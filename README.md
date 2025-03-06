@@ -18,6 +18,10 @@ Use the web app [here]().
 $
 ```
 
+## Legal disclaimer
+
+...
+
 ## Tech
 
 ...
