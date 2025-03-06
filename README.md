@@ -2,17 +2,35 @@
 
 # `Be-sure-ance` 🤷‍♂️
 
+Choosing and viewing insurance plans should be easy.
+
 ## Rationale
 
 ...
 
 ## Usage
 
+Use the web app [here]().
+
+### Local hosting
+
 ```console
+$
+```
+
+## Tech
+
+...
+
+## Architecture
+
+### DB
+
+```mermaid
 
 ```
 
-## Architecture
+### Overview
 
 ```mermaid
 
