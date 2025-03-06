@@ -1,0 +1,9 @@
+https://www.uoi.com.sg/index.page 
+https://www.uoi.com.sg/personal/travel-insurance.pag
+https://www.uoi.com.sg/personal/motor-insurance.page 
+https://www.uoi.com.sg/personal/home-contents-insurance.page 
+https://www.uoi.com.sg/personal/accident-protection.page 
+https://www.uoi.com.sg/commercial/general-insurance.page 
+https://www.uoi.com.sg/commercial/specialised-insurance.page 
+https://www.uoi.com.sg/takaful.page 
+https://www.uoi.com.sg/claims-assistance.page 

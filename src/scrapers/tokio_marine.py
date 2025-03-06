@@ -1,0 +1,17 @@
+https://www.tokiomarine.com/sg/en.html 
+https://www.tokiomarine.com/sg/en/life/claim/submit-a-claim.html 
+https://www.tokiomarine.com/sg/en/non-life.html 
+https://www.tokiomarine.com/sg/en/life.html 
+https://www.tokiomarine.com/sg/en/non-life/products/personal/motor/private-motor.html 
+https://www.tokiomarine.com/sg/en/non-life/products/personal/home/flexihome.html 
+https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html
+https://www.tokiomarine.com/sg/en/non-life/products/personal/travel/tm-xplora.html 
+https://www.tokiomarine.com/sg/en/non-life/products/business.html 
+https://www.tokiomarine.com/sg/en/life/products/personal/protect/critical-illness-insurance.html 
+https://www.tokiomarine.com/sg/en/life/products/personal/protect/disability-insurance/tm-protect-1.html 
+https://www.tokiomarine.com/sg/en/life/products/personal/protect/life-insurance.html 
+https://www.tokiomarine.com/sg/en/life/products/personal/protect/personal-accident.html
+https://www.tokiomarine.com/sg/en/life/products/personal/savings/general-savings.html
+https://www.tokiomarine.com/sg/en/life/products/personal/savings/education.html 
+https://www.tokiomarine.com/sg/en/life/products/personal/savings/retirement.html
+https://www.tokiomarine.com/sg/en/life/products/personal/investments.html 
