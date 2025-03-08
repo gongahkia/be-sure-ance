@@ -33,9 +33,13 @@ def process_json_files(target_directory_filepath):
 
 
 def overwrite_table_data(table_name, data):
-    response_delete = supabase.table(table_name).delete().eq("id", "id").execute()
-    if response_delete.error:
-        print(f"Error clearing data from {table_name}: {response_delete.error}")
+    query = f"DELETE FROM {table_name};"
+    try:
+        response = supabase.rpc("execute_sql", {"query": query}).execute()
+        if response.error:
+            print(f"Error clearing data from {table_name}: {response.error}")
+    except Exception as e:
+        print(f"An error occurred while clearing data from {table_name}: {e}")
     insert_data(table_name, data)
 
 
