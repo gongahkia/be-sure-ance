@@ -63,7 +63,9 @@ async def scrape_data(url):
             "plan_description": plan_description.strip(),
             "plan_overview": plan_overview.strip(),
             "plan_url": url,
-            "product_brochure_url": brochure_url if brochure_url else None,
+            "product_brochure_url": f"https://www.uoi.com.sg{brochure_url}"
+            if brochure_url
+            else None,
         }
 
 

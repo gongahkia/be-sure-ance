@@ -62,10 +62,6 @@ async def scrape_data(target_url):
                 }
             )
 
-        print(
-            f"NUM FILTERS: {len(product_filters_data)}FILTERS\n{product_filters_data}"
-        )
-
         for filter in product_filters_data:
             url = filter["plan_url"]
             print(url)
@@ -88,15 +84,12 @@ async def scrape_data(target_url):
             else:
                 cta_url = None
 
-            benefits_container = await product_page.query_selector(
-                "#benefitsforyou .cardcarousel.carousel.panelcontainer"
+            benefits_container = await product_page.query_selector_all(
+                "div.cmp-featuredperk__content"
             )
             if benefits_container:
-                benefits = await benefits_container.query_selector_all(
-                    "#cmp-featuredperk__content"
-                )
                 benefits_data = []
-                for benefit in benefits:
+                for benefit in benefits_container:
                     benefits_data.append(await benefit.text_content())
             else:
                 benefits_data = None
@@ -104,7 +97,12 @@ async def scrape_data(target_url):
             scraped_data.append(
                 {
                     "plan_name": filter["plan_name"],
-                    "plan_benefits": benefits_data,
+                    "plan_benefits": [
+                        lib.sanitise.remove_excess_newlines(benefits)
+                        for benefits in benefits_data
+                    ]
+                    if benefits_data
+                    else None,
                     "plan_description": lib.sanitise.remove_html_entities(
                         filter["plan_description"]
                     )
@@ -121,8 +119,6 @@ async def scrape_data(target_url):
             )
 
             await product_page.close()
-
-        print(f"SCRAPED DATA\n{scraped_data}")
 
         await browser.close()
 
