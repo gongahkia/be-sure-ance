@@ -1,0 +1,53 @@
+[
+  {
+    "plan_name": "UniTravel Insurance",
+    "plan_benefits": [
+      "24 Hours Emergency Assist Hotline\n            Call +65 6222 7737 for assistance while you are overseas",
+      "Medical Expenses\n            Incurred Overseas and for follow-up medical treatments upon return to Singapore",
+      "Extensive coverage including COVID-19\n            Receive comprehensive trip coverage before, during and after your trip, including COVID-19",
+      "Overseas Medical Expenses\n            Get covered up to S$700,000 overseas medical expenses",
+      "Trip Cancellation, Curtailment and Disruption\n            \u2022 Up to S$10,000 for trip cancellation\u2022 Up to S$8,000 for trip curtailment\u2022 Up to S$1,000 for trip disruption",
+      "Baggage and Personal Effects\n            Get covered up to S$6,000 for accidental loss or loss to baggage and personal effects"
+    ],
+    "plan_description": "Buy now",
+    "plan_overview": "Pack your bags and leave your worries with us. Travel smart with the insurance that\u2019s as valuable as you are.",
+    "plan_url": "https://www.uoi.com.sg/personal/travel-insurance.page",
+    "product_brochure_url": "https://www.uoi.com.sg/assets/web-resources/uoi/images/personal/travel-insurance/UOI-Travel-Insurance.jpg"
+  },
+  {
+    "plan_name": "UniCar Motor Insurance",
+    "plan_benefits": [
+      "Optional Add On NCD Protector when your NCD is 30% and above",
+      "Free addition of up to 2 named drivers",
+      "24 Hours Emergency Roadside Assistance\n            Call +65 6222 7737 for roadside assistance"
+    ],
+    "plan_description": "Buy now",
+    "plan_overview": "Designed to protect your vehicle against loss or damage and also your legal liability against third party.",
+    "plan_url": "https://www.uoi.com.sg/personal/motor-insurance.page",
+    "product_brochure_url": "https://www.uoi.com.sg/assets/web-resources/uoi/images/personal/motor-insurance/UOI-Motor-Insurance.jpg"
+  },
+  {
+    "plan_name": "UOI Home Contents Insurance",
+    "plan_benefits": [
+      "Covers accidental loss or damage to your property within your house up to S$150,000",
+      "24 Hours Emergency Assist Hotline\n            Call +65 6222 7737 for emergency home care services",
+      "Save up to 20% premium*\n            *if you purchase a 3-year plan"
+    ],
+    "plan_description": "Buy now",
+    "plan_overview": "Designed to protect your assets within your residential premises arising from any unforeseen and sudden physical loss or damage from any cause other than those specifically excluded.",
+    "plan_url": "https://www.uoi.com.sg/personal/home-contents-insurance.page",
+    "product_brochure_url": "https://www.uoi.com.sg/assets/web-resources/uoi/images/personal/home-contents-insurance/UOI-Home-Insurance.jpg"
+  },
+  {
+    "plan_name": "UOI Accident Protection",
+    "plan_benefits": [
+      "Free Automatic Increase in Benefit\n            The sum insured for accidental death benefit increases 5% each year (up to 5 years)",
+      "Get covered for Accidental Death, Permanent Disablement and Medical Expenses\n            Provides you with 24-hour insurance protection worldwide",
+      "No Medical Check-up required for you to enrol\n            Hassle Free Enrolment"
+    ],
+    "plan_description": "Apply now",
+    "plan_overview": "To provide financial protection for yourself or your family in the event of an accident. This insurance protection covers you 24 hours a day and everywhere you go.",
+    "plan_url": "https://www.uoi.com.sg/personal/accident-protection.page",
+    "product_brochure_url": "https://www.uoi.com.sg/assets/web-resources/uoi/images/personal/accident-protection/UOI-Accident-Protection.jpg"
+  }
+]
