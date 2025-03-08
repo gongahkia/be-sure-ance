@@ -149,14 +149,6 @@
       "product_brochure_url": "https://www.aia.com.sg/content/dam/sg-wise/en/docs/our-products/en/aia-life-dividends.pdf"
     },
     {
-      "plan_name": null,
-      "plan_benefits": null,
-      "plan_description": null,
-      "plan_overview": null,
-      "plan_url": "https://www.aia.com.sg/en/aiaplan360",
-      "product_brochure_url": "https://www.aia.com.sgNone"
-    },
-    {
       "plan_name": "AIA Secure Flexi Term",
       "plan_benefits": [
         "\n    \n      \n        High coverage at affordable premiums\n      \n      \n        Be protected from just S$1.36 a day for S$1 million coverage.\n      \n    \n    \n  ",
@@ -401,14 +393,6 @@
       "plan_overview": "AIA HealthShield Gold Max\n \n \n \n \n \n \n A MediSave-approved Integrated Shield Plan consisting of MediShield Life and private insurance coverage for private or public hospital treatment . \n \n \n \n \n \n \n \n \n \n \n \n Currency:\n \n \n \n \n S$\n \n \n \n \n \n \n Period:\n \n \n \n \n Term\n \n \n \n \n \n \n Issue Age:\n \n \n \n \n 2 Weeks - 74 Years Old\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n var aiaDatalayer = aiaDatalayer || {};\n aiaDatalayer[\"image\"] = \"\"\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Product Brochure\n \n \n \n \n \u4e2d\u6587\u624b\u518c",
       "plan_url": "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-healthshield-gold-max",
       "product_brochure_url": "https://www.aia.com.sg/content/dam/sg-wise/en/docs/our-products/en/aia-health-shield-gold-max-english-brochure.pdf"
-    },
-    {
-      "plan_name": null,
-      "plan_benefits": null,
-      "plan_description": null,
-      "plan_overview": null,
-      "plan_url": "https://www.aia.com.sg/en/aiaplan360",
-      "product_brochure_url": "https://www.aia.com.sgNone"
     },
     {
       "plan_name": "AIA Mum2Baby Choices",
