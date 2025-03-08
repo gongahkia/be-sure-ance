@@ -196,19 +196,14 @@ async def scrape_data(target_url):
                 {
                     "plan_name": filter["plan_name"] if filter["plan_name"] else "",
                     "plan_benefits": [
-                        lib.sanitise.remove_excess_newlines(benefits)
-                        for benefits in benefits_data
+                        remove_excess_newlines(benefits) for benefits in benefits_data
                     ]
                     if benefits_data
                     else [""],
-                    "plan_description": lib.sanitise.remove_html_entities(
-                        filter["plan_description"]
-                    )
+                    "plan_description": remove_html_entities(filter["plan_description"])
                     if filter["plan_description"]
                     else "",
-                    "plan_overview": lib.sanitise.remove_excess_newlines(
-                        overview_content
-                    )
+                    "plan_overview": remove_excess_newlines(overview_content)
                     if overview_content
                     else "",
                     "plan_url": filter["plan_url"] if filter["plan_url"] else "",
