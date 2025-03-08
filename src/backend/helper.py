@@ -46,7 +46,12 @@ def check_table_exists(table_name):
     );
     """
     response = supabase.rpc("execute_sql", {"query": query}).execute()
-    return response.data[0][0]
+    if response.data and len(response.data) > 0:
+        print(f"Table {table_name} was found.")
+        return response.data[0][0]
+    else:
+        print(f"No data returned for table {table_name}.")
+        return False
 
 
 def create_table(table_name):
