@@ -34,4 +34,5 @@ jobs:
 
       - name: Run Supabase sync script
         run: |
+          cd src
           python backend/helper.py
