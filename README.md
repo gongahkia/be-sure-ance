@@ -77,5 +77,5 @@ $
 | [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | ❌ || 
 | [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | ❌ || 
 | [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | ❌ || 
-| [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | ❌ || 
+| [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | ✅ | 08/03/2025 | 
 | [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/) | ❌ || 
