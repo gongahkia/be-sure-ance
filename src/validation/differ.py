@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 from xml.parsers.expat import ExpatError
 from xml.dom.minidom import parse, parseString
 
+
 def delete_directory_files(target_directory):
     current_date = datetime.now().strftime("%d_%m_%Y")
     yesterday_date = (datetime.now() - timedelta(days=1)).strftime("%d_%m_%Y")
@@ -21,16 +22,14 @@ def delete_directory_files(target_directory):
         for filename in os.listdir(target_directory):
             file_path = os.path.join(target_directory, filename)
             if os.path.isfile(file_path):
-                if (
-                    current_date not in file_path
-                    and yesterday_date not in file_path
-                ):
+                if current_date not in file_path and yesterday_date not in file_path:
                     os.remove(file_path)
                     pretty_print_green(f"Deleted file at the filepath: {file_path}")
                 else:
                     pass
     except Exception as e:
         pretty_print_red(f"Error encountered: {e}")
+
 
 def delete_files(target_filepath_array):
     files_to_delete_array = glob.glob(target_filepath_array)
@@ -46,6 +45,7 @@ def delete_files(target_filepath_array):
     else:
         pretty_print_red(f"No files at filepath: {target_filepath} were found")
 
+
 def fetch_raw_html(url):
     response = requests.get(url)
     response.raise_for_status()
@@ -60,12 +60,13 @@ def fetch_raw_html(url):
     body_content = html_as_soup.find("body")
     return str(body_content) if body_content else ""
 
+
 def generate_xml_hash(xml_content):
     hash_object = hashlib.sha256(xml_content.encode("utf-8"))
     return hash_object.hexdigest()
 
-def normalize_xml(xml_content):
 
+def normalize_xml(xml_content):
     root = ET.fromstring(xml_content)
 
     def strip_namespace(tag):
@@ -81,8 +82,8 @@ def normalize_xml(xml_content):
     structure_only_xml = traverse_and_build_structure(root)
     return structure_only_xml
 
-def compare_structural_similarity(xml1, xml2):
 
+def compare_structural_similarity(xml1, xml2):
     def get_node_paths(element, parent_path=""):
         paths = []
         for child in element:
@@ -127,8 +128,8 @@ def compare_structural_similarity(xml1, xml2):
             "common_paths": "Error",
         }
 
-def validate_xml_with_schema(xml_file, schema_file):
 
+def validate_xml_with_schema(xml_file, schema_file):
     xml_doc = etree.parse(xml_file)
     with open(schema_file, "r") as schema_file_obj:
         schema_doc = etree.XML(schema_file_obj.read())
@@ -138,8 +139,8 @@ def validate_xml_with_schema(xml_file, schema_file):
     else:
         return f"XML is not valid against the specified schema. Errors: {str(schema.error_log)}"
 
-def calculate_levenshtein_distance(xml1, xml2):
 
+def calculate_levenshtein_distance(xml1, xml2):
     def get_tag_sequence(element):
         seq = [element.tag]
         for child in element:
@@ -174,8 +175,8 @@ def calculate_levenshtein_distance(xml1, xml2):
     else:
         return 0.0
 
-def compare_dom(xml1, xml2):
 
+def compare_dom(xml1, xml2):
     def compare_dom_elements(elem1, elem2):
         if elem1.tagName != elem2.tagName:
             return False
