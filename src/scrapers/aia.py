@@ -74,7 +74,7 @@ async def scrape_data(target_url):
             if overview_content:
                 overview_content = await overview_content.text_content()
             else:
-                overview_content = (None,)
+                overview_content = None
 
             cta_button = await product_page.query_selector(
                 ".cmp-button.cmp-button__primary"
@@ -132,8 +132,9 @@ async def run_all_tasks(json_filepath, scrape_list):
     for url in scrape_list:
         tasks.append(scrape_data(url))
     all_data = await asyncio.gather(*tasks)
+    formatted_data = [plan_dict for general in all_data for plan_dict in general]
     with open(json_filepath, "w") as file:
-        json.dump(all_data[0], file, indent=2)
+        json.dump(formatted_data, file, indent=2)
 
 
 async def main(json_filepath, scrape_list):

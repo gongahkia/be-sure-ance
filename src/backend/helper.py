@@ -33,11 +33,13 @@ def process_json_files(target_directory_filepath):
 
 
 def overwrite_table_data(table_name, data):
-    query = f"TRUNCATE TABLE {table_name} RESTART IDENTITY;"
+    query = f"DELETE FROM {table_name} WHERE 1=1;"
     try:
         response = supabase.rpc("execute_sql", {"query": query}).execute()
-        if response.error:
-            print(f"Error clearing data from {table_name}: {response.error}")
+        if response.data is None or response.data == []:
+            print(f"Data cleared from {table_name}: No data returned")
+        else:
+            print(f"Data cleared from {table_name}: {response.data}")
     except Exception as e:
         print(f"An error occurred while clearing data from {table_name}: {e}")
     insert_data(table_name, data)
@@ -45,27 +47,32 @@ def overwrite_table_data(table_name, data):
 
 def insert_data(table_name, data):
     formatted_data = []
-    print(data)
-    # for row in data:
-    #     if isinstance(row, dict):
-    #         formatted_row = {
-    #             "plan_name": row.get("plan_name"),
-    #             "plan_benefits": row.get("plan_benefits"),
-    #             "plan_description": row.get("plan_description"),
-    #             "plan_overview": row.get("plan_overview"),
-    #             "plan_url": row.get("plan_url"),
-    #             "product_brochure_url": row.get("product_brochure_url"),
-    #         }
-    #         formatted_data.append(formatted_row)
-    #     else:
-    #         print(f"Skipping non-dictionary row: {row}")
-    # response_insert = supabase.table(table_name).insert(formatted_data).execute()
-    # if response_insert.status_code != 200:
-    #     print(f"Error inserting data into {table_name}: {response_insert}")
-    # elif response_insert.data is None:
-    #     print(f"Error inserting data into {table_name}: No data returned")
-    # else:
-    #     print(f"Data inserted successfully into {table_name}.")
+    for row in data:
+        # Ensure plan_benefits is a list
+        plan_benefits = row.get("plan_benefits", [])
+
+        # If plan_benefits is a string, convert it to a list
+        if isinstance(plan_benefits, str):
+            plan_benefits = [plan_benefits]
+
+        formatted_row = {
+            "plan_name": row.get("plan_name"),
+            "plan_benefits": plan_benefits,
+            "plan_description": row.get("plan_description"),
+            "plan_overview": row.get("plan_overview"),
+            "plan_url": row.get("plan_url"),
+            "product_brochure_url": row.get("product_brochure_url"),
+        }
+        formatted_data.append(formatted_row)
+
+    try:
+        response_insert = supabase.table(table_name).insert(formatted_data).execute()
+        if response_insert.data is None:
+            print(f"Error inserting data into {table_name}: No data returned")
+        else:
+            print(f"Data inserted successfully into {table_name}.")
+    except Exception as e:
+        print(f"An error occurred while inserting data into {table_name}: {e}")
 
 
 # ----- sample execution code -----
