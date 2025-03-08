@@ -44,18 +44,18 @@ def overwrite_table_data(table_name, data):
 
 
 def insert_data(table_name, data):
-    print(data)
     formatted_data = [
         {
-            "plan_name": row["plan_name"],
-            "plan_benefits": row["plan_benefits"],
-            "plan_description": row["plan_description"],
-            "plan_overview": row["plan_overview"],
-            "plan_url": row["plan_url"],
-            "product_brochure_url": row["product_brochure_url"],
+            "plan_name": row[0]["plan_name"],
+            "plan_benefits": row[0]["plan_benefits"],
+            "plan_description": row[0]["plan_description"],
+            "plan_overview": row[0]["plan_overview"],
+            "plan_url": row[0]["plan_url"],
+            "product_brochure_url": row[0]["product_brochure_url"],
         }
         for row in data
     ]
+    print(formatted_data)
     response_insert = supabase.table(table_name).insert(formatted_data).execute()
     if response_insert.error:
         print(f"Error inserting data into {table_name}: {response_insert.error}")
