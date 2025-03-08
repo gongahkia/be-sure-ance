@@ -18,7 +18,6 @@ https://www.uoi.com.sg/takaful.page
 # ----- required imports -----
 
 import asyncio
-import lib.sanitise
 from playwright.async_api import async_playwright
 import json
 
