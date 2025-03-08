@@ -3,6 +3,7 @@
 
     <h1><b>Be Sure</b> ance</h1>
     <h3>Made with ❤️ by <a href="https://gabrielongzm.com/">Gabriel Ong</a></h3>
+    <h4>Source code <a href="https://github.com/gongahkia/be-sure-ance">here</a></h4>
 
     <div v-if="loading">Loading...</div>
     <div v-else>
@@ -27,12 +28,12 @@
                 <tbody>
                   <tr v-for="plan in aiaPlans" :key="plan.id">
                     <td><a :href="plan.plan_url">{{ plan.plan_name }}</a></td>
+                    <td>{{ plan.plan_description }}</td>
                     <td>
                       <ul>
                         <li v-for="benefit in plan.plan_benefits" :key="benefit">{{ benefit }}</li>
                       </ul>
                     </td>
-                    <td>{{ plan.plan_description }}</td>
                     <td>{{ plan.plan_overview }}</td>
                     <td><a :href="plan.product_brochure_url">{{ plan.product_brochure_url }}</a></td>
                   </tr>
@@ -61,12 +62,12 @@
                 <tbody>
                   <tr v-for="plan in uoiPlans" :key="plan.id">
                     <td><a :href="plan.plan_url">{{ plan.plan_name }}</a></td>
+                    <td>{{ plan.plan_description }}</td>
                     <td>
                       <ul>
                         <li v-for="benefit in plan.plan_benefits" :key="benefit">{{ benefit }}</li>
                       </ul>
                     </td>
-                    <td>{{ plan.plan_description }}</td>
                     <td>{{ plan.plan_overview }}</td>
                     <td><a :href="plan.product_brochure_url">{{ plan.product_brochure_url }}</a></td>
                   </tr>
