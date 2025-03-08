@@ -1,3 +1,4 @@
+"""
 https://www.hlas.com.sg/ 
 https://www.hlas.com.sg/personal-insurance/travel-insurance/ 
 https://www.hlas.com.sg/personal-insurance/car-insurance/ 
@@ -23,3 +24,4 @@ https://www.hlas.com.sg/propertyinsurance/
 https://www.hlas.com.sg/check-claim-status/ 
 https://www.hlas.com.sg/claim-forms/ 
 https://www.hlas.com.sg/how-to-claim/ 
+"""

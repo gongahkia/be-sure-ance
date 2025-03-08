@@ -1,3 +1,4 @@
+"""
 https://www.greateasternlife.com/sg/en/about-us.html
 
 https://www.greateasternlife.com/sg/en/personal-insurance.html 
@@ -15,3 +16,4 @@ https://www.greateasternlife.com/sg/en/corporate-solutions/general-insurance/ove
 https://www.greateasternlife.com/sg/en/corporate-solutions/benefits-at-workplace/live-great-corporate-wellness-programme.html 
 https://www.greateasternlife.com/sg/en/corporate-solutions/contact-us-form.html 
 https://www.greateasternlife.com/sg/en/corporate-solutions/employee-benefits/group-insurance.html 
+"""

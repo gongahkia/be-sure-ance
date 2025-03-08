@@ -1,3 +1,4 @@
+"""
 https://www.sg.cntaiping.com/en/
 
 https://www.sg.cntaiping.com/en/claims/life-insurance/claims-death-claim
@@ -24,3 +25,4 @@ https://www.sg.cntaiping.com/en/business/landing-casualty-medical/medical-health
 https://www.sg.cntaiping.com/en/business/landing-insurance-engineering-bonds/property-insurance.html
 https://www.sg.cntaiping.com/en/business/landing-insurance-engineering-bonds/engineering.html 
 https://www.sg.cntaiping.com/en/business/landing-insurance-engineering-bonds/bonds.html 
+"""

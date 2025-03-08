@@ -1,3 +1,4 @@
+"""
 https://www.allianz.sg/
 
 https://www.allianz.sg/claims.html
@@ -19,3 +20,4 @@ https://www.allianz.sg/corporate-solutions/marine-insurance.html
 https://www.allianz.sg/corporate-solutions/property-insurance.html 
 https://www.allianz.sg/corporate-solutions/work-injury-compensation-insurance.html 
 https://www.allianz.sg/corporate-solutions/commercial-motor-insurance.html 
+"""

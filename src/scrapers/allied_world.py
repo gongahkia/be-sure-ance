@@ -1,3 +1,4 @@
+"""
 https://alliedworldinsurance.com/singapore/ 
 
 https://alliedworldinsurance.com/products_category/accident-health/
@@ -22,3 +23,4 @@ https://alliedworldinsurance.com/products_category/small-medium-business/
 https://alliedworldinsurance.com/products_category/workers-compensation/ 
 
 https://alliedworldinsurance.com/general-claims/ 
+"""

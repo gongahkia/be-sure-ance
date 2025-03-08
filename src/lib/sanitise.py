@@ -11,9 +11,9 @@ def remove_excess_newlines(inp):
         raise TypeError(
             f"Input must be type <string> but was type <{type(inp).__name__}>"
         )
-    inp2 = re.sub(r"\n+", "\n", inp)
-    return inp2.strip()
-
+    inp = re.sub(r"\n+", "\n", inp)
+    inp = re.sub(r"[ \t\u200b]+", " ", inp)
+    return inp.strip()
 
 def remove_unicode(inp):
 
@@ -23,33 +23,38 @@ def remove_unicode(inp):
     inp2 = "".join(char for char in inp if is_printable(char))
     return inp2
 
-
 def remove_html_entities(inp):
     inp2 = html.unescape(inp)
     replacements = {
-        "\xa0": " ",
-        "\u2013": "-",
-        "\u2014": "--",
-        "\u2026": "...",
-        "\u2018": "'",
-        "\u2019": "'",
-        "\u201c": '"',
-        "\u201d": '"',
-        "\u00ab": '"',
-        "\u00bb": '"',
-        "\u02c6": "^",
-        "\u2039": "<",
-        "\u203a": ">",
-        "\u02dc": "~",
-        "\u00a9": "(c)",
-        "\u00ae": "(R)",
-        "\u2122": "(TM)",
-        "\u00b0": "°",
-        "\u00b7": "*",
-        "\u00b1": "+/-",
-        "\u00bc": "1/4",
-        "\u00bd": "1/2",
-        "\u00be": "3/4",
+        "\xa0": " ",       # Non-breaking space
+        "\u200b": "",      # Zero-width space
+        "\u2013": "-",     # En dash
+        "\u2014": "--",    # Em dash
+        "\u2026": "...",   # Ellipsis
+        "\u2018": "'",     # Left single quote
+        "\u2019": "'",     # Right single quote
+        "\u201c": '"',     # Left double quote
+        "\u201d": '"',     # Right double quote
+        "\u00ab": '"',     # Left guillemet
+        "\u00bb": '"',     # Right guillemet
+        "\u02c6": "^",     # Circumflex
+        "\u2039": "<",     # Single left angle quote
+        "\u203a": ">",     # Single right angle quote
+        "\u02dc": "~",     # Small tilde
+        "\u00a9": "(c)",   # Copyright symbol
+        "\u00ae": "(R)",   # Registered trademark symbol
+        "\u2122": "(TM)",  # Trademark symbol
+        "\u00b0": "°",     # Degree symbol
+        "\u00b7": "*",     # Middle dot
+        "\u00b1": "+/-",   # Plus-minus symbol
+        "\u00bc": "1/4",   # One-quarter fraction
+        "\u00bd": "1/2",   # One-half fraction
+        "\u00be": "3/4",   # Three-quarters fraction
+        "&lt;": "<",       # Less-than sign (HTML entity)
+        "&gt;": ">",       # Greater-than sign (HTML entity)
+        "&amp;": "&",      # Ampersand (HTML entity)
+        "&quot;": '"',     # Quotation mark (HTML entity)
+        "&apos;": "'",     # Apostrophe (HTML entity)
     }
     for old_char, new_char in replacements.items():
         inp2 = inp2.replace(old_char, new_char)

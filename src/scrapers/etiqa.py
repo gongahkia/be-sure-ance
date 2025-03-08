@@ -1,3 +1,4 @@
+"""
 https://www.etiqa.com.sg/ 
 https://www.etiqa.com.sg/personal/life-critical-illness-protection/ 
 https://www.etiqa.com.sg/personal/premier-solutions/ 
@@ -21,3 +22,4 @@ https://www.etiqa.com.sg/business-insurance/business-owners-super-suite/
 https://www.etiqa.com.sg/business-insurance/miscellaneous/ 
 https://www.etiqa.com.sg/business-insurance/property/ 
 https://www.etiqa.com.sg/claims-and-services/
+"""

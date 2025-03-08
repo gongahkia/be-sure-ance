@@ -1,3 +1,4 @@
+"""
 https://singlife.com/en
 https://singlife.com/en/business
 
@@ -34,3 +35,4 @@ https://singlife.com/en/business/corporate-insurance/group-hospital-and-surgical
 https://singlife.com/en/business/corporate-insurance/group-personal-accident 
 https://singlife.com/en/business/corporate-insurance/group-disability-protection 
 https://singlife.com/en/business/corporate-insurance/mybenefits-plus 
+"""

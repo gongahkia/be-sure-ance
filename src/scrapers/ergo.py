@@ -1,3 +1,4 @@
+"""
 https://www.ergo.com.sg/ 
 https://www.ergo.com.sg/claim 
 https://www.ergo.com.sg/insurance/personal/motor/product-information 
@@ -15,3 +16,4 @@ https://www.ergo.com.sg/insurance/commercial/marine/product-information
 https://www.ergo.com.sg/insurance/commercial/work-injury/product-information 
 https://www.ergo.com.sg/insurance/commercial/contractor-all-risks-engineering/product-information 
 https://www.ergo.com.sg/insurance/commercial/miscellaneous/product-information 
+"""

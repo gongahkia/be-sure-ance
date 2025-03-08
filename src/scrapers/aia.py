@@ -12,6 +12,7 @@ https://www.aia.com.sg/en/our-products/save-and-invest
 # ----- required imports -----
 
 import asyncio
+import lib.sanitise 
 from playwright.async_api import async_playwright
 import json
 
@@ -92,8 +93,8 @@ async def scrape_data(target_url):
             scraped_data.append({
                 'plan_name': filter['plan_name'],
                 'plan_benefits': benefits_data,
-                'plan_description': filter['plan_description'],
-                'plan_overview': overview_content,
+                'plan_description': lib.sanitise.remove_html_entities(filter['plan_description']) if filter['plan_description'] else None,
+                'plan_overview': lib.sanitise.remove_excess_newlines(overview_content) if overview_content else None,
                 'plan_url': filter['plan_url'],
                 'product_brochure_url': f"https://www.aia.com.sg{cta_url}"
             })
