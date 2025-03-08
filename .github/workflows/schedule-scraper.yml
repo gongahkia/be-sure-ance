@@ -29,8 +29,8 @@ jobs:
       - name: Run Scraper Scripts
         run: |
             cd src
-            python3 scrapers/aia.py
-            python3 scrapers/uoi.py
+            python scrapers/aia.py
+            python scrapers/uoi.py
 
       - name: Configure Git
         run: |
