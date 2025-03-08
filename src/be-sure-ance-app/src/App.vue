@@ -82,7 +82,6 @@
         </div>
       </div>
     </div>
-    <button @click="toggleDark()">Toggle Mode</button>
   </div>
 </template>
 
@@ -119,12 +118,12 @@ async function fetchData() {
 
 function toggleAiaExpanded() {
   aiaExpanded.value = !aiaExpanded.value;
-  uoiExpanded.value = false; // Close UOI card when AIA is opened
+  uoiExpanded.value = false; 
 }
 
 function toggleUoiExpanded() {
   uoiExpanded.value = !uoiExpanded.value;
-  aiaExpanded.value = false; // Close AIA card when UOI is opened
+  aiaExpanded.value = false; 
 }
 
 fetchData();
