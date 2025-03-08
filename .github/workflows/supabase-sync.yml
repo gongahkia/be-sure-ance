@@ -2,7 +2,7 @@ name: Supabase Sync
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   sync-json-to-supabase:
