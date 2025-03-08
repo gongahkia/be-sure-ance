@@ -1,4 +1,5 @@
 ![](https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg)
+![](https://api.netlify.com/api/v1/badges/281baeb4-46fd-4008-9f72-36324a3e1cad/deploy-status)
 [![](https://img.shields.io/badge/be_sure_ance_1.0.0-passing-green)](https://github.com/gongahkia/be-sure-ance/releases/tag/1.0.0)
 
 # `Be-sure-ance` 🤷‍♂️
