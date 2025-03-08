@@ -44,6 +44,7 @@ def overwrite_table_data(table_name, data):
 
 
 def insert_data(table_name, data):
+    print(data)
     formatted_data = [
         {
             "plan_name": row["plan_name"],
