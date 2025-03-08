@@ -11,6 +11,7 @@ https://www.aia.com.sg/en/our-products/save-and-invest
 
 # ----- required imports -----
 
+import os
 import asyncio
 import lib.sanitise
 from playwright.async_api import async_playwright
@@ -151,6 +152,10 @@ scrape_list = [
     "https://www.aia.com.sg/en/our-products/health",
     "https://www.aia.com.sg/en/our-products/save-and-invest",
 ]
-json_filepath = "./scraped/aia.json"
+
+# json_filepath = "./scraped/aia.json"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+scraped_dir = os.path.join(os.path.dirname(script_dir), "scraped")
+json_filepath = os.path.join(scraped_dir, "aia.json")
 
 asyncio.run(main(json_filepath, scrape_list))
