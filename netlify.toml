@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "src/be-sure-ance-app/dist"
+  base = "src/be-sure-ance-app"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
