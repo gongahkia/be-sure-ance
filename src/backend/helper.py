@@ -29,48 +29,7 @@ def process_json_files(target_directory_filepath):
         file_path = os.path.join(target_directory_filepath, json_file)
         with open(file_path, "r") as file:
             data = json.load(file)
-        table_exists = check_table_exists(table_name)
-        if table_exists:
-            overwrite_table_data(table_name, data)
-        else:
-            create_table(table_name)
-            insert_data(table_name, data)
-
-
-def check_table_exists(table_name):
-    query = f"""
-    SELECT EXISTS (
-        SELECT 1
-        FROM pg_tables
-        WHERE tablename = '{table_name}'
-    );
-    """
-    response = supabase.rpc("execute_sql", {"query": query}).execute()
-    if response.data and len(response.data) > 0:
-        print(f"Table {table_name} was found.")
-        return response.data[0][0]
-    else:
-        print(f"No data returned for table {table_name}.")
-        return False
-
-
-def create_table(table_name):
-    sql_create_table = f"""
-    CREATE TABLE IF NOT EXISTS {table_name} (
-        id SERIAL PRIMARY KEY,
-        plan_name TEXT,
-        plan_benefits TEXT[],
-        plan_description TEXT,
-        plan_overview TEXT,
-        plan_url TEXT,
-        product_brochure_url TEXT
-    );
-    """
-    response = supabase.rpc("execute_sql", {"query": sql_create_table}).execute()
-    if response.error:
-        print(f"Error creating table {table_name}: {response.error}")
-    else:
-        print(f"Table {table_name} created successfully.")
+        overwrite_table_data(table_name, data)
 
 
 def overwrite_table_data(table_name, data):
