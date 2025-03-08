@@ -48,13 +48,9 @@ def overwrite_table_data(table_name, data):
 def insert_data(table_name, data):
     formatted_data = []
     for row in data:
-        # Ensure plan_benefits is a list
         plan_benefits = row.get("plan_benefits", [])
-
-        # If plan_benefits is a string, convert it to a list
         if isinstance(plan_benefits, str):
             plan_benefits = [plan_benefits]
-
         formatted_row = {
             "plan_name": row.get("plan_name"),
             "plan_benefits": plan_benefits,
@@ -64,7 +60,6 @@ def insert_data(table_name, data):
             "product_brochure_url": row.get("product_brochure_url"),
         }
         formatted_data.append(formatted_row)
-
     try:
         response_insert = supabase.table(table_name).insert(formatted_data).execute()
         if response_insert.data is None:
