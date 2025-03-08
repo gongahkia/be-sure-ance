@@ -1,3 +1,4 @@
+![](https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg)
 [![](https://img.shields.io/badge/be_sure_ance_1.0.0-passing-green)](https://github.com/gongahkia/be-sure-ance/releases/tag/1.0.0)
 
 # `Be-sure-ance` 🤷‍♂️
