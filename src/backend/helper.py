@@ -89,5 +89,6 @@ def insert_data(table_name, data):
 # ----- sample execution code -----
 
 if __name__ == "__main__":
+    initialize_supabase()
     target_directory = "./scraped"
     process_json_files(target_directory)
