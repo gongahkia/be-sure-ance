@@ -44,23 +44,28 @@ def overwrite_table_data(table_name, data):
 
 
 def insert_data(table_name, data):
-    formatted_data = [
-        {
-            "plan_name": row[0]["plan_name"],
-            "plan_benefits": row[0]["plan_benefits"],
-            "plan_description": row[0]["plan_description"],
-            "plan_overview": row[0]["plan_overview"],
-            "plan_url": row[0]["plan_url"],
-            "product_brochure_url": row[0]["product_brochure_url"],
-        }
-        for row in data
-    ]
-    print(formatted_data)
-    response_insert = supabase.table(table_name).insert(formatted_data).execute()
-    if response_insert.error:
-        print(f"Error inserting data into {table_name}: {response_insert.error}")
-    else:
-        print(f"Data inserted successfully into {table_name}.")
+    formatted_data = []
+    print(data[0])
+    # for row in data:
+    #     if isinstance(row, dict):
+    #         formatted_row = {
+    #             "plan_name": row.get("plan_name"),
+    #             "plan_benefits": row.get("plan_benefits"),
+    #             "plan_description": row.get("plan_description"),
+    #             "plan_overview": row.get("plan_overview"),
+    #             "plan_url": row.get("plan_url"),
+    #             "product_brochure_url": row.get("product_brochure_url"),
+    #         }
+    #         formatted_data.append(formatted_row)
+    #     else:
+    #         print(f"Skipping non-dictionary row: {row}")
+    # response_insert = supabase.table(table_name).insert(formatted_data).execute()
+    # if response_insert.status_code != 200:
+    #     print(f"Error inserting data into {table_name}: {response_insert}")
+    # elif response_insert.data is None:
+    #     print(f"Error inserting data into {table_name}: No data returned")
+    # else:
+    #     print(f"Data inserted successfully into {table_name}.")
 
 
 # ----- sample execution code -----
