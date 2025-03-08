@@ -3,7 +3,7 @@ name: Supabase Sync
 on:
   schedule:
     - cron: '*/5 * * * *'
-    workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   sync-json-to-supabase:
