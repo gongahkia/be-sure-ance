@@ -12,7 +12,6 @@ https://www.aia.com.sg/en/our-products/save-and-invest
 # ----- required imports -----
 
 import os
-import json
 import asyncio
 from dotenv import load_dotenv
 from supabase import create_client, Client
