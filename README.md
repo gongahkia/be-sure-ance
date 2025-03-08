@@ -40,34 +40,42 @@ $
 
 ```
 
+### Function call stack
+
+```mermaid
+
+```
+
 ## Details
 
 `Be-sure-ance` supports the following Singaporean Insurance Providers as of 6 March 2025.
 
-1. [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index)
-2. [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/)
-3. [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/)
-4. [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/)
-5. [FWD Singapore Pte Ltd](https://www.fwd.com.sg/)
-6. [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html)
-7. [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/)
-8. [Manulife (Singapore) Pte Ltd](https://www.manulife.com.sg/)
-9. [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/)
-11. [Raffles Health Insurance Pte Ltd](https://www.raffleshealthinsurance.com/)
-12. [Singapore Life Ltd](https://singlife.com/en)
-13. [Sun Life Assurance Company of Canada Singapore Branch](https://www.sunlife.com.sg/en/)
-14. [Allied World Assurance Company Pte Ltd (Singapore)](https://alliedworldinsurance.com/singapore/)
-15. [Auto & General Insurance (Singapore) Pte Ltd](https://www.aig.sg/home)
-16. [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/)
-17. [ERGO Insurance Pte Ltd](https://www.ergo.com.sg/)
-18. [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/)
-19. [HL Assurance Pte Ltd](https://www.hlas.com.sg/)
-20. [Income Insurance Pte Ltd](https://www.income.com.sg/)
-21. [India International Insurance Pte Ltd](https://www.iii.com.sg/)
-22. [Liberty Insurance Pte Ltd](https://www.libertyinsurance.com.sg/)
-23. [Lonpac Insurance Bhd](https://www.lonpac.com/)
-24. [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg)
-25. [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/)
-26. [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html)
-27. [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page)
-29. [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/)
+| Provider | Implementation Status | Implementation Date |
+| :--- | :--- | :--- |
+| [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index) | ✅ | 08/03/2025 |
+| [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | ❌ | | 
+| [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | ❌ || 
+| [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | ❌ || 
+| [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | ❌ || 
+| [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ❌ || 
+| [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | ❌ || 
+| [Manulife (Singapore) Pte Ltd](https://www.manulife.com.sg/) | ❌ || 
+| [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/) | ❌ || 
+| [Raffles Health Insurance Pte Ltd](https://www.raffleshealthinsurance.com/) | ❌ || 
+| [Singapore Life Ltd](https://singlife.com/en) | ❌ || 
+| [Sun Life Assurance Company of Canada Singapore Branch](https://www.sunlife.com.sg/en/) | ❌ || 
+| [Allied World Assurance Company Pte Ltd (Singapore)](https://alliedworldinsurance.com/singapore/) | ❌ || 
+| [Auto & General Insurance (Singapore) Pte Ltd](https://www.aig.sg/home) | ❌ || 
+| [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | ❌ || 
+| [ERGO Insurance Pte Ltd](https://www.ergo.com.sg/) | ❌ || 
+| [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/) | ❌ || 
+| [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | ❌ || 
+| [Income Insurance Pte Ltd](https://www.income.com.sg/) | ❌ || 
+| [India International Insurance Pte Ltd](https://www.iii.com.sg/) | ❌ || 
+| [Liberty Insurance Pte Ltd](https://www.libertyinsurance.com.sg/) | ❌ || 
+| [Lonpac Insurance Bhd](https://www.lonpac.com/) | ❌ || 
+| [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | ❌ || 
+| [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | ❌ || 
+| [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | ❌ || 
+| [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | ❌ || 
+| [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/) | ❌ || 

@@ -114,8 +114,8 @@ async def run_all_tasks(json_filepath, scrape_list):
     with open(json_filepath, "w") as file:
         json.dump(all_data, file, indent=2)
 
-async def main(scrape_list):
-    await run_all_tasks(scrape_list)
+async def main(json_filepath, scrape_list):
+    await run_all_tasks(json_filepath, scrape_list)
 
 # ----- sample execution code -----
 
