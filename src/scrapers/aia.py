@@ -108,7 +108,7 @@ async def scrape_data(json_filepath, target_url):
 async def run_all_tasks(scrape_list):
     tasks = []
     for index, url in enumerate(scrape_list):
-        tasks.append(scrape_data(f"{index}".json, url))
+        tasks.append(scrape_data(f"{index}.json", url))
     await asyncio.gather(*tasks)
 
 async def main(scrape_list):
