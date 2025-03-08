@@ -18,6 +18,11 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Set PYTHONPATH and run script
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/src
+          python src/scrapers/aia.py
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
