@@ -74,7 +74,7 @@ async def scrape_data(target_url):
             if overview_content:
                 overview_content = await overview_content.text_content()
             else:
-                overview_content = None
+                overview_content = (None,)
 
             cta_button = await product_page.query_selector(
                 ".cmp-button.cmp-button__primary"
@@ -96,25 +96,27 @@ async def scrape_data(target_url):
 
             scraped_data.append(
                 {
-                    "plan_name": filter["plan_name"],
+                    "plan_name": filter["plan_name"] if filter["plan_name"] else "",
                     "plan_benefits": [
                         lib.sanitise.remove_excess_newlines(benefits)
                         for benefits in benefits_data
                     ]
                     if benefits_data
-                    else None,
+                    else [""],
                     "plan_description": lib.sanitise.remove_html_entities(
                         filter["plan_description"]
                     )
                     if filter["plan_description"]
-                    else None,
+                    else "",
                     "plan_overview": lib.sanitise.remove_excess_newlines(
                         overview_content
                     )
                     if overview_content
-                    else None,
-                    "plan_url": filter["plan_url"],
-                    "product_brochure_url": f"https://www.aia.com.sg{cta_url}",
+                    else "",
+                    "plan_url": filter["plan_url"] if filter["plan_url"] else "",
+                    "product_brochure_url": f"https://www.aia.com.sg{cta_url}"
+                    if cta_url
+                    else "",
                 }
             )
 
