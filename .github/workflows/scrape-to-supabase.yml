@@ -1,4 +1,4 @@
-name: Supabase Sync
+name: Schedule Scrape and Supabase Sync
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  
 
 jobs:
-  sync-json-to-supabase:
+  scrape-to-supabase:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install Playwright Browsers
+        run: playwright install --with-deps chromium
+
       - name: Set up environment variables
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -32,7 +35,8 @@ jobs:
           echo "SUPABASE_URL=${SUPABASE_URL}" >> .env
           echo "SUPABASE_KEY=${SUPABASE_KEY}" >> .env
 
-      - name: Run Supabase sync script
+      - name: Run Scraper and Supabase sync scripts
         run: |
-          cd src
-          python backend/helper.py
+            cd src
+            python scrapers/aia.py
+            python scrapers/uoi.py

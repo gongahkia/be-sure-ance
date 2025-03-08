@@ -1,3 +1,9 @@
+"""
+NOW DEPRECATED
+
+Currently handled on a per scraper basis under ./src/scrapers
+"""
+
 # ----- required imports -----
 
 import os
