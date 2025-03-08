@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "src/be-sure-ance-app/dist"
+  publish = "dist"
   base = "src/be-sure-ance-app"
 
 [[redirects]]
