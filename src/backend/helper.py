@@ -38,8 +38,15 @@ def process_json_files(target_directory_filepath):
 
 
 def check_table_exists(table_name):
-    response = supabase.rpc("table_exists", {"table_name": table_name}).execute()
-    return response.data
+    query = f"""
+    SELECT EXISTS (
+        SELECT 1
+        FROM pg_tables
+        WHERE tablename = '{table_name}'
+    );
+    """
+    response = supabase.rpc("execute_sql", {"query": query}).execute()
+    return response.data[0][0]
 
 
 def create_table(table_name):
