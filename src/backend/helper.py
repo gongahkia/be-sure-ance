@@ -33,7 +33,7 @@ def process_json_files(target_directory_filepath):
 
 
 def overwrite_table_data(table_name, data):
-    query = f"DELETE FROM {table_name};"
+    query = f"TRUNCATE TABLE {table_name} RESTART IDENTITY;"
     try:
         response = supabase.rpc("execute_sql", {"query": query}).execute()
         if response.error:
@@ -45,7 +45,7 @@ def overwrite_table_data(table_name, data):
 
 def insert_data(table_name, data):
     formatted_data = []
-    print(data[0])
+    print(data)
     # for row in data:
     #     if isinstance(row, dict):
     #         formatted_row = {

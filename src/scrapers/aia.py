@@ -133,7 +133,7 @@ async def run_all_tasks(json_filepath, scrape_list):
         tasks.append(scrape_data(url))
     all_data = await asyncio.gather(*tasks)
     with open(json_filepath, "w") as file:
-        json.dump(all_data, file, indent=2)
+        json.dump(all_data[0], file, indent=2)
 
 
 async def main(json_filepath, scrape_list):
