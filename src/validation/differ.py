@@ -1,0 +1,1 @@
+# add xml differ here to ascertain whether a page's structure has changed, that should be sent to a DB everyday as well per a scheduled run task
