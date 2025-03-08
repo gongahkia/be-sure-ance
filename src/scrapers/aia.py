@@ -17,11 +17,14 @@ import json
 
 # ----- functions -----
 
-async def scrape_data(json_filepath, target_url):
+async def scrape_data(target_url):
+
+    product_filters_data = []
+    scraped_data = []
 
     async with async_playwright() as p:
 
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
@@ -34,7 +37,6 @@ async def scrape_data(json_filepath, target_url):
                 print('Closed popup')
 
         product_filters = await page.query_selector_all('.cmp-productfilterlist__container a')
-        product_filters_data = []
 
         for filter in product_filters:
 
@@ -53,18 +55,18 @@ async def scrape_data(json_filepath, target_url):
 
             product_filters_data.append({
                 'plan_name': h2_text,
-                'plan_url': href,
+                'plan_url': f"https://www.aia.com.sg{href}",
                 'plan_description': next_div_text
             })
 
-        print(product_filters)
-
-        scraped_data = []
+        print(f"NUM FILTERS: {len(product_filters_data)}FILTERS\n{product_filters_data}")
 
         for filter in product_filters_data:
 
+            url = filter["plan_url"]
+            print(url)
             product_page = await context.new_page()
-            await product_page.goto(filter['href'])
+            await product_page.goto(url)
 
             overview_content = await product_page.query_selector('.cmp-productoverviewhero__content')
             if overview_content:
@@ -88,28 +90,29 @@ async def scrape_data(json_filepath, target_url):
                 benefits_data = None
 
             scraped_data.append({
-                'href': filter['href'],
-                'h2Text': filter['h2Text'],
-                'nextDivText': filter['nextDivText'],
+                'plan_name': filter['plan_name'],
+                'plan_benefits': benefits_data,
+                'plan_description': filter['plan_description'],
                 'plan_overview': overview_content,
-                'product_brochure_url': cta_url,
-                'plan_benefits': benefits_data
+                'plan_url': filter['plan_url'],
+                'product_brochure_url': f"https://www.aia.com.sg{cta_url}"
             })
 
             await product_page.close()
 
-        print(scraped_data)
+        print(f"SCRAPED DATA\n{scraped_data}")
 
         await browser.close()
 
-        with open(json_filepath, "w") as file:
-            json.dump(scraped_data, file, indent=2)
+        return scraped_data
 
-async def run_all_tasks(scrape_list):
+async def run_all_tasks(json_filepath, scrape_list):
     tasks = []
-    for index, url in enumerate(scrape_list):
-        tasks.append(scrape_data(f"{index}.json", url))
-    await asyncio.gather(*tasks)
+    for url in scrape_list:
+        tasks.append(scrape_data(url))
+    all_data = await asyncio.gather(*tasks)
+    with open(json_filepath, "w") as file:
+        json.dump(all_data, file, indent=2)
 
 async def main(scrape_list):
     await run_all_tasks(scrape_list)
@@ -117,12 +120,13 @@ async def main(scrape_list):
 # ----- sample execution code -----
 
 scrape_list = [
+    "https://www.aia.com.sg/en/our-products/travel-and-lifestyle",
     "https://www.aia.com.sg/en/our-products/accident-protection",
     "https://www.aia.com.sg/en/our-products/life-insurance",
-    "https://www.aia.com.sg/en/our-products/travel-and-lifestyle",
     "https://www.aia.com.sg/en/our-products/platinum",
     "https://www.aia.com.sg/en/our-products/health",
     "https://www.aia.com.sg/en/our-products/save-and-invest"
 ]
+json_filepath = "./scraped/aia.json"
 
-asyncio.run(main(scrape_list))
+asyncio.run(main(json_filepath, scrape_list))
