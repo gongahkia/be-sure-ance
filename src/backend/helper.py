@@ -23,6 +23,7 @@ def process_json_files(target_directory_filepath):
     json_files = [
         file for file in os.listdir(target_directory_filepath) if file.endswith(".json")
     ]
+    print(f"Files being processed: {json_files}")
     for json_file in json_files:
         table_name = os.path.splitext(json_file)[0]
         file_path = os.path.join(target_directory_filepath, json_file)
