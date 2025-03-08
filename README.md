@@ -1,3 +1,4 @@
+![](https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg)
 [![](https://img.shields.io/badge/be_sure_ance_1.0.0-passing-green)](https://github.com/gongahkia/be-sure-ance/releases/tag/1.0.0)
 
 # `Be-sure-ance` 🤷‍♂️
@@ -50,9 +51,9 @@ $
 
 `Be-sure-ance` supports the following Singaporean Insurance Providers as of 6 March 2025.
 
-| Provider | Scraper Status | Implementation Date |
+| Provider | Implementation Status | Implementation Date |
 | :--- | :--- | :--- |
-| [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index) | ![](https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg) | 08/03/2025 |
+| [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index) | ✅ | 08/03/2025 |
 | [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | ❌ | | 
 | [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | ❌ || 
 | [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | ❌ || 
@@ -77,5 +78,5 @@ $
 | [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | ❌ || 
 | [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | ❌ || 
 | [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | ❌ || 
-| [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | ![](https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg) | 08/03/2025 | 
+| [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | ✅ | 08/03/2025 | 
 | [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/) | ❌ || 
