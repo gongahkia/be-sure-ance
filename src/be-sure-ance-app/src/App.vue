@@ -1,5 +1,9 @@
 <template>
+
   <div id="app" :class="{ dark: isDark }">
+    <div class="toggle-button" @click="toggleDark()">
+      {{ isDark ? '🌞' : '🌚' }}
+    </div>
 
     <h1><b>Be Sure</b> ance</h1>
     <h3>Made with ❤️ by <a href="https://gabrielongzm.com/">Gabriel Ong</a></h3>
@@ -223,5 +227,29 @@ th {
 
 #app.dark a {
   color: inherit;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#app.dark .toggle-button {
+  background-color: #333;
+  color: #fff;
+}
+
+.toggle-button:hover {
+  background-color: #ddd;
+}
+
+#app.dark .toggle-button:hover {
+  background-color: #444;
 }
 </style>
