@@ -49,7 +49,7 @@ $
 
 ## Details
 
-`Be-sure-ance` supports the following Singaporean Insurance Providers as of 6 March 2025.
+`Be-sure-ance` supports the following Singaporean Insurance Providers. Sites are scraped **daily** at 12am.
 
 | Provider | Implementation Status | Implementation Date |
 | :--- | :--- | :--- |

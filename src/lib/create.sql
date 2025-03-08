@@ -27,7 +27,8 @@ DECLARE
     tbl_name TEXT;
     table_list TEXT[] := ARRAY[
         'aia', 
-        'uoi'
+        'uoi',
+        'great_eastern',
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP
