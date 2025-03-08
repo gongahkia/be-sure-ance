@@ -39,5 +39,6 @@ jobs:
         run: |
             echo "Running scraper and supabase sync scripts."
             cd src
+            python scrapers/aia.py
             python scrapers/uoi.py
             echo "Finished running scraper and supabase sync scripts."
