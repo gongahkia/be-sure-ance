@@ -12,6 +12,13 @@
     <div v-if="loading">Loading...</div>
     <div v-else>
 
+      <input
+        type="text"
+        v-model="searchQuery"
+        placeholder="Search plans..."
+        class="search-bar"
+      />
+
       <div class="card-container">
         <div class="card" @click="toggleAiaExpanded">
           <div class="card-header">
@@ -30,7 +37,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="plan in aiaPlans" :key="plan.id">
+                  <tr v-for="plan in filteredAiaPlans" :key="plan.id">
                     <td><a :href="plan.plan_url">{{ plan.plan_name }}</a></td>
                     <td>{{ plan.plan_description }}</td>
                     <td>
@@ -64,7 +71,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="plan in uoiPlans" :key="plan.id">
+                  <tr v-for="plan in filteredUoiPlans" :key="plan.id">
                     <td><a :href="plan.plan_url">{{ plan.plan_name }}</a></td>
                     <td>{{ plan.plan_description }}</td>
                     <td>
@@ -86,7 +93,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useDark, useToggle } from "@vueuse/core";
 import { createClient } from '@supabase/supabase-js';
 
@@ -127,6 +134,20 @@ function toggleUoiExpanded() {
 }
 
 fetchData();
+
+const searchQuery = ref("");
+
+const filteredAiaPlans = computed(() =>
+  aiaPlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+const filteredUoiPlans = computed(() =>
+  uoiPlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
 </script>
 
 <style scoped>
@@ -250,5 +271,21 @@ th {
 
 #app.dark .toggle-button:hover {
   background-color: #444;
+}
+
+.search-bar {
+  width: 80%;
+  padding: 10px;
+  margin: 20px auto;
+  display: block;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#app.dark .search-bar {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
 }
 </style>
