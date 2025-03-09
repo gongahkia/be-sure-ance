@@ -26,7 +26,7 @@
           </div>
           <Transition name="expand">
             <div class="card-content" v-show="aiaExpanded">
-              <table>
+              <table v-if="filteredAiaPlans.length > 0">
                 <thead>
                   <tr>
                     <th>Plan Name</th>
@@ -50,6 +50,7 @@
                   </tr>
                 </tbody>
               </table>
+              <div v-else>No results found.</div>
             </div>
           </Transition>
         </div>
@@ -60,7 +61,7 @@
           </div>
           <Transition name="expand">
             <div class="card-content" v-show="uoiExpanded">
-              <table>
+                <table v-if="filteredUoiPlans.length > 0">
                 <thead>
                   <tr>
                     <th>Plan Name</th>
@@ -84,6 +85,7 @@
                   </tr>
                 </tbody>
               </table>
+              <div v-else>No results found.</div>
             </div>
           </Transition>
         </div>
