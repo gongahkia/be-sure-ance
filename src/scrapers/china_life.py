@@ -128,7 +128,6 @@ async def scrape_data(url):
         page = await browser.new_page()
         await page.goto(url, timeout=60000)
 
-        # Get general plan description
         header_element = await page.query_selector("h1.text-center.mt-5.mb-5")
         plan_description = (
             (await header_element.text_content()).strip()
@@ -141,7 +140,6 @@ async def scrape_data(url):
         plan_elements = await page.query_selector_all("div.col-12.col-lg-4.views-row")
 
         for plan in plan_elements:
-            # Plan Name and URL
             link_element = await plan.query_selector("span.field-content a")
             if link_element := await plan.query_selector("span.field-content a"):
                 plan_name = (
@@ -164,8 +162,6 @@ async def scrape_data(url):
                 )
             else:
                 plan_name, plan_url = "", ""
-
-            # Plan benefits
             benefit_elements = await plan.query_selector_all("p.h7")
             plan_benefits = (
                 [
