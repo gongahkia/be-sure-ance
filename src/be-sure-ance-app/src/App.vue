@@ -55,6 +55,41 @@
           </Transition>
         </div>
 
+        <div class="card" @click="toggleChinaLifeExpanded">
+          <div class="card-header">
+            <span><a href="https://www.chinalife.com.sg/">China Life Singapore</a></span>
+          </div>
+          <Transition name="expand">
+            <div class="card-content" v-show="chinaLifeExpanded">
+              <table v-if="filteredChinaLifePlans.length > 0">
+                <thead>
+                  <tr>
+                    <th>Plan Name</th>
+                    <th>Plan Description</th>
+                    <th>Plan Benefits</th>
+                    <th>Plan Overview</th>
+                    <th>Product Brochure</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="plan in chinaLifePlans" :key="plan.id">
+                    <td><a :href="plan.plan_url">{{ plan.plan_name }}</a></td>
+                    <td>{{ plan.plan_description }}</td>
+                    <td>
+                      <ul>
+                        <li v-for="benefit in plan.plan_benefits" :key="benefit">{{ benefit }}</li>
+                      </ul>
+                    </td>
+                    <td>{{ plan.plan_overview }}</td>
+                    <td><a :href="plan.product_brochure_url">{{ plan.product_brochure_url }}</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div v-else>No results found.</div>
+            </div>
+          </Transition>
+        </div>
+
         <div class="card" @click="toggleUoiExpanded">
           <div class="card-header">
             <span><a href="https://www.uoi.com.sg/index.page">United Overseas Insurance Limited (UOI)</a></span>
@@ -108,16 +143,20 @@ const toggleDark = useToggle(isDark);
 
 const aiaPlans = ref([]);
 const uoiPlans = ref([]);
+const chinaLifePlans = ref([]);
 const loading = ref(true);
 const aiaExpanded = ref(false);
 const uoiExpanded = ref(false);
+const chinaLifeExpanded = ref(false);
 
 async function fetchData() {
   try {
     const { data: aiaData } = await supabase.from('aia').select('*');
     const { data: uoiData } = await supabase.from('uoi').select('*');
+    const { data: chinaLifeData } = await supabase.from('china_life').select('*');
     aiaPlans.value = aiaData;
     uoiPlans.value = uoiData;
+    chinaLifeData.value = chinaLifeData;
   } catch (error) {
     console.error('Error fetching data:', error);
   } finally {
@@ -128,11 +167,19 @@ async function fetchData() {
 function toggleAiaExpanded() {
   aiaExpanded.value = !aiaExpanded.value;
   uoiExpanded.value = false; 
+  chinaLifeExpanded.value = false;
 }
 
 function toggleUoiExpanded() {
   uoiExpanded.value = !uoiExpanded.value;
   aiaExpanded.value = false; 
+  chinaLifeExpanded.value = false;
+}
+
+function toggleChinaLifeExpanded() {
+  uoiExpanded.value = false; 
+  aiaExpanded.value = false; 
+  chinaLifeExpanded.value = !chinaLifeExpanded.value;
 }
 
 fetchData();
@@ -147,6 +194,12 @@ const filteredAiaPlans = computed(() =>
 
 const filteredUoiPlans = computed(() =>
   uoiPlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+const filteredChinaLifePlans = computed(() =>
+  chinaLifePlans.value.filter(plan =>
     plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 );

@@ -145,7 +145,7 @@ async def scrape_data(url):
             link_element = await plan.query_selector("span.field-content a")
             if link_element := await plan.query_selector("span.field-content a"):
                 plan_name = (
-                    (await link_text.text_content()).strip()
+                    (await link_element.text_content()).strip()
                     if (
                         link_element := await plan.query_selector(
                             "span.field-content a"
