@@ -156,7 +156,7 @@ async function fetchData() {
     const { data: chinaLifeData } = await supabase.from('china_life').select('*');
     aiaPlans.value = aiaData;
     uoiPlans.value = uoiData;
-    chinaLifeData.value = chinaLifeData;
+    chinaLifePlans.value = chinaLifeData;
   } catch (error) {
     console.error('Error fetching data:', error);
   } finally {
