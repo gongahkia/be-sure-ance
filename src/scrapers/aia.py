@@ -164,7 +164,7 @@ async def scrape_data(target_url):
 
         for filter in product_filters_data:
             url = filter["plan_url"]
-            print(url)
+            # print(url)
             product_page = await context.new_page()
             await product_page.goto(url)
 

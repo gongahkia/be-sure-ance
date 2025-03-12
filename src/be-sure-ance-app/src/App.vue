@@ -72,7 +72,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="plan in chinaLifePlans" :key="plan.id">
+                  <tr v-for="plan in filteredChinaLifePlans" :key="plan.id">
                     <td><a :href="plan.plan_url">{{ plan.plan_name }}</a></td>
                     <td>{{ plan.plan_description }}</td>
                     <td>
