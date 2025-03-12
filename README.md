@@ -56,7 +56,7 @@ $
 | :--- | :--- | :--- |
 | [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index) | ✅ | 08/03/2025 |
 | [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | ❌ | | 
-| [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | ❌ || 
+| [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | ✅ || 
 | [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | ❌ || 
 | [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | ❌ || 
 | [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ❌ || 
