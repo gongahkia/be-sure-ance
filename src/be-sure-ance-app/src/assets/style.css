@@ -1,0 +1,133 @@
+body {
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#app {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#app.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#app.dark .toggle-button {
+  background-color: #333333;
+}
+
+.toggle-button:hover {
+  background-color: #ddd;
+}
+
+#app.dark .toggle-button:hover {
+  background-color: #333333;
+}
+
+h1, h3, h4 {
+  text-align: center;
+}
+
+.search-bar {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 80%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#app.dark .card {
+  background-color: #333333;
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+.card-content {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: solid thin #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f9f9f9;
+}
+
+#app.dark .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+#app.dark .card-header a,
+#app.dark a {
+    color:#90caf9
+}
+
+#app.dark table th,
+#app.dark table td {
+    border-color:#555
+}
+
+#app.dark table th{
+    background-color:#333
+}
+
+/* Transition effects */
+.expand-enter-active,
+.expand-leave-active {
+    transition-duration:.5s; transition-property:
+    opacity, transform; transition-timing-function:ease
+}
+.expand-enter-from,
+.expand-leave-to{
+    opacity :0; transform :scaleY(0)
+}
+.expand-enter-to,
+.expand-leave-from{
+    opacity :1; transform :scaleY(1)
+}
+
+/* Dark mode adjustments */
+#app.dark .card,
+#app.dark .toggle-button{
+    background-color:#333;color:#fff
+}
+#app.dark .toggle-button:hover{
+    background-color:#444
+}
