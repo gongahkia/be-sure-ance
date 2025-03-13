@@ -6,6 +6,7 @@
     <div v-else>
       <SearchBar v-model="searchQuery" />
       <div class="card-container">
+
         <InsuranceCard
           title="AIA Singapore"
           link="https://www.aia.com.sg/en/index"
@@ -13,6 +14,7 @@
           :expanded="aiaExpanded"
           @toggle="toggleAiaExpanded"
         />
+
         <InsuranceCard
           title="China Life Singapore"
           link="https://www.chinalife.com.sg/"
@@ -20,6 +22,7 @@
           :expanded="chinaLifeExpanded"
           @toggle="toggleChinaLifeExpanded"
         />
+
         <InsuranceCard
           title="Chubb Insurance (Singapore)"
           link="https://www.chubb.com/sg-en/"
@@ -27,6 +30,15 @@
           :expanded="chubbExpanded"
           @toggle="toggleChubbExpanded"
         />
+
+        <InsuranceCard
+          title="Tokio Marine Insurance Group"
+          link="https://www.tokiomarine.com/sg/en.html"
+          :plans="filteredTokioMarinePlans"
+          :expanded="tokioMarineExpanded"
+          @toggle="toggleTokioMarineExpanded"
+        />
+
         <InsuranceCard
           title="United Overseas Insurance Limited (UOI)"
           link="https://www.uoi.com.sg/index.page"
@@ -34,6 +46,7 @@
           :expanded="uoiExpanded"
           @toggle="toggleUoiExpanded"
         />
+
       </div>
     </div>
   </div>
@@ -55,28 +68,36 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+const loading = ref(true);
+const searchQuery = ref("");
 
 const aiaPlans = ref([]);
 const uoiPlans = ref([]);
 const chinaLifePlans = ref([]);
 const chubbPlans = ref([]);
-const loading = ref(true);
+const tokioMarinePlans = ref([]);
+
 const aiaExpanded = ref(false);
 const uoiExpanded = ref(false);
 const chinaLifeExpanded = ref(false);
 const chubbExpanded = ref(false);
-const searchQuery = ref("");
+const tokioMarineExpanded = ref(false);
 
 async function fetchData() {
   try {
+
     const { data: aiaData } = await supabase.from('aia').select('*');
     const { data: uoiData } = await supabase.from('uoi').select('*');
     const { data: chinaLifeData } = await supabase.from('china_life').select('*');
     const { data: chubbData } = await supabase.from('chubb').select('*');
+    const { data: tokioMarineData } = await supabase.from('tokio_marine').select('*');
+
     aiaPlans.value = aiaData;
     uoiPlans.value = uoiData;
     chinaLifePlans.value = chinaLifeData;
     chubbPlans.value = chubbData;
+    tokioMarinePlans.value = tokioMarineData;
+
   } catch (error) {
     console.error('Error fetching data:', error);
   } finally {
@@ -91,6 +112,7 @@ function toggleAiaExpanded() {
   uoiExpanded.value = false; 
   chinaLifeExpanded.value = false;
   chubbExpanded.value = false;
+  tokioMarineExpanded.value = false;
 }
 
 function toggleUoiExpanded() {
@@ -98,6 +120,7 @@ function toggleUoiExpanded() {
   aiaExpanded.value = false; 
   chinaLifeExpanded.value = false;
   chubbExpanded.value = false;
+  tokioMarineExpanded.value = false;
 }
 
 function toggleChinaLifeExpanded() {
@@ -105,6 +128,7 @@ function toggleChinaLifeExpanded() {
   aiaExpanded.value = false; 
   uoiExpanded.value = false; 
   chubbExpanded.value = false;
+  tokioMarineExpanded.value = false;
 }
 
 function toggleChubbExpanded() {
@@ -112,6 +136,15 @@ function toggleChubbExpanded() {
   aiaExpanded.value = false; 
   uoiExpanded.value = false; 
   chinaLifeExpanded.value = false;
+  tokioMarineExpanded.value = false;
+}
+
+function toggleTokioMarineExpanded() {
+  tokioMarineExpanded.value = !tokioMarineExpanded.value;
+  aiaExpanded.value = false; 
+  uoiExpanded.value = false; 
+  chinaLifeExpanded.value = false;
+  chubbExpanded.value = false;
 }
 
 const filteredAiaPlans = computed(() =>
@@ -137,6 +170,12 @@ const filteredChubbPlans = computed(() =>
     plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 );
+
+const filteredTokioMarinePlans = computed(() =>
+  tokioMarinePlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);  
 </script>
 
 <style scoped>
