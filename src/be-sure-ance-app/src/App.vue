@@ -64,6 +64,7 @@ const loading = ref(true);
 const aiaExpanded = ref(false);
 const uoiExpanded = ref(false);
 const chinaLifeExpanded = ref(false);
+const chubbExpanded = ref(false);
 const searchQuery = ref("");
 
 async function fetchData() {

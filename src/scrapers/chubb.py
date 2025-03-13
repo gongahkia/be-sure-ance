@@ -191,8 +191,8 @@ async def scrape_data(url):
             formatted_entry = {
                 "plan_name": plan_name,
                 "plan_benefits": [],
-                "plan_description": plan_description,
-                "plan_overview": plan_overview,
+                "plan_description": plan_overview,
+                "plan_overview": plan_description,
                 "plan_url": f"https://www.chubb.com/sg-en/{plan_url}",
                 "product_brochure_url": f"https://www.chubb.com/sg-en/{plan_url}",
             }
