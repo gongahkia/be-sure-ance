@@ -35,13 +35,34 @@ Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supa
 ### Overview
 
 ```mermaid
+sequenceDiagram
+    participant GitHub Workflow
+    participant Backend Scraper
+    participant Supabase
+    participant Frontend Vue.js
+    participant User
 
+    GitHub Workflow->>Backend Scraper: Trigger scheduled workflow (Weekly Monday 12am)
+    Backend Scraper->>Backend Scraper: Scrape data from various insurance sites
+    Backend Scraper->>Supabase: Write to database
+    Frontend Vue.js->>Supabase: Fetch insurance plan data
+    Frontend Vue.js->>User: Render insurance plans on the site
+    User->>Frontend Vue.js: Access website to view insurance plans
 ```
 
 ### DB
 
 ```mermaid
-
+erDiagram
+    Insurance_provider{
+        int id PK "Primary Key, Auto-increment"
+        text plan_name "Name of the plan"
+        text[] plan_benefits "Array of plan benefits"
+        text plan_description "Description of the plan"
+        text plan_overview "Overview of the plan"
+        text plan_url "URL for the plan"
+        text product_brochure_url "URL for the product brochure"
+    }
 ```
 
 ## Legal disclaimer
