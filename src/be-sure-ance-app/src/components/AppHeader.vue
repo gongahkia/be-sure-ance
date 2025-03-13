@@ -18,7 +18,7 @@ export default {
             const lastMonday = new Date(now);
             lastMonday.setDate(now.getDate() - diff);
             lastMonday.setHours(0, 0, 0, 0); 
-            return lastMonday.toISOString().strip('Z').split('T').join(' '); 
+            return lastMonday.toISOString().replace('Z', '').split('T').join(' '); 
         }
     }
 };
