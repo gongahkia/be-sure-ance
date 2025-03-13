@@ -43,7 +43,7 @@ jobs:
             python scrapers/china_life.py
             python scrapers/chubb.py
             python scrapers/singlife.py
-            pyhton scrapers/sunlife.py
+            python scrapers/sunlife.py
             python scrapers/tokio_marine.py
             python scrapers/uoi.py
             echo "Finished running scraper and supabase sync scripts."
