@@ -59,6 +59,7 @@ const toggleDark = useToggle(isDark);
 const aiaPlans = ref([]);
 const uoiPlans = ref([]);
 const chinaLifePlans = ref([]);
+const chubbPlans = ref([]);
 const loading = ref(true);
 const aiaExpanded = ref(false);
 const uoiExpanded = ref(false);
