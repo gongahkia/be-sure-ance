@@ -15,13 +15,18 @@ Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supa
 ## Screenshots
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="./../asset/1.png" width="48%">
-  <img src="./../asset/2.png" width="48%">
+  <img src="./assets/1.png" width="48%">
+  <img src="./assets/2.png" width="48%">
 </div>
-
+<br>
 <div style="display: flex; justify-content: space-between;">
-  <img src="./../asset/3.png" width="48%">
-  <img src="./../asset/4.png" width="48%">
+  <img src="./assets/3.png" width="48%">
+  <img src="./assets/4.png" width="48%">
+</div>
+<br>
+<div style="display: flex; justify-content: space-between;">
+  <img src="./assets/5.png" width="48%">
+  <img src="./assets/6.png" width="48%">
 </div>
 
 ## Architecture
