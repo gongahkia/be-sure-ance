@@ -35,7 +35,7 @@
           title="Sun Life"
           link="https://www.sunlife.com/en/"
           :plans="filteredSunlifePlans"
-          :expanded="tokioSunlifeExpanded"
+          :expanded="sunlifeExpanded"
           @toggle="toggleSunlifeExpanded"
         />
 
