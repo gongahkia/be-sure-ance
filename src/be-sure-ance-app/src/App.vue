@@ -21,6 +21,13 @@
           @toggle="toggleChinaLifeExpanded"
         />
         <InsuranceCard
+          title="Chubb Insurance (Singapore)"
+          link="https://www.chubb.com/sg-en/"
+          :plans="filteredChubbPlans"
+          :expanded="chubbExpanded"
+          @toggle="toggleChubbExpanded"
+        />
+        <InsuranceCard
           title="United Overseas Insurance Limited (UOI)"
           link="https://www.uoi.com.sg/index.page"
           :plans="filteredUoiPlans"
@@ -63,9 +70,11 @@ async function fetchData() {
     const { data: aiaData } = await supabase.from('aia').select('*');
     const { data: uoiData } = await supabase.from('uoi').select('*');
     const { data: chinaLifeData } = await supabase.from('china_life').select('*');
+    const { data: chubbData } = await supabase.from('chubb').select('*');
     aiaPlans.value = aiaData;
     uoiPlans.value = uoiData;
     chinaLifePlans.value = chinaLifeData;
+    chubbPlans.value = chubbData;
   } catch (error) {
     console.error('Error fetching data:', error);
   } finally {
@@ -79,18 +88,28 @@ function toggleAiaExpanded() {
   aiaExpanded.value = !aiaExpanded.value;
   uoiExpanded.value = false; 
   chinaLifeExpanded.value = false;
+  chubbExpanded.value = false;
 }
 
 function toggleUoiExpanded() {
   uoiExpanded.value = !uoiExpanded.value;
   aiaExpanded.value = false; 
   chinaLifeExpanded.value = false;
+  chubbExpanded.value = false;
 }
 
 function toggleChinaLifeExpanded() {
   chinaLifeExpanded.value = !chinaLifeExpanded.value;
   aiaExpanded.value = false; 
   uoiExpanded.value = false; 
+  chubbExpanded.value = false;
+}
+
+function chubbExpanded() {
+  chubbExpanded.value = !chubbExpanded.value;
+  aiaExpanded.value = false; 
+  uoiExpanded.value = false; 
+  chinaLifeExpanded.value = false;
 }
 
 const filteredAiaPlans = computed(() =>
@@ -107,6 +126,12 @@ const filteredUoiPlans = computed(() =>
 
 const filteredChinaLifePlans = computed(() =>
   chinaLifePlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+const filteredChubbPlans = computed(() =>
+  chubbPlans.value.filter(plan =>
     plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 );
