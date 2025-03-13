@@ -4,37 +4,33 @@
 
 # `Be-sure-ance` 🤷‍♂️
 
-Choosing and viewing insurance plans should be easy.
-
-## Rationale
-
-...
+Choosing and viewing insurance plans should be easy. 
 
 ## Usage
 
-Use the web app [here]().
+Use the live website [***here***](https://be-sure-ance.netlify.app/).
 
-### Local hosting
+Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supabase.yml).
 
-```console
-$
-```
+## Screenshots
 
-## Legal disclaimer
+<div style="display: flex; justify-content: space-between;">
+  <img src="./../asset/1.png" width="48%">
+  <img src="./../asset/2.png" width="48%">
+</div>
 
-...
-
-## Tech
-
-...
+<div style="display: flex; justify-content: space-between;">
+  <img src="./../asset/3.png" width="48%">
+  <img src="./../asset/4.png" width="48%">
+</div>
 
 ## Architecture
 
-### DB
+### Stack
 
-```mermaid
-
-```
+* [Frontend](./src/be-sure-ance-app/) - Vue.js, Netlify
+* [Backend](./src/scrapers/) - Python, Github workflows
+* [Database](./src/lib/create.sql) - Supabase
 
 ### Overview
 
@@ -42,15 +38,19 @@ $
 
 ```
 
-### Function call stack
+### DB
 
 ```mermaid
 
 ```
 
+## Legal disclaimer
+
+...
+
 ## Details
 
-`Be-sure-ance` supports the following Singaporean Insurance Providers. Sites are scraped **weekly** on [Monday 12am](./.github/workflows/scrape-to-supabase.yml).
+`Be-sure-ance` supports the following Singaporean Insurance Providers. 
 
 | Provider | Implementation Status | Implementation Date |
 | :--- | :--- | :--- |
