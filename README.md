@@ -65,7 +65,7 @@ $
 | [Manulife (Singapore) Pte Ltd](https://www.manulife.com.sg/) | ❌ || 
 | [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/) | ❌ || 
 | [Raffles Health Insurance Pte Ltd](https://www.raffleshealthinsurance.com/) | ❌ || 
-| [Singapore Life Ltd](https://singlife.com/en) | ❌ || 
+| [Singapore Life Ltd](https://singlife.com/en) | ✅ | 13/03/2025 | 
 | [Sun Life Assurance Company of Canada Singapore Branch](https://www.sunlife.com.sg/en/) | ✅ | 13/03/2025 | 
 | [Allied World Assurance Company Pte Ltd (Singapore)](https://alliedworldinsurance.com/singapore/) | ❌ || 
 | [Auto & General Insurance (Singapore) Pte Ltd](https://www.aig.sg/home) | ❌ || 

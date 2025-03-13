@@ -32,6 +32,14 @@
         />
 
         <InsuranceCard
+          title="Singlife"
+          link="https://singlife.com/en"
+          :plans="filteredSinglifePlans"
+          :expanded="singlifeExpanded"
+          @toggle="toggleSinglifeExpanded"
+        />
+
+        <InsuranceCard
           title="Sun Life"
           link="https://www.sunlife.com/en/"
           :plans="filteredSunlifePlans"
@@ -85,6 +93,7 @@ const chinaLifePlans = ref([]);
 const chubbPlans = ref([]);
 const tokioMarinePlans = ref([]);
 const sunlifePlans = ref([]);
+const singlifePlans = ref([]);
 
 const aiaExpanded = ref(false);
 const uoiExpanded = ref(false);
@@ -92,6 +101,7 @@ const chinaLifeExpanded = ref(false);
 const chubbExpanded = ref(false);
 const tokioMarineExpanded = ref(false);
 const sunlifeExpanded = ref(false);
+const singlifeExpanded = ref(false);
 
 async function fetchData() {
   try {
@@ -102,6 +112,7 @@ async function fetchData() {
     const { data: chubbData } = await supabase.from('chubb').select('*');
     const { data: tokioMarineData } = await supabase.from('tokio_marine').select('*');
     const { data: sunlifeData } = await supabase.from('sunlife').select('*');
+    const { data: singlifeData } = await supabase.from('singlife').select('*');
 
     aiaPlans.value = aiaData;
     uoiPlans.value = uoiData;
@@ -109,6 +120,7 @@ async function fetchData() {
     chubbPlans.value = chubbData;
     tokioMarinePlans.value = tokioMarineData;
     sunlifePlans.value = sunlifeData;
+    singlifePlans.value = singlifeData;
 
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -126,6 +138,7 @@ function toggleAiaExpanded() {
   chubbExpanded.value = false;
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
 }
 
 function toggleUoiExpanded() {
@@ -135,6 +148,7 @@ function toggleUoiExpanded() {
   chubbExpanded.value = false;
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
 }
 
 function toggleChinaLifeExpanded() {
@@ -144,6 +158,7 @@ function toggleChinaLifeExpanded() {
   chubbExpanded.value = false;
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
 }
 
 function toggleChubbExpanded() {
@@ -153,6 +168,7 @@ function toggleChubbExpanded() {
   chinaLifeExpanded.value = false;
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
 }
 
 function toggleTokioMarineExpanded() {
@@ -162,6 +178,7 @@ function toggleTokioMarineExpanded() {
   chinaLifeExpanded.value = false;
   chubbExpanded.value = false;
   sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
 }
 
 function toggleSunlifeExpanded() {
@@ -171,6 +188,17 @@ function toggleSunlifeExpanded() {
   chinaLifeExpanded.value = false;
   chubbExpanded.value = false;
   tokioMarineExpanded.value = false;
+  singlifeExpanded.value = false;
+}
+
+function toggleSinglifeExpanded(){
+  singlifeExpanded.value = !singlifeExpanded.value;
+  aiaExpanded.value = false; 
+  uoiExpanded.value = false; 
+  chinaLifeExpanded.value = false;
+  chubbExpanded.value = false;
+  tokioMarineExpanded.value = false;
+  sunlifeExpanded.value = false;
 }
 
 const filteredAiaPlans = computed(() =>
@@ -205,6 +233,12 @@ const filteredTokioMarinePlans = computed(() =>
 
 const filteredSunlifePlans = computed(() =>
   sunlifePlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+const filteredSinglifePlans = computed(() =>
+  signlifePlans.value.filter(plan =>
     plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 );
