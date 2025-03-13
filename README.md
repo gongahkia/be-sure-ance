@@ -60,7 +60,7 @@ $
 | [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | ❌ || 
 | [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | ✅ | 13/03/2025 | 
 | [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | ❌ || 
-| [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ❌ || 
+| [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ❌ | 08/03/2025 | 
 | [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | ❌ || 
 | [Manulife (Singapore) Pte Ltd](https://www.manulife.com.sg/) | ❌ || 
 | [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/) | ❌ || 
@@ -78,6 +78,6 @@ $
 | [Lonpac Insurance Bhd](https://www.lonpac.com/) | ❌ || 
 | [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | ❌ || 
 | [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | ❌ || 
-| [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | ❌ || 
+| [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | ✅ | 13/03/2025 | 
 | [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | ✅ | 08/03/2025 | 
 | [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/) | ❌ || 

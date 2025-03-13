@@ -196,7 +196,7 @@ async def scrape_data(url):
                 "plan_url": f"https://www.chubb.com{plan_url}",
                 "product_brochure_url": f"https://www.chubb.com{plan_url}",
             }
-            print(formatted_entry)
+            # print(formatted_entry)
             scraped_plans.append(formatted_entry)
         await browser.close()
         return scraped_plans
