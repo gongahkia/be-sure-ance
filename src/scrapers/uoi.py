@@ -12,7 +12,6 @@ https://www.uoi.com.sg/commercial/general-insurance.page
 https://www.uoi.com.sg/commercial/specialised-insurance.page 
 https://www.uoi.com.sg/claims-assistance.page 
 https://www.uoi.com.sg/takaful.page 
-
 """
 
 # ----- required imports -----

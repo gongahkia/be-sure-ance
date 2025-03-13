@@ -1,8 +1,8 @@
 <template>
     <header>
-        <h1><b>Be Sure</b> ance</h1>
-        <h3>Made with ❤️ by <a href="https://gabrielongzm.com/">Gabriel Ong</a></h3>
-        <h4>Source code <a href="https://github.com/gongahkia/be-sure-ance">here</a></h4>
+        <h1>Be Sure ance</h1>
+        <h3>Choosing an insurance plan should be easy</h3>
+        <h4>Made with ❤️ by <a href="https://gabrielongzm.com/">Gabriel Ong</a>. Source code <a href="https://github.com/gongahkia/be-sure-ance">here.</a></h4>
         <p>Last scraped on {{ lastMonday }} 00:00:00+08:00</p>
         <img src="https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg" alt="Workflow Status">
     </header>

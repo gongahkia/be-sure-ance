@@ -4,7 +4,7 @@
 
 # `Be-sure-ance` 🤷‍♂️
 
-Choosing and viewing insurance plans should be easy. 
+Choosing an insurance plan should be easy. 
 
 ## Usage
 
