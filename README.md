@@ -58,6 +58,7 @@ $
 | [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | ❌ | | 
 | [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | ✅ | 12/03/2025 |
 | [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | ❌ || 
+| [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | ✅ | 13/03/2025 | 
 | [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | ❌ || 
 | [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ❌ || 
 | [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | ❌ || 
@@ -68,7 +69,6 @@ $
 | [Sun Life Assurance Company of Canada Singapore Branch](https://www.sunlife.com.sg/en/) | ❌ || 
 | [Allied World Assurance Company Pte Ltd (Singapore)](https://alliedworldinsurance.com/singapore/) | ❌ || 
 | [Auto & General Insurance (Singapore) Pte Ltd](https://www.aig.sg/home) | ❌ || 
-| [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | ❌ || 
 | [ERGO Insurance Pte Ltd](https://www.ergo.com.sg/) | ❌ || 
 | [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/) | ❌ || 
 | [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | ❌ || 

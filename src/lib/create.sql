@@ -30,6 +30,7 @@ DECLARE
         'uoi',
         'great_eastern',
         'china_life',
+        'chubb',
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP
