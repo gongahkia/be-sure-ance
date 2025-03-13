@@ -128,7 +128,7 @@ def insert_data(table_name, data):
 
 async def scrape_data(url):
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
         await page.goto(url, timeout=60000)
 
