@@ -42,4 +42,5 @@ jobs:
             python scrapers/aia.py
             python scrapers/uoi.py
             python scrapers/china_life.py
+            python scrapers/chubb.py
             echo "Finished running scraper and supabase sync scripts."
