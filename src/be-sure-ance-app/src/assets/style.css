@@ -1,8 +1,6 @@
 body {
   font-family: 'Arial', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: #f9f9f9;
-  color: #333333;
 }
 
 #app {
@@ -11,70 +9,61 @@ body {
   padding: 20px;
 }
 
-/* Dark Mode Styling */
 #app.dark {
-  background-color: #181818;
-  color: #e0e0e0;
+  background-color: #121212;
+  color: #ffffff;
 }
 
-/* Toggle Button Styling */
 .toggle-button {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #0078d7; /* Modern blue tone */
-  color: #ffffff;
+  background-color: #f0f0f0;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 #app.dark .toggle-button {
-  background-color: #0056a1; /* Dark blue tone */
+  background-color: #333333;
 }
 
 .toggle-button:hover {
-  background-color: #0056a1; /* Slightly darker blue on hover */
+  background-color: #ddd;
 }
 
 #app.dark .toggle-button:hover {
-  background-color: #003b73; /* Even darker blue for dark mode hover */
+  background-color: #333333;
 }
 
-/* Headings Styling */
 h1, h3, h4 {
   text-align: center;
 }
 
-/* Search Bar Styling */
 .search-bar {
   display: block;
   margin: 20px auto;
   padding: 10px;
   width: 80%;
-  border-radius: 5px;
-  border: solid thin #cccccc; /* Light border for modern look */
 }
 
-/* Card Container Styling */
 .card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Card Styling */
 .card {
   width: 80%;
-  background-color: #ffffff; /* Clean white card */
-  padding: 15px; /* More padding for better spacing */
-  border-radius: 8px; /* Rounded corners for modern look */
-  box-shadow: rgba(0,0,0,0.1) 0px 4px 6px; /* Subtle shadow for depth */
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ddd;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 #app.dark .card {
-  background-color: #252525; /* Dark grey for dark mode cards */
+  background-color: #333333;
 }
 
 .card-header {
@@ -85,32 +74,33 @@ h1, h3, h4 {
   overflow-x: auto;
 }
 
-/* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
 th, td {
-  border-bottom: solid thin #dddddd; /* Subtle border for modern look */
-  padding: 12px; /* Better spacing for readability */
+  border: solid thin #ddd;
+  padding: 8px;
 }
 
 th {
-  background-color: #f1f1f1; /* Light grey header for table */
+  background-color: #f9f9f9;
 }
 
 #app.dark .card {
-    background-color:#252525;color:#e0e0e0;border-color:#444444
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #444444;
 }
 
 #app.dark .card-header a,
-#app.dark a{
-    color:#64b5f6
+#app.dark a {
+    color:#90caf9
 }
 
 #app.dark table th,
-#app.dark table td{
+#app.dark table td {
     border-color:#555
 }
 
@@ -118,26 +108,26 @@ th {
     background-color:#333
 }
 
-/* Transition Effects */
+/* Transition effects */
 .expand-enter-active,
-.expand-leave-active{
-    transition-duration:.5s;transition-property:
-    opacity,transform;transition-timing-function:ease
+.expand-leave-active {
+    transition-duration:.5s; transition-property:
+    opacity, transform; transition-timing-function:ease
 }
 .expand-enter-from,
 .expand-leave-to{
-    opacity :0;transform :scaleY(0)
+    opacity :0; transform :scaleY(0)
 }
 .expand-enter-to,
 .expand-leave-from{
-    opacity :1;transform :scaleY(1)
+    opacity :1; transform :scaleY(1)
 }
 
-/* Dark Mode Adjustments */
+/* Dark mode adjustments */
 #app.dark .card,
 #app.dark .toggle-button{
-    background-color:#252525;color:#e0e0e0
+    background-color:#333;color:#fff
 }
 #app.dark .toggle-button:hover{
-    background-color:#333333
+    background-color:#444
 }
