@@ -4,6 +4,7 @@
         <h3>Made with ❤️ by <a href="https://gabrielongzm.com/">Gabriel Ong</a></h3>
         <h4>Source code <a href="https://github.com/gongahkia/be-sure-ance">here</a></h4>
         <p>Last scraped on {{ lastMonday }}</p>
+        <img src="https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg">
     </header>
 </template>
 
@@ -17,7 +18,7 @@ export default {
             const lastMonday = new Date(now);
             lastMonday.setDate(now.getDate() - diff);
             lastMonday.setHours(0, 0, 0, 0); 
-            return lastMonday.toISOString().split('T')[0]; 
+            return lastMonday.toISOString(); 
         }
     }
 };
