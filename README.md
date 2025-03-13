@@ -50,7 +50,7 @@ $
 
 ## Details
 
-`Be-sure-ance` supports the following Singaporean Insurance Providers. Sites are scraped **daily** at 12am.
+`Be-sure-ance` supports the following Singaporean Insurance Providers. Sites are scraped **weekly** on [Monday 12am](./.github/workflows/scrape-to-supabase.yml).
 
 | Provider | Implementation Status | Implementation Date |
 | :--- | :--- | :--- |
