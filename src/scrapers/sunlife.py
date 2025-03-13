@@ -173,7 +173,7 @@ async def scrape_data(url):
             "plan_description": plan_description,
             "plan_overview": plan_overview.strip(),
             "plan_url": url,
-            "product_brochure_url": f"https://www.sunlife.com.sg/{plan_brochure_url}"
+            "product_brochure_url": f"https://www.sunlife.com.sg{plan_brochure_url}"
             if plan_brochure_url
             else "",
         }
