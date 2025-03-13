@@ -238,7 +238,7 @@ const filteredSunlifePlans = computed(() =>
 );
 
 const filteredSinglifePlans = computed(() =>
-  signlifePlans.value.filter(plan =>
+  singlifePlans.value.filter(plan =>
     plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 );
