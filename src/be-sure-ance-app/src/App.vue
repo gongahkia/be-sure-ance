@@ -107,7 +107,7 @@ function toggleChinaLifeExpanded() {
   chubbExpanded.value = false;
 }
 
-function chubbExpanded() {
+function toggleChubbExpanded() {
   chubbExpanded.value = !chubbExpanded.value;
   aiaExpanded.value = false; 
   uoiExpanded.value = false; 
