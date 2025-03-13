@@ -38,7 +38,7 @@ import { useDark, useToggle } from "@vueuse/core";
 import { createClient } from '@supabase/supabase-js'
 
 import ToggleButton from './components/ToggleButton.vue'
-import Header from './components/Header.vue'
+import Header from './components/AppHeader.vue'
 import SearchBar from './components/SearchBar.vue'
 import InsuranceCard from './components/InsuranceCard.vue'
 
