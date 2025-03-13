@@ -154,11 +154,13 @@ async def scrape_data(url):
                 "div.section-wrap"
             )
             descriptions = [
-                await descriptions.text_content().strip()
+                await descriptions.text_content()
                 for descriptions in description_elements
                 if descriptions
             ]
-            plan_description = "\n\n".join(descriptions)
+            plan_description = "\n\n".join(
+                [description.strip() for description in descriptions]
+            )
             formatted_row = {
                 "plan_name": plan_name,
                 "plan_benefits": [],
