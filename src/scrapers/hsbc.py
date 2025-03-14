@@ -122,10 +122,23 @@ async def scrape_data(url):
                     "plan_benefits": plan_benefits,
                     "plan_description": plan_description,
                     "plan_overview": plan_overview,
-                    "plan_url": plan_url,
-                    "product_brochure_url": plan_brochure_url,
+                    "plan_url": f"https://www.insurance.hsbc.com.sg{plan_url}"
+                    if plan_url
+                    else "",
+                    "product_brochure_url": f"https://www.insurance.hsbc.com.sg{plan_brochure_url}"
+                    if plan_brochure_url
+                    else "",
                 }
+                if formatted_row["plan_name"] in [
+                    "",
+                    "How to file a claim",
+                    "Ways to pay your premiums",
+                    "Insurance help and support",
+                    "Contact us",
+                ]:
+                    continue
                 scraped_data.append(formatted_row)
+                print(formatted_row)
         await browser.close()
         return scraped_data
 

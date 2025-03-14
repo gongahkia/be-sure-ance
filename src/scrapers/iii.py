@@ -125,6 +125,7 @@ async def scrape_data(url):
                 "plan_url": plan_url,
                 "product_brochure_url": plan_brochure_url,
             }
+            print(formatted_row)
             scraped_plans.append(formatted_row)
         await browser.close()
         return scraped_plans
@@ -142,7 +143,6 @@ async def run_all_tasks(scrape_list):
 
 if __name__ == "__main__":
     scrape_list = [
-        "https://www.iii.com.sg/",
         "https://www.iii.com.sg/products/motor-insurance",
         "https://www.iii.com.sg/products/home-insurance",
         "https://www.iii.com.sg/products/travel-insurance",

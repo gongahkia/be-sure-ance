@@ -85,8 +85,8 @@ erDiagram
 | [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | ❌ || 
 | [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | ✅ | 13/03/2025 | 
 | [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | ❌ || 
-| [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ❌ | 08/03/2025 | 
-| [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | ❌ || 
+| [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ✅ | 15/03/2025 |
+| [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | ✅ | 15/03/2025 |
 | [Manulife (Singapore) Pte Ltd](https://www.manulife.com.sg/) | ❌ || 
 | [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/) | ❌ || 
 | [Raffles Health Insurance Pte Ltd](https://www.raffleshealthinsurance.com/) | ❌ || 
@@ -98,7 +98,7 @@ erDiagram
 | [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/) | ❌ || 
 | [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | ❌ || 
 | [Income Insurance Pte Ltd](https://www.income.com.sg/) | ❌ || 
-| [India International Insurance Pte Ltd](https://www.iii.com.sg/) | ❌ || 
+| [India International Insurance Pte Ltd](https://www.iii.com.sg/) | ❌ | 15/03/2025 |
 | [Liberty Insurance Pte Ltd](https://www.libertyinsurance.com.sg/) | ❌ || 
 | [Lonpac Insurance Bhd](https://www.lonpac.com/) | ❌ || 
 | [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | ❌ || 
