@@ -77,25 +77,44 @@ def insert_data(table_name, data):
     except Exception as e:
         print(f"An error occurred while inserting data into {table_name}: {e}")
 
+
 async def scrape_data(url):
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
         await page.goto(url, timeout=60000)
         description_element = await page.query_selector("div.sl-banner-content")
-        plan_description = (await description_element.text_content()).strip() if description_element else ""
+        plan_description = (
+            (await description_element.text_content()).strip()
+            if description_element
+            else ""
+        )
         card_selector = "div.products-card-container.container.product-card-wrapper div.relative.product-card-container"
         product_cards = await page.query_selector_all(card_selector)
         scraped_plans = []
         for card in product_cards:
             name_element = await card.query_selector("h2.product-card-header")
-            plan_name = (await name_element.text_content()).strip() if name_element else ""
+            plan_name = (
+                (await name_element.text_content()).strip() if name_element else ""
+            )
             overview_element = await card.query_selector("div.product-card-description")
-            plan_overview = (await overview_element.text_content()).strip() if overview_element else ""
-            benefits_elements = await card.query_selector_all("ul.product-card-features li")
-            plan_benefits = [(await benefit.text_content()).strip() for benefit in benefits_elements]
-            brochure_element = await card.query_selector("div.product-card-action-container a")
-            plan_brochure_url = await brochure_element.get_attribute("href") if brochure_element else ""
+            plan_overview = (
+                (await overview_element.text_content()).strip()
+                if overview_element
+                else ""
+            )
+            benefits_elements = await card.query_selector_all(
+                "ul.product-card-features li"
+            )
+            plan_benefits = [
+                (await benefit.text_content()).strip() for benefit in benefits_elements
+            ]
+            brochure_element = await card.query_selector(
+                "div.product-card-action-container a"
+            )
+            plan_brochure_url = (
+                await brochure_element.get_attribute("href") if brochure_element else ""
+            )
             url_element = await card.query_selector("a.product-card-button")
             plan_url = await url_element.get_attribute("href") if url_element else ""
             formatted_row = {
@@ -109,6 +128,7 @@ async def scrape_data(url):
             scraped_plans.append(formatted_row)
         await browser.close()
         return scraped_plans
+
 
 async def run_all_tasks(scrape_list):
     tasks = []
@@ -135,7 +155,7 @@ if __name__ == "__main__":
         "https://www.iii.com.sg/products/engineering-insurance",
         "https://www.iii.com.sg/products/surety-insurance",
         "https://www.iii.com.sg/products/motor-fleet-insurance",
-        "https://www.iii.com.sg/products/reinsurance"
+        "https://www.iii.com.sg/products/reinsurance",
     ]
     initialize_supabase()
     output = asyncio.run(run_all_tasks(scrape_list))

@@ -72,6 +72,7 @@ def insert_data(table_name, data):
     except Exception as e:
         print(f"An error occurred while inserting data into {table_name}: {e}")
 
+
 async def scrape_data(url):
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
@@ -83,14 +84,24 @@ async def scrape_data(url):
             li_items = await ul.query_selector_all("li")
             for li in li_items:
                 name_element = await li.query_selector("div.item-content h3")
-                plan_name = (await name_element.text_content()).strip() if name_element else ""
+                plan_name = (
+                    (await name_element.text_content()).strip() if name_element else ""
+                )
                 link_element = await li.query_selector("div.item-content h3 a")
-                plan_url = await link_element.get_attribute("href") if link_element else ""
-                plan_brochure_url = plan_url  
+                plan_url = (
+                    await link_element.get_attribute("href") if link_element else ""
+                )
+                plan_brochure_url = plan_url
                 item_content_element = await li.query_selector("div.item-content")
                 if item_content_element:
-                    item_content_text = (await item_content_element.text_content()).strip()
-                    plan_description = item_content_text[len(plan_name):].lstrip() if plan_name else item_content_text
+                    item_content_text = (
+                        await item_content_element.text_content()
+                    ).strip()
+                    plan_description = (
+                        item_content_text[len(plan_name) :].lstrip()
+                        if plan_name
+                        else item_content_text
+                    )
                 else:
                     plan_description = ""
                 plan_benefits = [""]
@@ -106,6 +117,7 @@ async def scrape_data(url):
                 scraped_data.append(formatted_row)
         await browser.close()
         return scraped_data
+
 
 async def run_all_tasks(scrape_list):
     tasks = []
@@ -124,7 +136,7 @@ if __name__ == "__main__":
         "https://www.insurance.hsbc.com.sg/investment/",
         "https://www.insurance.hsbc.com.sg/employee-health-benefits/",
         "https://www.insurance.hsbc.com.sg/health/",
-        "https://www.insurance.hsbc.com.sg/legacy/"
+        "https://www.insurance.hsbc.com.sg/legacy/",
     ]
     initialize_supabase()
     output = asyncio.run(run_all_tasks(scrape_list))
