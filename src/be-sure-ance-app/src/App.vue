@@ -32,6 +32,30 @@
         />
 
         <InsuranceCard
+          title="Great Eastern Singapore"
+          link="https://www.greateasternlife.com/sg/en/personal-insurance.html",
+          :plans="filteredGreatEasternPlans"
+          :expanded="greatEasternExpanded"
+          @toggle="toggleGreatEasternExpanded"
+        />
+
+        <InsuranceCard
+          title="HSBC Singapore Insurance"
+          link="https://www.insurance.hsbc.com.sg/"
+          :plans="filteredHsbcPlans"
+          :expanded="hsbcExpanded"
+          @toggle="toggleHsbcExpanded"
+        />  
+
+        <InsuranceCard
+          title="India International Insurance (Singapore)"
+          link="https://www.iii.com.sg/"
+          :plans="filteredIiiPlans"
+          :expanded="iiiExpanded"
+          @toggle="toggleIiiExpanded"
+        />
+
+        <InsuranceCard
           title="Singlife"
           link="https://singlife.com/en"
           :plans="filteredSinglifePlans"
@@ -94,6 +118,9 @@ const chubbPlans = ref([]);
 const tokioMarinePlans = ref([]);
 const sunlifePlans = ref([]);
 const singlifePlans = ref([]);
+const greatEasternPlans = ref([]);
+const hsbcPlans = ref([]);
+const iiiPlans = ref([]);
 
 const aiaExpanded = ref(false);
 const uoiExpanded = ref(false);
@@ -102,6 +129,9 @@ const chubbExpanded = ref(false);
 const tokioMarineExpanded = ref(false);
 const sunlifeExpanded = ref(false);
 const singlifeExpanded = ref(false);
+const greatEasternExpanded = ref(false);
+const hsbcExpanded = ref(false);
+const iiiExpanded = ref(false);
 
 async function fetchData() {
   try {
@@ -113,6 +143,9 @@ async function fetchData() {
     const { data: tokioMarineData } = await supabase.from('tokio_marine').select('*');
     const { data: sunlifeData } = await supabase.from('sunlife').select('*');
     const { data: singlifeData } = await supabase.from('singlife').select('*');
+    const { data: greatEasternData } = await supabase.from('great_eastern').select('*');
+    const { data: hsbcData } = await supabase.from('hsbc').select('*');
+    const { data: iiiData } = await supabase.from('iii').select('*');
 
     aiaPlans.value = aiaData;
     uoiPlans.value = uoiData;
@@ -121,6 +154,9 @@ async function fetchData() {
     tokioMarinePlans.value = tokioMarineData;
     sunlifePlans.value = sunlifeData;
     singlifePlans.value = singlifeData;
+    greatEasternPlans.value = greatEasternData;
+    hsbcPlans.value = hsbcData;
+    iiiPlans.value = iiiData;
 
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -139,6 +175,9 @@ function toggleAiaExpanded() {
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
   singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
 }
 
 function toggleUoiExpanded() {
@@ -149,6 +188,9 @@ function toggleUoiExpanded() {
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
   singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
 }
 
 function toggleChinaLifeExpanded() {
@@ -159,6 +201,9 @@ function toggleChinaLifeExpanded() {
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
   singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
 }
 
 function toggleChubbExpanded() {
@@ -169,6 +214,9 @@ function toggleChubbExpanded() {
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
   singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
 }
 
 function toggleTokioMarineExpanded() {
@@ -179,6 +227,9 @@ function toggleTokioMarineExpanded() {
   chubbExpanded.value = false;
   sunlifeExpanded.value = false;
   singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
 }
 
 function toggleSunlifeExpanded() {
@@ -189,6 +240,9 @@ function toggleSunlifeExpanded() {
   chubbExpanded.value = false;
   tokioMarineExpanded.value = false;
   singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
 }
 
 function toggleSinglifeExpanded(){
@@ -199,6 +253,48 @@ function toggleSinglifeExpanded(){
   chubbExpanded.value = false;
   tokioMarineExpanded.value = false;
   sunlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
+}
+
+function toggleGreatEasternExpanded(){
+  greatEasternExpanded.value = !greatEasternExpanded.value;
+  aiaExpanded.value = false; 
+  uoiExpanded.value = false; 
+  chinaLifeExpanded.value = false;
+  chubbExpanded.value = false;
+  tokioMarineExpanded.value = false;
+  sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
+  hsbcExpanded.value = false;
+  iiiExpanded.value = false;
+}
+
+function toggleHsbcExpanded(){
+  hsbcExpanded.value = !hsbcExpanded.value;
+  aiaExpanded.value = false; 
+  uoiExpanded.value = false; 
+  chinaLifeExpanded.value = false;
+  chubbExpanded.value = false;
+  tokioMarineExpanded.value = false;
+  sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  iiiExpanded.value = false; 
+}
+
+function toggleIiiExpanded(){
+  iiiExpanded.value = !iiiExpanded.value;
+  aiaExpanded.value = false; 
+  uoiExpanded.value = false; 
+  chinaLifeExpanded.value = false;
+  chubbExpanded.value = false;
+  tokioMarineExpanded.value = false;
+  sunlifeExpanded.value = false;
+  singlifeExpanded.value = false;
+  greatEasternExpanded.value = false;
+  hsbcExpanded.value = false;
 }
 
 const filteredAiaPlans = computed(() =>
@@ -239,6 +335,24 @@ const filteredSunlifePlans = computed(() =>
 
 const filteredSinglifePlans = computed(() =>
   singlifePlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+const filteredGreatEasternPlans = computed(() =>
+  greatEasternPlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+const filteredHsbcPlans = computed(() =>
+  hsbcPlans.value.filter(plan =>
+    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+  )
+);
+
+const filteredIiiPlans = computed(() =>
+  iiiPlans.value.filter(plan =>
     plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 );

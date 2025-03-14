@@ -46,4 +46,7 @@ jobs:
             python scrapers/sunlife.py
             python scrapers/tokio_marine.py
             python scrapers/uoi.py
+            python scrapers/great_eastern.py
+            python scrapers/iii.py
+            python scrapers/hsbc.py
             echo "Finished running scraper and supabase sync scripts."

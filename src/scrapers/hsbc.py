@@ -15,12 +15,23 @@ https://www.insurance.hsbc.com.sg/legacy/
 # ----- required imports -----
 
 import os
+import re
 import asyncio
 from dotenv import load_dotenv
 from supabase import create_client, Client
 from playwright.async_api import async_playwright
 
 # ----- functions -----
+
+
+def remove_excess_newlines(inp):
+    if not isinstance(inp, str):
+        raise TypeError(
+            f"Input must be type <string> but was type <{type(inp).__name__}>"
+        )
+    inp = re.sub(r"\n+", "\n", inp)
+    inp = re.sub(r"[ \t\u200b]+", " ", inp)
+    return inp.strip()
 
 
 def initialize_supabase():

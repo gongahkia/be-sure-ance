@@ -28,14 +28,14 @@ DECLARE
     table_list TEXT[] := ARRAY[
         'aia', 
         'uoi',
-        'great_eastern',
         'china_life',
         'chubb',
         'tokio_marine',
         'sunlife',
         'singlife',
+        'great_eastern',
         'iii',
-        ''
+        'hsbc',
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP
