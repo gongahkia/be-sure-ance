@@ -33,7 +33,9 @@ DECLARE
         'chubb',
         'tokio_marine',
         'sunlife',
-        'singlife'
+        'singlife',
+        'iii',
+        ''
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP

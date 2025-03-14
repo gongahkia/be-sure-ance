@@ -1,10 +1,13 @@
 """
-https://www.income.com.sg/ | Income Insurance Singapore 
+NTUC INCOME
+
+https://www.income.com.sg/ 
 https://www.income.com.sg/claims/life-insurance
 https://www.income.com.sg/claims/health-and-personal-accident 
+https://www.income.com.sg/claims/i50-insurance-claims 
 https://www.income.com.sg/claims/motor-insurance 
 https://www.income.com.sg/claims/travel-claims 
-https://www.income.com.sg/claims/i50-insurance-claims 
+https://www.income.com.sg/health-insurance
 https://www.income.com.sg/claims/domestic-helper-insurance-claims 
 https://www.income.com.sg/claims/home-insurance-claims 
 https://www.income.com.sg/claims/overseas-study-protection-plan-claims 
