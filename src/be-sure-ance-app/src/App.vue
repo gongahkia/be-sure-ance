@@ -33,7 +33,7 @@
 
         <InsuranceCard
           title="Great Eastern Singapore"
-          link="https://www.greateasternlife.com/sg/en/personal-insurance.html",
+          link="https://www.greateasternlife.com/sg/en/personal-insurance.html"
           :plans="filteredGreatEasternPlans"
           :expanded="greatEasternExpanded"
           @toggle="toggleGreatEasternExpanded"
