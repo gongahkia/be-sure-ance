@@ -80,53 +80,50 @@ def insert_data(table_name, data):
 
 async def scrape_data(url):
     async with async_playwright() as p:
+        scraped_plans = []
+        plan_overview = ""
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
         await page.goto(url, timeout=60000)
-        description_element = await page.query_selector("div.sl-banner-content")
-        plan_description = (
-            (await description_element.text_content()).strip()
-            if description_element
-            else ""
+        name_el = await page.query_selector(
+            "div.col-12.col-lg-6.order-2.z-index-1.padding-10-rem-left.padding-60px-bottom.lg-padding-3-rem-left.md-padding-15px-left h3"
         )
-        card_selector = "div.products-card-container.container.product-card-wrapper div.relative.product-card-container"
-        product_cards = await page.query_selector_all(card_selector)
-        scraped_plans = []
-        for card in product_cards:
-            name_element = await card.query_selector("h2.product-card-header")
-            plan_name = (
-                (await name_element.text_content()).strip() if name_element else ""
-            )
-            overview_element = await card.query_selector("div.product-card-description")
-            plan_overview = (
-                (await overview_element.text_content()).strip()
-                if overview_element
-                else ""
-            )
-            benefits_elements = await card.query_selector_all(
-                "ul.product-card-features li"
-            )
-            plan_benefits = [
-                (await benefit.text_content()).strip() for benefit in benefits_elements
-            ]
-            brochure_element = await card.query_selector(
-                "div.product-card-action-container a"
-            )
-            plan_brochure_url = (
-                await brochure_element.get_attribute("href") if brochure_element else ""
-            )
-            url_element = await card.query_selector("a.product-card-button")
-            plan_url = await url_element.get_attribute("href") if url_element else ""
-            formatted_row = {
-                "plan_name": plan_name,
-                "plan_benefits": plan_benefits,
-                "plan_description": plan_description,
-                "plan_overview": plan_overview,
-                "plan_url": plan_url,
-                "product_brochure_url": plan_brochure_url,
-            }
-            print(formatted_row)
-            scraped_plans.append(formatted_row)
+        if name_el:
+            plan_name = (await name_el.text_content()).strip()
+        else:
+            plan_name = ""
+        plan_overview_1 = await page.query_selector(
+            "p.alt-font.text-white.text-uppercase.text-small"
+        )
+        if plan_overview_1:
+            plan_overview = (await plan_overview_1.text_content()).strip()
+        else:
+            plan_overview = ""
+        plan_description_el = await page.query_selector("section.parallax")
+        if plan_description_el:
+            plan_description = (await plan_description_el.text_content()).strip()
+        else:
+            plan_description = ""
+        plan_benefits = []
+        overall_list_el = await page.query_selector_all(
+            "ul.text-start.p-0.list-style-02.margin-20px-left.text-dkblue.alt-font"
+        )
+        if overall_list_el:
+            for list_el in overall_list_el:
+                elements = await list_el.query_selector_all("li")
+                if elements:
+                    for element in elements:
+                        plan_benefits.append((await element.text_content()).strip())
+        formatted_row = {
+            "plan_name": plan_name,
+            "plan_benefits": plan_benefits,
+            "plan_description": plan_description,
+            "plan_overview": plan_overview,
+            "plan_url": url,
+            "product_brochure_url": url,
+        }
+        # print(formatted_row)
+        scraped_plans.append(formatted_row)
         await browser.close()
         return scraped_plans
 

@@ -138,7 +138,7 @@ async def scrape_data(url):
                 ]:
                     continue
                 scraped_data.append(formatted_row)
-                print(formatted_row)
+                # print(formatted_row)
         await browser.close()
         return scraped_data
 
