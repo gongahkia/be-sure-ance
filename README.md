@@ -98,7 +98,7 @@ erDiagram
 | [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/) | ❌ || 
 | [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | ❌ || 
 | [Income Insurance Pte Ltd](https://www.income.com.sg/) | ❌ || 
-| [India International Insurance Pte Ltd](https://www.iii.com.sg/) | ❌ | 15/03/2025 |
+| [India International Insurance Pte Ltd](https://www.iii.com.sg/) | ✅ | 15/03/2025 |
 | [Liberty Insurance Pte Ltd](https://www.libertyinsurance.com.sg/) | ❌ || 
 | [Lonpac Insurance Bhd](https://www.lonpac.com/) | ❌ || 
 | [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | ❌ || 
