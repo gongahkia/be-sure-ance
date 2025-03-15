@@ -101,9 +101,8 @@ async def scrape_data(url):
             plan_overview = ""
         plan_description_el = await page.query_selector("section.parallax")
         if plan_description_el:
-            plan_description = (await plan_description_el.text_content()).strip()
-        else:
-            plan_description = ""
+            plan_overview += (await plan_description_el.text_content()).strip()
+        plan_description = ""
         plan_benefits = []
         overall_list_el = await page.query_selector_all(
             "ul.text-start.p-0.list-style-02.margin-20px-left.text-dkblue.alt-font"
