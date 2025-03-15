@@ -119,11 +119,14 @@ async def scrape_data(url):
                 else:
                     plan_name = ""
                 plan_benefits = []
-                for benefit_selector in ["div.product-banifits", "div.key-benefits"]:
-                    benefits = await card.query_selector_all(benefit_selector)
-                    for benefit in benefits:
-                        if benefit:
-                            plan_benefits.append(await benefit.text_content())
+                benefits1 = await card.query_selector("div.product-banifits")
+                benefits2 = await card.query_selector("div.key-benefits")
+                if benefits1:
+                    benefits1 = await benefits1.text_content()
+                    plan_benefits.append(remove_excess_newlines(benefits1.strip()))
+                if benefits2:
+                    benefits2 = await benefits2.text_content()
+                    plan_benefits.append(remove_excess_newlines(benefits2.strip()))
                 footer_element = await card.query_selector(
                     ".leo-card-footer.mt-auto.d-flex a"
                 )
@@ -133,10 +136,7 @@ async def scrape_data(url):
                     plan_url = ""
                 formatted_row = {
                     "plan_name": plan_name,
-                    "plan_benefits": [
-                        remove_excess_newlines(benefit.strip())
-                        for benefit in plan_benefits
-                    ],
+                    "plan_benefits": [plan_benefits],
                     "plan_description": remove_excess_newlines(
                         general_plan_description
                     ),
@@ -148,7 +148,6 @@ async def scrape_data(url):
                     if plan_url
                     else plan_url,
                 }
-                print(formatted_row)
                 scraped_plans.append(formatted_row)
         await browser.close()
         return scraped_plans
@@ -171,12 +170,7 @@ if __name__ == "__main__":
         "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance.html",
         "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income.html",
         "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation.html",
-        "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/travel-insurance/travelsmart-premier.html",
         "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance.html",
-        "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/home-insurance/great-home-protect.html",
-        "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/maid-insurance/great-maid-protect.html",
-        "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/dependants-protection-scheme.html",
-        "https://www.greateasternlife.com/sg/en/campaigns/great-legacy-programme.html",
         "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/prestige-series.html",
     ]
     initialize_supabase()

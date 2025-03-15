@@ -115,7 +115,7 @@ async def scrape_data(url):
                     )
                 else:
                     plan_description = ""
-                plan_benefits = [""]
+                plan_benefits = []
                 plan_overview = ""
                 formatted_row = {
                     "plan_name": plan_name,
