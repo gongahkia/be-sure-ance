@@ -90,15 +90,11 @@ async def scrape_data(url):
         )
         if name_el:
             plan_name = (await name_el.text_content()).strip()
-        else:
-            plan_name = ""
         plan_overview_1 = await page.query_selector(
             "p.alt-font.text-white.text-uppercase.text-small"
         )
         if plan_overview_1:
             plan_overview = (await plan_overview_1.text_content()).strip()
-        else:
-            plan_overview = ""
         plan_description_el = await page.query_selector("section.parallax")
         if plan_description_el:
             plan_overview += (await plan_description_el.text_content()).strip()
@@ -121,7 +117,7 @@ async def scrape_data(url):
             "plan_url": url,
             "product_brochure_url": url,
         }
-        # print(formatted_row)
+        print(formatted_row)
         scraped_plans.append(formatted_row)
         await browser.close()
         return scraped_plans
