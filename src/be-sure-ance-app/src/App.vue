@@ -2,33 +2,51 @@
   <div id="app" class="app-shell">
     <header class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Comparison Workspace</p>
-        <h1>Break Singapore insurance plans into comparable cost and coverage facts.</h1>
+        <p class="eyebrow">For Insurance Agents</p>
+        <h1>Prepare carrier comparisons, provider lookups, and cost scenarios before the client meeting.</h1>
         <p class="hero-text">
-          Select plans across providers, inspect normalized coverage flags, and run a
-          scenario calculator backed by persisted comparison assumptions.
+          Use the workspace to shortlist plans, open panel and specialist directories,
+          and frame cost tradeoffs with normalized comparison facts instead of brochure-by-brochure guesswork.
         </p>
       </div>
 
       <div class="hero-stats">
         <article>
-          <span>Providers</span>
+          <span>Carriers tracked</span>
           <strong>{{ providers.length }}</strong>
         </article>
         <article>
-          <span>Loaded plans</span>
+          <span>Plans loaded</span>
           <strong>{{ totalPlanCount }}</strong>
         </article>
         <article>
-          <span>Comparison profiles</span>
+          <span>Brief-ready profiles</span>
           <strong>{{ comparisonFacts.length }}</strong>
         </article>
         <article>
-          <span>Selected plans</span>
+          <span>Plans in brief</span>
           <strong>{{ selectedPlans.length }}</strong>
         </article>
       </div>
     </header>
+
+    <section class="workflow-strip">
+      <article>
+        <p class="eyebrow dark">Meeting Prep</p>
+        <h2>Build a three-plan brief fast.</h2>
+        <p>Keep shortlists tight, compare cost-sharing fields side by side, and carry a cleaner story into the call.</p>
+      </article>
+      <article>
+        <p class="eyebrow dark">Panel Lookup</p>
+        <h2>Jump straight to provider directories.</h2>
+        <p>Open hospital, panel, and specialist resources linked to the plan instead of hunting them down mid-conversation.</p>
+      </article>
+      <article>
+        <p class="eyebrow dark">Carrier Research</p>
+        <h2>Review one provider lane at a time.</h2>
+        <p>Use the provider rail to move through carriers quickly, then add only the plans worth presenting.</p>
+      </article>
+    </section>
 
     <section v-if="loading" class="status-panel">
       Loading plan data and comparison facts...
@@ -51,7 +69,7 @@
           <div>
             <p class="eyebrow">Active Provider</p>
             <h2>{{ activeProvider.name }}</h2>
-            <p class="toolbar-copy">{{ activeProvider.focus }}</p>
+            <p class="toolbar-copy">{{ activeProvider.focus }} Use this lane for carrier research and shortlist building.</p>
           </div>
 
           <div class="toolbar-actions">
@@ -69,7 +87,7 @@
               referrerpolicy="no-referrer"
               class="provider-link"
             >
-              Visit provider site
+              Open carrier site
             </a>
           </div>
         </section>
@@ -356,6 +374,35 @@ h1 {
   font-size: 1.7rem;
 }
 
+.workflow-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.workflow-strip article {
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(16, 39, 71, 0.08);
+  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.05);
+}
+
+.workflow-strip h2,
+.workflow-strip p:last-child {
+  margin: 0;
+}
+
+.workflow-strip h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.eyebrow.dark {
+  color: var(--muted-ink);
+}
+
 .status-panel,
 .empty-panel {
   margin-top: 1.5rem;
@@ -437,6 +484,10 @@ h1 {
 
   .hero-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow-strip {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -3,7 +3,7 @@
     <div class="section-top">
       <div>
         <p class="eyebrow">Scenario Calculator</p>
-        <h2>Assumption-driven annual cost estimate</h2>
+        <h2>Talking-point cost framing</h2>
       </div>
       <select v-model="selectedScenario" class="scenario-select">
         <option v-for="scenario in scenarioOptions" :key="scenario.value" :value="scenario.value">
@@ -13,7 +13,7 @@
     </div>
 
     <div v-if="selectedPlans.length === 0" class="empty-state">
-      Select plans to estimate annual cost for a stored scenario.
+      Select plans to estimate annual cost for a stored scenario before client review.
     </div>
 
     <div v-else class="calculator-grid">

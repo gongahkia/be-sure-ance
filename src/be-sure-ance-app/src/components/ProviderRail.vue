@@ -1,6 +1,6 @@
 <template>
   <aside class="provider-rail">
-    <p class="rail-label">Providers</p>
+    <p class="rail-label">Carrier Library</p>
     <button
       v-for="provider in providers"
       :key="provider.key"

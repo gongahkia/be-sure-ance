@@ -6,7 +6,7 @@
         <h3>{{ plan.plan_name }}</h3>
       </div>
       <button class="select-button" type="button" @click="$emit('toggle-select', plan.key)">
-        {{ selected ? "Remove" : "Compare" }}
+        {{ selected ? "Remove from brief" : "Add to brief" }}
       </button>
     </div>
 
@@ -39,7 +39,7 @@
     </div>
 
     <details class="detail-panel">
-      <summary>Plan detail</summary>
+      <summary>Agent detail</summary>
       <p class="detail-copy">{{ plan.plan_overview || comparisonFact?.comparison_notes || "No additional overview available." }}</p>
 
       <div class="link-row">

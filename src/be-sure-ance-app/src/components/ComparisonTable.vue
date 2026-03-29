@@ -3,9 +3,9 @@
     <div class="section-top">
       <div>
         <p class="eyebrow">Comparison</p>
-        <h2>Side-by-side plan readout</h2>
+        <h2>Client-ready comparison sheet</h2>
       </div>
-      <p class="section-copy">Coverage flags and cost-sharing fields come from the normalized comparison facts table.</p>
+      <p class="section-copy">Use this grid to frame what is covered, what is not, and where the cost structure changes across shortlisted plans.</p>
     </div>
 
     <div v-if="selectedPlans.length === 0" class="empty-state">
