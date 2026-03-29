@@ -85,3 +85,21 @@ CREATE INDEX IF NOT EXISTS idx_specialist_resources_lookup
 ON specialist_resources (insurer, plan_name);
 
 GRANT ALL ON TABLE specialist_resources TO anon, authenticated, service_role;
+
+CREATE TABLE IF NOT EXISTS plan_comparison_facts (
+    id SERIAL PRIMARY KEY,
+    insurer TEXT NOT NULL,
+    plan_name TEXT NOT NULL,
+    plan_slug TEXT NOT NULL,
+    premium_facts JSONB NOT NULL DEFAULT '{}'::jsonb,
+    cost_sharing JSONB NOT NULL DEFAULT '{}'::jsonb,
+    coverage_flags JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scenario_assumptions JSONB NOT NULL DEFAULT '{}'::jsonb,
+    comparison_notes TEXT,
+    source_url TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_plan_comparison_facts_lookup
+ON plan_comparison_facts (insurer, plan_slug);
+
+GRANT ALL ON TABLE plan_comparison_facts TO anon, authenticated, service_role;
