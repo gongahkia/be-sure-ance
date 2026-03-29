@@ -1,0 +1,77 @@
+name: validate-scraper-snapshots
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 18 * * 0"
+  workflow_run:
+    workflows: ["scrape-to-supabase"]
+    types: [completed]
+
+jobs:
+  validate:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run validation unit tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Download previous validation baseline
+        id: baseline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p .validation-baseline
+          artifact_id="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?per_page=100" --jq '.artifacts | map(select(.name=="validation-snapshots" and .expired == false)) | sort_by(.created_at) | reverse | .[0].id // empty')"
+
+          if [ -z "$artifact_id" ]; then
+            exit 0
+          fi
+
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${artifact_id}/zip" > /tmp/validation-baseline.zip
+          unzip -q /tmp/validation-baseline.zip -d .validation-baseline
+
+          baseline_root=".validation-baseline"
+          if [ -d ".validation-baseline/.validation-output" ]; then
+            baseline_root=".validation-baseline/.validation-output"
+          fi
+
+          echo "baseline_dir=${baseline_root}" >> "$GITHUB_OUTPUT"
+
+      - name: Run structural validation
+        run: |
+          command=(python -m src.validation.differ --output-dir .validation-output --max-urls-per-insurer 1)
+          if [ -n "${{ steps.baseline.outputs.baseline_dir }}" ]; then
+            command+=(--baseline-dir "${{ steps.baseline.outputs.baseline_dir }}")
+          fi
+          "${command[@]}"
+
+      - name: Upload validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-snapshots
+          path: .validation-output
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Publish validation summary
+        if: always()
+        run: |
+          if [ -f ".validation-output/summary.md" ]; then
+            cat .validation-output/summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi

@@ -33,6 +33,14 @@ def process_json_files(target_directory_filepath):
 
 
 def overwrite_table_data(table_name, data):
+    clear_table_data(table_name)
+    if not data:
+        print(f"No rows to insert into {table_name}.")
+        return
+    insert_data(table_name, data)
+
+
+def clear_table_data(table_name):
     query = f"DELETE FROM {table_name} WHERE 1=1;"
     try:
         response = supabase.rpc("execute_sql", {"query": query}).execute()
@@ -42,7 +50,14 @@ def overwrite_table_data(table_name, data):
             print(f"Data cleared from {table_name}: {response.data}")
     except Exception as e:
         print(f"An error occurred while clearing data from {table_name}: {e}")
-    insert_data(table_name, data)
+
+
+def overwrite_generic_table_data(table_name, data):
+    clear_table_data(table_name)
+    if not data:
+        print(f"No rows to insert into {table_name}.")
+        return
+    insert_generic_data(table_name, data)
 
 
 def insert_data(table_name, data):
@@ -62,6 +77,17 @@ def insert_data(table_name, data):
         formatted_data.append(formatted_row)
     try:
         response_insert = supabase.table(table_name).insert(formatted_data).execute()
+        if response_insert.data is None:
+            print(f"Error inserting data into {table_name}: No data returned")
+        else:
+            print(f"Data inserted successfully into {table_name}.")
+    except Exception as e:
+        print(f"An error occurred while inserting data into {table_name}: {e}")
+
+
+def insert_generic_data(table_name, data):
+    try:
+        response_insert = supabase.table(table_name).insert(data).execute()
         if response_insert.data is None:
             print(f"Error inserting data into {table_name}: No data returned")
         else:

@@ -1,363 +1,522 @@
 <template>
-  <div id="app" :class="{ dark: isDark }">
-    <ToggleButton :isDark="isDark" @toggle="toggleDark" />
-    <Header />
-    <div v-if="loading">Loading...</div>
-    <div v-else>
-      <SearchBar v-model="searchQuery" />
-      <div class="card-container">
-
-        <InsuranceCard
-          title="AIA Singapore"
-          link="https://www.aia.com.sg/en/index"
-          :plans="filteredAiaPlans"
-          :expanded="aiaExpanded"
-          @toggle="toggleAiaExpanded"
-        />
-
-        <InsuranceCard
-          title="China Life Singapore"
-          link="https://www.chinalife.com.sg/"
-          :plans="filteredChinaLifePlans"
-          :expanded="chinaLifeExpanded"
-          @toggle="toggleChinaLifeExpanded"
-        />
-
-        <InsuranceCard
-          title="Chubb Insurance (Singapore)"
-          link="https://www.chubb.com/sg-en/"
-          :plans="filteredChubbPlans"
-          :expanded="chubbExpanded"
-          @toggle="toggleChubbExpanded"
-        />
-
-        <InsuranceCard
-          title="Great Eastern Singapore"
-          link="https://www.greateasternlife.com/sg/en/personal-insurance.html"
-          :plans="filteredGreatEasternPlans"
-          :expanded="greatEasternExpanded"
-          @toggle="toggleGreatEasternExpanded"
-        />
-
-        <InsuranceCard
-          title="HSBC Singapore Insurance"
-          link="https://www.insurance.hsbc.com.sg/"
-          :plans="filteredHsbcPlans"
-          :expanded="hsbcExpanded"
-          @toggle="toggleHsbcExpanded"
-        />  
-
-        <InsuranceCard
-          title="India International Insurance (Singapore)"
-          link="https://www.iii.com.sg/"
-          :plans="filteredIiiPlans"
-          :expanded="iiiExpanded"
-          @toggle="toggleIiiExpanded"
-        />
-
-        <InsuranceCard
-          title="Singlife"
-          link="https://singlife.com/en"
-          :plans="filteredSinglifePlans"
-          :expanded="singlifeExpanded"
-          @toggle="toggleSinglifeExpanded"
-        />
-
-        <InsuranceCard
-          title="Sun Life"
-          link="https://www.sunlife.com/en/"
-          :plans="filteredSunlifePlans"
-          :expanded="sunlifeExpanded"
-          @toggle="toggleSunlifeExpanded"
-        />
-
-        <InsuranceCard
-          title="Tokio Marine Insurance Group"
-          link="https://www.tokiomarine.com/sg/en.html"
-          :plans="filteredTokioMarinePlans"
-          :expanded="tokioMarineExpanded"
-          @toggle="toggleTokioMarineExpanded"
-        />
-
-        <InsuranceCard
-          title="United Overseas Insurance Limited (UOI)"
-          link="https://www.uoi.com.sg/index.page"
-          :plans="filteredUoiPlans"
-          :expanded="uoiExpanded"
-          @toggle="toggleUoiExpanded"
-        />
-
+  <div id="app" class="app-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">For Insurance Agents</p>
+        <h1>Prepare carrier comparisons, provider lookups, and cost scenarios before the client meeting.</h1>
+        <p class="hero-text">
+          Use the workspace to shortlist plans, open panel and specialist directories,
+          and frame cost tradeoffs with normalized comparison facts instead of brochure-by-brochure guesswork.
+        </p>
       </div>
-    </div>
+
+      <div class="hero-stats">
+        <article>
+          <span>Carriers tracked</span>
+          <strong>{{ providers.length }}</strong>
+        </article>
+        <article>
+          <span>Plans loaded</span>
+          <strong>{{ totalPlanCount }}</strong>
+        </article>
+        <article>
+          <span>Brief-ready profiles</span>
+          <strong>{{ comparisonFacts.length }}</strong>
+        </article>
+        <article>
+          <span>Plans in brief</span>
+          <strong>{{ selectedPlans.length }}</strong>
+        </article>
+      </div>
+    </header>
+
+    <section class="workflow-strip">
+      <article>
+        <p class="eyebrow dark">Meeting Prep</p>
+        <h2>Build a three-plan brief fast.</h2>
+        <p>Keep shortlists tight, compare cost-sharing fields side by side, and carry a cleaner story into the call.</p>
+      </article>
+      <article>
+        <p class="eyebrow dark">Panel Lookup</p>
+        <h2>Jump straight to provider directories.</h2>
+        <p>Open hospital, panel, and specialist resources linked to the plan instead of hunting them down mid-conversation.</p>
+      </article>
+      <article>
+        <p class="eyebrow dark">Carrier Research</p>
+        <h2>Review one provider lane at a time.</h2>
+        <p>Use the provider rail to move through carriers quickly, then add only the plans worth presenting.</p>
+      </article>
+    </section>
+
+    <section v-if="loading" class="status-panel">
+      Loading plan data and comparison facts...
+    </section>
+
+    <section v-else-if="errorMessage" class="status-panel error">
+      {{ errorMessage }}
+    </section>
+
+    <section v-else class="workspace">
+      <ProviderRail
+        :providers="providers"
+        :active-provider-key="activeProviderKey"
+        :provider-counts="providerCounts"
+        @select="activeProviderKey = $event"
+      />
+
+      <main class="main-stage">
+        <section class="toolbar">
+          <div>
+            <p class="eyebrow">Active Provider</p>
+            <h2>{{ activeProvider.name }}</h2>
+            <p class="toolbar-copy">{{ activeProvider.focus }} Use this lane for carrier research and shortlist building.</p>
+          </div>
+
+          <div class="toolbar-actions">
+            <input
+              v-model="searchQuery"
+              class="search-input"
+              type="search"
+              placeholder="Search plans, benefits, notes, or provider resources"
+            />
+            <a
+              v-if="safeExternalUrl(activeProvider.website)"
+              :href="safeExternalUrl(activeProvider.website)"
+              target="_blank"
+              rel="noopener noreferrer"
+              referrerpolicy="no-referrer"
+              class="provider-link"
+            >
+              Open carrier site
+            </a>
+          </div>
+        </section>
+
+        <section v-if="visiblePlans.length > 0" class="plan-grid">
+          <PlanCard
+            v-for="plan in visiblePlans"
+            :key="plan.key"
+            :plan="plan"
+            :provider="activeProvider"
+            :comparison-fact="plan.comparisonFact"
+            :resources="plan.resources"
+            :selected="selectedPlanKeys.includes(plan.key)"
+            @toggle-select="togglePlanSelection"
+          />
+        </section>
+
+        <section v-else class="empty-panel">
+          No plans match the current provider and search filters.
+        </section>
+
+        <ComparisonTable :selected-plans="selectedPlans" />
+        <ScenarioCalculator :selected-plans="selectedPlans" />
+      </main>
+    </section>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { useDark, useToggle } from "@vueuse/core";
+import { computed, onMounted, ref } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
-import ToggleButton from './components/ToggleButton.vue'
-import Header from './components/AppHeader.vue'
-import SearchBar from './components/SearchBar.vue'
-import InsuranceCard from './components/InsuranceCard.vue'
+import ComparisonTable from './components/ComparisonTable.vue'
+import PlanCard from './components/PlanCard.vue'
+import ProviderRail from './components/ProviderRail.vue'
+import ScenarioCalculator from './components/ScenarioCalculator.vue'
+import { buildPlanKey, providers } from './lib/providers'
+import { safeExternalUrl } from './utils/links'
 
-const supabaseUrl = process.env.VUE_APP_SUPABASE_URL;
-const supabaseKey = process.env.VUE_APP_SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseUrl = process.env.VUE_APP_SUPABASE_URL
+const supabaseKey = process.env.VUE_APP_SUPABASE_KEY
+const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
-const loading = ref(true);
-const searchQuery = ref("");
-
-const aiaPlans = ref([]);
-const uoiPlans = ref([]);
-const chinaLifePlans = ref([]);
-const chubbPlans = ref([]);
-const tokioMarinePlans = ref([]);
-const sunlifePlans = ref([]);
-const singlifePlans = ref([]);
-const greatEasternPlans = ref([]);
-const hsbcPlans = ref([]);
-const iiiPlans = ref([]);
-
-const aiaExpanded = ref(false);
-const uoiExpanded = ref(false);
-const chinaLifeExpanded = ref(false);
-const chubbExpanded = ref(false);
-const tokioMarineExpanded = ref(false);
-const sunlifeExpanded = ref(false);
-const singlifeExpanded = ref(false);
-const greatEasternExpanded = ref(false);
-const hsbcExpanded = ref(false);
-const iiiExpanded = ref(false);
+const loading = ref(true)
+const errorMessage = ref("")
+const searchQuery = ref("")
+const activeProviderKey = ref(providers[0].key)
+const selectedPlanKeys = ref([])
+const plansByProvider = ref({})
+const comparisonFacts = ref([])
+const specialistResources = ref([])
 
 async function fetchData() {
+  if (!supabase) {
+    errorMessage.value = "Supabase configuration is missing. Set VUE_APP_SUPABASE_URL and VUE_APP_SUPABASE_KEY."
+    loading.value = false
+    return
+  }
+
   try {
+    const providerResults = await Promise.all(
+      providers.map(async (provider) => {
+        const { data, error } = await supabase.from(provider.key).select("*")
+        if (error) {
+          throw error
+        }
+        return [provider.key, data || []]
+      })
+    )
 
-    const { data: aiaData } = await supabase.from('aia').select('*');
-    const { data: uoiData } = await supabase.from('uoi').select('*');
-    const { data: chinaLifeData } = await supabase.from('china_life').select('*');
-    const { data: chubbData } = await supabase.from('chubb').select('*');
-    const { data: tokioMarineData } = await supabase.from('tokio_marine').select('*');
-    const { data: sunlifeData } = await supabase.from('sunlife').select('*');
-    const { data: singlifeData } = await supabase.from('singlife').select('*');
-    const { data: greatEasternData } = await supabase.from('great_eastern').select('*');
-    const { data: hsbcData } = await supabase.from('hsbc').select('*');
-    const { data: iiiData } = await supabase.from('iii').select('*');
+    plansByProvider.value = Object.fromEntries(providerResults)
 
-    aiaPlans.value = aiaData;
-    uoiPlans.value = uoiData;
-    chinaLifePlans.value = chinaLifeData;
-    chubbPlans.value = chubbData;
-    tokioMarinePlans.value = tokioMarineData;
-    sunlifePlans.value = sunlifeData;
-    singlifePlans.value = singlifeData;
-    greatEasternPlans.value = greatEasternData;
-    hsbcPlans.value = hsbcData;
-    iiiPlans.value = iiiData;
+    const [
+      { data: comparisonData, error: comparisonError },
+      { data: resourceData, error: resourceError }
+    ] = await Promise.all([
+      supabase.from("plan_comparison_facts").select("*"),
+      supabase.from("specialist_resources").select("*")
+    ])
 
+    if (comparisonError) {
+      throw comparisonError
+    }
+    if (resourceError) {
+      throw resourceError
+    }
+
+    comparisonFacts.value = comparisonData || []
+    specialistResources.value = resourceData || []
   } catch (error) {
-    console.error('Error fetching data:', error);
+    errorMessage.value = error?.message || "Unable to load comparison data."
   } finally {
-    loading.value = false;
+    loading.value = false
   }
 }
 
-fetchData();
+onMounted(fetchData)
 
-function toggleAiaExpanded() {
-  aiaExpanded.value = !aiaExpanded.value;
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleUoiExpanded() {
-  uoiExpanded.value = !uoiExpanded.value;
-  aiaExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleChinaLifeExpanded() {
-  chinaLifeExpanded.value = !chinaLifeExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleChubbExpanded() {
-  chubbExpanded.value = !chubbExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleTokioMarineExpanded() {
-  tokioMarineExpanded.value = !tokioMarineExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleSunlifeExpanded() {
-  sunlifeExpanded.value = !sunlifeExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleSinglifeExpanded(){
-  singlifeExpanded.value = !singlifeExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleGreatEasternExpanded(){
-  greatEasternExpanded.value = !greatEasternExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  hsbcExpanded.value = false;
-  iiiExpanded.value = false;
-}
-
-function toggleHsbcExpanded(){
-  hsbcExpanded.value = !hsbcExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  iiiExpanded.value = false; 
-}
-
-function toggleIiiExpanded(){
-  iiiExpanded.value = !iiiExpanded.value;
-  aiaExpanded.value = false; 
-  uoiExpanded.value = false; 
-  chinaLifeExpanded.value = false;
-  chubbExpanded.value = false;
-  tokioMarineExpanded.value = false;
-  sunlifeExpanded.value = false;
-  singlifeExpanded.value = false;
-  greatEasternExpanded.value = false;
-  hsbcExpanded.value = false;
-}
-
-const filteredAiaPlans = computed(() =>
-  aiaPlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+const comparisonFactMap = computed(() =>
+  Object.fromEntries(
+    comparisonFacts.value.map((fact) => [buildPlanKey(fact.insurer, fact.plan_name), fact])
   )
-);
+)
 
-const filteredUoiPlans = computed(() =>
-  uoiPlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);
+const specialistResourceMap = computed(() =>
+  specialistResources.value.reduce((accumulator, resource) => {
+    const key = buildPlanKey(resource.insurer, resource.plan_name)
+    if (!accumulator[key]) {
+      accumulator[key] = []
+    }
+    accumulator[key].push(resource)
+    return accumulator
+  }, {})
+)
 
-const filteredChinaLifePlans = computed(() =>
-  chinaLifePlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
+const enrichedPlans = computed(() =>
+  providers.flatMap((provider) =>
+    (plansByProvider.value[provider.key] || []).map((plan) => {
+      const key = buildPlanKey(provider.key, plan.plan_name)
+      return {
+        ...plan,
+        key,
+        providerKey: provider.key,
+        providerName: provider.name,
+        comparisonFact: comparisonFactMap.value[key] || null,
+        resources: specialistResourceMap.value[key] || []
+      }
+    })
   )
-);
+)
 
-const filteredChubbPlans = computed(() =>
-  chubbPlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);
+const activeProvider = computed(
+  () => providers.find((provider) => provider.key === activeProviderKey.value) || providers[0]
+)
 
-const filteredTokioMarinePlans = computed(() =>
-  tokioMarinePlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);  
+const providerCounts = computed(() =>
+  providers.reduce((accumulator, provider) => {
+    accumulator[provider.key] = (plansByProvider.value[provider.key] || []).length
+    return accumulator
+  }, {})
+)
 
-const filteredSunlifePlans = computed(() =>
-  sunlifePlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);
+const totalPlanCount = computed(() =>
+  Object.values(providerCounts.value).reduce((total, count) => total + count, 0)
+)
 
-const filteredSinglifePlans = computed(() =>
-  singlifePlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);
+const visiblePlans = computed(() =>
+  enrichedPlans.value.filter((plan) => {
+    if (plan.providerKey !== activeProviderKey.value) {
+      return false
+    }
 
-const filteredGreatEasternPlans = computed(() =>
-  greatEasternPlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);
+    if (!searchQuery.value.trim()) {
+      return true
+    }
 
-const filteredHsbcPlans = computed(() =>
-  hsbcPlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);
+    const searchableText = [
+      plan.plan_name,
+      plan.plan_description,
+      plan.plan_overview,
+      (plan.plan_benefits || []).join(" "),
+      plan.comparisonFact?.comparison_notes || "",
+      JSON.stringify(plan.comparisonFact?.coverage_flags || {}),
+      (plan.resources || [])
+        .map((resource) => `${resource.resource_title || ""} ${resource.resource_description || ""}`)
+        .join(" ")
+    ]
+      .join(" ")
+      .toLowerCase()
 
-const filteredIiiPlans = computed(() =>
-  iiiPlans.value.filter(plan =>
-    plan.plan_name.toLowerCase().includes(searchQuery.value.toLowerCase())
-  )
-);
+    return searchableText.includes(searchQuery.value.toLowerCase())
+  })
+)
+
+const selectedPlans = computed(() =>
+  selectedPlanKeys.value
+    .map((key) => enrichedPlans.value.find((plan) => plan.key === key))
+    .filter(Boolean)
+)
+
+function togglePlanSelection(planKey) {
+  if (selectedPlanKeys.value.includes(planKey)) {
+    selectedPlanKeys.value = selectedPlanKeys.value.filter((item) => item !== planKey)
+    return
+  }
+
+  if (selectedPlanKeys.value.length >= 3) {
+    selectedPlanKeys.value = [...selectedPlanKeys.value.slice(1), planKey]
+    return
+  }
+
+  selectedPlanKeys.value = [...selectedPlanKeys.value, planKey]
+}
 </script>
 
+<style>
+:root {
+  --ink: #102747;
+  --muted-ink: #567086;
+  --paper: #f4f7fb;
+  --panel: rgba(255, 255, 255, 0.88);
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(194, 225, 255, 0.9), transparent 36%),
+    linear-gradient(180deg, #eef4fb 0%, #f8fafc 100%);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+</style>
+
 <style scoped>
-@import './assets/style.css';
+.app-shell {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(120deg, rgba(16, 39, 71, 0.98), rgba(24, 76, 120, 0.94)),
+    var(--ink);
+  color: #f6fbff;
+  box-shadow: 0 34px 80px rgba(16, 39, 71, 0.18);
+}
+
+.hero-copy {
+  max-width: 52rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+  margin: 0;
+  max-width: 48rem;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.02;
+}
+
+.hero-text {
+  margin: 1rem 0 0;
+  max-width: 42rem;
+  color: rgba(246, 251, 255, 0.78);
+  font-size: 1.05rem;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.hero-stats article {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-stats span {
+  display: block;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.hero-stats strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.7rem;
+}
+
+.workflow-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.workflow-strip article {
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(16, 39, 71, 0.08);
+  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.05);
+}
+
+.workflow-strip h2,
+.workflow-strip p:last-child {
+  margin: 0;
+}
+
+.workflow-strip h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.eyebrow.dark {
+  color: var(--muted-ink);
+}
+
+.status-panel,
+.empty-panel {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 1rem;
+  background: var(--panel);
+  border: 1px solid rgba(16, 39, 71, 0.08);
+  color: var(--muted-ink);
+}
+
+.status-panel.error {
+  color: #7a1d21;
+  border-color: rgba(160, 38, 46, 0.2);
+  background: rgba(255, 243, 244, 0.92);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.main-stage {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  padding: 1.35rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(16, 39, 71, 0.08);
+}
+
+.toolbar h2,
+.toolbar-copy {
+  margin: 0;
+}
+
+.toolbar-copy {
+  margin-top: 0.4rem;
+  color: var(--muted-ink);
+}
+
+.toolbar-actions {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: end;
+}
+
+.search-input {
+  width: min(420px, 100%);
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 39, 71, 0.14);
+  background: #ffffff;
+}
+
+.provider-link {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 1080px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 1rem;
+  }
+
+  .hero,
+  .toolbar {
+    padding: 1.25rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .toolbar-actions {
+    width: 100%;
+    justify-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
 </style>

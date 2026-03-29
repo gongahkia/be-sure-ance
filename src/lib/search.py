@@ -1,80 +1,91 @@
-# ----- required imports -----
+from __future__ import annotations
 
+from typing import Iterable
+
+from rapidfuzz import fuzz
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from fuzzywuzzy import fuzz
-import numpy as np
-from scipy.spatial.distance import cdist
-from datasketch import MinHash, MinHashLSH
-
-# ----- helper functions -----
 
 
-def cosine_search(search_string, corpus, threshold=0.5):
-    all_texts = [search_string] + corpus
-    vectorizer = TfidfVectorizer()
-    tfidf_matrix = vectorizer.fit_transform(all_texts)
+def _normalize_strings(corpus: Iterable[str]) -> list[str]:
+    return [text.strip() for text in corpus if isinstance(text, str) and text.strip()]
+
+
+def cosine_search(search_string: str, corpus: Iterable[str], threshold: float = 0.15):
+    texts = _normalize_strings(corpus)
+    if not search_string or not texts:
+      return []
+
+    vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2))
+    tfidf_matrix = vectorizer.fit_transform([search_string] + texts)
     query_vector = tfidf_matrix[0]
     corpus_vectors = tfidf_matrix[1:]
     similarities = cosine_similarity(query_vector, corpus_vectors).flatten()
-    results = [
-        (corpus[i], similarities[i])
-        for i in range(len(corpus))
-        if similarities[i] >= threshold
+
+    ranked = [
+        {"text": texts[index], "score": float(similarities[index])}
+        for index in range(len(texts))
+        if similarities[index] >= threshold
     ]
-    results.sort(key=lambda x: x[1], reverse=True)
-    return results
+    ranked.sort(key=lambda item: item["score"], reverse=True)
+    return ranked
 
 
-def fuzzy_match(search_string, corpus, threshold=70):
-    results = [
-        (text, fuzz.ratio(search_string.lower(), text.lower())) for text in corpus
+def fuzzy_match(search_string: str, corpus: Iterable[str], threshold: int = 60):
+    texts = _normalize_strings(corpus)
+    if not search_string or not texts:
+        return []
+
+    ranked = [
+        {"text": text, "score": fuzz.token_set_ratio(search_string.lower(), text.lower())}
+        for text in texts
+        if fuzz.token_set_ratio(search_string.lower(), text.lower()) >= threshold
     ]
-    filtered_results = [(text, score) for text, score in results if score >= threshold]
-    filtered_results.sort(key=lambda x: x[1], reverse=True)
-    return filtered_results
+    ranked.sort(key=lambda item: item["score"], reverse=True)
+    return ranked
 
 
-def semantic_search(search_string, corpus_embeddings, query_embedding, threshold=0.5):
-    similarities = cosine_similarity([query_embedding], corpus_embeddings).flatten()
-    results = [
-        (i, similarities[i])
-        for i in range(len(corpus_embeddings))
-        if similarities[i] >= threshold
-    ]
-    results.sort(key=lambda x: x[1], reverse=True)
-    return results
+def hybrid_search(
+    search_string: str,
+    corpus: Iterable[str],
+    cosine_threshold: float = 0.15,
+    fuzzy_threshold: int = 60,
+    limit: int | None = None,
+):
+    texts = _normalize_strings(corpus)
+    if not search_string or not texts:
+        return []
 
+    cosine_hits = {
+        item["text"]: item["score"]
+        for item in cosine_search(search_string, texts, threshold=cosine_threshold)
+    }
+    fuzzy_hits = {
+        item["text"]: item["score"] / 100
+        for item in fuzzy_match(search_string, texts, threshold=fuzzy_threshold)
+    }
 
-def lsh_search(search_string, corpus, threshold=0.5):
-    lsh = MinHashLSH(threshold=threshold)
-    minhashes = []
-    for i, doc in enumerate(corpus):
-        m = MinHash()
-        for word in doc.split():
-            m.update(word.encode("utf8"))
-        lsh.insert(f"doc-{i}", m)
-        minhashes.append(m)
-    query_minhash = MinHash()
-    for word in search_string.split():
-        query_minhash.update(word.encode("utf8"))
-    result_indices = lsh.query(query_minhash)
-    return [corpus[int(idx.split("-")[1])] for idx in result_indices]
+    ranked = []
+    for text in texts:
+        score = max(cosine_hits.get(text, 0), fuzzy_hits.get(text, 0))
+        if score:
+            ranked.append({"text": text, "score": float(score)})
+
+    ranked.sort(key=lambda item: item["score"], reverse=True)
+    return ranked[:limit] if limit else ranked
 
 
 def search_wrapper(
-    search_string, corpus, method="cosine", threshold=0.5, embeddings=None
+    search_string: str,
+    corpus: Iterable[str],
+    method: str = "hybrid",
+    threshold: float = 0.15,
+    limit: int | None = None,
 ):
     if method == "cosine":
-        return find_similar_strings(search_string, corpus, threshold)
-    elif method == "fuzzy":
-        return fuzzy_match(search_string, corpus, int(threshold * 100))
-    elif method == "semantic":
-        if embeddings is None:
-            raise ValueError("Embeddings must be provided for semantic search.")
-        query_embedding = embeddings[0]
-        return semantic_search(
-            search_string, embeddings[1:], query_embedding, threshold
-        )
-    elif method == "lsh":
-        return lsh_search(search_string, corpus, threshold)
+        return cosine_search(search_string, corpus, threshold=threshold)
+    if method == "fuzzy":
+        return fuzzy_match(search_string, corpus, threshold=int(threshold * 100))
+    if method == "hybrid":
+        return hybrid_search(search_string, corpus, cosine_threshold=threshold, limit=limit)
+    raise ValueError(f"Unsupported search method: {method}")
