@@ -3,60 +3,222 @@
 @tailwind utilities;
 
 :root {
-  --pastel-blue: #e0f2fe;
-  --pastel-yellow: #fef9c3;
-  --pastel-pink: #fce7f3;
-  --pastel-green: #d1fae5;
-  --pastel-purple: #ede9fe;
+  --sand-50: #fbf6ee;
+  --sand-100: #f5efe4;
+  --sand-200: #ece0ca;
+  --sage-100: #dde7df;
+  --sage-200: #c2d3c5;
+  --sage-400: #6f8b71;
+  --cobalt-300: #7ea2d8;
+  --cobalt-700: #1f4f8a;
+  --cobalt-800: #163d6c;
+  --ink-50: #eff3f5;
+  --ink-600: #53636f;
+  --ink-700: #37444e;
+  --ink-800: #23313a;
+  --ink-900: #162127;
+  --ink-950: #0e171c;
 }
 
-@layer base {
-  body {
-    @apply bg-[var(--pastel-blue)] text-gray-800 font-sans;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink-900);
+  background:
+    radial-gradient(circle at top left, rgba(126, 162, 216, 0.18), transparent 22rem),
+    radial-gradient(circle at 80% 20%, rgba(194, 211, 197, 0.24), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) 0 0 / 100% 18rem no-repeat,
+    var(--sand-100);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 2.75rem 2.75rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 82%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Avenir Next Condensed", "Arial Narrow", "Franklin Gothic Medium", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 @layer components {
-  table {
-    @apply w-full bg-white rounded-lg shadow-md overflow-hidden;
+  .hero-shell::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 8rem;
+    background: linear-gradient(180deg, rgba(245, 239, 228, 0), rgba(245, 239, 228, 1));
+    pointer-events: none;
   }
-  thead {
-    @apply bg-[var(--pastel-yellow)];
-  }
-  th, td {
-    @apply px-4 py-2 text-left align-top;
-  }
-  th {
-    @apply font-semibold text-gray-700;
-  }
-  tr:nth-child(even) {
-    @apply bg-[var(--pastel-green)];
-  }
-  tr:hover {
-    @apply bg-[var(--pastel-pink)] transition-colors;
-  }
-}
 
-@layer components {
-  input, select {
-    @apply border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300 transition;
-    background-color: var(--pastel-purple);
+  .stat-panel {
+    @apply rounded-[1.5rem] border p-5 shadow-lg backdrop-blur;
+    border-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 20px 40px rgba(14, 23, 28, 0.05);
   }
-  button {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow transition;
+
+  .stat-label {
+    @apply text-xs font-semibold uppercase tracking-[0.24em];
+    color: var(--cobalt-700);
+    opacity: 0.8;
+  }
+
+  .stat-value {
+    @apply mt-3 text-4xl font-semibold;
+    color: var(--ink-950);
+  }
+
+  .stat-note {
+    @apply mt-2 text-sm leading-6;
+    color: var(--ink-600);
+  }
+
+  .field-shell {
+    @apply flex flex-col gap-2;
+  }
+
+  .field-label {
+    @apply text-xs font-semibold uppercase tracking-[0.2em];
+    color: var(--ink-600);
+  }
+
+  .field-input {
+    @apply h-12 rounded-2xl border px-4 text-sm shadow-sm transition focus:outline-none;
+    border-color: var(--sage-200);
+    background-color: var(--sand-50);
+    color: var(--ink-900);
+  }
+
+  .field-input::placeholder {
+    color: #677781;
+  }
+
+  .route-chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em];
+    background-color: rgba(126, 162, 216, 0.16);
+    color: var(--cobalt-800);
+  }
+
+  .route-chip-muted {
+    background: rgba(194, 211, 197, 0.55);
+    color: var(--ink-800);
+  }
+
+  .meta-card {
+    @apply rounded-2xl border p-3 shadow-sm;
+    border-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  .meta-label {
+    @apply text-[0.7rem] font-semibold uppercase tracking-[0.18em];
+    color: #677781;
+  }
+
+  .meta-value {
+    @apply mt-2 text-sm font-semibold leading-6;
+    color: var(--ink-800);
   }
 }
 
 @layer utilities {
-  ::-webkit-scrollbar {
-    width: 8px;
-    background: var(--pastel-yellow);
+  .bg-sand-100 {
+    background-color: var(--sand-100);
   }
-  ::-webkit-scrollbar-thumb {
-    background: var(--pastel-pink);
-    border-radius: 4px;
+
+  .bg-sand-200 {
+    background-color: var(--sand-200);
   }
+
+  .bg-cobalt-100 {
+    background-color: rgba(126, 162, 216, 0.16);
+  }
+
+  .bg-cobalt-700 {
+    background-color: var(--cobalt-700);
+  }
+
+  .bg-cobalt-800 {
+    background-color: var(--cobalt-800);
+  }
+
+  .bg-ink-900 {
+    background-color: var(--ink-900);
+  }
+
+  .border-sage-100 {
+    border-color: var(--sage-100);
+  }
+
+  .border-sage-200 {
+    border-color: var(--sage-200);
+  }
+
+  .border-cobalt-300 {
+    border-color: var(--cobalt-300);
+  }
+
+  .text-cobalt-700 {
+    color: var(--cobalt-700);
+  }
+
+  .text-cobalt-800 {
+    color: var(--cobalt-800);
+  }
+
+  .text-ink-50 {
+    color: var(--ink-50);
+  }
+
+  .text-ink-500 {
+    color: #677781;
+  }
+
+  .text-ink-600 {
+    color: var(--ink-600);
+  }
+
+  .text-ink-700 {
+    color: var(--ink-700);
+  }
+
+  .text-ink-800 {
+    color: var(--ink-800);
+  }
+
+  .text-ink-900 {
+    color: var(--ink-900);
+  }
+
+  .text-ink-950 {
+    color: var(--ink-950);
+  }
+}
+
+.field-input:focus {
+  border-color: var(--cobalt-300);
+  box-shadow: 0 0 0 3px rgba(126, 162, 216, 0.28);
 }
