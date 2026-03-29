@@ -1,224 +1,383 @@
-import glob
-import os
-import re
-import json
+from __future__ import annotations
+
+import argparse
+import ast
 import difflib
 import hashlib
+import json
+import re
+import shutil
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Iterable
+from urllib.parse import urlparse
+
 import requests
-from lxml import etree
-import networkx as nx
-from bs4 import BeautifulSoup
-import xml.etree.ElementTree as ET
-from xmldiff import main, formatting
-from datetime import datetime, timedelta
-from xml.parsers.expat import ExpatError
-from xml.dom.minidom import parse, parseString
+from bs4 import BeautifulSoup, Tag
 
 
-def delete_directory_files(target_directory):
-    current_date = datetime.now().strftime("%d_%m_%Y")
-    yesterday_date = (datetime.now() - timedelta(days=1)).strftime("%d_%m_%Y")
-    try:
-        for filename in os.listdir(target_directory):
-            file_path = os.path.join(target_directory, filename)
-            if os.path.isfile(file_path):
-                if current_date not in file_path and yesterday_date not in file_path:
-                    os.remove(file_path)
-                    pretty_print_green(f"Deleted file at the filepath: {file_path}")
-                else:
-                    pass
-    except Exception as e:
-        pretty_print_red(f"Error encountered: {e}")
+SCRAPER_DIR = Path(__file__).resolve().parents[1] / "scrapers"
+DEFAULT_OUTPUT_DIR = Path(".validation-output")
+EXCLUDED_SCRAPER_FILES = {"__init__.py", "_generic_domain.py", "run_all.py"}
+USER_AGENT = "be-sure-ance-validation-bot/1.0"
 
 
-def delete_files(target_filepath_array):
-    files_to_delete_array = glob.glob(target_filepath_array)
-    if files_to_delete_array:
-        for filepath in files_to_delete_array:
-            try:
-                os.remove(filepath)
-                pretty_print_green(f"Deleted file at filepath: {filepath}")
-            except OSError as e:
-                pretty_print_red(
-                    f"Error deleting file at filepath: {filepath} due to {e}"
+@dataclass(frozen=True)
+class ValidationTarget:
+    insurer: str
+    url: str
+    domain: str
+    source_file: str
+
+
+def slugify(value: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+    return slug or "root"
+
+
+def extract_urls(module_doc: str | None) -> list[str]:
+    if not module_doc:
+        return []
+
+    unique_urls = []
+    seen = set()
+    for match in re.findall(r"https?://[^\s\"']+", module_doc):
+        candidate = match.rstrip(".,")
+        parsed = urlparse(candidate)
+        if parsed.scheme not in {"http", "https"}:
+            continue
+        if candidate.lower().endswith(".pdf"):
+            continue
+        if candidate in seen:
+            continue
+        seen.add(candidate)
+        unique_urls.append(candidate)
+    return unique_urls
+
+
+def discover_targets(
+    scraper_dir: Path = SCRAPER_DIR,
+    max_urls_per_insurer: int = 2,
+) -> list[ValidationTarget]:
+    targets: list[ValidationTarget] = []
+    for path in sorted(scraper_dir.glob("*.py")):
+        if path.name in EXCLUDED_SCRAPER_FILES:
+            continue
+
+        tree = ast.parse(path.read_text(), filename=str(path))
+        urls = extract_urls(ast.get_docstring(tree))
+        for url in urls[:max_urls_per_insurer]:
+            domain = urlparse(url).netloc.lower().removeprefix("www.")
+            targets.append(
+                ValidationTarget(
+                    insurer=path.stem,
+                    url=url,
+                    domain=domain,
+                    source_file=path.name,
                 )
-    else:
-        pretty_print_red(f"No files at filepath: {target_filepath} were found")
+            )
+    return targets
 
 
-def fetch_raw_html(url):
-    response = requests.get(url)
-    response.raise_for_status()
-    html_content = response.content.decode("utf-8")
-    html_content = re.sub(r"<\?xml .*?\?>", "", html_content)
-    html_content = re.sub(
-        r'<use\s+xlink:href="[^"]*".*?>', "", html_content, flags=re.IGNORECASE
+def normalize_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def sha256_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def fetch_html(url: str, request_timeout: int) -> str:
+    response = requests.get(
+        url,
+        timeout=request_timeout,
+        headers={"User-Agent": USER_AGENT},
     )
-    html_as_soup = BeautifulSoup(html_content, "html.parser")
-    for script_or_style in html_as_soup(["style", "script"]):
-        script_or_style.decompose()
-    body_content = html_as_soup.find("body")
-    return str(body_content) if body_content else ""
+    response.raise_for_status()
+    return response.text
 
 
-def generate_xml_hash(xml_content):
-    hash_object = hashlib.sha256(xml_content.encode("utf-8"))
-    return hash_object.hexdigest()
+def sanitize_html(html: str) -> BeautifulSoup:
+    soup = BeautifulSoup(html, "html.parser")
+    root = soup.body or soup
+    for element in root(["script", "style", "noscript", "svg"]):
+        element.decompose()
+    for element in root.find_all(attrs=True):
+        for attribute in list(element.attrs):
+            if attribute in {"style", "class", "id", "data-testid"} or attribute.startswith(
+                "data-"
+            ):
+                del element.attrs[attribute]
+    return soup
 
 
-def normalize_xml(xml_content):
-    root = ET.fromstring(xml_content)
-
-    def strip_namespace(tag):
-        return tag.split("}", 1)[-1] if "}" in tag else tag
-
-    def traverse_and_build_structure(element):
-        structure = f"<{strip_namespace(element.tag)}>"
-        for child in element:
-            structure += traverse_and_build_structure(child)
-        structure += f"</{strip_namespace(element.tag)}>"
-        return structure
-
-    structure_only_xml = traverse_and_build_structure(root)
-    return structure_only_xml
+def iter_child_tags(node: Tag) -> Iterable[Tag]:
+    for child in node.children:
+        if isinstance(child, Tag):
+            yield child
 
 
-def compare_structural_similarity(xml1, xml2):
-    def get_node_paths(element, parent_path=""):
-        paths = []
-        for child in element:
-            path = f"{parent_path}/{child.tag}"
-            paths.append(path)
-            paths.extend(get_node_paths(child, path))
-        return paths
+def collect_tag_sequence(node: Tag) -> list[str]:
+    sequence = [node.name]
+    for child in iter_child_tags(node):
+        sequence.extend(collect_tag_sequence(child))
+    return sequence
 
-    if xml1:
-        try:
-            root1 = ET.fromstring(xml1)
-        except ET.ParseError as e:
-            pretty_print_red(f"XML Parse Error: {e}")
-            print(
-                "Human validation required for the compare_structural_similarity() check!"
-            )
-            root1 = None
 
-    if xml2:
-        try:
-            root2 = ET.fromstring(xml2)
-        except ET.ParseError as e:
-            pretty_print_red(f"XML Parse Error: {e}")
-            print(
-                "Human validation required for the compare_structural_similarity() check!"
-            )
-            root2 = None
+def collect_paths(node: Tag, parent_path: str = "") -> list[str]:
+    current_path = f"{parent_path}/{node.name}"
+    paths = [current_path]
+    for child in iter_child_tags(node):
+        paths.extend(collect_paths(child, current_path))
+    return paths
 
-    if root1 and root2:
-        paths1, paths2 = get_node_paths(root1), get_node_paths(root2)
-        unique_in_1 = set(paths1) - set(paths2)
-        unique_in_2 = set(paths2) - set(paths1)
-        return {
-            "unique_in_xml1": unique_in_1,
-            "unique_in_xml2": unique_in_2,
-            "common_paths": set(paths1).intersection(paths2),
+
+def snapshot_from_html(target: ValidationTarget, html: str) -> dict:
+    soup = sanitize_html(html)
+    root = soup.body or soup
+
+    tag_sequence = collect_tag_sequence(root)
+    unique_paths = sorted(set(collect_paths(root)))
+    normalized_text = normalize_text(" ".join(root.stripped_strings))
+    normalized_html = normalize_text(str(root))
+    parsed_url = urlparse(target.url)
+    path_identifier = parsed_url.path or "root"
+    if parsed_url.query:
+        path_identifier = f"{path_identifier}?{parsed_url.query}"
+    path_slug = slugify(path_identifier)
+
+    return {
+        "insurer": target.insurer,
+        "url": target.url,
+        "domain": target.domain,
+        "source_file": target.source_file,
+        "path_slug": path_slug,
+        "captured_at": datetime.now(timezone.utc).isoformat(),
+        "root_tag": root.name,
+        "tag_sequence": tag_sequence,
+        "tag_count": len(tag_sequence),
+        "unique_paths": unique_paths,
+        "unique_path_count": len(unique_paths),
+        "structure_hash": sha256_text("\n".join(unique_paths)),
+        "text_hash": sha256_text(normalized_text),
+        "normalized_html": normalized_html,
+    }
+
+
+def load_snapshot(snapshot_path: Path) -> dict | None:
+    if not snapshot_path.exists():
+        return None
+    return json.loads(snapshot_path.read_text())
+
+
+def compare_snapshot_pair(
+    baseline_snapshot: dict,
+    current_snapshot: dict,
+    max_path_drift: float,
+    max_tag_drift: float,
+) -> dict:
+    baseline_paths = set(baseline_snapshot["unique_paths"])
+    current_paths = set(current_snapshot["unique_paths"])
+    union = baseline_paths | current_paths
+    symmetric_difference = baseline_paths ^ current_paths
+
+    path_drift = (len(symmetric_difference) / len(union)) if union else 0.0
+    tag_similarity = difflib.SequenceMatcher(
+        None,
+        baseline_snapshot["tag_sequence"],
+        current_snapshot["tag_sequence"],
+    ).ratio()
+    tag_drift = 1 - tag_similarity
+
+    added_paths = sorted(current_paths - baseline_paths)[:20]
+    removed_paths = sorted(baseline_paths - current_paths)[:20]
+    failures = []
+
+    if baseline_snapshot["root_tag"] != current_snapshot["root_tag"]:
+        failures.append(
+            f'Root tag changed from "{baseline_snapshot["root_tag"]}" '
+            f'to "{current_snapshot["root_tag"]}"'
+        )
+    if path_drift > max_path_drift:
+        failures.append(
+            f"Path drift {path_drift:.3f} exceeded threshold {max_path_drift:.3f}"
+        )
+    if tag_drift > max_tag_drift:
+        failures.append(f"Tag drift {tag_drift:.3f} exceeded threshold {max_tag_drift:.3f}")
+
+    return {
+        "status": "failed" if failures else "passed",
+        "path_drift": round(path_drift, 6),
+        "tag_drift": round(tag_drift, 6),
+        "tag_similarity": round(tag_similarity, 6),
+        "structure_hash_changed": baseline_snapshot["structure_hash"]
+        != current_snapshot["structure_hash"],
+        "text_hash_changed": baseline_snapshot["text_hash"] != current_snapshot["text_hash"],
+        "added_paths": added_paths,
+        "removed_paths": removed_paths,
+        "failures": failures,
+    }
+
+
+def snapshot_output_path(output_dir: Path, snapshot: dict) -> Path:
+    domain_slug = slugify(snapshot["domain"])
+    return output_dir / "snapshots" / snapshot["insurer"] / f"{domain_slug}__{snapshot['path_slug']}.json"
+
+
+def snapshot_html_path(output_dir: Path, snapshot: dict) -> Path:
+    domain_slug = slugify(snapshot["domain"])
+    return output_dir / "snapshots" / snapshot["insurer"] / f"{domain_slug}__{snapshot['path_slug']}.html"
+
+
+def baseline_snapshot_path(baseline_dir: Path, snapshot: dict) -> Path:
+    return snapshot_output_path(baseline_dir, snapshot)
+
+
+def write_snapshot_artifacts(output_dir: Path, snapshot: dict) -> tuple[Path, Path]:
+    json_path = snapshot_output_path(output_dir, snapshot)
+    html_path = snapshot_html_path(output_dir, snapshot)
+    json_path.parent.mkdir(parents=True, exist_ok=True)
+    json_path.write_text(json.dumps(snapshot, indent=2, sort_keys=True))
+    html_path.write_text(snapshot["normalized_html"])
+    return json_path, html_path
+
+
+def build_summary_markdown(report: dict) -> str:
+    lines = [
+        "# Validation Summary",
+        "",
+        f'- Targets checked: {report["summary"]["total_targets"]}',
+        f'- Passed: {report["summary"]["passed"]}',
+        f'- Failed: {report["summary"]["failed"]}',
+        f'- Errors: {report["summary"]["errors"]}',
+        f'- No baseline: {report["summary"]["no_baseline"]}',
+        "",
+        "| Target | Status | Path Drift | Tag Drift | Notes |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+
+    for result in report["results"]:
+        target_name = f'{result["insurer"]}::{result["domain"]}'
+        notes = "; ".join(result.get("failures", []) or result.get("errors", []) or ["-"])
+        lines.append(
+            f"| {target_name} | {result['status']} | "
+            f"{result.get('path_drift', '-')} | {result.get('tag_drift', '-')} | {notes} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def run_validation(
+    output_dir: Path,
+    baseline_dir: Path | None,
+    max_urls_per_insurer: int,
+    request_timeout: int,
+    max_path_drift: float,
+    max_tag_drift: float,
+) -> int:
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    results = []
+    has_failures = False
+
+    for target in discover_targets(max_urls_per_insurer=max_urls_per_insurer):
+        result = {
+            "insurer": target.insurer,
+            "url": target.url,
+            "domain": target.domain,
+            "source_file": target.source_file,
         }
-    else:
-        return {
-            "unique_in_xml1": "Error",
-            "unique_in_xml2": "Error",
-            "common_paths": "Error",
-        }
 
-
-def validate_xml_with_schema(xml_file, schema_file):
-    xml_doc = etree.parse(xml_file)
-    with open(schema_file, "r") as schema_file_obj:
-        schema_doc = etree.XML(schema_file_obj.read())
-    schema = etree.XMLSchema(schema_doc)
-    if schema.validate(xml_doc):
-        return "XML is valid against the specified schema"
-    else:
-        return f"XML is not valid against the specified schema. Errors: {str(schema.error_log)}"
-
-
-def calculate_levenshtein_distance(xml1, xml2):
-    def get_tag_sequence(element):
-        seq = [element.tag]
-        for child in element:
-            seq.extend(get_tag_sequence(child))
-        return seq
-
-    def levenshtein_distance(seq1, seq2):
-        matcher = difflib.SequenceMatcher(None, seq1, seq2)
-        return 1 - matcher.ratio()
-
-    if xml1:
         try:
-            tree1 = ET.fromstring(xml1)
-        except ET.ParseError as e:
-            pretty_print_red(f"XML Parse Error: {e}")
-            print("Human validation required for the calculate_levenshtein_distance!")
-            tree1 = None
+            html = fetch_html(target.url, request_timeout=request_timeout)
+            current_snapshot = snapshot_from_html(target, html)
+            current_json_path, current_html_path = write_snapshot_artifacts(output_dir, current_snapshot)
+            result["snapshot_json"] = str(current_json_path)
+            result["snapshot_html"] = str(current_html_path)
+        except Exception as exc:
+            result["status"] = "error"
+            result["errors"] = [str(exc)]
+            results.append(result)
+            has_failures = True
+            continue
 
-    if xml2:
-        try:
-            tree2 = ET.fromstring(xml2)
-        except ET.ParseError as e:
-            pretty_print_red(f"XML Parse Error: {e}")
-            print("Human validation required for the calculate_levenshtein_distance!")
-            tree2 = None
+        if baseline_dir is None:
+            result["status"] = "no_baseline"
+            results.append(result)
+            continue
 
-    if tree1 and tree2:
-        seq1 = get_tag_sequence(tree1)
-        seq2 = get_tag_sequence(tree2)
-        distance = levenshtein_distance(seq1, seq2)
-        return distance
-    else:
-        return 0.0
+        baseline_path = baseline_snapshot_path(baseline_dir, current_snapshot)
+        baseline_snapshot = load_snapshot(baseline_path)
+        if baseline_snapshot is None:
+            result["status"] = "no_baseline"
+            results.append(result)
+            continue
+
+        comparison = compare_snapshot_pair(
+            baseline_snapshot=baseline_snapshot,
+            current_snapshot=current_snapshot,
+            max_path_drift=max_path_drift,
+            max_tag_drift=max_tag_drift,
+        )
+        result.update(comparison)
+        results.append(result)
+        if comparison["status"] == "failed":
+            has_failures = True
+
+    summary = {
+        "total_targets": len(results),
+        "passed": sum(1 for result in results if result["status"] == "passed"),
+        "failed": sum(1 for result in results if result["status"] == "failed"),
+        "errors": sum(1 for result in results if result["status"] == "error"),
+        "no_baseline": sum(1 for result in results if result["status"] == "no_baseline"),
+    }
+    report = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "settings": {
+            "max_urls_per_insurer": max_urls_per_insurer,
+            "request_timeout": request_timeout,
+            "max_path_drift": max_path_drift,
+            "max_tag_drift": max_tag_drift,
+        },
+        "summary": summary,
+        "results": results,
+    }
+
+    report_path = output_dir / "report.json"
+    summary_path = output_dir / "summary.md"
+    report_path.write_text(json.dumps(report, indent=2, sort_keys=True))
+    summary_path.write_text(build_summary_markdown(report))
+
+    print(json.dumps(summary, indent=2, sort_keys=True))
+    return 1 if has_failures else 0
 
 
-def compare_dom(xml1, xml2):
-    def compare_dom_elements(elem1, elem2):
-        if elem1.tagName != elem2.tagName:
-            return False
-        if elem1.namespaceURI != elem2.namespaceURI:
-            return False
-        if elem1.attributes.keys() != elem2.attributes.keys():
-            return False
-        for key in elem1.attributes.keys():
-            if elem1.attributes[key].value != elem2.attributes[key].value:
-                return False
-        elem1_children = [
-            child for child in elem1.childNodes if child.nodeType == child.ELEMENT_NODE
-        ]
-        elem2_children = [
-            child for child in elem2.childNodes if child.nodeType == child.ELEMENT_NODE
-        ]
-        if len(elem1_children) != len(elem2_children):
-            return False
-        for child1, child2 in zip(elem1_children, elem2_children):
-            if not compare_dom_elements(child1, child2):
-                return False
-        return True
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--baseline-dir", type=Path)
+    parser.add_argument("--max-urls-per-insurer", type=int, default=2)
+    parser.add_argument("--request-timeout", type=int, default=30)
+    parser.add_argument("--max-path-drift", type=float, default=0.35)
+    parser.add_argument("--max-tag-drift", type=float, default=0.30)
+    args = parser.parse_args()
 
-    if xml1:
-        try:
-            dom1 = parseString(xml1)
-        except ExpatError as e:
-            pretty_print_red(f"XML Parse Error: {e}")
-            print("Human validation required for the compare_dom() check!")
-            return None
+    baseline_dir = args.baseline_dir
+    if baseline_dir is not None and not baseline_dir.exists():
+        baseline_dir = None
 
-    if xml2:
-        try:
-            dom2 = parseString(xml2)
-        except ExpatError as e:
-            pretty_print_red(f"XML Parse Error: {e}")
-            print("Human validation required for the compare_dom() check!")
-            return None
+    return run_validation(
+        output_dir=args.output_dir,
+        baseline_dir=baseline_dir,
+        max_urls_per_insurer=args.max_urls_per_insurer,
+        request_timeout=args.request_timeout,
+        max_path_drift=args.max_path_drift,
+        max_tag_drift=args.max_tag_drift,
+    )
 
-    if xml1 and xml1:
-        root1 = dom1.documentElement
-        root2 = dom2.documentElement
-        return compare_dom_elements(root1, root2)
-    else:
-        return False
+
+if __name__ == "__main__":
+    raise SystemExit(main())
