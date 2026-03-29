@@ -7,3 +7,4 @@ requests
 beautifulsoup4
 scikit-learn
 rapidfuzz
+pypdf

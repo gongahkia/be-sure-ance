@@ -10,7 +10,9 @@
         <InsuranceCard
           title="AIA Singapore"
           link="https://www.aia.com.sg/en/index"
+          insurer-key="aia"
           :plans="filteredAiaPlans"
+          :specialist-resources="specialistResources"
           :expanded="aiaExpanded"
           @toggle="toggleAiaExpanded"
         />
@@ -18,7 +20,9 @@
         <InsuranceCard
           title="China Life Singapore"
           link="https://www.chinalife.com.sg/"
+          insurer-key="china_life"
           :plans="filteredChinaLifePlans"
+          :specialist-resources="specialistResources"
           :expanded="chinaLifeExpanded"
           @toggle="toggleChinaLifeExpanded"
         />
@@ -26,7 +30,9 @@
         <InsuranceCard
           title="Chubb Insurance (Singapore)"
           link="https://www.chubb.com/sg-en/"
+          insurer-key="chubb"
           :plans="filteredChubbPlans"
+          :specialist-resources="specialistResources"
           :expanded="chubbExpanded"
           @toggle="toggleChubbExpanded"
         />
@@ -34,7 +40,9 @@
         <InsuranceCard
           title="Great Eastern Singapore"
           link="https://www.greateasternlife.com/sg/en/personal-insurance.html"
+          insurer-key="great_eastern"
           :plans="filteredGreatEasternPlans"
+          :specialist-resources="specialistResources"
           :expanded="greatEasternExpanded"
           @toggle="toggleGreatEasternExpanded"
         />
@@ -42,7 +50,9 @@
         <InsuranceCard
           title="HSBC Singapore Insurance"
           link="https://www.insurance.hsbc.com.sg/"
+          insurer-key="hsbc"
           :plans="filteredHsbcPlans"
+          :specialist-resources="specialistResources"
           :expanded="hsbcExpanded"
           @toggle="toggleHsbcExpanded"
         />  
@@ -50,7 +60,9 @@
         <InsuranceCard
           title="India International Insurance (Singapore)"
           link="https://www.iii.com.sg/"
+          insurer-key="iii"
           :plans="filteredIiiPlans"
+          :specialist-resources="specialistResources"
           :expanded="iiiExpanded"
           @toggle="toggleIiiExpanded"
         />
@@ -58,7 +70,9 @@
         <InsuranceCard
           title="Singlife"
           link="https://singlife.com/en"
+          insurer-key="singlife"
           :plans="filteredSinglifePlans"
+          :specialist-resources="specialistResources"
           :expanded="singlifeExpanded"
           @toggle="toggleSinglifeExpanded"
         />
@@ -66,7 +80,9 @@
         <InsuranceCard
           title="Sun Life"
           link="https://www.sunlife.com/en/"
+          insurer-key="sunlife"
           :plans="filteredSunlifePlans"
+          :specialist-resources="specialistResources"
           :expanded="sunlifeExpanded"
           @toggle="toggleSunlifeExpanded"
         />
@@ -74,7 +90,9 @@
         <InsuranceCard
           title="Tokio Marine Insurance Group"
           link="https://www.tokiomarine.com/sg/en.html"
+          insurer-key="tokio_marine"
           :plans="filteredTokioMarinePlans"
+          :specialist-resources="specialistResources"
           :expanded="tokioMarineExpanded"
           @toggle="toggleTokioMarineExpanded"
         />
@@ -82,7 +100,9 @@
         <InsuranceCard
           title="United Overseas Insurance Limited (UOI)"
           link="https://www.uoi.com.sg/index.page"
+          insurer-key="uoi"
           :plans="filteredUoiPlans"
+          :specialist-resources="specialistResources"
           :expanded="uoiExpanded"
           @toggle="toggleUoiExpanded"
         />
@@ -121,6 +141,7 @@ const singlifePlans = ref([]);
 const greatEasternPlans = ref([]);
 const hsbcPlans = ref([]);
 const iiiPlans = ref([]);
+const specialistResources = ref([]);
 
 const aiaExpanded = ref(false);
 const uoiExpanded = ref(false);
@@ -146,6 +167,7 @@ async function fetchData() {
     const { data: greatEasternData } = await supabase.from('great_eastern').select('*');
     const { data: hsbcData } = await supabase.from('hsbc').select('*');
     const { data: iiiData } = await supabase.from('iii').select('*');
+    const { data: specialistResourceData } = await supabase.from('specialist_resources').select('*');
 
     aiaPlans.value = aiaData;
     uoiPlans.value = uoiData;
@@ -157,6 +179,7 @@ async function fetchData() {
     greatEasternPlans.value = greatEasternData;
     hsbcPlans.value = hsbcData;
     iiiPlans.value = iiiData;
+    specialistResources.value = specialistResourceData || [];
 
   } catch (error) {
     console.error('Error fetching data:', error);

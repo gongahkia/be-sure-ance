@@ -66,5 +66,22 @@ BEGIN
                 plan_url TEXT,
                 product_brochure_url TEXT
             )', tbl_name);
-    END LOOP;
+END LOOP;
 END $$;
+
+CREATE TABLE IF NOT EXISTS specialist_resources (
+    id SERIAL PRIMARY KEY,
+    insurer TEXT NOT NULL,
+    plan_name TEXT NOT NULL,
+    resource_type TEXT NOT NULL,
+    resource_title TEXT,
+    resource_url TEXT NOT NULL,
+    resource_description TEXT,
+    resource_keywords TEXT[],
+    source_url TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_specialist_resources_lookup
+ON specialist_resources (insurer, plan_name);
+
+GRANT ALL ON TABLE specialist_resources TO anon, authenticated, service_role;
