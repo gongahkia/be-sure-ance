@@ -9,7 +9,7 @@ module.exports = [
   js.configs.recommended,
   ...vue.configs['flat/essential'],
   {
-    files: ['src/**/*.{js,vue}', 'vite.config.js'],
+    files: ['src/**/*.{js,vue}', 'scripts/**/*.mjs', 'vite.config.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',

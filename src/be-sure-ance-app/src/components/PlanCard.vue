@@ -63,6 +63,7 @@
         >
           Brochure
         </a>
+        <a v-if="planPagePath" :href="planPagePath">Plan page</a>
       </div>
 
       <div class="qualitative-sections">
@@ -173,6 +174,11 @@ const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
 const exclusions = computed(() => factItems(props.facts, 'exclusions'))
 const sourceNotes = computed(() => factItems(props.facts, 'source_notes'))
 const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
+const planPagePath = computed(() =>
+  props.plan?.providerKey && props.plan?.plan_slug
+    ? `/plan/${encodeURIComponent(props.plan.providerKey)}/${encodeURIComponent(props.plan.plan_slug)}`
+    : '',
+)
 const profileProvenance = computed(() => profileProvenanceEntry(props.plan))
 const highlightProvenance = computed(() =>
   provenanceEntriesForFields(props.facts, [

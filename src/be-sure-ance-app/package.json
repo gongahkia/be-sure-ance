@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint \"src/**/*.{js,vue}\" vite.config.js",
-    "format": "prettier --write \"src/**/*.{js,vue,css}\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",
-    "format:check": "prettier --check \"src/**/*.{js,vue,css}\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",
+    "build": "vite build && node scripts/generate-static-pages.mjs",
+    "lint": "eslint \"src/**/*.{js,vue}\" \"scripts/**/*.mjs\" vite.config.js",
+    "format": "prettier --write \"src/**/*.{js,vue,css}\" \"scripts/**/*.mjs\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",
+    "format:check": "prettier --check \"src/**/*.{js,vue,css}\" \"scripts/**/*.mjs\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",
     "preview": "vite preview"
   },
   "dependencies": {

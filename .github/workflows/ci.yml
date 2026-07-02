@@ -57,4 +57,5 @@ jobs:
         env:
           VITE_SUPABASE_URL: https://example.supabase.co
           VITE_SUPABASE_ANON_KEY: anon
+          VITE_SITE_ORIGIN: https://example.com
         run: npm run build

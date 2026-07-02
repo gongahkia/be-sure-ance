@@ -24,6 +24,7 @@ Frontend variables are public and are bundled into the Vue app:
 ```sh
 VITE_SUPABASE_URL=
 VITE_SUPABASE_ANON_KEY=
+VITE_SITE_ORIGIN=
 ```
 
 Scraper/backend variables are private and must stay in local `.env` or GitHub Actions secrets:
@@ -36,7 +37,7 @@ BROCHURE_STORAGE_BUCKET=plan-brochures
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and optional `VITE_PDF_BRIEF_ENDPOINT`.
+Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, and optional `VITE_PDF_BRIEF_ENDPOINT`.
 
 GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
 
@@ -50,10 +51,16 @@ python -m unittest discover -s tests -p "test_*.py"
 npm --prefix src/be-sure-ance-app ci
 npm --prefix src/be-sure-ance-app run lint
 npm --prefix src/be-sure-ance-app run format:check
-(cd src/be-sure-ance-app && VITE_SUPABASE_URL=https://example.supabase.co VITE_SUPABASE_ANON_KEY=anon npm run build)
+(cd src/be-sure-ance-app && VITE_SUPABASE_URL=https://example.supabase.co VITE_SUPABASE_ANON_KEY=anon VITE_SITE_ORIGIN=https://example.com npm run build)
 pre-commit run --all-files
 uvicorn src.backend.pdf_brief_api:app --reload
 ```
+
+## Static plan pages and sitemap
+
+`npm run build` runs Vite, then generates `dist/plan/<insurer>/<plan-slug>/index.html`, `dist/sitemap.xml`, and `dist/robots.txt`. With real Supabase public env, the generator reads `plans` and `plan_facts`; with placeholder env it emits only the key-route sitemap so CI stays offline.
+
+Set `VITE_SITE_ORIGIN` to the canonical production origin before Phase 5 launch. Submit `<origin>/sitemap.xml` in Google Search Console and Bing Webmaster Tools only after deployment is restored.
 
 ## Screenshots
 

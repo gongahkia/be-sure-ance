@@ -173,7 +173,7 @@ const errorMessage = ref('')
 const searchQuery = ref('')
 const matrixSearchQuery = ref('')
 const currentPath = ref(window.location.pathname)
-const activeProviderKey = ref(providers[0].key)
+const activeProviderKey = ref(providerKeyFromPath(window.location.pathname) || providers[0].key)
 const selectedPlanKeys = ref([])
 const plansByProvider = ref({})
 const comparisonFacts = ref([])
@@ -237,9 +237,10 @@ onBeforeUnmount(() => {
 const activeView = computed(() =>
   currentPath.value === '/matrix/panel-hospitals' ? 'panelMatrix' : 'workspace',
 )
+const routePlanTarget = computed(() => parsePlanRoute(currentPath.value))
 
 function syncPathFromLocation() {
-  currentPath.value = window.location.pathname
+  setCurrentPath(window.location.pathname)
 }
 
 function navigateTo(path, event) {
@@ -250,7 +251,42 @@ function navigateTo(path, event) {
   if (window.location.pathname !== path) {
     window.history.pushState({}, '', path)
   }
+  setCurrentPath(path)
+}
+
+function setCurrentPath(path) {
   currentPath.value = path
+  const providerKey = providerKeyFromPath(path)
+  if (providerKey) {
+    activeProviderKey.value = providerKey
+  }
+}
+
+function providerKeyFromPath(path) {
+  const routeTarget = parsePlanRoute(path)
+  if (routeTarget && providers.some((provider) => provider.key === routeTarget.providerKey)) {
+    return routeTarget.providerKey
+  }
+  return ''
+}
+
+function parsePlanRoute(path) {
+  const match = path.match(/^\/plan\/([^/]+)\/([^/]+)\/?$/)
+  if (!match) {
+    return null
+  }
+  return {
+    providerKey: decodePathPart(match[1]),
+    planSlug: decodePathPart(match[2]),
+  }
+}
+
+function decodePathPart(value) {
+  try {
+    return decodeURIComponent(value)
+  } catch {
+    return value
+  }
 }
 
 function groupPlansByProvider(rows) {
@@ -337,6 +373,11 @@ const totalPlanCount = computed(() =>
 
 const visiblePlans = computed(() =>
   enrichedPlans.value.filter((plan) => {
+    const routeTarget = routePlanTarget.value
+    if (routeTarget) {
+      return plan.providerKey === routeTarget.providerKey && plan.plan_slug === routeTarget.planSlug
+    }
+
     if (plan.providerKey !== activeProviderKey.value) {
       return false
     }
@@ -367,6 +408,9 @@ const visiblePlans = computed(() =>
 )
 
 const emptyPlanMessage = computed(() => {
+  if (routePlanTarget.value) {
+    return 'No plan matches this static plan URL yet.'
+  }
   const providerPlanCount = (plansByProvider.value[activeProviderKey.value] || []).length
   if (providerPlanCount === 0 && !searchQuery.value.trim()) {
     return 'No supported plans are loaded for this provider yet.'
