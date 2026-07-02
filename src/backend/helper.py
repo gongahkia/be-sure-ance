@@ -14,6 +14,12 @@ import requests
 from dotenv import load_dotenv
 from supabase import create_client
 
+from src.lib.brochure_versions import (
+    build_change_alert,
+    build_version_row,
+    extract_brochure_text,
+    version_change_status,
+)
 from src.lib.http_identity import BOT_USER_AGENT
 
 # ------ functions ------
@@ -340,6 +346,85 @@ def upsert_plan_fact(row):
     return response
 
 
+def fetch_latest_brochure_version(insurer, plan_slug, source_url):
+    response = (
+        require_client()
+        .table("brochure_version_history")
+        .select("*")
+        .eq("insurer", insurer)
+        .eq("plan_slug", plan_slug)
+        .eq("source_url", source_url)
+        .order("captured_at", desc=True)
+        .limit(1)
+        .execute()
+    )
+    rows = response.data or []
+    return rows[0] if rows else None
+
+
+def update_brochure_version_seen(version_id, captured_at):
+    return (
+        require_client()
+        .table("brochure_version_history")
+        .update({"last_seen_at": captured_at})
+        .eq("id", version_id)
+        .execute()
+    )
+
+
+def upsert_brochure_version(row):
+    return (
+        require_client()
+        .table("brochure_version_history")
+        .upsert([row], on_conflict="insurer,plan_slug,source_url,sha256")
+        .execute()
+    )
+
+
+def upsert_brochure_change_alert(row):
+    return (
+        require_client()
+        .table("brochure_change_alerts")
+        .upsert(
+            [row],
+            on_conflict="insurer,plan_slug,source_url,previous_sha256,current_sha256",
+        )
+        .execute()
+    )
+
+
+def record_brochure_version(insurer, plan, fact_row, content, captured_at):
+    metadata = fact_row["field_value"]["value"]
+    plan = {
+        **plan,
+        "plan_name": plan.get("plan_name") or fact_row["plan_slug"],
+    }
+    previous_version = fetch_latest_brochure_version(
+        insurer,
+        plan["plan_slug"],
+        metadata["url"],
+    )
+    current_version = build_version_row(
+        insurer=insurer,
+        plan=plan,
+        metadata=metadata,
+        captured_at=captured_at,
+        extracted_text=extract_brochure_text(content),
+    )
+    status = version_change_status(previous_version, metadata["sha256"])
+    if status == "unchanged":
+        if previous_version.get("id") is not None:
+            update_brochure_version_seen(previous_version["id"], captured_at)
+        return {"status": status, "version": previous_version, "alert": None}
+
+    upsert_brochure_version(current_version)
+    alert = None
+    if status == "changed":
+        alert = build_change_alert(previous_version, current_version, detected_at=captured_at)
+        upsert_brochure_change_alert(alert)
+    return {"status": status, "version": current_version, "alert": alert}
+
+
 def capture_brochure_for_plan(insurer, plan, session=None, captured_at=None):
     source_url = plan.get("product_brochure_url")
     if not source_url:
@@ -358,6 +443,10 @@ def capture_brochure_for_plan(insurer, plan, session=None, captured_at=None):
             metadata["content_type"],
         )
         upsert_plan_fact(fact_row)
+        try:
+            record_brochure_version(insurer, plan, fact_row, download["content"], captured_at)
+        except Exception as error:
+            print(f"Brochure version tracking skipped for {insurer}/{plan['plan_slug']}: {error}")
         print(f"Brochure captured for {insurer}/{plan['plan_slug']}: {metadata['sha256']}")
         return fact_row
     except Exception as error:

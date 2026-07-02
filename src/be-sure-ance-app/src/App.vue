@@ -137,6 +137,7 @@
             :comparison-fact="plan.comparisonFact"
             :resources="plan.resources"
             :regulatory-events="plan.regulatoryEvents"
+            :brochure-changes="plan.brochureChanges"
             :selected="selectedPlanKeys.includes(plan.key)"
             @toggle-select="togglePlanSelection"
           />
@@ -184,6 +185,7 @@ const planFacts = ref([])
 const specialistResources = ref([])
 const claimTurnaroundMetrics = ref([])
 const masRegulatoryEvents = ref([])
+const brochureChangeAlerts = ref([])
 
 async function fetchData() {
   if (!supabase) {
@@ -201,6 +203,7 @@ async function fetchData() {
       { data: resourceData, error: resourceError },
       { data: claimData, error: claimError },
       { data: regulatoryData, error: regulatoryError },
+      { data: brochureChangeData, error: brochureChangeError },
     ] = await Promise.all([
       supabase.from('plans').select('*'),
       supabase.from('plan_comparison_facts').select('*'),
@@ -208,6 +211,7 @@ async function fetchData() {
       supabase.from('specialist_resources').select('*'),
       supabase.from('claim_turnaround_metrics').select('*'),
       supabase.from('mas_regulatory_events').select('*'),
+      supabase.from('brochure_change_alerts').select('*'),
     ])
 
     if (planError) {
@@ -228,6 +232,9 @@ async function fetchData() {
     if (regulatoryError) {
       throw regulatoryError
     }
+    if (brochureChangeError) {
+      throw brochureChangeError
+    }
 
     plansByProvider.value = groupPlansByProvider(planData || [])
     comparisonFacts.value = comparisonData || []
@@ -235,6 +242,7 @@ async function fetchData() {
     specialistResources.value = resourceData || []
     claimTurnaroundMetrics.value = claimData || []
     masRegulatoryEvents.value = regulatoryData || []
+    brochureChangeAlerts.value = brochureChangeData || []
   } catch (error) {
     errorMessage.value = error?.message || 'Unable to load qualitative plan data.'
   } finally {
@@ -368,6 +376,22 @@ const regulatoryEventMap = computed(() =>
   }, {}),
 )
 
+const brochureChangeMap = computed(() => groupBrochureChangesByPlan(brochureChangeAlerts.value))
+
+function groupBrochureChangesByPlan(rows) {
+  return rows.reduce((groupedChanges, change) => {
+    if (!change?.insurer || !change?.plan_slug) {
+      return groupedChanges
+    }
+    const key = buildPlanKey(change.insurer, change.plan_slug)
+    if (!groupedChanges[key]) {
+      groupedChanges[key] = []
+    }
+    groupedChanges[key].push(change)
+    return groupedChanges
+  }, {})
+}
+
 const enrichedPlans = computed(() =>
   providers.flatMap((provider) =>
     (plansByProvider.value[provider.key] || []).map((plan) => {
@@ -382,6 +406,7 @@ const enrichedPlans = computed(() =>
         facts: planFactMap.value[factKey] || {},
         resources: specialistResourceMap.value[key] || [],
         regulatoryEvents: regulatoryEventMap.value[provider.key] || [],
+        brochureChanges: brochureChangeMap.value[factKey] || [],
       }
     }),
   ),

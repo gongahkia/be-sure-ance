@@ -27,6 +27,7 @@ Current behavior:
 - Frontend reads public `plans`, `plan_facts`, and provider-resource data with the Supabase anon key.
 - Scrapers write only plan/source metadata with server-side Supabase credentials.
 - MAS regulatory-event rows are source-linked and dated; low-confidence carrier matches must be shown as review-needed context, not definitive carrier findings.
+- Brochure change-alert rows store source URLs, hashes, timestamps, generated diffs, and alert status only; no subscriber, client, or agent PII is stored.
 
 Before relaunch:
 

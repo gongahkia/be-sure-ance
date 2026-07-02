@@ -84,6 +84,49 @@ Public clients can read `plan_facts`. Only `service_role` can write.
 
 `match_status = "needs_review"` must be shown as a possible carrier match, not a definitive finding. Rows are regulatory context only and are not advice, ratings, suitability rankings, or carrier recommendations.
 
+## `brochure_version_history`
+
+`brochure_version_history` stores source brochure hash history by insurer, plan, URL, and capture timestamp.
+
+- `insurer`
+- `plan_slug`
+- `plan_name`
+- `source_url`
+- `sha256`
+- `storage_bucket`
+- `storage_key`
+- `size_bytes`
+- `content_type`
+- `source_last_modified_at`
+- `first_seen_at`
+- `last_seen_at`
+- `captured_at`
+- `extracted_text`
+- `text_sha256`
+
+Rows are deduped on `(insurer, plan_slug, source_url, sha256)`. Unchanged captures update `last_seen_at`; changed hashes create a new version row.
+
+## `brochure_change_alerts`
+
+`brochure_change_alerts` stores deduped change alerts generated from adjacent brochure versions.
+
+- `insurer`
+- `plan_slug`
+- `plan_name`
+- `source_url`
+- `previous_sha256`
+- `current_sha256`
+- `previous_captured_at`
+- `current_captured_at`
+- `change_detected_at`
+- `alert_status`
+- `summary`
+- `text_diff`
+- `html_diff`
+- `created_at`
+
+`alert_status` is prepared for email or Telegram dispatch hooks with `pending`, `sent`, and `suppressed` states. No subscriber, client, or agent PII is stored in these rows.
+
 ## `moh_institutions`
 
 Required columns:
@@ -117,6 +160,8 @@ brochures/{insurer}/{plan_slug}/{sha256}.pdf
 ```
 
 Each successful capture writes a `plan_facts` row with `field_name = "brochure_metadata"` and `source_type = "brochure_pdf"`. `field_value.value` stores `url`, `sha256`, `storage_bucket`, `storage_key`, `size_bytes`, `content_type`, `fetched_at`, and `last_modified_at`.
+
+The same capture writes `brochure_version_history` and, when the latest stored hash differs, creates one `brochure_change_alerts` row with source URL, previous/current hashes, timestamps, and text/HTML redline output where PDF text extraction succeeds.
 
 ## Fact Taxonomy V1
 

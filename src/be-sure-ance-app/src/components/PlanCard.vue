@@ -106,6 +106,8 @@
           <FactProvenance :entries="brochureProvenance" />
         </section>
 
+        <BrochureChangeList :changes="brochureChanges" />
+
         <section v-if="sourceNotes.length > 0">
           <h4>Source notes</h4>
           <p>{{ listText(sourceNotes) }}</p>
@@ -137,6 +139,7 @@
 <script setup>
 import { computed } from 'vue'
 
+import BrochureChangeList from './BrochureChangeList.vue'
 import FactProvenance from './FactProvenance.vue'
 import RegulatoryEventList from './RegulatoryEventList.vue'
 import { safeExternalUrl } from '../utils/links'
@@ -163,6 +166,10 @@ const props = defineProps({
   comparisonFact: Object,
   resources: Array,
   regulatoryEvents: {
+    type: Array,
+    default: () => [],
+  },
+  brochureChanges: {
     type: Array,
     default: () => [],
   },

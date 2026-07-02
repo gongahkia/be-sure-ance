@@ -1,5 +1,7 @@
 import hashlib
 import unittest
+from collections import defaultdict
+from unittest.mock import patch
 
 import src.backend.helper as helper
 
@@ -45,27 +47,69 @@ class FakeStorage:
 
 
 class FakeQuery:
-    def __init__(self):
-        self.upserts = []
+    def __init__(self, parent, table_name):
+        self.parent = parent
+        self.table_name = table_name
+        self.filters = []
+        self.limit_count = None
+        self.update_payload = None
+        self.upsert_payload = None
 
     def upsert(self, rows, on_conflict):
-        self.upserts.append((rows, on_conflict))
+        self.upsert_payload = (rows, on_conflict)
+        self.parent.upserts[self.table_name].append((rows, on_conflict))
+        return self
+
+    def select(self, columns):
+        self.parent.calls[self.table_name].append(("select", columns))
+        return self
+
+    def eq(self, column, value):
+        self.filters.append((column, value))
+        self.parent.calls[self.table_name].append(("eq", column, value))
+        return self
+
+    def order(self, column, desc=False):
+        self.parent.calls[self.table_name].append(("order", column, desc))
+        return self
+
+    def limit(self, count):
+        self.limit_count = count
+        self.parent.calls[self.table_name].append(("limit", count))
+        return self
+
+    def update(self, payload):
+        self.update_payload = payload
+        self.parent.calls[self.table_name].append(("update", payload))
         return self
 
     def execute(self):
-        return type("Response", (), {"data": [{"ok": True}]})()
+        if self.update_payload is not None:
+            self.parent.updates[self.table_name].append((self.update_payload, self.filters))
+            return type("Response", (), {"data": [{"ok": True}]})()
+        if self.upsert_payload is not None:
+            return type("Response", (), {"data": self.upsert_payload[0]})()
+        rows = list(self.parent.select_rows[self.table_name])
+        for column, value in self.filters:
+            rows = [row for row in rows if row.get(column) == value]
+        if self.limit_count is not None:
+            rows = rows[: self.limit_count]
+        return type("Response", (), {"data": rows})()
 
 
 class FakeSupabase:
     def __init__(self):
         self.bucket = FakeStorageBucket()
         self.storage = FakeStorage(self.bucket)
-        self.query = FakeQuery()
         self.tables = []
+        self.upserts = defaultdict(list)
+        self.updates = defaultdict(list)
+        self.calls = defaultdict(list)
+        self.select_rows = defaultdict(list)
 
     def table(self, table_name):
         self.tables.append(table_name)
-        return self.query
+        return FakeQuery(self, table_name)
 
 
 class BrochureCaptureTests(unittest.TestCase):
@@ -114,12 +158,13 @@ class BrochureCaptureTests(unittest.TestCase):
             )
         )
 
-        fact = helper.capture_brochure_for_plan(
-            "aia",
-            plan,
-            session=session,
-            captured_at="2026-07-02T00:00:00Z",
-        )
+        with patch("src.backend.helper.extract_brochure_text", return_value="Sample text"):
+            fact = helper.capture_brochure_for_plan(
+                "aia",
+                plan,
+                session=session,
+                captured_at="2026-07-02T00:00:00Z",
+            )
 
         expected_key = f"brochures/aia/sample-plan/{content_hash}.pdf"
         self.assertEqual(fact["field_name"], "brochure_metadata")
@@ -131,8 +176,18 @@ class BrochureCaptureTests(unittest.TestCase):
         self.assertEqual(helper.supabase.bucket.uploads[0][0], expected_key)
         self.assertEqual(helper.supabase.bucket.uploads[0][1], content)
         self.assertEqual(helper.supabase.bucket.uploads[0][2]["upsert"], "true")
-        self.assertEqual(helper.supabase.tables, ["plan_facts"])
-        self.assertEqual(helper.supabase.query.upserts[0][1], "insurer,plan_slug,field_name")
+        self.assertEqual(
+            helper.supabase.tables,
+            ["plan_facts", "brochure_version_history", "brochure_version_history"],
+        )
+        self.assertEqual(
+            helper.supabase.upserts["plan_facts"][0][1],
+            "insurer,plan_slug,field_name",
+        )
+        version_row = helper.supabase.upserts["brochure_version_history"][0][0][0]
+        self.assertEqual(version_row["sha256"], content_hash)
+        self.assertEqual(version_row["source_url"], "https://example.com/sample.pdf")
+        self.assertEqual(helper.supabase.upserts["brochure_change_alerts"], [])
 
     def test_failed_brochure_capture_returns_none_without_upsert(self):
         result = helper.capture_brochure_for_plan(
@@ -147,7 +202,89 @@ class BrochureCaptureTests(unittest.TestCase):
 
         self.assertIsNone(result)
         self.assertEqual(helper.supabase.bucket.uploads, [])
-        self.assertEqual(helper.supabase.query.upserts, [])
+        self.assertEqual(dict(helper.supabase.upserts), {})
+
+    def test_record_brochure_version_updates_seen_for_unchanged_hash(self):
+        content = b"current"
+        content_hash = hashlib.sha256(content).hexdigest()
+        captured_at = "2026-07-02T00:00:00Z"
+        plan = {
+            "plan_name": "Sample Plan",
+            "plan_slug": "sample-plan",
+            "product_brochure_url": "https://example.com/sample.pdf",
+        }
+        fact_row = helper.build_brochure_metadata_fact(
+            "aia",
+            plan,
+            {"content": content, "content_type": "application/pdf", "last_modified_at": None},
+            captured_at,
+        )
+        helper.supabase.select_rows["brochure_version_history"] = [
+            {
+                "id": 7,
+                "insurer": "aia",
+                "plan_slug": "sample-plan",
+                "source_url": "https://example.com/sample.pdf",
+                "sha256": content_hash,
+                "captured_at": "2026-07-01T00:00:00Z",
+            }
+        ]
+
+        with patch("src.backend.helper.extract_brochure_text", return_value="Current"):
+            result = helper.record_brochure_version("aia", plan, fact_row, content, captured_at)
+
+        self.assertEqual(result["status"], "unchanged")
+        self.assertEqual(
+            helper.supabase.updates["brochure_version_history"],
+            [({"last_seen_at": captured_at}, [("id", 7)])],
+        )
+        self.assertEqual(helper.supabase.upserts["brochure_change_alerts"], [])
+
+    def test_record_brochure_version_creates_alert_for_changed_hash(self):
+        content = b"current"
+        content_hash = hashlib.sha256(content).hexdigest()
+        captured_at = "2026-07-02T00:00:00Z"
+        plan = {
+            "plan_name": "Sample Plan",
+            "plan_slug": "sample-plan",
+            "product_brochure_url": "https://example.com/sample.pdf",
+        }
+        fact_row = helper.build_brochure_metadata_fact(
+            "aia",
+            plan,
+            {"content": content, "content_type": "application/pdf", "last_modified_at": None},
+            captured_at,
+        )
+        helper.supabase.select_rows["brochure_version_history"] = [
+            {
+                "id": 7,
+                "insurer": "aia",
+                "plan_slug": "sample-plan",
+                "plan_name": "Sample Plan",
+                "source_url": "https://example.com/sample.pdf",
+                "sha256": "previous-hash",
+                "captured_at": "2026-07-01T00:00:00Z",
+                "size_bytes": 10,
+                "extracted_text": "old limit",
+            }
+        ]
+
+        with patch("src.backend.helper.extract_brochure_text", return_value="new limit"):
+            result = helper.record_brochure_version("aia", plan, fact_row, content, captured_at)
+
+        self.assertEqual(result["status"], "changed")
+        self.assertEqual(
+            helper.supabase.upserts["brochure_version_history"][0][1],
+            "insurer,plan_slug,source_url,sha256",
+        )
+        alert = helper.supabase.upserts["brochure_change_alerts"][0][0][0]
+        self.assertEqual(alert["previous_sha256"], "previous-hash")
+        self.assertEqual(alert["current_sha256"], content_hash)
+        self.assertEqual(alert["source_url"], "https://example.com/sample.pdf")
+        self.assertEqual(alert["change_detected_at"], captured_at)
+        self.assertEqual(alert["alert_status"], "pending")
+        self.assertIn("-old limit", alert["text_diff"])
+        self.assertIn("+new limit", alert["text_diff"])
 
 
 if __name__ == "__main__":
