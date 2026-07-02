@@ -8,6 +8,22 @@
           Use the workspace to shortlist plans, open panel and specialist directories, and frame
           qualitative coverage signals instead of brochure-by-brochure guesswork.
         </p>
+        <nav class="route-tabs" aria-label="Workspace views">
+          <a
+            href="/"
+            :class="{ active: activeView === 'workspace' }"
+            @click="navigateTo('/', $event)"
+          >
+            Plan workspace
+          </a>
+          <a
+            href="/matrix/panel-hospitals"
+            :class="{ active: activeView === 'panelMatrix' }"
+            @click="navigateTo('/matrix/panel-hospitals', $event)"
+          >
+            Panel hospitals
+          </a>
+        </nav>
       </div>
 
       <div class="hero-stats">
@@ -63,6 +79,14 @@
 
     <section v-else-if="errorMessage" class="status-panel error">
       {{ errorMessage }}
+    </section>
+
+    <section v-else-if="activeView === 'panelMatrix'" class="matrix-workspace">
+      <PanelHospitalMatrix
+        v-model:query="matrixSearchQuery"
+        :plans="enrichedPlans"
+        :providers="providers"
+      />
     </section>
 
     <section v-else class="workspace">
@@ -128,10 +152,11 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
 import ComparisonTable from './components/ComparisonTable.vue'
+import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
 import PlanCard from './components/PlanCard.vue'
 import ProviderRail from './components/ProviderRail.vue'
 import { buildPlanKey, providers } from './lib/providers'
@@ -144,6 +169,8 @@ const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supa
 const loading = ref(true)
 const errorMessage = ref('')
 const searchQuery = ref('')
+const matrixSearchQuery = ref('')
+const currentPath = ref(window.location.pathname)
 const activeProviderKey = ref(providers[0].key)
 const selectedPlanKeys = ref([])
 const plansByProvider = ref({})
@@ -196,7 +223,33 @@ async function fetchData() {
   }
 }
 
-onMounted(fetchData)
+onMounted(() => {
+  fetchData()
+  window.addEventListener('popstate', syncPathFromLocation)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('popstate', syncPathFromLocation)
+})
+
+const activeView = computed(() =>
+  currentPath.value === '/matrix/panel-hospitals' ? 'panelMatrix' : 'workspace',
+)
+
+function syncPathFromLocation() {
+  currentPath.value = window.location.pathname
+}
+
+function navigateTo(path, event) {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+    return
+  }
+  event.preventDefault()
+  if (window.location.pathname !== path) {
+    window.history.pushState({}, '', path)
+  }
+  currentPath.value = path
+}
 
 function groupPlansByProvider(rows) {
   const groupedPlans = Object.fromEntries(providers.map((provider) => [provider.key, []]))
@@ -411,6 +464,27 @@ h1 {
   font-size: 1.05rem;
 }
 
+.route-tabs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.route-tabs a {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  color: #f6fbff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.route-tabs a.active {
+  background: #f6fbff;
+  color: var(--ink);
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -484,6 +558,10 @@ h1 {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
   gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.matrix-workspace {
   margin-top: 1.5rem;
 }
 
