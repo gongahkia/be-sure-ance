@@ -19,6 +19,7 @@ def sample_plan(name="AIA Health Shield", insurer="aia"):
     return {
         "insurer": insurer,
         "providerName": insurer.upper(),
+        "canonical_carrier_name": "AIA SINGAPORE PRIVATE LIMITED",
         "plan_name": name,
         "facts": {
             "coverage_tags": {
@@ -83,6 +84,7 @@ class PdfBriefTests(unittest.TestCase):
         self.assertIn("Be-sure-ance Client Brief", text)
         self.assertIn("Generated at 2026-07-02T00:00:00+00:00", text)
         self.assertIn("AIA Health Shield", text)
+        self.assertIn("AIA SINGAPORE PRIVATE LIMITED", text)
         self.assertIn("Singapore General Hospital", text)
         self.assertIn("10 days (published target)", text)
         self.assertIn("https://example.com/brochure.pdf", text)

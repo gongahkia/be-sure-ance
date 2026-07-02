@@ -93,6 +93,7 @@ class LocalDockerStackTests(unittest.TestCase):
             "plans",
             "plan_facts",
             "comparison_shares",
+            "carrier_canonical_names",
             "HealthShield Gold Max Demo",
             "Mount Elizabeth Novena Hospital",
         ):

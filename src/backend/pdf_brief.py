@@ -173,7 +173,9 @@ def base_table_style() -> TableStyle:
 
 
 def plan_heading(plan: dict) -> str:
-    provider = safe_text(plan.get("providerName") or plan.get("insurer"))
+    provider = safe_text(
+        plan.get("canonical_carrier_name") or plan.get("providerName") or plan.get("insurer")
+    )
     plan_name = safe_text(plan.get("plan_name"))
     return escape(f"{provider}: {plan_name}" if provider else plan_name)
 

@@ -224,6 +224,7 @@ const specialistResources = ref([])
 const claimTurnaroundMetrics = ref([])
 const masRegulatoryEvents = ref([])
 const brochureChangeAlerts = ref([])
+const carrierCanonicalNames = ref([])
 
 async function fetchData() {
   if (!supabase) {
@@ -242,6 +243,7 @@ async function fetchData() {
       { data: claimData, error: claimError },
       { data: regulatoryData, error: regulatoryError },
       { data: brochureChangeData, error: brochureChangeError },
+      { data: carrierCanonicalData, error: carrierCanonicalError },
     ] = await Promise.all([
       supabase.from('plans').select('*'),
       supabase.from('plan_comparison_facts').select('*'),
@@ -250,6 +252,7 @@ async function fetchData() {
       supabase.from('claim_turnaround_metrics').select('*'),
       supabase.from('mas_regulatory_events').select('*'),
       supabase.from('brochure_change_alerts').select('*'),
+      supabase.from('carrier_canonical_names').select('*'),
     ])
 
     if (planError) {
@@ -273,6 +276,9 @@ async function fetchData() {
     if (brochureChangeError) {
       throw brochureChangeError
     }
+    if (carrierCanonicalError) {
+      throw carrierCanonicalError
+    }
 
     plansByProvider.value = groupPlansByProvider(planData || [])
     comparisonFacts.value = comparisonData || []
@@ -281,6 +287,7 @@ async function fetchData() {
     claimTurnaroundMetrics.value = claimData || []
     masRegulatoryEvents.value = regulatoryData || []
     brochureChangeAlerts.value = brochureChangeData || []
+    carrierCanonicalNames.value = carrierCanonicalData || []
     await loadShareFromRoute()
   } catch (error) {
     errorMessage.value = error?.message || 'Unable to load qualitative plan data.'
@@ -436,6 +443,9 @@ const regulatoryEventMap = computed(() =>
 )
 
 const brochureChangeMap = computed(() => groupBrochureChangesByPlan(brochureChangeAlerts.value))
+const carrierCanonicalMap = computed(() =>
+  Object.fromEntries(carrierCanonicalNames.value.map((carrier) => [carrier.carrier_key, carrier])),
+)
 
 function groupBrochureChangesByPlan(rows) {
   return rows.reduce((groupedChanges, change) => {
@@ -466,6 +476,7 @@ const enrichedPlans = computed(() =>
         resources: specialistResourceMap.value[key] || [],
         regulatoryEvents: regulatoryEventMap.value[provider.key] || [],
         brochureChanges: brochureChangeMap.value[factKey] || [],
+        carrierCanonical: carrierCanonicalMap.value[provider.key] || null,
       }
     }),
   ),

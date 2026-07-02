@@ -79,6 +79,8 @@ function publicPlanPayload(plan) {
   return {
     insurer: plan.insurer,
     providerName: plan.providerName,
+    canonical_carrier_name: plan.carrierCanonical?.canonical_name,
+    carrier_mismatch_flags: plan.carrierCanonical?.mismatch_flags || [],
     plan_name: plan.plan_name,
     plan_slug: plan.plan_slug,
     facts: plan.facts,

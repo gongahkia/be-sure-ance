@@ -12,6 +12,8 @@
 
 `moh_institutions` is the canonical MOH institution lookup table for panel-hospital normalization. It is populated from the data.gov.sg MOH NEHR participating-institutions dataset (`d_2864c425e22ddb89969585820629adf8`) and stores source-backed names, aliases, source record IDs, and scrape timestamps.
 
+`carrier_canonical_names` stores MAS FID and LIA member-directory cross-checks for tracked carrier keys. It is refreshed by the weekly scraper workflow and is used to expose source-backed canonical carrier names and review flags in UI/export surfaces.
+
 ## `plan_facts`
 
 Required columns:
@@ -85,6 +87,36 @@ Public clients can read `plan_facts`. Only `service_role` can write.
 - `last_verified_at`
 
 `match_status = "needs_review"` must be shown as a possible carrier match, not a definitive finding. Rows are regulatory context only and are not advice, ratings, suitability rankings, or carrier recommendations.
+
+## `carrier_canonical_names`
+
+`carrier_canonical_names` stores source-backed canonical carrier names and aliases for tracked carrier keys.
+
+- `carrier_key`
+- `display_name`
+- `canonical_name`
+- `aliases`
+- `mas_entity_name`
+- `mas_detail_url`
+- `mas_licence_types`
+- `mas_match_status`
+- `lia_member_name`
+- `lia_member_url`
+- `lia_member_category`
+- `lia_match_status`
+- `source_urls`
+- `mismatch_flags`
+- `scraped_at`
+- `last_verified_at`
+
+Sources:
+
+- MAS Financial Institutions Directory, Insurance sector: `https://eservices.mas.gov.sg/fid/institution?sector=Insurance`
+- LIA Singapore member companies: `https://www.lia.org.sg/about-us/member-companies/`
+
+Rows are upserted by `carrier_key`. The weekly scraper queries MAS FID with tracked carrier aliases and parses LIA ordinary-member links. `canonical_name` prefers a matched MAS FID entity, then a matched LIA member name, then the configured display name.
+
+`mas_match_status` and `lia_match_status` use `matched`, `needs_review`, or `unmatched`. `mismatch_flags` is non-empty when a source is missing, low-confidence, or when MAS and LIA source names diverge materially. UI and exports may display canonical names, but source flags must remain available so unresolved mismatches are not hidden.
 
 ## `comparison_shares`
 

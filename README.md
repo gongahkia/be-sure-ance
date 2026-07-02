@@ -15,6 +15,7 @@ The app does not provide financial advice, insurance advice, quotes, recommendat
 | Supported scheduled carriers | 10 | Test-backed from `src/scrapers/registry.py`; 17 more carriers remain experimental opt-in scrapers. |
 | MOH institutions available for panel normalization | 5,305 | Latest local dry-run on 2026-07-02; production refresh still depends on Phase 5 deployment. |
 | LIA claim metrics extracted | 12 | Latest local dry-run on 2026-07-02 against fixture/live parser path. |
+| Civic carrier canonicalization | Available locally | MAS FID Insurance and LIA member-directory cross-checks produce source-backed canonical names and mismatch flags. |
 | 30-day lookups | Unavailable | No production Plausible/Umami/privacy-safe analytics deployment is claimed during Phases 1-4. |
 | Brochure alerts fired | Unavailable | Brochure history and pending-alert rows exist; no production alert dispatcher is claimed before Phase 5. |
 

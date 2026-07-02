@@ -15,6 +15,10 @@
         plan.plan_description || comparisonFact?.comparison_notes || 'No plan summary available.'
       }}
     </p>
+    <p v-if="canonicalCarrierText" class="canonical-line">
+      Canonical carrier: {{ canonicalCarrierText }}
+      <span v-if="canonicalFlagsText">({{ canonicalFlagsText }})</span>
+    </p>
     <FactProvenance :entries="profileProvenance" compact />
 
     <div class="fact-row">
@@ -185,6 +189,11 @@ const planWithFacts = computed(() => ({
 }))
 
 const coverageBadges = computed(() => coverageTagsForPlan(planWithFacts.value).map(labelForTag))
+const carrierCanonical = computed(() => props.plan?.carrierCanonical || null)
+const canonicalCarrierText = computed(() => carrierCanonical.value?.canonical_name || '')
+const canonicalFlagsText = computed(() =>
+  (carrierCanonical.value?.mismatch_flags || []).map(labelForTag).join(', '),
+)
 
 const panelHospitals = computed(() => factItems(props.facts, 'panel_hospitals'))
 const waitingPeriods = computed(() => factItems(props.facts, 'waiting_periods'))
@@ -346,9 +355,14 @@ h3 {
 }
 
 .summary,
-.detail-copy {
+.detail-copy,
+.canonical-line {
   margin: 0;
   color: var(--muted-ink);
+}
+
+.canonical-line {
+  font-size: 0.84rem;
 }
 
 .fact-row {

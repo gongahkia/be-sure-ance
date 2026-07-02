@@ -32,6 +32,8 @@ class BriefExportFrontendTests(unittest.TestCase):
             "VITE_PDF_BRIEF_ENDPOINT",
             "fetch(pdfBriefEndpoint.value",
             "plans: props.selectedPlans.map(publicPlanPayload)",
+            "canonical_carrier_name: plan.carrierCanonical?.canonical_name",
+            "carrier_mismatch_flags: plan.carrierCanonical?.mismatch_flags || []",
             "branding: brandingPayload()",
             "agent_name: agentName.value.trim()",
             "mas_rep_number: masRepNumber.value.trim()",

@@ -308,6 +308,55 @@ DEMO_TABLES = {
             "last_viewed_at": None,
         }
     ],
+    "carrier_canonical_names": [
+        {
+            "id": 1,
+            "carrier_key": "aia",
+            "display_name": "AIA Singapore",
+            "canonical_name": "AIA SINGAPORE PRIVATE LIMITED",
+            "aliases": ["AIA Singapore", "AIA Singapore Private Limited", "AIA"],
+            "mas_entity_name": "AIA SINGAPORE PRIVATE LIMITED",
+            "mas_detail_url": "https://eservices.mas.gov.sg/fid/institution/detail/2452-AIA-SINGAPORE-PRIVATE-LIMITED",
+            "mas_licence_types": ["Direct Insurer (Composite)", "Exempt Financial Adviser"],
+            "mas_match_status": "matched",
+            "lia_member_name": "AIA Singapore Private Limited",
+            "lia_member_url": "https://www.aia.com.sg",
+            "lia_member_category": "Ordinary Members",
+            "lia_match_status": "matched",
+            "source_urls": [
+                "https://eservices.mas.gov.sg/fid/institution?sector=Insurance",
+                "https://www.lia.org.sg/about-us/member-companies/",
+            ],
+            "mismatch_flags": [],
+            "scraped_at": DEMO_TIMESTAMP,
+            "last_verified_at": DEMO_TIMESTAMP,
+        },
+        {
+            "id": 2,
+            "carrier_key": "great_eastern",
+            "display_name": "Great Eastern Singapore",
+            "canonical_name": "THE GREAT EASTERN LIFE ASSURANCE COMPANY LIMITED",
+            "aliases": [
+                "Great Eastern Singapore",
+                "The Great Eastern Life Assurance Company Limited",
+            ],
+            "mas_entity_name": "THE GREAT EASTERN LIFE ASSURANCE COMPANY LIMITED",
+            "mas_detail_url": "https://eservices.mas.gov.sg/fid/institution/detail/103-THE-GREAT-EASTERN-LIFE-ASSURANCE-COMPANY-LIMITED",
+            "mas_licence_types": ["Direct Insurer (Life)", "Exempt Financial Adviser"],
+            "mas_match_status": "matched",
+            "lia_member_name": "The Great Eastern Life Assurance Company Limited",
+            "lia_member_url": "https://www.greateasternlife.com",
+            "lia_member_category": "Ordinary Members",
+            "lia_match_status": "matched",
+            "source_urls": [
+                "https://eservices.mas.gov.sg/fid/institution?sector=Insurance",
+                "https://www.lia.org.sg/about-us/member-companies/",
+            ],
+            "mismatch_flags": [],
+            "scraped_at": DEMO_TIMESTAMP,
+            "last_verified_at": DEMO_TIMESTAMP,
+        },
+    ],
 }
 
 
