@@ -1,9 +1,4 @@
-CREATE OR REPLACE FUNCTION public.execute_sql(query TEXT)
-RETURNS void AS $$
-BEGIN
-    EXECUTE query;
-END;
-$$ LANGUAGE plpgsql;
+DROP FUNCTION IF EXISTS public.execute_sql(TEXT);
 
 CREATE OR REPLACE FUNCTION public.table_exists(
     table_name text
