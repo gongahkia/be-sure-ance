@@ -76,7 +76,7 @@ pre-commit run --all-files
 ### Stack
 
 * [Frontend](./src/be-sure-ance-app/) - Vue 3, Vite, Supabase JS client.
-* [Backend](./src/scrapers/) - Python scrapers, brochure capture/parsing, GitHub Actions.
+* [Backend](./src/) - Python scrapers, brochure capture/parsing, and FastAPI PDF brief rendering.
 * [Database](./src/lib/create.sql) - Supabase Postgres with public read-only access and service-role writes.
 * [Storage](./src/backend/helper.py) - Supabase Storage for captured brochure PDFs.
 
@@ -89,6 +89,7 @@ sequenceDiagram
     participant Supabase
     participant Supabase Storage
     participant Frontend Vue.js
+    participant Backend API
     participant IFA
 
     GitHub Workflow->>Backend Scraper: Trigger scheduled workflow (Weekly Monday 12am)
@@ -96,6 +97,7 @@ sequenceDiagram
     Backend Scraper->>Supabase Storage: Store brochure PDF bytes by content hash
     Backend Scraper->>Supabase: Upsert plans and source-traceable plan_facts
     Frontend Vue.js->>Supabase: Fetch plans, plan_facts, and provider resources
+    Frontend Vue.js->>Backend API: Request no-PII PDF brief for up to 3 selected plans
     Frontend Vue.js->>IFA: Render qualitative comparison workspace with provenance
 ```
 

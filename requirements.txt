@@ -10,3 +10,5 @@ beautifulsoup4
 scikit-learn
 rapidfuzz
 pypdf
+reportlab
+uvicorn

@@ -23,6 +23,7 @@ Current behavior:
 - No user accounts or authentication.
 - No client data capture, CRM notes, or generated advice records.
 - No client names, NRIC/FIN, contact details, health information, financial profile, or meeting notes are stored.
+- PDF brief generation accepts up to three selected plan payloads, returns a PDF response, and does not persist client or agent details.
 - Frontend reads public `plans`, `plan_facts`, and provider-resource data with the Supabase anon key.
 - Scrapers write only plan/source metadata with server-side Supabase credentials.
 
@@ -42,6 +43,7 @@ Current behavior:
 
 - No advice, recommendation, suitability, or ranking engine.
 - No quote, premium, deductible, coinsurance, or projected-cost UI.
+- PDF briefs contain qualitative facts, provenance, generated timestamps, and a no-advice/no-transaction disclaimer.
 - No purchase, lead-generation, application, payment, or referral flow.
 - External links point users to compareFIRST and carrier sites for regulated quantitative comparison, official product documents, quotes, or transactions.
 
