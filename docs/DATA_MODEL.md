@@ -113,11 +113,13 @@ V1 fields:
 | :--- | :--- | :--- |
 | `coverage_tags` | list | `{"status":"known","items":["accident","emergency"],"raw_text":"Personal accident and emergency support","notes":[]}` |
 | `panel_hospitals` | list | `{"status":"known","items":[{"name":"Sample Hospital","normalized_name":"Sample Hospital","source_label":"Panel hospital","match_status":"matched","match_confidence":100,"matched_alias":"Sample Hospital","canonical_id":"nehr-1-sample-hospital","review_required":false}],"raw_text":"Sample Hospital - Panel hospital","notes":[],"review_required":false}` |
-| `exclusions` | list | `{"status":"known","items":[{"label":"Pre-existing conditions","details":"See policy wording for full clause."}],"raw_text":"Pre-existing conditions are excluded...","notes":[]}` |
-| `waiting_periods` | list | `{"status":"known","items":[{"condition":"Specified condition","duration_days":90,"raw_text":"90 days waiting period"}],"raw_text":"90 days waiting period","notes":[]}` |
+| `exclusions` | list | `{"status":"known","items":[{"label":"Pre-existing conditions","details":"See policy wording for full clause.","tags":["pre_existing_condition"],"taxonomy_status":"tagged","review_required":false,"review_reason":""}],"raw_text":"Pre-existing conditions are excluded...","notes":[],"taxonomy_version":1,"review_required":false}` |
+| `waiting_periods` | list | `{"status":"known","items":[{"condition":"Specified condition","duration_days":90,"raw_text":"90 days waiting period","tags":["specified_condition"],"taxonomy_status":"tagged","review_required":false,"review_reason":""}],"raw_text":"90 days waiting period","notes":[],"taxonomy_version":1,"review_required":false}` |
 | `claim_deadlines` | list | `{"status":"known","items":[{"event":"Hospitalisation claim","deadline_days":30,"raw_text":"Submit within 30 days"}],"raw_text":"Submit within 30 days","notes":[]}` |
 | `claim_sla` | structured | `{"status":"known","value":{"duration_days":10,"basis":"published target"},"raw_text":"Claims are processed within 10 working days","notes":[]}` |
 | `brochure_metadata` | structured | `{"status":"known","value":{"url":"https://example.com/brochure.pdf","sha256":"example-sha256","storage_bucket":"plan-brochures","storage_key":"brochures/aia/sample-plan/example-sha256.pdf","size_bytes":12345,"content_type":"application/pdf","fetched_at":"2026-07-02T00:00:00Z","last_modified_at":null},"raw_text":"brochure.pdf","notes":[]}` |
 | `source_notes` | list | `{"status":"known","items":["Brochure section heading found, but table layout needs manual review."],"raw_text":"Manual review note","notes":[]}` |
 
 The app must never infer premium amounts, deductibles, coinsurance, cash value projections, claim approval likelihood, medical advice, financial advice, plan recommendations, or panel membership without a source.
+
+Exclusion and waiting-period items carry controlled `tags`, `taxonomy_status`, and `review_required` fields. Empty tag matches must be represented as `taxonomy_status = "needs_review"` with the raw source item retained.

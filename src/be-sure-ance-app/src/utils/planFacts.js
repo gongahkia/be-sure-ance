@@ -84,16 +84,38 @@ export function listText(items, fallback = 'Unknown') {
   return labels.length > 0 ? labels.join(', ') : fallback
 }
 
+export function taxonomyTagLabels(items) {
+  return Array.from(
+    new Set(
+      (items || [])
+        .flatMap((item) => item?.tags || [])
+        .filter(Boolean)
+        .map(labelForTag),
+    ),
+  )
+}
+
+export function taxonomySuffix(item) {
+  const tags = taxonomyTagLabels([item])
+  if (tags.length > 0) {
+    return ` [${tags.join(', ')}]`
+  }
+  if (item?.taxonomy_status === 'needs_review') {
+    return ' [Needs review]'
+  }
+  return ''
+}
+
 export function durationText(item, fieldName = 'duration_days') {
   const label = itemLabel(item)
   const days = item?.[fieldName]
   if (days !== null && days !== undefined && label) {
-    return `${label}: ${days} days`
+    return `${label}: ${days} days${taxonomySuffix(item)}`
   }
   if (days !== null && days !== undefined) {
-    return `${days} days`
+    return `${days} days${taxonomySuffix(item)}`
   }
-  return label
+  return `${label}${taxonomySuffix(item)}`
 }
 
 export function claimSlaText(facts) {

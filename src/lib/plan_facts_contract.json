@@ -108,11 +108,17 @@
         "items": [
           {
             "label": "Pre-existing conditions",
-            "details": "See policy wording for full clause."
+            "details": "See policy wording for full clause.",
+            "tags": ["pre_existing_condition"],
+            "taxonomy_status": "tagged",
+            "review_required": false,
+            "review_reason": ""
           }
         ],
         "raw_text": "Pre-existing conditions are excluded...",
-        "notes": []
+        "notes": [],
+        "taxonomy_version": 1,
+        "review_required": false
       }
     },
     {
@@ -125,11 +131,17 @@
           {
             "condition": "Specified condition",
             "duration_days": 90,
-            "raw_text": "90 days waiting period"
+            "raw_text": "90 days waiting period",
+            "tags": ["specified_condition"],
+            "taxonomy_status": "tagged",
+            "review_required": false,
+            "review_reason": ""
           }
         ],
         "raw_text": "90 days waiting period",
-        "notes": []
+        "notes": [],
+        "taxonomy_version": 1,
+        "review_required": false
       }
     },
     {

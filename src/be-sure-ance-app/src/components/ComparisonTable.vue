@@ -51,6 +51,7 @@ import {
   labelForTag,
   listText,
   provenanceEntriesForFields,
+  taxonomySuffix,
 } from '../utils/planFacts'
 
 defineProps({
@@ -91,7 +92,7 @@ const rows = computed(() => [
   {
     key: 'exclusions',
     label: 'Exclusions',
-    render: (plan) => qualitativeListValue(plan, 'exclusions'),
+    render: exclusionValue,
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['exclusions']),
   },
   {
@@ -116,6 +117,13 @@ function coverageValue(plan) {
 function qualitativeListValue(plan, fieldName) {
   const items = factItems(plan.facts, fieldName)
   return items.length > 0 ? listText(items) : factStateText(plan.facts, fieldName)
+}
+
+function exclusionValue(plan) {
+  const items = factItems(plan.facts, 'exclusions')
+  return items.length > 0
+    ? items.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
+    : factStateText(plan.facts, 'exclusions')
 }
 
 function durationListValue(plan, fieldName, durationFieldName) {

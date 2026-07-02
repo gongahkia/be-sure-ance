@@ -34,6 +34,8 @@ class FrontendQualitativeFactsTests(unittest.TestCase):
             "claim_sla",
             "brochure_metadata",
             "source_notes",
+            "waitingPeriodTags",
+            "exclusionTags",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PLAN_CARD)
@@ -49,9 +51,24 @@ class FrontendQualitativeFactsTests(unittest.TestCase):
             "exclusions",
             "brochure_metadata",
             "source_notes",
+            "taxonomySuffix(item)",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, COMPARISON_TABLE)
+
+    def test_frontend_exposes_taxonomy_tags_without_suitability_language(self):
+        for required in (
+            "export function taxonomyTagLabels(items)",
+            "export function taxonomySuffix(item)",
+            "Needs review",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, PLAN_FACTS_UTIL)
+
+        frontend_text = "\n".join([PLAN_CARD, COMPARISON_TABLE]).lower()
+        for forbidden in ("better tag", "worse tag", "suitable tag"):
+            with self.subTest(forbidden=forbidden):
+                self.assertNotIn(forbidden, frontend_text)
 
     def test_old_calculator_terms_are_not_rendered_by_frontend_components(self):
         frontend_text = "\n".join([PLAN_CARD, COMPARISON_TABLE]).lower()

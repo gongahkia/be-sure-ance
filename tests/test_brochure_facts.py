@@ -60,9 +60,25 @@ class BrochureFactsTests(unittest.TestCase):
             ["Sample Hospital", "Example Medical Centre"],
         )
         self.assertEqual(parsed["waiting_periods"]["items"][0]["duration_days"], 90)
+        self.assertEqual(parsed["waiting_periods"]["items"][0]["tags"], ["specified_condition"])
         self.assertEqual(parsed["claim_deadlines"]["items"][0]["deadline_days"], 30)
         self.assertEqual(parsed["claim_sla"]["value"]["duration_days"], 10)
         self.assertIn("Pre-existing conditions", parsed["exclusions"]["items"][0]["label"])
+        self.assertEqual(parsed["exclusions"]["items"][0]["tags"], ["pre_existing_condition"])
+        self.assertEqual(parsed["exclusions"]["items"][1]["tags"], ["self_inflicted_injury"])
+
+    def test_taxonomy_marks_ambiguous_items_for_review(self):
+        parsed = parse_brochure_text(
+            "Exclusions: other policy exclusions. "
+            "Waiting Period: 45 days waiting period for other benefits."
+        )
+
+        self.assertEqual(parsed["exclusions"]["items"][0]["taxonomy_status"], "needs_review")
+        self.assertTrue(parsed["exclusions"]["items"][0]["review_required"])
+        self.assertEqual(parsed["waiting_periods"]["items"][0]["taxonomy_status"], "needs_review")
+        self.assertTrue(parsed["waiting_periods"]["items"][0]["review_required"])
+        self.assertTrue(parsed["exclusions"]["review_required"])
+        self.assertTrue(parsed["waiting_periods"]["review_required"])
 
     def test_built_fact_rows_include_provenance(self):
         rows = build_fact_rows(

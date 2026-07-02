@@ -10,6 +10,12 @@ from pypdf import PdfReader
 
 import src.backend.helper as helper
 from src.backend.helper import initialize_supabase
+from src.lib.benefit_taxonomy import (
+    TAXONOMY_VERSION,
+    normalize_exclusion_item,
+    normalize_waiting_period_item,
+    taxonomy_notes,
+)
 from src.lib.moh_institutions import (
     InstitutionRecord,
     load_institution_records_from_supabase,
@@ -102,12 +108,17 @@ def parse_panel_hospitals(
 
 def parse_exclusions(text: str) -> dict | None:
     section = section_text(text, r"exclusions?", r"waiting periods?|claims?|panel hospitals?")
-    items = [
-        {"label": item, "details": item} for item in split_list_items(section) if len(item) >= 4
-    ]
+    items = [normalize_exclusion_item(item) for item in split_list_items(section) if len(item) >= 4]
     if not items:
         return None
-    return {"status": "known", "items": items, "raw_text": section, "notes": []}
+    return {
+        "status": "known",
+        "items": items,
+        "raw_text": section,
+        "notes": taxonomy_notes(items),
+        "taxonomy_version": TAXONOMY_VERSION,
+        "review_required": any(item.get("review_required") for item in items),
+    }
 
 
 def parse_waiting_periods(text: str) -> dict | None:
@@ -120,12 +131,13 @@ def parse_waiting_periods(text: str) -> dict | None:
         raw_text = normalize_whitespace(match.group(0))
         if "waiting" not in raw_text.lower():
             continue
+        condition = normalize_whitespace(match.group("condition"))
         items.append(
-            {
-                "condition": normalize_whitespace(match.group("condition")),
-                "duration_days": int(match.group("days")),
-                "raw_text": raw_text,
-            }
+            normalize_waiting_period_item(
+                condition=condition,
+                duration_days=int(match.group("days")),
+                raw_text=raw_text,
+            )
         )
     if not items:
         return None
@@ -133,7 +145,9 @@ def parse_waiting_periods(text: str) -> dict | None:
         "status": "known",
         "items": items,
         "raw_text": "; ".join(item["raw_text"] for item in items),
-        "notes": [],
+        "notes": taxonomy_notes(items),
+        "taxonomy_version": TAXONOMY_VERSION,
+        "review_required": any(item.get("review_required") for item in items),
     }
 
 

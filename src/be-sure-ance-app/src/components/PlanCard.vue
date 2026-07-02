@@ -87,6 +87,7 @@
         <section>
           <h4>Process</h4>
           <p>Waiting periods: {{ waitingPeriodSummary }}</p>
+          <p v-if="waitingPeriodTags.length > 0">Tags: {{ waitingPeriodTags.join(', ') }}</p>
           <p>Claim deadlines: {{ claimDeadlineSummary }}</p>
           <p>Claim SLA: {{ claimSlaSummary }}</p>
           <FactProvenance :entries="processProvenance" />
@@ -95,6 +96,7 @@
         <section>
           <h4>Exclusions</h4>
           <p>{{ exclusionSummary }}</p>
+          <p v-if="exclusionTags.length > 0">Tags: {{ exclusionTags.join(', ') }}</p>
           <FactProvenance :entries="exclusionProvenance" />
         </section>
 
@@ -147,6 +149,8 @@ import {
   listText,
   profileProvenanceEntry,
   provenanceEntriesForFields,
+  taxonomySuffix,
+  taxonomyTagLabels,
 } from '../utils/planFacts'
 
 const props = defineProps({
@@ -172,6 +176,8 @@ const panelHospitals = computed(() => factItems(props.facts, 'panel_hospitals'))
 const waitingPeriods = computed(() => factItems(props.facts, 'waiting_periods'))
 const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
 const exclusions = computed(() => factItems(props.facts, 'exclusions'))
+const waitingPeriodTags = computed(() => taxonomyTagLabels(waitingPeriods.value))
+const exclusionTags = computed(() => taxonomyTagLabels(exclusions.value))
 const sourceNotes = computed(() => factItems(props.facts, 'source_notes'))
 const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
 const planPagePath = computed(() =>
@@ -247,7 +253,7 @@ const claimDeadlineSummary = computed(() =>
 
 const exclusionSummary = computed(() =>
   exclusions.value.length > 0
-    ? listText(exclusions.value)
+    ? exclusions.value.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
     : factStateText(props.facts, 'exclusions'),
 )
 
