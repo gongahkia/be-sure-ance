@@ -26,8 +26,8 @@ Use [`.env.example`](./.env.example) as the local template.
 Frontend variables are public and are bundled into the Vue app:
 
 ```sh
-VUE_APP_SUPABASE_URL=
-VUE_APP_SUPABASE_ANON_KEY=
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
 ```
 
 Scraper/backend variables are private and must stay in local `.env` or GitHub Actions secrets:
@@ -39,7 +39,9 @@ SUPABASE_SECRET_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VUE_APP_*` variables.
+Netlify only needs the public frontend variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
+
+GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
 
 ## Screenshots
 

@@ -125,8 +125,8 @@ import ProviderRail from './components/ProviderRail.vue'
 import { buildPlanKey, providers } from './lib/providers'
 import { safeExternalUrl } from './utils/links'
 
-const supabaseUrl = process.env.VUE_APP_SUPABASE_URL
-const supabaseAnonKey = process.env.VUE_APP_SUPABASE_ANON_KEY
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null
 
 const loading = ref(true)
@@ -140,7 +140,7 @@ const specialistResources = ref([])
 
 async function fetchData() {
   if (!supabase) {
-    errorMessage.value = "Supabase configuration is missing. Set VUE_APP_SUPABASE_URL and VUE_APP_SUPABASE_ANON_KEY."
+    errorMessage.value = "Supabase configuration is missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY."
     loading.value = false
     return
   }
