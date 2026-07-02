@@ -14,3 +14,12 @@ export function safeExternalUrl(value) {
 
   return ''
 }
+
+export function externalHostname(value) {
+  const safeUrl = safeExternalUrl(value)
+  if (!safeUrl) {
+    return ''
+  }
+
+  return new URL(safeUrl).hostname.replace(/^www\./, '')
+}

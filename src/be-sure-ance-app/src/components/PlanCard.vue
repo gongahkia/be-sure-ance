@@ -15,6 +15,7 @@
         plan.plan_description || comparisonFact?.comparison_notes || 'No plan summary available.'
       }}
     </p>
+    <FactProvenance :entries="profileProvenance" compact />
 
     <div class="fact-row">
       <div v-for="fact in factHighlights" :key="fact.label" class="fact">
@@ -22,6 +23,7 @@
         <strong>{{ fact.value }}</strong>
       </div>
     </div>
+    <FactProvenance :entries="highlightProvenance" compact />
 
     <div class="tag-row">
       <span v-for="badge in coverageBadges" :key="badge" class="coverage-badge">
@@ -67,6 +69,7 @@
         <section>
           <h4>Coverage</h4>
           <p>{{ coverageSummary }}</p>
+          <FactProvenance :entries="coverageProvenance" />
         </section>
 
         <section>
@@ -77,6 +80,7 @@
               {{ itemLabel(hospital) }}
             </li>
           </ul>
+          <FactProvenance :entries="networkProvenance" />
         </section>
 
         <section>
@@ -84,16 +88,25 @@
           <p>Waiting periods: {{ waitingPeriodSummary }}</p>
           <p>Claim deadlines: {{ claimDeadlineSummary }}</p>
           <p>Claim SLA: {{ claimSlaSummary }}</p>
+          <FactProvenance :entries="processProvenance" />
         </section>
 
         <section>
           <h4>Exclusions</h4>
           <p>{{ exclusionSummary }}</p>
+          <FactProvenance :entries="exclusionProvenance" />
+        </section>
+
+        <section>
+          <h4>Brochure</h4>
+          <p>{{ brochureSummary }}</p>
+          <FactProvenance :entries="brochureProvenance" />
         </section>
 
         <section v-if="sourceNotes.length > 0">
           <h4>Source notes</h4>
           <p>{{ listText(sourceNotes) }}</p>
+          <FactProvenance :entries="sourceNotesProvenance" />
         </section>
       </div>
 
@@ -111,6 +124,7 @@
           <span v-if="resource.resource_description"> - {{ resource.resource_description }}</span>
         </li>
       </ul>
+      <FactProvenance v-if="resources.length > 0" :entries="resourceProvenance" compact />
     </details>
   </article>
 </template>
@@ -118,6 +132,7 @@
 <script setup>
 import { computed } from 'vue'
 
+import FactProvenance from './FactProvenance.vue'
 import { safeExternalUrl } from '../utils/links'
 import {
   claimSlaText,
@@ -129,6 +144,8 @@ import {
   itemLabel,
   labelForTag,
   listText,
+  profileProvenanceEntry,
+  provenanceEntriesForFields,
 } from '../utils/planFacts'
 
 const props = defineProps({
@@ -156,6 +173,44 @@ const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
 const exclusions = computed(() => factItems(props.facts, 'exclusions'))
 const sourceNotes = computed(() => factItems(props.facts, 'source_notes'))
 const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
+const profileProvenance = computed(() => profileProvenanceEntry(props.plan))
+const highlightProvenance = computed(() =>
+  provenanceEntriesForFields(props.facts, [
+    'coverage_tags',
+    'panel_hospitals',
+    'waiting_periods',
+    'claim_deadlines',
+    'claim_sla',
+    'exclusions',
+    'brochure_metadata',
+  ]),
+)
+const coverageProvenance = computed(() =>
+  provenanceEntriesForFields(props.facts, ['coverage_tags']),
+)
+const networkProvenance = computed(() =>
+  provenanceEntriesForFields(props.facts, ['panel_hospitals']),
+)
+const processProvenance = computed(() =>
+  provenanceEntriesForFields(props.facts, ['waiting_periods', 'claim_deadlines', 'claim_sla']),
+)
+const exclusionProvenance = computed(() => provenanceEntriesForFields(props.facts, ['exclusions']))
+const brochureProvenance = computed(() =>
+  provenanceEntriesForFields(props.facts, ['brochure_metadata']),
+)
+const sourceNotesProvenance = computed(() =>
+  provenanceEntriesForFields(props.facts, ['source_notes']),
+)
+const resourceProvenance = computed(() =>
+  (props.resources || []).map((resource, index) => ({
+    key: `resource:${resource.id || resource.resource_url || index}`,
+    fields: [resource.resource_title || resource.resource_type || 'Provider resource'],
+    sourceUrl: resource.source_url || resource.resource_url || '',
+    sourceType: 'product_page',
+    scrapedAt: '',
+    lastVerifiedAt: '',
+  })),
+)
 const claimSlaSummary = computed(
   () => claimSlaText(props.facts) || factStateText(props.facts, 'claim_sla'),
 )
@@ -190,6 +245,16 @@ const exclusionSummary = computed(() =>
     : factStateText(props.facts, 'exclusions'),
 )
 
+const brochureSummary = computed(() => {
+  if (brochureMetadata.value?.sha256 || brochureMetadata.value?.url) {
+    return 'Captured'
+  }
+  if (props.plan?.product_brochure_url) {
+    return 'Available'
+  }
+  return factStateText(props.facts, 'brochure_metadata')
+})
+
 const processFactCount = computed(
   () =>
     waitingPeriods.value.length + claimDeadlines.value.length + (claimSlaText(props.facts) ? 1 : 0),
@@ -216,7 +281,7 @@ const factHighlights = computed(() => [
   },
   {
     label: 'Brochure',
-    value: brochureMetadata.value || props.plan?.product_brochure_url ? 'Available' : 'Unknown',
+    value: brochureSummary.value,
   },
 ])
 </script>

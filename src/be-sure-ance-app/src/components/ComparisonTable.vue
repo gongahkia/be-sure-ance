@@ -27,7 +27,8 @@
           <tr v-for="row in rows" :key="row.key">
             <td>{{ row.label }}</td>
             <td v-for="plan in selectedPlans" :key="`${row.key}:${plan.key}`">
-              {{ row.render(plan) }}
+              <span class="cell-value">{{ row.render(plan) }}</span>
+              <FactProvenance :entries="row.provenance(plan)" compact />
             </td>
           </tr>
         </tbody>
@@ -39,6 +40,7 @@
 <script setup>
 import { computed } from 'vue'
 
+import FactProvenance from './FactProvenance.vue'
 import {
   claimSlaText,
   coverageTagsForPlan,
@@ -48,6 +50,7 @@ import {
   factValue,
   labelForTag,
   listText,
+  provenanceEntriesForFields,
 } from '../utils/planFacts'
 
 defineProps({
@@ -56,49 +59,52 @@ defineProps({
 
 const rows = computed(() => [
   {
-    key: 'provider',
-    label: 'Provider',
-    render: (plan) => plan.providerName,
-  },
-  {
     key: 'coverage_tags',
     label: 'Coverage',
     render: coverageValue,
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['coverage_tags']),
   },
   {
     key: 'panel_hospitals',
     label: 'Network',
     render: (plan) => qualitativeListValue(plan, 'panel_hospitals'),
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['panel_hospitals']),
   },
   {
     key: 'waiting_periods',
     label: 'Waiting periods',
     render: (plan) => durationListValue(plan, 'waiting_periods', 'duration_days'),
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['waiting_periods']),
   },
   {
     key: 'claim_deadlines',
     label: 'Claim deadlines',
     render: (plan) => durationListValue(plan, 'claim_deadlines', 'deadline_days'),
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['claim_deadlines']),
   },
   {
     key: 'claim_sla',
     label: 'Claim SLA',
     render: (plan) => claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla'),
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['claim_sla']),
   },
   {
     key: 'exclusions',
     label: 'Exclusions',
     render: (plan) => qualitativeListValue(plan, 'exclusions'),
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['exclusions']),
   },
   {
     key: 'brochure_metadata',
     label: 'Brochure',
     render: brochureValue,
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['brochure_metadata']),
   },
   {
     key: 'source_notes',
     label: 'Source notes',
     render: (plan) => qualitativeListValue(plan, 'source_notes'),
+    provenance: (plan) => provenanceEntriesForFields(plan.facts, ['source_notes']),
   },
 ])
 
@@ -196,6 +202,10 @@ th {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted-ink);
+}
+
+.cell-value {
+  display: block;
 }
 
 @media (max-width: 720px) {
