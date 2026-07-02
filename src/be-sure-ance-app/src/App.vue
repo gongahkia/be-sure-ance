@@ -36,6 +36,13 @@
           >
             {{ t('route.panelHospitals') }}
           </a>
+          <a
+            href="/status"
+            :class="{ active: activeView === 'scraperStatus' }"
+            @click="navigateTo('/status', $event)"
+          >
+            {{ t('route.status') }}
+          </a>
         </nav>
       </div>
 
@@ -91,6 +98,10 @@
         :plans="enrichedPlans"
         :providers="providers"
       />
+    </section>
+
+    <section v-else-if="activeView === 'scraperStatus'" class="status-workspace">
+      <ScraperStatusDashboard :health-rows="scraperHealth" :providers="providers" />
     </section>
 
     <section v-else-if="activeView === 'sharedComparison'" class="shared-workspace">
@@ -205,6 +216,7 @@ import ComparisonTable from './components/ComparisonTable.vue'
 import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
 import PlanCard from './components/PlanCard.vue'
 import ProviderRail from './components/ProviderRail.vue'
+import ScraperStatusDashboard from './components/ScraperStatusDashboard.vue'
 import ShareComparisonPanel from './components/ShareComparisonPanel.vue'
 import { buildPlanKey, providers } from './lib/providers'
 import { useI18n } from './i18n'
@@ -235,6 +247,7 @@ const claimTurnaroundMetrics = ref([])
 const masRegulatoryEvents = ref([])
 const brochureChangeAlerts = ref([])
 const carrierCanonicalNames = ref([])
+const scraperHealth = ref([])
 
 async function fetchData() {
   if (!supabase) {
@@ -253,6 +266,7 @@ async function fetchData() {
       { data: regulatoryData, error: regulatoryError },
       { data: brochureChangeData, error: brochureChangeError },
       { data: carrierCanonicalData, error: carrierCanonicalError },
+      { data: scraperHealthData, error: scraperHealthError },
     ] = await Promise.all([
       supabase.from('plans').select('*'),
       supabase.from('plan_comparison_facts').select('*'),
@@ -262,6 +276,11 @@ async function fetchData() {
       supabase.from('mas_regulatory_events').select('*'),
       supabase.from('brochure_change_alerts').select('*'),
       supabase.from('carrier_canonical_names').select('*'),
+      supabase
+        .from('scraper_health')
+        .select(
+          'carrier_key,display_name,support_status,last_success_at,last_failure_at,last_run_at,row_count,validation_status,validation_checked_at,validation_summary,updated_at',
+        ),
     ])
 
     if (planError) {
@@ -288,6 +307,9 @@ async function fetchData() {
     if (carrierCanonicalError) {
       throw carrierCanonicalError
     }
+    if (scraperHealthError) {
+      throw scraperHealthError
+    }
 
     plansByProvider.value = groupPlansByProvider(planData || [])
     comparisonFacts.value = comparisonData || []
@@ -297,6 +319,7 @@ async function fetchData() {
     masRegulatoryEvents.value = regulatoryData || []
     brochureChangeAlerts.value = brochureChangeData || []
     carrierCanonicalNames.value = carrierCanonicalData || []
+    scraperHealth.value = scraperHealthData || []
     await loadShareFromRoute()
   } catch (error) {
     errorMessage.value = error?.message || t('status.loadError')
@@ -318,6 +341,9 @@ const currentShareId = computed(() => parseShareRoute(currentPath.value))
 const activeView = computed(() => {
   if (currentPath.value === '/matrix/panel-hospitals') {
     return 'panelMatrix'
+  }
+  if (currentPath.value === '/status') {
+    return 'scraperStatus'
   }
   if (currentShareId.value) {
     return 'sharedComparison'
@@ -857,6 +883,10 @@ h1 {
 }
 
 .shared-workspace {
+  margin-top: 1.5rem;
+}
+
+.status-workspace {
   margin-top: 1.5rem;
 }
 

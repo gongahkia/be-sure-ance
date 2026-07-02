@@ -7,7 +7,7 @@ const appRoot = path.resolve(__dirname, '..')
 const distDir = resolvePath(process.env.STATIC_PLAN_DIST_DIR, path.join(appRoot, 'dist'))
 const siteOrigin = normalizeOrigin(process.env.VITE_SITE_ORIGIN || process.env.URL)
 const indexPath = path.join(distDir, 'index.html')
-const keyRoutes = ['/', '/matrix/panel-hospitals']
+const keyRoutes = ['/', '/matrix/panel-hospitals', '/status']
 
 const providerNames = {
   aia: 'AIA Singapore',

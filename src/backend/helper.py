@@ -21,6 +21,7 @@ from src.lib.brochure_versions import (
     version_change_status,
 )
 from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.scraper_health import record_scraper_success
 
 # ------ functions ------
 
@@ -123,6 +124,7 @@ def overwrite_plans_for_insurer(insurer, rows):
     else:
         print(f"Plans upserted successfully for {insurer}.")
         capture_brochures_for_plans(insurer, formatted_rows)
+        record_scraper_success(insurer, len(formatted_rows))
 
 
 def clear_plans_for_insurer(insurer):

@@ -53,6 +53,10 @@ jobs:
           echo "baseline_dir=${baseline_root}" >> "$GITHUB_OUTPUT"
 
       - name: Run structural validation
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           command=(python -m src.validation.differ --output-dir .validation-output --max-urls-per-insurer 1)
           if [ -n "${{ steps.baseline.outputs.baseline_dir }}" ]; then

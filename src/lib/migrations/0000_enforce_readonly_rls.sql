@@ -49,7 +49,8 @@ DECLARE
         'claim_turnaround_metrics',
         'mas_regulatory_events',
         'brochure_version_history',
-        'brochure_change_alerts'
+        'brochure_change_alerts',
+        'scraper_health'
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP

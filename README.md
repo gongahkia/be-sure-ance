@@ -35,6 +35,7 @@ Architecture decisions are recorded in [docs/adr](./docs/adr/).
 No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate for restoring Netlify or moving to another static host.
 
 Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supabase.yml).
+The public scraper health dashboard is available at `/status` after the app is deployed.
 
 > [!IMPORTANT]
 > Read the [compliance posture](./docs/COMPLIANCE.md) and [legal disclaimer](#legal-disclaimer) before using `Be-sure-ance`.

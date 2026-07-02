@@ -17,6 +17,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.scraper_health import record_validation_report
 from src.scrapers.registry import SUPPORTED_SCRAPERS
 
 SCRAPER_DIR = Path(__file__).resolve().parents[1] / "scrapers"
@@ -364,6 +365,10 @@ def run_validation(
     summary_path = output_dir / "summary.md"
     report_path.write_text(json.dumps(report, indent=2, sort_keys=True))
     summary_path.write_text(build_summary_markdown(report))
+    try:
+        record_validation_report(report)
+    except Exception as exc:
+        print(f"[validation] scraper health status persistence skipped: {exc}")
 
     print(json.dumps(summary, indent=2, sort_keys=True))
     return 1 if has_failures else 0
