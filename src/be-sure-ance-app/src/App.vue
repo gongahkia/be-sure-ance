@@ -21,7 +21,7 @@
         </article>
         <article>
           <span>Brief-ready profiles</span>
-          <strong>{{ comparisonFacts.length }}</strong>
+          <strong>{{ planFactProfileCount }}</strong>
         </article>
         <article>
           <span>Plans in brief</span>
@@ -57,7 +57,9 @@
       </article>
     </section>
 
-    <section v-if="loading" class="status-panel">Loading plan data and comparison facts...</section>
+    <section v-if="loading" class="status-panel">
+      Loading plan data and qualitative facts...
+    </section>
 
     <section v-else-if="errorMessage" class="status-panel error">
       {{ errorMessage }}
@@ -107,6 +109,7 @@
             :key="plan.key"
             :plan="plan"
             :provider="activeProvider"
+            :facts="plan.facts"
             :comparison-fact="plan.comparisonFact"
             :resources="plan.resources"
             :selected="selectedPlanKeys.includes(plan.key)"
@@ -145,6 +148,7 @@ const activeProviderKey = ref(providers[0].key)
 const selectedPlanKeys = ref([])
 const plansByProvider = ref({})
 const comparisonFacts = ref([])
+const planFacts = ref([])
 const specialistResources = ref([])
 
 async function fetchData() {
@@ -159,10 +163,12 @@ async function fetchData() {
     const [
       { data: planData, error: planError },
       { data: comparisonData, error: comparisonError },
+      { data: factData, error: factError },
       { data: resourceData, error: resourceError },
     ] = await Promise.all([
       supabase.from('plans').select('*'),
       supabase.from('plan_comparison_facts').select('*'),
+      supabase.from('plan_facts').select('*'),
       supabase.from('specialist_resources').select('*'),
     ])
 
@@ -172,15 +178,19 @@ async function fetchData() {
     if (comparisonError) {
       throw comparisonError
     }
+    if (factError) {
+      throw factError
+    }
     if (resourceError) {
       throw resourceError
     }
 
     plansByProvider.value = groupPlansByProvider(planData || [])
     comparisonFacts.value = comparisonData || []
+    planFacts.value = factData || []
     specialistResources.value = resourceData || []
   } catch (error) {
-    errorMessage.value = error?.message || 'Unable to load comparison data.'
+    errorMessage.value = error?.message || 'Unable to load qualitative plan data.'
   } finally {
     loading.value = false
   }
@@ -207,6 +217,25 @@ const comparisonFactMap = computed(() =>
   ),
 )
 
+const planFactMap = computed(() => groupPlanFactsByPlan(planFacts.value))
+
+const planFactProfileCount = computed(() => Object.keys(planFactMap.value).length)
+
+function groupPlanFactsByPlan(rows) {
+  return rows.reduce((groupedFacts, fact) => {
+    if (!fact?.insurer || !fact?.plan_slug || !fact?.field_name) {
+      return groupedFacts
+    }
+
+    const key = buildPlanKey(fact.insurer, fact.plan_slug)
+    if (!groupedFacts[key]) {
+      groupedFacts[key] = {}
+    }
+    groupedFacts[key][fact.field_name] = fact
+    return groupedFacts
+  }, {})
+}
+
 const specialistResourceMap = computed(() =>
   specialistResources.value.reduce((accumulator, resource) => {
     const key = buildPlanKey(resource.insurer, resource.plan_name)
@@ -222,12 +251,14 @@ const enrichedPlans = computed(() =>
   providers.flatMap((provider) =>
     (plansByProvider.value[provider.key] || []).map((plan) => {
       const key = buildPlanKey(provider.key, plan.plan_name)
+      const factKey = buildPlanKey(provider.key, plan.plan_slug || plan.plan_name)
       return {
         ...plan,
         key,
         providerKey: provider.key,
         providerName: provider.name,
         comparisonFact: comparisonFactMap.value[key] || null,
+        facts: planFactMap.value[factKey] || {},
         resources: specialistResourceMap.value[key] || [],
       }
     }),
@@ -266,6 +297,7 @@ const visiblePlans = computed(() =>
       (plan.plan_benefits || []).join(' '),
       plan.comparisonFact?.comparison_notes || '',
       (plan.comparisonFact?.coverage_tags || []).join(' '),
+      stringifyFacts(plan.facts),
       (plan.resources || [])
         .map(
           (resource) => `${resource.resource_title || ''} ${resource.resource_description || ''}`,
@@ -305,6 +337,12 @@ function togglePlanSelection(planKey) {
   }
 
   selectedPlanKeys.value = [...selectedPlanKeys.value, planKey]
+}
+
+function stringifyFacts(facts) {
+  return Object.values(facts || {})
+    .map((fact) => JSON.stringify(fact.field_value || ''))
+    .join(' ')
 }
 </script>
 

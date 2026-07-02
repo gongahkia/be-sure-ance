@@ -19,7 +19,7 @@
       <table>
         <thead>
           <tr>
-            <th>Metric</th>
+            <th>Field</th>
             <th v-for="plan in selectedPlans" :key="plan.key">{{ plan.plan_name }}</th>
           </tr>
         </thead>
@@ -39,39 +39,20 @@
 <script setup>
 import { computed } from 'vue'
 
+import {
+  claimSlaText,
+  coverageTagsForPlan,
+  durationText,
+  factItems,
+  factStateText,
+  factValue,
+  labelForTag,
+  listText,
+} from '../utils/planFacts'
+
 defineProps({
   selectedPlans: Array,
 })
-
-function availabilityValue(value) {
-  return value ? 'Available' : 'Missing'
-}
-
-function tagValue(tags, tag) {
-  return (tags || []).includes(tag) ? 'Tagged' : 'Not tagged'
-}
-
-function nullableNumber(value, unit) {
-  if (value === null || value === undefined) {
-    return 'Unknown'
-  }
-  return unit ? `${value} ${unit}` : String(value)
-}
-
-function listValue(value) {
-  return value?.length ? value.join(', ') : 'Unknown'
-}
-
-function sourceHost(value) {
-  if (!value) {
-    return 'Missing'
-  }
-  try {
-    return new URL(value).hostname.replace(/^www\./, '')
-  } catch {
-    return 'Available'
-  }
-}
 
 const rows = computed(() => [
   {
@@ -80,81 +61,80 @@ const rows = computed(() => [
     render: (plan) => plan.providerName,
   },
   {
-    key: 'source',
-    label: 'Source host',
-    render: (plan) =>
-      sourceHost(plan.comparisonFact?.source_url || plan.product_brochure_url || plan.plan_url),
+    key: 'coverage_tags',
+    label: 'Coverage',
+    render: coverageValue,
   },
   {
-    key: 'accident',
-    label: 'Accident',
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'accident'),
+    key: 'panel_hospitals',
+    label: 'Network',
+    render: (plan) => qualitativeListValue(plan, 'panel_hospitals'),
   },
   {
-    key: 'hospitalization',
-    label: 'Hospitalization',
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'hospitalization'),
+    key: 'waiting_periods',
+    label: 'Waiting periods',
+    render: (plan) => durationListValue(plan, 'waiting_periods', 'duration_days'),
   },
   {
-    key: 'life',
-    label: 'Life',
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'life'),
+    key: 'claim_deadlines',
+    label: 'Claim deadlines',
+    render: (plan) => durationListValue(plan, 'claim_deadlines', 'deadline_days'),
   },
   {
-    key: 'critical_illness',
-    label: 'Critical illness',
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'critical_illness'),
-  },
-  {
-    key: 'outpatient',
-    label: 'Outpatient',
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'outpatient'),
-  },
-  {
-    key: 'emergency',
-    label: 'Emergency',
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'emergency'),
-  },
-  {
-    key: 'specialist',
-    label: 'Provider directory',
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'provider_directory'),
-  },
-  {
-    key: 'brochure',
-    label: 'Brochure',
-    render: (plan) =>
-      availabilityValue(
-        (plan.comparisonFact?.coverage_tags || []).includes('brochure_available') ||
-          plan.product_brochure_url,
-      ),
-  },
-  {
-    key: 'panel_network_size',
-    label: 'Panel network size',
-    render: (plan) => nullableNumber(plan.comparisonFact?.panel_network_size),
-  },
-  {
-    key: 'claim_sla_days',
+    key: 'claim_sla',
     label: 'Claim SLA',
-    render: (plan) => nullableNumber(plan.comparisonFact?.claim_sla_days, 'days'),
-  },
-  {
-    key: 'waiting_period_days',
-    label: 'Waiting period',
-    render: (plan) => nullableNumber(plan.comparisonFact?.waiting_period_days, 'days'),
+    render: (plan) => claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla'),
   },
   {
     key: 'exclusions',
     label: 'Exclusions',
-    render: (plan) => listValue(plan.comparisonFact?.exclusions),
+    render: (plan) => qualitativeListValue(plan, 'exclusions'),
   },
   {
-    key: 'notes',
-    label: 'Notes',
-    render: (plan) => plan.comparisonFact?.comparison_notes || 'No comparison note',
+    key: 'brochure_metadata',
+    label: 'Brochure',
+    render: brochureValue,
+  },
+  {
+    key: 'source_notes',
+    label: 'Source notes',
+    render: (plan) => qualitativeListValue(plan, 'source_notes'),
   },
 ])
+
+function coverageValue(plan) {
+  const tags = coverageTagsForPlan(plan).map(labelForTag)
+  return tags.length > 0 ? tags.join(', ') : factStateText(plan.facts, 'coverage_tags')
+}
+
+function qualitativeListValue(plan, fieldName) {
+  const items = factItems(plan.facts, fieldName)
+  return items.length > 0 ? listText(items) : factStateText(plan.facts, fieldName)
+}
+
+function durationListValue(plan, fieldName, durationFieldName) {
+  const items = factItems(plan.facts, fieldName)
+  return items.length > 0
+    ? items
+        .map((item) => durationText(item, durationFieldName))
+        .filter(Boolean)
+        .join(', ')
+    : factStateText(plan.facts, fieldName)
+}
+
+function brochureValue(plan) {
+  const metadata = factValue(plan.facts, 'brochure_metadata')
+  if (metadata?.sha256 || metadata?.url) {
+    return 'Captured'
+  }
+  if (
+    plan.product_brochure_url ||
+    (plan.comparisonFact?.coverage_tags || []).includes('brochure_available')
+  ) {
+    return 'Available'
+  }
+  return factStateText(plan.facts, 'brochure_metadata')
+}
 </script>
 
 <style scoped>

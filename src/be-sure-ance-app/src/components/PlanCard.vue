@@ -63,6 +63,40 @@
         </a>
       </div>
 
+      <div class="qualitative-sections">
+        <section>
+          <h4>Coverage</h4>
+          <p>{{ coverageSummary }}</p>
+        </section>
+
+        <section>
+          <h4>Network</h4>
+          <p>{{ networkSummary }}</p>
+          <ul v-if="panelHospitals.length > 0">
+            <li v-for="hospital in panelHospitals.slice(0, 4)" :key="itemLabel(hospital)">
+              {{ itemLabel(hospital) }}
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Process</h4>
+          <p>Waiting periods: {{ waitingPeriodSummary }}</p>
+          <p>Claim deadlines: {{ claimDeadlineSummary }}</p>
+          <p>Claim SLA: {{ claimSlaSummary }}</p>
+        </section>
+
+        <section>
+          <h4>Exclusions</h4>
+          <p>{{ exclusionSummary }}</p>
+        </section>
+
+        <section v-if="sourceNotes.length > 0">
+          <h4>Source notes</h4>
+          <p>{{ listText(sourceNotes) }}</p>
+        </section>
+      </div>
+
       <ul v-if="resources.length > 0" class="resource-list">
         <li v-for="resource in resources" :key="resource.id || resource.resource_url">
           <a
@@ -85,10 +119,22 @@
 import { computed } from 'vue'
 
 import { safeExternalUrl } from '../utils/links'
+import {
+  claimSlaText,
+  coverageTagsForPlan,
+  durationText,
+  factItems,
+  factStateText,
+  factValue,
+  itemLabel,
+  labelForTag,
+  listText,
+} from '../utils/planFacts'
 
 const props = defineProps({
   plan: Object,
   provider: Object,
+  facts: Object,
   comparisonFact: Object,
   resources: Array,
   selected: Boolean,
@@ -96,37 +142,83 @@ const props = defineProps({
 
 defineEmits(['toggle-select'])
 
-const coverageBadges = computed(() => {
-  const tags = props.comparisonFact?.coverage_tags || []
-  return tags.map(labelForTag)
-})
+const planWithFacts = computed(() => ({
+  ...props.plan,
+  facts: props.facts,
+  comparisonFact: props.comparisonFact,
+}))
+
+const coverageBadges = computed(() => coverageTagsForPlan(planWithFacts.value).map(labelForTag))
+
+const panelHospitals = computed(() => factItems(props.facts, 'panel_hospitals'))
+const waitingPeriods = computed(() => factItems(props.facts, 'waiting_periods'))
+const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
+const exclusions = computed(() => factItems(props.facts, 'exclusions'))
+const sourceNotes = computed(() => factItems(props.facts, 'source_notes'))
+const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
+const claimSlaSummary = computed(
+  () => claimSlaText(props.facts) || factStateText(props.facts, 'claim_sla'),
+)
+
+const coverageSummary = computed(() =>
+  coverageBadges.value.length > 0
+    ? coverageBadges.value.join(', ')
+    : factStateText(props.facts, 'coverage_tags', 'Unknown'),
+)
+
+const networkSummary = computed(() =>
+  panelHospitals.value.length > 0
+    ? `${panelHospitals.value.length} listed`
+    : factStateText(props.facts, 'panel_hospitals', 'Unknown'),
+)
+
+const waitingPeriodSummary = computed(() =>
+  waitingPeriods.value.length > 0
+    ? waitingPeriods.value.map((item) => durationText(item)).join(', ')
+    : factStateText(props.facts, 'waiting_periods', 'Unknown'),
+)
+
+const claimDeadlineSummary = computed(() =>
+  claimDeadlines.value.length > 0
+    ? claimDeadlines.value.map((item) => durationText(item, 'deadline_days')).join(', ')
+    : factStateText(props.facts, 'claim_deadlines', 'Unknown'),
+)
+
+const exclusionSummary = computed(() =>
+  exclusions.value.length > 0
+    ? listText(exclusions.value)
+    : factStateText(props.facts, 'exclusions'),
+)
+
+const processFactCount = computed(
+  () =>
+    waitingPeriods.value.length + claimDeadlines.value.length + (claimSlaText(props.facts) ? 1 : 0),
+)
 
 const factHighlights = computed(() => [
   {
     label: 'Coverage signals',
-    value: coverageBadges.value.length ? coverageBadges.value.length : 'None',
+    value: coverageBadges.value.length
+      ? coverageBadges.value.length
+      : factStateText(props.facts, 'coverage_tags', 'Unknown'),
   },
   {
-    label: 'Provider links',
-    value: props.resources?.length || 0,
+    label: 'Network facts',
+    value: networkSummary.value,
+  },
+  {
+    label: 'Process facts',
+    value: processFactCount.value ? `${processFactCount.value} listed` : 'Unknown',
+  },
+  {
+    label: 'Exclusions',
+    value: exclusions.value.length ? `${exclusions.value.length} noted` : exclusionSummary.value,
   },
   {
     label: 'Brochure',
-    value:
-      (props.comparisonFact?.coverage_tags || []).includes('brochure_available') ||
-      props.plan?.product_brochure_url
-        ? 'Available'
-        : 'Missing',
+    value: brochureMetadata.value || props.plan?.product_brochure_url ? 'Available' : 'Unknown',
   },
 ])
-
-function labelForTag(tag) {
-  return String(tag)
-    .split('_')
-    .filter(Boolean)
-    .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
-    .join(' ')
-}
 </script>
 
 <style scoped>
@@ -170,7 +262,7 @@ h3 {
 
 .fact-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 0.8rem;
 }
 
@@ -221,6 +313,38 @@ h3 {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 0.85rem;
+}
+
+.qualitative-sections {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.qualitative-sections section {
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(16, 39, 71, 0.08);
+}
+
+.qualitative-sections h4,
+.qualitative-sections p,
+.qualitative-sections ul {
+  margin: 0;
+}
+
+.qualitative-sections h4 {
+  margin-bottom: 0.35rem;
+  font-size: 0.86rem;
+}
+
+.qualitative-sections p,
+.qualitative-sections li {
+  color: var(--muted-ink);
+}
+
+.qualitative-sections ul {
+  padding-left: 1rem;
+  margin-top: 0.45rem;
 }
 
 .resource-list {
