@@ -222,7 +222,12 @@ def description_snippet(pdf_text: str) -> str:
 
 
 def fetch_plans(insurer: str) -> list[dict]:
-    response = helper.supabase.table(insurer).select("*").execute()
+    response = (
+        helper.supabase.table("plans")
+        .select("*")
+        .eq("insurer", insurer)
+        .execute()
+    )
     return response.data or []
 
 

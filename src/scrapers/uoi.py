@@ -19,7 +19,7 @@ https://www.uoi.com.sg/takaful.page
 import asyncio
 from playwright.async_api import async_playwright
 
-from src.backend.helper import initialize_supabase, overwrite_table_data
+from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 # ----- functions -----
 
@@ -87,4 +87,4 @@ if __name__ == "__main__":
     ]
     initialize_supabase()
     output = asyncio.run(run_all_tasks(scrape_list))
-    overwrite_table_data("uoi", output)
+    overwrite_plans_for_insurer("uoi", output)

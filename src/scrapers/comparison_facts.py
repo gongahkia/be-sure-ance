@@ -45,8 +45,13 @@ def slugify(value: str) -> str:
     return slug or "plan"
 
 
-def fetch_rows(table_name: str) -> list[dict]:
-    response = helper.supabase.table(table_name).select("*").execute()
+def fetch_rows(insurer: str) -> list[dict]:
+    response = (
+        helper.supabase.table("plans")
+        .select("*")
+        .eq("insurer", insurer)
+        .execute()
+    )
     return response.data or []
 
 
@@ -104,7 +109,7 @@ def build_fact_row(insurer: str, plan: dict, specialist_resource_count: int) -> 
     return {
         "insurer": insurer,
         "plan_name": plan["plan_name"],
-        "plan_slug": slugify(plan["plan_name"]),
+        "plan_slug": plan.get("plan_slug") or slugify(plan["plan_name"]),
         "panel_network_size": None,
         "claim_sla_days": None,
         "exclusions": [],

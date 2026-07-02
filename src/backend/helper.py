@@ -3,7 +3,9 @@
 import base64
 import os
 import json
+import re
 import sys
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 from supabase import create_client
 
@@ -84,14 +86,40 @@ def dry_run_enabled(args=None):
 
 
 def overwrite_table_data(table_name, data):
+    overwrite_plans_for_insurer(table_name, data)
+
+
+def overwrite_plans_for_insurer(insurer, rows):
     if dry_run_enabled():
-        print(f"Dry run enabled; skipping Supabase writes for {table_name}.")
+        print(f"Dry run enabled; skipping Supabase plan writes for {insurer}.")
         return
-    clear_table_data(table_name)
-    if not data:
-        print(f"No rows to insert into {table_name}.")
+
+    require_write_key()
+    formatted_rows = format_plan_rows(insurer, rows)
+    clear_plans_for_insurer(insurer)
+    if not formatted_rows:
+        print(f"No plan rows to insert for {insurer}.")
         return
-    insert_data(table_name, data)
+
+    response = (
+        require_client()
+        .table("plans")
+        .upsert(formatted_rows, on_conflict="insurer,plan_slug")
+        .execute()
+    )
+    if response.data is None:
+        print(f"Error upserting plans for {insurer}: No data returned")
+    else:
+        print(f"Plans upserted successfully for {insurer}.")
+
+
+def clear_plans_for_insurer(insurer):
+    require_write_key()
+    response = require_client().table("plans").delete().eq("insurer", insurer).execute()
+    if response.data is None or response.data == []:
+        print(f"Plans cleared for {insurer}: No data returned")
+    else:
+        print(f"Plans cleared for {insurer}: {response.data}")
 
 
 def clear_table_data(table_name):
@@ -114,30 +142,69 @@ def overwrite_generic_table_data(table_name, data):
     insert_generic_data(table_name, data)
 
 
-def insert_data(table_name, data):
-    require_write_key()
-    formatted_data = []
-    for row in flatten_rows(data):
+def format_plan_rows(insurer, rows, scraped_at=None):
+    scraped_at = scraped_at or datetime.now(timezone.utc).isoformat()
+    formatted_rows = []
+    slug_counts = {}
+    for row in flatten_rows(rows):
         if not isinstance(row, dict):
             raise TypeError(f"Expected row dict, got {type(row).__name__}")
-        plan_benefits = row.get("plan_benefits", [])
-        if isinstance(plan_benefits, str):
-            plan_benefits = [plan_benefits]
+        plan_name = normalize_text(row.get("plan_name"))
+        if not plan_name:
+            raise ValueError(f"Plan row for {insurer} is missing plan_name.")
+        base_slug = slugify(row.get("plan_slug") or plan_name)
+        slug_counts[base_slug] = slug_counts.get(base_slug, 0) + 1
+        plan_slug = (
+            base_slug
+            if slug_counts[base_slug] == 1
+            else f"{base_slug}-{slug_counts[base_slug]}"
+        )
         formatted_row = {
-            "plan_name": row.get("plan_name"),
-            "plan_benefits": plan_benefits,
+            "insurer": insurer,
+            "plan_name": plan_name,
+            "plan_slug": plan_slug,
+            "plan_benefits": normalize_plan_benefits(row.get("plan_benefits", [])),
             "plan_description": row.get("plan_description"),
             "plan_overview": row.get("plan_overview"),
             "plan_url": row.get("plan_url"),
             "product_brochure_url": row.get("product_brochure_url"),
+            "scraped_at": scraped_at,
         }
-        formatted_data.append(formatted_row)
+        formatted_rows.append(formatted_row)
+    return formatted_rows
 
-    response_insert = require_client().table(table_name).insert(formatted_data).execute()
-    if response_insert.data is None:
-        print(f"Error inserting data into {table_name}: No data returned")
-    else:
-        print(f"Data inserted successfully into {table_name}.")
+
+def normalize_text(value):
+    if value is None:
+        return ""
+    return re.sub(r"\s+", " ", str(value)).strip()
+
+
+def slugify(value):
+    slug = re.sub(r"[^a-z0-9]+", "-", normalize_text(value).lower()).strip("-")
+    return slug or "plan"
+
+
+def normalize_plan_benefits(value):
+    if not value:
+        return []
+    if isinstance(value, str):
+        return [normalize_text(value)]
+    if not isinstance(value, list | tuple):
+        return [normalize_text(value)]
+
+    benefits = []
+    for item in value:
+        if isinstance(item, list | tuple):
+            for child in item:
+                child_text = normalize_text(child)
+                if child_text:
+                    benefits.append(child_text)
+        else:
+            item_text = normalize_text(item)
+            if item_text:
+                benefits.append(item_text)
+    return benefits
 
 
 def insert_generic_data(table_name, data):

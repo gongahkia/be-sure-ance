@@ -10,7 +10,7 @@ from urllib.parse import urljoin, urldefrag, urlparse
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
-from src.backend.helper import initialize_supabase, overwrite_table_data
+from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 from src.lib.search import search_wrapper
 
 DEFAULT_SEARCH_QUERY = (
@@ -265,4 +265,4 @@ def run_cli_scraper(config: GenericScraperConfig, module_doc: str | None):
         return
 
     initialize_supabase()
-    overwrite_table_data(config.table_name, rows)
+    overwrite_plans_for_insurer(config.table_name, rows)
