@@ -39,6 +39,7 @@ Portfolio artifacts:
 - [Backup and retention](./docs/BACKUP_RETENTION.md)
 - [Takedown runbook](./docs/TAKEDOWN_RUNBOOK.md)
 - [Succession runbook](./docs/SUCCESSION.md)
+- [Phase 4 exit verification](./docs/PHASE4_EXIT_VERIFICATION.md)
 - [Pivot blog draft](./docs/blog/why-we-ripped-out-regex-derived-premiums.md)
 - [Case study template](./docs/case-studies/)
 - [Talk proposal](./docs/talks/)
