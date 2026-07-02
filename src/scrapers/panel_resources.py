@@ -14,6 +14,7 @@ from pypdf import PdfReader
 
 import src.backend.helper as helper
 from src.backend.helper import initialize_supabase, overwrite_generic_table_data
+from src.lib.http_identity import BOT_USER_AGENT
 
 SCRAPER_DIR = Path(__file__).resolve().parent
 SUPPORTED_INSURERS = (
@@ -49,7 +50,7 @@ RESOURCE_KEYWORDS = (
     "network",
     "directory",
 )
-USER_AGENT = "be-sure-ance-panel-resource-bot/1.0"
+USER_AGENT = BOT_USER_AGENT
 
 
 def normalize_whitespace(value: str | None) -> str:

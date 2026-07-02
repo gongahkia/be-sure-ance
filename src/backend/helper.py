@@ -14,6 +14,8 @@ import requests
 from dotenv import load_dotenv
 from supabase import create_client
 
+from src.lib.http_identity import BOT_USER_AGENT
+
 # ------ functions ------
 
 
@@ -23,7 +25,7 @@ DEFAULT_BROCHURE_STORAGE_BUCKET = "plan-brochures"
 BROCHURE_CAPTURE_FIELD = "brochure_metadata"
 BROCHURE_REQUEST_TIMEOUT_SECONDS = 30
 MAX_BROCHURE_BYTES = 20 * 1024 * 1024
-BROCHURE_USER_AGENT = "be-sure-ance-brochure-capture/1.0"
+BROCHURE_USER_AGENT = BOT_USER_AGENT
 
 
 def initialize_supabase():

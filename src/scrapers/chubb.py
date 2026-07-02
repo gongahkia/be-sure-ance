@@ -25,6 +25,7 @@ import re
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
+from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
 
 # ----- functions -----
 
@@ -78,8 +79,9 @@ def remove_html_entities(inp):
 async def scrape_data(url):
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        await page.goto(url, timeout=60000)
+        context = await new_bot_context(browser)
+        page = await context.new_page()
+        await goto_with_retry(page, url)
 
         scraped_plans = []
 
@@ -141,11 +143,7 @@ async def scrape_data(url):
 
 
 async def run_all_tasks(scrape_list):
-    tasks = []
-    for url in scrape_list:
-        tasks.append(scrape_data(url))
-    all_data = await asyncio.gather(*tasks)
-    return [plan_dict for general in all_data for plan_dict in general]
+    return await gather_scrape_results("chubb", scrape_list, scrape_data)
 
 
 # ----- sample execution code -----

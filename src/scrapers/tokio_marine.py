@@ -17,6 +17,7 @@ import re
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
+from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
 
 # ----- functions -----
 
@@ -72,9 +73,9 @@ async def scrape_data(url):
     scraped_plans = []
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context()
+        context = await new_bot_context(browser)
         page = await context.new_page()
-        await page.goto(url, timeout=60000)
+        await goto_with_retry(page, url)
         link_elements = await page.query_selector_all("div.quick-help-custom__item a")
         plan_urls = []
         for link in link_elements:
@@ -86,7 +87,7 @@ async def scrape_data(url):
         for plan_url in plan_urls:
             # print(plan_urls)
             plan_page = await page.context.new_page()
-            await plan_page.goto(plan_url, timeout=60000)
+            await goto_with_retry(plan_page, plan_url)
             title_element = await plan_page.query_selector("h2.masthead-colors__title")
             plan_name = (await title_element.text_content()).strip() if title_element else ""
             overview_element = await plan_page.query_selector("h2.masthead-colors__text")
@@ -116,11 +117,7 @@ async def scrape_data(url):
 
 
 async def run_all_tasks(scrape_list):
-    tasks = []
-    for url in scrape_list:
-        tasks.append(scrape_data(url))
-    all_data = await asyncio.gather(*tasks)
-    return [plan_dict for general in all_data for plan_dict in general]
+    return await gather_scrape_results("tokio_marine", scrape_list, scrape_data)
 
 
 # ----- sample execution code -----

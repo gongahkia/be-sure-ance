@@ -12,6 +12,7 @@ from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 from src.lib.search import search_wrapper
+from src.scrapers.navigation import goto_with_retry, new_bot_context
 
 DEFAULT_SEARCH_QUERY = (
     "insurance protection plan policy health life medical hospital accident "
@@ -84,11 +85,7 @@ def dedupe_preserve_order(values: Iterable[str]) -> list[str]:
 
 
 async def read_page(page, url: str, config: GenericScraperConfig):
-    await page.goto(url, wait_until="domcontentloaded", timeout=config.timeout_ms)
-    try:
-        await page.wait_for_load_state("networkidle", timeout=min(config.timeout_ms, 5000))
-    except Exception:
-        pass
+    await goto_with_retry(page, url, timeout_ms=config.timeout_ms)
     html = await page.content()
     soup = BeautifulSoup(html, "html.parser")
 
@@ -216,7 +213,8 @@ async def scrape_generic_insurer(config: GenericScraperConfig, module_doc: str |
 
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch(headless=True)
-        page = await browser.new_page()
+        context = await new_bot_context(browser)
+        page = await context.new_page()
 
         while queued and len(visited) < config.max_seed_pages:
             url = queued.pop(0)

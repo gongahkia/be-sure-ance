@@ -18,6 +18,7 @@ import re
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
+from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
 
 # ----- functions -----
 
@@ -74,10 +75,10 @@ async def scrape_data(target_url):
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context()
+        context = await new_bot_context(browser)
         page = await context.new_page()
 
-        await page.goto(target_url)
+        await goto_with_retry(page, target_url)
 
         if await page.query_selector("#productDetailContainer"):  # handle pop-up ad
             await page.wait_for_timeout(2000)
@@ -113,7 +114,7 @@ async def scrape_data(target_url):
             url = filter["plan_url"]
             # print(url)
             product_page = await context.new_page()
-            await product_page.goto(url)
+            await goto_with_retry(product_page, url)
 
             overview_content = await product_page.query_selector(
                 ".cmp-productoverviewhero__content"
@@ -168,11 +169,7 @@ async def scrape_data(target_url):
 
 
 async def run_all_tasks(scrape_list):
-    tasks = []
-    for url in scrape_list:
-        tasks.append(scrape_data(url))
-    all_data = await asyncio.gather(*tasks)
-    return [plan_dict for general in all_data for plan_dict in general]
+    return await gather_scrape_results("aia", scrape_list, scrape_data)
 
 
 # ----- sample execution code -----

@@ -16,12 +16,13 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup, Tag
 
+from src.lib.http_identity import BOT_USER_AGENT
 from src.scrapers.registry import SUPPORTED_SCRAPERS
 
 SCRAPER_DIR = Path(__file__).resolve().parents[1] / "scrapers"
 DEFAULT_OUTPUT_DIR = Path(".validation-output")
 EXCLUDED_SCRAPER_FILES = {"__init__.py", "_generic_domain.py", "run_all.py"}
-USER_AGENT = "be-sure-ance-validation-bot/1.0"
+USER_AGENT = BOT_USER_AGENT
 
 
 @dataclass(frozen=True)

@@ -84,11 +84,8 @@ Operating policy:
 Current implementation status:
 
 - Weekly GitHub Actions scrape is scheduled for Monday 00:00 SGT.
-- Some HTTP paths already set bot User-Agent headers:
-  - `be-sure-ance-brochure-capture/1.0`
-  - `be-sure-ance-panel-resource-bot/1.0`
-  - `be-sure-ance-validation-bot/1.0`
-- Repo-wide robots.txt enforcement is not complete yet. Public relaunch is blocked until scraper hardening verifies robots handling and a contactable launch User-Agent such as `be-sure-ance-bot/1.0 (mailto:gabrielzmong@gmail.com)` is used consistently.
+- Playwright and HTTP scraper paths use `be-sure-ance-bot/1.0 (mailto:gabrielzmong@gmail.com)`.
+- Repo-wide robots.txt enforcement is not complete yet. Public relaunch is blocked until scraper hardening verifies robots handling consistently.
 
 Reference: RFC 9309 defines the Robots Exclusion Protocol as the mechanism for service owners to control how crawlers access content.
 
