@@ -1,18 +1,14 @@
 ![](https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg)
-![](https://api.netlify.com/api/v1/badges/281baeb4-46fd-4008-9f72-36324a3e1cad/deploy-status)
-[![](https://img.shields.io/badge/be_sure_ance_1.0.0-build-passing)](https://github.com/gongahkia/be-sure-ance/releases/tag/1.0.0)
-![](https://img.shields.io/badge/be_sure_ance_1.0.0-deployment_down-orange)
 
-> [!WARNING]
-> [`Be-sure-ance`](https://github.com/gongahkia/be-sure-ance)'s Netlify deployment is inactive as of 7 April 2025.
+# `Be-sure-ance`
 
-# `Be-sure-ance` 🤷‍♂️
+`Be-sure-ance` is an IFA pre-meeting research tool for source-traceable qualitative metadata on Singapore insurance plans. [`compareFIRST`](https://www.comparefirst.sg/wap/homeEvent.action) remains the reference point for regulated quantitative life-insurance comparison; this project complements it with plan-grain qualitative facts that compareFIRST does not try to curate, such as panel/network clues, exclusions, claim process text, and brochure provenance.
 
-Choosing an insurance plan should be easy.
+The app does not provide financial advice, insurance advice, quotes, recommendations, suitability rankings, premium estimates, or cost projections. It is a research workspace for checking source-linked plan facts before using carrier documents, compareFIRST, or licensed advisory workflows.
 
 ## Usage
 
-Use the live website [***here***](https://be-sure-ance.netlify.app/).
+No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate for restoring Netlify or moving to another static host.
 
 Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supabase.yml).
 
@@ -79,9 +75,10 @@ pre-commit run --all-files
 
 ### Stack
 
-* [Frontend](./src/be-sure-ance-app/) - Vue.js, Netlify
-* [Backend](./src/scrapers/) - Python, Github workflows
-* [Database](./src/lib/create.sql) - Supabase
+* [Frontend](./src/be-sure-ance-app/) - Vue 3, Vite, Supabase JS client.
+* [Backend](./src/scrapers/) - Python scrapers, brochure capture/parsing, GitHub Actions.
+* [Database](./src/lib/create.sql) - Supabase Postgres with public read-only access and service-role writes.
+* [Storage](./src/backend/helper.py) - Supabase Storage for captured brochure PDFs.
 
 ### Overview
 
@@ -90,31 +87,61 @@ sequenceDiagram
     participant GitHub Workflow
     participant Backend Scraper
     participant Supabase
+    participant Supabase Storage
     participant Frontend Vue.js
-    participant User
+    participant IFA
 
     GitHub Workflow->>Backend Scraper: Trigger scheduled workflow (Weekly Monday 12am)
-    Backend Scraper->>Backend Scraper: Scrape data from various insurance sites
-    Backend Scraper->>Supabase: Write to database
-    Frontend Vue.js->>Supabase: Fetch insurance plan data
-    Frontend Vue.js->>User: Render insurance plans on the site
-    User->>Frontend Vue.js: Access website to view insurance plans
+    Backend Scraper->>Backend Scraper: Scrape plan pages and capture brochures
+    Backend Scraper->>Supabase Storage: Store brochure PDF bytes by content hash
+    Backend Scraper->>Supabase: Upsert plans and source-traceable plan_facts
+    Frontend Vue.js->>Supabase: Fetch plans, plan_facts, and provider resources
+    Frontend Vue.js->>IFA: Render qualitative comparison workspace with provenance
 ```
 
 ### DB
 
 ```mermaid
 erDiagram
-    Insurance_provider{
-        int id PK "Primary Key, Auto-increment"
-        text plan_name "Name of the plan"
-        text[] plan_benefits "Array of plan benefits"
-        text plan_description "Description of the plan"
-        text plan_overview "Overview of the plan"
-        text plan_url "URL for the plan"
-        text product_brochure_url "URL for the product brochure"
+    plans {
+        int id PK
+        text insurer
+        text plan_name
+        text plan_slug
+        text[] plan_benefits
+        text plan_description
+        text plan_overview
+        text plan_url
+        text product_brochure_url
+        timestamptz scraped_at
     }
+
+    plan_facts {
+        int id PK
+        text insurer
+        text plan_slug
+        text field_name
+        jsonb field_value
+        text source_url
+        text source_type
+        timestamptz scraped_at
+        timestamptz last_verified_at
+    }
+
+    specialist_resources {
+        int id PK
+        text insurer
+        text plan_name
+        text resource_type
+        text resource_url
+        text source_url
+    }
+
+    plans ||--o{ plan_facts : "insurer + plan_slug"
+    plans ||--o{ specialist_resources : "insurer + plan_name"
 ```
+
+`plans` is the canonical plan catalog. `plan_facts` is the canonical qualitative fact table; each displayed fact carries `source_url`, `source_type`, `scraped_at`, and `last_verified_at`. `plan_comparison_facts` remains an interim qualitative summary table while the frontend completes the Phase 2 migration.
 
 ## Details
 
@@ -158,15 +185,15 @@ Report any issues to [gabrielzmong@gmail.com](mailto:gabrielzmong@gmail.com).
 
 ### For Informational Purposes Only
 
-The information provided on Be-sure-ance is for general informational purposes only. While we strive to ensure the accuracy and reliability of the insurance plans displayed, Be-sure-ance makes no guarantees, representations, or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information. Users should independently verify any information before making decisions based on it.
+The information provided on Be-sure-ance is for informational research only. While the project records source URLs and verification dates for qualitative plan facts, Be-sure-ance makes no guarantees, representations, or warranties of any kind, express or implied, about completeness, accuracy, reliability, suitability, or availability. Users should independently verify every fact against the carrier source, compareFIRST where applicable, and their own advisory or compliance workflow.
 
 ### No Professional Advice
 
-Be-sure-ance does not provide professional, legal, financial, or insurance advice. The content displayed should not be considered as a substitute for professional advice from licensed insurance agents or advisors. Users are encouraged to consult directly with the relevant insurance companies or professionals to confirm details and suitability of any insurance plans.
+Be-sure-ance does not provide professional, legal, financial, or insurance advice. It does not generate quotes, premiums, cost projections, suitability rankings, recommendations, or purchase pathways. The content displayed is not a substitute for licensed financial advisory work, carrier documents, or regulated comparison tools.
 
 ### No Endorsement
 
-The inclusion of any insurance plans or companies on Be-sure-ance does not constitute an endorsement or recommendation of their services. Be-sure-ance is not affiliated with any of the listed insurance providers unless explicitly stated otherwise.
+The inclusion of any insurance plans or companies on Be-sure-ance does not constitute an endorsement, ranking, or recommendation of their services. Be-sure-ance is not affiliated with any of the listed insurance providers unless explicitly stated otherwise.
 
 ### Third-Party Content
 
