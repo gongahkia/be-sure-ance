@@ -4,23 +4,24 @@ CHUBB
 https://www.chubb.com/sg-en/
 https://www.chubb.com/sg-en/claims.html
 
-https://www.chubb.com/sg-en/business/financial-lines.html 
-https://www.chubb.com/sg-en/business/marine.html 
-https://www.chubb.com/sg-en/business/property.html 
+https://www.chubb.com/sg-en/business/financial-lines.html
+https://www.chubb.com/sg-en/business/marine.html
+https://www.chubb.com/sg-en/business/property.html
 https://www.chubb.com/sg-en/business/risk-engineering-services.html
-https://www.chubb.com/sg-en/business/accident-health.html 
-https://www.chubb.com/sg-en/business/casualty.html 
+https://www.chubb.com/sg-en/business/accident-health.html
+https://www.chubb.com/sg-en/business/casualty.html
 https://www.chubb.com/sg-en/business/construction.html
 https://www.chubb.com/sg-en/business/cyber.html
-https://www.chubb.com/sg-en/business/energy.html 
+https://www.chubb.com/sg-en/business/energy.html
 https://www.chubb.com/sg-en/business/environmental.html
 """
 
 # ----- required imports -----
 
-import re
-import html
 import asyncio
+import html
+import re
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -30,9 +31,7 @@ from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 def remove_excess_newlines(inp):
     if not isinstance(inp, str):
-        raise TypeError(
-            f"Input must be type <string> but was type <{type(inp).__name__}>"
-        )
+        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
     inp = re.sub(r"\n+", "\n", inp)
     inp = re.sub(r"[ \t\u200b]+", " ", inp)
     return inp.strip()
@@ -92,19 +91,13 @@ async def scrape_data(url):
                 else ""
             )
             hero_title = (
-                (
-                    await (
-                        await content_div.query_selector("h1.hero-title")
-                    ).text_content()
-                ).strip()
+                (await (await content_div.query_selector("h1.hero-title")).text_content()).strip()
                 if await content_div.query_selector("h1.hero-title")
                 else ""
             )
             text_description = (
                 (
-                    await (
-                        await content_div.query_selector("div.text-description")
-                    ).text_content()
+                    await (await content_div.query_selector("div.text-description")).text_content()
                 ).strip()
                 if await content_div.query_selector("div.text-description")
                 else ""
@@ -118,10 +111,6 @@ async def scrape_data(url):
         widget_contents = await page.query_selector_all("div.widget-content")
 
         for widget in widget_contents:
-            h2_element = await widget.query_selector("h2.h4-title")
-            description_element = await widget.query_selector("div.text-description")
-            cta_buttons_wrap = await widget.query_selector("div.cta-buttons-wrap a")
-
             if h2_element := await widget.query_selector("h2.h4-title"):
                 plan_name = (await h2_element.text_content()).strip()
             else:
@@ -134,7 +123,6 @@ async def scrape_data(url):
 
             if cta_wrap := await widget.query_selector("div.cta-buttons-wrap a"):
                 plan_url = await cta_wrap.get_attribute("href")
-                product_brochure_url = plan_url
             else:
                 continue
 

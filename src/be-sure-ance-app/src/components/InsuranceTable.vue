@@ -45,7 +45,10 @@
         </td>
         <td>
           <ul v-if="resourcesForPlan(plan).length > 0">
-            <li v-for="resource in resourcesForPlan(plan)" :key="resource.id || resource.resource_url">
+            <li
+              v-for="resource in resourcesForPlan(plan)"
+              :key="resource.id || resource.resource_url"
+            >
               <a
                 v-if="safeExternalUrl(resource.resource_url)"
                 :href="safeExternalUrl(resource.resource_url)"
@@ -56,7 +59,9 @@
                 {{ resource.resource_title || resource.resource_type }}
               </a>
               <span v-else>{{ resource.resource_title || resource.resource_type }}</span>
-              <span v-if="resource.resource_description"> - {{ resource.resource_description }}</span>
+              <span v-if="resource.resource_description">
+                - {{ resource.resource_description }}</span
+              >
             </li>
           </ul>
           <span v-else>No directory found.</span>
@@ -64,9 +69,7 @@
       </tr>
     </tbody>
   </table>
-  <div v-else>
-    No results found.
-  </div>
+  <div v-else>No results found.</div>
 </template>
 
 <script setup>
@@ -77,7 +80,7 @@ import { safeExternalUrl } from '../utils/links'
 const props = defineProps({
   plans: Array,
   insurerKey: String,
-  specialistResources: Array
+  specialistResources: Array,
 })
 
 const planResourceMap = computed(() => {
@@ -85,7 +88,7 @@ const planResourceMap = computed(() => {
   return resources
     .filter((resource) => resource.insurer === props.insurerKey)
     .reduce((accumulator, resource) => {
-      const key = resource.plan_name || ""
+      const key = resource.plan_name || ''
       if (!accumulator[key]) {
         accumulator[key] = []
       }

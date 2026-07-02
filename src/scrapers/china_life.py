@@ -5,18 +5,19 @@ https://www.chinalife.com.sg/
 
 https://www.chinalife.com.sg/forms
 
-https://www.chinalife.com.sg/products/endowment-plans 
-https://www.chinalife.com.sg/products/legacy-planning 
-https://www.chinalife.com.sg/products/riders 
-https://www.chinalife.com.sg/products/retirement-annuity-plans 
-https://www.chinalife.com.sg/products/protection 
+https://www.chinalife.com.sg/products/endowment-plans
+https://www.chinalife.com.sg/products/legacy-planning
+https://www.chinalife.com.sg/products/riders
+https://www.chinalife.com.sg/products/retirement-annuity-plans
+https://www.chinalife.com.sg/products/protection
 """
 
 # ----- required imports -----
 
-import re
-import html
 import asyncio
+import html
+import re
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -26,9 +27,7 @@ from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 def remove_excess_newlines(inp):
     if not isinstance(inp, str):
-        raise TypeError(
-            f"Input must be type <string> but was type <{type(inp).__name__}>"
-        )
+        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
     inp = re.sub(r"\n+", "\n", inp)
     inp = re.sub(r"[ \t\u200b]+", " ", inp)
     return inp.strip()
@@ -94,20 +93,12 @@ async def scrape_data(url):
             if link_element := await plan.query_selector("span.field-content a"):
                 plan_name = (
                     (await link_element.text_content()).strip()
-                    if (
-                        link_element := await plan.query_selector(
-                            "span.field-content a"
-                        )
-                    )
+                    if (link_element := await plan.query_selector("span.field-content a"))
                     else ""
                 )
                 plan_url = (
                     await link_element.get_attribute("href")
-                    if (
-                        link_element := await plan.query_selector(
-                            "span.field-content a"
-                        )
-                    )
+                    if (link_element := await plan.query_selector("span.field-content a"))
                     else ""
                 )
             else:
@@ -128,12 +119,10 @@ async def scrape_data(url):
                 "plan_benefits": plan_benefits,
                 "plan_description": plan_description,
                 "plan_overview": "",
-                "plan_url": f"https://www.chinalife.com.sg/{plan_url}"
-                if plan_url
-                else "",
-                "product_brochure_url": f"https://www.chinalife.com.sg/{plan_url}"
-                if plan_url
-                else "",
+                "plan_url": f"https://www.chinalife.com.sg/{plan_url}" if plan_url else "",
+                "product_brochure_url": (
+                    f"https://www.chinalife.com.sg/{plan_url}" if plan_url else ""
+                ),
             }
 
             scraped_plans.append(formatted_entry)

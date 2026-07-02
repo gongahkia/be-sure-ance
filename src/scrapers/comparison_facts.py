@@ -7,7 +7,6 @@ import re
 import src.backend.helper as helper
 from src.backend.helper import initialize_supabase, overwrite_generic_table_data
 
-
 SUPPORTED_INSURERS = (
     "aia",
     "uoi",
@@ -46,12 +45,7 @@ def slugify(value: str) -> str:
 
 
 def fetch_rows(insurer: str) -> list[dict]:
-    response = (
-        helper.supabase.table("plans")
-        .select("*")
-        .eq("insurer", insurer)
-        .execute()
-    )
+    response = helper.supabase.table("plans").select("*").eq("insurer", insurer).execute()
     return response.data or []
 
 
@@ -60,7 +54,9 @@ def first_sentences(text: str, limit: int = 2) -> str:
     return ". ".join(segments[:limit])
 
 
-def derive_coverage_tags(text: str, specialist_resource_count: int, brochure_available: bool) -> list[str]:
+def derive_coverage_tags(
+    text: str, specialist_resource_count: int, brochure_available: bool
+) -> list[str]:
     lowered = text.lower()
     tags = [
         key for key, keywords in PLAN_KEYWORDS if any(keyword in lowered for keyword in keywords)

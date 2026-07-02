@@ -1,22 +1,23 @@
 """
 UOI
 
-https://www.uoi.com.sg/index.page 
+https://www.uoi.com.sg/index.page
 
 https://www.uoi.com.sg/personal/travel-insurance.page
-https://www.uoi.com.sg/personal/motor-insurance.page 
-https://www.uoi.com.sg/personal/home-contents-insurance.page 
-https://www.uoi.com.sg/personal/accident-protection.page 
+https://www.uoi.com.sg/personal/motor-insurance.page
+https://www.uoi.com.sg/personal/home-contents-insurance.page
+https://www.uoi.com.sg/personal/accident-protection.page
 
-https://www.uoi.com.sg/commercial/general-insurance.page 
-https://www.uoi.com.sg/commercial/specialised-insurance.page 
-https://www.uoi.com.sg/claims-assistance.page 
-https://www.uoi.com.sg/takaful.page 
+https://www.uoi.com.sg/commercial/general-insurance.page
+https://www.uoi.com.sg/commercial/specialised-insurance.page
+https://www.uoi.com.sg/claims-assistance.page
+https://www.uoi.com.sg/takaful.page
 """
 
 # ----- required imports -----
 
 import asyncio
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -35,12 +36,8 @@ async def scrape_data(url):
         plan_name = await page.locator(
             "div.col-12.col-lg-5.p-0 h1.uob-h1.mb-3.mb-md-6"
         ).text_content()
-        plan_overview_and_description = await page.locator(
-            "div.col-12.col-lg-5.p-0"
-        ).text_content()
-        plan_overview_and_description = plan_overview_and_description.replace(
-            plan_name, ""
-        ).strip()
+        plan_overview_and_description = await page.locator("div.col-12.col-lg-5.p-0").text_content()
+        plan_overview_and_description = plan_overview_and_description.replace(plan_name, "").strip()
         plan_overview = plan_overview_and_description.split("\n")[0]
         plan_description = "\n".join(plan_overview_and_description.split("\n")[1:])
         benefits_locator = page.locator(
@@ -62,9 +59,9 @@ async def scrape_data(url):
             "plan_description": plan_description.strip(),
             "plan_overview": plan_overview.strip(),
             "plan_url": url,
-            "product_brochure_url": f"https://www.uoi.com.sg{brochure_url}"
-            if brochure_url
-            else None,
+            "product_brochure_url": (
+                f"https://www.uoi.com.sg{brochure_url}" if brochure_url else None
+            ),
         }
 
 

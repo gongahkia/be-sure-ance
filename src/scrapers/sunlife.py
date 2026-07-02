@@ -1,17 +1,18 @@
 """
 SUN LIFE
 
-https://www.sunlife.com.sg/en/ 
+https://www.sunlife.com.sg/en/
 
 https://www.sunlife.com.sg/en/product-solutions/life-insurance/
-https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/ 
+https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/
 """
 
 # ----- required imports -----
 
-import re
-import html
 import asyncio
+import html
+import re
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -21,9 +22,7 @@ from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 def remove_excess_newlines(inp):
     if not isinstance(inp, str):
-        raise TypeError(
-            f"Input must be type <string> but was type <{type(inp).__name__}>"
-        )
+        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
     inp = re.sub(r"\n+", "\n", inp)
     inp = re.sub(r"[ \t\u200b]+", " ", inp)
     return inp.strip()
@@ -76,26 +75,16 @@ async def scrape_data(url):
         title_element = await page.query_selector(
             "div.bright.card-content-overlay h1.h1.card-title"
         )
-        plan_name = (
-            (await title_element.text_content()).strip() if title_element else ""
-        )
+        plan_name = (await title_element.text_content()).strip() if title_element else ""
         description_elements = [
             await page.query_selector("div.bright.card-content-overlay div.card_text"),
-            await page.query_selector(
-                "div.text.aem-GridColumn.aem-GridColumn--default--12"
-            ),
+            await page.query_selector("div.text.aem-GridColumn.aem-GridColumn--default--12"),
         ]
         plan_description = " ".join(
-            [
-                (await desc.text_content()).strip()
-                for desc in description_elements
-                if desc
-            ]
+            [(await desc.text_content()).strip() for desc in description_elements if desc]
         )
         benefit_elements = await page.query_selector_all("div.card-body")
-        plan_benefits = [
-            (await benefit.text_content()).strip() for benefit in benefit_elements
-        ]
+        plan_benefits = [(await benefit.text_content()).strip() for benefit in benefit_elements]
         overview_elements = await page.query_selector_all("h3.h3.accordion-header")
         plan_overview = ""
         for overview in overview_elements:
@@ -123,9 +112,9 @@ async def scrape_data(url):
             "plan_description": plan_description,
             "plan_overview": plan_overview.strip(),
             "plan_url": url,
-            "product_brochure_url": f"https://www.sunlife.com.sg{plan_brochure_url}"
-            if plan_brochure_url
-            else "",
+            "product_brochure_url": (
+                f"https://www.sunlife.com.sg{plan_brochure_url}" if plan_brochure_url else ""
+            ),
         }
         scraped_plans.append(formatted_row)
         await browser.close()

@@ -1,6 +1,23 @@
 repos:
-  - repo: https://github.com/psf/black
-    rev: 23.1.0  
+  - repo: local
     hooks:
       - id: black
-        language_version: python3
+        name: black
+        entry: black --check src tests
+        language: system
+        pass_filenames: false
+      - id: ruff
+        name: ruff
+        entry: ruff check src tests
+        language: system
+        pass_filenames: false
+      - id: frontend-lint
+        name: frontend lint
+        entry: npm --prefix src/be-sure-ance-app run lint
+        language: system
+        pass_filenames: false
+      - id: frontend-format
+        name: frontend format
+        entry: npm --prefix src/be-sure-ance-app run format:check
+        language: system
+        pass_filenames: false

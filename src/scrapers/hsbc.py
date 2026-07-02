@@ -14,8 +14,9 @@ https://www.insurance.hsbc.com.sg/legacy/
 
 # ----- required imports -----
 
-import re
 import asyncio
+import re
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -25,9 +26,7 @@ from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 def remove_excess_newlines(inp):
     if not isinstance(inp, str):
-        raise TypeError(
-            f"Input must be type <string> but was type <{type(inp).__name__}>"
-        )
+        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
     inp = re.sub(r"\n+", "\n", inp)
     inp = re.sub(r"[ \t\u200b]+", " ", inp)
     return inp.strip()
@@ -44,19 +43,13 @@ async def scrape_data(url):
             li_items = await ul.query_selector_all("li")
             for li in li_items:
                 name_element = await li.query_selector("div.item-content h3")
-                plan_name = (
-                    (await name_element.text_content()).strip() if name_element else ""
-                )
+                plan_name = (await name_element.text_content()).strip() if name_element else ""
                 link_element = await li.query_selector("div.item-content h3 a")
-                plan_url = (
-                    await link_element.get_attribute("href") if link_element else ""
-                )
+                plan_url = await link_element.get_attribute("href") if link_element else ""
                 plan_brochure_url = plan_url
                 item_content_element = await li.query_selector("div.item-content")
                 if item_content_element:
-                    item_content_text = (
-                        await item_content_element.text_content()
-                    ).strip()
+                    item_content_text = (await item_content_element.text_content()).strip()
                     plan_description = (
                         item_content_text[len(plan_name) :].lstrip()
                         if plan_name
@@ -71,12 +64,12 @@ async def scrape_data(url):
                     "plan_benefits": plan_benefits,
                     "plan_description": plan_description,
                     "plan_overview": plan_overview,
-                    "plan_url": f"https://www.insurance.hsbc.com.sg{plan_url}"
-                    if plan_url
-                    else "",
-                    "product_brochure_url": f"https://www.insurance.hsbc.com.sg{plan_brochure_url}"
-                    if plan_brochure_url
-                    else "",
+                    "plan_url": f"https://www.insurance.hsbc.com.sg{plan_url}" if plan_url else "",
+                    "product_brochure_url": (
+                        f"https://www.insurance.hsbc.com.sg{plan_brochure_url}"
+                        if plan_brochure_url
+                        else ""
+                    ),
                 }
                 if formatted_row["plan_name"] in [
                     "",

@@ -2,7 +2,6 @@ import re
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_SQL = (ROOT / "src/lib/create.sql").read_text()
 MIGRATION_SQL = "\n".join(
@@ -24,9 +23,7 @@ class SupabaseSchemaSecurityTests(unittest.TestCase):
             if not re.search(r"\bTO\b.*\b(?:ANON|AUTHENTICATED)\b", statement):
                 continue
             with self.subTest(statement=statement.strip()):
-                self.assertIsNone(
-                    re.search(r"\b(?:ALL|INSERT|UPDATE|DELETE)\b", statement)
-                )
+                self.assertIsNone(re.search(r"\b(?:ALL|INSERT|UPDATE|DELETE)\b", statement))
 
     def test_schema_enables_read_only_rls_for_public_tables(self):
         combined = squash(f"{SCHEMA_SQL}\n{MIGRATION_SQL}")

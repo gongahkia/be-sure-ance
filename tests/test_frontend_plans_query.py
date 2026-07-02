@@ -1,14 +1,13 @@
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 APP_VUE = (ROOT / "src/be-sure-ance-app/src/App.vue").read_text()
 
 
 class FrontendPlansQueryTests(unittest.TestCase):
     def test_app_loads_plan_rows_from_single_plans_query(self):
-        self.assertEqual(APP_VUE.count('supabase.from("plans").select("*")'), 1)
+        self.assertEqual(APP_VUE.count("supabase.from('plans').select('*')"), 1)
         self.assertNotIn("supabase.from(provider.key)", APP_VUE)
         self.assertNotIn("providers.map(async (provider)", APP_VUE)
 

@@ -15,7 +15,6 @@ from pypdf import PdfReader
 import src.backend.helper as helper
 from src.backend.helper import initialize_supabase, overwrite_generic_table_data
 
-
 SCRAPER_DIR = Path(__file__).resolve().parent
 SUPPORTED_INSURERS = (
     "aia",
@@ -222,12 +221,7 @@ def description_snippet(pdf_text: str) -> str:
 
 
 def fetch_plans(insurer: str) -> list[dict]:
-    response = (
-        helper.supabase.table("plans")
-        .select("*")
-        .eq("insurer", insurer)
-        .execute()
-    )
+    response = helper.supabase.table("plans").select("*").eq("insurer", insurer).execute()
     return response.data or []
 
 
@@ -258,7 +252,9 @@ def gather_candidates_for_insurer(
     return dedupe_by_url(candidates)
 
 
-def build_resource_row(insurer: str, plan: dict, candidate: dict, keywords: list[str], pdf_text: str) -> dict:
+def build_resource_row(
+    insurer: str, plan: dict, candidate: dict, keywords: list[str], pdf_text: str
+) -> dict:
     title = candidate["title"] or Path(urlparse(candidate["url"]).path).name or "Provider resource"
     return {
         "insurer": insurer,
@@ -272,7 +268,9 @@ def build_resource_row(insurer: str, plan: dict, candidate: dict, keywords: list
     }
 
 
-def run_panel_resource_scrape(insurers: list[str], request_timeout: int, max_plans: int | None) -> list[dict]:
+def run_panel_resource_scrape(
+    insurers: list[str], request_timeout: int, max_plans: int | None
+) -> list[dict]:
     html_cache: dict[str, list[dict]] = {}
     pdf_cache: dict[str, str] = {}
     rows = []

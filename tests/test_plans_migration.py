@@ -1,7 +1,6 @@
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_SQL = (ROOT / "src/lib/create.sql").read_text()
 MIGRATION_SQL = (ROOT / "src/lib/migrations/0001_unify_plans.sql").read_text()

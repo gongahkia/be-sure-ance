@@ -1,11 +1,12 @@
 # ----- required imports -----
 
 import base64
-import os
 import json
+import os
 import re
 import sys
 from datetime import datetime, timezone
+
 from dotenv import load_dotenv
 from supabase import create_client
 
@@ -22,10 +23,7 @@ def initialize_supabase():
         return
     load_dotenv()
     SUPABASE_URL = os.getenv("SUPABASE_URL")
-    SUPABASE_SERVER_KEY = (
-        os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-        or os.getenv("SUPABASE_SECRET_KEY")
-    )
+    SUPABASE_SERVER_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_SECRET_KEY")
     if not SUPABASE_URL or not SUPABASE_SERVER_KEY:
         raise ValueError(
             "Supabase URL or server-side service/secret key is missing. Check your .env file."
@@ -57,9 +55,7 @@ def key_has_write_access(key):
 
 def require_write_key():
     if not key_has_write_access(_supabase_key):
-        raise PermissionError(
-            "Supabase writes require a server-side secret/service_role key."
-        )
+        raise PermissionError("Supabase writes require a server-side secret/service_role key.")
 
 
 def require_client():
@@ -69,9 +65,7 @@ def require_client():
 
 
 def process_json_files(target_directory_filepath):
-    json_files = [
-        file for file in os.listdir(target_directory_filepath) if file.endswith(".json")
-    ]
+    json_files = [file for file in os.listdir(target_directory_filepath) if file.endswith(".json")]
     print(f"Files being processed: {json_files}")
     for json_file in json_files:
         table_name = os.path.splitext(json_file)[0]
@@ -155,9 +149,7 @@ def format_plan_rows(insurer, rows, scraped_at=None):
         base_slug = slugify(row.get("plan_slug") or plan_name)
         slug_counts[base_slug] = slug_counts.get(base_slug, 0) + 1
         plan_slug = (
-            base_slug
-            if slug_counts[base_slug] == 1
-            else f"{base_slug}-{slug_counts[base_slug]}"
+            base_slug if slug_counts[base_slug] == 1 else f"{base_slug}-{slug_counts[base_slug]}"
         )
         formatted_row = {
             "insurer": insurer,

@@ -6,11 +6,15 @@
         <h3>{{ plan.plan_name }}</h3>
       </div>
       <button class="select-button" type="button" @click="$emit('toggle-select', plan.key)">
-        {{ selected ? "Remove from brief" : "Add to brief" }}
+        {{ selected ? 'Remove from brief' : 'Add to brief' }}
       </button>
     </div>
 
-    <p class="summary">{{ plan.plan_description || comparisonFact?.comparison_notes || "No plan summary available." }}</p>
+    <p class="summary">
+      {{
+        plan.plan_description || comparisonFact?.comparison_notes || 'No plan summary available.'
+      }}
+    </p>
 
     <div class="fact-row">
       <div v-for="fact in factHighlights" :key="fact.label" class="fact">
@@ -20,19 +24,23 @@
     </div>
 
     <div class="tag-row">
-      <span
-        v-for="badge in coverageBadges"
-        :key="badge"
-        class="coverage-badge"
-      >
+      <span v-for="badge in coverageBadges" :key="badge" class="coverage-badge">
         {{ badge }}
       </span>
-      <span v-if="resources.length > 0" class="resource-badge">{{ resources.length }} provider links</span>
+      <span v-if="resources.length > 0" class="resource-badge"
+        >{{ resources.length }} provider links</span
+      >
     </div>
 
     <details class="detail-panel">
       <summary>Agent detail</summary>
-      <p class="detail-copy">{{ plan.plan_overview || comparisonFact?.comparison_notes || "No additional overview available." }}</p>
+      <p class="detail-copy">
+        {{
+          plan.plan_overview ||
+          comparisonFact?.comparison_notes ||
+          'No additional overview available.'
+        }}
+      </p>
 
       <div class="link-row">
         <a
@@ -83,10 +91,10 @@ const props = defineProps({
   provider: Object,
   comparisonFact: Object,
   resources: Array,
-  selected: Boolean
+  selected: Boolean,
 })
 
-defineEmits(["toggle-select"])
+defineEmits(['toggle-select'])
 
 const coverageBadges = computed(() => {
   const tags = props.comparisonFact?.coverage_tags || []
@@ -95,26 +103,29 @@ const coverageBadges = computed(() => {
 
 const factHighlights = computed(() => [
   {
-    label: "Coverage signals",
-    value: coverageBadges.value.length ? coverageBadges.value.length : "None"
+    label: 'Coverage signals',
+    value: coverageBadges.value.length ? coverageBadges.value.length : 'None',
   },
   {
-    label: "Provider links",
-    value: props.resources?.length || 0
+    label: 'Provider links',
+    value: props.resources?.length || 0,
   },
   {
-    label: "Brochure",
-    value: (props.comparisonFact?.coverage_tags || []).includes("brochure_available") ||
-      props.plan?.product_brochure_url ? "Available" : "Missing"
-  }
+    label: 'Brochure',
+    value:
+      (props.comparisonFact?.coverage_tags || []).includes('brochure_available') ||
+      props.plan?.product_brochure_url
+        ? 'Available'
+        : 'Missing',
+  },
 ])
 
 function labelForTag(tag) {
   return String(tag)
-    .split("_")
+    .split('_')
     .filter(Boolean)
     .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
-    .join(" ")
+    .join(' ')
 }
 </script>
 

@@ -5,7 +5,7 @@ import asyncio
 import re
 from dataclasses import dataclass, field, replace
 from typing import Iterable
-from urllib.parse import urljoin, urldefrag, urlparse
+from urllib.parse import urldefrag, urljoin, urlparse
 
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
@@ -142,16 +142,15 @@ async def read_page(page, url: str, config: GenericScraperConfig):
     }
 
 
-def score_candidates(search_query: str, links: list[dict], excluded_keywords: Iterable[str], limit: int):
+def score_candidates(
+    search_query: str, links: list[dict], excluded_keywords: Iterable[str], limit: int
+):
     filtered_links = [
         link
         for link in links
         if link["url"] and not should_skip_url(link["url"], excluded_keywords)
     ]
-    corpus = [
-        normalize_whitespace(f'{link["text"]} {link["url"]}')
-        for link in filtered_links
-    ]
+    corpus = [normalize_whitespace(f'{link["text"]} {link["url"]}') for link in filtered_links]
     ranked = search_wrapper(search_query, corpus, method="hybrid", threshold=0.12, limit=limit)
 
     ranked_urls = []
@@ -169,7 +168,11 @@ def should_include_page(page_data: dict, config: GenericScraperConfig):
         return False
     if len(page_data["searchable_text"]) < 120:
         return False
-    return bool(search_wrapper(config.search_query, [page_data["searchable_text"]], method="hybrid", threshold=0.12))
+    return bool(
+        search_wrapper(
+            config.search_query, [page_data["searchable_text"]], method="hybrid", threshold=0.12
+        )
+    )
 
 
 def build_plan_record(page_data: dict, config: GenericScraperConfig):
@@ -177,8 +180,14 @@ def build_plan_record(page_data: dict, config: GenericScraperConfig):
     if not plan_name:
         return None
 
-    description = normalize_whitespace(page_data["paragraphs"][0] if page_data["paragraphs"] else "")
-    overview_source = page_data["paragraphs"][1:4] if len(page_data["paragraphs"]) > 1 else page_data["paragraphs"][:2]
+    description = normalize_whitespace(
+        page_data["paragraphs"][0] if page_data["paragraphs"] else ""
+    )
+    overview_source = (
+        page_data["paragraphs"][1:4]
+        if len(page_data["paragraphs"]) > 1
+        else page_data["paragraphs"][:2]
+    )
     overview = compact_text("\n\n".join(overview_source))
     if not overview:
         overview = compact_text(page_data["searchable_text"])

@@ -78,19 +78,25 @@ class ValidationDifferTests(unittest.TestCase):
         self.assertTrue(comparison["failures"])
 
     def test_run_validation_writes_machine_readable_report_and_fails_on_drift(self):
-        with tempfile.TemporaryDirectory() as baseline_tmp, tempfile.TemporaryDirectory() as output_tmp:
+        with (
+            tempfile.TemporaryDirectory() as baseline_tmp,
+            tempfile.TemporaryDirectory() as output_tmp,
+        ):
             baseline_dir = Path(baseline_tmp)
             output_dir = Path(output_tmp)
 
             baseline_snapshot = snapshot_from_html(self.target, self.baseline_html)
             write_snapshot_artifacts(baseline_dir, baseline_snapshot)
 
-            with patch(
-                "src.validation.differ.discover_targets",
-                return_value=[self.target],
-            ), patch(
-                "src.validation.differ.fetch_html",
-                return_value=self.changed_html,
+            with (
+                patch(
+                    "src.validation.differ.discover_targets",
+                    return_value=[self.target],
+                ),
+                patch(
+                    "src.validation.differ.fetch_html",
+                    return_value=self.changed_html,
+                ),
             ):
                 exit_code = run_validation(
                     output_dir=output_dir,

@@ -11,9 +11,10 @@ https://www.aia.com.sg/en/our-products/save-and-invest
 
 # ----- required imports -----
 
-import re
-import html
 import asyncio
+import html
+import re
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -23,9 +24,7 @@ from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 def remove_excess_newlines(inp):
     if not isinstance(inp, str):
-        raise TypeError(
-            f"Input must be type <string> but was type <{type(inp).__name__}>"
-        )
+        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
     inp = re.sub(r"\n+", "\n", inp)
     inp = re.sub(r"[ \t\u200b]+", " ", inp)
     return inp.strip()
@@ -86,9 +85,7 @@ async def scrape_data(target_url):
                 await page.click("#div-close")
                 print("Closed popup")
 
-        product_filters = await page.query_selector_all(
-            ".cmp-productfilterlist__container a"
-        )
+        product_filters = await page.query_selector_all(".cmp-productfilterlist__container a")
 
         for filter in product_filters:
             href = await filter.get_attribute("href")
@@ -126,9 +123,7 @@ async def scrape_data(target_url):
             else:
                 overview_content = None
 
-            cta_button = await product_page.query_selector(
-                ".cmp-button.cmp-button__primary"
-            )
+            cta_button = await product_page.query_selector(".cmp-button.cmp-button__primary")
             if cta_button:
                 cta_url = await cta_button.get_attribute("data-cta-btn-url")
             else:
@@ -147,21 +142,21 @@ async def scrape_data(target_url):
             scraped_data.append(
                 {
                     "plan_name": filter["plan_name"] if filter["plan_name"] else "",
-                    "plan_benefits": [
-                        remove_excess_newlines(benefits) for benefits in benefits_data
-                    ]
-                    if benefits_data
-                    else [""],
-                    "plan_description": remove_html_entities(filter["plan_description"])
-                    if filter["plan_description"]
-                    else "",
-                    "plan_overview": remove_excess_newlines(overview_content)
-                    if overview_content
-                    else "",
+                    "plan_benefits": (
+                        [remove_excess_newlines(benefits) for benefits in benefits_data]
+                        if benefits_data
+                        else [""]
+                    ),
+                    "plan_description": (
+                        remove_html_entities(filter["plan_description"])
+                        if filter["plan_description"]
+                        else ""
+                    ),
+                    "plan_overview": (
+                        remove_excess_newlines(overview_content) if overview_content else ""
+                    ),
                     "plan_url": filter["plan_url"] if filter["plan_url"] else "",
-                    "product_brochure_url": f"https://www.aia.com.sg{cta_url}"
-                    if cta_url
-                    else "",
+                    "product_brochure_url": f"https://www.aia.com.sg{cta_url}" if cta_url else "",
                 }
             )
 

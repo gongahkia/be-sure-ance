@@ -5,7 +5,10 @@
         <p class="eyebrow">Comparison</p>
         <h2>Client-ready comparison sheet</h2>
       </div>
-      <p class="section-copy">Use this grid to frame what is covered, what is unknown, and where source links differ across shortlisted plans.</p>
+      <p class="section-copy">
+        Use this grid to frame what is covered, what is unknown, and where source links differ
+        across shortlisted plans.
+      </p>
     </div>
 
     <div v-if="selectedPlans.length === 0" class="empty-state">
@@ -23,7 +26,9 @@
         <tbody>
           <tr v-for="row in rows" :key="row.key">
             <td>{{ row.label }}</td>
-            <td v-for="plan in selectedPlans" :key="`${row.key}:${plan.key}`">{{ row.render(plan) }}</td>
+            <td v-for="plan in selectedPlans" :key="`${row.key}:${plan.key}`">
+              {{ row.render(plan) }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -35,115 +40,120 @@
 import { computed } from 'vue'
 
 defineProps({
-  selectedPlans: Array
+  selectedPlans: Array,
 })
 
 function availabilityValue(value) {
-  return value ? "Available" : "Missing"
+  return value ? 'Available' : 'Missing'
 }
 
 function tagValue(tags, tag) {
-  return (tags || []).includes(tag) ? "Tagged" : "Not tagged"
+  return (tags || []).includes(tag) ? 'Tagged' : 'Not tagged'
 }
 
 function nullableNumber(value, unit) {
   if (value === null || value === undefined) {
-    return "Unknown"
+    return 'Unknown'
   }
   return unit ? `${value} ${unit}` : String(value)
 }
 
 function listValue(value) {
-  return value?.length ? value.join(", ") : "Unknown"
+  return value?.length ? value.join(', ') : 'Unknown'
 }
 
 function sourceHost(value) {
   if (!value) {
-    return "Missing"
+    return 'Missing'
   }
   try {
-    return new URL(value).hostname.replace(/^www\./, "")
+    return new URL(value).hostname.replace(/^www\./, '')
   } catch {
-    return "Available"
+    return 'Available'
   }
 }
 
 const rows = computed(() => [
   {
-    key: "provider",
-    label: "Provider",
-    render: (plan) => plan.providerName
+    key: 'provider',
+    label: 'Provider',
+    render: (plan) => plan.providerName,
   },
   {
-    key: "source",
-    label: "Source host",
-    render: (plan) => sourceHost(plan.comparisonFact?.source_url || plan.product_brochure_url || plan.plan_url)
+    key: 'source',
+    label: 'Source host',
+    render: (plan) =>
+      sourceHost(plan.comparisonFact?.source_url || plan.product_brochure_url || plan.plan_url),
   },
   {
-    key: "accident",
-    label: "Accident",
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "accident")
+    key: 'accident',
+    label: 'Accident',
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'accident'),
   },
   {
-    key: "hospitalization",
-    label: "Hospitalization",
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "hospitalization")
+    key: 'hospitalization',
+    label: 'Hospitalization',
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'hospitalization'),
   },
   {
-    key: "life",
-    label: "Life",
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "life")
+    key: 'life',
+    label: 'Life',
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'life'),
   },
   {
-    key: "critical_illness",
-    label: "Critical illness",
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "critical_illness")
+    key: 'critical_illness',
+    label: 'Critical illness',
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'critical_illness'),
   },
   {
-    key: "outpatient",
-    label: "Outpatient",
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "outpatient")
+    key: 'outpatient',
+    label: 'Outpatient',
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'outpatient'),
   },
   {
-    key: "emergency",
-    label: "Emergency",
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "emergency")
+    key: 'emergency',
+    label: 'Emergency',
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'emergency'),
   },
   {
-    key: "specialist",
-    label: "Provider directory",
-    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "provider_directory")
+    key: 'specialist',
+    label: 'Provider directory',
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, 'provider_directory'),
   },
   {
-    key: "brochure",
-    label: "Brochure",
-    render: (plan) => availabilityValue((plan.comparisonFact?.coverage_tags || []).includes("brochure_available") || plan.product_brochure_url)
+    key: 'brochure',
+    label: 'Brochure',
+    render: (plan) =>
+      availabilityValue(
+        (plan.comparisonFact?.coverage_tags || []).includes('brochure_available') ||
+          plan.product_brochure_url,
+      ),
   },
   {
-    key: "panel_network_size",
-    label: "Panel network size",
-    render: (plan) => nullableNumber(plan.comparisonFact?.panel_network_size)
+    key: 'panel_network_size',
+    label: 'Panel network size',
+    render: (plan) => nullableNumber(plan.comparisonFact?.panel_network_size),
   },
   {
-    key: "claim_sla_days",
-    label: "Claim SLA",
-    render: (plan) => nullableNumber(plan.comparisonFact?.claim_sla_days, "days")
+    key: 'claim_sla_days',
+    label: 'Claim SLA',
+    render: (plan) => nullableNumber(plan.comparisonFact?.claim_sla_days, 'days'),
   },
   {
-    key: "waiting_period_days",
-    label: "Waiting period",
-    render: (plan) => nullableNumber(plan.comparisonFact?.waiting_period_days, "days")
+    key: 'waiting_period_days',
+    label: 'Waiting period',
+    render: (plan) => nullableNumber(plan.comparisonFact?.waiting_period_days, 'days'),
   },
   {
-    key: "exclusions",
-    label: "Exclusions",
-    render: (plan) => listValue(plan.comparisonFact?.exclusions)
+    key: 'exclusions',
+    label: 'Exclusions',
+    render: (plan) => listValue(plan.comparisonFact?.exclusions),
   },
   {
-    key: "notes",
-    label: "Notes",
-    render: (plan) => plan.comparisonFact?.comparison_notes || "No comparison note"
-  }
+    key: 'notes',
+    label: 'Notes',
+    render: (plan) => plan.comparisonFact?.comparison_notes || 'No comparison note',
+  },
 ])
 </script>
 

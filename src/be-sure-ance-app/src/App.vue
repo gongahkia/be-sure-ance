@@ -5,8 +5,8 @@
         <p class="eyebrow">For Insurance Agents</p>
         <h1>Prepare carrier comparisons and provider lookups before the client meeting.</h1>
         <p class="hero-text">
-          Use the workspace to shortlist plans, open panel and specialist directories,
-          and frame qualitative coverage signals instead of brochure-by-brochure guesswork.
+          Use the workspace to shortlist plans, open panel and specialist directories, and frame
+          qualitative coverage signals instead of brochure-by-brochure guesswork.
         </p>
       </div>
 
@@ -34,23 +34,30 @@
       <article>
         <p class="eyebrow dark">Meeting Prep</p>
         <h2>Build a three-plan brief fast.</h2>
-        <p>Keep shortlists tight, compare coverage signals side by side, and carry a cleaner story into the call.</p>
+        <p>
+          Keep shortlists tight, compare coverage signals side by side, and carry a cleaner story
+          into the call.
+        </p>
       </article>
       <article>
         <p class="eyebrow dark">Panel Lookup</p>
         <h2>Jump straight to provider directories.</h2>
-        <p>Open hospital, panel, and specialist resources linked to the plan instead of hunting them down mid-conversation.</p>
+        <p>
+          Open hospital, panel, and specialist resources linked to the plan instead of hunting them
+          down mid-conversation.
+        </p>
       </article>
       <article>
         <p class="eyebrow dark">Carrier Research</p>
         <h2>Review one provider lane at a time.</h2>
-        <p>Use the provider rail to move through carriers quickly, then add only the plans worth presenting.</p>
+        <p>
+          Use the provider rail to move through carriers quickly, then add only the plans worth
+          presenting.
+        </p>
       </article>
     </section>
 
-    <section v-if="loading" class="status-panel">
-      Loading plan data and comparison facts...
-    </section>
+    <section v-if="loading" class="status-panel">Loading plan data and comparison facts...</section>
 
     <section v-else-if="errorMessage" class="status-panel error">
       {{ errorMessage }}
@@ -69,7 +76,9 @@
           <div>
             <p class="eyebrow">Active Provider</p>
             <h2>{{ activeProvider.name }}</h2>
-            <p class="toolbar-copy">{{ activeProvider.focus }} Use this lane for carrier research and shortlist building.</p>
+            <p class="toolbar-copy">
+              {{ activeProvider.focus }} Use this lane for carrier research and shortlist building.
+            </p>
           </div>
 
           <div class="toolbar-actions">
@@ -130,8 +139,8 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null
 
 const loading = ref(true)
-const errorMessage = ref("")
-const searchQuery = ref("")
+const errorMessage = ref('')
+const searchQuery = ref('')
 const activeProviderKey = ref(providers[0].key)
 const selectedPlanKeys = ref([])
 const plansByProvider = ref({})
@@ -140,7 +149,8 @@ const specialistResources = ref([])
 
 async function fetchData() {
   if (!supabase) {
-    errorMessage.value = "Supabase configuration is missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY."
+    errorMessage.value =
+      'Supabase configuration is missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.'
     loading.value = false
     return
   }
@@ -149,11 +159,11 @@ async function fetchData() {
     const [
       { data: planData, error: planError },
       { data: comparisonData, error: comparisonError },
-      { data: resourceData, error: resourceError }
+      { data: resourceData, error: resourceError },
     ] = await Promise.all([
-      supabase.from("plans").select("*"),
-      supabase.from("plan_comparison_facts").select("*"),
-      supabase.from("specialist_resources").select("*")
+      supabase.from('plans').select('*'),
+      supabase.from('plan_comparison_facts').select('*'),
+      supabase.from('specialist_resources').select('*'),
     ])
 
     if (planError) {
@@ -170,7 +180,7 @@ async function fetchData() {
     comparisonFacts.value = comparisonData || []
     specialistResources.value = resourceData || []
   } catch (error) {
-    errorMessage.value = error?.message || "Unable to load comparison data."
+    errorMessage.value = error?.message || 'Unable to load comparison data.'
   } finally {
     loading.value = false
   }
@@ -193,8 +203,8 @@ function groupPlansByProvider(rows) {
 
 const comparisonFactMap = computed(() =>
   Object.fromEntries(
-    comparisonFacts.value.map((fact) => [buildPlanKey(fact.insurer, fact.plan_name), fact])
-  )
+    comparisonFacts.value.map((fact) => [buildPlanKey(fact.insurer, fact.plan_name), fact]),
+  ),
 )
 
 const specialistResourceMap = computed(() =>
@@ -205,7 +215,7 @@ const specialistResourceMap = computed(() =>
     }
     accumulator[key].push(resource)
     return accumulator
-  }, {})
+  }, {}),
 )
 
 const enrichedPlans = computed(() =>
@@ -218,25 +228,25 @@ const enrichedPlans = computed(() =>
         providerKey: provider.key,
         providerName: provider.name,
         comparisonFact: comparisonFactMap.value[key] || null,
-        resources: specialistResourceMap.value[key] || []
+        resources: specialistResourceMap.value[key] || [],
       }
-    })
-  )
+    }),
+  ),
 )
 
 const activeProvider = computed(
-  () => providers.find((provider) => provider.key === activeProviderKey.value) || providers[0]
+  () => providers.find((provider) => provider.key === activeProviderKey.value) || providers[0],
 )
 
 const providerCounts = computed(() =>
   providers.reduce((accumulator, provider) => {
     accumulator[provider.key] = (plansByProvider.value[provider.key] || []).length
     return accumulator
-  }, {})
+  }, {}),
 )
 
 const totalPlanCount = computed(() =>
-  Object.values(providerCounts.value).reduce((total, count) => total + count, 0)
+  Object.values(providerCounts.value).reduce((total, count) => total + count, 0),
 )
 
 const visiblePlans = computed(() =>
@@ -253,32 +263,34 @@ const visiblePlans = computed(() =>
       plan.plan_name,
       plan.plan_description,
       plan.plan_overview,
-      (plan.plan_benefits || []).join(" "),
-      plan.comparisonFact?.comparison_notes || "",
-      (plan.comparisonFact?.coverage_tags || []).join(" "),
+      (plan.plan_benefits || []).join(' '),
+      plan.comparisonFact?.comparison_notes || '',
+      (plan.comparisonFact?.coverage_tags || []).join(' '),
       (plan.resources || [])
-        .map((resource) => `${resource.resource_title || ""} ${resource.resource_description || ""}`)
-        .join(" ")
+        .map(
+          (resource) => `${resource.resource_title || ''} ${resource.resource_description || ''}`,
+        )
+        .join(' '),
     ]
-      .join(" ")
+      .join(' ')
       .toLowerCase()
 
     return searchableText.includes(searchQuery.value.toLowerCase())
-  })
+  }),
 )
 
 const emptyPlanMessage = computed(() => {
   const providerPlanCount = (plansByProvider.value[activeProviderKey.value] || []).length
   if (providerPlanCount === 0 && !searchQuery.value.trim()) {
-    return "No supported plans are loaded for this provider yet."
+    return 'No supported plans are loaded for this provider yet.'
   }
-  return "No plans match the current provider and search filters."
+  return 'No plans match the current provider and search filters.'
 })
 
 const selectedPlans = computed(() =>
   selectedPlanKeys.value
     .map((key) => enrichedPlans.value.find((plan) => plan.key === key))
-    .filter(Boolean)
+    .filter(Boolean),
 )
 
 function togglePlanSelection(planKey) {
@@ -310,7 +322,7 @@ body {
     radial-gradient(circle at top left, rgba(194, 225, 255, 0.9), transparent 36%),
     linear-gradient(180deg, #eef4fb 0%, #f8fafc 100%);
   color: var(--ink);
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
 }
 
 a {
@@ -329,9 +341,7 @@ a {
   gap: 1.5rem;
   padding: 2rem;
   border-radius: 1.75rem;
-  background:
-    linear-gradient(120deg, rgba(16, 39, 71, 0.98), rgba(24, 76, 120, 0.94)),
-    var(--ink);
+  background: linear-gradient(120deg, rgba(16, 39, 71, 0.98), rgba(24, 76, 120, 0.94)), var(--ink);
   color: #f6fbff;
   box-shadow: 0 34px 80px rgba(16, 39, 71, 0.18);
 }

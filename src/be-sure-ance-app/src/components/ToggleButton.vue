@@ -1,7 +1,7 @@
 <template>
-    <div class="toggle-button" @click="$emit('toggle')">
+  <div class="toggle-button" @click="$emit('toggle')">
     {{ isDark ? '🌞' : '🌚' }}
-    </div>
+  </div>
 </template>
 
 <script setup>

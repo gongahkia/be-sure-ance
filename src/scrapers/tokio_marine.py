@@ -1,18 +1,19 @@
 """
 TOKIO MARINE
 
-https://www.tokiomarine.com/sg/en.html 
-https://www.tokiomarine.com/sg/en/life/claim/submit-a-claim.html 
+https://www.tokiomarine.com/sg/en.html
+https://www.tokiomarine.com/sg/en/life/claim/submit-a-claim.html
 
-https://www.tokiomarine.com/sg/en/non-life.html 
-https://www.tokiomarine.com/sg/en/life.html 
+https://www.tokiomarine.com/sg/en/non-life.html
+https://www.tokiomarine.com/sg/en/life.html
 """
 
 # ----- required imports -----
 
-import re
-import html
 import asyncio
+import html
+import re
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -22,9 +23,7 @@ from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 def remove_excess_newlines(inp):
     if not isinstance(inp, str):
-        raise TypeError(
-            f"Input must be type <string> but was type <{type(inp).__name__}>"
-        )
+        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
     inp = re.sub(r"\n+", "\n", inp)
     inp = re.sub(r"[ \t\u200b]+", " ", inp)
     return inp.strip()
@@ -89,28 +88,18 @@ async def scrape_data(url):
             plan_page = await page.context.new_page()
             await plan_page.goto(plan_url, timeout=60000)
             title_element = await plan_page.query_selector("h2.masthead-colors__title")
-            plan_name = (
-                (await title_element.text_content()).strip() if title_element else ""
-            )
-            overview_element = await plan_page.query_selector(
-                "h2.masthead-colors__text"
-            )
+            plan_name = (await title_element.text_content()).strip() if title_element else ""
+            overview_element = await plan_page.query_selector("h2.masthead-colors__text")
             plan_overview = (
-                (await overview_element.text_content()).strip()
-                if overview_element
-                else ""
+                (await overview_element.text_content()).strip() if overview_element else ""
             )
-            description_elements = await plan_page.query_selector_all(
-                "div.section-wrap"
-            )
+            description_elements = await plan_page.query_selector_all("div.section-wrap")
             descriptions = [
                 await descriptions.text_content()
                 for descriptions in description_elements
                 if descriptions
             ]
-            plan_description = "\n\n".join(
-                [description.strip() for description in descriptions]
-            )
+            plan_description = "\n\n".join([description.strip() for description in descriptions])
             formatted_row = {
                 "plan_name": plan_name,
                 "plan_benefits": [],

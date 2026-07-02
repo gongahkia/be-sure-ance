@@ -16,7 +16,6 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup, Tag
 
-
 SCRAPER_DIR = Path(__file__).resolve().parents[1] / "scrapers"
 DEFAULT_OUTPUT_DIR = Path(".validation-output")
 EXCLUDED_SCRAPER_FILES = {"__init__.py", "_generic_domain.py", "run_all.py"}
@@ -200,9 +199,7 @@ def compare_snapshot_pair(
             f'to "{current_snapshot["root_tag"]}"'
         )
     if path_drift > max_path_drift:
-        failures.append(
-            f"Path drift {path_drift:.3f} exceeded threshold {max_path_drift:.3f}"
-        )
+        failures.append(f"Path drift {path_drift:.3f} exceeded threshold {max_path_drift:.3f}")
     if tag_drift > max_tag_drift:
         failures.append(f"Tag drift {tag_drift:.3f} exceeded threshold {max_tag_drift:.3f}")
 
@@ -222,12 +219,22 @@ def compare_snapshot_pair(
 
 def snapshot_output_path(output_dir: Path, snapshot: dict) -> Path:
     domain_slug = slugify(snapshot["domain"])
-    return output_dir / "snapshots" / snapshot["insurer"] / f"{domain_slug}__{snapshot['path_slug']}.json"
+    return (
+        output_dir
+        / "snapshots"
+        / snapshot["insurer"]
+        / f"{domain_slug}__{snapshot['path_slug']}.json"
+    )
 
 
 def snapshot_html_path(output_dir: Path, snapshot: dict) -> Path:
     domain_slug = slugify(snapshot["domain"])
-    return output_dir / "snapshots" / snapshot["insurer"] / f"{domain_slug}__{snapshot['path_slug']}.html"
+    return (
+        output_dir
+        / "snapshots"
+        / snapshot["insurer"]
+        / f"{domain_slug}__{snapshot['path_slug']}.html"
+    )
 
 
 def baseline_snapshot_path(baseline_dir: Path, snapshot: dict) -> Path:
@@ -294,7 +301,9 @@ def run_validation(
         try:
             html = fetch_html(target.url, request_timeout=request_timeout)
             current_snapshot = snapshot_from_html(target, html)
-            current_json_path, current_html_path = write_snapshot_artifacts(output_dir, current_snapshot)
+            current_json_path, current_html_path = write_snapshot_artifacts(
+                output_dir, current_snapshot
+            )
             result["snapshot_json"] = str(current_json_path)
             result["snapshot_html"] = str(current_html_path)
         except Exception as exc:

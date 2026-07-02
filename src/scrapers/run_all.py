@@ -5,17 +5,12 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 SCRAPER_DIR = Path(__file__).resolve().parent
 EXCLUDED_FILES = {"__init__.py", "_generic_domain.py", "run_all.py"}
 
 
 def list_scraper_scripts():
-    return sorted(
-        path
-        for path in SCRAPER_DIR.glob("*.py")
-        if path.name not in EXCLUDED_FILES
-    )
+    return sorted(path for path in SCRAPER_DIR.glob("*.py") if path.name not in EXCLUDED_FILES)
 
 
 def main():
@@ -25,9 +20,7 @@ def main():
     args, scraper_args = parser.parse_known_args()
 
     only = {item.strip() for item in args.only.split(",")} if args.only else None
-    scripts = [
-        script for script in list_scraper_scripts() if only is None or script.stem in only
-    ]
+    scripts = [script for script in list_scraper_scripts() if only is None or script.stem in only]
 
     if not scripts:
         raise SystemExit("No scrapers selected.")

@@ -18,10 +18,10 @@
 defineProps({
   providers: Array,
   activeProviderKey: String,
-  providerCounts: Object
+  providerCounts: Object,
 })
 
-defineEmits(["select"])
+defineEmits(['select'])
 </script>
 
 <style scoped>
@@ -49,7 +49,10 @@ defineEmits(["select"])
   background: rgba(255, 255, 255, 0.8);
   text-align: left;
   cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .provider-chip:hover,

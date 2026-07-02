@@ -136,16 +136,12 @@ class BackendHelperTests(unittest.TestCase):
         helper._supabase_key = jwt_for_role("service_role")
         helper.supabase = fake_client
 
-        helper.overwrite_plans_for_insurer(
-            "aia", [{"plan_name": "x", "plan_benefits": "benefit"}]
-        )
+        helper.overwrite_plans_for_insurer("aia", [{"plan_name": "x", "plan_benefits": "benefit"}])
 
         self.assertEqual(fake_client.tables, ["plans", "plans"])
         self.assertIn(("delete",), fake_client.query.calls)
         self.assertIn(("eq", "insurer", "aia"), fake_client.query.calls)
-        upsert_calls = [
-            call for call in fake_client.query.calls if call[0] == "upsert"
-        ]
+        upsert_calls = [call for call in fake_client.query.calls if call[0] == "upsert"]
         self.assertEqual(upsert_calls[0][2], {"on_conflict": "insurer,plan_slug"})
         self.assertEqual(upsert_calls[0][1][0]["insurer"], "aia")
         self.assertEqual(upsert_calls[0][1][0]["plan_slug"], "x")

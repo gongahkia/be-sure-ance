@@ -14,7 +14,7 @@ def _normalize_strings(corpus: Iterable[str]) -> list[str]:
 def cosine_search(search_string: str, corpus: Iterable[str], threshold: float = 0.15):
     texts = _normalize_strings(corpus)
     if not search_string or not texts:
-      return []
+        return []
 
     vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2))
     tfidf_matrix = vectorizer.fit_transform([search_string] + texts)

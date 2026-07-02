@@ -1,5 +1,5 @@
 """
-GREAT EASTERN 
+GREAT EASTERN
 
 https://www.greateasternlife.com/sg/en/about-us.html
 
@@ -19,8 +19,9 @@ https://www.greateasternlife.com/sg/en/personal-insurance/our-products/prestige-
 
 # ----- required imports -----
 
-import re
 import asyncio
+import re
+
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
@@ -30,9 +31,7 @@ from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
 
 def remove_excess_newlines(inp):
     if not isinstance(inp, str):
-        raise TypeError(
-            f"Input must be type <string> but was type <{type(inp).__name__}>"
-        )
+        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
     inp = re.sub(r"\n+", "\n", inp)
     inp = re.sub(r"[ \t\u200b]+", " ", inp)
     return inp.strip()
@@ -47,9 +46,7 @@ async def scrape_data(url):
         related_categories_element = await page.query_selector(
             "div.relatedCategories.aem-GridColumn.aem-GridColumn--default--12"
         )
-        product_header_title_element = await page.query_selector(
-            "div.product-header-title h1"
-        )
+        product_header_title_element = await page.query_selector("div.product-header-title h1")
         if related_categories_element and product_header_title_element:
             general_plan_description = (
                 (await related_categories_element.text_content())
@@ -77,9 +74,7 @@ async def scrape_data(url):
                 if benefits2:
                     benefits2 = await benefits2.text_content()
                     plan_benefits.append(remove_excess_newlines(benefits2.strip()))
-                footer_element = await card.query_selector(
-                    ".leo-card-footer.mt-auto.d-flex a"
-                )
+                footer_element = await card.query_selector(".leo-card-footer.mt-auto.d-flex a")
                 if footer_element:
                     plan_url = await footer_element.get_attribute("href")
                 else:
@@ -87,16 +82,12 @@ async def scrape_data(url):
                 formatted_row = {
                     "plan_name": plan_name,
                     "plan_benefits": [plan_benefits],
-                    "plan_description": remove_excess_newlines(
-                        general_plan_description
-                    ),
+                    "plan_description": remove_excess_newlines(general_plan_description),
                     "plan_overview": "",
-                    "plan_url": f"https://www.greateasternlife.com{plan_url}"
-                    if plan_url
-                    else "",
-                    "product_brochure_url": f"https://www.greateasternlife.com{plan_url}"
-                    if plan_url
-                    else plan_url,
+                    "plan_url": f"https://www.greateasternlife.com{plan_url}" if plan_url else "",
+                    "product_brochure_url": (
+                        f"https://www.greateasternlife.com{plan_url}" if plan_url else plan_url
+                    ),
                 }
                 scraped_plans.append(formatted_row)
         await browser.close()
