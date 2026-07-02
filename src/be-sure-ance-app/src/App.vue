@@ -145,6 +145,7 @@
           {{ emptyPlanMessage }}
         </section>
 
+        <ClaimTurnaroundBoard :metrics="claimTurnaroundMetrics" />
         <BriefExportPanel :selected-plans="selectedPlans" />
         <ComparisonTable :selected-plans="selectedPlans" />
       </main>
@@ -157,6 +158,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
 import BriefExportPanel from './components/BriefExportPanel.vue'
+import ClaimTurnaroundBoard from './components/ClaimTurnaroundBoard.vue'
 import ComparisonTable from './components/ComparisonTable.vue'
 import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
 import PlanCard from './components/PlanCard.vue'
@@ -179,6 +181,7 @@ const plansByProvider = ref({})
 const comparisonFacts = ref([])
 const planFacts = ref([])
 const specialistResources = ref([])
+const claimTurnaroundMetrics = ref([])
 
 async function fetchData() {
   if (!supabase) {
@@ -194,11 +197,13 @@ async function fetchData() {
       { data: comparisonData, error: comparisonError },
       { data: factData, error: factError },
       { data: resourceData, error: resourceError },
+      { data: claimData, error: claimError },
     ] = await Promise.all([
       supabase.from('plans').select('*'),
       supabase.from('plan_comparison_facts').select('*'),
       supabase.from('plan_facts').select('*'),
       supabase.from('specialist_resources').select('*'),
+      supabase.from('claim_turnaround_metrics').select('*'),
     ])
 
     if (planError) {
@@ -213,11 +218,15 @@ async function fetchData() {
     if (resourceError) {
       throw resourceError
     }
+    if (claimError) {
+      throw claimError
+    }
 
     plansByProvider.value = groupPlansByProvider(planData || [])
     comparisonFacts.value = comparisonData || []
     planFacts.value = factData || []
     specialistResources.value = resourceData || []
+    claimTurnaroundMetrics.value = claimData || []
   } catch (error) {
     errorMessage.value = error?.message || 'Unable to load qualitative plan data.'
   } finally {

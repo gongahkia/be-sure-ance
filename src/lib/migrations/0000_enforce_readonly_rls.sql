@@ -44,7 +44,8 @@ DECLARE
         'specialist_resources',
         'plan_comparison_facts',
         'plan_facts',
-        'moh_institutions'
+        'moh_institutions',
+        'claim_turnaround_metrics'
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP

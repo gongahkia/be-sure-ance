@@ -38,6 +38,14 @@ jobs:
           BROCHURE_STORAGE_BUCKET: ${{ vars.BROCHURE_STORAGE_BUCKET }}
         run: python -m src.scrapers.moh_institutions
 
+      - name: Ingest LIA claim turnaround metrics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BROCHURE_STORAGE_BUCKET: ${{ vars.BROCHURE_STORAGE_BUCKET }}
+        run: python -m src.scrapers.lia_claim_turnaround
+
       - name: Parse brochure qualitative facts
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

@@ -42,6 +42,26 @@ ON CONFLICT (insurer, plan_slug, field_name) DO UPDATE SET
 
 Public clients can read `plan_facts`. Only `service_role` can write.
 
+## `claim_turnaround_metrics`
+
+`claim_turnaround_metrics` stores LIA-sourced claims evidence for the frontend claim board.
+
+- `carrier_key`
+- `carrier_name`
+- `metric_key`
+- `metric_label`
+- `metric_value`
+- `metric_unit`
+- `rank`
+- `source_year`
+- `source_url`
+- `source_type`
+- `limitations`
+- `scraped_at`
+- `last_verified_at`
+
+`rank` is nullable. Current LIA sources provide industry-level handling timelines and annual claims/maturity payout totals; LIA does not publish carrier-level turnaround rankings in these sources. UI rows must show source year and limitations, and must not present aggregate LIA metrics as carrier suitability evidence.
+
 ## `moh_institutions`
 
 Required columns:
