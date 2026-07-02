@@ -16,8 +16,30 @@ Use the live website [***here***](https://be-sure-ance.netlify.app/).
 
 Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supabase.yml).
 
-> [!IMPORTANT]  
-> Read the [legal disclaimer](#legal-disclaimer) before using `Be-sure-ance`.  
+> [!IMPORTANT]
+> Read the [legal disclaimer](#legal-disclaimer) before using `Be-sure-ance`.
+
+## Environment variables
+
+Use [`.env.example`](./.env.example) as the local template.
+
+Frontend variables are public and are bundled into the Vue app:
+
+```sh
+VUE_APP_SUPABASE_URL=
+VUE_APP_SUPABASE_ANON_KEY=
+```
+
+Scraper/backend variables are private and must stay in local `.env` or GitHub Actions secrets:
+
+```sh
+SUPABASE_URL=
+SUPABASE_SECRET_KEY=
+# or legacy fallback:
+SUPABASE_SERVICE_ROLE_KEY=
+```
+
+GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VUE_APP_*` variables.
 
 ## Screenshots
 

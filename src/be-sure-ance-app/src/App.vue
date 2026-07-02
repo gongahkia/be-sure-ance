@@ -126,8 +126,8 @@ import { buildPlanKey, providers } from './lib/providers'
 import { safeExternalUrl } from './utils/links'
 
 const supabaseUrl = process.env.VUE_APP_SUPABASE_URL
-const supabaseKey = process.env.VUE_APP_SUPABASE_KEY
-const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null
+const supabaseAnonKey = process.env.VUE_APP_SUPABASE_ANON_KEY
+const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null
 
 const loading = ref(true)
 const errorMessage = ref("")
@@ -140,7 +140,7 @@ const specialistResources = ref([])
 
 async function fetchData() {
   if (!supabase) {
-    errorMessage.value = "Supabase configuration is missing. Set VUE_APP_SUPABASE_URL and VUE_APP_SUPABASE_KEY."
+    errorMessage.value = "Supabase configuration is missing. Set VUE_APP_SUPABASE_URL and VUE_APP_SUPABASE_ANON_KEY."
     loading.value = false
     return
   }

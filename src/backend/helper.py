@@ -20,16 +20,17 @@ def initialize_supabase():
         return
     load_dotenv()
     SUPABASE_URL = os.getenv("SUPABASE_URL")
-    SUPABASE_KEY = (
+    SUPABASE_SERVER_KEY = (
         os.getenv("SUPABASE_SERVICE_ROLE_KEY")
         or os.getenv("SUPABASE_SECRET_KEY")
-        or os.getenv("SUPABASE_KEY")
     )
-    if not SUPABASE_URL or not SUPABASE_KEY:
-        raise ValueError("Supabase URL or Key is missing. Check your .env file.")
+    if not SUPABASE_URL or not SUPABASE_SERVER_KEY:
+        raise ValueError(
+            "Supabase URL or server-side service/secret key is missing. Check your .env file."
+        )
     global supabase, _supabase_key
-    _supabase_key = SUPABASE_KEY
-    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+    _supabase_key = SUPABASE_SERVER_KEY
+    supabase = create_client(SUPABASE_URL, SUPABASE_SERVER_KEY)
     print("Supabase client initialized successfully.")
 
 
