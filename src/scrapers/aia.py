@@ -14,13 +14,22 @@ https://www.aia.com.sg/en/our-products/save-and-invest
 import asyncio
 import html
 import re
+from urllib.parse import urljoin
 
+from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
-from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
+from src.scrapers.navigation import (
+    gather_scrape_results,
+    goto_with_retry,
+    log_url_failure,
+    new_bot_context,
+)
 
 # ----- functions -----
+
+AIA_BASE_URL = "https://www.aia.com.sg"
 
 
 def remove_excess_newlines(inp):
@@ -69,8 +78,63 @@ def remove_html_entities(inp):
     return inp2
 
 
-async def scrape_data(target_url):
+def parse_listing_html(html_content: str):
+    soup = BeautifulSoup(html_content, "html.parser")
     product_filters_data = []
+    for anchor in soup.select(".cmp-productfilterlist__container a"):
+        h2_text = anchor.select_one("h2")
+        next_div = anchor.select_one("h2 + div")
+        product_filters_data.append(
+            {
+                "plan_name": h2_text.get_text(strip=True) if h2_text else "",
+                "plan_url": urljoin(AIA_BASE_URL, anchor.get("href") or ""),
+                "plan_description": next_div.get_text(" ", strip=True) if next_div else "",
+            }
+        )
+    return product_filters_data
+
+
+def parse_product_html(html_content: str):
+    soup = BeautifulSoup(html_content, "html.parser")
+    overview_content = soup.select_one(".cmp-productoverviewhero__content")
+    cta_button = soup.select_one(".cmp-button.cmp-button__primary")
+    benefits = [
+        benefit.get_text(" ", strip=True)
+        for benefit in soup.select("div.cmp-featuredperk__content")
+    ]
+    cta_url = cta_button.get("data-cta-btn-url") if cta_button else ""
+    return {
+        "plan_overview": overview_content.get_text(" ", strip=True) if overview_content else "",
+        "product_brochure_url": urljoin(AIA_BASE_URL, cta_url) if cta_url else "",
+        "plan_benefits": benefits,
+    }
+
+
+def build_plan_row(filter_data: dict, product_data: dict):
+    benefits_data = product_data.get("plan_benefits") or []
+    return {
+        "plan_name": filter_data.get("plan_name") or "",
+        "plan_benefits": (
+            [remove_excess_newlines(benefits) for benefits in benefits_data]
+            if benefits_data
+            else [""]
+        ),
+        "plan_description": (
+            remove_html_entities(filter_data.get("plan_description"))
+            if filter_data.get("plan_description")
+            else ""
+        ),
+        "plan_overview": (
+            remove_excess_newlines(product_data.get("plan_overview"))
+            if product_data.get("plan_overview")
+            else ""
+        ),
+        "plan_url": filter_data.get("plan_url") or "",
+        "product_brochure_url": product_data.get("product_brochure_url") or "",
+    }
+
+
+async def scrape_data(target_url):
     scraped_data = []
 
     async with async_playwright() as p:
@@ -86,82 +150,20 @@ async def scrape_data(target_url):
                 await page.click("#div-close")
                 print("Closed popup")
 
-        product_filters = await page.query_selector_all(".cmp-productfilterlist__container a")
-
-        for filter in product_filters:
-            href = await filter.get_attribute("href")
-            h2_text = await filter.query_selector("h2")
-            if h2_text:
-                h2_text = await h2_text.text_content()
-            else:
-                h2_text = None
-
-            next_div = await filter.query_selector("h2 + div")
-            if next_div:
-                next_div_text = await next_div.text_content()
-            else:
-                next_div_text = None
-
-            product_filters_data.append(
-                {
-                    "plan_name": h2_text,
-                    "plan_url": f"https://www.aia.com.sg{href}",
-                    "plan_description": next_div_text,
-                }
-            )
+        product_filters_data = parse_listing_html(await page.content())
 
         for filter in product_filters_data:
             url = filter["plan_url"]
             # print(url)
             product_page = await context.new_page()
-            await goto_with_retry(product_page, url)
-
-            overview_content = await product_page.query_selector(
-                ".cmp-productoverviewhero__content"
-            )
-            if overview_content:
-                overview_content = await overview_content.text_content()
-            else:
-                overview_content = None
-
-            cta_button = await product_page.query_selector(".cmp-button.cmp-button__primary")
-            if cta_button:
-                cta_url = await cta_button.get_attribute("data-cta-btn-url")
-            else:
-                cta_url = None
-
-            benefits_container = await product_page.query_selector_all(
-                "div.cmp-featuredperk__content"
-            )
-            if benefits_container:
-                benefits_data = []
-                for benefit in benefits_container:
-                    benefits_data.append(await benefit.text_content())
-            else:
-                benefits_data = None
-
-            scraped_data.append(
-                {
-                    "plan_name": filter["plan_name"] if filter["plan_name"] else "",
-                    "plan_benefits": (
-                        [remove_excess_newlines(benefits) for benefits in benefits_data]
-                        if benefits_data
-                        else [""]
-                    ),
-                    "plan_description": (
-                        remove_html_entities(filter["plan_description"])
-                        if filter["plan_description"]
-                        else ""
-                    ),
-                    "plan_overview": (
-                        remove_excess_newlines(overview_content) if overview_content else ""
-                    ),
-                    "plan_url": filter["plan_url"] if filter["plan_url"] else "",
-                    "product_brochure_url": f"https://www.aia.com.sg{cta_url}" if cta_url else "",
-                }
-            )
-
-            await product_page.close()
+            try:
+                await goto_with_retry(product_page, url)
+                product_data = parse_product_html(await product_page.content())
+                scraped_data.append(build_plan_row(filter, product_data))
+            except Exception as exc:
+                log_url_failure("aia", url, exc)
+            finally:
+                await product_page.close()
 
         await browser.close()
 
