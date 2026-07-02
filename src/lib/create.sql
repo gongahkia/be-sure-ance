@@ -15,7 +15,15 @@ END;
 $$ LANGUAGE plpgsql;
 
 GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
-GRANT ALL ON ALL TABLES IN SCHEMA public TO anon, authenticated, service_role;
+REVOKE ALL ON ALL TABLES IN SCHEMA public FROM anon, authenticated;
+REVOKE ALL ON ALL SEQUENCES IN SCHEMA public FROM anon, authenticated;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO service_role;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO service_role;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public REVOKE ALL ON TABLES FROM anon, authenticated;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public REVOKE ALL ON SEQUENCES FROM anon, authenticated;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO anon, authenticated;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO service_role;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE, SELECT ON SEQUENCES TO service_role;
 
 DO $$ 
 DECLARE 
@@ -61,7 +69,16 @@ BEGIN
                 plan_url TEXT,
                 product_brochure_url TEXT
             )', tbl_name);
-END LOOP;
+        EXECUTE format('ALTER TABLE %I ENABLE ROW LEVEL SECURITY', tbl_name);
+        EXECUTE format('DROP POLICY IF EXISTS "public read access" ON %I', tbl_name);
+        EXECUTE format(
+            'CREATE POLICY "public read access" ON %I FOR SELECT TO anon, authenticated USING (true)',
+            tbl_name
+        );
+        EXECUTE format('REVOKE ALL ON TABLE %I FROM anon, authenticated', tbl_name);
+        EXECUTE format('GRANT SELECT ON TABLE %I TO anon, authenticated', tbl_name);
+        EXECUTE format('GRANT ALL ON TABLE %I TO service_role', tbl_name);
+    END LOOP;
 END $$;
 
 CREATE TABLE IF NOT EXISTS specialist_resources (
@@ -79,7 +96,15 @@ CREATE TABLE IF NOT EXISTS specialist_resources (
 CREATE INDEX IF NOT EXISTS idx_specialist_resources_lookup
 ON specialist_resources (insurer, plan_name);
 
-GRANT ALL ON TABLE specialist_resources TO anon, authenticated, service_role;
+ALTER TABLE specialist_resources ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "public read access" ON specialist_resources;
+CREATE POLICY "public read access"
+ON specialist_resources FOR SELECT
+TO anon, authenticated
+USING (true);
+REVOKE ALL ON TABLE specialist_resources FROM anon, authenticated;
+GRANT SELECT ON TABLE specialist_resources TO anon, authenticated;
+GRANT ALL ON TABLE specialist_resources TO service_role;
 
 CREATE TABLE IF NOT EXISTS plan_comparison_facts (
     id SERIAL PRIMARY KEY,
@@ -113,4 +138,12 @@ ALTER TABLE plan_comparison_facts
 CREATE INDEX IF NOT EXISTS idx_plan_comparison_facts_lookup
 ON plan_comparison_facts (insurer, plan_slug);
 
-GRANT ALL ON TABLE plan_comparison_facts TO anon, authenticated, service_role;
+ALTER TABLE plan_comparison_facts ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "public read access" ON plan_comparison_facts;
+CREATE POLICY "public read access"
+ON plan_comparison_facts FOR SELECT
+TO anon, authenticated
+USING (true);
+REVOKE ALL ON TABLE plan_comparison_facts FROM anon, authenticated;
+GRANT SELECT ON TABLE plan_comparison_facts TO anon, authenticated;
+GRANT ALL ON TABLE plan_comparison_facts TO service_role;
