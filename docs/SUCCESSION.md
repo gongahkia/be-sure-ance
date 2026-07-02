@@ -31,7 +31,7 @@ Expected locations:
 - Supabase: project dashboard for database, storage, anon key, and server-side secret/service-role key.
 - Telegram beta: BotFather token stored only in local `.env` or GitHub/environment secrets.
 - Sentry: project DSN and alert recipients in Sentry project settings and GitHub secrets.
-- Hosting provider: Netlify or Cloudflare Pages project settings after Phase 5.
+- Hosting provider: Netlify restore is the selected Phase 5 path; Cloudflare Pages remains the fallback if Netlify is blocked.
 - Object storage: Supabase Storage bucket settings or future R2 bucket settings.
 - Backup database URL: GitHub Actions secret `SUPABASE_DB_URL`.
 - Optional backup mirror: R2 endpoint, bucket, access key, and secret key in GitHub Actions secrets or variables.

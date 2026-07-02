@@ -4,7 +4,7 @@ Current status: staging pre-flight automation is ready, but no public launch is 
 
 Compliance lawyer sign-off status: blocked - not obtained as of 2026-07-02.
 
-No public launch may proceed until the staging checks pass against the real `STAGING_ORIGIN` and the compliance sign-off status changes to approved in private legal records.
+No public launch may proceed until the staging checks pass against the real `STAGING_ORIGIN`, the deployment runbook has a working production URL, and the compliance sign-off status changes to approved in private legal records.
 
 ## Staging Origin
 

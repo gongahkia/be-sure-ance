@@ -1,0 +1,71 @@
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+README = (ROOT / "README.md").read_text()
+DEPLOYMENT = (ROOT / "docs/DEPLOYMENT.md").read_text()
+SUCCESSION = (ROOT / "docs/SUCCESSION.md").read_text()
+LAUNCH_PREFLIGHT = (ROOT / "docs/LAUNCH_PREFLIGHT.md").read_text()
+NETLIFY = (ROOT / "netlify.toml").read_text()
+
+
+class DeploymentRunbookTests(unittest.TestCase):
+    def test_readme_links_deployment_runbook_without_live_url_claim(self):
+        self.assertIn("[Deployment runbook](./docs/DEPLOYMENT.md)", README)
+        self.assertIn("Deployment decision: restore Netlify first", README)
+        self.assertIn("Production URL is not published from this repository yet.", README)
+        self.assertNotIn("Use the live website", README)
+
+    def test_netlify_restore_decision_and_cloudflare_fallback_are_documented(self):
+        for required in (
+            "Restore Netlify first.",
+            "Cloudflare Pages remains a fallback",
+            "No deploy, push, DNS change, or custom-domain change was performed",
+            "Do not claim a live URL in README until the production URL works",
+            "Netlify restore is the selected Phase 5 path",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, DEPLOYMENT + SUCCESSION)
+
+    def test_frontend_env_allowlist_excludes_private_keys(self):
+        for allowed in (
+            "VITE_SUPABASE_URL",
+            "VITE_SUPABASE_ANON_KEY",
+            "VITE_SITE_ORIGIN",
+            "optional `VITE_SENTRY_*`",
+        ):
+            with self.subTest(allowed=allowed):
+                self.assertIn(allowed, DEPLOYMENT)
+
+        for forbidden in (
+            "SUPABASE_SECRET_KEY",
+            "SUPABASE_SERVICE_ROLE_KEY",
+            "SUPABASE_DB_URL",
+            "R2_SECRET_ACCESS_KEY",
+            "TELEGRAM_BOT_TOKEN",
+        ):
+            with self.subTest(forbidden=forbidden):
+                self.assertIn(forbidden, DEPLOYMENT)
+
+    def test_netlify_config_supports_vite_spa_and_security_headers(self):
+        for required in (
+            'base = "src/be-sure-ance-app"',
+            'command = "npm run build"',
+            'publish = "dist"',
+            'from = "/*"',
+            'to = "/index.html"',
+            "Content-Security-Policy",
+            "Strict-Transport-Security",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, NETLIFY)
+
+    def test_launch_prefight_depends_on_working_production_url(self):
+        self.assertIn("deployment runbook has a working production URL", LAUNCH_PREFLIGHT)
+        self.assertIn(
+            "Update README with the live URL only after the production URL works.", DEPLOYMENT
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()
