@@ -126,6 +126,8 @@ Takedown SLA:
 - Resolve or provide a written status update within 7 calendar days.
 - Keep a private audit note of the request, source URL, action taken, and date.
 
+Manual removal procedure: [Takedown and source removal runbook](./TAKEDOWN_RUNBOOK.md).
+
 ## Launch Gate
 
 Do not publicly relaunch until:

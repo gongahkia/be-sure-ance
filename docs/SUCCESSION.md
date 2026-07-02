@@ -33,6 +33,8 @@ Expected locations:
 - Sentry: project DSN and alert recipients in Sentry project settings and GitHub secrets.
 - Hosting provider: Netlify or Cloudflare Pages project settings after Phase 5.
 - Object storage: Supabase Storage bucket settings or future R2 bucket settings.
+- Backup database URL: GitHub Actions secret `SUPABASE_DB_URL`.
+- Optional backup mirror: R2 endpoint, bucket, access key, and secret key in GitHub Actions secrets or variables.
 
 Never commit:
 
@@ -40,6 +42,8 @@ Never commit:
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `TELEGRAM_BOT_TOKEN`
 - `SENTRY_DSN`
+- `SUPABASE_DB_URL`
+- `R2_SECRET_ACCESS_KEY`
 - hosting deploy tokens
 - database passwords
 - private legal/compliance notes
@@ -49,10 +53,17 @@ The public `VITE_SUPABASE_ANON_KEY` and optional `VITE_SENTRY_DSN` can be presen
 ## Weekly Operations
 
 1. Check GitHub Actions for `scrape-to-supabase`, `validate-scraper-snapshots`, `publish-open-dataset`, and CI.
-2. Review `/status` for stale, failing, unsupported, or validation-failed carriers.
-3. Triage `brochure_change_alerts` rows before dispatching any public alert.
-4. Check Sentry for new frontend or scraper error groups if DSNs are configured.
-5. Confirm open dataset artifacts were generated and do not include secret-like fields.
+2. Check `nightly-supabase-backup` for a fresh 30-day artifact and optional R2 copy.
+3. Review `/status` for stale, failing, unsupported, or validation-failed carriers.
+4. Triage `brochure_change_alerts` rows before dispatching any public alert.
+5. Check Sentry for new frontend or scraper error groups if DSNs are configured.
+6. Confirm open dataset artifacts were generated and do not include secret-like fields.
+
+## Backup Restore
+
+Use [Backup and retention](./BACKUP_RETENTION.md) for logical dump creation, retention, and restore steps.
+
+Default retention is 30 days for GitHub Actions artifacts and any configured R2 lifecycle rule.
 
 ## Takedown Flow
 

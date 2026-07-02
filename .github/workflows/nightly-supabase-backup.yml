@@ -1,0 +1,50 @@
+name: nightly-supabase-backup
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 17 * * *"
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    env:
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      R2_ENDPOINT_URL: ${{ secrets.R2_ENDPOINT_URL || vars.R2_ENDPOINT_URL }}
+      R2_BUCKET: ${{ secrets.R2_BACKUP_BUCKET || vars.R2_BACKUP_BUCKET }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pg_dump
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+      - name: Create Supabase logical dump
+        run: python scripts/supabase_logical_dump.py --output-dir .backup-output
+
+      - name: Upload 30-day GitHub artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: supabase-logical-dump-${{ github.run_id }}
+          path: .backup-output/*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload optional R2 backup copy
+        if: ${{ env.R2_ENDPOINT_URL != '' && env.R2_BUCKET != '' && env.AWS_ACCESS_KEY_ID != '' && env.AWS_SECRET_ACCESS_KEY != '' }}
+        run: |
+          aws s3 cp .backup-output/ "s3://${R2_BUCKET}/be-sure-ance/supabase-logical-dumps/" \
+            --recursive \
+            --endpoint-url "${R2_ENDPOINT_URL}"

@@ -36,6 +36,8 @@ Portfolio artifacts:
 - [Accessibility audit](./docs/ACCESSIBILITY.md)
 - [Compliance posture](./docs/COMPLIANCE.md)
 - [Data model](./docs/DATA_MODEL.md)
+- [Backup and retention](./docs/BACKUP_RETENTION.md)
+- [Takedown runbook](./docs/TAKEDOWN_RUNBOOK.md)
 - [Succession runbook](./docs/SUCCESSION.md)
 - [Pivot blog draft](./docs/blog/why-we-ripped-out-regex-derived-premiums.md)
 - [Case study template](./docs/case-studies/)
@@ -88,6 +90,7 @@ Scraper/backend variables are private and must stay in local `.env` or GitHub Ac
 
 ```sh
 SUPABASE_URL=
+SUPABASE_DB_URL=
 SUPABASE_SECRET_KEY=
 BROCHURE_STORAGE_BUCKET=plan-brochures
 TELEGRAM_BOT_TOKEN=
@@ -95,13 +98,17 @@ SENTRY_DSN=
 SENTRY_ENVIRONMENT=local
 SENTRY_RELEASE=
 SENTRY_TRACES_SAMPLE_RATE=0
+R2_ENDPOINT_URL=
+R2_BACKUP_BUCKET=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
 # or legacy fallback:
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
 Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, optional `VITE_SHARE_ENDPOINT`, and optional `VITE_SENTRY_*` variables for frontend-only error reporting.
 
-GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Scraper observability is optional through `SENTRY_DSN`. Never expose `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SENTRY_DSN`, or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
+GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Scraper observability is optional through `SENTRY_DSN`. Nightly logical dumps require `SUPABASE_DB_URL`; optional R2 backup mirroring uses `R2_*` variables. Never expose `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL`, `SENTRY_DSN`, `R2_SECRET_ACCESS_KEY`, or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
 
 ## Local checks
 
