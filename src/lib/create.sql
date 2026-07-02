@@ -106,6 +106,38 @@ REVOKE ALL ON TABLE specialist_resources FROM anon, authenticated;
 GRANT SELECT ON TABLE specialist_resources TO anon, authenticated;
 GRANT ALL ON TABLE specialist_resources TO service_role;
 
+CREATE TABLE IF NOT EXISTS plans (
+    id SERIAL PRIMARY KEY,
+    insurer TEXT NOT NULL,
+    plan_name TEXT NOT NULL,
+    plan_slug TEXT NOT NULL,
+    plan_benefits TEXT[] NOT NULL DEFAULT '{}',
+    plan_description TEXT,
+    plan_overview TEXT,
+    plan_url TEXT,
+    product_brochure_url TEXT,
+    scraped_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    CONSTRAINT plans_insurer_plan_slug_key UNIQUE (insurer, plan_slug)
+);
+
+CREATE INDEX IF NOT EXISTS idx_plans_insurer_slug
+ON plans (insurer, plan_slug);
+
+CREATE INDEX IF NOT EXISTS idx_plans_insurer
+ON plans (insurer);
+
+ALTER TABLE plans ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "public read access" ON plans;
+CREATE POLICY "public read access"
+ON plans FOR SELECT
+TO anon, authenticated
+USING (true);
+REVOKE ALL ON TABLE plans FROM anon, authenticated;
+GRANT SELECT ON TABLE plans TO anon, authenticated;
+GRANT ALL ON TABLE plans TO service_role;
+REVOKE ALL ON SEQUENCE plans_id_seq FROM anon, authenticated;
+GRANT USAGE, SELECT ON SEQUENCE plans_id_seq TO service_role;
+
 CREATE TABLE IF NOT EXISTS plan_comparison_facts (
     id SERIAL PRIMARY KEY,
     insurer TEXT NOT NULL,

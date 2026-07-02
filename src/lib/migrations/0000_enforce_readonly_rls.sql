@@ -40,6 +40,7 @@ DECLARE
         'great_eastern',
         'iii',
         'hsbc',
+        'plans',
         'specialist_resources',
         'plan_comparison_facts'
     ];

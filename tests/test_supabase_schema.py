@@ -5,9 +5,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_SQL = (ROOT / "src/lib/create.sql").read_text()
-MIGRATION_SQL = (
-    ROOT / "src/lib/migrations/0000_enforce_readonly_rls.sql"
-).read_text()
+MIGRATION_SQL = "\n".join(
+    path.read_text() for path in sorted((ROOT / "src/lib/migrations").glob("*.sql"))
+)
 
 
 def squash(sql):
