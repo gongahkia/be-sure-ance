@@ -106,7 +106,7 @@
         </section>
 
         <section v-else class="empty-panel">
-          No plans match the current provider and search filters.
+          {{ emptyPlanMessage }}
         </section>
 
         <ComparisonTable :selected-plans="selectedPlans" />
@@ -146,26 +146,19 @@ async function fetchData() {
   }
 
   try {
-    const providerResults = await Promise.all(
-      providers.map(async (provider) => {
-        const { data, error } = await supabase.from(provider.key).select("*")
-        if (error) {
-          throw error
-        }
-        return [provider.key, data || []]
-      })
-    )
-
-    plansByProvider.value = Object.fromEntries(providerResults)
-
     const [
+      { data: planData, error: planError },
       { data: comparisonData, error: comparisonError },
       { data: resourceData, error: resourceError }
     ] = await Promise.all([
+      supabase.from("plans").select("*"),
       supabase.from("plan_comparison_facts").select("*"),
       supabase.from("specialist_resources").select("*")
     ])
 
+    if (planError) {
+      throw planError
+    }
     if (comparisonError) {
       throw comparisonError
     }
@@ -173,6 +166,7 @@ async function fetchData() {
       throw resourceError
     }
 
+    plansByProvider.value = groupPlansByProvider(planData || [])
     comparisonFacts.value = comparisonData || []
     specialistResources.value = resourceData || []
   } catch (error) {
@@ -183,6 +177,19 @@ async function fetchData() {
 }
 
 onMounted(fetchData)
+
+function groupPlansByProvider(rows) {
+  const groupedPlans = Object.fromEntries(providers.map((provider) => [provider.key, []]))
+
+  for (const row of rows) {
+    if (!row?.insurer || !groupedPlans[row.insurer]) {
+      continue
+    }
+    groupedPlans[row.insurer].push(row)
+  }
+
+  return groupedPlans
+}
 
 const comparisonFactMap = computed(() =>
   Object.fromEntries(
@@ -259,6 +266,14 @@ const visiblePlans = computed(() =>
     return searchableText.includes(searchQuery.value.toLowerCase())
   })
 )
+
+const emptyPlanMessage = computed(() => {
+  const providerPlanCount = (plansByProvider.value[activeProviderKey.value] || []).length
+  if (providerPlanCount === 0 && !searchQuery.value.trim()) {
+    return "No supported plans are loaded for this provider yet."
+  }
+  return "No plans match the current provider and search filters."
+})
 
 const selectedPlans = computed(() =>
   selectedPlanKeys.value
