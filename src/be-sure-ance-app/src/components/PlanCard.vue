@@ -89,19 +89,8 @@ const props = defineProps({
 defineEmits(["toggle-select"])
 
 const coverageBadges = computed(() => {
-  const flags = props.comparisonFact?.coverage_flags || {}
-  const labels = [
-    ["accident", "Accident"],
-    ["hospitalization", "Hospitalization"],
-    ["life", "Life"],
-    ["critical_illness", "Critical illness"],
-    ["outpatient", "Outpatient"],
-    ["emergency", "Emergency"]
-  ]
-
-  return labels
-    .filter(([key]) => flags[key])
-    .map(([, label]) => label)
+  const tags = props.comparisonFact?.coverage_tags || []
+  return tags.map(labelForTag)
 })
 
 const factHighlights = computed(() => [
@@ -115,9 +104,18 @@ const factHighlights = computed(() => [
   },
   {
     label: "Brochure",
-    value: props.plan?.product_brochure_url ? "Available" : "Missing"
+    value: (props.comparisonFact?.coverage_tags || []).includes("brochure_available") ||
+      props.plan?.product_brochure_url ? "Available" : "Missing"
   }
 ])
+
+function labelForTag(tag) {
+  return String(tag)
+    .split("_")
+    .filter(Boolean)
+    .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+    .join(" ")
+}
 </script>
 
 <style scoped>

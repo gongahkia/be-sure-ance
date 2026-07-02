@@ -28,6 +28,10 @@ PLAN_KEYWORDS = (
     ("outpatient", ("outpatient", "clinic", "general practitioner")),
     ("emergency", ("emergency", "ambulance", "evacuation")),
 )
+RESOURCE_TAGS = (
+    ("provider_directory", "provider directory"),
+    ("brochure_available", "brochure available"),
+)
 
 
 def normalize_whitespace(value: str | None) -> str:
@@ -51,14 +55,16 @@ def first_sentences(text: str, limit: int = 2) -> str:
     return ". ".join(segments[:limit])
 
 
-def derive_coverage_flags(text: str, specialist_resource_count: int, brochure_available: bool) -> dict:
+def derive_coverage_tags(text: str, specialist_resource_count: int, brochure_available: bool) -> list[str]:
     lowered = text.lower()
-    flags = {
-        key: any(keyword in lowered for keyword in keywords) for key, keywords in PLAN_KEYWORDS
-    }
-    flags["specialist_network"] = specialist_resource_count > 0
-    flags["brochure_available"] = brochure_available
-    return flags
+    tags = [
+        key for key, keywords in PLAN_KEYWORDS if any(keyword in lowered for keyword in keywords)
+    ]
+    if specialist_resource_count > 0:
+        tags.append(RESOURCE_TAGS[0][0])
+    if brochure_available:
+        tags.append(RESOURCE_TAGS[1][0])
+    return tags
 
 
 def build_comparison_notes(plan: dict, specialist_resource_count: int) -> str:
@@ -89,7 +95,7 @@ def build_fact_row(insurer: str, plan: dict, specialist_resource_count: int) -> 
             ]
         )
     )
-    coverage_flags = derive_coverage_flags(
+    coverage_tags = derive_coverage_tags(
         text=text,
         specialist_resource_count=specialist_resource_count,
         brochure_available=bool(plan.get("product_brochure_url")),
@@ -99,7 +105,13 @@ def build_fact_row(insurer: str, plan: dict, specialist_resource_count: int) -> 
         "insurer": insurer,
         "plan_name": plan["plan_name"],
         "plan_slug": slugify(plan["plan_name"]),
-        "coverage_flags": coverage_flags,
+        "panel_network_size": None,
+        "claim_sla_days": None,
+        "exclusions": [],
+        "waiting_period_days": None,
+        "coverage_tags": coverage_tags,
+        "brochure_hash": None,
+        "brochure_last_changed_at": None,
         "comparison_notes": build_comparison_notes(plan, specialist_resource_count),
         "source_url": plan.get("product_brochure_url") or plan.get("plan_url"),
     }

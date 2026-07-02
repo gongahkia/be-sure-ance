@@ -52,7 +52,7 @@ DECLARE
         'singlife',
         'great_eastern',
         'iii',
-        'hsbc',
+        'hsbc'
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP
@@ -91,13 +91,29 @@ CREATE TABLE IF NOT EXISTS plan_comparison_facts (
     insurer TEXT NOT NULL,
     plan_name TEXT NOT NULL,
     plan_slug TEXT NOT NULL,
-    premium_facts JSONB NOT NULL DEFAULT '{}'::jsonb,
-    cost_sharing JSONB NOT NULL DEFAULT '{}'::jsonb,
-    coverage_flags JSONB NOT NULL DEFAULT '{}'::jsonb,
-    scenario_assumptions JSONB NOT NULL DEFAULT '{}'::jsonb,
+    panel_network_size INT,
+    claim_sla_days INT,
+    exclusions TEXT[] NOT NULL DEFAULT '{}',
+    waiting_period_days INT,
+    coverage_tags TEXT[] NOT NULL DEFAULT '{}',
+    brochure_hash TEXT,
+    brochure_last_changed_at TIMESTAMPTZ,
     comparison_notes TEXT,
     source_url TEXT
 );
+
+ALTER TABLE plan_comparison_facts
+    DROP COLUMN IF EXISTS premium_facts,
+    DROP COLUMN IF EXISTS cost_sharing,
+    DROP COLUMN IF EXISTS coverage_flags,
+    DROP COLUMN IF EXISTS scenario_assumptions,
+    ADD COLUMN IF NOT EXISTS panel_network_size INT,
+    ADD COLUMN IF NOT EXISTS claim_sla_days INT,
+    ADD COLUMN IF NOT EXISTS exclusions TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS waiting_period_days INT,
+    ADD COLUMN IF NOT EXISTS coverage_tags TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS brochure_hash TEXT,
+    ADD COLUMN IF NOT EXISTS brochure_last_changed_at TIMESTAMPTZ;
 
 CREATE INDEX IF NOT EXISTS idx_plan_comparison_facts_lookup
 ON plan_comparison_facts (insurer, plan_slug);

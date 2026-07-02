@@ -248,7 +248,7 @@ const visiblePlans = computed(() =>
       plan.plan_overview,
       (plan.plan_benefits || []).join(" "),
       plan.comparisonFact?.comparison_notes || "",
-      JSON.stringify(plan.comparisonFact?.coverage_flags || {}),
+      (plan.comparisonFact?.coverage_tags || []).join(" "),
       (plan.resources || [])
         .map((resource) => `${resource.resource_title || ""} ${resource.resource_description || ""}`)
         .join(" ")

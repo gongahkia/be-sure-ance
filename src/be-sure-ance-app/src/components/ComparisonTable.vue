@@ -38,18 +38,23 @@ defineProps({
   selectedPlans: Array
 })
 
-function coverageValue(value) {
-  if (value === true) {
-    return "Covered"
-  }
-  if (value === false) {
-    return "Not covered"
-  }
-  return "Unknown"
-}
-
 function availabilityValue(value) {
   return value ? "Available" : "Missing"
+}
+
+function tagValue(tags, tag) {
+  return (tags || []).includes(tag) ? "Tagged" : "Not tagged"
+}
+
+function nullableNumber(value, unit) {
+  if (value === null || value === undefined) {
+    return "Unknown"
+  }
+  return unit ? `${value} ${unit}` : String(value)
+}
+
+function listValue(value) {
+  return value?.length ? value.join(", ") : "Unknown"
 }
 
 function sourceHost(value) {
@@ -77,42 +82,62 @@ const rows = computed(() => [
   {
     key: "accident",
     label: "Accident",
-    render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.accident)
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "accident")
   },
   {
     key: "hospitalization",
     label: "Hospitalization",
-    render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.hospitalization)
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "hospitalization")
   },
   {
     key: "life",
     label: "Life",
-    render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.life)
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "life")
   },
   {
     key: "critical_illness",
     label: "Critical illness",
-    render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.critical_illness)
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "critical_illness")
   },
   {
     key: "outpatient",
     label: "Outpatient",
-    render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.outpatient)
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "outpatient")
   },
   {
     key: "emergency",
     label: "Emergency",
-    render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.emergency)
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "emergency")
   },
   {
     key: "specialist",
     label: "Provider directory",
-    render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.specialist_network)
+    render: (plan) => tagValue(plan.comparisonFact?.coverage_tags, "provider_directory")
   },
   {
     key: "brochure",
     label: "Brochure",
-    render: (plan) => availabilityValue(plan.comparisonFact?.coverage_flags?.brochure_available || plan.product_brochure_url)
+    render: (plan) => availabilityValue((plan.comparisonFact?.coverage_tags || []).includes("brochure_available") || plan.product_brochure_url)
+  },
+  {
+    key: "panel_network_size",
+    label: "Panel network size",
+    render: (plan) => nullableNumber(plan.comparisonFact?.panel_network_size)
+  },
+  {
+    key: "claim_sla_days",
+    label: "Claim SLA",
+    render: (plan) => nullableNumber(plan.comparisonFact?.claim_sla_days, "days")
+  },
+  {
+    key: "waiting_period_days",
+    label: "Waiting period",
+    render: (plan) => nullableNumber(plan.comparisonFact?.waiting_period_days, "days")
+  },
+  {
+    key: "exclusions",
+    label: "Exclusions",
+    render: (plan) => listValue(plan.comparisonFact?.exclusions)
   },
   {
     key: "notes",
