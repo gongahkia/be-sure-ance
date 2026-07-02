@@ -7,6 +7,7 @@ from playwright.async_api import Error as PlaywrightError
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 
 from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.observability import capture_scraper_exception
 
 DEFAULT_NAVIGATION_TIMEOUT_MS = 60000
 DEFAULT_NETWORKIDLE_TIMEOUT_MS = 5000
@@ -64,6 +65,7 @@ async def goto_with_retry(
 
 
 def log_url_failure(scraper_name: str, url: str, error: Exception):
+    capture_scraper_exception(scraper_name, error, source_url=url)
     print(f"[{scraper_name}] skipping {url}: {type(error).__name__}: {error}")
 
 

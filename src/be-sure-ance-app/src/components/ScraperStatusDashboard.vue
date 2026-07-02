@@ -88,6 +88,7 @@ const summaryCounts = computed(() => {
     counts[carrierState(row)] += 1
   }
   return [
+    { key: 'errorRate', label: 'Error rate', count: errorRate(counts) },
     { key: 'fresh', label: 'Fresh', count: counts.fresh },
     { key: 'stale', label: 'Stale', count: counts.stale },
     { key: 'failing', label: 'Failing', count: counts.failing },
@@ -108,6 +109,14 @@ function normalizeRow(row, provider = {}) {
     validation_checked_at: row?.validation_checked_at || '',
     validation_summary: row?.validation_summary || {},
   }
+}
+
+function errorRate(counts) {
+  const supportedTotal = counts.fresh + counts.stale + counts.failing
+  if (supportedTotal === 0) {
+    return '0%'
+  }
+  return `${Math.round((counts.failing / supportedTotal) * 100)}%`
 }
 
 function carrierState(row) {

@@ -13,3 +13,4 @@ pypdf
 reportlab
 uvicorn
 python-telegram-bot==22.8
+sentry-sdk==2.64.0

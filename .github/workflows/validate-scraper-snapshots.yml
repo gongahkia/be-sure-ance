@@ -13,6 +13,11 @@ jobs:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+      SENTRY_ENVIRONMENT: github-actions
+      SENTRY_RELEASE: ${{ github.sha }}
+      SENTRY_TRACES_SAMPLE_RATE: "0"
     permissions:
       actions: read
       contents: read

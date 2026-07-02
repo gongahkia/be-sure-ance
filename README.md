@@ -80,13 +80,17 @@ SUPABASE_URL=
 SUPABASE_SECRET_KEY=
 BROCHURE_STORAGE_BUCKET=plan-brochures
 TELEGRAM_BOT_TOKEN=
+SENTRY_DSN=
+SENTRY_ENVIRONMENT=local
+SENTRY_RELEASE=
+SENTRY_TRACES_SAMPLE_RATE=0
 # or legacy fallback:
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, and optional `VITE_SHARE_ENDPOINT`.
+Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, optional `VITE_SHARE_ENDPOINT`, and optional `VITE_SENTRY_*` variables for frontend-only error reporting.
 
-GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Never expose `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
+GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Scraper observability is optional through `SENTRY_DSN`. Never expose `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SENTRY_DSN`, or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
 
 ## Local checks
 

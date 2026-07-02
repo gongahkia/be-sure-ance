@@ -40,6 +40,25 @@ Before relaunch:
 
 Reference: Singapore PDPC describes the PDPA as governing collection, use, and disclosure of personal data while balancing legitimate organisational use and individual protection.
 
+## Error Observability
+
+Sentry is the selected Phase 4 error monitor. It stays disabled unless DSN environment variables are set.
+
+Current behavior:
+
+- Frontend reporting uses `VITE_SENTRY_DSN`, `VITE_SENTRY_ENVIRONMENT`, `VITE_SENTRY_RELEASE`, and `VITE_SENTRY_TRACES_SAMPLE_RATE`.
+- Scraper/backend reporting uses `SENTRY_DSN`, `SENTRY_ENVIRONMENT`, `SENTRY_RELEASE`, and `SENTRY_TRACES_SAMPLE_RATE`.
+- SDKs are initialized with default PII disabled.
+- Event scrubbers redact authorization headers, cookies, Supabase keys, Telegram bot tokens, Sentry DSNs, bearer tokens, service-role JWT-like values, and `sb_secret_*` values before sending.
+- Scraper exception context is limited to carrier key, source URL, command context, and sanitized exception metadata.
+- `/status` shows aggregate failing-rate and validation state, not raw exception messages.
+
+Before relaunch:
+
+- Confirm Sentry project data residency, retention, team access, and alert recipients.
+- Keep DSNs and auth tokens out of committed files and frontend code except the public frontend DSN.
+- Review a test event payload before enabling alerts for production traffic.
+
 ## MAS FAA Stance
 
 [Inference] Based on current product behavior, the project is intended to stay outside financial-advisory and transaction flows by presenting source-linked qualitative facts only. This is not a legal conclusion.

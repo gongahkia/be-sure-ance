@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { initializeObservability } from './observability'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+initializeObservability(app)
+app.mount('#app')

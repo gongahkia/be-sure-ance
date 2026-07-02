@@ -21,6 +21,7 @@ from src.lib.brochure_versions import (
     version_change_status,
 )
 from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.observability import initialize_observability
 from src.lib.scraper_health import record_scraper_success
 
 # ------ functions ------
@@ -36,6 +37,7 @@ BROCHURE_USER_AGENT = BOT_USER_AGENT
 
 
 def initialize_supabase():
+    initialize_observability("scraper")
     if dry_run_enabled():
         print("Dry run enabled; Supabase client not initialized.")
         return

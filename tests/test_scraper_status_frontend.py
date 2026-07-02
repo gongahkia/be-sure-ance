@@ -32,6 +32,7 @@ class ScraperStatusFrontendTests(unittest.TestCase):
             "Stale",
             "Failing",
             "Unsupported",
+            "Error rate",
             "validation_summary",
             "row_count",
             "last_success_at",

@@ -5,6 +5,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from src.lib.observability import capture_scraper_exception, initialize_observability
 from src.lib.scraper_health import record_scraper_failure, sync_scraper_registry_statuses
 from src.scrapers.registry import EXPERIMENTAL_SCRAPERS, SUPPORTED_SCRAPERS
 
@@ -61,6 +62,7 @@ def main():
     if not scripts:
         raise SystemExit("No scrapers selected.")
 
+    initialize_observability("scraper")
     sync_scraper_registry_statuses(dry_run=args.dry_run)
     failures = []
     for script in scripts:
@@ -72,6 +74,11 @@ def main():
         print(f"Running {script.stem} ...")
         result = subprocess.run(command, cwd=SCRAPER_DIR.parent.parent)
         if result.returncode != 0:
+            capture_scraper_exception(
+                script.stem,
+                RuntimeError(f"scraper process exited with code {result.returncode}"),
+                context={"command": " ".join(command)},
+            )
             record_scraper_failure(
                 script.stem,
                 f"scraper process exited with code {result.returncode}",
