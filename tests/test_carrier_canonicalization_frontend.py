@@ -23,7 +23,8 @@ class CarrierCanonicalizationFrontendTests(unittest.TestCase):
 
     def test_plan_card_surfaces_canonical_name_and_flags(self):
         for required in (
-            "Canonical carrier: {{ canonicalCarrierText }}",
+            "t('plan.canonicalCarrier')",
+            "canonicalCarrierText",
             "canonicalFlagsText",
             "mismatch_flags",
         ):

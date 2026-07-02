@@ -7,7 +7,7 @@
       :class="{ warning: provenanceState(entry) !== 'Verified' }"
     >
       <span class="provenance-fields">{{ entry.fields.join(', ') }}</span>
-      <span>{{ sourceTypeLabel(entry.sourceType) }}</span>
+      <span>{{ sourceTypeText(entry.sourceType) }}</span>
       <a
         v-if="safeExternalUrl(entry.sourceUrl)"
         :href="safeExternalUrl(entry.sourceUrl)"
@@ -15,13 +15,21 @@
         rel="noopener noreferrer"
         referrerpolicy="no-referrer"
       >
-        {{ externalHostname(entry.sourceUrl) || 'source' }}
+        {{ externalHostname(entry.sourceUrl) || t('provenance.source') }}
       </a>
-      <span v-else>Source URL missing</span>
-      <span>Scraped {{ formatFactDate(entry.scrapedAt) || 'missing' }}</span>
-      <span>Verified {{ formatFactDate(entry.lastVerifiedAt) || 'missing' }}</span>
+      <span v-else>{{ t('provenance.sourceMissing') }}</span>
+      <span>{{
+        t('provenance.scraped', {
+          date: formatFactDate(entry.scrapedAt) || t('provenance.missing'),
+        })
+      }}</span>
+      <span>{{
+        t('provenance.verified', {
+          date: formatFactDate(entry.lastVerifiedAt) || t('provenance.missing'),
+        })
+      }}</span>
       <strong v-if="provenanceState(entry) !== 'Verified'">
-        {{ provenanceState(entry) }}
+        {{ provenanceStateText(entry) }}
       </strong>
     </p>
   </div>
@@ -29,7 +37,8 @@
 
 <script setup>
 import { externalHostname, safeExternalUrl } from '../utils/links'
-import { formatFactDate, provenanceState, sourceTypeLabel } from '../utils/planFacts'
+import { useI18n } from '../i18n'
+import { formatFactDate, provenanceState } from '../utils/planFacts'
 
 defineProps({
   entries: {
@@ -38,6 +47,22 @@ defineProps({
   },
   compact: Boolean,
 })
+
+const { t } = useI18n()
+
+function sourceTypeText(sourceType) {
+  return t(`sourceType.${sourceType || 'source'}`)
+}
+
+function provenanceStateText(entry) {
+  const keyByState = {
+    Verified: 'provenance.state.verified',
+    'Source incomplete': 'provenance.state.sourceIncomplete',
+    'Verification missing': 'provenance.state.verificationMissing',
+    'Stale verification': 'provenance.state.staleVerification',
+  }
+  return t(keyByState[provenanceState(entry)] || 'provenance.state.sourceIncomplete')
+}
 </script>
 
 <style scoped>

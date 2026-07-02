@@ -6,7 +6,7 @@
         <h3>{{ plan.plan_name }}</h3>
       </div>
       <button class="select-button" type="button" @click="$emit('toggle-select', plan.key)">
-        {{ selected ? 'Remove from brief' : 'Add to brief' }}
+        {{ selected ? t('plan.remove') : t('plan.select') }}
       </button>
     </div>
 
@@ -16,7 +16,7 @@
       }}
     </p>
     <p v-if="canonicalCarrierText" class="canonical-line">
-      Canonical carrier: {{ canonicalCarrierText }}
+      {{ t('plan.canonicalCarrier') }}: {{ canonicalCarrierText }}
       <span v-if="canonicalFlagsText">({{ canonicalFlagsText }})</span>
     </p>
     <FactProvenance :entries="profileProvenance" compact />
@@ -39,7 +39,7 @@
     </div>
 
     <details class="detail-panel">
-      <summary>Agent detail</summary>
+      <summary>{{ t('plan.details') }}</summary>
       <p class="detail-copy">
         {{
           plan.plan_overview ||
@@ -56,7 +56,7 @@
           rel="noopener noreferrer"
           referrerpolicy="no-referrer"
         >
-          Product page
+          {{ t('plan.productPage') }}
         </a>
         <a
           v-if="safeExternalUrl(plan.product_brochure_url)"
@@ -65,20 +65,20 @@
           rel="noopener noreferrer"
           referrerpolicy="no-referrer"
         >
-          Brochure
+          {{ t('plan.brochureLink') }}
         </a>
-        <a v-if="planPagePath" :href="planPagePath">Plan page</a>
+        <a v-if="planPagePath" :href="planPagePath">{{ t('plan.planPage') }}</a>
       </div>
 
       <div class="qualitative-sections">
         <section>
-          <h4>Coverage</h4>
+          <h4>{{ t('plan.coverage') }}</h4>
           <p>{{ coverageSummary }}</p>
           <FactProvenance :entries="coverageProvenance" />
         </section>
 
         <section>
-          <h4>Network</h4>
+          <h4>{{ t('plan.network') }}</h4>
           <p>{{ networkSummary }}</p>
           <ul v-if="panelHospitals.length > 0">
             <li v-for="hospital in panelHospitals.slice(0, 4)" :key="itemLabel(hospital)">
@@ -89,23 +89,27 @@
         </section>
 
         <section>
-          <h4>Process</h4>
-          <p>Waiting periods: {{ waitingPeriodSummary }}</p>
-          <p v-if="waitingPeriodTags.length > 0">Tags: {{ waitingPeriodTags.join(', ') }}</p>
-          <p>Claim deadlines: {{ claimDeadlineSummary }}</p>
-          <p>Claim SLA: {{ claimSlaSummary }}</p>
+          <h4>{{ t('plan.process') }}</h4>
+          <p>{{ t('plan.waitingPeriods') }}: {{ waitingPeriodSummary }}</p>
+          <p v-if="waitingPeriodTags.length > 0">
+            {{ t('plan.tags') }}: {{ waitingPeriodTags.join(', ') }}
+          </p>
+          <p>{{ t('plan.claimDeadlines') }}: {{ claimDeadlineSummary }}</p>
+          <p>{{ t('plan.claimSla') }}: {{ claimSlaSummary }}</p>
           <FactProvenance :entries="processProvenance" />
         </section>
 
         <section>
-          <h4>Exclusions</h4>
+          <h4>{{ t('plan.exclusions') }}</h4>
           <p>{{ exclusionSummary }}</p>
-          <p v-if="exclusionTags.length > 0">Tags: {{ exclusionTags.join(', ') }}</p>
+          <p v-if="exclusionTags.length > 0">
+            {{ t('plan.tags') }}: {{ exclusionTags.join(', ') }}
+          </p>
           <FactProvenance :entries="exclusionProvenance" />
         </section>
 
         <section>
-          <h4>Brochure</h4>
+          <h4>{{ t('plan.brochure') }}</h4>
           <p>{{ brochureSummary }}</p>
           <FactProvenance :entries="brochureProvenance" />
         </section>
@@ -113,7 +117,7 @@
         <BrochureChangeList :changes="brochureChanges" />
 
         <section v-if="sourceNotes.length > 0">
-          <h4>Source notes</h4>
+          <h4>{{ t('plan.sourceNotes') }}</h4>
           <p>{{ listText(sourceNotes) }}</p>
           <FactProvenance :entries="sourceNotesProvenance" />
         </section>
@@ -146,6 +150,7 @@ import { computed } from 'vue'
 import BrochureChangeList from './BrochureChangeList.vue'
 import FactProvenance from './FactProvenance.vue'
 import RegulatoryEventList from './RegulatoryEventList.vue'
+import { useI18n } from '../i18n'
 import { safeExternalUrl } from '../utils/links'
 import {
   claimSlaText,
@@ -182,6 +187,7 @@ const props = defineProps({
 
 defineEmits(['toggle-select'])
 
+const { t } = useI18n()
 const planWithFacts = computed(() => ({
   ...props.plan,
   facts: props.facts,

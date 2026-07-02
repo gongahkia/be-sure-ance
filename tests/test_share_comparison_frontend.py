@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 APP_VUE = (ROOT / "src/be-sure-ance-app/src/App.vue").read_text()
 SHARE_PANEL = (ROOT / "src/be-sure-ance-app/src/components/ShareComparisonPanel.vue").read_text()
+I18N = (ROOT / "src/be-sure-ance-app/src/i18n.js").read_text()
 
 
 class ShareComparisonFrontendTests(unittest.TestCase):
@@ -51,12 +52,13 @@ class ShareComparisonFrontendTests(unittest.TestCase):
 
     def test_share_route_preserves_no_advice_and_provenance(self):
         for required in (
+            "disclaimer.share",
             "This shared comparison is for pre-meeting research only",
-            "Verify every fact against the carrier source",
+            "此共享比较仅供会前研究使用",
             "ComparisonTable v-else",
         ):
             with self.subTest(required=required):
-                self.assertIn(required, APP_VUE)
+                self.assertIn(required, APP_VUE + I18N)
 
 
 if __name__ == "__main__":

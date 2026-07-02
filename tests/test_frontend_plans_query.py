@@ -3,6 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_VUE = (ROOT / "src/be-sure-ance-app/src/App.vue").read_text()
+I18N = (ROOT / "src/be-sure-ance-app/src/i18n.js").read_text()
 
 
 class FrontendPlansQueryTests(unittest.TestCase):
@@ -26,8 +27,10 @@ class FrontendPlansQueryTests(unittest.TestCase):
         self.assertIn("selectedPlanKeys.value.slice(1)", APP_VUE)
 
     def test_empty_provider_state_is_distinct_from_search_miss(self):
-        self.assertIn("No supported plans are loaded for this provider yet.", APP_VUE)
-        self.assertIn("No plans match the current provider and search filters.", APP_VUE)
+        self.assertIn("t('empty.provider')", APP_VUE)
+        self.assertIn("t('empty.search')", APP_VUE)
+        self.assertIn("No supported plans are loaded for this provider yet.", I18N)
+        self.assertIn("No plans match the current provider and search filters.", I18N)
 
 
 if __name__ == "__main__":

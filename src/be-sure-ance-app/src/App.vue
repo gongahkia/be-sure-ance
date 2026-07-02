@@ -2,11 +2,24 @@
   <div id="app" class="app-shell">
     <header class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">For Insurance Agents</p>
-        <h1>Prepare carrier comparisons and provider lookups before the client meeting.</h1>
+        <div class="hero-topline">
+          <p class="eyebrow">{{ t('hero.eyebrow') }}</p>
+          <div class="language-toggle" :aria-label="t('language.label')">
+            <button
+              v-for="option in supportedLocales"
+              :key="option.code"
+              type="button"
+              :class="{ active: locale === option.code }"
+              :aria-pressed="locale === option.code"
+              @click="setLocale(option.code)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </div>
+        <h1>{{ t('hero.title') }}</h1>
         <p class="hero-text">
-          Use the workspace to shortlist plans, open panel and specialist directories, and frame
-          qualitative coverage signals instead of brochure-by-brochure guesswork.
+          {{ t('hero.text') }}
         </p>
         <nav class="route-tabs" aria-label="Workspace views">
           <a
@@ -14,33 +27,33 @@
             :class="{ active: activeView === 'workspace' }"
             @click="navigateTo('/', $event)"
           >
-            Plan workspace
+            {{ t('route.workspace') }}
           </a>
           <a
             href="/matrix/panel-hospitals"
             :class="{ active: activeView === 'panelMatrix' }"
             @click="navigateTo('/matrix/panel-hospitals', $event)"
           >
-            Panel hospitals
+            {{ t('route.panelHospitals') }}
           </a>
         </nav>
       </div>
 
       <div class="hero-stats">
         <article>
-          <span>Carriers tracked</span>
+          <span>{{ t('stats.carriers') }}</span>
           <strong>{{ providers.length }}</strong>
         </article>
         <article>
-          <span>Plans loaded</span>
+          <span>{{ t('stats.plans') }}</span>
           <strong>{{ totalPlanCount }}</strong>
         </article>
         <article>
-          <span>Brief-ready profiles</span>
+          <span>{{ t('stats.briefReady') }}</span>
           <strong>{{ planFactProfileCount }}</strong>
         </article>
         <article>
-          <span>Plans in brief</span>
+          <span>{{ t('stats.plansInBrief') }}</span>
           <strong>{{ selectedPlans.length }}</strong>
         </article>
       </div>
@@ -48,33 +61,24 @@
 
     <section class="workflow-strip">
       <article>
-        <p class="eyebrow dark">Meeting Prep</p>
-        <h2>Build a three-plan brief fast.</h2>
-        <p>
-          Keep shortlists tight, compare coverage signals side by side, and carry a cleaner story
-          into the call.
-        </p>
+        <p class="eyebrow dark">{{ t('workflow.meetingPrep.eyebrow') }}</p>
+        <h2>{{ t('workflow.meetingPrep.title') }}</h2>
+        <p>{{ t('workflow.meetingPrep.text') }}</p>
       </article>
       <article>
-        <p class="eyebrow dark">Panel Lookup</p>
-        <h2>Jump straight to provider directories.</h2>
-        <p>
-          Open hospital, panel, and specialist resources linked to the plan instead of hunting them
-          down mid-conversation.
-        </p>
+        <p class="eyebrow dark">{{ t('workflow.panelLookup.eyebrow') }}</p>
+        <h2>{{ t('workflow.panelLookup.title') }}</h2>
+        <p>{{ t('workflow.panelLookup.text') }}</p>
       </article>
       <article>
-        <p class="eyebrow dark">Carrier Research</p>
-        <h2>Review one provider lane at a time.</h2>
-        <p>
-          Use the provider rail to move through carriers quickly, then add only the plans worth
-          presenting.
-        </p>
+        <p class="eyebrow dark">{{ t('workflow.carrierResearch.eyebrow') }}</p>
+        <h2>{{ t('workflow.carrierResearch.title') }}</h2>
+        <p>{{ t('workflow.carrierResearch.text') }}</p>
       </article>
     </section>
 
     <section v-if="loading" class="status-panel">
-      Loading plan data and qualitative facts...
+      {{ t('status.loading') }}
     </section>
 
     <section v-else-if="errorMessage" class="status-panel error">
@@ -93,16 +97,23 @@
       <main class="main-stage">
         <section class="toolbar">
           <div>
-            <p class="eyebrow">Shared Comparison</p>
-            <h2>Shared plan set</h2>
+            <p class="eyebrow">{{ t('shared.eyebrow') }}</p>
+            <h2>{{ t('shared.title') }}</h2>
             <p class="toolbar-copy">{{ SHARE_DISCLAIMER }}</p>
             <p v-if="sharedComparison" class="toolbar-copy">
-              Created {{ dateText(sharedComparison.created_at) }} · {{ shareViewText }}
+              {{
+                t('shared.created', {
+                  date: dateText(sharedComparison.created_at),
+                  views: shareViewText,
+                })
+              }}
             </p>
           </div>
 
           <div class="toolbar-actions">
-            <a href="/" class="provider-link" @click="navigateTo('/', $event)"> Plan workspace </a>
+            <a href="/" class="provider-link" @click="navigateTo('/', $event)">
+              {{ t('shared.back') }}
+            </a>
           </div>
         </section>
 
@@ -110,10 +121,10 @@
           {{ sharedComparisonError }}
         </section>
         <section v-else-if="sharedComparison && sharedPlans.length === 0" class="status-panel">
-          Shared comparison found, but referenced plans are not loaded in the current dataset.
+          {{ t('shared.missingPlans') }}
         </section>
         <section v-else-if="!sharedComparison" class="status-panel">
-          Loading shared comparison...
+          {{ t('shared.loading') }}
         </section>
         <ComparisonTable v-else :selected-plans="sharedPlans" />
       </main>
@@ -130,11 +141,9 @@
       <main class="main-stage">
         <section class="toolbar">
           <div>
-            <p class="eyebrow">Active Provider</p>
+            <p class="eyebrow">{{ t('toolbar.activeProvider') }}</p>
             <h2>{{ activeProvider.name }}</h2>
-            <p class="toolbar-copy">
-              {{ activeProvider.focus }} Use this lane for carrier research and shortlist building.
-            </p>
+            <p class="toolbar-copy">{{ activeProvider.focus }} {{ t('toolbar.copySuffix') }}</p>
           </div>
 
           <div class="toolbar-actions">
@@ -142,7 +151,7 @@
               v-model="searchQuery"
               class="search-input"
               type="search"
-              placeholder="Search plans, benefits, notes, or provider resources"
+              :placeholder="t('toolbar.searchPlaceholder')"
             />
             <a
               v-if="safeExternalUrl(activeProvider.website)"
@@ -152,7 +161,7 @@
               referrerpolicy="no-referrer"
               class="provider-link"
             >
-              Open carrier site
+              {{ t('toolbar.openCarrier') }}
             </a>
           </div>
         </section>
@@ -198,10 +207,11 @@ import PlanCard from './components/PlanCard.vue'
 import ProviderRail from './components/ProviderRail.vue'
 import ShareComparisonPanel from './components/ShareComparisonPanel.vue'
 import { buildPlanKey, providers } from './lib/providers'
+import { useI18n } from './i18n'
 import { safeExternalUrl } from './utils/links'
 
-const SHARE_DISCLAIMER =
-  'This shared comparison is for pre-meeting research only. It is not financial advice, insurance advice, legal advice, a recommendation, a ranking, a quote, or a policy transaction. Verify every fact against the carrier source, compareFIRST where applicable, and the adviser compliance workflow.'
+const { locale, supportedLocales, setLocale, t } = useI18n()
+const SHARE_DISCLAIMER = computed(() => t('disclaimer.share'))
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null
@@ -228,8 +238,7 @@ const carrierCanonicalNames = ref([])
 
 async function fetchData() {
   if (!supabase) {
-    errorMessage.value =
-      'Supabase configuration is missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.'
+    errorMessage.value = t('status.supabaseMissing')
     loading.value = false
     return
   }
@@ -290,7 +299,7 @@ async function fetchData() {
     carrierCanonicalNames.value = carrierCanonicalData || []
     await loadShareFromRoute()
   } catch (error) {
-    errorMessage.value = error?.message || 'Unable to load qualitative plan data.'
+    errorMessage.value = error?.message || t('status.loadError')
   } finally {
     loading.value = false
   }
@@ -551,13 +560,13 @@ const visiblePlans = computed(() =>
 
 const emptyPlanMessage = computed(() => {
   if (routePlanTarget.value) {
-    return 'No plan matches this static plan URL yet.'
+    return t('empty.routePlan')
   }
   const providerPlanCount = (plansByProvider.value[activeProviderKey.value] || []).length
   if (providerPlanCount === 0 && !searchQuery.value.trim()) {
-    return 'No supported plans are loaded for this provider yet.'
+    return t('empty.provider')
   }
-  return 'No plans match the current provider and search filters.'
+  return t('empty.search')
 })
 
 const selectedPlans = computed(() =>
@@ -594,8 +603,7 @@ async function loadShareFromRoute() {
     return
   }
   if (!supabase) {
-    sharedComparisonError.value =
-      'Supabase configuration is missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.'
+    sharedComparisonError.value = t('status.supabaseMissing')
     return
   }
 
@@ -613,16 +621,16 @@ async function loadShareFromRoute() {
     }
     const row = (data || [])[0]
     if (!row) {
-      sharedComparisonError.value = 'Shared comparison not found.'
+      sharedComparisonError.value = t('shared.notFound')
       return
     }
     sharedComparison.value = {
       ...row,
-      disclaimer: SHARE_DISCLAIMER,
+      disclaimer: SHARE_DISCLAIMER.value,
     }
     trackShareView(shareId)
   } catch (error) {
-    sharedComparisonError.value = error?.message || 'Unable to load shared comparison.'
+    sharedComparisonError.value = error?.message || t('shared.loadError')
   }
 }
 
@@ -695,6 +703,33 @@ a {
 
 .hero-copy {
   max-width: 52rem;
+}
+
+.hero-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.language-toggle {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.language-toggle button {
+  min-height: 34px;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 0.55rem;
+  background: transparent;
+  color: #f6fbff;
+  font-weight: 700;
+}
+
+.language-toggle button.active {
+  background: #f6fbff;
+  color: var(--ink);
 }
 
 .eyebrow {

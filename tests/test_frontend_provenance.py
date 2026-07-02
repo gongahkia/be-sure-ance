@@ -7,6 +7,7 @@ PLAN_CARD = (ROOT / "src/be-sure-ance-app/src/components/PlanCard.vue").read_tex
 COMPARISON_TABLE = (ROOT / "src/be-sure-ance-app/src/components/ComparisonTable.vue").read_text()
 PLAN_FACTS_UTIL = (ROOT / "src/be-sure-ance-app/src/utils/planFacts.js").read_text()
 LINKS_UTIL = (ROOT / "src/be-sure-ance-app/src/utils/links.js").read_text()
+I18N = (ROOT / "src/be-sure-ance-app/src/i18n.js").read_text()
 
 
 class FrontendProvenanceTests(unittest.TestCase):
@@ -23,14 +24,15 @@ class FrontendProvenanceTests(unittest.TestCase):
 
     def test_provenance_component_shows_source_type_and_dates(self):
         for required in (
-            "sourceTypeLabel(entry.sourceType)",
+            "sourceTypeText(entry.sourceType)",
             "formatFactDate(entry.scrapedAt)",
             "formatFactDate(entry.lastVerifiedAt)",
             "provenanceState(entry)",
-            "Source URL missing",
+            "t('provenance.sourceMissing')",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, FACT_PROVENANCE)
+        self.assertIn("Source URL missing", I18N)
 
     def test_plan_card_marks_each_fact_group_with_provenance(self):
         for required in (

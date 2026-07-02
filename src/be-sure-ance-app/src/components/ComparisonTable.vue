@@ -2,24 +2,21 @@
   <section class="comparison-panel">
     <div class="section-top">
       <div>
-        <p class="eyebrow">Comparison</p>
-        <h2>Client-ready comparison sheet</h2>
+        <p class="eyebrow">{{ t('comparison.eyebrow') }}</p>
+        <h2>{{ t('comparison.title') }}</h2>
       </div>
-      <p class="section-copy">
-        Use this grid to frame what is covered, what is unknown, and where source links differ
-        across shortlisted plans.
-      </p>
+      <p class="section-copy">{{ t('comparison.copy') }}</p>
     </div>
 
     <div v-if="selectedPlans.length === 0" class="empty-state">
-      Select at least one plan to populate the comparison grid.
+      {{ t('comparison.empty') }}
     </div>
 
     <div v-else class="comparison-grid">
       <table>
         <thead>
           <tr>
-            <th>Field</th>
+            <th>{{ t('comparison.field') }}</th>
             <th v-for="plan in selectedPlans" :key="plan.key">{{ plan.plan_name }}</th>
           </tr>
         </thead>
@@ -41,6 +38,7 @@
 import { computed } from 'vue'
 
 import FactProvenance from './FactProvenance.vue'
+import { useI18n } from '../i18n'
 import {
   claimSlaText,
   coverageTagsForPlan,
@@ -58,52 +56,53 @@ defineProps({
   selectedPlans: Array,
 })
 
+const { t } = useI18n()
 const rows = computed(() => [
   {
     key: 'coverage_tags',
-    label: 'Coverage',
+    label: t('field.coverage_tags'),
     render: coverageValue,
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['coverage_tags']),
   },
   {
     key: 'panel_hospitals',
-    label: 'Network',
+    label: t('field.panel_hospitals'),
     render: (plan) => qualitativeListValue(plan, 'panel_hospitals'),
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['panel_hospitals']),
   },
   {
     key: 'waiting_periods',
-    label: 'Waiting periods',
+    label: t('field.waiting_periods'),
     render: (plan) => durationListValue(plan, 'waiting_periods', 'duration_days'),
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['waiting_periods']),
   },
   {
     key: 'claim_deadlines',
-    label: 'Claim deadlines',
+    label: t('field.claim_deadlines'),
     render: (plan) => durationListValue(plan, 'claim_deadlines', 'deadline_days'),
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['claim_deadlines']),
   },
   {
     key: 'claim_sla',
-    label: 'Claim SLA',
+    label: t('field.claim_sla'),
     render: (plan) => claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla'),
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['claim_sla']),
   },
   {
     key: 'exclusions',
-    label: 'Exclusions',
+    label: t('field.exclusions'),
     render: exclusionValue,
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['exclusions']),
   },
   {
     key: 'brochure_metadata',
-    label: 'Brochure',
+    label: t('field.brochure_metadata'),
     render: brochureValue,
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['brochure_metadata']),
   },
   {
     key: 'source_notes',
-    label: 'Source notes',
+    label: t('field.source_notes'),
     render: (plan) => qualitativeListValue(plan, 'source_notes'),
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['source_notes']),
   },
@@ -139,13 +138,13 @@ function durationListValue(plan, fieldName, durationFieldName) {
 function brochureValue(plan) {
   const metadata = factValue(plan.facts, 'brochure_metadata')
   if (metadata?.sha256 || metadata?.url) {
-    return 'Captured'
+    return t('common.captured')
   }
   if (
     plan.product_brochure_url ||
     (plan.comparisonFact?.coverage_tags || []).includes('brochure_available')
   ) {
-    return 'Available'
+    return t('common.available')
   }
   return factStateText(plan.facts, 'brochure_metadata')
 }

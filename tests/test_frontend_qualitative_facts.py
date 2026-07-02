@@ -23,10 +23,10 @@ class FrontendQualitativeFactsTests(unittest.TestCase):
 
     def test_plan_card_groups_contract_fields(self):
         for required in (
-            "<h4>Coverage</h4>",
-            "<h4>Network</h4>",
-            "<h4>Process</h4>",
-            "<h4>Exclusions</h4>",
+            "t('plan.coverage')",
+            "t('plan.network')",
+            "t('plan.process')",
+            "t('plan.exclusions')",
             "coverage_tags",
             "panel_hospitals",
             "waiting_periods",
@@ -42,7 +42,7 @@ class FrontendQualitativeFactsTests(unittest.TestCase):
 
     def test_comparison_table_uses_qualitative_fact_rows(self):
         for required in (
-            "<th>Field</th>",
+            "t('comparison.field')",
             "coverage_tags",
             "panel_hospitals",
             "waiting_periods",
