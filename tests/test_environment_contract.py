@@ -19,6 +19,7 @@ class EnvironmentContractTests(unittest.TestCase):
         self.assertIn("SUPABASE_SECRET_KEY=", env_example)
         self.assertIn("SUPABASE_SERVICE_ROLE_KEY=", env_example)
         self.assertIn("BROCHURE_STORAGE_BUCKET=", env_example)
+        self.assertIn("TELEGRAM_BOT_TOKEN=", env_example)
         self.assertIn("Never expose", env_example)
 
     def test_frontend_uses_anon_key_only(self):
@@ -28,6 +29,7 @@ class EnvironmentContractTests(unittest.TestCase):
         self.assertIn("import.meta.env.VITE_SUPABASE_URL", app_vue)
         self.assertNotIn("SUPABASE_SERVICE_ROLE_KEY", app_vue)
         self.assertNotIn("SUPABASE_SECRET_KEY", app_vue)
+        self.assertNotIn("TELEGRAM_BOT_TOKEN", app_vue)
         self.assertNotIn("VUE_APP_", app_vue)
 
     def test_scraper_workflow_uses_explicit_server_key_names(self):
@@ -49,6 +51,7 @@ class EnvironmentContractTests(unittest.TestCase):
             "SUPABASE_SECRET_KEY",
             "SUPABASE_SERVICE_ROLE_KEY",
             "BROCHURE_STORAGE_BUCKET",
+            "TELEGRAM_BOT_TOKEN",
             "Netlify only needs",
             "GitHub Actions requires",
             "Never expose",

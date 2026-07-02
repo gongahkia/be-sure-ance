@@ -29,12 +29,14 @@ Current behavior:
 - MAS regulatory-event rows are source-linked and dated; low-confidence carrier matches must be shown as review-needed context, not definitive carrier findings.
 - Brochure change-alert rows store source URLs, hashes, timestamps, generated diffs, and alert status only; no subscriber, client, or agent PII is stored.
 - Saved comparison links store only selected `insurer` and `plan_slug` references plus aggregate view counts; no client, agent, visitor, account, cookie, IP address, or user-agent data is stored in `comparison_shares`.
+- Telegram bot beta responses are read-only plan lookups with no-advice wording. The repository does not persist Telegram chat IDs, usernames, phone numbers, or message text; in-memory rate limiting is the only bot-side abuse control.
 
 Before relaunch:
 
 - Review hosting, analytics, CDN, error-reporting, and server logs for incidental personal data such as IP addresses or user-agent strings.
 - Add a privacy notice before adding analytics, saved comparisons, PDF exports with agent/client details, or any form submission.
 - Keep any future client-brief export no-PII by default unless a separate PDPA review is completed.
+- Document Telegram platform metadata handling before any public bot launch.
 
 Reference: Singapore PDPC describes the PDPA as governing collection, use, and disclosure of personal data while balancing legitimate organisational use and individual protection.
 

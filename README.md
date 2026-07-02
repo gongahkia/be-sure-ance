@@ -34,13 +34,14 @@ Scraper/backend variables are private and must stay in local `.env` or GitHub Ac
 SUPABASE_URL=
 SUPABASE_SECRET_KEY=
 BROCHURE_STORAGE_BUCKET=plan-brochures
+TELEGRAM_BOT_TOKEN=
 # or legacy fallback:
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
 Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, and optional `VITE_SHARE_ENDPOINT`.
 
-GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
+GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Never expose `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
 
 ## Local checks
 
@@ -58,6 +59,14 @@ uvicorn src.backend.pdf_brief_api:app --reload
 ```
 
 The FastAPI backend exposes no-PII PDF and share-link endpoints. Share creation writes only selected `{insurer, plan_slug}` references to `comparison_shares`; `/share/<uuid>` reads that public row and reconstructs the comparison from current source-traceable plan tables.
+
+Telegram lookup beta:
+
+```sh
+python -m src.bot.telegram_bot
+```
+
+See [Telegram bot beta](./docs/TELEGRAM_BOT.md) for token handling, commands, and deployment notes.
 
 ## Static plan pages and sitemap
 
@@ -87,7 +96,7 @@ Set `VITE_SITE_ORIGIN` to the canonical production origin before Phase 5 launch.
 ### Stack
 
 * [Frontend](./src/be-sure-ance-app/) - Vue 3, Vite, Supabase JS client.
-* [Backend](./src/) - Python scrapers, brochure capture/parsing, and FastAPI PDF brief rendering.
+* [Backend](./src/) - Python scrapers, brochure capture/parsing, FastAPI PDF/share endpoints, and Telegram lookup bot.
 * [Database](./src/lib/create.sql) - Supabase Postgres with public read-only access and service-role writes.
 * [Storage](./src/backend/helper.py) - Supabase Storage for captured brochure PDFs.
 

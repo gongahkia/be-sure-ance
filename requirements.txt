@@ -12,3 +12,4 @@ rapidfuzz
 pypdf
 reportlab
 uvicorn
+python-telegram-bot==22.8
