@@ -23,7 +23,7 @@ Current behavior:
 - No user accounts or authentication.
 - No client data capture, CRM notes, or generated advice records.
 - No client names, NRIC/FIN, contact details, health information, financial profile, or meeting notes are stored.
-- PDF brief generation accepts up to three selected plan payloads, returns a PDF response, and does not persist client or agent details.
+- PDF brief generation accepts up to three selected plan payloads plus optional session-only agent name and MAS representative number, returns a PDF response, and does not persist client or agent details.
 - Frontend reads public `plans`, `plan_facts`, and provider-resource data with the Supabase anon key.
 - Scrapers write only plan/source metadata with server-side Supabase credentials.
 

@@ -145,6 +145,7 @@
           {{ emptyPlanMessage }}
         </section>
 
+        <BriefExportPanel :selected-plans="selectedPlans" />
         <ComparisonTable :selected-plans="selectedPlans" />
       </main>
     </section>
@@ -155,6 +156,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
+import BriefExportPanel from './components/BriefExportPanel.vue'
 import ComparisonTable from './components/ComparisonTable.vue'
 import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
 import PlanCard from './components/PlanCard.vue'

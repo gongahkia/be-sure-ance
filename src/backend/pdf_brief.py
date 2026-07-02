@@ -41,8 +41,17 @@ def validate_plan_selection(plans: list[dict]) -> None:
 
 
 def build_pdf_brief(plans: list[dict], generated_at: datetime | None = None) -> bytes:
+    return build_pdf_brief_with_branding(plans, branding=None, generated_at=generated_at)
+
+
+def build_pdf_brief_with_branding(
+    plans: list[dict],
+    branding: dict | None = None,
+    generated_at: datetime | None = None,
+) -> bytes:
     validate_plan_selection(plans)
     timestamp = generated_timestamp(generated_at)
+    footer_text = branding_footer_text(branding)
     buffer = io.BytesIO()
     doc = SimpleDocTemplate(
         buffer,
@@ -65,7 +74,11 @@ def build_pdf_brief(plans: list[dict], generated_at: datetime | None = None) -> 
         Paragraph("Sources", styles["Heading2"]),
         source_table(plans, styles),
     ]
-    doc.build(story)
+    doc.build(
+        story,
+        onFirstPage=lambda canvas, document: draw_footer(canvas, document, footer_text),
+        onLaterPages=lambda canvas, document: draw_footer(canvas, document, footer_text),
+    )
     return buffer.getvalue()
 
 
@@ -203,3 +216,29 @@ def item_text(item, field_name: str) -> str:
 
 def safe_text(value) -> str:
     return " ".join(str(value or "").split())
+
+
+def branding_footer_text(branding: dict | None = None) -> str:
+    branding = branding or {}
+    agent_name = safe_text(branding.get("agent_name") or branding.get("agentName"))
+    mas_rep_number = safe_text(branding.get("mas_rep_number") or branding.get("masRepNumber"))
+    if agent_name and mas_rep_number:
+        return f"Prepared by {agent_name} | MAS rep no. {mas_rep_number}"
+    if agent_name:
+        return f"Prepared by {agent_name} | MAS rep no. not provided"
+    if mas_rep_number:
+        return f"Prepared by unbranded adviser | MAS rep no. {mas_rep_number}"
+    return "Prepared by unbranded adviser | MAS rep no. not provided"
+
+
+def draw_footer(canvas, document, footer_text: str) -> None:
+    canvas.saveState()
+    canvas.setFont("Helvetica", 7)
+    canvas.setFillColor(colors.HexColor("#567086"))
+    canvas.drawString(document.leftMargin, 9 * mm, footer_text)
+    canvas.drawRightString(
+        A4[0] - document.rightMargin,
+        9 * mm,
+        f"Page {document.page}",
+    )
+    canvas.restoreState()

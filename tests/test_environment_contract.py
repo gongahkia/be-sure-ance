@@ -13,6 +13,7 @@ class EnvironmentContractTests(unittest.TestCase):
         env_example = read(".env.example")
 
         self.assertIn("VITE_SUPABASE_ANON_KEY=", env_example)
+        self.assertIn("VITE_PDF_BRIEF_ENDPOINT=", env_example)
         self.assertIn("SUPABASE_SECRET_KEY=", env_example)
         self.assertIn("SUPABASE_SERVICE_ROLE_KEY=", env_example)
         self.assertIn("BROCHURE_STORAGE_BUCKET=", env_example)
@@ -40,6 +41,7 @@ class EnvironmentContractTests(unittest.TestCase):
 
         for required in (
             "VITE_SUPABASE_ANON_KEY",
+            "VITE_PDF_BRIEF_ENDPOINT",
             "SUPABASE_SECRET_KEY",
             "SUPABASE_SERVICE_ROLE_KEY",
             "BROCHURE_STORAGE_BUCKET",

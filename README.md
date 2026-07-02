@@ -36,7 +36,7 @@ BROCHURE_STORAGE_BUCKET=plan-brochures
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-Netlify only needs the public frontend variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
+Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and optional `VITE_PDF_BRIEF_ENDPOINT`.
 
 GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
 
@@ -52,6 +52,7 @@ npm --prefix src/be-sure-ance-app run lint
 npm --prefix src/be-sure-ance-app run format:check
 (cd src/be-sure-ance-app && VITE_SUPABASE_URL=https://example.supabase.co VITE_SUPABASE_ANON_KEY=anon npm run build)
 pre-commit run --all-files
+uvicorn src.backend.pdf_brief_api:app --reload
 ```
 
 ## Screenshots
@@ -97,7 +98,7 @@ sequenceDiagram
     Backend Scraper->>Supabase Storage: Store brochure PDF bytes by content hash
     Backend Scraper->>Supabase: Upsert plans and source-traceable plan_facts
     Frontend Vue.js->>Supabase: Fetch plans, plan_facts, and provider resources
-    Frontend Vue.js->>Backend API: Request no-PII PDF brief for up to 3 selected plans
+    Frontend Vue.js->>Backend API: Request no-PII PDF brief for up to 3 selected plans and session branding
     Frontend Vue.js->>IFA: Render qualitative comparison workspace with provenance
 ```
 

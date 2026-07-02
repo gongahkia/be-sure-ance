@@ -7,7 +7,9 @@ from pypdf import PdfReader
 from src.backend.pdf_brief import (
     MAX_PLANS_PER_BRIEF,
     NO_ADVICE_DISCLAIMER,
+    branding_footer_text,
     build_pdf_brief,
+    build_pdf_brief_with_branding,
     validate_plan_selection,
 )
 from src.backend.pdf_brief_api import BriefRequest, create_client_brief
@@ -100,6 +102,22 @@ class PdfBriefTests(unittest.TestCase):
             with self.subTest(index=index):
                 self.assertIn(f"Plan {index}", text)
 
+    def test_pdf_footer_includes_supplied_agent_branding(self):
+        text = extract_pdf_text(
+            build_pdf_brief_with_branding(
+                [sample_plan()],
+                branding={"agent_name": "Jamie Tan", "mas_rep_number": "A123456"},
+            )
+        )
+
+        self.assertIn("Prepared by Jamie Tan | MAS rep no. A123456", text)
+
+    def test_pdf_footer_falls_back_without_branding(self):
+        self.assertEqual(
+            branding_footer_text({}),
+            "Prepared by unbranded adviser | MAS rep no. not provided",
+        )
+
     def test_pdf_brief_rejects_empty_selection(self):
         with self.assertRaises(ValueError):
             validate_plan_selection([])
@@ -112,7 +130,12 @@ class PdfBriefTests(unittest.TestCase):
                 self.assertNotIn(forbidden, text)
 
     def test_fastapi_endpoint_returns_pdf_without_storage_headers(self):
-        response = create_client_brief(BriefRequest(plans=[sample_plan()]))
+        response = create_client_brief(
+            BriefRequest(
+                plans=[sample_plan()],
+                branding={"agent_name": "Jamie Tan", "mas_rep_number": "A123456"},
+            )
+        )
 
         self.assertEqual(response.media_type, "application/pdf")
         self.assertEqual(response.headers["Cache-Control"], "no-store")
