@@ -136,6 +136,7 @@
             :facts="plan.facts"
             :comparison-fact="plan.comparisonFact"
             :resources="plan.resources"
+            :regulatory-events="plan.regulatoryEvents"
             :selected="selectedPlanKeys.includes(plan.key)"
             @toggle-select="togglePlanSelection"
           />
@@ -182,6 +183,7 @@ const comparisonFacts = ref([])
 const planFacts = ref([])
 const specialistResources = ref([])
 const claimTurnaroundMetrics = ref([])
+const masRegulatoryEvents = ref([])
 
 async function fetchData() {
   if (!supabase) {
@@ -198,12 +200,14 @@ async function fetchData() {
       { data: factData, error: factError },
       { data: resourceData, error: resourceError },
       { data: claimData, error: claimError },
+      { data: regulatoryData, error: regulatoryError },
     ] = await Promise.all([
       supabase.from('plans').select('*'),
       supabase.from('plan_comparison_facts').select('*'),
       supabase.from('plan_facts').select('*'),
       supabase.from('specialist_resources').select('*'),
       supabase.from('claim_turnaround_metrics').select('*'),
+      supabase.from('mas_regulatory_events').select('*'),
     ])
 
     if (planError) {
@@ -221,12 +225,16 @@ async function fetchData() {
     if (claimError) {
       throw claimError
     }
+    if (regulatoryError) {
+      throw regulatoryError
+    }
 
     plansByProvider.value = groupPlansByProvider(planData || [])
     comparisonFacts.value = comparisonData || []
     planFacts.value = factData || []
     specialistResources.value = resourceData || []
     claimTurnaroundMetrics.value = claimData || []
+    masRegulatoryEvents.value = regulatoryData || []
   } catch (error) {
     errorMessage.value = error?.message || 'Unable to load qualitative plan data.'
   } finally {
@@ -347,6 +355,19 @@ const specialistResourceMap = computed(() =>
   }, {}),
 )
 
+const regulatoryEventMap = computed(() =>
+  masRegulatoryEvents.value.reduce((accumulator, event) => {
+    if (!event?.carrier_key) {
+      return accumulator
+    }
+    if (!accumulator[event.carrier_key]) {
+      accumulator[event.carrier_key] = []
+    }
+    accumulator[event.carrier_key].push(event)
+    return accumulator
+  }, {}),
+)
+
 const enrichedPlans = computed(() =>
   providers.flatMap((provider) =>
     (plansByProvider.value[provider.key] || []).map((plan) => {
@@ -360,6 +381,7 @@ const enrichedPlans = computed(() =>
         comparisonFact: comparisonFactMap.value[key] || null,
         facts: planFactMap.value[factKey] || {},
         resources: specialistResourceMap.value[key] || [],
+        regulatoryEvents: regulatoryEventMap.value[provider.key] || [],
       }
     }),
   ),

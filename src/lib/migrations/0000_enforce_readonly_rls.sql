@@ -45,7 +45,8 @@ DECLARE
         'plan_comparison_facts',
         'plan_facts',
         'moh_institutions',
-        'claim_turnaround_metrics'
+        'claim_turnaround_metrics',
+        'mas_regulatory_events'
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP

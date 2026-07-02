@@ -111,6 +111,8 @@
           <p>{{ listText(sourceNotes) }}</p>
           <FactProvenance :entries="sourceNotesProvenance" />
         </section>
+
+        <RegulatoryEventList :events="regulatoryEvents" />
       </div>
 
       <ul v-if="resources.length > 0" class="resource-list">
@@ -136,6 +138,7 @@
 import { computed } from 'vue'
 
 import FactProvenance from './FactProvenance.vue'
+import RegulatoryEventList from './RegulatoryEventList.vue'
 import { safeExternalUrl } from '../utils/links'
 import {
   claimSlaText,
@@ -159,6 +162,10 @@ const props = defineProps({
   facts: Object,
   comparisonFact: Object,
   resources: Array,
+  regulatoryEvents: {
+    type: Array,
+    default: () => [],
+  },
   selected: Boolean,
 })
 

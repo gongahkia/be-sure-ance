@@ -26,6 +26,7 @@ Current behavior:
 - PDF brief generation accepts up to three selected plan payloads plus optional session-only agent name and MAS representative number, returns a PDF response, and does not persist client or agent details.
 - Frontend reads public `plans`, `plan_facts`, and provider-resource data with the Supabase anon key.
 - Scrapers write only plan/source metadata with server-side Supabase credentials.
+- MAS regulatory-event rows are source-linked and dated; low-confidence carrier matches must be shown as review-needed context, not definitive carrier findings.
 
 Before relaunch:
 

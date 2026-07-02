@@ -62,6 +62,28 @@ Public clients can read `plan_facts`. Only `service_role` can write.
 
 `rank` is nullable. Current LIA sources provide industry-level handling timelines and annual claims/maturity payout totals; LIA does not publish carrier-level turnaround rankings in these sources. UI rows must show source year and limitations, and must not present aggregate LIA metrics as carrier suitability evidence.
 
+## `mas_regulatory_events`
+
+`mas_regulatory_events` stores source-linked MAS news/enforcement items that mention tracked carriers.
+
+- `carrier_key`
+- `carrier_name`
+- `event_title`
+- `event_type`
+- `event_date`
+- `source_url`
+- `source_type`
+- `summary`
+- `matched_alias`
+- `match_confidence`
+- `match_status`
+- `source_published_at`
+- `limitations`
+- `scraped_at`
+- `last_verified_at`
+
+`match_status = "needs_review"` must be shown as a possible carrier match, not a definitive finding. Rows are regulatory context only and are not advice, ratings, suitability rankings, or carrier recommendations.
+
 ## `moh_institutions`
 
 Required columns:

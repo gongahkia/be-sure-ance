@@ -46,6 +46,14 @@ jobs:
           BROCHURE_STORAGE_BUCKET: ${{ vars.BROCHURE_STORAGE_BUCKET }}
         run: python -m src.scrapers.lia_claim_turnaround
 
+      - name: Ingest MAS regulatory events
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BROCHURE_STORAGE_BUCKET: ${{ vars.BROCHURE_STORAGE_BUCKET }}
+        run: python -m src.scrapers.mas_regulatory
+
       - name: Parse brochure qualitative facts
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
