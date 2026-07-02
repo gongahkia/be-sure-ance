@@ -117,37 +117,37 @@ erDiagram
 
 ## Details
 
-`Be-sure-ance` supports the following Singaporean Insurance Providers.
+`Be-sure-ance` only schedules supported scrapers by default. Generic scrapers are experimental, opt-in via `python -m src.scrapers.run_all --include-experimental --only <module>`, and deferred until Phase 2 golden-output tests exist.
 
-| Provider | Implementation Status | Implementation Date |
+| Provider | Runtime status | Decision |
 | :--- | :--- | :--- |
-| [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index) | ✅ | 08/03/2025 |
-| [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | ❌ | |
-| [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | ✅ | 12/03/2025 |
-| [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | ❌ ||
-| [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | ✅ | 13/03/2025 |
-| [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | ❌ ||
-| [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | ✅ | 15/03/2025 |
-| [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | ✅ | 15/03/2025 |
-| [Manulife (Singapore) Pte Ltd](https://www.manulife.com.sg/) | ❌ ||
-| [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/) | ❌ ||
-| [Raffles Health Insurance Pte Ltd](https://www.raffleshealthinsurance.com/) | ❌ ||
-| [Singapore Life Ltd](https://singlife.com/en) | ✅ | 13/03/2025 |
-| [Sun Life Assurance Company of Canada Singapore Branch](https://www.sunlife.com.sg/en/) | ✅ | 13/03/2025 |
-| [Allied World Assurance Company Pte Ltd (Singapore)](https://alliedworldinsurance.com/singapore/) | ❌ ||
-| [Auto & General Insurance (Singapore) Pte Ltd](https://www.aig.sg/home) | ❌ ||
-| [ERGO Insurance Pte Ltd](https://www.ergo.com.sg/) | ❌ ||
-| [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/) | ❌ ||
-| [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | ❌ ||
-| [Income Insurance Pte Ltd](https://www.income.com.sg/) | ❌ ||
-| [India International Insurance Pte Ltd](https://www.iii.com.sg/) | ✅ | 15/03/2025 |
-| [Liberty Insurance Pte Ltd](https://www.libertyinsurance.com.sg/) | ❌ ||
-| [Lonpac Insurance Bhd](https://www.lonpac.com/) | ❌ ||
-| [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | ❌ ||
-| [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | ❌ ||
-| [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | ✅ | 13/03/2025 |
-| [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | ✅ | 08/03/2025 |
-| [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/) | ❌ ||
+| [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index) | Supported - scheduled | Implemented 08/03/2025 |
+| [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | Supported - scheduled | Implemented 12/03/2025 |
+| [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | Supported - scheduled | Implemented 13/03/2025 |
+| [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | Supported - scheduled | Implemented 15/03/2025 |
+| [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | Supported - scheduled | Implemented 15/03/2025 |
+| [India International Insurance Pte Ltd](https://www.iii.com.sg/) | Supported - scheduled | Implemented 15/03/2025 |
+| [Singapore Life Ltd](https://singlife.com/en) | Supported - scheduled | Implemented 13/03/2025 |
+| [Sun Life Assurance Company of Canada Singapore Branch](https://www.sunlife.com.sg/en/) | Supported - scheduled | Implemented 13/03/2025 |
+| [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | Supported - scheduled | Implemented 13/03/2025 |
+| [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | Supported - scheduled | Implemented 08/03/2025 |
+| [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Manulife (Singapore) Pte Ltd](https://www.manulife.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Raffles Health Insurance Pte Ltd](https://www.raffleshealthinsurance.com/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Allied World Assurance Company Pte Ltd (Singapore)](https://alliedworldinsurance.com/singapore/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [AIG Singapore](https://www.aig.sg/home) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [ERGO Insurance Pte Ltd](https://www.ergo.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Income Insurance Pte Ltd](https://www.income.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Liberty Insurance Pte Ltd](https://www.libertyinsurance.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Lonpac Insurance Bhd](https://www.lonpac.com/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
+| [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 
 ## Issues
 

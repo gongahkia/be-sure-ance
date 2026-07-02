@@ -16,6 +16,8 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup, Tag
 
+from src.scrapers.registry import SUPPORTED_SCRAPERS
+
 SCRAPER_DIR = Path(__file__).resolve().parents[1] / "scrapers"
 DEFAULT_OUTPUT_DIR = Path(".validation-output")
 EXCLUDED_SCRAPER_FILES = {"__init__.py", "_generic_domain.py", "run_all.py"}
@@ -62,6 +64,8 @@ def discover_targets(
     targets: list[ValidationTarget] = []
     for path in sorted(scraper_dir.glob("*.py")):
         if path.name in EXCLUDED_SCRAPER_FILES:
+            continue
+        if path.stem not in SUPPORTED_SCRAPERS:
             continue
 
         tree = ast.parse(path.read_text(), filename=str(path))
