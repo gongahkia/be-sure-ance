@@ -24,6 +24,8 @@ Cost posture: `$0/mo` target during portfolio validation on Supabase free tier, 
 
 This repository is MIT licensed. Read [CONTRIBUTING.md](./CONTRIBUTING.md) before changing scrapers, data contracts, compliance wording, or deployment assumptions. Participation is governed by [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
 
+Architecture decisions are recorded in [docs/adr](./docs/adr/).
+
 ## Usage
 
 No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate for restoring Netlify or moving to another static host.

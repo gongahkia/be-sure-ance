@@ -1,4 +1,4 @@
-# ADR 0001: Defer Chrome MV3 Sidebar Extension
+# ADR 0006: Defer Chrome MV3 Sidebar Extension
 
 ## Status
 
@@ -46,6 +46,12 @@ Rationale:
 - It adds a new browser-permission review surface.
 - It needs a stable deployed data endpoint and a clearer privacy policy before user testing.
 - Building it now would compete with Phase 3 exit work and Phase 4 portfolio readiness.
+
+## Rejected Approaches
+
+- Build the extension during Phase 3. Rejected because the starter combo and data moats already satisfy Phase 3 exit.
+- Add broad host permissions for all carrier pages. Rejected because it expands review and privacy risk.
+- Ship an extension before a stable public endpoint exists. Rejected because stale-cache and no-advice behavior would be hard to verify.
 
 ## Blockers
 

@@ -29,7 +29,7 @@ Shipped:
 
 Explicitly deferred:
 
-- Chrome MV3 sidebar extension. ADR: `docs/adr/0001-defer-chrome-extension-sidebar.md`.
+- Chrome MV3 sidebar extension. ADR: `docs/adr/0006-defer-chrome-extension-sidebar.md`.
 
 This exceeds the Phase 3 requirement for at least three expansion moats shipped or explicitly deferred.
 

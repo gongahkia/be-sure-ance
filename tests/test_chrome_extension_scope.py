@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ADR = (ROOT / "docs/adr/0001-defer-chrome-extension-sidebar.md").read_text()
+ADR = (ROOT / "docs/adr/0006-defer-chrome-extension-sidebar.md").read_text()
 
 
 class ChromeExtensionScopeTests(unittest.TestCase):

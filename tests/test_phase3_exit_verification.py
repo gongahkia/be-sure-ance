@@ -26,7 +26,7 @@ class Phase3ExitVerificationTests(unittest.TestCase):
             "Saved comparison sets",
             "Telegram lookup bot beta",
             "Chrome MV3 sidebar extension",
-            "docs/adr/0001-defer-chrome-extension-sidebar.md",
+            "docs/adr/0006-defer-chrome-extension-sidebar.md",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PHASE3)
