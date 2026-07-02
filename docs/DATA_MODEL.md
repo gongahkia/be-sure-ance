@@ -8,6 +8,8 @@
 
 `plan_facts` is the canonical source-traceable fact table. It stores one fact per `(insurer, plan_slug, field_name)` with a JSON value, source URL, source type, scrape timestamp, and verification timestamp.
 
+`moh_institutions` is the canonical MOH institution lookup table for panel-hospital normalization. It is populated from the data.gov.sg MOH NEHR participating-institutions dataset (`d_2864c425e22ddb89969585820629adf8`) and stores source-backed names, aliases, source record IDs, and scrape timestamps.
+
 ## `plan_facts`
 
 Required columns:
@@ -39,6 +41,22 @@ ON CONFLICT (insurer, plan_slug, field_name) DO UPDATE SET
 ```
 
 Public clients can read `plan_facts`. Only `service_role` can write.
+
+## `moh_institutions`
+
+Required columns:
+
+- `canonical_id`
+- `canonical_name`
+- `aliases`
+- `organization_name`
+- `effective_date`
+- `source_dataset_id`
+- `source_record_id`
+- `source_url`
+- `scraped_at`
+
+The scraper expands parenthetical NEHR entries into individual institution records. For example, a source row for a healthcare group can produce child records for each named hospital or centre inside the parentheses. Public clients can read the normalized lookup table. Only `service_role` can write.
 
 ## Brochure Storage
 
@@ -74,7 +92,7 @@ V1 fields:
 | Field | Shape | Example `field_value` |
 | :--- | :--- | :--- |
 | `coverage_tags` | list | `{"status":"known","items":["accident","emergency"],"raw_text":"Personal accident and emergency support","notes":[]}` |
-| `panel_hospitals` | list | `{"status":"known","items":[{"name":"Sample Hospital","normalized_name":"Sample Hospital","source_label":"Panel hospital"}],"raw_text":"Sample Hospital - Panel hospital","notes":[]}` |
+| `panel_hospitals` | list | `{"status":"known","items":[{"name":"Sample Hospital","normalized_name":"Sample Hospital","source_label":"Panel hospital","match_status":"matched","match_confidence":100,"matched_alias":"Sample Hospital","canonical_id":"nehr-1-sample-hospital","review_required":false}],"raw_text":"Sample Hospital - Panel hospital","notes":[],"review_required":false}` |
 | `exclusions` | list | `{"status":"known","items":[{"label":"Pre-existing conditions","details":"See policy wording for full clause."}],"raw_text":"Pre-existing conditions are excluded...","notes":[]}` |
 | `waiting_periods` | list | `{"status":"known","items":[{"condition":"Specified condition","duration_days":90,"raw_text":"90 days waiting period"}],"raw_text":"90 days waiting period","notes":[]}` |
 | `claim_deadlines` | list | `{"status":"known","items":[{"event":"Hospitalisation claim","deadline_days":30,"raw_text":"Submit within 30 days"}],"raw_text":"Submit within 30 days","notes":[]}` |

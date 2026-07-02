@@ -10,6 +10,11 @@ from pypdf import PdfReader
 
 import src.backend.helper as helper
 from src.backend.helper import initialize_supabase
+from src.lib.moh_institutions import (
+    InstitutionRecord,
+    load_institution_records_from_supabase,
+    normalize_panel_hospital_items,
+)
 
 QUALITATIVE_FIELDS = (
     "panel_hospitals",
@@ -50,22 +55,49 @@ def section_text(text: str, heading_pattern: str, stop_pattern: str) -> str:
     return normalize_whitespace(match.group(1)) if match else ""
 
 
-def parse_panel_hospitals(text: str) -> dict | None:
+def source_only_panel_item(name: str) -> dict:
+    return {
+        "name": name,
+        "normalized_name": name,
+        "source_label": "Panel hospital",
+        "match_status": "not_checked",
+        "match_confidence": None,
+        "matched_alias": None,
+        "canonical_id": None,
+        "review_required": True,
+    }
+
+
+def parse_panel_hospitals(
+    text: str,
+    institution_records: list[InstitutionRecord] | None = None,
+) -> dict | None:
     section = section_text(text, r"panel hospitals?", r"exclusions?|waiting periods?|claims?")
     items = []
     for name in split_list_items(section):
-        if not re.search(r"\b(hospital|medical centre|clinic|centre)\b", name, re.IGNORECASE):
-            continue
-        items.append(
-            {
-                "name": name,
-                "normalized_name": name,
-                "source_label": "Panel hospital",
-            }
+        has_facility_hint = re.search(
+            r"\b(hospital|hosp|medical centre|clinic|centre)\b",
+            name,
+            re.IGNORECASE,
         )
+        if not has_facility_hint and not institution_records:
+            continue
+        items.append({"name": name})
     if not items:
         return None
-    return {"status": "known", "items": items, "raw_text": section, "notes": []}
+    if institution_records:
+        normalized_items = normalize_panel_hospital_items(items, institution_records)
+        notes = []
+    else:
+        normalized_items = [source_only_panel_item(item["name"]) for item in items]
+        notes = ["MOH institution normalization not run."]
+    return {
+        "status": "known",
+        "items": normalized_items,
+        "raw_text": section,
+        "notes": notes,
+        "review_required": any(item.get("review_required") for item in normalized_items),
+    }
 
 
 def parse_exclusions(text: str) -> dict | None:
@@ -151,10 +183,13 @@ def parse_claim_sla(text: str) -> dict | None:
     }
 
 
-def parse_brochure_text(text: str) -> dict[str, dict]:
+def parse_brochure_text(
+    text: str,
+    institution_records: list[InstitutionRecord] | None = None,
+) -> dict[str, dict]:
     normalized = normalize_whitespace(text)
     parsed = {
-        "panel_hospitals": parse_panel_hospitals(normalized),
+        "panel_hospitals": parse_panel_hospitals(normalized, institution_records),
         "exclusions": parse_exclusions(normalized),
         "waiting_periods": parse_waiting_periods(normalized),
         "claim_deadlines": parse_claim_deadlines(normalized),
@@ -209,10 +244,13 @@ def download_stored_brochure(metadata_row: dict) -> bytes:
     return helper.require_client().storage.from_(bucket).download(storage_key)
 
 
-def parse_brochure_metadata_row(metadata_row: dict) -> list[dict]:
+def parse_brochure_metadata_row(
+    metadata_row: dict,
+    institution_records: list[InstitutionRecord] | None = None,
+) -> list[dict]:
     content = download_stored_brochure(metadata_row)
     text = extract_pdf_text_from_bytes(content)
-    parsed = parse_brochure_text(text)
+    parsed = parse_brochure_text(text, institution_records=institution_records)
     field_value = metadata_row.get("field_value") or {}
     metadata = field_value.get("value") or {}
     source_url = metadata_row.get("source_url") or metadata.get("url")
@@ -231,10 +269,16 @@ def parse_stored_brochures(insurers: list[str] | None = None, max_brochures: int
     if max_brochures is not None:
         rows = rows[:max_brochures]
 
+    try:
+        institution_records = load_institution_records_from_supabase()
+    except Exception as error:
+        institution_records = []
+        print(f"MOH institution normalization unavailable: {error}")
+
     parsed_rows = []
     for row in rows:
         try:
-            parsed_rows.extend(parse_brochure_metadata_row(row))
+            parsed_rows.extend(parse_brochure_metadata_row(row, institution_records))
         except Exception as error:
             print(
                 "Brochure parse failed for " f"{row.get('insurer')}/{row.get('plan_slug')}: {error}"

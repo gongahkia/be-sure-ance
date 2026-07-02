@@ -30,6 +30,14 @@ jobs:
           BROCHURE_STORAGE_BUCKET: ${{ vars.BROCHURE_STORAGE_BUCKET }}
         run: python -m src.scrapers.run_all
 
+      - name: Ingest MOH institution registry
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BROCHURE_STORAGE_BUCKET: ${{ vars.BROCHURE_STORAGE_BUCKET }}
+        run: python -m src.scrapers.moh_institutions
+
       - name: Parse brochure qualitative facts
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

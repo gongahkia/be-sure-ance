@@ -86,11 +86,17 @@
           {
             "name": "Sample Hospital",
             "normalized_name": "Sample Hospital",
-            "source_label": "Panel hospital"
+            "source_label": "Panel hospital",
+            "match_status": "matched",
+            "match_confidence": 100,
+            "matched_alias": "Sample Hospital",
+            "canonical_id": "nehr-1-sample-hospital",
+            "review_required": false
           }
         ],
         "raw_text": "Sample Hospital - Panel hospital",
-        "notes": []
+        "notes": [],
+        "review_required": false
       }
     },
     {
