@@ -43,6 +43,7 @@ Portfolio artifacts:
 - [Launch pre-flight runbook](./docs/LAUNCH_PREFLIGHT.md)
 - [Deployment runbook](./docs/DEPLOYMENT.md)
 - [Search indexing runbook](./docs/SEARCH_INDEXING.md)
+- [Launch outreach drafts](./docs/OUTREACH.md)
 - [Pivot blog draft](./docs/blog/why-we-ripped-out-regex-derived-premiums.md)
 - [Case study template](./docs/case-studies/)
 - [Talk proposal](./docs/talks/)
