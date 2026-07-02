@@ -5,7 +5,7 @@
         <p class="eyebrow">Comparison</p>
         <h2>Client-ready comparison sheet</h2>
       </div>
-      <p class="section-copy">Use this grid to frame what is covered, what is not, and where the cost structure changes across shortlisted plans.</p>
+      <p class="section-copy">Use this grid to frame what is covered, what is unknown, and where source links differ across shortlisted plans.</p>
     </div>
 
     <div v-if="selectedPlans.length === 0" class="empty-state">
@@ -38,17 +38,6 @@ defineProps({
   selectedPlans: Array
 })
 
-function currencyValue(value) {
-  if (typeof value !== "number" || Number.isNaN(value) || value <= 0) {
-    return "N/A"
-  }
-  return new Intl.NumberFormat("en-SG", {
-    style: "currency",
-    currency: "SGD",
-    maximumFractionDigits: 0
-  }).format(value)
-}
-
 function coverageValue(value) {
   if (value === true) {
     return "Covered"
@@ -59,6 +48,21 @@ function coverageValue(value) {
   return "Unknown"
 }
 
+function availabilityValue(value) {
+  return value ? "Available" : "Missing"
+}
+
+function sourceHost(value) {
+  if (!value) {
+    return "Missing"
+  }
+  try {
+    return new URL(value).hostname.replace(/^www\./, "")
+  } catch {
+    return "Available"
+  }
+}
+
 const rows = computed(() => [
   {
     key: "provider",
@@ -66,24 +70,9 @@ const rows = computed(() => [
     render: (plan) => plan.providerName
   },
   {
-    key: "annual",
-    label: "Annual premium",
-    render: (plan) => currencyValue(plan.comparisonFact?.premium_facts?.annual_premium_min)
-  },
-  {
-    key: "monthly",
-    label: "Monthly premium",
-    render: (plan) => currencyValue(plan.comparisonFact?.premium_facts?.monthly_premium_min)
-  },
-  {
-    key: "deductible",
-    label: "Deductible",
-    render: (plan) => currencyValue(plan.comparisonFact?.cost_sharing?.deductible_amount)
-  },
-  {
-    key: "coinsurance",
-    label: "Co-insurance",
-    render: (plan) => `${plan.comparisonFact?.cost_sharing?.coinsurance_percent || 0}%`
+    key: "source",
+    label: "Source host",
+    render: (plan) => sourceHost(plan.comparisonFact?.source_url || plan.product_brochure_url || plan.plan_url)
   },
   {
     key: "accident",
@@ -119,6 +108,11 @@ const rows = computed(() => [
     key: "specialist",
     label: "Provider directory",
     render: (plan) => coverageValue(plan.comparisonFact?.coverage_flags?.specialist_network)
+  },
+  {
+    key: "brochure",
+    label: "Brochure",
+    render: (plan) => availabilityValue(plan.comparisonFact?.coverage_flags?.brochure_available || plan.product_brochure_url)
   },
   {
     key: "notes",

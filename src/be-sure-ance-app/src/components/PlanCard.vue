@@ -12,18 +12,10 @@
 
     <p class="summary">{{ plan.plan_description || comparisonFact?.comparison_notes || "No plan summary available." }}</p>
 
-    <div class="metric-row">
-      <div class="metric">
-        <span class="metric-label">Annual premium</span>
-        <strong>{{ currencyValue(comparisonFact?.premium_facts?.annual_premium_min) }}</strong>
-      </div>
-      <div class="metric">
-        <span class="metric-label">Deductible</span>
-        <strong>{{ currencyValue(comparisonFact?.cost_sharing?.deductible_amount) }}</strong>
-      </div>
-      <div class="metric">
-        <span class="metric-label">Co-insurance</span>
-        <strong>{{ percentValue(comparisonFact?.cost_sharing?.coinsurance_percent) }}</strong>
+    <div class="fact-row">
+      <div v-for="fact in factHighlights" :key="fact.label" class="fact">
+        <span class="fact-label">{{ fact.label }}</span>
+        <strong>{{ fact.value }}</strong>
       </div>
     </div>
 
@@ -112,23 +104,20 @@ const coverageBadges = computed(() => {
     .map(([, label]) => label)
 })
 
-function currencyValue(value) {
-  if (typeof value !== "number" || Number.isNaN(value) || value <= 0) {
-    return "N/A"
+const factHighlights = computed(() => [
+  {
+    label: "Coverage signals",
+    value: coverageBadges.value.length ? coverageBadges.value.length : "None"
+  },
+  {
+    label: "Provider links",
+    value: props.resources?.length || 0
+  },
+  {
+    label: "Brochure",
+    value: props.plan?.product_brochure_url ? "Available" : "Missing"
   }
-  return new Intl.NumberFormat("en-SG", {
-    style: "currency",
-    currency: "SGD",
-    maximumFractionDigits: 0
-  }).format(value)
-}
-
-function percentValue(value) {
-  if (typeof value !== "number" || Number.isNaN(value)) {
-    return "N/A"
-  }
-  return `${value}%`
-}
+])
 </script>
 
 <style scoped>
@@ -170,19 +159,19 @@ h3 {
   color: var(--muted-ink);
 }
 
-.metric-row {
+.fact-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
 }
 
-.metric {
+.fact {
   padding: 0.85rem;
   border-radius: 1rem;
   background: rgba(16, 39, 71, 0.04);
 }
 
-.metric-label {
+.fact-label {
   display: block;
   margin-bottom: 0.25rem;
   font-size: 0.78rem;
@@ -242,7 +231,7 @@ h3 {
 }
 
 @media (max-width: 720px) {
-  .metric-row {
+  .fact-row {
     grid-template-columns: 1fr;
   }
 }

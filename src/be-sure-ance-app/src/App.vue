@@ -3,10 +3,10 @@
     <header class="hero">
       <div class="hero-copy">
         <p class="eyebrow">For Insurance Agents</p>
-        <h1>Prepare carrier comparisons, provider lookups, and cost scenarios before the client meeting.</h1>
+        <h1>Prepare carrier comparisons and provider lookups before the client meeting.</h1>
         <p class="hero-text">
           Use the workspace to shortlist plans, open panel and specialist directories,
-          and frame cost tradeoffs with normalized comparison facts instead of brochure-by-brochure guesswork.
+          and frame qualitative coverage signals instead of brochure-by-brochure guesswork.
         </p>
       </div>
 
@@ -34,7 +34,7 @@
       <article>
         <p class="eyebrow dark">Meeting Prep</p>
         <h2>Build a three-plan brief fast.</h2>
-        <p>Keep shortlists tight, compare cost-sharing fields side by side, and carry a cleaner story into the call.</p>
+        <p>Keep shortlists tight, compare coverage signals side by side, and carry a cleaner story into the call.</p>
       </article>
       <article>
         <p class="eyebrow dark">Panel Lookup</p>
@@ -110,7 +110,6 @@
         </section>
 
         <ComparisonTable :selected-plans="selectedPlans" />
-        <ScenarioCalculator :selected-plans="selectedPlans" />
       </main>
     </section>
   </div>
@@ -123,7 +122,6 @@ import { createClient } from '@supabase/supabase-js'
 import ComparisonTable from './components/ComparisonTable.vue'
 import PlanCard from './components/PlanCard.vue'
 import ProviderRail from './components/ProviderRail.vue'
-import ScenarioCalculator from './components/ScenarioCalculator.vue'
 import { buildPlanKey, providers } from './lib/providers'
 import { safeExternalUrl } from './utils/links'
 

@@ -20,8 +20,6 @@ SUPPORTED_INSURERS = (
     "hsbc",
     "iii",
 )
-AMOUNT_PATTERN = re.compile(r"(?:S\$|SGD|\$)\s?(\d{1,3}(?:,\d{3})*(?:\.\d{1,2})?)", re.I)
-PERCENT_PATTERN = re.compile(r"(\d{1,2}(?:\.\d+)?)\s*%")
 PLAN_KEYWORDS = (
     ("accident", ("accident", "personal accident")),
     ("hospitalization", ("hospital", "inpatient", "ward", "admission")),
@@ -53,77 +51,6 @@ def first_sentences(text: str, limit: int = 2) -> str:
     return ". ".join(segments[:limit])
 
 
-def money_values(sentence: str) -> list[float]:
-    values = []
-    for match in AMOUNT_PATTERN.findall(sentence):
-        try:
-            values.append(float(match.replace(",", "")))
-        except ValueError:
-            continue
-    return values
-
-
-def percentage_values(sentence: str) -> list[float]:
-    values = []
-    for match in PERCENT_PATTERN.findall(sentence):
-        try:
-            values.append(float(match))
-        except ValueError:
-            continue
-    return values
-
-
-def derive_premium_facts(text: str) -> dict:
-    annual_candidates = []
-    monthly_candidates = []
-    fallback_candidates = []
-
-    for sentence in re.split(r"[\n.]+", text):
-        lowered = sentence.lower()
-        amounts = money_values(sentence)
-        if not amounts:
-            continue
-
-        if any(keyword in lowered for keyword in ("annual", "annually", "year", "yearly")):
-            annual_candidates.extend(amounts)
-        if any(keyword in lowered for keyword in ("monthly", "month")):
-            monthly_candidates.extend(amounts)
-        fallback_candidates.extend(amounts)
-
-    annual_premium_min = min(annual_candidates) if annual_candidates else None
-    monthly_premium_min = min(monthly_candidates) if monthly_candidates else None
-
-    if annual_premium_min is None and monthly_premium_min is not None:
-        annual_premium_min = round(monthly_premium_min * 12, 2)
-    if monthly_premium_min is None and annual_premium_min is not None:
-        monthly_premium_min = round(annual_premium_min / 12, 2)
-
-    return {
-        "currency": "SGD",
-        "annual_premium_min": annual_premium_min,
-        "monthly_premium_min": monthly_premium_min,
-        "fallback_detected_amount": min(fallback_candidates) if fallback_candidates else None,
-    }
-
-
-def derive_cost_sharing(text: str) -> dict:
-    deductible_candidates = []
-    coinsurance_candidates = []
-
-    for sentence in re.split(r"[\n.]+", text):
-        lowered = sentence.lower()
-        if "deductible" in lowered:
-            deductible_candidates.extend(money_values(sentence))
-        if any(keyword in lowered for keyword in ("co-insurance", "coinsurance", "copay", "co-pay")):
-            coinsurance_candidates.extend(percentage_values(sentence))
-
-    return {
-        "deductible_amount": min(deductible_candidates) if deductible_candidates else 0,
-        "coinsurance_percent": min(coinsurance_candidates) if coinsurance_candidates else 0,
-        "out_of_pocket_cap": None,
-    }
-
-
 def derive_coverage_flags(text: str, specialist_resource_count: int, brochure_available: bool) -> dict:
     lowered = text.lower()
     flags = {
@@ -132,32 +59,6 @@ def derive_coverage_flags(text: str, specialist_resource_count: int, brochure_av
     flags["specialist_network"] = specialist_resource_count > 0
     flags["brochure_available"] = brochure_available
     return flags
-
-
-def build_scenario_assumptions(premium_facts: dict, cost_sharing: dict) -> dict:
-    return {
-        "currency": "SGD",
-        "claim_amounts": {
-            "hospitalization": 5000,
-            "outpatient": 400,
-            "accident": 2500,
-            "critical_illness": 12000,
-        },
-        "calculation_method": (
-            "estimated annual cost = annual premium + deductible + "
-            "(claim amount * coinsurance percent)"
-        ),
-        "premium_fallback_note": (
-            "Uses annual premium when detected, otherwise falls back to 0 in the calculator."
-            if premium_facts["annual_premium_min"] is None
-            else "Uses detected annual premium."
-        ),
-        "deductible_note": (
-            "Uses detected deductible when present, otherwise 0."
-            if cost_sharing["deductible_amount"] == 0
-            else "Uses detected deductible."
-        ),
-    }
 
 
 def build_comparison_notes(plan: dict, specialist_resource_count: int) -> str:
@@ -188,23 +89,17 @@ def build_fact_row(insurer: str, plan: dict, specialist_resource_count: int) -> 
             ]
         )
     )
-    premium_facts = derive_premium_facts(text)
-    cost_sharing = derive_cost_sharing(text)
     coverage_flags = derive_coverage_flags(
         text=text,
         specialist_resource_count=specialist_resource_count,
         brochure_available=bool(plan.get("product_brochure_url")),
     )
-    scenario_assumptions = build_scenario_assumptions(premium_facts, cost_sharing)
 
     return {
         "insurer": insurer,
         "plan_name": plan["plan_name"],
         "plan_slug": slugify(plan["plan_name"]),
-        "premium_facts": premium_facts,
-        "cost_sharing": cost_sharing,
         "coverage_flags": coverage_flags,
-        "scenario_assumptions": scenario_assumptions,
         "comparison_notes": build_comparison_notes(plan, specialist_resource_count),
         "source_url": plan.get("product_brochure_url") or plan.get("plan_url"),
     }
