@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import os
+
 from fastapi import FastAPI, HTTPException, Response
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from src.backend import helper
@@ -14,6 +17,17 @@ from src.backend.comparison_shares import (
 from src.backend.pdf_brief import build_pdf_brief_with_branding
 
 app = FastAPI(title="Be-sure-ance backend")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        origin.strip()
+        for origin in os.getenv("BE_SURE_ANCE_CORS_ORIGINS", "").split(",")
+        if origin.strip()
+    ],
+    allow_credentials=False,
+    allow_methods=["POST", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 
 class BriefRequest(BaseModel):

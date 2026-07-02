@@ -4,6 +4,16 @@
 
 ## Local setup
 
+Docker demo:
+
+```sh
+docker compose up --build
+```
+
+Open `http://localhost:5173`. The compose stack uses seeded local demo data and fake local keys only; it does not need production Supabase credentials.
+
+Manual setup:
+
 ```sh
 pip install -r requirements.txt
 playwright install chromium

@@ -35,6 +35,26 @@ Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supa
 > [!IMPORTANT]
 > Read the [compliance posture](./docs/COMPLIANCE.md) and [legal disclaimer](#legal-disclaimer) before using `Be-sure-ance`.
 
+## Local Docker demo
+
+Run the no-credential local demo:
+
+```sh
+docker compose up --build
+```
+
+Open `http://localhost:5173`. The default stack starts the Vue frontend, FastAPI backend, and a small in-memory Supabase-compatible demo API on `http://localhost:54321` with seeded plan/fact/share rows. It does not require production Supabase credentials and does not deploy anything.
+
+Common local commands:
+
+```sh
+docker compose run --rm scraper
+TELEGRAM_BOT_TOKEN=<bot-token> docker compose --profile bot up bot
+docker compose down --volumes
+```
+
+The compose file uses fake local keys only. Keep real `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, and `TELEGRAM_BOT_TOKEN` values in local `.env` files or GitHub Actions secrets, not in `docker-compose.yml`.
+
 ## Environment variables
 
 Use [`.env.example`](./.env.example) as the local template.
