@@ -75,6 +75,8 @@ Goal: stop the bleeding. Repo is currently dangerous to redeploy. Lock down DB, 
 
 **Phase 1 exit criteria:** No regex dollar values shown to user. No public-anon write access to DB. Single `plans` table. Vite builds clean. CI runs lint + the 1 existing test.
 
+Phase 1 exit verification is recorded in `docs/PHASE1_EXIT_VERIFICATION.md`.
+
 ---
 
 ## Phase 2 — Pivot (Week 3–4)
