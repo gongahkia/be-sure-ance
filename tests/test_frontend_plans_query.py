@@ -8,8 +8,8 @@ I18N = (ROOT / "src/be-sure-ance-app/src/i18n.js").read_text()
 
 class FrontendPlansQueryTests(unittest.TestCase):
     def test_app_loads_plan_rows_from_single_plans_query(self):
-        self.assertEqual(APP_VUE.count("supabase.from('plans').select('*')"), 1)
-        self.assertNotIn("supabase.from(provider.key)", APP_VUE)
+        self.assertIn("const data = await loadAppData()", APP_VUE)
+        self.assertIn("plansByProvider.value = groupPlansByProvider(data.plans)", APP_VUE)
         self.assertNotIn("providers.map(async (provider)", APP_VUE)
 
     def test_app_groups_plan_rows_by_insurer(self):

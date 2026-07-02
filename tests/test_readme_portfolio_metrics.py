@@ -31,7 +31,6 @@ class ReadmePortfolioMetricsTests(unittest.TestCase):
     def test_cost_transparency_uses_free_tier_language(self):
         for required in (
             "Cost posture: `$0/mo` target",
-            "Supabase free tier",
             "Netlify or Cloudflare Pages free tier",
             "GitHub Actions free tier",
         ):

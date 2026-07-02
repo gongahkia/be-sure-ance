@@ -14,7 +14,7 @@ class CarrierCanonicalizationFrontendTests(unittest.TestCase):
     def test_app_fetches_and_enriches_canonical_carrier_rows(self):
         for required in (
             "const carrierCanonicalNames = ref([])",
-            "supabase.from('carrier_canonical_names').select('*')",
+            "carrierCanonicalNames.value = data.carrier_canonical_names",
             "const carrierCanonicalMap = computed(() =>",
             "carrierCanonical: carrierCanonicalMap.value[provider.key] || null",
         ):

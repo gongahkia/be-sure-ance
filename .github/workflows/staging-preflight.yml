@@ -33,7 +33,7 @@ jobs:
 
       - name: Run smoke, security, and free-tier load checks
         run: |
-          python scripts/staging_preflight.py \
+          python3 scripts/staging_preflight.py \
             --origin "$STAGING_ORIGIN" \
             --output output/staging-preflight/preflight.json \
             --load-requests 24 \
@@ -61,13 +61,13 @@ jobs:
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json \
             --output-path=output/staging-preflight/lighthouse-status.json
-          npx --yes lighthouse "$STAGING_ORIGIN/share/11111111-2222-4333-8444-555555555555" \
+          npx --yes lighthouse "$STAGING_ORIGIN/share?plans=aia:healthshield-gold-max-demo" \
             --quiet \
             --chrome-flags="--headless --no-sandbox" \
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json \
             --output-path=output/staging-preflight/lighthouse-share.json
-          python scripts/lighthouse_score_gate.py output/staging-preflight/lighthouse-*.json --minimum 0.9
+          python3 scripts/lighthouse_score_gate.py output/staging-preflight/lighthouse-*.json --minimum 0.9
 
       - name: Upload staging preflight evidence
         uses: actions/upload-artifact@v4

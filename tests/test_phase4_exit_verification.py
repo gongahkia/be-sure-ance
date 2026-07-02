@@ -38,7 +38,7 @@ class Phase4ExitVerificationTests(unittest.TestCase):
             "/status",
             "scraper_health",
             "Sentry",
-            "nightly Supabase backup artifacts",
+            "refresh workflow logs",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PHASE4)

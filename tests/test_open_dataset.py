@@ -27,8 +27,7 @@ class OpenDatasetTests(unittest.TestCase):
 
         for forbidden in (
             "TELEGRAM_BOT_TOKEN",
-            "SUPABASE_SECRET_KEY",
-            "comparison_shares",
+            "NETLIFY_BUILD_HOOK_URL",
             "view_count",
             "agent_name",
             "mas_rep_number",

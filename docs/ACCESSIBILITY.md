@@ -15,7 +15,7 @@ References:
 Local demo stack:
 
 - Frontend: `http://127.0.0.1:5173`
-- Demo Supabase API: `http://127.0.0.1:54321`
+- Static app data: `/data/app-data.json`
 
 Routes audited:
 
@@ -24,7 +24,7 @@ Routes audited:
 | `/` | 0 | 100 |
 | `/matrix/panel-hospitals` | 0 | 100 |
 | `/status` | 0 | 100 |
-| `/share/11111111-2222-4333-8444-555555555555` | 0 | 100 |
+| `/share?plans=aia:healthshield-gold-max-demo` | 0 | 100 |
 
 Raw local artifacts:
 

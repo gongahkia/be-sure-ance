@@ -10,7 +10,7 @@ REGULATORY_LIST = (ROOT / "src/be-sure-ance-app/src/components/RegulatoryEventLi
 class MasRegulatoryFrontendTests(unittest.TestCase):
     def test_app_fetches_and_groups_mas_regulatory_events(self):
         for required in (
-            "supabase.from('mas_regulatory_events').select('*')",
+            "masRegulatoryEvents.value = data.mas_regulatory_events",
             "const masRegulatoryEvents = ref([])",
             "const regulatoryEventMap = computed(() =>",
             "regulatoryEvents: regulatoryEventMap.value[provider.key] || []",

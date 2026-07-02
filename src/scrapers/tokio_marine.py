@@ -16,7 +16,7 @@ import re
 
 from playwright.async_api import async_playwright
 
-from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
+from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
 from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
 
 # ----- functions -----
@@ -127,6 +127,6 @@ if __name__ == "__main__":
         "https://www.tokiomarine.com/sg/en/non-life.html",
         "https://www.tokiomarine.com/sg/en/life.html",
     ]
-    initialize_supabase()
+    initialize_data_store()
     output = asyncio.run(run_all_tasks(scrape_list))
     overwrite_plans_for_insurer("tokio_marine", output)

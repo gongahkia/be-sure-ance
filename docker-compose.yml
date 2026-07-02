@@ -1,30 +1,14 @@
 name: be-sure-ance-local
 
 services:
-  supabase-local:
-    image: python:3.12-slim
-    working_dir: /app
-    command: >
-      sh -c "pip install --no-cache-dir fastapi uvicorn &&
-      uvicorn src.backend.demo_supabase_api:app --host 0.0.0.0 --port 54321"
-    ports:
-      - "54321:54321"
-    volumes:
-      - .:/app:ro
-
   backend:
     image: python:3.12-slim
     working_dir: /app
     command: >
       sh -c "pip install --no-cache-dir -r requirements.txt &&
       uvicorn src.backend.pdf_brief_api:app --host 0.0.0.0 --port 8000"
-    depends_on:
-      - supabase-local
     environment:
       BE_SURE_ANCE_CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
-      BROCHURE_STORAGE_BUCKET: local-demo-no-bucket
-      SUPABASE_SECRET_KEY: sb_secret_local_demo_not_real
-      SUPABASE_URL: http://supabase-local:54321
     ports:
       - "8000:8000"
     volumes:
@@ -33,16 +17,17 @@ services:
   frontend:
     image: node:20-alpine
     working_dir: /app/src/be-sure-ance-app
-    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    command: >
+      sh -c "apk add --no-cache python3 py3-pip &&
+      npm ci &&
+      npm run build:data &&
+      npm run dev -- --host 0.0.0.0"
     depends_on:
       - backend
-      - supabase-local
     environment:
       VITE_PDF_BRIEF_ENDPOINT: http://localhost:8000/briefs/client.pdf
-      VITE_SHARE_ENDPOINT: http://localhost:8000/shares
+      VITE_STATIC_DATA_PATH: /data/app-data.json
       VITE_SITE_ORIGIN: http://localhost:5173
-      VITE_SUPABASE_ANON_KEY: local-demo-anon-key
-      VITE_SUPABASE_URL: http://localhost:54321
     ports:
       - "5173:5173"
     volumes:
@@ -57,10 +42,6 @@ services:
     command: >
       sh -c "pip install --no-cache-dir -r requirements.txt &&
       python -m src.scrapers.moh_institutions --dry-run"
-    environment:
-      BROCHURE_STORAGE_BUCKET: local-demo-no-bucket
-      SUPABASE_SECRET_KEY: sb_secret_local_demo_not_real
-      SUPABASE_URL: http://supabase-local:54321
     volumes:
       - .:/app:ro
 
@@ -72,11 +53,7 @@ services:
     command: >
       sh -c "pip install --no-cache-dir -r requirements.txt &&
       python -m src.bot.telegram_bot"
-    depends_on:
-      - supabase-local
     environment:
-      SUPABASE_SECRET_KEY: sb_secret_local_demo_not_real
-      SUPABASE_URL: http://supabase-local:54321
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
     volumes:
       - .:/app:ro

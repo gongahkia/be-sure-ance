@@ -12,7 +12,7 @@ class FrontendQualitativeFactsTests(unittest.TestCase):
     def test_app_loads_source_traceable_plan_facts(self):
         for required in (
             "const planFacts = ref([])",
-            "supabase.from('plan_facts').select('*')",
+            "planFacts.value = data.plan_facts",
             "function groupPlanFactsByPlan(rows)",
             "fact?.plan_slug",
             "groupedFacts[key][fact.field_name] = fact",

@@ -6,10 +6,10 @@ import src.backend.helper as helper
 from src.bot.lookup import PlanFactIndex, RateLimiter, help_text, safe_answer
 
 
-class SupabaseLookupProvider:
+class LocalDataLookupProvider:
     def load_index(self) -> PlanFactIndex:
-        if helper.supabase is None:
-            helper.initialize_supabase()
+        if helper.data_store is None:
+            helper.initialize_data_store()
         client = helper.require_client()
         plans = client.table("plans").select("insurer,plan_slug,plan_name").execute().data or []
         facts = (
@@ -30,11 +30,11 @@ def bot_token() -> str:
 
 
 def build_application(
-    provider: SupabaseLookupProvider | None = None, limiter: RateLimiter | None = None
+    provider: LocalDataLookupProvider | None = None, limiter: RateLimiter | None = None
 ):
     from telegram.ext import Application, CommandHandler
 
-    provider = provider or SupabaseLookupProvider()
+    provider = provider or LocalDataLookupProvider()
     limiter = limiter or RateLimiter()
 
     async def start(update, context):

@@ -1,0 +1,21 @@
+name: refresh-static-data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 16 * * 0"
+
+jobs:
+  trigger-netlify-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger Netlify build hook
+        env:
+          NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+        run: |
+          if [ -z "$NETLIFY_BUILD_HOOK_URL" ]; then
+            echo "NETLIFY_BUILD_HOOK_URL is not configured; skipping refresh."
+            exit 0
+          fi
+          curl -fsS -X POST "$NETLIFY_BUILD_HOOK_URL"

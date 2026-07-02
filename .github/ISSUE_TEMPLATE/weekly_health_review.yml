@@ -1,5 +1,5 @@
 name: Weekly scraper health review
-description: Review scraper freshness, validation, artifacts, backups, and public status.
+description: Review scraper freshness, validation, artifacts, deploy logs, and public status.
 title: "[Ops] Weekly scraper health review - YYYY-MM-DD"
 labels: ["phase-5", "observability"]
 body:
@@ -20,10 +20,9 @@ body:
       label: Evidence checked
       options:
         - label: Public /status dashboard reviewed.
-        - label: scrape-to-supabase run reviewed.
+        - label: refresh-static-data run and Netlify deploy log reviewed.
         - label: validate-scraper-snapshots artifact reviewed.
         - label: publish-open-dataset artifact reviewed.
-        - label: nightly-supabase-backup artifact reviewed.
         - label: Sentry reviewed if DSNs are configured.
   - type: textarea
     id: findings

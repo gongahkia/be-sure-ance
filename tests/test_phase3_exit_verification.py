@@ -48,12 +48,12 @@ class Phase3ExitVerificationTests(unittest.TestCase):
 
     def test_no_pii_no_advice_and_limitations_are_recorded(self):
         for required in (
-            "Share links store only `insurer`, `plan_slug`, UUID, and aggregate view counts.",
+            "Share links encode selected `insurer` and `plan_slug` references in the URL.",
             "Telegram bot lookup does not persist chat IDs",
             "Claim metrics are source evidence, not suitability rankings.",
             "Public deployment is still blocked until Phase 5.",
             "Remote CI is not verified until commits are pushed.",
-            "static_pages: skipped_supabase_placeholder_env",
+            "static_pages:",
             "MAS live source was unavailable",
         ):
             with self.subTest(required=required):

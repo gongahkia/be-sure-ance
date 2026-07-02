@@ -18,9 +18,8 @@ class ScraperStatusFrontendTests(unittest.TestCase):
         for required in (
             'href="/status"',
             "activeView === 'scraperStatus'",
-            "currentPath.value === '/status'",
-            ".from('scraper_health')",
-            "carrier_key,display_name,support_status,last_success_at,last_failure_at,last_run_at,row_count,validation_status,validation_checked_at,validation_summary,updated_at",
+            "path === '/status'",
+            "scraperHealth.value = data.scraper_health",
             '<ScraperStatusDashboard :health-rows="scraperHealth" :providers="providers" />',
         ):
             with self.subTest(required=required):

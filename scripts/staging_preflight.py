@@ -14,7 +14,7 @@ DEFAULT_ROUTES = (
     "/",
     "/matrix/panel-hospitals",
     "/status",
-    "/share/11111111-2222-4333-8444-555555555555",
+    "/share?plans=aia:healthshield-gold-max-demo",
     "/sitemap.xml",
     "/robots.txt",
 )

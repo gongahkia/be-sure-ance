@@ -19,3 +19,4 @@ pnpm-debug.log*
 *.sw?
 .env.*
 !.env.example
+src/be-sure-ance-app/public/data/

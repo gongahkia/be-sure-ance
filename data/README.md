@@ -29,7 +29,7 @@ Columns:
 - `last_verified_at`
 - `limitations`
 
-The dataset intentionally excludes comparison share IDs, view counts, Telegram data, agent branding, client details, Supabase keys, bot tokens, and raw brochure PDF bytes.
+The dataset intentionally excludes comparison share IDs, view counts, Telegram data, agent branding, client details, build hooks, bot tokens, and raw brochure PDF bytes.
 
 ## Provenance
 

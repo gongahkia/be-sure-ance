@@ -16,7 +16,7 @@ HELPER = (ROOT / "src/backend/helper.py").read_text()
 ENV_EXAMPLE = (ROOT / ".env.example").read_text()
 README = (ROOT / "README.md").read_text()
 COMPLIANCE = (ROOT / "docs/COMPLIANCE.md").read_text()
-SCRAPE_WORKFLOW = (ROOT / ".github/workflows/scrape-to-supabase.yml").read_text()
+REFRESH_WORKFLOW = (ROOT / ".github/workflows/refresh-static-data.yml").read_text()
 VALIDATE_WORKFLOW = (ROOT / ".github/workflows/validate-scraper-snapshots.yml").read_text()
 
 
@@ -60,7 +60,7 @@ class ObservabilityTests(unittest.TestCase):
             "request": {
                 "headers": {
                     "Authorization": "Bearer abc",
-                    "apikey": "sb_secret_bad",
+                    "apikey": "private-token",
                 }
             },
             "extra": {"message": "token eyJaaa.bbb.ccc"},
@@ -94,7 +94,7 @@ class ObservabilityTests(unittest.TestCase):
         self.assertEqual(context_payload["Authorization"], "[redacted]")
 
     def test_docs_and_workflows_explain_operational_alerts_and_privacy(self):
-        combined = ENV_EXAMPLE + README + COMPLIANCE + SCRAPE_WORKFLOW + VALIDATE_WORKFLOW
+        combined = ENV_EXAMPLE + README + COMPLIANCE + REFRESH_WORKFLOW + VALIDATE_WORKFLOW
         for required in (
             "VITE_SENTRY_DSN",
             "SENTRY_DSN",

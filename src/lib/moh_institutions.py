@@ -220,7 +220,7 @@ def upsert_institution_records(records: list[InstitutionRecord]) -> None:
     print(f"MOH institution records upserted: {len(rows)}")
 
 
-def load_institution_records_from_supabase() -> list[InstitutionRecord]:
+def load_institution_records_from_store() -> list[InstitutionRecord]:
     rows = helper.require_client().table("moh_institutions").select("*").execute().data or []
     return [
         InstitutionRecord(
@@ -298,7 +298,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    helper.initialize_supabase()
+    helper.initialize_data_store()
     records = fetch_institution_records()
     print(json.dumps({"moh_institution_count": len(records)}, indent=2, sort_keys=True))
     if args.dry_run:

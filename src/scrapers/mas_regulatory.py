@@ -89,7 +89,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.parse_known_args()
-    helper.initialize_supabase()
+    helper.initialize_data_store()
     events = scrape_mas_regulatory_events()
     upsert_mas_regulatory_events(events)
 

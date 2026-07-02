@@ -46,7 +46,7 @@ class ScraperHealthTests(unittest.TestCase):
             "record_scraper_failure(",
             "sync_scraper_registry_statuses(dry_run=args.dry_run)",
             "record_validation_report(report)",
-            "SUPABASE_SECRET_KEY",
+            "validate-scraper-snapshots",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, HELPER + RUN_ALL + DIFFER + WORKFLOW)
@@ -66,12 +66,11 @@ class ScraperHealthTests(unittest.TestCase):
         self.assertIn("[redacted]", summary["notes"][0])
 
     def test_sanitized_error_redacts_common_secret_shapes(self):
-        text = sanitized_error("bad sb_secret_abc Bearer token eyJaaa.bbb.ccc")
+        text = sanitized_error("bad Bearer token eyJaaa.bbb.ccc")
 
-        self.assertNotIn("sb_secret_abc", text)
         self.assertNotIn("Bearer token", text)
         self.assertNotIn("eyJaaa.bbb.ccc", text)
-        self.assertEqual(text.count("[redacted]"), 3)
+        self.assertEqual(text.count("[redacted]"), 2)
 
     def test_run_validation_writes_report_and_calls_health_recorder(self):
         target = ValidationTarget(
@@ -108,7 +107,7 @@ class ScraperHealthTests(unittest.TestCase):
             "generated_at": "2026-07-02T00:00:00+00:00",
             "results": [
                 {"insurer": "aia", "status": "passed"},
-                {"insurer": "aia", "status": "error", "errors": ["sb_secret_bad"]},
+                {"insurer": "aia", "status": "error", "errors": ["Bearer bad"]},
             ],
         }
         with (

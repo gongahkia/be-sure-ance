@@ -376,7 +376,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    helper.initialize_supabase()
+    helper.initialize_data_store()
     lia_records = parse_lia_member_records(fetch_text(LIA_MEMBER_COMPANIES_URL))
     mas_records = fetch_mas_records_for_tracked_carriers()
     rows = [record.as_row() for record in build_canonical_records(mas_records, lia_records)]

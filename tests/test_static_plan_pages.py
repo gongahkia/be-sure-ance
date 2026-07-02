@@ -15,7 +15,7 @@ NETLIFY_REDIRECTS = (ROOT / "src/be-sure-ance-app/public/_redirects").read_text(
 class StaticPlanPagesTests(unittest.TestCase):
     def test_build_runs_static_plan_generator_after_vite(self):
         self.assertIn(
-            '"build": "vite build && node scripts/generate-static-pages.mjs"', PACKAGE_JSON
+            '"build:app": "vite build && node scripts/generate-static-pages.mjs"', PACKAGE_JSON
         )
         self.assertIn("scripts/**/*.mjs", PACKAGE_JSON)
 
@@ -26,8 +26,7 @@ class StaticPlanPagesTests(unittest.TestCase):
             "sitemap.xml",
             "robots.txt",
             "VITE_SITE_ORIGIN",
-            "VITE_SUPABASE_URL",
-            "VITE_SUPABASE_ANON_KEY",
+            "app-data.json",
             "plan_facts",
             "source_url",
             "last_verified_at",
@@ -55,7 +54,7 @@ class StaticPlanPagesTests(unittest.TestCase):
             "function parsePlanRoute(path)",
             "providerKeyFromPath(window.location.pathname)",
             "plan.plan_slug === routeTarget.planSlug",
-            "currentPath.value === '/matrix/panel-hospitals'",
+            "path === '/matrix/panel-hospitals'",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, APP_VUE)

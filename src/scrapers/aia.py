@@ -19,7 +19,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
-from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
+from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
 from src.scrapers.navigation import (
     gather_scrape_results,
     goto_with_retry,
@@ -185,6 +185,6 @@ if __name__ == "__main__":
         "https://www.aia.com.sg/en/our-products/health",
         "https://www.aia.com.sg/en/our-products/save-and-invest",
     ]
-    initialize_supabase()
+    initialize_data_store()
     output = asyncio.run(run_all_tasks(scrape_list))
     overwrite_plans_for_insurer("aia", output)

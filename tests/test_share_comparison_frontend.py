@@ -12,23 +12,21 @@ class ShareComparisonFrontendTests(unittest.TestCase):
         for required in (
             "parseShareRoute(path)",
             "activeView === 'sharedComparison'",
-            ".from('comparison_shares')",
-            ".select('*')",
+            "parseSharePlanRefs(params.get('plans') || '')",
             "const sharedPlans = computed(() =>",
             'ComparisonTable v-else :selected-plans="sharedPlans"',
             "SHARE_DISCLAIMER",
-            "trackShareView(shareId)",
+            "view_count: 0",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, APP_VUE)
 
     def test_share_panel_posts_plan_refs_only(self):
         for required in (
-            "VITE_SHARE_ENDPOINT",
-            "fetch(shareEndpoint.value",
-            "plans: props.selectedPlans.map(sharePlanPayload)",
-            "insurer: plan.insurer || plan.providerKey",
-            "plan_slug: plan.plan_slug",
+            "/share?plans=",
+            "props.selectedPlans.map(sharePlanPayload)",
+            "const insurer = plan.insurer || plan.providerKey",
+            "const planSlug = plan.plan_slug",
             "Open share link",
         ):
             with self.subTest(required=required):

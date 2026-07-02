@@ -1,2 +1,3 @@
+/share /index.html 200
 /share/* /index.html 200
 /status /index.html 200

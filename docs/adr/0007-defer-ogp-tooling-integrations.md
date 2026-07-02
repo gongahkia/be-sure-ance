@@ -51,7 +51,7 @@ Create follow-up issues only after the matching build condition is satisfied:
 
 - Postman: implement brochure-change alert dispatcher with opt-in recipients, delivery-status logging, unsubscribe/consent handling, and no-PII defaults.
 - FormSG: implement stale-data intake webhook with SDK verification/decryption, duplicate-safe storage, triage status, and takedown/escalation workflow.
-- Go.gov.sg: implement optional server-side short-link creation for `/share/<uuid>` URLs with token rotation, rate limiting, idempotency, and fallback to canonical URLs.
+- Go.gov.sg: implement optional server-side short-link creation for `/share?plans=<refs>` URLs with token rotation, rate limiting, idempotency, and fallback to canonical URLs.
 
 ## Consequences
 

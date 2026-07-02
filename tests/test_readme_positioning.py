@@ -36,7 +36,7 @@ class ReadmePositioningTests(unittest.TestCase):
             "source_url",
             "source_type",
             "last_verified_at",
-            "Supabase Storage",
+            "Static data",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, README)

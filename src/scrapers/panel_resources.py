@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 from pypdf import PdfReader
 
 import src.backend.helper as helper
-from src.backend.helper import initialize_supabase, overwrite_generic_table_data
+from src.backend.helper import initialize_data_store, overwrite_generic_table_data
 from src.lib.http_identity import BOT_USER_AGENT
 
 SCRAPER_DIR = Path(__file__).resolve().parent
@@ -222,7 +222,7 @@ def description_snippet(pdf_text: str) -> str:
 
 
 def fetch_plans(insurer: str) -> list[dict]:
-    response = helper.supabase.table("plans").select("*").eq("insurer", insurer).execute()
+    response = helper.require_client().table("plans").select("*").eq("insurer", insurer).execute()
     return response.data or []
 
 
@@ -350,7 +350,7 @@ def main():
         else list(SUPPORTED_INSURERS)
     )
 
-    initialize_supabase()
+    initialize_data_store()
     rows = run_panel_resource_scrape(
         insurers=insurers,
         request_timeout=args.request_timeout,

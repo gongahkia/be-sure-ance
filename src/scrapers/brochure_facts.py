@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pypdf import PdfReader
 
 import src.backend.helper as helper
-from src.backend.helper import initialize_supabase
+from src.backend.helper import initialize_data_store
 from src.lib.benefit_taxonomy import (
     TAXONOMY_VERSION,
     normalize_exclusion_item,
@@ -18,7 +18,7 @@ from src.lib.benefit_taxonomy import (
 )
 from src.lib.moh_institutions import (
     InstitutionRecord,
-    load_institution_records_from_supabase,
+    load_institution_records_from_store,
     normalize_panel_hospital_items,
 )
 
@@ -284,7 +284,7 @@ def parse_stored_brochures(insurers: list[str] | None = None, max_brochures: int
         rows = rows[:max_brochures]
 
     try:
-        institution_records = load_institution_records_from_supabase()
+        institution_records = load_institution_records_from_store()
     except Exception as error:
         institution_records = []
         print(f"MOH institution normalization unavailable: {error}")
@@ -313,8 +313,8 @@ def main():
         else None
     )
 
-    initialize_supabase()
-    if args.dry_run and helper.supabase is None:
+    initialize_data_store()
+    if args.dry_run and helper.data_store is None:
         print(json.dumps({"plan_fact_count": 0}, indent=2, sort_keys=True))
         return
 

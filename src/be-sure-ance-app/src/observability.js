@@ -5,14 +5,10 @@ const SENSITIVE_KEYS = new Set([
   'apikey',
   'cookie',
   'set-cookie',
-  'x-supabase-key',
-  'supabase_secret_key',
-  'supabase_service_role_key',
   'telegram_bot_token',
   'sentry_dsn',
 ])
 const SECRET_PATTERNS = [
-  /sb_secret_[A-Za-z0-9_-]+/g,
   /Bearer\s+[A-Za-z0-9._-]+/gi,
   /eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g,
 ]

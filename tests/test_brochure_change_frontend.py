@@ -11,7 +11,7 @@ class BrochureChangeFrontendTests(unittest.TestCase):
     def test_app_fetches_and_groups_brochure_change_alerts(self):
         for required in (
             "const brochureChangeAlerts = ref([])",
-            "supabase.from('brochure_change_alerts').select('*')",
+            "brochureChangeAlerts.value = data.brochure_change_alerts",
             "function groupBrochureChangesByPlan(rows)",
             "const brochureChangeMap = computed(() =>",
             "brochureChanges: brochureChangeMap.value[factKey] || []",

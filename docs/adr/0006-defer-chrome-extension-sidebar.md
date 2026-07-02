@@ -33,7 +33,7 @@ If restarted, the MVP should include:
 - Content script that scans visible page text for known plan names and adds non-destructive highlights.
 - Click or toolbar gesture that opens a side panel for the detected plan.
 - Sidebar fact card showing plan name, carrier, source-traceable facts, source URLs, verified dates, and no-advice copy.
-- Read-only data access through a public API or Supabase anon read path. No service-role key, bot token, client data, or agent data in the extension.
+- Read-only data access through public static app data. No backend secret, bot token, client data, or agent data in the extension.
 - Local cache only for public plan/fact metadata, with clear expiry and no visitor tracking.
 
 ## Decision

@@ -9,7 +9,6 @@ import sentry_sdk
 from dotenv import load_dotenv
 
 SECRET_PATTERNS = (
-    re.compile(r"sb_secret_[A-Za-z0-9_-]+"),
     re.compile(r"Bearer\s+[A-Za-z0-9._-]+", re.IGNORECASE),
     re.compile(r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+"),
 )
@@ -18,9 +17,6 @@ SENSITIVE_KEYS = {
     "apikey",
     "cookie",
     "set-cookie",
-    "x-supabase-key",
-    "supabase_secret_key",
-    "supabase_service_role_key",
     "telegram_bot_token",
     "sentry_dsn",
 }

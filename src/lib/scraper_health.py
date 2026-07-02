@@ -1,18 +1,14 @@
 from __future__ import annotations
 
-import os
 import re
 import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 
-from dotenv import load_dotenv
-from supabase import create_client
-
+from src.lib.local_data_store import LocalDataClient, default_data_dir
 from src.scrapers.registry import EXPERIMENTAL_SCRAPERS, SUPPORTED_SCRAPERS
 
 SECRET_PATTERNS = (
-    re.compile(r"sb_secret_[A-Za-z0-9_-]+"),
     re.compile(r"Bearer\s+[A-Za-z0-9._-]+", re.IGNORECASE),
     re.compile(r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+"),
 )
@@ -45,12 +41,7 @@ def sanitized_error(value):
 
 
 def health_client():
-    load_dotenv()
-    supabase_url = os.getenv("SUPABASE_URL")
-    supabase_key = os.getenv("SUPABASE_SECRET_KEY") or os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-    if not supabase_url or not supabase_key:
-        return None
-    return create_client(supabase_url, supabase_key)
+    return LocalDataClient(default_data_dir())
 
 
 def upsert_health_rows(rows, dry_run=None):
@@ -60,8 +51,6 @@ def upsert_health_rows(rows, dry_run=None):
     if not rows:
         return None
     client = health_client()
-    if client is None:
-        return None
     try:
         return client.table("scraper_health").upsert(rows, on_conflict="carrier_key").execute()
     except Exception as exc:

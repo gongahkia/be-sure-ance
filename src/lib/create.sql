@@ -181,32 +181,6 @@ REVOKE ALL ON TABLE plan_comparison_facts FROM anon, authenticated;
 GRANT SELECT ON TABLE plan_comparison_facts TO anon, authenticated;
 GRANT ALL ON TABLE plan_comparison_facts TO service_role;
 
-CREATE TABLE IF NOT EXISTS comparison_shares (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    selected_plans JSONB NOT NULL,
-    view_count INT NOT NULL DEFAULT 0 CHECK (view_count >= 0),
-    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-    last_viewed_at TIMESTAMPTZ,
-    CONSTRAINT comparison_shares_plan_count
-        CHECK (
-            jsonb_typeof(selected_plans) = 'array'
-            AND jsonb_array_length(selected_plans) BETWEEN 1 AND 3
-        )
-);
-
-CREATE INDEX IF NOT EXISTS idx_comparison_shares_created_at
-ON comparison_shares (created_at DESC);
-
-ALTER TABLE comparison_shares ENABLE ROW LEVEL SECURITY;
-DROP POLICY IF EXISTS "public read access" ON comparison_shares;
-CREATE POLICY "public read access"
-ON comparison_shares FOR SELECT
-TO anon, authenticated
-USING (true);
-REVOKE ALL ON TABLE comparison_shares FROM anon, authenticated;
-GRANT SELECT ON TABLE comparison_shares TO anon, authenticated;
-GRANT ALL ON TABLE comparison_shares TO service_role;
-
 CREATE TABLE IF NOT EXISTS carrier_canonical_names (
     id SERIAL PRIMARY KEY,
     carrier_key TEXT NOT NULL,

@@ -8,7 +8,7 @@
     </h4>
     <p>Last scraped on {{ lastMonday }} 00:00:00+08:00</p>
     <img
-      src="https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg"
+      src="https://github.com/gongahkia/be-sure-ance/actions/workflows/refresh-static-data.yml/badge.svg"
       alt="Workflow Status"
     />
   </header>

@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CREATE_SQL = (ROOT / "src/lib/create.sql").read_text()
 MIGRATION_SQL = (ROOT / "src/lib/migrations/0004_claim_turnaround_metrics.sql").read_text()
 RLS_SQL = (ROOT / "src/lib/migrations/0000_enforce_readonly_rls.sql").read_text()
-WORKFLOW = (ROOT / ".github/workflows/scrape-to-supabase.yml").read_text()
+STATIC_APP_DATA = (ROOT / "src/lib/static_app_data.py").read_text()
 DATA_MODEL = (ROOT / "docs/DATA_MODEL.md").read_text()
 
 
@@ -37,7 +37,7 @@ class ClaimTurnaroundSchemaTests(unittest.TestCase):
                 self.assertIn(required, combined)
 
     def test_workflow_runs_lia_claim_metric_ingest(self):
-        self.assertIn("python -m src.scrapers.lia_claim_turnaround", WORKFLOW)
+        self.assertIn("src.scrapers.lia_claim_turnaround", STATIC_APP_DATA)
 
     def test_data_model_documents_lia_limits(self):
         for required in (

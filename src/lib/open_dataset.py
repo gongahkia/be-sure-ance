@@ -3,12 +3,12 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 
 from dotenv import load_dotenv
-from supabase import create_client
+
+from src.lib.static_app_data import load_local_tables
 
 SNAPSHOT_FIELDS = (
     "snapshot_date",
@@ -103,28 +103,7 @@ def json_list(value) -> str:
 
 def fetch_public_tables() -> dict[str, list[dict]]:
     load_dotenv()
-    url = os.getenv("SUPABASE_URL") or os.getenv("VITE_SUPABASE_URL")
-    key = (
-        os.getenv("SUPABASE_ANON_KEY")
-        or os.getenv("VITE_SUPABASE_ANON_KEY")
-        or os.getenv("SUPABASE_SECRET_KEY")
-        or os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-    )
-    if not url or not key:
-        raise RuntimeError(
-            "Open dataset export requires SUPABASE_URL plus SUPABASE_ANON_KEY "
-            "or another read-capable Supabase key."
-        )
-    client = create_client(url, key)
-    return {
-        "plans": client.table("plans").select("*").execute().data or [],
-        "plan_facts": client.table("plan_facts").select("*").execute().data or [],
-        "carrier_canonical_names": client.table("carrier_canonical_names")
-        .select("*")
-        .execute()
-        .data
-        or [],
-    }
+    return load_local_tables()
 
 
 def demo_tables() -> dict[str, list[dict]]:

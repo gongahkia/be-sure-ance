@@ -6,7 +6,7 @@
 
 `plan_comparison_facts` is an interim UI summary table. It keeps the current qualitative comparison fields used by the frontend while Phase 2 migrates facts into the source-traceable model.
 
-`comparison_shares` stores UUID-addressed saved comparison sets with selected plan references only.
+Share links are URL-only and encode selected plan references; there is no server-side share table.
 
 `plan_facts` is the canonical source-traceable fact table. It stores one fact per `(insurer, plan_slug, field_name)` with a JSON value, source URL, source type, scrape timestamp, and verification timestamp.
 
@@ -149,19 +149,9 @@ Limitations:
 - `validation_status = passed` means structural drift thresholds passed for configured targets; it does not prove the source content is semantically correct.
 - `unsupported` means the scraper is not part of the scheduled production set.
 
-## `comparison_shares`
+## Share Links
 
-`comparison_shares` stores saved comparison links without client, agent, or visitor identity fields.
-
-- `id`
-- `selected_plans`
-- `view_count`
-- `created_at`
-- `last_viewed_at`
-
-`selected_plans` is a JSON array of up to three objects containing only `insurer` and `plan_slug`. The frontend reconstructs plan names, facts, provenance, and no-advice copy from current public read-only tables at `/share/<uuid>`.
-
-`view_count` is a non-identifying aggregate counter. It must not be joined to IP addresses, user agents, cookies, accounts, or contact details.
+Share links use `/share?plans=<insurer>:<plan_slug>,...` and contain at most three selected plan references. The frontend reconstructs plan names, facts, provenance, and no-advice copy from the current static app data. No view count, account, cookie, IP address, user agent, client, or agent data is stored.
 
 ## `brochure_version_history`
 
@@ -224,13 +214,12 @@ The scraper expands parenthetical NEHR entries into individual institution recor
 
 ## Brochure Storage
 
-Raw brochure PDFs are stored in Supabase Storage. The default bucket is `plan-brochures`; override it with `BROCHURE_STORAGE_BUCKET`.
+Raw brochure PDFs captured during scraping are stored in the local build data directory under `storage/<bucket>/...` and are not exposed as frontend upload inputs. The default bucket label is `plan-brochures`; override it with `BROCHURE_STORAGE_BUCKET`.
 
 Bucket setup:
 
-- Create a private Supabase Storage bucket named `plan-brochures`.
-- Grant scraper writes through the existing server-side `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY`.
-- Do not expose the bucket as a frontend public upload surface.
+- Keep generated storage files out of committed source unless an explicit dataset release needs them.
+- Do not expose the bucket path as a frontend public upload surface.
 
 Stored object keys are deterministic:
 

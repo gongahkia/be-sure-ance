@@ -24,7 +24,7 @@ class OpenDatasetDocsTests(unittest.TestCase):
         for required in (
             "name: publish-open-dataset",
             'cron: "0 20 * * 0"',
-            "python -m src.lib.open_dataset",
+            "python3 -m src.lib.open_dataset",
             "data/be-sure-ance-snapshot-${snapshot_date}.csv",
             "actions/upload-artifact@v4",
             "open-dataset-snapshot",

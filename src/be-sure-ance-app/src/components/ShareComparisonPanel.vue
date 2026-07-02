@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 import { safeExternalUrl } from '../utils/links'
 
@@ -39,9 +39,8 @@ const props = defineProps({
 const sharing = ref(false)
 const statusMessage = ref('')
 const shareUrl = ref('')
-const shareEndpoint = computed(() => import.meta.env.VITE_SHARE_ENDPOINT || '/shares')
 
-async function createShare() {
+function createShare() {
   if (props.selectedPlans.length === 0) {
     statusMessage.value = 'Select at least one plan.'
     return
@@ -51,18 +50,8 @@ async function createShare() {
   statusMessage.value = ''
   shareUrl.value = ''
   try {
-    const response = await fetch(shareEndpoint.value, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        plans: props.selectedPlans.map(sharePlanPayload),
-      }),
-    })
-    if (!response.ok) {
-      throw new Error(`Share link failed with ${response.status}`)
-    }
-    const payload = await response.json()
-    shareUrl.value = absoluteShareUrl(payload.path || `/share/${payload.id}`)
+    const refs = props.selectedPlans.map(sharePlanPayload).filter(Boolean)
+    shareUrl.value = absoluteShareUrl(`/share?plans=${encodeURIComponent(refs.join(','))}`)
     statusMessage.value = 'Share link ready.'
   } catch (error) {
     statusMessage.value = error?.message || 'Share link failed.'
@@ -72,14 +61,17 @@ async function createShare() {
 }
 
 function sharePlanPayload(plan) {
-  return {
-    insurer: plan.insurer || plan.providerKey,
-    plan_slug: plan.plan_slug,
-  }
+  const insurer = plan.insurer || plan.providerKey
+  const planSlug = plan.plan_slug
+  return safePlanRef(insurer) && safePlanRef(planSlug) ? `${insurer}:${planSlug}` : ''
 }
 
 function absoluteShareUrl(path) {
   return new URL(path, window.location.origin).toString()
+}
+
+function safePlanRef(value) {
+  return /^[a-z0-9][a-z0-9_-]{0,119}$/.test(String(value || ''))
 }
 </script>
 

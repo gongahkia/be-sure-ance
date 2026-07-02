@@ -14,7 +14,7 @@ The repository now uses Vite, `import.meta.env`, `VITE_*` public variables, flat
 
 Use Vite as the frontend build tool. Keep the app as Vue 3, keep Netlify or Cloudflare Pages as static-host candidates, and run static page generation after the Vite build.
 
-Frontend configuration must use only public `VITE_*` values. Private Supabase service keys and bot tokens stay in scraper/backend environments.
+Frontend configuration must use only public `VITE_*` values. Private build hooks and bot tokens stay in GitHub/backend environments.
 
 ## Rejected Approaches
 
@@ -25,5 +25,5 @@ Frontend configuration must use only public `VITE_*` values. Private Supabase se
 ## Consequences
 
 - Local frontend commands are `npm run dev`, `npm run build`, `npm run lint`, and `npm run format:check` inside `src/be-sure-ance-app`.
-- Static plan-page generation runs after Vite build and needs real public Supabase env only for full plan output.
+- Static plan-page generation runs after Vite build and reads generated app-data JSON for full plan output.
 - Deployment remains blocked until Phase 5 even though local static builds work.

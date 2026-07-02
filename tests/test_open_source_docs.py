@@ -21,7 +21,7 @@ class OpenSourceDocsTests(unittest.TestCase):
         for required in (
             "pip install -r requirements.txt",
             "npm --prefix src/be-sure-ance-app ci",
-            "python -m unittest discover -s tests",
+            "python3 -m unittest discover -s tests",
             "Use GitHub issues for scoped work.",
             "source_url",
             "source_type",

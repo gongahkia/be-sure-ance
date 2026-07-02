@@ -102,7 +102,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.parse_known_args()
-    helper.initialize_supabase()
+    helper.initialize_data_store()
     metrics = scrape_claim_turnaround_metrics()
     upsert_claim_turnaround_metrics(metrics)
 

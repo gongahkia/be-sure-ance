@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-static-pages.mjs",
+    "build:data": "cd ../.. && python3 -m src.lib.static_app_data --fallback-demo --output src/be-sure-ance-app/public/data/app-data.json",
+    "build:app": "vite build && node scripts/generate-static-pages.mjs",
+    "build": "npm run build:data && npm run build:app",
     "lint": "eslint \"src/**/*.{js,vue}\" \"scripts/**/*.mjs\" vite.config.js",
     "format": "prettier --write \"src/**/*.{js,vue,css}\" \"scripts/**/*.mjs\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",
     "format:check": "prettier --check \"src/**/*.{js,vue,css}\" \"scripts/**/*.mjs\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",
@@ -12,7 +14,6 @@
   },
   "dependencies": {
     "@sentry/vue": "^10.63.0",
-    "@supabase/supabase-js": "^2.49.1",
     "@vueuse/core": "^12.8.2",
     "vue": "^3.2.13"
   },

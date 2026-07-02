@@ -13,10 +13,9 @@ Open a `Weekly scraper health review` issue from the GitHub issue form.
 Evidence to inspect:
 
 - `/status` public scraper health dashboard
-- latest `scrape-to-supabase` GitHub Actions run
+- latest `refresh-static-data` GitHub Actions run and Netlify deploy log
 - latest `validate-scraper-snapshots` artifact
 - latest `publish-open-dataset` artifact
-- latest `nightly-supabase-backup` artifact
 - Sentry frontend and scraper projects if DSNs are configured
 
 Checklist:
@@ -26,10 +25,9 @@ Checklist:
 3. Open validation artifacts for failed, error, or no-baseline carriers.
 4. Confirm public `/status` hides raw exceptions and secret-like values.
 5. Confirm the open dataset artifact exists and does not include client, agent, share-link, or secret-like fields.
-6. Confirm the latest backup artifact exists with 30-day retention.
-7. File follow-up issues for stale, failing, unsupported, or validation-failed carriers.
+6. File follow-up issues for stale, failing, unsupported, or validation-failed carriers.
 
-First health review can be performed from existing dashboards/artifacts after launch because `/status`, scraper workflows, validation artifacts, open dataset artifacts, backup artifacts, and optional Sentry hooks are already defined.
+First health review can be performed from existing dashboards/artifacts after launch because `/status`, refresh workflow logs, validation artifacts, open dataset artifacts, and optional Sentry hooks are already defined.
 
 ## Monthly Brochure Alert And Dataset Review
 

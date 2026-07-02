@@ -21,10 +21,9 @@ class OperationsCadenceTests(unittest.TestCase):
         for required in (
             "Weekly Scraper Health Review",
             "/status",
-            "scrape-to-supabase",
+            "refresh-static-data",
             "validate-scraper-snapshots",
             "publish-open-dataset",
-            "nightly-supabase-backup",
             "Sentry",
             "First health review can be performed from existing dashboards/artifacts",
         ):

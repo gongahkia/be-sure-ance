@@ -10,12 +10,12 @@ Docker demo:
 docker compose up --build
 ```
 
-Open `http://localhost:5173`. The compose stack uses seeded local demo data and fake local keys only; it does not need production Supabase credentials.
+Open `http://localhost:5173`. The compose stack uses seeded static app data and does not need production credentials.
 
 Manual setup:
 
 ```sh
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 playwright install chromium
 npm --prefix src/be-sure-ance-app ci
 cp .env.example .env
@@ -24,12 +24,11 @@ cp .env.example .env
 Use placeholder public frontend values for offline frontend builds:
 
 ```sh
-VITE_SUPABASE_URL=https://example.supabase.co
-VITE_SUPABASE_ANON_KEY=anon
+VITE_STATIC_DATA_PATH=/data/app-data.json
 VITE_SITE_ORIGIN=https://example.com
 ```
 
-Never put `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, or `TELEGRAM_BOT_TOKEN` in frontend `VITE_*` variables.
+Never put `TELEGRAM_BOT_TOKEN` or backend observability credentials in frontend `VITE_*` variables.
 
 ## Test gates
 
@@ -38,10 +37,10 @@ Run the narrowest relevant checks first, then the full local gate before opening
 ```sh
 black --check src tests
 ruff check src tests
-python -m unittest discover -s tests
+python3 -m unittest discover -s tests
 npm --prefix src/be-sure-ance-app run lint
 npm --prefix src/be-sure-ance-app run format:check
-(cd src/be-sure-ance-app && VITE_SUPABASE_URL=https://example.supabase.co VITE_SUPABASE_ANON_KEY=anon VITE_SITE_ORIGIN=https://example.com npm run build)
+(cd src/be-sure-ance-app && VITE_STATIC_DATA_PATH=/data/app-data.json VITE_SITE_ORIGIN=https://example.com npm run build)
 pre-commit run --all-files
 git diff --check
 ```

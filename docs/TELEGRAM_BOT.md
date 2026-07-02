@@ -10,13 +10,10 @@ Required private variables:
 
 ```sh
 TELEGRAM_BOT_TOKEN=
-SUPABASE_URL=
-SUPABASE_SECRET_KEY=
-# or legacy fallback:
-SUPABASE_SERVICE_ROLE_KEY=
+BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data
 ```
 
-Do not expose `TELEGRAM_BOT_TOKEN`, `SUPABASE_SECRET_KEY`, or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
+Do not expose `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
 
 ## Commands
 
@@ -30,7 +27,7 @@ Responses include source URL, verified date, and no-advice wording. Missing data
 Run as a backend worker, not inside the Vue frontend:
 
 ```sh
-python -m src.bot.telegram_bot
+python3 -m src.bot.telegram_bot
 ```
 
 The beta uses long polling. Move to a webhook only after Phase 5 deployment decisions are complete.

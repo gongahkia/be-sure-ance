@@ -1,6 +1,5 @@
 # ----- required imports -----
 
-import base64
 import hashlib
 import json
 import os
@@ -12,7 +11,6 @@ from urllib.parse import urlparse
 
 import requests
 from dotenv import load_dotenv
-from supabase import create_client
 
 from src.lib.brochure_versions import (
     build_change_alert,
@@ -21,14 +19,16 @@ from src.lib.brochure_versions import (
     version_change_status,
 )
 from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.local_data_store import LocalDataClient, default_data_dir
 from src.lib.observability import initialize_observability
 from src.lib.scraper_health import record_scraper_success
 
 # ------ functions ------
 
 
-supabase = None
-_supabase_key = None
+data_store = None
+injected_client = None
+_write_key = "local-data-store"
 DEFAULT_BROCHURE_STORAGE_BUCKET = "plan-brochures"
 BROCHURE_CAPTURE_FIELD = "brochure_metadata"
 BROCHURE_REQUEST_TIMEOUT_SECONDS = 30
@@ -36,52 +36,35 @@ MAX_BROCHURE_BYTES = 20 * 1024 * 1024
 BROCHURE_USER_AGENT = BOT_USER_AGENT
 
 
-def initialize_supabase():
+def initialize_data_store():
     initialize_observability("scraper")
     if dry_run_enabled():
-        print("Dry run enabled; Supabase client not initialized.")
+        print("Dry run enabled; local data store not initialized.")
         return
     load_dotenv()
-    SUPABASE_URL = os.getenv("SUPABASE_URL")
-    SUPABASE_SERVER_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_SECRET_KEY")
-    if not SUPABASE_URL or not SUPABASE_SERVER_KEY:
-        raise ValueError(
-            "Supabase URL or server-side service/secret key is missing. Check your .env file."
-        )
-    global supabase, _supabase_key
-    _supabase_key = SUPABASE_SERVER_KEY
-    supabase = create_client(SUPABASE_URL, SUPABASE_SERVER_KEY)
-    print("Supabase client initialized successfully.")
+    global data_store, injected_client, _write_key
+    data_store = LocalDataClient(default_data_dir())
+    injected_client = None
+    _write_key = "local-data-store"
+    print(f"Local data store initialized at {data_store.data_dir}.")
 
 
 def key_has_write_access(key):
-    if not key:
-        return False
-    if key.startswith("sb_secret_"):
-        return True
-
-    parts = key.split(".")
-    if len(parts) < 2:
-        return False
-
-    try:
-        padded_payload = parts[1] + "=" * (-len(parts[1]) % 4)
-        payload = json.loads(base64.urlsafe_b64decode(padded_payload))
-    except Exception:
-        return False
-
-    return payload.get("role") == "service_role"
+    return bool(key)
 
 
 def require_write_key():
-    if not key_has_write_access(_supabase_key):
-        raise PermissionError("Supabase writes require a server-side secret/service_role key.")
+    return True
 
 
 def require_client():
-    if supabase is None:
-        raise RuntimeError("Supabase client is not initialized.")
-    return supabase
+    if injected_client is not None:
+        return injected_client
+    if data_store is None:
+        initialize_data_store()
+    if data_store is None:
+        raise RuntimeError("Local data store is not initialized.")
+    return data_store
 
 
 def process_json_files(target_directory_filepath):
@@ -105,7 +88,7 @@ def overwrite_table_data(table_name, data):
 
 def overwrite_plans_for_insurer(insurer, rows):
     if dry_run_enabled():
-        print(f"Dry run enabled; skipping Supabase plan writes for {insurer}.")
+        print(f"Dry run enabled; skipping local plan writes for {insurer}.")
         return
 
     require_write_key()
@@ -149,7 +132,7 @@ def clear_table_data(table_name):
 
 def overwrite_generic_table_data(table_name, data):
     if dry_run_enabled():
-        print(f"Dry run enabled; skipping Supabase writes for {table_name}.")
+        print(f"Dry run enabled; skipping local writes for {table_name}.")
         return
     clear_table_data(table_name)
     if not data:
@@ -470,6 +453,6 @@ def capture_brochures_for_plans(insurer, plans, session=None):
 # ----- sample execution code -----
 
 if __name__ == "__main__":
-    initialize_supabase()
+    initialize_data_store()
     target_directory = "./scraped"
     process_json_files(target_directory)

@@ -27,8 +27,7 @@ export const messages = {
     'workflow.carrierResearch.text':
       'Use the provider rail to move through carriers quickly, then add only the plans worth presenting.',
     'status.loading': 'Loading plan data and qualitative facts...',
-    'status.supabaseMissing':
-      'Supabase configuration is missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.',
+    'status.staticDataMissing': 'Static app data is missing. Generate /data/app-data.json.',
     'status.loadError': 'Unable to load qualitative plan data.',
     'shared.eyebrow': 'Shared Comparison',
     'shared.title': 'Shared plan set',
@@ -115,8 +114,7 @@ export const messages = {
     'workflow.carrierResearch.title': '一次查看一个保险公司渠道。',
     'workflow.carrierResearch.text': '通过保险公司列表快速切换，只加入值得说明的计划。',
     'status.loading': '正在载入计划资料和定性事实...',
-    'status.supabaseMissing':
-      '缺少 Supabase 设置。请设置 VITE_SUPABASE_URL 和 VITE_SUPABASE_ANON_KEY。',
+    'status.staticDataMissing': '缺少静态应用数据。请生成 /data/app-data.json。',
     'status.loadError': '无法载入定性计划资料。',
     'shared.eyebrow': '共享比较',
     'shared.title': '共享计划组合',

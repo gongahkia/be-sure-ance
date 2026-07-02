@@ -11,7 +11,7 @@ class PanelHospitalMatrixFrontendTests(unittest.TestCase):
         for required in (
             "import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'",
             'href="/matrix/panel-hospitals"',
-            "currentPath.value === '/matrix/panel-hospitals'",
+            "path === '/matrix/panel-hospitals'",
             "window.history.pushState",
             "window.addEventListener('popstate', syncPathFromLocation)",
             "<PanelHospitalMatrix",

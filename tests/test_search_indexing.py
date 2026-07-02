@@ -34,7 +34,7 @@ class SearchIndexingTests(unittest.TestCase):
         for required in (
             "name: search-indexing-preflight",
             "LIVE_ORIGIN",
-            "python scripts/search_indexing_preflight.py",
+            "python3 scripts/search_indexing_preflight.py",
             "output/search-indexing/preflight.json",
             "actions/upload-artifact@v4",
         ):

@@ -14,7 +14,7 @@ No push or deployment was performed. Remote GitHub Actions status for these loca
 
 - Panel matrix: `/matrix/panel-hospitals` is routed in `App.vue`; `PanelHospitalMatrix.vue` renders plan/hospital coverage from source-traceable plan facts; MOH institution normalization is backed by `moh_institutions`.
 - PDF brief: `src/backend/pdf_brief.py` builds a qualitative, source-backed PDF for one to three plans; `BriefExportPanel.vue` sends selected public plan payloads plus session-only agent branding; the backend response is `Cache-Control: no-store`.
-- Per-plan static pages: `npm run build` runs Vite plus `scripts/generate-static-pages.mjs`, which emits `/plan/<insurer>/<plan-slug>/index.html`, `sitemap.xml`, and `robots.txt` when real Supabase public env is available.
+- Per-plan static pages: `npm run build` generates static app data, runs Vite plus `scripts/generate-static-pages.mjs`, and emits `/plan/<insurer>/<plan-slug>/index.html`, `sitemap.xml`, and `robots.txt`.
 
 ## Expansion Moats
 
@@ -24,7 +24,7 @@ Shipped:
 - Exclusion and waiting-period taxonomy tags.
 - MAS regulatory event feed by carrier.
 - Brochure version history and deduped change alerts.
-- Saved comparison sets with no-PII `/share/<uuid>` links.
+- Saved comparison sets with no-PII `/share?plans=<refs>` links.
 - Telegram lookup bot beta for `/panel` and `/fact`.
 
 Explicitly deferred:
@@ -77,7 +77,7 @@ Full local gates:
 ## No-PII And No-Advice Checks
 
 - PDF brief generation does not persist client or agent details.
-- Share links store only `insurer`, `plan_slug`, UUID, and aggregate view counts.
+- Share links encode selected `insurer` and `plan_slug` references in the URL.
 - Telegram bot lookup does not persist chat IDs, usernames, phone numbers, or message text.
 - MAS regulatory matches marked `needs_review` are displayed as possible matches, not definitive findings.
 - Claim metrics are source evidence, not suitability rankings.
@@ -88,7 +88,7 @@ Full local gates:
 
 - Public deployment is still blocked until Phase 5.
 - Remote CI is not verified until commits are pushed.
-- Local static-page build used placeholder Supabase env and reported `static_pages: skipped_supabase_placeholder_env`; full page generation requires real public Supabase env.
+- Local static-page build reported `static_pages:` after reading generated static app data.
 - MAS live source was unavailable from this environment during dry-run, so the local MAS count was zero.
 - Telegram bot is beta and requires deployment of a backend worker with `TELEGRAM_BOT_TOKEN`.
 - Chrome extension work is deferred by ADR and does not block Phase 3.

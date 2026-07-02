@@ -4,13 +4,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 18 * * 0"
-  workflow_run:
-    workflows: ["scrape-to-supabase"]
-    types: [completed]
 
 jobs:
   validate:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -33,7 +29,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run validation unit tests
-        run: python -m unittest discover -s tests -p "test_*.py"
+        run: python3 -m unittest discover -s tests -p "test_*.py"
 
       - name: Download previous validation baseline
         id: baseline
@@ -58,12 +54,8 @@ jobs:
           echo "baseline_dir=${baseline_root}" >> "$GITHUB_OUTPUT"
 
       - name: Run structural validation
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
-          command=(python -m src.validation.differ --output-dir .validation-output --max-urls-per-insurer 1)
+          command=(python3 -m src.validation.differ --output-dir .validation-output --max-urls-per-insurer 1)
           if [ -n "${{ steps.baseline.outputs.baseline_dir }}" ]; then
             command+=(--baseline-dir "${{ steps.baseline.outputs.baseline_dir }}")
           fi

@@ -111,7 +111,7 @@
             <p class="eyebrow">{{ t('shared.eyebrow') }}</p>
             <h2>{{ t('shared.title') }}</h2>
             <p class="toolbar-copy">{{ SHARE_DISCLAIMER }}</p>
-            <p v-if="sharedComparison" class="toolbar-copy">
+            <p v-if="sharedComparison?.created_at" class="toolbar-copy">
               {{
                 t('shared.created', {
                   date: dateText(sharedComparison.created_at),
@@ -208,7 +208,6 @@
 
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { createClient } from '@supabase/supabase-js'
 
 import BriefExportPanel from './components/BriefExportPanel.vue'
 import ClaimTurnaroundBoard from './components/ClaimTurnaroundBoard.vue'
@@ -219,16 +218,13 @@ import ProviderRail from './components/ProviderRail.vue'
 import ScraperStatusDashboard from './components/ScraperStatusDashboard.vue'
 import ShareComparisonPanel from './components/ShareComparisonPanel.vue'
 import { buildPlanKey, providers } from './lib/providers'
+import { loadAppData } from './lib/staticData'
 import { useI18n } from './i18n'
 import { safeExternalUrl } from './utils/links'
 
 const { locale, supportedLocales, setLocale, t } = useI18n()
 const SHARE_DISCLAIMER = computed(() => t('disclaimer.share'))
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null
-const shareEndpoint = computed(() => import.meta.env.VITE_SHARE_ENDPOINT || '/shares')
-const trackedShareViews = new Set()
+const SELECTED_PLANS_STORAGE_KEY = 'be-sure-ance:selected-plan-keys'
 
 const loading = ref(true)
 const errorMessage = ref('')
@@ -236,9 +232,9 @@ const sharedComparison = ref(null)
 const sharedComparisonError = ref('')
 const searchQuery = ref('')
 const matrixSearchQuery = ref('')
-const currentPath = ref(window.location.pathname)
+const currentPath = ref(locationPath())
 const activeProviderKey = ref(providerKeyFromPath(window.location.pathname) || providers[0].key)
-const selectedPlanKeys = ref([])
+const selectedPlanKeys = ref(loadStoredSelectedPlanKeys())
 const plansByProvider = ref({})
 const comparisonFacts = ref([])
 const planFacts = ref([])
@@ -250,76 +246,17 @@ const carrierCanonicalNames = ref([])
 const scraperHealth = ref([])
 
 async function fetchData() {
-  if (!supabase) {
-    errorMessage.value = t('status.supabaseMissing')
-    loading.value = false
-    return
-  }
-
   try {
-    const [
-      { data: planData, error: planError },
-      { data: comparisonData, error: comparisonError },
-      { data: factData, error: factError },
-      { data: resourceData, error: resourceError },
-      { data: claimData, error: claimError },
-      { data: regulatoryData, error: regulatoryError },
-      { data: brochureChangeData, error: brochureChangeError },
-      { data: carrierCanonicalData, error: carrierCanonicalError },
-      { data: scraperHealthData, error: scraperHealthError },
-    ] = await Promise.all([
-      supabase.from('plans').select('*'),
-      supabase.from('plan_comparison_facts').select('*'),
-      supabase.from('plan_facts').select('*'),
-      supabase.from('specialist_resources').select('*'),
-      supabase.from('claim_turnaround_metrics').select('*'),
-      supabase.from('mas_regulatory_events').select('*'),
-      supabase.from('brochure_change_alerts').select('*'),
-      supabase.from('carrier_canonical_names').select('*'),
-      supabase
-        .from('scraper_health')
-        .select(
-          'carrier_key,display_name,support_status,last_success_at,last_failure_at,last_run_at,row_count,validation_status,validation_checked_at,validation_summary,updated_at',
-        ),
-    ])
-
-    if (planError) {
-      throw planError
-    }
-    if (comparisonError) {
-      throw comparisonError
-    }
-    if (factError) {
-      throw factError
-    }
-    if (resourceError) {
-      throw resourceError
-    }
-    if (claimError) {
-      throw claimError
-    }
-    if (regulatoryError) {
-      throw regulatoryError
-    }
-    if (brochureChangeError) {
-      throw brochureChangeError
-    }
-    if (carrierCanonicalError) {
-      throw carrierCanonicalError
-    }
-    if (scraperHealthError) {
-      throw scraperHealthError
-    }
-
-    plansByProvider.value = groupPlansByProvider(planData || [])
-    comparisonFacts.value = comparisonData || []
-    planFacts.value = factData || []
-    specialistResources.value = resourceData || []
-    claimTurnaroundMetrics.value = claimData || []
-    masRegulatoryEvents.value = regulatoryData || []
-    brochureChangeAlerts.value = brochureChangeData || []
-    carrierCanonicalNames.value = carrierCanonicalData || []
-    scraperHealth.value = scraperHealthData || []
+    const data = await loadAppData()
+    plansByProvider.value = groupPlansByProvider(data.plans)
+    comparisonFacts.value = data.plan_comparison_facts
+    planFacts.value = data.plan_facts
+    specialistResources.value = data.specialist_resources
+    claimTurnaroundMetrics.value = data.claim_turnaround_metrics
+    masRegulatoryEvents.value = data.mas_regulatory_events
+    brochureChangeAlerts.value = data.brochure_change_alerts
+    carrierCanonicalNames.value = data.carrier_canonical_names
+    scraperHealth.value = data.scraper_health
     await loadShareFromRoute()
   } catch (error) {
     errorMessage.value = error?.message || t('status.loadError')
@@ -337,29 +274,38 @@ onBeforeUnmount(() => {
   window.removeEventListener('popstate', syncPathFromLocation)
 })
 
-const currentShareId = computed(() => parseShareRoute(currentPath.value))
+const currentShareRefs = computed(() => parseShareRoute(currentPath.value))
 const activeView = computed(() => {
-  if (currentPath.value === '/matrix/panel-hospitals') {
+  const path = pathWithoutQuery(currentPath.value)
+  if (path === '/matrix/panel-hospitals') {
     return 'panelMatrix'
   }
-  if (currentPath.value === '/status') {
+  if (path === '/status') {
     return 'scraperStatus'
   }
-  if (currentShareId.value) {
+  if (currentShareRefs.value.length > 0) {
     return 'sharedComparison'
   }
   return 'workspace'
 })
 const routePlanTarget = computed(() => parsePlanRoute(currentPath.value))
 
-watch(currentShareId, () => {
+watch(currentPath, () => {
   if (!loading.value) {
     loadShareFromRoute()
   }
 })
 
+watch(
+  selectedPlanKeys,
+  (keys) => {
+    storeSelectedPlanKeys(keys)
+  },
+  { deep: true },
+)
+
 function syncPathFromLocation() {
-  setCurrentPath(window.location.pathname)
+  setCurrentPath(locationPath())
 }
 
 function navigateTo(path, event) {
@@ -382,7 +328,7 @@ function setCurrentPath(path) {
 }
 
 function providerKeyFromPath(path) {
-  const routeTarget = parsePlanRoute(path)
+  const routeTarget = parsePlanRoute(pathWithoutQuery(path))
   if (routeTarget && providers.some((provider) => provider.key === routeTarget.providerKey)) {
     return routeTarget.providerKey
   }
@@ -390,7 +336,7 @@ function providerKeyFromPath(path) {
 }
 
 function parsePlanRoute(path) {
-  const match = path.match(/^\/plan\/([^/]+)\/([^/]+)\/?$/)
+  const match = pathWithoutQuery(path).match(/^\/plan\/([^/]+)\/([^/]+)\/?$/)
   if (!match) {
     return null
   }
@@ -401,10 +347,11 @@ function parsePlanRoute(path) {
 }
 
 function parseShareRoute(path) {
-  const match = path.match(
-    /^\/share\/([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\/?$/,
-  )
-  return match ? match[1].toLowerCase() : ''
+  if (pathWithoutQuery(path) !== '/share') {
+    return []
+  }
+  const params = new URLSearchParams(queryPart(path))
+  return parseSharePlanRefs(params.get('plans') || '')
 }
 
 function decodePathPart(value) {
@@ -413,6 +360,38 @@ function decodePathPart(value) {
   } catch {
     return value
   }
+}
+
+function locationPath() {
+  return `${window.location.pathname}${window.location.search}`
+}
+
+function pathWithoutQuery(path) {
+  return String(path || '').split('?')[0]
+}
+
+function queryPart(path) {
+  const index = String(path || '').indexOf('?')
+  return index === -1 ? '' : String(path).slice(index + 1)
+}
+
+function parseSharePlanRefs(value) {
+  return String(value || '')
+    .split(',')
+    .map((item) => item.trim().toLowerCase())
+    .map((item) => {
+      const [insurer, planSlug] = item.split(':')
+      if (!safePlanRef(insurer) || !safePlanRef(planSlug)) {
+        return null
+      }
+      return { insurer, plan_slug: planSlug }
+    })
+    .filter(Boolean)
+    .slice(0, 3)
+}
+
+function safePlanRef(value) {
+  return /^[a-z0-9][a-z0-9_-]{0,119}$/.test(String(value || ''))
 }
 
 function groupPlansByProvider(rows) {
@@ -622,63 +601,37 @@ function stringifyFacts(facts) {
 }
 
 async function loadShareFromRoute() {
-  const shareId = currentShareId.value
+  const shareRefs = currentShareRefs.value
   sharedComparison.value = null
   sharedComparisonError.value = ''
-  if (!shareId) {
-    return
-  }
-  if (!supabase) {
-    sharedComparisonError.value = t('status.supabaseMissing')
+  if (shareRefs.length === 0) {
     return
   }
 
-  try {
-    const { data, error } = await supabase
-      .from('comparison_shares')
-      .select('*')
-      .eq('id', shareId)
-      .limit(1)
-    if (currentShareId.value !== shareId) {
-      return
-    }
-    if (error) {
-      throw error
-    }
-    const row = (data || [])[0]
-    if (!row) {
-      sharedComparisonError.value = t('shared.notFound')
-      return
-    }
-    sharedComparison.value = {
-      ...row,
-      disclaimer: SHARE_DISCLAIMER.value,
-    }
-    trackShareView(shareId)
-  } catch (error) {
-    sharedComparisonError.value = error?.message || t('shared.loadError')
+  sharedComparison.value = {
+    id: 'url',
+    selected_plans: shareRefs,
+    created_at: '',
+    view_count: 0,
+    disclaimer: SHARE_DISCLAIMER.value,
   }
 }
 
-async function trackShareView(shareId) {
-  if (trackedShareViews.has(shareId)) {
-    return
-  }
-  trackedShareViews.add(shareId)
+function loadStoredSelectedPlanKeys() {
   try {
-    const response = await fetch(`${shareEndpoint.value}/${encodeURIComponent(shareId)}/view`, {
-      method: 'POST',
-    })
-    if (!response.ok) {
-      return
+    const stored = JSON.parse(window.localStorage.getItem(SELECTED_PLANS_STORAGE_KEY) || '[]')
+    if (Array.isArray(stored)) {
+      return stored.filter((item) => typeof item === 'string').slice(0, 3)
     }
-    const payload = await response.json()
-    if (sharedComparison.value?.id === shareId && payload.view_count !== undefined) {
-      sharedComparison.value = {
-        ...sharedComparison.value,
-        view_count: payload.view_count,
-      }
-    }
+  } catch {
+    return []
+  }
+  return []
+}
+
+function storeSelectedPlanKeys(keys) {
+  try {
+    window.localStorage.setItem(SELECTED_PLANS_STORAGE_KEY, JSON.stringify(keys.slice(0, 3)))
   } catch {
     return
   }

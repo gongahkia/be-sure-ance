@@ -9,7 +9,7 @@ CLAIM_BOARD = (ROOT / "src/be-sure-ance-app/src/components/ClaimTurnaroundBoard.
 class ClaimTurnaroundFrontendTests(unittest.TestCase):
     def test_app_fetches_claim_turnaround_metrics(self):
         for required in (
-            "supabase.from('claim_turnaround_metrics').select('*')",
+            "claimTurnaroundMetrics.value = data.claim_turnaround_metrics",
             "const claimTurnaroundMetrics = ref([])",
             '<ClaimTurnaroundBoard :metrics="claimTurnaroundMetrics" />',
         ):

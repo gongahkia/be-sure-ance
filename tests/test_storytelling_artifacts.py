@@ -67,10 +67,9 @@ class StorytellingArtifactsTests(unittest.TestCase):
     def test_docs_do_not_contain_committed_secret_values(self):
         combined = "\n".join((README, SUCCESSION, BLOG_DRAFT, CASE_STUDY, TALKS, DATA_MODEL))
         forbidden_patterns = (
-            r"sb_secret_[A-Za-z0-9_-]+",
-            r"SUPABASE_SERVICE_ROLE_KEY=\\S+",
             r"TELEGRAM_BOT_TOKEN=\\S+",
             r"SENTRY_DSN=https://",
+            r"NETLIFY_BUILD_HOOK_URL=https://",
         )
         for pattern in forbidden_patterns:
             with self.subTest(pattern=pattern):

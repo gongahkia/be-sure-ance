@@ -29,7 +29,7 @@ No push or deploy was performed. Remote GitHub Actions status for these local co
 - `/tmp/be-sure-ance-venv/bin/python -m unittest discover -s tests -p 'test_*.py'` passed 93 tests.
 - `npm --prefix src/be-sure-ance-app run lint`
 - `npm --prefix src/be-sure-ance-app run format:check`
-- `(cd src/be-sure-ance-app && VITE_SUPABASE_URL=https://example.supabase.co VITE_SUPABASE_ANON_KEY=anon npm run build)`
+- `(cd src/be-sure-ance-app && VITE_STATIC_DATA_PATH=/data/app-data.json npm run build)`
 - `PATH=/tmp/be-sure-ance-venv/bin:$PATH /tmp/be-sure-ance-venv/bin/pre-commit run --all-files`
 - `git diff --check`
 

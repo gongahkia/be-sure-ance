@@ -29,7 +29,7 @@ jobs:
 
       - name: Verify sitemap, robots, canonical metadata, and JSON-LD
         run: |
-          python scripts/search_indexing_preflight.py \
+          python3 scripts/search_indexing_preflight.py \
             --origin "$LIVE_ORIGIN" \
             --output output/search-indexing/preflight.json
 

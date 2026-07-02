@@ -1,4 +1,4 @@
-![](https://github.com/gongahkia/be-sure-ance/actions/workflows/scrape-to-supabase.yml/badge.svg)
+![](https://github.com/gongahkia/be-sure-ance/actions/workflows/refresh-static-data.yml/badge.svg)
 
 # `Be-sure-ance`
 
@@ -17,13 +17,13 @@ The app does not provide financial advice, insurance advice, quotes, recommendat
 | LIA claim metrics extracted | 12 | Latest local dry-run on 2026-07-02 against fixture/live parser path. |
 | Civic carrier canonicalization | Available locally | MAS FID Insurance and LIA member-directory cross-checks produce source-backed canonical names and mismatch flags. |
 | Open dataset snapshots | Artifact workflow | Weekly CC-BY-4.0 CSV artifacts export plan facts, source URLs, and verification dates. |
-| WCAG 2.1 AA audit | 0 Axe violations / Lighthouse 100 | Local audit on 2026-07-02 covered `/`, `/matrix/panel-hospitals`, `/status`, and one `/share/<uuid>` route. See [docs/ACCESSIBILITY.md](./docs/ACCESSIBILITY.md). |
+| WCAG 2.1 AA audit | 0 Axe violations / Lighthouse 100 | Local audit on 2026-07-02 covered `/`, `/matrix/panel-hospitals`, `/status`, and one `/share?plans=<refs>` route. See [docs/ACCESSIBILITY.md](./docs/ACCESSIBILITY.md). |
 | 30-day lookups | Unavailable | No production Plausible/Umami/privacy-safe analytics deployment is claimed during Phases 1-4. |
 | Brochure alerts fired | Unavailable | Brochure history and pending-alert rows exist; no production alert dispatcher is claimed before Phase 5. |
 
 OGP/GovTech tooling scope: Postman.gov.sg email alerts, FormSG stale-data reports, and Go.gov.sg short links were evaluated in [ADR 0007](./docs/adr/0007-defer-ogp-tooling-integrations.md). No integration is currently claimed; each is deferred until public-sector ownership, access, and governance are confirmed.
 
-Cost posture: `$0/mo` target during portfolio validation on Supabase free tier, Netlify or Cloudflare Pages free tier, GitHub Actions free tier, and a free object-storage allowance for brochure PDFs. Any paid upgrade should be documented here before launch.
+Cost posture: `$0/mo` target during portfolio validation on Netlify or Cloudflare Pages free tier plus GitHub Actions free tier. Any paid upgrade should be documented here before launch.
 
 ## Open source
 
@@ -36,7 +36,6 @@ Portfolio artifacts:
 - [Accessibility audit](./docs/ACCESSIBILITY.md)
 - [Compliance posture](./docs/COMPLIANCE.md)
 - [Data model](./docs/DATA_MODEL.md)
-- [Backup and retention](./docs/BACKUP_RETENTION.md)
 - [Takedown runbook](./docs/TAKEDOWN_RUNBOOK.md)
 - [Succession runbook](./docs/SUCCESSION.md)
 - [Post-launch operations](./docs/OPERATIONS.md)
@@ -56,7 +55,7 @@ No production deployment is claimed during Phases 1-4. Phase 5 is the launch gat
 Deployment decision: restore Netlify first; see [deployment runbook](./docs/DEPLOYMENT.md). Production URL is not published from this repository yet.
 Before any public launch, run the [launch pre-flight](./docs/LAUNCH_PREFLIGHT.md) workflow against staging and record compliance sign-off status.
 
-Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supabase.yml).
+Sites are refreshed weekly on [SGT Monday 12am](./.github/workflows/refresh-static-data.yml). The scheduled workflow triggers a Netlify build hook; the build generates `/data/app-data.json`.
 The public scraper health dashboard is available at `/status` after the app is deployed.
 
 > [!IMPORTANT]
@@ -70,7 +69,7 @@ Run the no-credential local demo:
 docker compose up --build
 ```
 
-Open `http://localhost:5173`. The default stack starts the Vue frontend, FastAPI backend, and a small in-memory Supabase-compatible demo API on `http://localhost:54321` with seeded plan/fact/share rows. It does not require production Supabase credentials and does not deploy anything.
+Open `http://localhost:5173`. The default stack starts the Vue frontend and FastAPI PDF backend, then generates seeded static app data. It does not require production credentials and does not deploy anything.
 
 Common local commands:
 
@@ -80,7 +79,7 @@ TELEGRAM_BOT_TOKEN=<bot-token> docker compose --profile bot up bot
 docker compose down --volumes
 ```
 
-The compose file uses fake local keys only. Keep real `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, and `TELEGRAM_BOT_TOKEN` values in local `.env` files or GitHub Actions secrets, not in `docker-compose.yml`.
+Keep `TELEGRAM_BOT_TOKEN` and any observability credentials in local `.env` files or GitHub Actions secrets, not in `docker-compose.yml`.
 
 ## Environment variables
 
@@ -89,64 +88,55 @@ Use [`.env.example`](./.env.example) as the local template.
 Frontend variables are public and are bundled into the Vue app:
 
 ```sh
-VITE_SUPABASE_URL=
-VITE_SUPABASE_ANON_KEY=
-VITE_SHARE_ENDPOINT=
+VITE_STATIC_DATA_PATH=/data/app-data.json
+VITE_PDF_BRIEF_ENDPOINT=/briefs/client.pdf
 VITE_SITE_ORIGIN=
 ```
 
 Scraper/backend variables are private and must stay in local `.env` or GitHub Actions secrets:
 
 ```sh
-SUPABASE_URL=
-SUPABASE_DB_URL=
-SUPABASE_SECRET_KEY=
-BROCHURE_STORAGE_BUCKET=plan-brochures
+BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data
+NETLIFY_BUILD_HOOK_URL=
 TELEGRAM_BOT_TOKEN=
 SENTRY_DSN=
 SENTRY_ENVIRONMENT=local
 SENTRY_RELEASE=
 SENTRY_TRACES_SAMPLE_RATE=0
-R2_ENDPOINT_URL=
-R2_BACKUP_BUCKET=
-R2_ACCESS_KEY_ID=
-R2_SECRET_ACCESS_KEY=
-# or legacy fallback:
-SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, optional `VITE_SHARE_ENDPOINT`, and optional `VITE_SENTRY_*` variables for frontend-only error reporting.
+Netlify only needs `VITE_STATIC_DATA_PATH`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, and optional `VITE_SENTRY_*` variables for frontend-only error reporting.
 
-GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Scraper observability is optional through `SENTRY_DSN`. Nightly logical dumps require `SUPABASE_DB_URL`; optional R2 backup mirroring uses `R2_*` variables. Never expose `SUPABASE_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL`, `SENTRY_DSN`, `R2_SECRET_ACCESS_KEY`, or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
+GitHub Actions uses `NETLIFY_BUILD_HOOK_URL` to trigger scheduled rebuilds. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Scraper observability is optional through `SENTRY_DSN`. Never expose `SENTRY_DSN` or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
 
 ## Local checks
 
 ```sh
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 black --check src tests
 ruff check src tests
-python -m unittest discover -s tests -p "test_*.py"
+python3 -m unittest discover -s tests -p "test_*.py"
 npm --prefix src/be-sure-ance-app ci
 npm --prefix src/be-sure-ance-app run lint
 npm --prefix src/be-sure-ance-app run format:check
-(cd src/be-sure-ance-app && VITE_SUPABASE_URL=https://example.supabase.co VITE_SUPABASE_ANON_KEY=anon VITE_SITE_ORIGIN=https://example.com npm run build)
+(cd src/be-sure-ance-app && VITE_STATIC_DATA_PATH=/data/app-data.json VITE_SITE_ORIGIN=https://example.com npm run build)
 pre-commit run --all-files
 uvicorn src.backend.pdf_brief_api:app --reload
 ```
 
-The FastAPI backend exposes no-PII PDF and share-link endpoints. Share creation writes only selected `{insurer, plan_slug}` references to `comparison_shares`; `/share/<uuid>` reads that public row and reconstructs the comparison from current source-traceable plan tables.
+The FastAPI backend exposes the no-PII PDF endpoint for local development. Production PDF export is served by the Netlify Function at `/briefs/client.pdf`. Share links encode only selected `{insurer, plan_slug}` references in the URL and are not persisted server-side.
 
 Telegram lookup beta:
 
 ```sh
-python -m src.bot.telegram_bot
+python3 -m src.bot.telegram_bot
 ```
 
 See [Telegram bot beta](./docs/TELEGRAM_BOT.md) for token handling, commands, and deployment notes.
 
 ## Static plan pages and sitemap
 
-`npm run build` runs Vite, then generates `dist/plan/<insurer>/<plan-slug>/index.html`, `dist/sitemap.xml`, and `dist/robots.txt`. With real Supabase public env, the generator reads `plans` and `plan_facts`; with placeholder env it emits only the key-route sitemap so CI stays offline.
+`npm run build` generates `public/data/app-data.json`, runs Vite, then generates `dist/plan/<insurer>/<plan-slug>/index.html`, `dist/sitemap.xml`, and `dist/robots.txt`. The static page generator reads `plans` and `plan_facts` from the same app-data JSON used by the browser.
 
 Set `VITE_SITE_ORIGIN` to the canonical production origin before Phase 5 launch. Submit `<origin>/sitemap.xml` in Google Search Console and Bing Webmaster Tools only after deployment is restored.
 Use [search indexing](./docs/SEARCH_INDEXING.md) to record sitemap pre-flight, Google submission, and Bing submission status.
@@ -172,10 +162,9 @@ Use [search indexing](./docs/SEARCH_INDEXING.md) to record sitemap pre-flight, G
 
 ### Stack
 
-* [Frontend](./src/be-sure-ance-app/) - Vue 3, Vite, Supabase JS client.
-* [Backend](./src/) - Python scrapers, brochure capture/parsing, FastAPI PDF/share endpoints, and Telegram lookup bot.
-* [Database](./src/lib/create.sql) - Supabase Postgres with public read-only access and service-role writes.
-* [Storage](./src/backend/helper.py) - Supabase Storage for captured brochure PDFs.
+* [Frontend](./src/be-sure-ance-app/) - Vue 3, Vite, static JSON app data, localStorage shortlist state, and URL-only share links.
+* [Backend](./src/) - Python scrapers, local JSON table export, FastAPI local PDF endpoint, Netlify PDF Function, and Telegram lookup bot.
+* [Static data](./src/lib/static_app_data.py) - build-time exporter for `public/data/app-data.json`.
 
 ### Overview
 
@@ -183,17 +172,15 @@ Use [search indexing](./docs/SEARCH_INDEXING.md) to record sitemap pre-flight, G
 sequenceDiagram
     participant GitHub Workflow
     participant Backend Scraper
-    participant Supabase
-    participant Supabase Storage
+    participant Static JSON
     participant Frontend Vue.js
     participant Backend API
     participant IFA
 
-    GitHub Workflow->>Backend Scraper: Trigger scheduled workflow (Weekly Monday 12am)
-    Backend Scraper->>Backend Scraper: Scrape plan pages and capture brochures
-    Backend Scraper->>Supabase Storage: Store brochure PDF bytes by content hash
-    Backend Scraper->>Supabase: Upsert plans and source-traceable plan_facts
-    Frontend Vue.js->>Supabase: Fetch plans, plan_facts, and provider resources
+    GitHub Workflow->>Backend Scraper: Trigger Netlify build hook weekly
+    Backend Scraper->>Backend Scraper: Scrape plan pages and capture source metadata
+    Backend Scraper->>Static JSON: Write app-data.json during build
+    Frontend Vue.js->>Static JSON: Fetch plans, plan_facts, and provider resources
     Frontend Vue.js->>Backend API: Request no-PII PDF brief for up to 3 selected plans and session branding
     Frontend Vue.js->>IFA: Render qualitative comparison workspace with provenance
 ```

@@ -19,7 +19,7 @@ class LaunchPreflightDocsTests(unittest.TestCase):
             "Compliance lawyer sign-off status: blocked - not obtained as of 2026-07-02.",
             "/matrix/panel-hospitals",
             "/status",
-            "/share/11111111-2222-4333-8444-555555555555",
+            "/share?plans=aia:healthshield-gold-max-demo",
             "--load-requests 24",
             "Performance >= 90",
             "Accessibility >= 90",
@@ -35,11 +35,11 @@ class LaunchPreflightDocsTests(unittest.TestCase):
         for required in (
             "name: staging-preflight",
             "STAGING_ORIGIN",
-            "python scripts/staging_preflight.py",
+            "python3 scripts/staging_preflight.py",
             "--load-concurrency 3",
             "npx --yes lighthouse",
             "--only-categories=performance,accessibility,best-practices,seo",
-            "python scripts/lighthouse_score_gate.py",
+            "python3 scripts/lighthouse_score_gate.py",
             "--minimum 0.9",
             "actions/upload-artifact@v4",
         ):

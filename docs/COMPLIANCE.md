@@ -24,11 +24,11 @@ Current behavior:
 - No client data capture, CRM notes, or generated advice records.
 - No client names, NRIC/FIN, contact details, health information, financial profile, or meeting notes are stored.
 - PDF brief generation accepts up to three selected plan payloads plus optional session-only agent name and MAS representative number, returns a PDF response, and does not persist client or agent details.
-- Frontend reads public `plans`, `plan_facts`, and provider-resource data with the Supabase anon key.
-- Scrapers write only plan/source metadata with server-side Supabase credentials.
+- Frontend reads public `plans`, `plan_facts`, and provider-resource data from `/data/app-data.json`.
+- Build-time scrapers write only plan/source metadata into local JSON tables that are exported into static app data.
 - MAS regulatory-event rows are source-linked and dated; low-confidence carrier matches must be shown as review-needed context, not definitive carrier findings.
 - Brochure change-alert rows store source URLs, hashes, timestamps, generated diffs, and alert status only; no subscriber, client, or agent PII is stored.
-- Saved comparison links store only selected `insurer` and `plan_slug` references plus aggregate view counts; no client, agent, visitor, account, cookie, IP address, or user-agent data is stored in `comparison_shares`.
+- Share links encode only selected `insurer` and `plan_slug` references in the URL. No server-side share records, visitor records, cookies, IP addresses, user agents, or view counts are stored.
 - Telegram bot beta responses are read-only plan lookups with no-advice wording. The repository does not persist Telegram chat IDs, usernames, phone numbers, or message text; in-memory rate limiting is the only bot-side abuse control.
 
 Before relaunch:
@@ -49,7 +49,7 @@ Current behavior:
 - Frontend reporting uses `VITE_SENTRY_DSN`, `VITE_SENTRY_ENVIRONMENT`, `VITE_SENTRY_RELEASE`, and `VITE_SENTRY_TRACES_SAMPLE_RATE`.
 - Scraper/backend reporting uses `SENTRY_DSN`, `SENTRY_ENVIRONMENT`, `SENTRY_RELEASE`, and `SENTRY_TRACES_SAMPLE_RATE`.
 - SDKs are initialized with default PII disabled.
-- Event scrubbers redact authorization headers, cookies, Supabase keys, Telegram bot tokens, Sentry DSNs, bearer tokens, service-role JWT-like values, and `sb_secret_*` values before sending.
+- Event scrubbers redact authorization headers, cookies, Telegram bot tokens, Sentry DSNs, bearer tokens, and JWT-like values before sending.
 - Scraper exception context is limited to carrier key, source URL, command context, and sanitized exception metadata.
 - `/status` shows aggregate failing-rate and validation state, not raw exception messages.
 

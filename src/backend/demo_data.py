@@ -299,15 +299,6 @@ DEMO_TABLES = {
             "summary": "Demo brochure hash changed; review source document.",
         }
     ],
-    "comparison_shares": [
-        {
-            "id": "11111111-2222-4333-8444-555555555555",
-            "selected_plans": [{"insurer": "aia", "plan_slug": "healthshield-gold-max-demo"}],
-            "view_count": 0,
-            "created_at": DEMO_TIMESTAMP,
-            "last_viewed_at": None,
-        }
-    ],
     "carrier_canonical_names": [
         {
             "id": 1,

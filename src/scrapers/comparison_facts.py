@@ -5,7 +5,7 @@ import json
 import re
 
 import src.backend.helper as helper
-from src.backend.helper import initialize_supabase, overwrite_generic_table_data
+from src.backend.helper import initialize_data_store, overwrite_generic_table_data
 
 SUPPORTED_INSURERS = (
     "aia",
@@ -45,7 +45,7 @@ def slugify(value: str) -> str:
 
 
 def fetch_rows(insurer: str) -> list[dict]:
-    response = helper.supabase.table("plans").select("*").eq("insurer", insurer).execute()
+    response = helper.require_client().table("plans").select("*").eq("insurer", insurer).execute()
     return response.data or []
 
 
@@ -119,7 +119,9 @@ def build_fact_row(insurer: str, plan: dict, specialist_resource_count: int) -> 
 
 
 def build_specialist_resource_counts() -> dict[tuple[str, str], int]:
-    response = helper.supabase.table("specialist_resources").select("insurer, plan_name").execute()
+    response = (
+        helper.require_client().table("specialist_resources").select("insurer, plan_name").execute()
+    )
     rows = response.data or []
     counts: dict[tuple[str, str], int] = {}
     for row in rows:
@@ -157,7 +159,7 @@ def main():
         else list(SUPPORTED_INSURERS)
     )
 
-    initialize_supabase()
+    initialize_data_store()
     rows = build_comparison_rows(insurers=insurers, max_plans=args.max_plans)
 
     summary = {

@@ -97,7 +97,7 @@ class FakeQuery:
         return type("Response", (), {"data": rows})()
 
 
-class FakeSupabase:
+class FakeLocalClient:
     def __init__(self):
         self.bucket = FakeStorageBucket()
         self.storage = FakeStorage(self.bucket)
@@ -114,16 +114,16 @@ class FakeSupabase:
 
 class BrochureCaptureTests(unittest.TestCase):
     def setUp(self):
-        self.previous_supabase = helper.supabase
-        self.previous_key = helper._supabase_key
+        self.previous_client = helper.injected_client
+        self.previous_key = helper._write_key
         self.previous_bucket = helper.os.environ.get("BROCHURE_STORAGE_BUCKET")
-        helper.supabase = FakeSupabase()
-        helper._supabase_key = "sb_secret_test"
+        helper.injected_client = FakeLocalClient()
+        helper._write_key = "local-test-key"
         helper.os.environ["BROCHURE_STORAGE_BUCKET"] = "plan-brochures-test"
 
     def tearDown(self):
-        helper.supabase = self.previous_supabase
-        helper._supabase_key = self.previous_key
+        helper.injected_client = self.previous_client
+        helper._write_key = self.previous_key
         if self.previous_bucket is None:
             helper.os.environ.pop("BROCHURE_STORAGE_BUCKET", None)
         else:
@@ -172,22 +172,22 @@ class BrochureCaptureTests(unittest.TestCase):
         self.assertEqual(fact["field_value"]["value"]["sha256"], content_hash)
         self.assertEqual(fact["field_value"]["value"]["storage_key"], expected_key)
         self.assertEqual(fact["field_value"]["value"]["size_bytes"], len(content))
-        self.assertEqual(helper.supabase.storage.bucket_names, ["plan-brochures-test"])
-        self.assertEqual(helper.supabase.bucket.uploads[0][0], expected_key)
-        self.assertEqual(helper.supabase.bucket.uploads[0][1], content)
-        self.assertEqual(helper.supabase.bucket.uploads[0][2]["upsert"], "true")
+        self.assertEqual(helper.injected_client.storage.bucket_names, ["plan-brochures-test"])
+        self.assertEqual(helper.injected_client.bucket.uploads[0][0], expected_key)
+        self.assertEqual(helper.injected_client.bucket.uploads[0][1], content)
+        self.assertEqual(helper.injected_client.bucket.uploads[0][2]["upsert"], "true")
         self.assertEqual(
-            helper.supabase.tables,
+            helper.injected_client.tables,
             ["plan_facts", "brochure_version_history", "brochure_version_history"],
         )
         self.assertEqual(
-            helper.supabase.upserts["plan_facts"][0][1],
+            helper.injected_client.upserts["plan_facts"][0][1],
             "insurer,plan_slug,field_name",
         )
-        version_row = helper.supabase.upserts["brochure_version_history"][0][0][0]
+        version_row = helper.injected_client.upserts["brochure_version_history"][0][0][0]
         self.assertEqual(version_row["sha256"], content_hash)
         self.assertEqual(version_row["source_url"], "https://example.com/sample.pdf")
-        self.assertEqual(helper.supabase.upserts["brochure_change_alerts"], [])
+        self.assertEqual(helper.injected_client.upserts["brochure_change_alerts"], [])
 
     def test_failed_brochure_capture_returns_none_without_upsert(self):
         result = helper.capture_brochure_for_plan(
@@ -201,8 +201,8 @@ class BrochureCaptureTests(unittest.TestCase):
         )
 
         self.assertIsNone(result)
-        self.assertEqual(helper.supabase.bucket.uploads, [])
-        self.assertEqual(dict(helper.supabase.upserts), {})
+        self.assertEqual(helper.injected_client.bucket.uploads, [])
+        self.assertEqual(dict(helper.injected_client.upserts), {})
 
     def test_record_brochure_version_updates_seen_for_unchanged_hash(self):
         content = b"current"
@@ -219,7 +219,7 @@ class BrochureCaptureTests(unittest.TestCase):
             {"content": content, "content_type": "application/pdf", "last_modified_at": None},
             captured_at,
         )
-        helper.supabase.select_rows["brochure_version_history"] = [
+        helper.injected_client.select_rows["brochure_version_history"] = [
             {
                 "id": 7,
                 "insurer": "aia",
@@ -235,10 +235,10 @@ class BrochureCaptureTests(unittest.TestCase):
 
         self.assertEqual(result["status"], "unchanged")
         self.assertEqual(
-            helper.supabase.updates["brochure_version_history"],
+            helper.injected_client.updates["brochure_version_history"],
             [({"last_seen_at": captured_at}, [("id", 7)])],
         )
-        self.assertEqual(helper.supabase.upserts["brochure_change_alerts"], [])
+        self.assertEqual(helper.injected_client.upserts["brochure_change_alerts"], [])
 
     def test_record_brochure_version_creates_alert_for_changed_hash(self):
         content = b"current"
@@ -255,7 +255,7 @@ class BrochureCaptureTests(unittest.TestCase):
             {"content": content, "content_type": "application/pdf", "last_modified_at": None},
             captured_at,
         )
-        helper.supabase.select_rows["brochure_version_history"] = [
+        helper.injected_client.select_rows["brochure_version_history"] = [
             {
                 "id": 7,
                 "insurer": "aia",
@@ -274,10 +274,10 @@ class BrochureCaptureTests(unittest.TestCase):
 
         self.assertEqual(result["status"], "changed")
         self.assertEqual(
-            helper.supabase.upserts["brochure_version_history"][0][1],
+            helper.injected_client.upserts["brochure_version_history"][0][1],
             "insurer,plan_slug,source_url,sha256",
         )
-        alert = helper.supabase.upserts["brochure_change_alerts"][0][0][0]
+        alert = helper.injected_client.upserts["brochure_change_alerts"][0][0][0]
         self.assertEqual(alert["previous_sha256"], "previous-hash")
         self.assertEqual(alert["current_sha256"], content_hash)
         self.assertEqual(alert["source_url"], "https://example.com/sample.pdf")

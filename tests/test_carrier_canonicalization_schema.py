@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MIGRATION_SQL = (ROOT / "src/lib/migrations/0008_carrier_canonical_names.sql").read_text()
 CREATE_SQL = (ROOT / "src/lib/create.sql").read_text()
-WORKFLOW = (ROOT / ".github/workflows/scrape-to-supabase.yml").read_text()
+STATIC_APP_DATA = (ROOT / "src/lib/static_app_data.py").read_text()
 
 
 class CarrierCanonicalizationSchemaTests(unittest.TestCase):
@@ -30,8 +30,7 @@ class CarrierCanonicalizationSchemaTests(unittest.TestCase):
                 self.assertIn(required, MIGRATION_SQL)
 
     def test_workflow_refreshes_carrier_canonicalization(self):
-        self.assertIn("Ingest carrier canonical names", WORKFLOW)
-        self.assertIn("python -m src.scrapers.carrier_canonicalization", WORKFLOW)
+        self.assertIn("src.scrapers.carrier_canonicalization", STATIC_APP_DATA)
 
 
 if __name__ == "__main__":

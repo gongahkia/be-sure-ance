@@ -12,7 +12,7 @@ The Phase 1 data model introduced `public.plans` with `(insurer, plan_slug)` as 
 
 ## Decision
 
-Use `public.plans` as the canonical plan catalog. Store carrier identity in the `insurer` column, keep `plan_slug` stable per carrier, and query plans through one public read-only Supabase path.
+Use `public.plans` as the canonical plan catalog. The generated static app data exports that shape into one public JSON path. Store carrier identity in the `insurer` column and keep `plan_slug` stable per carrier.
 
 Writes remain service-role only. Public clients receive read-only access through RLS and explicit grants.
 

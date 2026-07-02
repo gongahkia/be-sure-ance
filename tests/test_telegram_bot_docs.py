@@ -17,7 +17,7 @@ class TelegramBotDocsTests(unittest.TestCase):
     def test_bot_token_and_deploy_path_are_documented(self):
         for required in (
             "TELEGRAM_BOT_TOKEN=",
-            "python -m src.bot.telegram_bot",
+            "python3 -m src.bot.telegram_bot",
             "/panel <hospital name>",
             "/fact <plan name or slug>",
             "Do not expose `TELEGRAM_BOT_TOKEN`",

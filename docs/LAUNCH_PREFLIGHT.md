@@ -22,7 +22,7 @@ The `staging-preflight` workflow checks these routes:
 - `/`
 - `/matrix/panel-hospitals`
 - `/status`
-- `/share/11111111-2222-4333-8444-555555555555`
+- `/share?plans=aia:healthshield-gold-max-demo`
 - `/sitemap.xml`
 - `/robots.txt`
 
@@ -56,7 +56,7 @@ The `staging-preflight` workflow runs Lighthouse on:
 - `/`
 - `/matrix/panel-hospitals`
 - `/status`
-- `/share/11111111-2222-4333-8444-555555555555`
+- `/share?plans=aia:healthshield-gold-max-demo`
 
 Required categories:
 
@@ -106,7 +106,7 @@ Before launch, obtain Singapore fintech/compliance lawyer review of:
 
 - live user-facing copy and disclaimers
 - scraper behavior, robots.txt handling, and source-owner takedown path
-- Supabase RLS and public anon-read surface
+- static app-data generation and public data surface
 - hosting logs, analytics, Sentry, and retention settings
 - Telegram bot launch scope if enabled
 

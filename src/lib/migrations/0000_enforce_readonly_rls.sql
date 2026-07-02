@@ -43,7 +43,6 @@ DECLARE
         'plans',
         'specialist_resources',
         'plan_comparison_facts',
-        'comparison_shares',
         'plan_facts',
         'moh_institutions',
         'claim_turnaround_metrics',

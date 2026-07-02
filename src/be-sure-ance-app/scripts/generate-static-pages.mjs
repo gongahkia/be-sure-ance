@@ -50,70 +50,31 @@ async function main() {
 }
 
 async function loadStaticData() {
-  if (process.env.STATIC_PLAN_EXPORT_PATH) {
-    const payloadPath = resolvePath(process.env.STATIC_PLAN_EXPORT_PATH, process.cwd())
-    const payload = JSON.parse(await readFile(payloadPath, 'utf8'))
-    return {
-      plans: payload.plans || [],
-      planFacts: payload.plan_facts || payload.planFacts || [],
+  const candidatePaths = [
+    process.env.STATIC_PLAN_EXPORT_PATH
+      ? resolvePath(process.env.STATIC_PLAN_EXPORT_PATH, process.cwd())
+      : '',
+    path.join(distDir, 'data', 'app-data.json'),
+    path.join(appRoot, 'public', 'data', 'app-data.json'),
+  ].filter(Boolean)
+
+  for (const payloadPath of candidatePaths) {
+    try {
+      const payload = JSON.parse(await readFile(payloadPath, 'utf8'))
+      const source = payload.tables || payload
+      return {
+        plans: source.plans || [],
+        planFacts: source.plan_facts || source.planFacts || [],
+      }
+    } catch (error) {
+      if (process.env.STATIC_PLAN_EXPORT_PATH) {
+        throw error
+      }
     }
   }
 
-  if (!hasUsableSupabaseEnv()) {
-    console.log('static_pages: skipped_supabase_placeholder_env')
-    return { plans: [], planFacts: [] }
-  }
-
-  const [plans, planFacts] = await Promise.all([
-    fetchSupabaseTable('plans'),
-    fetchSupabaseTable('plan_facts'),
-  ])
-  return { plans, planFacts }
-}
-
-function hasUsableSupabaseEnv() {
-  const supabaseUrl = process.env.VITE_SUPABASE_URL || ''
-  const anonKey = process.env.VITE_SUPABASE_ANON_KEY || ''
-  if (!supabaseUrl || !anonKey) {
-    return false
-  }
-  if (supabaseUrl.includes('example.supabase.co')) {
-    return false
-  }
-  if (['anon', 'your-anon-or-sb-publishable-key'].includes(anonKey)) {
-    return false
-  }
-  return true
-}
-
-async function fetchSupabaseTable(tableName) {
-  const rows = []
-  const pageSize = 1000
-  let offset = 0
-
-  while (true) {
-    const url = new URL(`/rest/v1/${tableName}`, process.env.VITE_SUPABASE_URL)
-    url.searchParams.set('select', '*')
-    url.searchParams.set('limit', String(pageSize))
-    url.searchParams.set('offset', String(offset))
-
-    const response = await fetch(url, {
-      headers: {
-        apikey: process.env.VITE_SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${process.env.VITE_SUPABASE_ANON_KEY}`,
-      },
-    })
-    if (!response.ok) {
-      throw new Error(`Unable to fetch ${tableName}: ${response.status}`)
-    }
-
-    const batch = await response.json()
-    rows.push(...batch)
-    if (batch.length < pageSize) {
-      return rows
-    }
-    offset += batch.length
-  }
+  console.log('static_pages: skipped_missing_static_data')
+  return { plans: [], planFacts: [] }
 }
 
 function normalizePlans(plans) {

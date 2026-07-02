@@ -119,16 +119,16 @@ class BrochureFactsTests(unittest.TestCase):
         self.assertNotIn("premium", serialized)
         self.assertNotIn("s$500", serialized)
 
-    def test_dry_run_without_supabase_client_exits_cleanly(self):
-        previous_client = helper.supabase
-        helper.supabase = None
+    def test_dry_run_without_local_client_exits_cleanly(self):
+        previous_client = helper.injected_client
+        helper.injected_client = None
         output = io.StringIO()
         try:
             with patch.object(sys, "argv", ["brochure_facts.py", "--dry-run"]):
                 with redirect_stdout(output):
                     main()
         finally:
-            helper.supabase = previous_client
+            helper.injected_client = previous_client
 
         self.assertIn('"plan_fact_count": 0', output.getvalue())
 

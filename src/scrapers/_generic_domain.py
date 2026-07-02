@@ -10,7 +10,7 @@ from urllib.parse import urldefrag, urljoin, urlparse
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
-from src.backend.helper import initialize_supabase, overwrite_plans_for_insurer
+from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
 from src.lib.search import search_wrapper
 from src.scrapers.navigation import goto_with_retry, new_bot_context
 
@@ -271,5 +271,5 @@ def run_cli_scraper(config: GenericScraperConfig, module_doc: str | None):
     if args.dry_run or not rows:
         return
 
-    initialize_supabase()
+    initialize_data_store()
     overwrite_plans_for_insurer(config.table_name, rows)

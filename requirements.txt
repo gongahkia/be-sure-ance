@@ -2,7 +2,6 @@ pre-commit
 black==26.5.1
 ruff==0.15.20
 fastapi
-supabase
 playwright
 python-dotenv
 requests

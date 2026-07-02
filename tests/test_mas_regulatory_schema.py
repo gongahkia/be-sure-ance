@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CREATE_SQL = (ROOT / "src/lib/create.sql").read_text()
 MIGRATION_SQL = (ROOT / "src/lib/migrations/0005_mas_regulatory_events.sql").read_text()
 RLS_SQL = (ROOT / "src/lib/migrations/0000_enforce_readonly_rls.sql").read_text()
-WORKFLOW = (ROOT / ".github/workflows/scrape-to-supabase.yml").read_text()
+STATIC_APP_DATA = (ROOT / "src/lib/static_app_data.py").read_text()
 COMPLIANCE = (ROOT / "docs/COMPLIANCE.md").read_text()
 
 
@@ -35,7 +35,7 @@ class MasRegulatorySchemaTests(unittest.TestCase):
                 self.assertIn(required, combined)
 
     def test_workflow_and_compliance_docs_cover_mas_regulatory_events(self):
-        self.assertIn("python -m src.scrapers.mas_regulatory", WORKFLOW)
+        self.assertIn("src.scrapers.mas_regulatory", STATIC_APP_DATA)
         self.assertIn("MAS regulatory-event rows are source-linked and dated", COMPLIANCE)
         self.assertIn("review-needed context", COMPLIANCE)
 

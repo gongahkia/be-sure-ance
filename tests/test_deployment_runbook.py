@@ -29,29 +29,25 @@ class DeploymentRunbookTests(unittest.TestCase):
 
     def test_frontend_env_allowlist_excludes_private_keys(self):
         for allowed in (
-            "VITE_SUPABASE_URL",
-            "VITE_SUPABASE_ANON_KEY",
             "VITE_SITE_ORIGIN",
+            "VITE_STATIC_DATA_PATH",
+            "VITE_PDF_BRIEF_ENDPOINT",
             "optional `VITE_SENTRY_*`",
         ):
             with self.subTest(allowed=allowed):
                 self.assertIn(allowed, DEPLOYMENT)
 
         for forbidden in (
-            "SUPABASE_SECRET_KEY",
-            "SUPABASE_SERVICE_ROLE_KEY",
-            "SUPABASE_DB_URL",
-            "R2_SECRET_ACCESS_KEY",
             "TELEGRAM_BOT_TOKEN",
+            "SENTRY_DSN",
         ):
             with self.subTest(forbidden=forbidden):
                 self.assertIn(forbidden, DEPLOYMENT)
 
     def test_netlify_config_supports_vite_spa_and_security_headers(self):
         for required in (
-            'base = "src/be-sure-ance-app"',
-            'command = "npm run build"',
-            'publish = "dist"',
+            'publish = "src/be-sure-ance-app/dist"',
+            'functions = "netlify/functions"',
             'from = "/*"',
             'to = "/index.html"',
             "Content-Security-Policy",

@@ -22,7 +22,7 @@ class FakeQuery:
         return type("Response", (), {"data": self.rows})()
 
 
-class FakeSupabase:
+class FakeLocalClient:
     def __init__(self, rows):
         self.rows = rows
         self.tables = []
@@ -35,19 +35,19 @@ class FakeSupabase:
 
 class PlansSourceTests(unittest.TestCase):
     def tearDown(self):
-        helper.supabase = None
+        helper.injected_client = None
 
     def test_comparison_facts_fetches_from_plans_by_insurer(self):
-        fake = FakeSupabase([{"plan_name": "x"}])
-        comparison_facts.helper.supabase = fake
+        fake = FakeLocalClient([{"plan_name": "x"}])
+        comparison_facts.helper.injected_client = fake
 
         self.assertEqual(comparison_facts.fetch_rows("aia"), [{"plan_name": "x"}])
         self.assertEqual(fake.tables, ["plans"])
         self.assertIn(("eq", "insurer", "aia"), fake.query.calls)
 
     def test_panel_resources_fetches_from_plans_by_insurer(self):
-        fake = FakeSupabase([{"plan_name": "x"}])
-        panel_resources.helper.supabase = fake
+        fake = FakeLocalClient([{"plan_name": "x"}])
+        panel_resources.helper.injected_client = fake
 
         self.assertEqual(panel_resources.fetch_plans("aia"), [{"plan_name": "x"}])
         self.assertEqual(fake.tables, ["plans"])

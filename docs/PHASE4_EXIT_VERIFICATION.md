@@ -33,21 +33,21 @@ Reviewer-facing operating docs exist:
 
 - `docs/COMPLIANCE.md`: PDPA stance, MAS FAA/no-advice boundary, observability, scraping ethics, takedown handling, and lawyer-review launch gate.
 - `docs/DATA_MODEL.md`: source-traceable `plan_facts`, `scraper_health`, brochure history, open dataset fields, and public/private data boundaries.
-- `docs/SUCCESSION.md`: credential inventory locations, weekly operations, backup restore pointer, takedown flow, scraper failure flow, and shutdown path.
-- `docs/BACKUP_RETENTION.md`: nightly logical dump artifact, 30-day retention, R2 mirror option, restore procedure, and no-secret local smoke test.
+- `docs/SUCCESSION.md`: credential inventory locations, weekly operations, takedown flow, scraper failure flow, and shutdown path.
+- `docs/BACKUP_RETENTION.md`: superseded by static build data and open dataset artifacts.
 - `docs/TAKEDOWN_RUNBOOK.md`: source-removal steps, SLA, private intake fields, User-Agent, robots.txt, and takedown contact.
 
 Status and observability evidence exists:
 
 - `/status` is backed by the `scraper_health` table and hides raw errors from public clients.
-- Sentry is optional for frontend and scraper paths; scrubbers redact Supabase keys, service-role tokens, Telegram tokens, Sentry DSNs, bearer tokens, and `sb_secret_*` values.
-- GitHub workflows cover CI, weekly scraping, validation snapshots, open dataset publication, and nightly Supabase backup artifacts.
+- Sentry is optional for frontend and scraper paths; scrubbers redact Telegram tokens, Sentry DSNs, bearer tokens, and JWT-like values.
+- GitHub workflows cover CI, refresh workflow logs, validation snapshots, and open dataset publication.
 
 ## Portfolio Evidence
 
 WCAG evidence is recorded:
 
-- `docs/ACCESSIBILITY.md` reports 0 Axe violations / Lighthouse 100 for `/`, `/matrix/panel-hospitals`, `/status`, and `/share/<uuid>`.
+- `docs/ACCESSIBILITY.md` reports 0 Axe violations / Lighthouse 100 for `/`, `/matrix/panel-hospitals`, `/status`, and `/share?plans=<refs>`.
 - Manual screen-reader testing remains a Phase 5 prelaunch requirement because automated tools cannot prove full WCAG conformance.
 
 Open dataset path is present:
@@ -66,7 +66,7 @@ Case-study and storytelling path is started without inventing traction:
 Focused Phase 4 evidence:
 
 - `tests/test_accessibility_audit_docs.py`
-- `tests/test_backup_and_ethics.py`
+- static build data and open dataset artifact checks
 - `tests/test_compliance_doc.py`
 - `tests/test_open_dataset.py`
 - `tests/test_open_dataset_docs.py`
@@ -82,7 +82,7 @@ Full local gates for this record:
 - `/tmp/be-sure-ance-venv/bin/python -m unittest discover -s tests`
 - `npm run lint` in `src/be-sure-ance-app`
 - `npm run format:check` in `src/be-sure-ance-app`
-- `VITE_SUPABASE_URL=https://example.supabase.co VITE_SUPABASE_ANON_KEY=anon VITE_SITE_ORIGIN=https://example.com npm run build` in `src/be-sure-ance-app`
+- `VITE_STATIC_DATA_PATH=/data/app-data.json VITE_SITE_ORIGIN=https://example.com npm run build` in `src/be-sure-ance-app`
 - `pre-commit run --all-files`
 - `git diff --check`
 
