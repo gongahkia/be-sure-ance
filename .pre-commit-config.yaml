@@ -3,12 +3,12 @@ repos:
     hooks:
       - id: black
         name: black
-        entry: black --check src tests
+        entry: black --check src tests scripts
         language: system
         pass_filenames: false
       - id: ruff
         name: ruff
-        entry: ruff check src tests
+        entry: ruff check src tests scripts
         language: system
         pass_filenames: false
       - id: frontend-lint

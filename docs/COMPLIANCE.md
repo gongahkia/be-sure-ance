@@ -137,3 +137,4 @@ Do not publicly relaunch until:
 - Robots.txt handling and User-Agent behavior are verified.
 - No PII collection is introduced without a PDPA review.
 - A Singapore fintech/compliance lawyer has reviewed the live behavior.
+- The [launch pre-flight runbook](./LAUNCH_PREFLIGHT.md) passes against staging and records compliance sign-off status.

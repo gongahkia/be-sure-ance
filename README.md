@@ -40,6 +40,7 @@ Portfolio artifacts:
 - [Takedown runbook](./docs/TAKEDOWN_RUNBOOK.md)
 - [Succession runbook](./docs/SUCCESSION.md)
 - [Phase 4 exit verification](./docs/PHASE4_EXIT_VERIFICATION.md)
+- [Launch pre-flight runbook](./docs/LAUNCH_PREFLIGHT.md)
 - [Pivot blog draft](./docs/blog/why-we-ripped-out-regex-derived-premiums.md)
 - [Case study template](./docs/case-studies/)
 - [Talk proposal](./docs/talks/)
@@ -47,6 +48,7 @@ Portfolio artifacts:
 ## Usage
 
 No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate for restoring Netlify or moving to another static host.
+Before any public launch, run the [launch pre-flight](./docs/LAUNCH_PREFLIGHT.md) workflow against staging and record compliance sign-off status.
 
 Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supabase.yml).
 The public scraper health dashboard is available at `/status` after the app is deployed.
