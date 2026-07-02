@@ -40,6 +40,24 @@ ON CONFLICT (insurer, plan_slug, field_name) DO UPDATE SET
 
 Public clients can read `plan_facts`. Only `service_role` can write.
 
+## Brochure Storage
+
+Raw brochure PDFs are stored in Supabase Storage. The default bucket is `plan-brochures`; override it with `BROCHURE_STORAGE_BUCKET`.
+
+Bucket setup:
+
+- Create a private Supabase Storage bucket named `plan-brochures`.
+- Grant scraper writes through the existing server-side `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY`.
+- Do not expose the bucket as a frontend public upload surface.
+
+Stored object keys are deterministic:
+
+```text
+brochures/{insurer}/{plan_slug}/{sha256}.pdf
+```
+
+Each successful capture writes a `plan_facts` row with `field_name = "brochure_metadata"` and `source_type = "brochure_pdf"`. `field_value.value` stores `url`, `sha256`, `storage_bucket`, `storage_key`, `size_bytes`, `content_type`, `fetched_at`, and `last_modified_at`.
+
 ## Fact Taxonomy V1
 
 The shared contract lives in `src/lib/plan_facts_contract.json`. Scrapers and frontend code must use those `field_name` values and JSON envelopes.
@@ -61,7 +79,7 @@ V1 fields:
 | `waiting_periods` | list | `{"status":"known","items":[{"condition":"Specified condition","duration_days":90,"raw_text":"90 days waiting period"}],"raw_text":"90 days waiting period","notes":[]}` |
 | `claim_deadlines` | list | `{"status":"known","items":[{"event":"Hospitalisation claim","deadline_days":30,"raw_text":"Submit within 30 days"}],"raw_text":"Submit within 30 days","notes":[]}` |
 | `claim_sla` | structured | `{"status":"known","value":{"duration_days":10,"basis":"published target"},"raw_text":"Claims are processed within 10 working days","notes":[]}` |
-| `brochure_metadata` | structured | `{"status":"known","value":{"url":"https://example.com/brochure.pdf","sha256":"example-sha256","content_type":"application/pdf","fetched_at":"2026-07-02T00:00:00Z","last_modified_at":null},"raw_text":"brochure.pdf","notes":[]}` |
+| `brochure_metadata` | structured | `{"status":"known","value":{"url":"https://example.com/brochure.pdf","sha256":"example-sha256","storage_bucket":"plan-brochures","storage_key":"brochures/aia/sample-plan/example-sha256.pdf","size_bytes":12345,"content_type":"application/pdf","fetched_at":"2026-07-02T00:00:00Z","last_modified_at":null},"raw_text":"brochure.pdf","notes":[]}` |
 | `source_notes` | list | `{"status":"known","items":["Brochure section heading found, but table layout needs manual review."],"raw_text":"Manual review note","notes":[]}` |
 
 The app must never infer premium amounts, deductibles, coinsurance, cash value projections, claim approval likelihood, medical advice, financial advice, plan recommendations, or panel membership without a source.

@@ -1,12 +1,16 @@
 # ----- required imports -----
 
 import base64
+import hashlib
 import json
 import os
 import re
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urlparse
 
+import requests
 from dotenv import load_dotenv
 from supabase import create_client
 
@@ -15,6 +19,11 @@ from supabase import create_client
 
 supabase = None
 _supabase_key = None
+DEFAULT_BROCHURE_STORAGE_BUCKET = "plan-brochures"
+BROCHURE_CAPTURE_FIELD = "brochure_metadata"
+BROCHURE_REQUEST_TIMEOUT_SECONDS = 30
+MAX_BROCHURE_BYTES = 20 * 1024 * 1024
+BROCHURE_USER_AGENT = "be-sure-ance-brochure-capture/1.0"
 
 
 def initialize_supabase():
@@ -105,6 +114,7 @@ def overwrite_plans_for_insurer(insurer, rows):
         print(f"Error upserting plans for {insurer}: No data returned")
     else:
         print(f"Plans upserted successfully for {insurer}.")
+        capture_brochures_for_plans(insurer, formatted_rows)
 
 
 def clear_plans_for_insurer(insurer):
@@ -216,6 +226,150 @@ def flatten_rows(data):
         else:
             rows.append(row)
     return rows
+
+
+def brochure_storage_bucket():
+    return os.getenv("BROCHURE_STORAGE_BUCKET") or DEFAULT_BROCHURE_STORAGE_BUCKET
+
+
+def is_allowed_brochure_url(url):
+    if not url:
+        return False
+    parsed = urlparse(str(url))
+    return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
+
+
+def sha256_bytes(content):
+    return hashlib.sha256(content).hexdigest()
+
+
+def build_brochure_storage_key(insurer, plan_slug, content_hash):
+    return f"brochures/{slugify(insurer)}/{slugify(plan_slug)}/{content_hash}.pdf"
+
+
+def download_brochure(url, session=None, request_timeout=BROCHURE_REQUEST_TIMEOUT_SECONDS):
+    if not is_allowed_brochure_url(url):
+        raise ValueError(f"Unsupported brochure URL: {url}")
+
+    client = session or requests
+    response = client.get(
+        url,
+        timeout=request_timeout,
+        headers={"User-Agent": BROCHURE_USER_AGENT},
+    )
+    response.raise_for_status()
+
+    content = response.content
+    content_type = response.headers.get("content-type", "").split(";")[0].strip().lower()
+    path = urlparse(url).path.lower()
+    if "pdf" not in content_type and not path.endswith(".pdf"):
+        raise ValueError(f"Brochure URL did not return a PDF: {url}")
+    if not content:
+        raise ValueError(f"Brochure download was empty: {url}")
+    if len(content) > MAX_BROCHURE_BYTES:
+        raise ValueError(f"Brochure exceeds {MAX_BROCHURE_BYTES} bytes: {url}")
+
+    return {
+        "content": content,
+        "content_type": content_type or "application/pdf",
+        "last_modified_at": response.headers.get("last-modified"),
+    }
+
+
+def upload_brochure_bytes(bucket, storage_key, content, content_type):
+    return (
+        require_client()
+        .storage.from_(bucket)
+        .upload(
+            storage_key,
+            content,
+            file_options={
+                "content-type": content_type or "application/pdf",
+                "upsert": "true",
+            },
+        )
+    )
+
+
+def build_brochure_metadata_fact(insurer, plan, download, captured_at):
+    content = download["content"]
+    content_hash = sha256_bytes(content)
+    bucket = brochure_storage_bucket()
+    storage_key = build_brochure_storage_key(insurer, plan["plan_slug"], content_hash)
+    source_url = plan["product_brochure_url"]
+
+    field_value = {
+        "status": "known",
+        "value": {
+            "url": source_url,
+            "sha256": content_hash,
+            "storage_bucket": bucket,
+            "storage_key": storage_key,
+            "size_bytes": len(content),
+            "content_type": download["content_type"],
+            "fetched_at": captured_at,
+            "last_modified_at": download["last_modified_at"],
+        },
+        "raw_text": Path(urlparse(source_url).path).name or "brochure.pdf",
+        "notes": [],
+    }
+    return {
+        "insurer": insurer,
+        "plan_slug": plan["plan_slug"],
+        "field_name": BROCHURE_CAPTURE_FIELD,
+        "field_value": field_value,
+        "source_url": source_url,
+        "source_type": "brochure_pdf",
+        "scraped_at": captured_at,
+        "last_verified_at": captured_at,
+    }
+
+
+def upsert_plan_fact(row):
+    require_write_key()
+    response = (
+        require_client()
+        .table("plan_facts")
+        .upsert([row], on_conflict="insurer,plan_slug,field_name")
+        .execute()
+    )
+    if response.data is None:
+        print(f"Plan fact upsert returned no data for {row['insurer']}/{row['plan_slug']}.")
+    return response
+
+
+def capture_brochure_for_plan(insurer, plan, session=None, captured_at=None):
+    source_url = plan.get("product_brochure_url")
+    if not source_url:
+        return None
+    captured_at = captured_at or datetime.now(timezone.utc).isoformat()
+
+    try:
+        require_write_key()
+        download = download_brochure(source_url, session=session)
+        fact_row = build_brochure_metadata_fact(insurer, plan, download, captured_at)
+        metadata = fact_row["field_value"]["value"]
+        upload_brochure_bytes(
+            metadata["storage_bucket"],
+            metadata["storage_key"],
+            download["content"],
+            metadata["content_type"],
+        )
+        upsert_plan_fact(fact_row)
+        print(f"Brochure captured for {insurer}/{plan['plan_slug']}: {metadata['sha256']}")
+        return fact_row
+    except Exception as error:
+        print(f"Brochure capture skipped for {insurer}/{plan.get('plan_slug')}: {error}")
+        return None
+
+
+def capture_brochures_for_plans(insurer, plans, session=None):
+    captured = []
+    for plan in plans:
+        result = capture_brochure_for_plan(insurer, plan, session=session)
+        if result:
+            captured.append(result)
+    return captured
 
 
 # ----- sample execution code -----

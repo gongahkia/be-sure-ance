@@ -15,6 +15,7 @@ class EnvironmentContractTests(unittest.TestCase):
         self.assertIn("VITE_SUPABASE_ANON_KEY=", env_example)
         self.assertIn("SUPABASE_SECRET_KEY=", env_example)
         self.assertIn("SUPABASE_SERVICE_ROLE_KEY=", env_example)
+        self.assertIn("BROCHURE_STORAGE_BUCKET=", env_example)
         self.assertIn("Never expose", env_example)
 
     def test_frontend_uses_anon_key_only(self):
@@ -31,6 +32,7 @@ class EnvironmentContractTests(unittest.TestCase):
 
         self.assertIn("SUPABASE_SECRET_KEY", workflow)
         self.assertIn("SUPABASE_SERVICE_ROLE_KEY", workflow)
+        self.assertIn("BROCHURE_STORAGE_BUCKET", workflow)
         self.assertNotIn("SUPABASE_KEY", workflow)
 
     def test_readme_documents_local_and_actions_secrets(self):
@@ -40,6 +42,7 @@ class EnvironmentContractTests(unittest.TestCase):
             "VITE_SUPABASE_ANON_KEY",
             "SUPABASE_SECRET_KEY",
             "SUPABASE_SERVICE_ROLE_KEY",
+            "BROCHURE_STORAGE_BUCKET",
             "Netlify only needs",
             "GitHub Actions requires",
             "Never expose",

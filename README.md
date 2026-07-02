@@ -35,13 +35,14 @@ Scraper/backend variables are private and must stay in local `.env` or GitHub Ac
 ```sh
 SUPABASE_URL=
 SUPABASE_SECRET_KEY=
+BROCHURE_STORAGE_BUCKET=plan-brochures
 # or legacy fallback:
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
 Netlify only needs the public frontend variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
 
-GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
+GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
 
 ## Local checks
 

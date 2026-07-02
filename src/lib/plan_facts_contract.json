@@ -166,6 +166,9 @@
         "value": {
           "url": "https://example.com/brochure.pdf",
           "sha256": "example-sha256",
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/aia/sample-plan/example-sha256.pdf",
+          "size_bytes": 12345,
           "content_type": "application/pdf",
           "fetched_at": "2026-07-02T00:00:00Z",
           "last_modified_at": null
