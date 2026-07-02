@@ -31,6 +31,16 @@ This repository is MIT licensed. Read [CONTRIBUTING.md](./CONTRIBUTING.md) befor
 
 Architecture decisions are recorded in [docs/adr](./docs/adr/).
 
+Portfolio artifacts:
+
+- [Accessibility audit](./docs/ACCESSIBILITY.md)
+- [Compliance posture](./docs/COMPLIANCE.md)
+- [Data model](./docs/DATA_MODEL.md)
+- [Succession runbook](./docs/SUCCESSION.md)
+- [Pivot blog draft](./docs/blog/why-we-ripped-out-regex-derived-premiums.md)
+- [Case study template](./docs/case-studies/)
+- [Talk proposal](./docs/talks/)
+
 ## Usage
 
 No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate for restoring Netlify or moving to another static host.

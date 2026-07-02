@@ -14,6 +14,8 @@
 
 `carrier_canonical_names` stores MAS FID and LIA member-directory cross-checks for tracked carrier keys. It is refreshed by the weekly scraper workflow and is used to expose source-backed canonical carrier names and review flags in UI/export surfaces.
 
+`scraper_health` stores public operational metadata for each carrier scraper, including support status, last success/failure timestamps, row count, validation status, and validation summary. It must not store raw secrets, request headers, client data, or full exception payloads.
+
 ## `plan_facts`
 
 Required columns:
@@ -117,6 +119,35 @@ Sources:
 Rows are upserted by `carrier_key`. The weekly scraper queries MAS FID with tracked carrier aliases and parses LIA ordinary-member links. `canonical_name` prefers a matched MAS FID entity, then a matched LIA member name, then the configured display name.
 
 `mas_match_status` and `lia_match_status` use `matched`, `needs_review`, or `unmatched`. `mismatch_flags` is non-empty when a source is missing, low-confidence, or when MAS and LIA source names diverge materially. UI and exports may display canonical names, but source flags must remain available so unresolved mismatches are not hidden.
+
+## `scraper_health`
+
+`scraper_health` powers the public `/status` page.
+
+- `carrier_key`
+- `display_name`
+- `support_status`
+- `last_success_at`
+- `last_failure_at`
+- `last_run_at`
+- `last_error`
+- `row_count`
+- `validation_status`
+- `validation_checked_at`
+- `validation_summary`
+- `updated_at`
+
+`support_status` is `supported` or `unsupported`.
+
+`validation_status` is one of `passed`, `failed`, `error`, `no_baseline`, `not_run`, or `unsupported`.
+
+Public clients should select only display-safe columns. The frontend does not request `last_error`; raw error text belongs in private logs or Sentry, not in the public status page. Stored error strings must be redacted and bounded if written for maintainer triage.
+
+Limitations:
+
+- `row_count` only proves a scraper wrote rows, not that every source fact is complete.
+- `validation_status = passed` means structural drift thresholds passed for configured targets; it does not prove the source content is semantically correct.
+- `unsupported` means the scraper is not part of the scheduled production set.
 
 ## `comparison_shares`
 
