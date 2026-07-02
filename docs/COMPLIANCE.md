@@ -96,6 +96,8 @@ Frontend behavior:
 - Stale verification states are shown by the provenance UI.
 - External provenance links use safe URL parsing plus `target="_blank"`, `rel="noopener noreferrer"`, and `referrerpolicy="no-referrer"`.
 
+Post-launch qualitative entries require quarterly licensed-advisor or compliance-qualified review as documented in [Post-launch operations cadence](./OPERATIONS.md).
+
 ## Scraping Ethics
 
 Operating policy:

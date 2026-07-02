@@ -52,6 +52,8 @@ The public `VITE_SUPABASE_ANON_KEY` and optional `VITE_SENTRY_DSN` can be presen
 
 ## Weekly Operations
 
+Use [Post-launch operations cadence](./OPERATIONS.md) for weekly, monthly, and quarterly review issue templates.
+
 1. Check GitHub Actions for `scrape-to-supabase`, `validate-scraper-snapshots`, `publish-open-dataset`, and CI.
 2. Check `nightly-supabase-backup` for a fresh 30-day artifact and optional R2 copy.
 3. Review `/status` for stale, failing, unsupported, or validation-failed carriers.

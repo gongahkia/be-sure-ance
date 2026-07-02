@@ -39,6 +39,7 @@ Portfolio artifacts:
 - [Backup and retention](./docs/BACKUP_RETENTION.md)
 - [Takedown runbook](./docs/TAKEDOWN_RUNBOOK.md)
 - [Succession runbook](./docs/SUCCESSION.md)
+- [Post-launch operations](./docs/OPERATIONS.md)
 - [Phase 4 exit verification](./docs/PHASE4_EXIT_VERIFICATION.md)
 - [Launch pre-flight runbook](./docs/LAUNCH_PREFLIGHT.md)
 - [Deployment runbook](./docs/DEPLOYMENT.md)
