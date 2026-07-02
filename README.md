@@ -41,6 +41,7 @@ Portfolio artifacts:
 - [Succession runbook](./docs/SUCCESSION.md)
 - [Post-launch operations](./docs/OPERATIONS.md)
 - [Phase 4 exit verification](./docs/PHASE4_EXIT_VERIFICATION.md)
+- [Phase 5 exit verification](./docs/PHASE5_EXIT_VERIFICATION.md)
 - [Launch pre-flight runbook](./docs/LAUNCH_PREFLIGHT.md)
 - [Deployment runbook](./docs/DEPLOYMENT.md)
 - [Search indexing runbook](./docs/SEARCH_INDEXING.md)
