@@ -13,7 +13,7 @@ No production deployment is claimed during Phases 1-4. Phase 5 is the launch gat
 Sites are scraped weekly on [SGT Monday 12am](./.github/workflows/scrape-to-supabase.yml).
 
 > [!IMPORTANT]
-> Read the [legal disclaimer](#legal-disclaimer) before using `Be-sure-ance`.
+> Read the [compliance posture](./docs/COMPLIANCE.md) and [legal disclaimer](#legal-disclaimer) before using `Be-sure-ance`.
 
 ## Environment variables
 
