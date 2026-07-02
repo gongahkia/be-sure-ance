@@ -2,9 +2,23 @@
 
 # `Be-sure-ance`
 
-`Be-sure-ance` is an IFA pre-meeting research tool for source-traceable qualitative metadata on Singapore insurance plans. [`compareFIRST`](https://www.comparefirst.sg/wap/homeEvent.action) remains the reference point for regulated quantitative life-insurance comparison; this project complements it with plan-grain qualitative facts that compareFIRST does not try to curate, such as panel/network clues, exclusions, claim process text, and brochure provenance.
+`Be-sure-ance` is a public-good IFA pre-meeting research tool for source-traceable qualitative metadata on Singapore insurance plans. [`compareFIRST`](https://www.comparefirst.sg/wap/homeEvent.action) remains the reference point for regulated quantitative life-insurance comparison; this project complements compareFIRST with plan-grain qualitative facts that it does not try to curate, such as panel/network clues, exclusions, claim process text, regulatory-event context, and brochure provenance.
+
+The civic value is narrow: reduce brochure-by-brochure manual checking, make stale or changed source material visible, and keep qualitative plan facts traceable to public carrier, MOH, LIA, or MAS sources before any licensed advisory workflow starts. Be-sure-ance does not replace compareFIRST, carrier brochures, or licensed financial advisers.
 
 The app does not provide financial advice, insurance advice, quotes, recommendations, suitability rankings, premium estimates, or cost projections. It is a research workspace for checking source-linked plan facts before using carrier documents, compareFIRST, or licensed advisory workflows.
+
+## Portfolio status
+
+| Signal | Current value | Evidence / caveat |
+| :-- | :-- | :-- |
+| Supported scheduled carriers | 10 | Test-backed from `src/scrapers/registry.py`; 17 more carriers remain experimental opt-in scrapers. |
+| MOH institutions available for panel normalization | 5,305 | Latest local dry-run on 2026-07-02; production refresh still depends on Phase 5 deployment. |
+| LIA claim metrics extracted | 12 | Latest local dry-run on 2026-07-02 against fixture/live parser path. |
+| 30-day lookups | Unavailable | No production Plausible/Umami/privacy-safe analytics deployment is claimed during Phases 1-4. |
+| Brochure alerts fired | Unavailable | Brochure history and pending-alert rows exist; no production alert dispatcher is claimed before Phase 5. |
+
+Cost posture: `$0/mo` target during portfolio validation on Supabase free tier, Netlify or Cloudflare Pages free tier, GitHub Actions free tier, and a free object-storage allowance for brochure PDFs. Any paid upgrade should be documented here before launch.
 
 ## Usage
 
