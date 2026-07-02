@@ -42,7 +42,8 @@ DECLARE
         'hsbc',
         'plans',
         'specialist_resources',
-        'plan_comparison_facts'
+        'plan_comparison_facts',
+        'plan_facts'
     ];
 BEGIN
     FOREACH tbl_name IN ARRAY table_list LOOP
