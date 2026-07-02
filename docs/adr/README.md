@@ -8,3 +8,4 @@ Accepted ADRs:
 - [ADR 0004: Migrate Frontend From Vue CLI To Vite](./0004-vue-cli-to-vite.md)
 - [ADR 0005: Use `plan_facts` As Source-Traceable Fact Model](./0005-plan-facts-provenance.md)
 - [ADR 0006: Defer Chrome MV3 Sidebar Extension](./0006-defer-chrome-extension-sidebar.md)
+- [ADR 0007: Defer OGP Tooling Integrations](./0007-defer-ogp-tooling-integrations.md)

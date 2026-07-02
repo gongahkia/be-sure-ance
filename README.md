@@ -20,6 +20,8 @@ The app does not provide financial advice, insurance advice, quotes, recommendat
 | 30-day lookups | Unavailable | No production Plausible/Umami/privacy-safe analytics deployment is claimed during Phases 1-4. |
 | Brochure alerts fired | Unavailable | Brochure history and pending-alert rows exist; no production alert dispatcher is claimed before Phase 5. |
 
+OGP/GovTech tooling scope: Postman.gov.sg email alerts, FormSG stale-data reports, and Go.gov.sg short links were evaluated in [ADR 0007](./docs/adr/0007-defer-ogp-tooling-integrations.md). No integration is currently claimed; each is deferred until public-sector ownership, access, and governance are confirmed.
+
 Cost posture: `$0/mo` target during portfolio validation on Supabase free tier, Netlify or Cloudflare Pages free tier, GitHub Actions free tier, and a free object-storage allowance for brochure PDFs. Any paid upgrade should be documented here before launch.
 
 ## Open source
