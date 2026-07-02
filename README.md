@@ -20,6 +20,10 @@ The app does not provide financial advice, insurance advice, quotes, recommendat
 
 Cost posture: `$0/mo` target during portfolio validation on Supabase free tier, Netlify or Cloudflare Pages free tier, GitHub Actions free tier, and a free object-storage allowance for brochure PDFs. Any paid upgrade should be documented here before launch.
 
+## Open source
+
+This repository is MIT licensed. Read [CONTRIBUTING.md](./CONTRIBUTING.md) before changing scrapers, data contracts, compliance wording, or deployment assumptions. Participation is governed by [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
+
 ## Usage
 
 No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate for restoring Netlify or moving to another static host.
