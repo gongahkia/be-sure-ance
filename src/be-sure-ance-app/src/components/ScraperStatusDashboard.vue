@@ -18,7 +18,7 @@
       </article>
     </div>
 
-    <div class="status-table-wrap">
+    <div class="status-table-wrap" tabindex="0" aria-label="Carrier scraper health table">
       <table>
         <thead>
           <tr>
@@ -231,6 +231,11 @@ function dateText(value) {
 
 .status-table-wrap {
   overflow-x: auto;
+}
+
+.status-table-wrap:focus {
+  outline: 3px solid #2f73c7;
+  outline-offset: 0.2rem;
 }
 
 table {

@@ -92,17 +92,17 @@
       {{ errorMessage }}
     </section>
 
-    <section v-else-if="activeView === 'panelMatrix'" class="matrix-workspace">
+    <main v-else-if="activeView === 'panelMatrix'" class="matrix-workspace">
       <PanelHospitalMatrix
         v-model:query="matrixSearchQuery"
         :plans="enrichedPlans"
         :providers="providers"
       />
-    </section>
+    </main>
 
-    <section v-else-if="activeView === 'scraperStatus'" class="status-workspace">
+    <main v-else-if="activeView === 'scraperStatus'" class="status-workspace">
       <ScraperStatusDashboard :health-rows="scraperHealth" :providers="providers" />
-    </section>
+    </main>
 
     <section v-else-if="activeView === 'sharedComparison'" class="shared-workspace">
       <main class="main-stage">
