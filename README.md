@@ -42,6 +42,7 @@ Portfolio artifacts:
 - [Phase 4 exit verification](./docs/PHASE4_EXIT_VERIFICATION.md)
 - [Launch pre-flight runbook](./docs/LAUNCH_PREFLIGHT.md)
 - [Deployment runbook](./docs/DEPLOYMENT.md)
+- [Search indexing runbook](./docs/SEARCH_INDEXING.md)
 - [Pivot blog draft](./docs/blog/why-we-ripped-out-regex-derived-premiums.md)
 - [Case study template](./docs/case-studies/)
 - [Talk proposal](./docs/talks/)
@@ -145,6 +146,7 @@ See [Telegram bot beta](./docs/TELEGRAM_BOT.md) for token handling, commands, an
 `npm run build` runs Vite, then generates `dist/plan/<insurer>/<plan-slug>/index.html`, `dist/sitemap.xml`, and `dist/robots.txt`. With real Supabase public env, the generator reads `plans` and `plan_facts`; with placeholder env it emits only the key-route sitemap so CI stays offline.
 
 Set `VITE_SITE_ORIGIN` to the canonical production origin before Phase 5 launch. Submit `<origin>/sitemap.xml` in Google Search Console and Bing Webmaster Tools only after deployment is restored.
+Use [search indexing](./docs/SEARCH_INDEXING.md) to record sitemap pre-flight, Google submission, and Bing submission status.
 
 ## Screenshots
 
