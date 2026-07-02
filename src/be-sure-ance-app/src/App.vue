@@ -89,6 +89,36 @@
       />
     </section>
 
+    <section v-else-if="activeView === 'sharedComparison'" class="shared-workspace">
+      <main class="main-stage">
+        <section class="toolbar">
+          <div>
+            <p class="eyebrow">Shared Comparison</p>
+            <h2>Shared plan set</h2>
+            <p class="toolbar-copy">{{ SHARE_DISCLAIMER }}</p>
+            <p v-if="sharedComparison" class="toolbar-copy">
+              Created {{ dateText(sharedComparison.created_at) }} · {{ shareViewText }}
+            </p>
+          </div>
+
+          <div class="toolbar-actions">
+            <a href="/" class="provider-link" @click="navigateTo('/', $event)"> Plan workspace </a>
+          </div>
+        </section>
+
+        <section v-if="sharedComparisonError" class="status-panel error">
+          {{ sharedComparisonError }}
+        </section>
+        <section v-else-if="sharedComparison && sharedPlans.length === 0" class="status-panel">
+          Shared comparison found, but referenced plans are not loaded in the current dataset.
+        </section>
+        <section v-else-if="!sharedComparison" class="status-panel">
+          Loading shared comparison...
+        </section>
+        <ComparisonTable v-else :selected-plans="sharedPlans" />
+      </main>
+    </section>
+
     <section v-else class="workspace">
       <ProviderRail
         :providers="providers"
@@ -149,6 +179,7 @@
 
         <ClaimTurnaroundBoard :metrics="claimTurnaroundMetrics" />
         <BriefExportPanel :selected-plans="selectedPlans" />
+        <ShareComparisonPanel :selected-plans="selectedPlans" />
         <ComparisonTable :selected-plans="selectedPlans" />
       </main>
     </section>
@@ -156,7 +187,7 @@
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 
 import BriefExportPanel from './components/BriefExportPanel.vue'
@@ -165,15 +196,22 @@ import ComparisonTable from './components/ComparisonTable.vue'
 import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
 import PlanCard from './components/PlanCard.vue'
 import ProviderRail from './components/ProviderRail.vue'
+import ShareComparisonPanel from './components/ShareComparisonPanel.vue'
 import { buildPlanKey, providers } from './lib/providers'
 import { safeExternalUrl } from './utils/links'
 
+const SHARE_DISCLAIMER =
+  'This shared comparison is for pre-meeting research only. It is not financial advice, insurance advice, legal advice, a recommendation, a ranking, a quote, or a policy transaction. Verify every fact against the carrier source, compareFIRST where applicable, and the adviser compliance workflow.'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null
+const shareEndpoint = computed(() => import.meta.env.VITE_SHARE_ENDPOINT || '/shares')
+const trackedShareViews = new Set()
 
 const loading = ref(true)
 const errorMessage = ref('')
+const sharedComparison = ref(null)
+const sharedComparisonError = ref('')
 const searchQuery = ref('')
 const matrixSearchQuery = ref('')
 const currentPath = ref(window.location.pathname)
@@ -243,6 +281,7 @@ async function fetchData() {
     claimTurnaroundMetrics.value = claimData || []
     masRegulatoryEvents.value = regulatoryData || []
     brochureChangeAlerts.value = brochureChangeData || []
+    await loadShareFromRoute()
   } catch (error) {
     errorMessage.value = error?.message || 'Unable to load qualitative plan data.'
   } finally {
@@ -259,10 +298,23 @@ onBeforeUnmount(() => {
   window.removeEventListener('popstate', syncPathFromLocation)
 })
 
-const activeView = computed(() =>
-  currentPath.value === '/matrix/panel-hospitals' ? 'panelMatrix' : 'workspace',
-)
+const currentShareId = computed(() => parseShareRoute(currentPath.value))
+const activeView = computed(() => {
+  if (currentPath.value === '/matrix/panel-hospitals') {
+    return 'panelMatrix'
+  }
+  if (currentShareId.value) {
+    return 'sharedComparison'
+  }
+  return 'workspace'
+})
 const routePlanTarget = computed(() => parsePlanRoute(currentPath.value))
+
+watch(currentShareId, () => {
+  if (!loading.value) {
+    loadShareFromRoute()
+  }
+})
 
 function syncPathFromLocation() {
   setCurrentPath(window.location.pathname)
@@ -304,6 +356,13 @@ function parsePlanRoute(path) {
     providerKey: decodePathPart(match[1]),
     planSlug: decodePathPart(match[2]),
   }
+}
+
+function parseShareRoute(path) {
+  const match = path.match(
+    /^\/share\/([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\/?$/,
+  )
+  return match ? match[1].toLowerCase() : ''
 }
 
 function decodePathPart(value) {
@@ -412,6 +471,22 @@ const enrichedPlans = computed(() =>
   ),
 )
 
+const sharedPlans = computed(() => {
+  const allPlans = enrichedPlans.value
+  return (sharedComparison.value?.selected_plans || [])
+    .map((planRef) =>
+      allPlans.find(
+        (plan) => plan.providerKey === planRef.insurer && plan.plan_slug === planRef.plan_slug,
+      ),
+    )
+    .filter(Boolean)
+})
+
+const shareViewText = computed(() => {
+  const count = Number(sharedComparison.value?.view_count || 0)
+  return `${count} ${count === 1 ? 'view' : 'views'}`
+})
+
 const activeProvider = computed(
   () => providers.find((provider) => provider.key === activeProviderKey.value) || providers[0],
 )
@@ -498,6 +573,74 @@ function stringifyFacts(facts) {
   return Object.values(facts || {})
     .map((fact) => JSON.stringify(fact.field_value || ''))
     .join(' ')
+}
+
+async function loadShareFromRoute() {
+  const shareId = currentShareId.value
+  sharedComparison.value = null
+  sharedComparisonError.value = ''
+  if (!shareId) {
+    return
+  }
+  if (!supabase) {
+    sharedComparisonError.value =
+      'Supabase configuration is missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.'
+    return
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('comparison_shares')
+      .select('*')
+      .eq('id', shareId)
+      .limit(1)
+    if (currentShareId.value !== shareId) {
+      return
+    }
+    if (error) {
+      throw error
+    }
+    const row = (data || [])[0]
+    if (!row) {
+      sharedComparisonError.value = 'Shared comparison not found.'
+      return
+    }
+    sharedComparison.value = {
+      ...row,
+      disclaimer: SHARE_DISCLAIMER,
+    }
+    trackShareView(shareId)
+  } catch (error) {
+    sharedComparisonError.value = error?.message || 'Unable to load shared comparison.'
+  }
+}
+
+async function trackShareView(shareId) {
+  if (trackedShareViews.has(shareId)) {
+    return
+  }
+  trackedShareViews.add(shareId)
+  try {
+    const response = await fetch(`${shareEndpoint.value}/${encodeURIComponent(shareId)}/view`, {
+      method: 'POST',
+    })
+    if (!response.ok) {
+      return
+    }
+    const payload = await response.json()
+    if (sharedComparison.value?.id === shareId && payload.view_count !== undefined) {
+      sharedComparison.value = {
+        ...sharedComparison.value,
+        view_count: payload.view_count,
+      }
+    }
+  } catch {
+    return
+  }
+}
+
+function dateText(value) {
+  return String(value || '').slice(0, 10) || 'Unknown date'
 }
 </script>
 
@@ -664,6 +807,10 @@ h1 {
 }
 
 .matrix-workspace {
+  margin-top: 1.5rem;
+}
+
+.shared-workspace {
   margin-top: 1.5rem;
 }
 

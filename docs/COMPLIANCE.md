@@ -28,6 +28,7 @@ Current behavior:
 - Scrapers write only plan/source metadata with server-side Supabase credentials.
 - MAS regulatory-event rows are source-linked and dated; low-confidence carrier matches must be shown as review-needed context, not definitive carrier findings.
 - Brochure change-alert rows store source URLs, hashes, timestamps, generated diffs, and alert status only; no subscriber, client, or agent PII is stored.
+- Saved comparison links store only selected `insurer` and `plan_slug` references plus aggregate view counts; no client, agent, visitor, account, cookie, IP address, or user-agent data is stored in `comparison_shares`.
 
 Before relaunch:
 

@@ -9,6 +9,7 @@ SSG_SCRIPT = (ROOT / "src/be-sure-ance-app/scripts/generate-static-pages.mjs").r
 README = (ROOT / "README.md").read_text()
 ENV_EXAMPLE = (ROOT / ".env.example").read_text()
 CI_WORKFLOW = (ROOT / ".github/workflows/ci.yml").read_text()
+NETLIFY_REDIRECTS = (ROOT / "src/be-sure-ance-app/public/_redirects").read_text()
 
 
 class StaticPlanPagesTests(unittest.TestCase):
@@ -77,6 +78,9 @@ class StaticPlanPagesTests(unittest.TestCase):
         ):
             with self.subTest(required=required):
                 self.assertIn(required, ENV_EXAMPLE + README + CI_WORKFLOW)
+
+    def test_static_host_rewrites_share_routes_to_spa(self):
+        self.assertIn("/share/* /index.html 200", NETLIFY_REDIRECTS)
 
 
 if __name__ == "__main__":

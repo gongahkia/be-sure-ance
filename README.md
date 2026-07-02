@@ -24,6 +24,7 @@ Frontend variables are public and are bundled into the Vue app:
 ```sh
 VITE_SUPABASE_URL=
 VITE_SUPABASE_ANON_KEY=
+VITE_SHARE_ENDPOINT=
 VITE_SITE_ORIGIN=
 ```
 
@@ -37,7 +38,7 @@ BROCHURE_STORAGE_BUCKET=plan-brochures
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, and optional `VITE_PDF_BRIEF_ENDPOINT`.
+Netlify only needs the public frontend variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, and optional `VITE_SHARE_ENDPOINT`.
 
 GitHub Actions requires `SUPABASE_URL` and exactly one server-side writer key: `SUPABASE_SECRET_KEY` preferred, or legacy `SUPABASE_SERVICE_ROLE_KEY`. It uses `BROCHURE_STORAGE_BUCKET` when set, defaulting to `plan-brochures`. Never expose `SUPABASE_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` through `VITE_*` variables.
 
@@ -55,6 +56,8 @@ npm --prefix src/be-sure-ance-app run format:check
 pre-commit run --all-files
 uvicorn src.backend.pdf_brief_api:app --reload
 ```
+
+The FastAPI backend exposes no-PII PDF and share-link endpoints. Share creation writes only selected `{insurer, plan_slug}` references to `comparison_shares`; `/share/<uuid>` reads that public row and reconstructs the comparison from current source-traceable plan tables.
 
 ## Static plan pages and sitemap
 

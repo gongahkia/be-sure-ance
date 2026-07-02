@@ -6,6 +6,8 @@
 
 `plan_comparison_facts` is an interim UI summary table. It keeps the current qualitative comparison fields used by the frontend while Phase 2 migrates facts into the source-traceable model.
 
+`comparison_shares` stores UUID-addressed saved comparison sets with selected plan references only.
+
 `plan_facts` is the canonical source-traceable fact table. It stores one fact per `(insurer, plan_slug, field_name)` with a JSON value, source URL, source type, scrape timestamp, and verification timestamp.
 
 `moh_institutions` is the canonical MOH institution lookup table for panel-hospital normalization. It is populated from the data.gov.sg MOH NEHR participating-institutions dataset (`d_2864c425e22ddb89969585820629adf8`) and stores source-backed names, aliases, source record IDs, and scrape timestamps.
@@ -83,6 +85,20 @@ Public clients can read `plan_facts`. Only `service_role` can write.
 - `last_verified_at`
 
 `match_status = "needs_review"` must be shown as a possible carrier match, not a definitive finding. Rows are regulatory context only and are not advice, ratings, suitability rankings, or carrier recommendations.
+
+## `comparison_shares`
+
+`comparison_shares` stores saved comparison links without client, agent, or visitor identity fields.
+
+- `id`
+- `selected_plans`
+- `view_count`
+- `created_at`
+- `last_viewed_at`
+
+`selected_plans` is a JSON array of up to three objects containing only `insurer` and `plan_slug`. The frontend reconstructs plan names, facts, provenance, and no-advice copy from current public read-only tables at `/share/<uuid>`.
+
+`view_count` is a non-identifying aggregate counter. It must not be joined to IP addresses, user agents, cookies, accounts, or contact details.
 
 ## `brochure_version_history`
 
