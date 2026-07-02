@@ -17,6 +17,7 @@ The app does not provide financial advice, insurance advice, quotes, recommendat
 | LIA claim metrics extracted | 12 | Latest local dry-run on 2026-07-02 against fixture/live parser path. |
 | Civic carrier canonicalization | Available locally | MAS FID Insurance and LIA member-directory cross-checks produce source-backed canonical names and mismatch flags. |
 | Open dataset snapshots | Artifact workflow | Weekly CC-BY-4.0 CSV artifacts export plan facts, source URLs, and verification dates. |
+| WCAG 2.1 AA audit | 0 Axe violations / Lighthouse 100 | Local audit on 2026-07-02 covered `/`, `/matrix/panel-hospitals`, `/status`, and one `/share/<uuid>` route. See [docs/ACCESSIBILITY.md](./docs/ACCESSIBILITY.md). |
 | 30-day lookups | Unavailable | No production Plausible/Umami/privacy-safe analytics deployment is claimed during Phases 1-4. |
 | Brochure alerts fired | Unavailable | Brochure history and pending-alert rows exist; no production alert dispatcher is claimed before Phase 5. |
 

@@ -14,7 +14,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-07-02T06:20:16.689Z",
+    "timestamp": "2026-07-02T06:37:38.984Z",
     "url": "http://127.0.0.1:5173/",
     "toolOptions": {
       "runOnly": {
@@ -7188,7 +7188,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-07-02T06:20:19.501Z",
+    "timestamp": "2026-07-02T06:37:41.847Z",
     "url": "http://127.0.0.1:5173/matrix/panel-hospitals",
     "toolOptions": {
       "runOnly": {
@@ -8811,6 +8811,20 @@
                 ],
                 "impact": "serious",
                 "message": "Page has a heading"
+              },
+              {
+                "id": "landmark",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<main data-v-7a7a37b1=\"\" class=\"matrix-workspace\">",
+                    "target": [
+                      "main"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Page has a landmark region"
               }
             ],
             "all": [],
@@ -12187,7 +12201,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-07-02T06:20:22.318Z",
+    "timestamp": "2026-07-02T06:37:44.584Z",
     "url": "http://127.0.0.1:5173/status",
     "toolOptions": {
       "runOnly": {
@@ -13952,6 +13966,20 @@
                 ],
                 "impact": "serious",
                 "message": "Page has a heading"
+              },
+              {
+                "id": "landmark",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<main data-v-7a7a37b1=\"\" class=\"status-workspace\">",
+                    "target": [
+                      "main"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Page has a landmark region"
               }
             ],
             "all": [],
@@ -18746,7 +18774,7 @@
       "orientationAngle": 0,
       "orientationType": "landscape-primary"
     },
-    "timestamp": "2026-07-02T06:20:25.060Z",
+    "timestamp": "2026-07-02T06:37:47.315Z",
     "url": "http://127.0.0.1:5173/share/11111111-2222-4333-8444-555555555555",
     "toolOptions": {
       "runOnly": {
