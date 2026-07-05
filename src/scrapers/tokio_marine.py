@@ -13,6 +13,7 @@ https://www.tokiomarine.com/sg/en/life.html
 import asyncio
 import html
 import re
+from urllib.parse import urljoin
 
 from playwright.async_api import async_playwright
 
@@ -72,16 +73,18 @@ async def scrape_data(url):
     base_url = "https://www.tokiomarine.com"
     scraped_plans = []
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=True, args=["--disable-http2"])
         context = await new_bot_context(browser)
         page = await context.new_page()
         await goto_with_retry(page, url)
         link_elements = await page.query_selector_all("div.quick-help-custom__item a")
         plan_urls = []
+        seen_urls = set()
         for link in link_elements:
             href = await link.get_attribute("href")
-            if href:
-                full_url = base_url + href
+            full_url = urljoin(base_url, href or "")
+            if href and full_url not in seen_urls:
+                seen_urls.add(full_url)
                 plan_urls.append(full_url)
         scraped_plans = []
         for plan_url in plan_urls:
@@ -90,6 +93,9 @@ async def scrape_data(url):
             await goto_with_retry(plan_page, plan_url)
             title_element = await plan_page.query_selector("h2.masthead-colors__title")
             plan_name = (await title_element.text_content()).strip() if title_element else ""
+            if not plan_name:
+                await plan_page.close()
+                continue
             overview_element = await plan_page.query_selector("h2.masthead-colors__text")
             plan_overview = (
                 (await overview_element.text_content()).strip() if overview_element else ""
@@ -106,8 +112,8 @@ async def scrape_data(url):
                 "plan_benefits": [],
                 "plan_description": plan_description,
                 "plan_overview": plan_overview,
-                "plan_url": full_url,
-                "product_brochure_url": full_url,
+                "plan_url": plan_url,
+                "product_brochure_url": plan_url,
             }
             # print(scraped_plans)
             scraped_plans.append(formatted_row)

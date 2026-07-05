@@ -51,6 +51,7 @@ RESOURCE_KEYWORDS = (
     "directory",
 )
 USER_AGENT = BOT_USER_AGENT
+DEFAULT_MAX_PDF_BYTES = 8 * 1024 * 1024
 
 
 def normalize_whitespace(value: str | None) -> str:
@@ -180,14 +181,15 @@ def extract_pdf_text(
     session: requests.Session,
     pdf_cache: dict[str, str],
     max_pages: int = 5,
+    max_pdf_bytes: int = DEFAULT_MAX_PDF_BYTES,
 ) -> str:
     if url in pdf_cache:
         return pdf_cache[url]
 
     try:
-        response = session.get(url, timeout=request_timeout)
+        response = session.get(url, timeout=request_timeout, stream=True)
         response.raise_for_status()
-        reader = PdfReader(io.BytesIO(response.content))
+        reader = PdfReader(io.BytesIO(read_limited_response_content(response, max_pdf_bytes)))
         pages = []
         for page in reader.pages[:max_pages]:
             try:
@@ -199,6 +201,17 @@ def extract_pdf_text(
         pdf_cache[url] = ""
 
     return pdf_cache[url]
+
+
+def read_limited_response_content(response, max_bytes: int) -> bytes:
+    content = bytearray()
+    for chunk in response.iter_content(chunk_size=65536):
+        if not chunk:
+            continue
+        content.extend(chunk)
+        if len(content) > max_bytes:
+            raise ValueError(f"PDF exceeds {max_bytes} bytes.")
+    return bytes(content)
 
 
 def matched_resource_keywords(text: str) -> list[str]:
@@ -270,7 +283,10 @@ def build_resource_row(
 
 
 def run_panel_resource_scrape(
-    insurers: list[str], request_timeout: int, max_plans: int | None
+    insurers: list[str],
+    request_timeout: int,
+    max_plans: int | None,
+    max_pdf_bytes: int = DEFAULT_MAX_PDF_BYTES,
 ) -> list[dict]:
     html_cache: dict[str, list[dict]] = {}
     pdf_cache: dict[str, str] = {}
@@ -301,6 +317,7 @@ def run_panel_resource_scrape(
                     request_timeout=request_timeout,
                     session=session,
                     pdf_cache=pdf_cache,
+                    max_pdf_bytes=max_pdf_bytes,
                 )
                 combined_text = normalize_whitespace(
                     " ".join([candidate["url"], candidate["title"], candidate["context"], pdf_text])
@@ -341,6 +358,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--insurers", help="Comma-separated supported insurer table names.")
     parser.add_argument("--request-timeout", type=int, default=20)
+    parser.add_argument("--max-pdf-bytes", type=int, default=DEFAULT_MAX_PDF_BYTES)
     parser.add_argument("--max-plans", type=int)
     args = parser.parse_args()
 
@@ -355,6 +373,7 @@ def main():
         insurers=insurers,
         request_timeout=args.request_timeout,
         max_plans=args.max_plans,
+        max_pdf_bytes=args.max_pdf_bytes,
     )
 
     summary = {

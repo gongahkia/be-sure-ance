@@ -64,7 +64,15 @@ def run_scraper_pipeline(data_dir: Path):
         [sys.executable, "-m", "src.scrapers.mas_regulatory"],
         [sys.executable, "-m", "src.scrapers.carrier_canonicalization"],
         [sys.executable, "-m", "src.scrapers.brochure_facts"],
-        [sys.executable, "-m", "src.scrapers.panel_resources"],
+        [
+            sys.executable,
+            "-m",
+            "src.scrapers.panel_resources",
+            "--request-timeout",
+            "10",
+            "--max-pdf-bytes",
+            str(8 * 1024 * 1024),
+        ],
         [sys.executable, "-m", "src.scrapers.comparison_facts"],
     ]
     for command in commands:

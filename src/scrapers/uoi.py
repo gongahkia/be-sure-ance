@@ -17,53 +17,85 @@ https://www.uoi.com.sg/takaful.page
 # ----- required imports -----
 
 import asyncio
+import re
+from urllib.parse import urljoin
 
-from playwright.async_api import async_playwright
+import requests
+from bs4 import BeautifulSoup
 
 from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
-from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
+from src.lib.http_identity import BOT_USER_AGENT
+from src.scrapers.navigation import gather_scrape_results
 
 # ----- functions -----
 
+REQUEST_TIMEOUT_SECONDS = 20
+
+
+def normalize_whitespace(value: str | None) -> str:
+    return re.sub(r"\s+", " ", value or "").strip()
+
+
+def fetch_html(url: str, session: requests.Session | None = None) -> str:
+    client = session or requests
+    response = client.get(
+        url,
+        timeout=REQUEST_TIMEOUT_SECONDS,
+        headers={"User-Agent": BOT_USER_AGENT},
+    )
+    response.raise_for_status()
+    return response.text
+
+
+def first_pdf_url(soup: BeautifulSoup, source_url: str) -> str:
+    fallback = ""
+    for anchor in soup.select("a[href]"):
+        href = anchor.get("href") or ""
+        if ".pdf" not in href.lower():
+            continue
+        absolute = urljoin(source_url, href)
+        label = normalize_whitespace(anchor.get_text(" ", strip=True)).lower()
+        if "brochure" in label:
+            return absolute
+        fallback = fallback or absolute
+    return fallback
+
+
+def parse_product_html(html_content: str, source_url: str) -> dict:
+    soup = BeautifulSoup(html_content, "html.parser")
+    title_node = soup.select_one("main h1, h1, title")
+    plan_name = normalize_whitespace(title_node.get_text(" ", strip=True) if title_node else "")
+    if "|" in plan_name:
+        plan_name = normalize_whitespace(plan_name.split("|", 1)[0])
+
+    paragraphs = [
+        normalize_whitespace(node.get_text(" ", strip=True))
+        for node in soup.select("main p, section p, div.content p")
+    ]
+    paragraphs = [text for text in paragraphs if text and text != plan_name]
+    benefits = [
+        normalize_whitespace(node.get_text(" ", strip=True))
+        for node in soup.select("main li, section li, div.content-block, div.card-body")
+    ]
+    benefits = [text for text in benefits if text]
+    benefits = list(dict.fromkeys(benefits))[:16]
+
+    return {
+        "plan_name": plan_name,
+        "plan_benefits": benefits,
+        "plan_description": " ".join(paragraphs[:2]),
+        "plan_overview": " ".join(paragraphs[:5]),
+        "plan_url": source_url,
+        "product_brochure_url": first_pdf_url(soup, source_url),
+    }
+
+
+def scrape_page(url: str) -> list[dict]:
+    return [parse_product_html(fetch_html(url), url)]
+
 
 async def scrape_data(url):
-    plan_benefits = []
-
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await new_bot_context(browser)
-        page = await context.new_page()
-        await goto_with_retry(page, url)
-        plan_name = await page.locator(
-            "div.col-12.col-lg-5.p-0 h1.uob-h1.mb-3.mb-md-6"
-        ).text_content()
-        plan_overview_and_description = await page.locator("div.col-12.col-lg-5.p-0").text_content()
-        plan_overview_and_description = plan_overview_and_description.replace(plan_name, "").strip()
-        plan_overview = plan_overview_and_description.split("\n")[0]
-        plan_description = "\n".join(plan_overview_and_description.split("\n")[1:])
-        benefits_locator = page.locator(
-            "div.row.m-0.p-0 div.col-12.col-sm-4.content-block.d-flex.d-sm-block.mt-5.pl-0.pr-0.align-items-center"
-        )
-        benefit_count = await benefits_locator.count()
-
-        for i in range(benefit_count):
-            benefit_text = await benefits_locator.nth(i).text_content()
-            plan_benefits.append(benefit_text.strip())
-
-        brochure_url = await page.locator(
-            "h2.uob-h2.title.text-center.content-title + img"
-        ).get_attribute("src")
-
-        return {
-            "plan_name": plan_name.strip(),
-            "plan_benefits": plan_benefits,
-            "plan_description": plan_description.strip(),
-            "plan_overview": plan_overview.strip(),
-            "plan_url": url,
-            "product_brochure_url": (
-                f"https://www.uoi.com.sg{brochure_url}" if brochure_url else None
-            ),
-        }
+    return await asyncio.to_thread(scrape_page, url)
 
 
 async def run_all_tasks(scrape_list):

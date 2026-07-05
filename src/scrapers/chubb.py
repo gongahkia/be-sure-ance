@@ -1,145 +1,128 @@
 """
 CHUBB
 
-https://www.chubb.com/sg-en/
-https://www.chubb.com/sg-en/claims.html
-
-https://www.chubb.com/sg-en/business/financial-lines.html
-https://www.chubb.com/sg-en/business/marine.html
-https://www.chubb.com/sg-en/business/property.html
-https://www.chubb.com/sg-en/business/risk-engineering-services.html
-https://www.chubb.com/sg-en/business/accident-health.html
-https://www.chubb.com/sg-en/business/casualty.html
-https://www.chubb.com/sg-en/business/construction.html
-https://www.chubb.com/sg-en/business/cyber.html
-https://www.chubb.com/sg-en/business/energy.html
-https://www.chubb.com/sg-en/business/environmental.html
+https://www.chubb.com/sg-en/individuals-families.html
+https://www.chubb.com/sg-en/individuals-families/travel-insurance.html
+https://www.chubb.com/sg-en/individuals-families/home-insurance.html
+https://www.chubb.com/sg-en/individuals-families/personal-accident-insurance.html
+https://www.chubb.com/sg-en/individuals-families/staycation-insurance.html
+https://www.chubb.com/sg-en/individuals-families/coach-and-ferry-travel-insurance.html
 """
 
 # ----- required imports -----
 
 import asyncio
-import html
 import re
+from urllib.parse import urljoin, urlparse
 
-from playwright.async_api import async_playwright
+import requests
+from bs4 import BeautifulSoup
 
 from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
-from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
+from src.lib.http_identity import BOT_USER_AGENT
+from src.scrapers.navigation import gather_scrape_results
 
 # ----- functions -----
 
-
-def remove_excess_newlines(inp):
-    if not isinstance(inp, str):
-        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
-    inp = re.sub(r"\n+", "\n", inp)
-    inp = re.sub(r"[ \t\u200b]+", " ", inp)
-    return inp.strip()
+CHUBB_BASE_URL = "https://www.chubb.com"
+REQUEST_TIMEOUT_SECONDS = 20
+SKIP_SLUGS = {"individuals-families", "travel-protection", "accident-protection", "personal-protection"}
 
 
-def remove_html_entities(inp):
-    inp2 = html.unescape(inp)
-    replacements = {
-        "\xa0": " ",  # Non-breaking space
-        "\u200b": "",  # Zero-width space
-        "\u2013": "-",  # En dash
-        "\u2014": "--",  # Em dash
-        "\u2026": "...",  # Ellipsis
-        "\u2018": "'",  # Left single quote
-        "\u2019": "'",  # Right single quote
-        "\u201c": '"',  # Left double quote
-        "\u201d": '"',  # Right double quote
-        "\u00ab": '"',  # Left guillemet
-        "\u00bb": '"',  # Right guillemet
-        "\u02c6": "^",  # Circumflex
-        "\u2039": "<",  # Single left angle quote
-        "\u203a": ">",  # Single right angle quote
-        "\u02dc": "~",  # Small tilde
-        "\u00a9": "(c)",  # Copyright symbol
-        "\u00ae": "(R)",  # Registered trademark symbol
-        "\u2122": "(TM)",  # Trademark symbol
-        "\u00b0": "°",  # Degree symbol
-        "\u00b7": "*",  # Middle dot
-        "\u00b1": "+/-",  # Plus-minus symbol
-        "\u00bc": "1/4",  # One-quarter fraction
-        "\u00bd": "1/2",  # One-half fraction
-        "\u00be": "3/4",  # Three-quarters fraction
-        "&lt;": "<",  # Less-than sign (HTML entity)
-        "&gt;": ">",  # Greater-than sign (HTML entity)
-        "&amp;": "&",  # Ampersand (HTML entity)
-        "&quot;": '"',  # Quotation mark (HTML entity)
-        "&apos;": "'",  # Apostrophe (HTML entity)
+def normalize_whitespace(value: str | None) -> str:
+    return re.sub(r"\s+", " ", value or "").strip()
+
+
+def fetch_html(url: str, session: requests.Session | None = None) -> str:
+    client = session or requests
+    response = client.get(
+        url,
+        timeout=REQUEST_TIMEOUT_SECONDS,
+        headers={"User-Agent": BOT_USER_AGENT},
+    )
+    response.raise_for_status()
+    return response.text
+
+
+def is_chubb_product_url(url: str) -> bool:
+    parsed = urlparse(url)
+    slug = parsed.path.rstrip("/").rsplit("/", 1)[-1].removesuffix(".html")
+    return "/sg-en/individuals-families/" in parsed.path and slug not in SKIP_SLUGS
+
+
+def discover_product_links(html_content: str, source_url: str) -> list[str]:
+    soup = BeautifulSoup(html_content, "html.parser")
+    links = []
+    seen = set()
+    for anchor in soup.select("a[href]"):
+        href = urljoin(source_url, anchor.get("href") or "")
+        if not is_chubb_product_url(href) or href in seen:
+            continue
+        seen.add(href)
+        links.append(href)
+    return links
+
+
+def meta_description(soup: BeautifulSoup) -> str:
+    meta = soup.select_one('meta[name="description"]')
+    return normalize_whitespace(meta.get("content")) if meta else ""
+
+
+def first_pdf_url(soup: BeautifulSoup, source_url: str) -> str:
+    for anchor in soup.select("a[href]"):
+        href = anchor.get("href") or ""
+        if ".pdf" in href.lower():
+            return urljoin(source_url, href)
+    return ""
+
+
+def parse_product_html(html_content: str, source_url: str) -> dict | None:
+    soup = BeautifulSoup(html_content, "html.parser")
+    title = normalize_whitespace((soup.select_one("h1") or soup.select_one("title")).get_text(" "))
+    if "|" in title:
+        title = normalize_whitespace(title.split("|", 1)[0])
+    if not title:
+        return None
+
+    description = meta_description(soup)
+    text_blocks = [
+        normalize_whitespace(element.get_text(" ", strip=True))
+        for element in soup.select("p, li, div.text-description")
+    ]
+    text_blocks = [text for text in text_blocks if text and text != title]
+    benefits = []
+    for text in text_blocks:
+        lowered = text.lower()
+        if title.lower() in lowered and len(text) > len(title) + 20:
+            description = description or text
+        if any(keyword in lowered for keyword in ("cover", "benefit", "protection", "insurance")):
+            benefits.append(text)
+    benefits = list(dict.fromkeys(benefits))[:12]
+
+    return {
+        "plan_name": title,
+        "plan_benefits": benefits,
+        "plan_description": description or " ".join(text_blocks[:2]),
+        "plan_overview": " ".join(text_blocks[:4]),
+        "plan_url": source_url,
+        "product_brochure_url": first_pdf_url(soup, source_url) or source_url,
     }
-    for old_char, new_char in replacements.items():
-        inp2 = inp2.replace(old_char, new_char)
-    return inp2
+
+
+def scrape_page(url: str) -> list[dict]:
+    html_content = fetch_html(url)
+    urls = [url] if is_chubb_product_url(url) else discover_product_links(html_content, url)
+    rows = []
+    for plan_url in urls:
+        plan_html = html_content if plan_url == url else fetch_html(plan_url)
+        row = parse_product_html(plan_html, plan_url)
+        if row:
+            rows.append(row)
+    return rows
 
 
 async def scrape_data(url):
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await new_bot_context(browser)
-        page = await context.new_page()
-        await goto_with_retry(page, url)
-
-        scraped_plans = []
-
-        content_div = await page.query_selector("div.content")
-        if content_div:
-            anchor_text = (
-                (await (await content_div.query_selector("a")).text_content()).strip()
-                if await content_div.query_selector("a")
-                else ""
-            )
-            hero_title = (
-                (await (await content_div.query_selector("h1.hero-title")).text_content()).strip()
-                if await content_div.query_selector("h1.hero-title")
-                else ""
-            )
-            text_description = (
-                (
-                    await (await content_div.query_selector("div.text-description")).text_content()
-                ).strip()
-                if await content_div.query_selector("div.text-description")
-                else ""
-            )
-            plan_description = ", ".join(
-                filter(None, [anchor_text, hero_title, hero_title and text_description])
-            )
-        else:
-            plan_description = ""
-
-        widget_contents = await page.query_selector_all("div.widget-content")
-
-        for widget in widget_contents:
-            if h2_element := await widget.query_selector("h2.h4-title"):
-                plan_name = (await h2_element.text_content()).strip()
-            else:
-                continue
-
-            if desc_element := await widget.query_selector("div.text-description"):
-                plan_overview = (await desc_element.text_content()).strip()
-            else:
-                continue
-
-            if cta_wrap := await widget.query_selector("div.cta-buttons-wrap a"):
-                plan_url = await cta_wrap.get_attribute("href")
-            else:
-                continue
-
-            formatted_entry = {
-                "plan_name": plan_name,
-                "plan_benefits": [],
-                "plan_description": plan_overview,
-                "plan_overview": plan_description,
-                "plan_url": f"https://www.chubb.com{plan_url}",
-                "product_brochure_url": f"https://www.chubb.com{plan_url}",
-            }
-            # print(formatted_entry)
-            scraped_plans.append(formatted_entry)
-        await browser.close()
-        return scraped_plans
+    return await asyncio.to_thread(scrape_page, url)
 
 
 async def run_all_tasks(scrape_list):
@@ -150,15 +133,12 @@ async def run_all_tasks(scrape_list):
 
 if __name__ == "__main__":
     scrape_list = [
-        "https://www.chubb.com/sg-en/business/financial-lines.html",
-        "https://www.chubb.com/sg-en/business/marine.html",
-        "https://www.chubb.com/sg-en/business/property.html",
-        "https://www.chubb.com/sg-en/business/risk-engineering-services.html",
-        "https://www.chubb.com/sg-en/business/casualty.html",
-        "https://www.chubb.com/sg-en/business/construction.html",
-        "https://www.chubb.com/sg-en/business/cyber.html",
-        "https://www.chubb.com/sg-en/business/energy.html",
-        "https://www.chubb.com/sg-en/business/environmental.html",
+        "https://www.chubb.com/sg-en/individuals-families.html",
+        "https://www.chubb.com/sg-en/individuals-families/travel-insurance.html",
+        "https://www.chubb.com/sg-en/individuals-families/home-insurance.html",
+        "https://www.chubb.com/sg-en/individuals-families/personal-accident-insurance.html",
+        "https://www.chubb.com/sg-en/individuals-families/staycation-insurance.html",
+        "https://www.chubb.com/sg-en/individuals-families/coach-and-ferry-travel-insurance.html",
     ]
     initialize_data_store()
     output = asyncio.run(run_all_tasks(scrape_list))

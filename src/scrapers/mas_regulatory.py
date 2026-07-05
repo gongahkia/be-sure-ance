@@ -10,10 +10,12 @@ from bs4 import BeautifulSoup
 from src.backend import helper
 from src.lib.http_identity import BOT_USER_AGENT
 from src.lib.mas_regulatory import (
+    MAS_ENFORCEMENT_URL,
     MAS_NEWS_URL,
     extract_events_from_text,
     parse_mas_news_listing,
 )
+from src.lib.scraper_health import record_scraper_failure, record_scraper_success
 
 REQUEST_TIMEOUT_SECONDS = 30
 MAX_DETAIL_PAGES = 20
@@ -27,7 +29,7 @@ def fetch_html(url: str, session=requests) -> str:
     )
     response.raise_for_status()
     text = response.text
-    if "Sorry, this service is currently unavailable" in text:
+    if "Sorry, this service is currently unavailable" in text or "<title>Maintenance</title>" in text:
         raise RuntimeError(f"MAS source unavailable: {url}")
     return text
 
@@ -38,12 +40,27 @@ def html_text(html: str) -> str:
 
 def scrape_mas_regulatory_events(session=requests, scraped_at: str | None = None):
     scraped_at = scraped_at or datetime.now(timezone.utc).isoformat()
-    try:
-        listing_html = fetch_html(MAS_NEWS_URL, session=session)
-    except RuntimeError as error:
-        print(error)
+    errors = []
+    news_items = []
+    for source_url in (MAS_NEWS_URL, MAS_ENFORCEMENT_URL):
+        try:
+            listing_html = fetch_html(source_url, session=session)
+        except RuntimeError as error:
+            errors.append(str(error))
+            print(error)
+            continue
+        news_items.extend(parse_mas_news_listing(listing_html))
+
+    if not news_items:
+        if errors:
+            record_scraper_failure(
+                "mas_regulatory",
+                "; ".join(errors),
+                dry_run=helper.dry_run_enabled(),
+            )
         return []
-    news_items = parse_mas_news_listing(listing_html)[:MAX_DETAIL_PAGES]
+
+    news_items = news_items[:MAX_DETAIL_PAGES]
     events = []
     for item in news_items:
         try:
@@ -83,6 +100,7 @@ def upsert_mas_regulatory_events(events) -> None:
     if response.data is None:
         raise RuntimeError("MAS regulatory event upsert returned no data.")
     print(f"MAS regulatory events upserted: {len(rows)}")
+    record_scraper_success("mas_regulatory", len(rows))
 
 
 def main() -> None:

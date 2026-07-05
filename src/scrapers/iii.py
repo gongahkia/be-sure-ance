@@ -20,59 +20,86 @@ https://www.iii.com.sg/products/reinsurance
 # ----- required imports -----
 
 import asyncio
+import re
+from urllib.parse import urljoin
 
-from playwright.async_api import async_playwright
+import requests
+from bs4 import BeautifulSoup
 
 from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
-from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
+from src.lib.http_identity import BOT_USER_AGENT
+from src.scrapers.navigation import gather_scrape_results
 
 # ----- functions -----
 
+III_BASE_URL = "https://www.iii.com.sg"
+REQUEST_TIMEOUT_SECONDS = 20
+
+def normalize_whitespace(value: str | None) -> str:
+    return re.sub(r"\s+", " ", value or "").strip()
+
+
+def fetch_html(url: str, session: requests.Session | None = None) -> str:
+    client = session or requests
+    response = client.get(
+        url,
+        timeout=REQUEST_TIMEOUT_SECONDS,
+        headers={"User-Agent": BOT_USER_AGENT},
+    )
+    response.raise_for_status()
+    return response.text
+
+
+def page_title_from_url(url: str) -> str:
+    slug = url.rstrip("/").rsplit("/", 1)[-1]
+    return slug.replace("-", " ").title()
+
+
+def first_pdf_url(soup: BeautifulSoup, source_url: str) -> str:
+    for anchor in soup.select("a[href]"):
+        href = anchor.get("href") or ""
+        if ".pdf" in href.lower():
+            return urljoin(source_url, href)
+    return ""
+
+
+def parse_product_html(html_content: str, source_url: str) -> dict:
+    soup = BeautifulSoup(html_content, "html.parser")
+    title_node = soup.select_one("main h1, h1, main h2, h2")
+    title = normalize_whitespace(title_node.get_text(" ", strip=True) if title_node else "")
+    title = title or page_title_from_url(source_url)
+
+    lead_blocks = [
+        normalize_whitespace(node.get_text(" ", strip=True))
+        for node in soup.select("main p, section p, article p")
+    ]
+    lead_blocks = [text for text in lead_blocks if text and text != title]
+    benefit_nodes = soup.select(
+        "main li, section li, ul.text-start li, ul.list-style-02 li, div.card-body"
+    )
+    benefits = [
+        normalize_whitespace(node.get_text(" ", strip=True))
+        for node in benefit_nodes
+        if normalize_whitespace(node.get_text(" ", strip=True))
+    ]
+    benefits = list(dict.fromkeys(benefits))[:16]
+
+    return {
+        "plan_name": title,
+        "plan_benefits": benefits,
+        "plan_description": " ".join(lead_blocks[:2]),
+        "plan_overview": " ".join(lead_blocks[:5]),
+        "plan_url": source_url,
+        "product_brochure_url": first_pdf_url(soup, source_url) or source_url,
+    }
+
+
+def scrape_page(url: str) -> list[dict]:
+    return [parse_product_html(fetch_html(url), url)]
+
 
 async def scrape_data(url):
-    async with async_playwright() as p:
-        scraped_plans = []
-        plan_overview = ""
-        browser = await p.chromium.launch(headless=True)
-        context = await new_bot_context(browser)
-        page = await context.new_page()
-        await goto_with_retry(page, url)
-        name_el = await page.query_selector(
-            "div.col-12.col-lg-6.order-2.z-index-1.padding-10-rem-left.padding-60px-bottom.lg-padding-3-rem-left.md-padding-15px-left h3"
-        )
-        if name_el:
-            plan_name = (await name_el.text_content()).strip()
-        plan_overview_1 = await page.query_selector(
-            "p.alt-font.text-white.text-uppercase.text-small"
-        )
-        if plan_overview_1:
-            plan_overview = (await plan_overview_1.text_content()).strip()
-        plan_description_el = await page.query_selector("section.parallax")
-        if plan_description_el:
-            plan_overview += f"\n{(await plan_description_el.text_content()).strip()}"
-        plan_description = ""
-        plan_benefits = []
-        overall_list_el = await page.query_selector_all(
-            "ul.text-start.p-0.list-style-02.margin-20px-left.text-dkblue.alt-font"
-        )
-        if overall_list_el:
-            for list_el in overall_list_el:
-                elements = await list_el.query_selector_all("li")
-                if elements:
-                    for element in elements:
-                        plan_benefits.append((await element.text_content()).strip())
-        formatted_row = {
-            "plan_name": plan_name,
-            "plan_benefits": plan_benefits,
-            "plan_description": plan_description,
-            "plan_overview": plan_overview,
-            "plan_url": url,
-            "product_brochure_url": url,
-        }
-        print(formatted_row)
-        scraped_plans.append(formatted_row)
-        await browser.close()
-        return scraped_plans
+    return await asyncio.to_thread(scrape_page, url)
 
 
 async def run_all_tasks(scrape_list):

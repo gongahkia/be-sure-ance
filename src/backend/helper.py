@@ -87,12 +87,25 @@ def overwrite_table_data(table_name, data):
 
 
 def overwrite_plans_for_insurer(insurer, rows):
+    formatted_rows = format_plan_rows(insurer, rows)
     if dry_run_enabled():
-        print(f"Dry run enabled; skipping local plan writes for {insurer}.")
+        print(
+            json.dumps(
+                {
+                    "dry_run": True,
+                    "insurer": insurer,
+                    "plan_row_count": len(formatted_rows),
+                    "sample_plan_names": [
+                        row["plan_name"] for row in formatted_rows[:5] if row.get("plan_name")
+                    ],
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
         return
 
     require_write_key()
-    formatted_rows = format_plan_rows(insurer, rows)
     clear_plans_for_insurer(insurer)
     if not formatted_rows:
         print(f"No plan rows to insert for {insurer}.")
@@ -132,7 +145,17 @@ def clear_table_data(table_name):
 
 def overwrite_generic_table_data(table_name, data):
     if dry_run_enabled():
-        print(f"Dry run enabled; skipping local writes for {table_name}.")
+        print(
+            json.dumps(
+                {
+                    "dry_run": True,
+                    "row_count": len(data or []),
+                    "table_name": table_name,
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
         return
     clear_table_data(table_name)
     if not data:
