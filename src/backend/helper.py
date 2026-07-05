@@ -21,7 +21,7 @@ from src.lib.brochure_versions import (
 from src.lib.http_identity import BOT_USER_AGENT
 from src.lib.local_data_store import LocalDataClient, default_data_dir
 from src.lib.observability import initialize_observability
-from src.lib.scraper_health import record_scraper_success
+from src.lib.scraper_health import record_scraper_failure, record_scraper_success
 
 # ------ functions ------
 
@@ -109,6 +109,7 @@ def overwrite_plans_for_insurer(insurer, rows):
     clear_plans_for_insurer(insurer)
     if not formatted_rows:
         print(f"No plan rows to insert for {insurer}.")
+        record_scraper_failure(insurer, "no plan rows produced")
         return
 
     response = (

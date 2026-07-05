@@ -3,13 +3,18 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
+from src.lib.http_identity import BROWSER_USER_AGENT
 from src.lib.mas_regulatory import (
     MAS_BASE_URL,
+    MAS_DIRECT_NEWS_ITEMS,
     MATCHED_STATUS,
     NEEDS_REVIEW_STATUS,
+    direct_mas_news_items,
     extract_events_from_text,
+    is_mas_unavailable,
     parse_mas_news_listing,
 )
+from src.scrapers.mas_regulatory import scrape_mas_regulatory_events
 
 ROOT = Path(__file__).resolve().parents[1]
 LISTING = (ROOT / "tests/fixtures/mas_regulatory_listing.html").read_text()
@@ -63,6 +68,44 @@ class MasRegulatoryTests(unittest.TestCase):
         self.assertEqual(row["source_published_at"], "2026-07-01")
         self.assertEqual(row["match_status"], MATCHED_STATUS)
         self.assertIn("not advice", row["limitations"][0])
+
+    def test_direct_catalog_contains_quarterly_official_releases(self):
+        items = direct_mas_news_items()
+        urls = [item.source_url for item in items]
+
+        self.assertGreaterEqual(len(items), 6)
+        self.assertIn(MAS_DIRECT_NEWS_ITEMS[0][1], urls)
+
+    def test_maintenance_pages_are_source_unavailable(self):
+        self.assertTrue(is_mas_unavailable("<title>Maintenance</title>"))
+        self.assertTrue(is_mas_unavailable("This site is currently undergoing scheduled maintenance."))
+
+    def test_direct_catalog_is_used_when_listing_pages_are_unavailable(self):
+        seen_user_agents = []
+
+        class Response:
+            def __init__(self, text):
+                self.text = text
+
+            def raise_for_status(self):
+                return None
+
+        class Session:
+            def get(self, url, timeout, headers):
+                seen_user_agents.append(headers.get("User-Agent"))
+                if url == MAS_DIRECT_NEWS_ITEMS[0][1]:
+                    return Response((ROOT / "tests/fixtures/mas_regulatory_detail.html").read_text())
+                return Response("<title>Maintenance</title>")
+
+        events = scrape_mas_regulatory_events(
+            session=Session(),
+            scraped_at="2026-07-02T00:00:00+00:00",
+        )
+        by_carrier = {event.carrier_key: event for event in events}
+
+        self.assertIn("aia", by_carrier)
+        self.assertEqual(by_carrier["aia"].source_url, MAS_DIRECT_NEWS_ITEMS[0][1])
+        self.assertEqual(set(seen_user_agents), {BROWSER_USER_AGENT})
 
 
 if __name__ == "__main__":

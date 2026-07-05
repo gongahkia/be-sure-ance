@@ -18,6 +18,18 @@ export const providers = [
     focus: 'Personal and commercial protection',
   },
   {
+    key: 'etiqa',
+    name: 'Etiqa Singapore',
+    website: 'https://www.etiqa.com.sg/',
+    focus: 'Life, accident, travel, home, motor, maid, and business insurance',
+  },
+  {
+    key: 'fwd',
+    name: 'FWD Singapore',
+    website: 'https://www.fwd.com.sg/',
+    focus: 'Digital life, critical illness, travel, motor, home, and maid insurance',
+  },
+  {
     key: 'great_eastern',
     name: 'Great Eastern Singapore',
     website: 'https://www.greateasternlife.com/sg/en/personal-insurance.html',
@@ -34,6 +46,30 @@ export const providers = [
     name: 'India International Insurance (Singapore)',
     website: 'https://www.iii.com.sg/',
     focus: 'General insurance and medical options',
+  },
+  {
+    key: 'income',
+    name: 'Income Insurance',
+    website: 'https://www.income.com.sg/',
+    focus: 'Life, health, travel, motor, home, maid, and commercial insurance',
+  },
+  {
+    key: 'manulife',
+    name: 'Manulife Singapore',
+    website: 'https://www.manulife.com.sg/',
+    focus: 'Life, health, savings, investment-linked, and signature plans',
+  },
+  {
+    key: 'prudential',
+    name: 'Prudential Singapore',
+    website: 'https://www.prudential.com.sg/',
+    focus: 'Health, life, critical illness, savings, and legacy planning',
+  },
+  {
+    key: 'raffles_health',
+    name: 'Raffles Health Insurance',
+    website: 'https://www.raffleshealthinsurance.com/',
+    focus: 'Personal and corporate medical insurance',
   },
   {
     key: 'singlife',

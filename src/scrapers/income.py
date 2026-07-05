@@ -37,10 +37,24 @@ if __package__ in {None, ""}:
 
     sys.path.append(str(Path(__file__).resolve().parents[2]))
 
-from src.scrapers._generic_domain import GenericScraperConfig, run_cli_scraper
+from src.scrapers._static_pages import run_static_product_scraper
 
-CONFIG = GenericScraperConfig(table_name="income", max_seed_pages=32)
+PRODUCT_URLS = [
+    "https://www.income.com.sg/health-insurance",
+    "https://www.income.com.sg/personal-accident-insurance",
+    "https://www.income.com.sg/life-insurance",
+    "https://www.income.com.sg/travel-insurance",
+    "https://www.income.com.sg/enhanced-prex-travel-insurance",
+    "https://www.income.com.sg/drivo-car-insurance",
+    "https://www.income.com.sg/edrivo-car-insurance",
+    "https://www.income.com.sg/motorcycle-insurance",
+    "https://www.income.com.sg/enhanced-home-insurance",
+    "https://www.income.com.sg/domestic-helper-insurance",
+    "https://www.income.com.sg/happy-tails-pet-insurance",
+    "https://www.income.com.sg/group-insurance-for-employees",
+    "https://www.income.com.sg/commercial-insurance",
+]
 
 
 if __name__ == "__main__":
-    run_cli_scraper(CONFIG, __doc__)
+    run_static_product_scraper("income", PRODUCT_URLS)

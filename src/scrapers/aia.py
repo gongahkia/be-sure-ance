@@ -11,10 +11,13 @@ https://www.aia.com.sg/en/our-products/save-and-invest
 
 # ----- required imports -----
 
+import argparse
 import asyncio
 import html
+import os
 import re
-from urllib.parse import urljoin
+from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -22,6 +25,7 @@ from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
 from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.scraper_health import record_scraper_failure
 from src.scrapers.navigation import (
     gather_scrape_results,
     goto_with_retry,
@@ -33,6 +37,8 @@ from src.scrapers.navigation import (
 
 AIA_BASE_URL = "https://www.aia.com.sg"
 REQUEST_TIMEOUT_SECONDS = 8
+AIA_SOURCE_CACHE_DIR = os.getenv("AIA_SOURCE_CACHE_DIR", ".scraper-cache/aia")
+URL_FAILURES = []
 AIA_DIRECT_PRODUCT_URLS = [
     "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-healthshield-gold-max",
     "https://www.aia.com.sg/en/our-products/accident-protection/aia-solitaire-personal-accident",
@@ -42,6 +48,11 @@ AIA_DIRECT_PRODUCT_URLS = [
     "https://www.aia.com.sg/en/our-products/accident-protection/aia-genfit-pa",
     "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-guaranteed-protect-plus-iv",
     "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/direct-aia-whole-life-cover-ii",
+    "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/direct-aia-term-cover",
+    "https://www.aia.com.sg/en/our-products/accident-protection/aia-prime-assured",
+    "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-pro-lifetime-protector-ii",
+    "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/aia-secure-flexi-term",
+    "https://www.aia.com.sg/en/our-products/corporate-medical-insurance/aia-foreign-worker-protector-plus",
 ]
 
 
@@ -142,6 +153,42 @@ def parse_product_html(html_content: str):
     }
 
 
+def parse_product_text(text_content: str, source_url: str):
+    lines = [remove_excess_newlines(line) for line in text_content.splitlines()]
+    lines = [line for line in lines if line]
+    title = next((line for line in lines if 4 <= len(line) <= 90), "")
+    if not title:
+        title = title_from_url(source_url)
+    paragraphs = split_text_paragraphs(text_content)
+    description = next((paragraph for paragraph in paragraphs if paragraph != title), "")
+    benefits = [
+        line
+        for line in lines
+        if any(
+            keyword in line.lower()
+            for keyword in (
+                "accident",
+                "benefit",
+                "cover",
+                "critical",
+                "health",
+                "hospital",
+                "life",
+                "medical",
+                "protect",
+                "term",
+            )
+        )
+    ][:12]
+    return {
+        "plan_name": title,
+        "plan_description": description,
+        "plan_overview": "\n".join(paragraphs[:4]),
+        "product_brochure_url": source_url if source_url.lower().endswith(".pdf") else "",
+        "plan_benefits": benefits,
+    }
+
+
 def product_title(title_content, meta_title, soup: BeautifulSoup) -> str:
     title = title_content.get_text(" ", strip=True) if title_content else ""
     if not title or title.lower() in {"share", "overview"}:
@@ -149,6 +196,16 @@ def product_title(title_content, meta_title, soup: BeautifulSoup) -> str:
     if not title and soup.title:
         title = soup.title.get_text(" ", strip=True).split("|", 1)[0]
     return title.strip()
+
+
+def title_from_url(url: str) -> str:
+    slug = urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
+    return " ".join(part.capitalize() for part in slug.split("-") if part)
+
+
+def split_text_paragraphs(value: str) -> list[str]:
+    paragraphs = [remove_excess_newlines(part) for part in re.split(r"\n\s*\n", value)]
+    return [paragraph for paragraph in paragraphs if paragraph]
 
 
 def build_plan_row(filter_data: dict, product_data: dict):
@@ -185,17 +242,57 @@ def fetch_html(url: str) -> str:
     return response.text
 
 
-async def page_content_or_fallback(page, url: str) -> str:
+def cache_slug(url: str) -> str:
+    parsed = urlparse(url)
+    value = f"{parsed.netloc}{parsed.path}".strip("/")
+    return re.sub(r"[^A-Za-z0-9]+", "-", value).strip("-").lower()
+
+
+def cache_candidates(url: str, cache_dir: str | Path | None = None) -> list[Path]:
+    root = Path(cache_dir or AIA_SOURCE_CACHE_DIR)
+    parsed = urlparse(url)
+    slug = cache_slug(url)
+    basename = parsed.path.rstrip("/").rsplit("/", 1)[-1]
+    path_key = parsed.path.strip("/").replace("/", "__")
+    names = [
+        f"{slug}.html",
+        f"{slug}.txt",
+        f"{slug}.pdf.txt",
+        f"{path_key}.html" if path_key else "",
+        f"{path_key}.txt" if path_key else "",
+        f"{path_key}.pdf.txt" if path_key else "",
+        f"{basename}.html" if basename else "",
+        f"{basename}.txt" if basename else "",
+        f"{basename}.pdf.txt" if basename else "",
+    ]
+    return [root / name for name in dict.fromkeys(names) if name]
+
+
+def cached_payload(url: str, cache_dir: str | Path | None = None) -> tuple[str, str]:
+    for candidate in cache_candidates(url, cache_dir):
+        if not candidate.exists():
+            continue
+        kind = "html" if candidate.suffix == ".html" else "text"
+        return candidate.read_text(encoding="utf-8"), kind
+    return "", ""
+
+
+async def page_content_or_fallback(page, url: str) -> tuple[str, str]:
     try:
         await goto_with_retry(page, url)
-        return await page.content()
+        return await page.content(), "html"
     except Exception as exc:
         log_url_failure("aia", url, exc)
+        URL_FAILURES.append(f"{url}: {type(exc).__name__}: {exc}")
         try:
-            return await asyncio.to_thread(fetch_html, url)
+            return await asyncio.to_thread(fetch_html, url), "html"
         except Exception as fallback_exc:
             log_url_failure("aia", url, fallback_exc)
-            return ""
+            URL_FAILURES.append(f"{url}: {type(fallback_exc).__name__}: {fallback_exc}")
+            payload, kind = cached_payload(url)
+            if payload:
+                return payload, kind
+            return "", ""
 
 
 async def scrape_data(target_url):
@@ -206,10 +303,15 @@ async def scrape_data(target_url):
         context = await new_bot_context(browser)
         page = await context.new_page()
 
-        html_content = await page_content_or_fallback(page, target_url)
-        if not html_content:
+        source_content, source_kind = await page_content_or_fallback(page, target_url)
+        if not source_content:
             await browser.close()
             return []
+        if source_kind == "text":
+            product_data = parse_product_text(source_content, target_url)
+            row = build_plan_row({"plan_url": target_url}, product_data)
+            await browser.close()
+            return [row] if row["plan_name"] else []
 
         if await page.query_selector("#productDetailContainer"):  # handle pop-up ad
             await page.wait_for_timeout(2000)
@@ -217,9 +319,9 @@ async def scrape_data(target_url):
                 await page.click("#div-close")
                 print("Closed popup")
 
-        product_filters_data = parse_listing_html(html_content)
+        product_filters_data = parse_listing_html(source_content)
         if not product_filters_data:
-            product_data = parse_product_html(html_content)
+            product_data = parse_product_html(source_content)
             row = build_plan_row({"plan_url": target_url}, product_data)
             await browser.close()
             return [row] if row["plan_name"] else []
@@ -229,10 +331,14 @@ async def scrape_data(target_url):
             # print(url)
             product_page = await context.new_page()
             try:
-                product_html = await page_content_or_fallback(product_page, url)
-                if not product_html:
+                product_content, product_kind = await page_content_or_fallback(product_page, url)
+                if not product_content:
                     continue
-                product_data = parse_product_html(product_html)
+                product_data = (
+                    parse_product_html(product_content)
+                    if product_kind == "html"
+                    else parse_product_text(product_content, url)
+                )
                 scraped_data.append(build_plan_row(filter, product_data))
             finally:
                 await product_page.close()
@@ -249,6 +355,12 @@ async def run_all_tasks(scrape_list):
 # ----- sample execution code -----
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--source-cache-dir")
+    args, _ = parser.parse_known_args()
+    if args.source_cache_dir:
+        AIA_SOURCE_CACHE_DIR = args.source_cache_dir
     scrape_list = [
         "https://www.aia.com.sg/en/our-products/travel-and-lifestyle",
         "https://www.aia.com.sg/en/our-products/accident-protection",
@@ -260,4 +372,10 @@ if __name__ == "__main__":
     ]
     initialize_data_store()
     output = asyncio.run(run_all_tasks(scrape_list))
+    if not output:
+        record_scraper_failure(
+            "aia",
+            "; ".join(URL_FAILURES[-8:]) or "no AIA source payloads",
+            dry_run=args.dry_run,
+        )
     overwrite_plans_for_insurer("aia", output)

@@ -12,7 +12,8 @@ from bs4 import BeautifulSoup
 from rapidfuzz import fuzz
 
 import src.backend.helper as helper
-from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.http_identity import BROWSER_USER_AGENT
+from src.lib.mas_regulatory import is_mas_unavailable
 
 MAS_FID_INSURANCE_URL = "https://eservices.mas.gov.sg/fid/institution?sector=Insurance"
 LIA_MEMBER_COMPANIES_URL = "https://www.lia.org.sg/about-us/member-companies/"
@@ -35,6 +36,14 @@ TRACKED_CARRIERS = {
         "display_name": "Chubb Singapore",
         "aliases": ("Chubb Insurance Singapore", "Chubb Singapore", "Chubb"),
     },
+    "etiqa": {
+        "display_name": "Etiqa Singapore",
+        "aliases": ("Etiqa Insurance Pte. Ltd.", "Etiqa Singapore", "Etiqa"),
+    },
+    "fwd": {
+        "display_name": "FWD Singapore",
+        "aliases": ("FWD Singapore Pte. Ltd.", "FWD Singapore", "FWD"),
+    },
     "great_eastern": {
         "display_name": "Great Eastern Singapore",
         "aliases": (
@@ -53,6 +62,26 @@ TRACKED_CARRIERS = {
             "India International Insurance Pte Ltd",
             "India International Insurance Singapore",
         ),
+    },
+    "income": {
+        "display_name": "Income Insurance",
+        "aliases": ("Income Insurance Limited", "Income Insurance", "NTUC Income"),
+    },
+    "manulife": {
+        "display_name": "Manulife Singapore",
+        "aliases": ("Manulife (Singapore) Pte. Ltd.", "Manulife Singapore", "Manulife"),
+    },
+    "prudential": {
+        "display_name": "Prudential Singapore",
+        "aliases": (
+            "Prudential Assurance Company Singapore Pte. Limited",
+            "Prudential Singapore",
+            "Prudential",
+        ),
+    },
+    "raffles_health": {
+        "display_name": "Raffles Health Insurance",
+        "aliases": ("Raffles Health Insurance Pte. Ltd.", "Raffles Health Insurance"),
     },
     "singlife": {
         "display_name": "Singlife",
@@ -142,9 +171,12 @@ class CarrierCanonicalRecord:
 
 def fetch_text(url: str, session=None, timeout: int = 30) -> str:
     client = session or requests
-    response = client.get(url, timeout=timeout, headers={"User-Agent": BOT_USER_AGENT})
+    response = client.get(url, timeout=timeout, headers={"User-Agent": BROWSER_USER_AGENT})
     response.raise_for_status()
-    return response.text
+    text = response.text
+    if is_mas_unavailable(text):
+        raise RuntimeError(f"source unavailable: {url}")
+    return text
 
 
 def parse_mas_fid_records(

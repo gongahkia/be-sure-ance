@@ -14,7 +14,7 @@ class ScraperRegistryTests(unittest.TestCase):
 
     def test_each_experimental_scraper_has_defer_decision_documented(self):
         self.assertIn("defer", EXPERIMENTAL_DECISION)
-        self.assertEqual(len(EXPERIMENTAL_SCRAPERS), 17)
+        self.assertEqual(len(EXPERIMENTAL_SCRAPERS), 11)
 
     def test_readme_matrix_matches_registry_counts(self):
         self.assertEqual(README.count("Supported - scheduled"), len(SUPPORTED_SCRAPERS))

@@ -16,7 +16,7 @@ class Phase4ExitVerificationTests(unittest.TestCase):
             "public-good IFA pre-meeting research tool",
             "compareFIRST",
             "no advice, quotes, recommendations",
-            "10 supported scheduled carriers",
+            "16 supported scheduled carriers",
             "5,305 MOH institutions",
             "12 LIA claim metrics",
             "$0/mo",

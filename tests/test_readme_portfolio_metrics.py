@@ -20,7 +20,7 @@ class ReadmePortfolioMetricsTests(unittest.TestCase):
 
     def test_metrics_stat_block_marks_unavailable_usage_metrics(self):
         for required in (
-            "Supported scheduled carriers | 10",
+            "Supported scheduled carriers | 16",
             "30-day lookups | Unavailable",
             "Brochure alerts fired | Unavailable",
             "Plausible/Umami/privacy-safe analytics",

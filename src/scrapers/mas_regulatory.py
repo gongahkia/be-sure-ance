@@ -8,11 +8,14 @@ import requests
 from bs4 import BeautifulSoup
 
 from src.backend import helper
-from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.http_identity import BROWSER_USER_AGENT
 from src.lib.mas_regulatory import (
     MAS_ENFORCEMENT_URL,
     MAS_NEWS_URL,
+    direct_mas_news_items,
     extract_events_from_text,
+    extract_date,
+    is_mas_unavailable,
     parse_mas_news_listing,
 )
 from src.lib.scraper_health import record_scraper_failure, record_scraper_success
@@ -22,17 +25,17 @@ MAX_DETAIL_PAGES = 20
 
 
 def fetch_html(url: str, session=requests) -> str:
-    response = session.get(
-        url,
-        timeout=REQUEST_TIMEOUT_SECONDS,
-        headers={"User-Agent": BOT_USER_AGENT},
-    )
-    response.raise_for_status()
+    try:
+        response = session.get(
+            url,
+            timeout=REQUEST_TIMEOUT_SECONDS,
+            headers={"User-Agent": BROWSER_USER_AGENT},
+        )
+        response.raise_for_status()
+    except requests.RequestException as error:
+        raise RuntimeError(f"MAS source unavailable: {url}: {error}") from error
     text = response.text
-    if (
-        "Sorry, this service is currently unavailable" in text
-        or "<title>Maintenance</title>" in text
-    ):
+    if is_mas_unavailable(text):
         raise RuntimeError(f"MAS source unavailable: {url}")
     return text
 
@@ -53,6 +56,8 @@ def scrape_mas_regulatory_events(session=requests, scraped_at: str | None = None
             print(error)
             continue
         news_items.extend(parse_mas_news_listing(listing_html))
+    news_items.extend(direct_mas_news_items())
+    news_items = dedupe_news_items(news_items)
 
     if not news_items:
         if errors:
@@ -69,19 +74,41 @@ def scrape_mas_regulatory_events(session=requests, scraped_at: str | None = None
         try:
             detail_html = fetch_html(item.source_url, session=session)
         except RuntimeError as error:
+            errors.append(str(error))
             print(error)
             continue
         detail_text = html_text(detail_html)
+        published_at = item.published_at or extract_date(detail_text) or extract_date(item.title)
+        if not published_at:
+            errors.append(f"MAS source missing published date: {item.source_url}")
+            continue
         events.extend(
             extract_events_from_text(
                 title=item.title,
                 text=detail_text,
                 source_url=item.source_url,
-                published_at=item.published_at,
+                published_at=published_at,
                 scraped_at=scraped_at,
             )
         )
+    if not events and errors:
+        record_scraper_failure(
+            "mas_regulatory",
+            "; ".join(errors),
+            dry_run=helper.dry_run_enabled(),
+        )
     return events
+
+
+def dedupe_news_items(items):
+    seen = set()
+    deduped = []
+    for item in items:
+        if item.source_url in seen:
+            continue
+        seen.add(item.source_url)
+        deduped.append(item)
+    return deduped
 
 
 def upsert_mas_regulatory_events(events) -> None:

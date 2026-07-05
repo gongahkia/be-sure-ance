@@ -13,6 +13,32 @@ MAS_NEWS_URL = (
     "content_type=Enforcement+Actions+Media+Releases&content_type=Media+Releases&page=1"
 )
 MAS_ENFORCEMENT_URL = "https://www.mas.gov.sg/regulation/enforcement/enforcement-actions"
+MAS_DIRECT_NEWS_ITEMS = (
+    (
+        "Key Enforcement Actions Taken by MAS in Q2 2026",
+        "https://www.mas.gov.sg/news/media-releases/2026/key-enforcement-actions-taken-by-mas-in-q2-2026",
+    ),
+    (
+        "Key Enforcement Actions Taken by MAS in Q1 2026",
+        "https://www.mas.gov.sg/news/media-releases/2026/key-enforcement-actions-taken-by-mas-in-q1-2026",
+    ),
+    (
+        "Key Enforcement Actions Taken by MAS in Q4 2025",
+        "https://www.mas.gov.sg/news/media-releases/2026/key-enforcement-actions-taken-by-mas-in-q4-2025",
+    ),
+    (
+        "Key Regulatory and Enforcement Actions Taken by MAS in Q3 2025",
+        "https://www.mas.gov.sg/news/media-releases/2025/key-regulatory-and-enforcement-actions-taken-by-mas-in-q3-2025",
+    ),
+    (
+        "Key Regulatory and Enforcement Actions Taken by MAS in Q2 2025",
+        "https://www.mas.gov.sg/news/media-releases/2025/key-regulatory-and-enforcement-actions-taken-by-mas-in-q2-2025",
+    ),
+    (
+        "Key Regulatory and Enforcement Actions Taken by MAS in Q1 2025",
+        "https://www.mas.gov.sg/news/media-releases/2025/key-regulatory-and-enforcement-actions-taken-by-mas-in-q1-2025",
+    ),
+)
 MATCHED_STATUS = "matched"
 NEEDS_REVIEW_STATUS = "needs_review"
 
@@ -60,6 +86,22 @@ CARRIER_ALIASES = {
         "aliases": ("raffles health insurance", "raffles health"),
     },
     "chubb": {"name": "Chubb Singapore", "aliases": ("chubb insurance singapore", "chubb")},
+    "china_life": {
+        "name": "China Life Singapore",
+        "aliases": ("china life insurance singapore", "china life singapore", "china life"),
+    },
+    "iii": {
+        "name": "India International Insurance Singapore",
+        "aliases": ("india international insurance", "iii"),
+    },
+    "sunlife": {
+        "name": "Sun Life Singapore",
+        "aliases": ("sun life assurance company of canada", "sun life singapore", "sun life"),
+    },
+    "uoi": {
+        "name": "United Overseas Insurance",
+        "aliases": ("united overseas insurance", "uoi"),
+    },
 }
 
 EVENT_TYPES = {
@@ -141,6 +183,27 @@ def parse_mas_news_listing(html: str, base_url: str = MAS_BASE_URL) -> list[MasN
             )
         )
     return dedupe_news_items(items)
+
+
+def direct_mas_news_items() -> list[MasNewsItem]:
+    return [
+        MasNewsItem(title=title, source_url=url, published_at="")
+        for title, url in MAS_DIRECT_NEWS_ITEMS
+    ]
+
+
+def is_mas_unavailable(html: str) -> bool:
+    lowered = normalize_whitespace(html).lower()
+    return any(
+        marker in lowered
+        for marker in (
+            "<title>maintenance</title>",
+            "this service is currently unavailable",
+            "undergoing scheduled maintenance",
+            "maintenance.mas.gov.sg",
+            "work in progress",
+        )
+    )
 
 
 def extract_events_from_text(

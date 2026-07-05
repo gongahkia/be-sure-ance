@@ -5,11 +5,14 @@ from src.lib.carrier_canonicalization import (
     MAS_FID_INSURANCE_URL,
     MATCHED_STATUS,
     NEEDS_REVIEW_STATUS,
+    TRACKED_CARRIERS,
     UNMATCHED_STATUS,
     build_canonical_records,
+    fetch_text,
     parse_lia_member_records,
     parse_mas_fid_records,
 )
+from src.lib.http_identity import BROWSER_USER_AGENT
 
 MAS_HTML = """
 <div class="result-list resize">
@@ -103,6 +106,29 @@ class CarrierCanonicalizationTests(unittest.TestCase):
         self.assertIn(LIA_MEMBER_COMPANIES_URL, row["source_urls"])
         self.assertIn("AIA Singapore", row["aliases"])
         self.assertEqual(row["last_verified_at"], "2026-07-02T00:00:00+00:00")
+
+    def test_new_supported_carriers_are_tracked_for_registry_matching(self):
+        for carrier_key in ("etiqa", "fwd", "income", "manulife", "prudential", "raffles_health"):
+            with self.subTest(carrier_key=carrier_key):
+                self.assertIn(carrier_key, TRACKED_CARRIERS)
+
+    def test_fetch_text_rejects_mas_maintenance_page(self):
+        seen_headers = []
+
+        class Response:
+            text = "<title>MAS</title>This site is currently undergoing scheduled maintenance."
+
+            def raise_for_status(self):
+                return None
+
+        class Session:
+            def get(self, url, timeout, headers):
+                seen_headers.append(headers)
+                return Response()
+
+        with self.assertRaisesRegex(RuntimeError, "source unavailable"):
+            fetch_text(MAS_FID_INSURANCE_URL, session=Session())
+        self.assertEqual(seen_headers[0]["User-Agent"], BROWSER_USER_AGENT)
 
 
 if __name__ == "__main__":

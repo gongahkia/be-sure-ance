@@ -65,6 +65,7 @@ def sync_scraper_registry_statuses(dry_run=None):
             "carrier_key": carrier_key,
             "display_name": display_name(carrier_key),
             "support_status": "supported",
+            "validation_status": "not_run",
             "updated_at": timestamp,
         }
         for carrier_key in SUPPORTED_SCRAPERS
@@ -95,6 +96,7 @@ def record_scraper_success(carrier_key, row_count, dry_run=None):
                 "last_run_at": timestamp,
                 "last_error": None,
                 "row_count": int(row_count or 0),
+                "validation_status": "not_run",
                 "updated_at": timestamp,
             }
         ],

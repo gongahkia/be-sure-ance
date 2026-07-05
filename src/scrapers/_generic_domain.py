@@ -12,6 +12,7 @@ from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
 from src.lib.search import search_wrapper
+from src.lib.scraper_health import record_scraper_failure
 from src.scrapers.navigation import goto_with_retry, new_bot_context
 
 DEFAULT_SEARCH_QUERY = (
@@ -268,7 +269,10 @@ def run_cli_scraper(config: GenericScraperConfig, module_doc: str | None):
     rows = asyncio.run(scrape_generic_insurer(runtime_config, module_doc))
     print(f"[{config.table_name}] produced {len(rows)} plan rows")
 
-    if args.dry_run or not rows:
+    if args.dry_run:
+        return
+    if not rows:
+        record_scraper_failure(config.table_name, "no plan rows produced")
         return
 
     initialize_data_store()
