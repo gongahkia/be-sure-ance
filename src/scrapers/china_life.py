@@ -122,7 +122,7 @@ async def scrape_data(url):
                 "plan_benefits": plan_benefits,
                 "plan_description": plan_description,
                 "plan_overview": "",
-                "plan_url": urljoin("https://www.chinalife.com.sg/", plan_url),
+                "plan_url": urljoin("https://www.chinalife.com.sg/", plan_url) if plan_url else "",
                 "product_brochure_url": "",
             }
 

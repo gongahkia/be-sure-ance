@@ -27,6 +27,17 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual(row["plan_description"], "Personal accident cover.")
         self.assertIn("Accident-related injury protection", row["plan_benefits"])
 
+    def test_chubb_dedupes_listing_and_direct_rows(self):
+        rows = chubb.dedupe_rows(
+            [
+                {"plan_name": "Travel", "plan_url": "https://example.com/travel"},
+                {"plan_name": "Travel", "plan_url": "https://example.com/travel"},
+                {"plan_name": "Home", "plan_url": "https://example.com/home"},
+            ]
+        )
+
+        self.assertEqual([row["plan_name"] for row in rows], ["Travel", "Home"])
+
     def test_iii_parser_falls_back_to_url_title(self):
         row = iii.parse_product_html(
             "<html><body><main><p>Simple travel coverage.</p><li>Trip delay</li></main></body></html>",
