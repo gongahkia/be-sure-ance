@@ -1,54 +1,41 @@
 <template>
-  <article class="plan-card">
-    <div class="plan-card-top">
-      <div>
-        <p class="eyebrow">{{ provider.name }}</p>
-        <h3>{{ plan.plan_name }}</h3>
+  <article class="repo-row">
+    <ProviderLogo :provider="provider" size="md" />
+    <div class="repo-body">
+      <div class="repo-title-line">
+        <div>
+          <a class="repo-title" :href="planPagePath">
+            <span>{{ provider.name }}</span>
+            <strong>/{{ plan.plan_name }}</strong>
+          </a>
+          <p class="repo-summary">
+            {{
+              plan.plan_description ||
+              comparisonFact?.comparison_notes ||
+              plan.plan_overview ||
+              t('ui.plan.noSummary')
+            }}
+          </p>
+        </div>
+        <button class="hub-button" type="button" @click="$emit('toggle-select', plan.key)">
+          {{ selected ? t('ui.plan.selected') : t('ui.plan.add') }}
+        </button>
       </div>
-      <button class="select-button" type="button" @click="$emit('toggle-select', plan.key)">
-        {{ selected ? t('plan.remove') : t('plan.select') }}
-      </button>
-    </div>
 
-    <p class="summary">
-      {{
-        plan.plan_description || comparisonFact?.comparison_notes || 'No plan summary available.'
-      }}
-    </p>
-    <p v-if="canonicalCarrierText" class="canonical-line">
-      {{ t('plan.canonicalCarrier') }}: {{ canonicalCarrierText }}
-      <span v-if="canonicalFlagsText">({{ canonicalFlagsText }})</span>
-    </p>
-    <FactProvenance :entries="profileProvenance" compact />
-
-    <div class="fact-row">
-      <div v-for="fact in factHighlights" :key="fact.label" class="fact">
-        <span class="fact-label">{{ fact.label }}</span>
-        <strong>{{ fact.value }}</strong>
+      <div class="chip-row">
+        <span v-for="badge in coverageBadges" :key="badge" class="hub-chip">{{ badge }}</span>
+        <span class="hub-chip">{{ t('ui.plan.facts', { count: factCount }) }}</span>
+        <span class="hub-chip">{{ t('ui.plan.sources', { count: sourceCount }) }}</span>
+        <span :class="['hub-chip', verificationClass]">{{ verificationText }}</span>
+        <span v-if="resources.length > 0" class="hub-chip good">
+          {{ t('ui.plan.providerLinks', { count: resources.length }) }}
+        </span>
       </div>
-    </div>
-    <FactProvenance :entries="highlightProvenance" compact />
 
-    <div class="tag-row">
-      <span v-for="badge in coverageBadges" :key="badge" class="coverage-badge">
-        {{ badge }}
-      </span>
-      <span v-if="resources.length > 0" class="resource-badge"
-        >{{ resources.length }} provider links</span
-      >
-    </div>
-
-    <details class="detail-panel">
-      <summary>{{ t('plan.details') }}</summary>
-      <p class="detail-copy">
-        {{
-          plan.plan_overview ||
-          comparisonFact?.comparison_notes ||
-          'No additional overview available.'
-        }}
-      </p>
-
-      <div class="link-row">
+      <div class="repo-meta">
+        <span>{{ plan.providerKey }}</span>
+        <span>{{ brochureSummary }}</span>
+        <span>{{ latestVerifiedText }}</span>
         <a
           v-if="safeExternalUrl(plan.plan_url)"
           :href="safeExternalUrl(plan.plan_url)"
@@ -56,91 +43,65 @@
           rel="noopener noreferrer"
           referrerpolicy="no-referrer"
         >
-          {{ t('plan.productPage') }}
+          {{ externalHostname(plan.plan_url) }}
         </a>
-        <a
-          v-if="safeExternalUrl(plan.product_brochure_url)"
-          :href="safeExternalUrl(plan.product_brochure_url)"
-          target="_blank"
-          rel="noopener noreferrer"
-          referrerpolicy="no-referrer"
-        >
-          {{ t('plan.brochureLink') }}
-        </a>
-        <a v-if="planPagePath" :href="planPagePath">{{ t('plan.planPage') }}</a>
       </div>
 
-      <div class="qualitative-sections">
-        <section>
-          <h4>{{ t('plan.coverage') }}</h4>
-          <p>{{ coverageSummary }}</p>
-          <FactProvenance :entries="coverageProvenance" />
-        </section>
-
-        <section>
-          <h4>{{ t('plan.network') }}</h4>
-          <p>{{ networkSummary }}</p>
-          <ul v-if="panelHospitals.length > 0">
-            <li v-for="hospital in panelHospitals.slice(0, 4)" :key="itemLabel(hospital)">
-              {{ itemLabel(hospital) }}
-            </li>
-          </ul>
-          <FactProvenance :entries="networkProvenance" />
-        </section>
-
-        <section>
-          <h4>{{ t('plan.process') }}</h4>
-          <p>{{ t('plan.waitingPeriods') }}: {{ waitingPeriodSummary }}</p>
-          <p v-if="waitingPeriodTags.length > 0">
-            {{ t('plan.tags') }}: {{ waitingPeriodTags.join(', ') }}
-          </p>
-          <p>{{ t('plan.claimDeadlines') }}: {{ claimDeadlineSummary }}</p>
-          <p>{{ t('plan.claimSla') }}: {{ claimSlaSummary }}</p>
-          <FactProvenance :entries="processProvenance" />
-        </section>
-
-        <section>
-          <h4>{{ t('plan.exclusions') }}</h4>
-          <p>{{ exclusionSummary }}</p>
-          <p v-if="exclusionTags.length > 0">
-            {{ t('plan.tags') }}: {{ exclusionTags.join(', ') }}
-          </p>
-          <FactProvenance :entries="exclusionProvenance" />
-        </section>
-
-        <section>
-          <h4>{{ t('plan.brochure') }}</h4>
-          <p>{{ brochureSummary }}</p>
-          <FactProvenance :entries="brochureProvenance" />
-        </section>
-
-        <BrochureChangeList :changes="brochureChanges" />
-
-        <section v-if="sourceNotes.length > 0">
-          <h4>{{ t('plan.sourceNotes') }}</h4>
-          <p>{{ listText(sourceNotes) }}</p>
-          <FactProvenance :entries="sourceNotesProvenance" />
-        </section>
-
-        <RegulatoryEventList :events="regulatoryEvents" />
-      </div>
-
-      <ul v-if="resources.length > 0" class="resource-list">
-        <li v-for="resource in resources" :key="resource.id || resource.resource_url">
-          <a
-            v-if="safeExternalUrl(resource.resource_url)"
-            :href="safeExternalUrl(resource.resource_url)"
-            target="_blank"
-            rel="noopener noreferrer"
-            referrerpolicy="no-referrer"
-          >
-            {{ resource.resource_title || resource.resource_type }}
-          </a>
-          <span v-if="resource.resource_description"> - {{ resource.resource_description }}</span>
-        </li>
-      </ul>
-      <FactProvenance v-if="resources.length > 0" :entries="resourceProvenance" compact />
-    </details>
+      <details class="row-details">
+        <summary>{{ t('ui.plan.modelPreview') }}</summary>
+        <div class="detail-grid">
+          <section>
+            <h3>{{ t('field.panel_hospitals') }}</h3>
+            <p>{{ networkSummary }}</p>
+            <FactProvenance
+              :entries="provenanceEntriesForFields(facts, ['panel_hospitals'])"
+              compact
+            />
+          </section>
+          <section>
+            <h3>{{ t('plan.process') }}</h3>
+            <p>{{ processSummary }}</p>
+            <FactProvenance
+              :entries="
+                provenanceEntriesForFields(facts, [
+                  'waiting_periods',
+                  'claim_deadlines',
+                  'claim_sla',
+                ])
+              "
+              compact
+            />
+          </section>
+          <section>
+            <h3>{{ t('field.exclusions') }}</h3>
+            <p>{{ exclusionSummary }}</p>
+            <FactProvenance :entries="provenanceEntriesForFields(facts, ['exclusions'])" compact />
+          </section>
+          <section v-if="resources.length > 0">
+            <h3>{{ t('ui.plan.providerResources') }}</h3>
+            <ul>
+              <li
+                v-for="resource in resources.slice(0, 4)"
+                :key="resource.id || resource.resource_url"
+              >
+                <a
+                  v-if="safeExternalUrl(resource.resource_url)"
+                  :href="safeExternalUrl(resource.resource_url)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  referrerpolicy="no-referrer"
+                >
+                  {{ resource.resource_title || resource.resource_type }}
+                </a>
+                <span v-else>{{ resource.resource_title || resource.resource_type }}</span>
+              </li>
+            </ul>
+          </section>
+          <BrochureChangeList :changes="brochureChanges" />
+          <RegulatoryEventList :events="regulatoryEvents" />
+        </div>
+      </details>
+    </div>
   </article>
 </template>
 
@@ -149,9 +110,10 @@ import { computed } from 'vue'
 
 import BrochureChangeList from './BrochureChangeList.vue'
 import FactProvenance from './FactProvenance.vue'
+import ProviderLogo from './ProviderLogo.vue'
 import RegulatoryEventList from './RegulatoryEventList.vue'
 import { useI18n } from '../i18n'
-import { safeExternalUrl } from '../utils/links'
+import { externalHostname, safeExternalUrl } from '../utils/links'
 import {
   claimSlaText,
   coverageTagsForPlan,
@@ -159,13 +121,13 @@ import {
   factItems,
   factStateText,
   factValue,
+  formatFactDate,
   itemLabel,
   labelForTag,
   listText,
-  profileProvenanceEntry,
   provenanceEntriesForFields,
+  provenanceState,
   taxonomySuffix,
-  taxonomyTagLabels,
 } from '../utils/planFacts'
 
 const props = defineProps({
@@ -173,7 +135,10 @@ const props = defineProps({
   provider: Object,
   facts: Object,
   comparisonFact: Object,
-  resources: Array,
+  resources: {
+    type: Array,
+    default: () => [],
+  },
   regulatoryEvents: {
     type: Array,
     default: () => [],
@@ -194,90 +159,94 @@ const planWithFacts = computed(() => ({
   comparisonFact: props.comparisonFact,
 }))
 
-const coverageBadges = computed(() => coverageTagsForPlan(planWithFacts.value).map(labelForTag))
-const carrierCanonical = computed(() => props.plan?.carrierCanonical || null)
-const canonicalCarrierText = computed(() => carrierCanonical.value?.canonical_name || '')
-const canonicalFlagsText = computed(() =>
-  (carrierCanonical.value?.mismatch_flags || []).map(labelForTag).join(', '),
-)
-
+const coverageBadges = computed(() => coverageTagsForPlan(planWithFacts.value).map(tagLabel))
 const panelHospitals = computed(() => factItems(props.facts, 'panel_hospitals'))
 const waitingPeriods = computed(() => factItems(props.facts, 'waiting_periods'))
 const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
 const exclusions = computed(() => factItems(props.facts, 'exclusions'))
-const waitingPeriodTags = computed(() => taxonomyTagLabels(waitingPeriods.value))
-const exclusionTags = computed(() => taxonomyTagLabels(exclusions.value))
-const sourceNotes = computed(() => factItems(props.facts, 'source_notes'))
 const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
 const planPagePath = computed(() =>
   props.plan?.providerKey && props.plan?.plan_slug
     ? `/plan/${encodeURIComponent(props.plan.providerKey)}/${encodeURIComponent(props.plan.plan_slug)}`
-    : '',
-)
-const profileProvenance = computed(() => profileProvenanceEntry(props.plan))
-const highlightProvenance = computed(() =>
-  provenanceEntriesForFields(props.facts, [
-    'coverage_tags',
-    'panel_hospitals',
-    'waiting_periods',
-    'claim_deadlines',
-    'claim_sla',
-    'exclusions',
-    'brochure_metadata',
-  ]),
-)
-const coverageProvenance = computed(() =>
-  provenanceEntriesForFields(props.facts, ['coverage_tags']),
-)
-const networkProvenance = computed(() =>
-  provenanceEntriesForFields(props.facts, ['panel_hospitals']),
-)
-const processProvenance = computed(() =>
-  provenanceEntriesForFields(props.facts, ['waiting_periods', 'claim_deadlines', 'claim_sla']),
-)
-const exclusionProvenance = computed(() => provenanceEntriesForFields(props.facts, ['exclusions']))
-const brochureProvenance = computed(() =>
-  provenanceEntriesForFields(props.facts, ['brochure_metadata']),
-)
-const sourceNotesProvenance = computed(() =>
-  provenanceEntriesForFields(props.facts, ['source_notes']),
-)
-const resourceProvenance = computed(() =>
-  (props.resources || []).map((resource, index) => ({
-    key: `resource:${resource.id || resource.resource_url || index}`,
-    fields: [resource.resource_title || resource.resource_type || 'Provider resource'],
-    sourceUrl: resource.source_url || resource.resource_url || '',
-    sourceType: 'product_page',
-    scrapedAt: '',
-    lastVerifiedAt: '',
-  })),
-)
-const claimSlaSummary = computed(
-  () => claimSlaText(props.facts) || factStateText(props.facts, 'claim_sla'),
+    : '/',
 )
 
-const coverageSummary = computed(() =>
-  coverageBadges.value.length > 0
-    ? coverageBadges.value.join(', ')
-    : factStateText(props.facts, 'coverage_tags', 'Unknown'),
+const factCount = computed(() => Object.keys(props.facts || {}).length)
+const sourceCount = computed(
+  () =>
+    new Set(
+      Object.values(props.facts || {})
+        .map((fact) => fact.source_url)
+        .filter(Boolean),
+    ).size,
 )
+
+const latestVerifiedText = computed(() => {
+  const value = Object.values(props.facts || {})
+    .map((fact) => fact.last_verified_at || fact.scraped_at || '')
+    .filter(Boolean)
+    .sort()
+    .at(-1)
+  return value
+    ? t('ui.plan.verifiedDate', { date: formatFactDate(value) })
+    : t('ui.plan.verificationMissing')
+})
+
+const verificationState = computed(() => {
+  const entries = Object.values(props.facts || {}).map((fact) => ({
+    sourceUrl: fact.source_url || '',
+    scrapedAt: fact.scraped_at || '',
+    lastVerifiedAt: fact.last_verified_at || '',
+  }))
+  if (entries.length === 0) {
+    return 'missing'
+  }
+  return entries.some((entry) => provenanceState(entry) === 'Verified') ? 'verified' : 'stale'
+})
+
+const verificationText = computed(() => {
+  if (verificationState.value === 'verified') return t('ui.state.verified')
+  if (verificationState.value === 'stale') return t('ui.state.stale')
+  return t('ui.state.sourceIncomplete')
+})
+
+const verificationClass = computed(() => {
+  if (verificationState.value === 'verified') return 'good'
+  if (verificationState.value === 'stale') return 'warn'
+  return 'bad'
+})
+
+const brochureSummary = computed(() => {
+  if (brochureMetadata.value?.sha256) {
+    return t('ui.plan.brochureHash', { hash: String(brochureMetadata.value.sha256).slice(0, 8) })
+  }
+  if (props.plan?.product_brochure_url) {
+    return t('ui.plan.brochureLinked')
+  }
+  return t('ui.plan.noBrochure')
+})
+
+function tagLabel(tag) {
+  const translated = t(`tag.${tag}`)
+  return translated.startsWith('[missing:') ? labelForTag(tag) : translated
+}
 
 const networkSummary = computed(() =>
   panelHospitals.value.length > 0
-    ? `${panelHospitals.value.length} listed`
-    : factStateText(props.facts, 'panel_hospitals', 'Unknown'),
+    ? panelHospitals.value.map(itemLabel).join(', ')
+    : factStateText(props.facts, 'panel_hospitals', t('ui.matrix.unknown')),
 )
 
-const waitingPeriodSummary = computed(() =>
-  waitingPeriods.value.length > 0
-    ? waitingPeriods.value.map((item) => durationText(item)).join(', ')
-    : factStateText(props.facts, 'waiting_periods', 'Unknown'),
-)
-
-const claimDeadlineSummary = computed(() =>
-  claimDeadlines.value.length > 0
-    ? claimDeadlines.value.map((item) => durationText(item, 'deadline_days')).join(', ')
-    : factStateText(props.facts, 'claim_deadlines', 'Unknown'),
+const processSummary = computed(() =>
+  [
+    waitingPeriods.value.length
+      ? waitingPeriods.value.map((item) => durationText(item)).join(', ')
+      : factStateText(props.facts, 'waiting_periods', t('ui.matrix.unknown')),
+    claimDeadlines.value.length
+      ? claimDeadlines.value.map((item) => durationText(item, 'deadline_days')).join(', ')
+      : factStateText(props.facts, 'claim_deadlines', t('ui.matrix.unknown')),
+    claimSlaText(props.facts) || factStateText(props.facts, 'claim_sla', t('ui.matrix.unknown')),
+  ].join(' / '),
 )
 
 const exclusionSummary = computed(() =>
@@ -285,198 +254,133 @@ const exclusionSummary = computed(() =>
     ? exclusions.value.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
     : factStateText(props.facts, 'exclusions'),
 )
-
-const brochureSummary = computed(() => {
-  if (brochureMetadata.value?.sha256 || brochureMetadata.value?.url) {
-    return 'Captured'
-  }
-  if (props.plan?.product_brochure_url) {
-    return 'Available'
-  }
-  return factStateText(props.facts, 'brochure_metadata')
-})
-
-const processFactCount = computed(
-  () =>
-    waitingPeriods.value.length + claimDeadlines.value.length + (claimSlaText(props.facts) ? 1 : 0),
-)
-
-const factHighlights = computed(() => [
-  {
-    label: 'Coverage signals',
-    value: coverageBadges.value.length
-      ? coverageBadges.value.length
-      : factStateText(props.facts, 'coverage_tags', 'Unknown'),
-  },
-  {
-    label: 'Network facts',
-    value: networkSummary.value,
-  },
-  {
-    label: 'Process facts',
-    value: processFactCount.value ? `${processFactCount.value} listed` : 'Unknown',
-  },
-  {
-    label: 'Exclusions',
-    value: exclusions.value.length ? `${exclusions.value.length} noted` : exclusionSummary.value,
-  },
-  {
-    label: 'Brochure',
-    value: brochureSummary.value,
-  },
-])
 </script>
 
 <style scoped>
-.plan-card {
+.repo-row {
   display: grid;
-  gap: 1rem;
-  padding: 1.35rem;
-  border: 1px solid rgba(16, 39, 71, 0.1);
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.08);
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-lg);
+  background: var(--hf-surface);
 }
 
-.plan-card-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: start;
+.repo-row:hover {
+  border-color: var(--hf-tertiary);
 }
 
-.eyebrow {
-  margin: 0 0 0.35rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-ink);
-}
-
-h3 {
-  margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.25;
-}
-
-.summary,
-.detail-copy,
-.canonical-line {
-  margin: 0;
-  color: var(--muted-ink);
-}
-
-.canonical-line {
-  font-size: 0.84rem;
-}
-
-.fact-row {
+.repo-body {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  gap: 0.8rem;
+  min-width: 0;
+  gap: 10px;
 }
 
-.fact {
-  padding: 0.85rem;
-  border-radius: 1rem;
-  background: rgba(16, 39, 71, 0.04);
+.repo-title-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: flex-start;
 }
 
-.fact-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: 0.78rem;
-  color: var(--muted-ink);
+.repo-title {
+  display: inline-flex;
+  max-width: 100%;
+  gap: 2px;
+  color: var(--hf-primary);
+  font-size: 20px;
+  line-height: 26px;
+  text-decoration: none;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
 }
 
-.tag-row {
+.repo-title span {
+  color: var(--hf-muted);
+}
+
+.repo-title strong {
+  overflow-wrap: anywhere;
+}
+
+.repo-summary {
+  margin: 4px 0 0;
+  color: var(--hf-secondary);
+  line-height: 22px;
+}
+
+.chip-row,
+.repo-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 8px;
+  align-items: center;
 }
 
-.coverage-badge,
-.resource-badge {
-  padding: 0.45rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  background: rgba(194, 225, 255, 0.72);
-  color: #133d5e;
+.repo-meta {
+  color: var(--hf-muted);
+  font-size: 14px;
 }
 
-.resource-badge {
-  background: rgba(219, 234, 194, 0.9);
-  color: #355118;
+.repo-meta span,
+.repo-meta a {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
-.detail-panel {
-  padding-top: 0.2rem;
+.row-details {
+  border-top: 1px solid var(--hf-border);
+  padding-top: 10px;
 }
 
-.detail-panel summary {
+.row-details summary {
+  color: var(--hf-secondary);
   cursor: pointer;
   font-weight: 700;
 }
 
-.link-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.85rem;
-}
-
-.qualitative-sections {
+.detail-grid {
   display: grid;
-  gap: 0.8rem;
-  margin-top: 1rem;
+  gap: 14px;
+  margin-top: 14px;
 }
 
-.qualitative-sections section {
-  padding-top: 0.8rem;
-  border-top: 1px solid rgba(16, 39, 71, 0.08);
+.detail-grid section {
+  display: grid;
+  gap: 6px;
 }
 
-.qualitative-sections h4,
-.qualitative-sections p,
-.qualitative-sections ul {
+.detail-grid h3,
+.detail-grid p,
+.detail-grid ul {
   margin: 0;
 }
 
-.qualitative-sections h4 {
-  margin-bottom: 0.35rem;
-  font-size: 0.86rem;
+.detail-grid h3 {
+  font-size: 16px;
 }
 
-.qualitative-sections p,
-.qualitative-sections li {
-  color: var(--muted-ink);
+.detail-grid p,
+.detail-grid li {
+  color: var(--hf-secondary);
 }
 
-.qualitative-sections ul {
-  padding-left: 1rem;
-  margin-top: 0.45rem;
+.detail-grid ul {
+  padding-left: 18px;
 }
 
-.resource-list {
-  margin: 1rem 0 0;
-  padding-left: 1rem;
-  color: var(--muted-ink);
-}
+@media (max-width: 760px) {
+  .repo-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
 
-.select-button {
-  border: none;
-  border-radius: 999px;
-  padding: 0.75rem 1rem;
-  background: #102747;
-  color: #f8fbff;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-@media (max-width: 720px) {
-  .fact-row {
+  .repo-title-line {
     grid-template-columns: 1fr;
+  }
+
+  .repo-title-line .hub-button {
+    width: max-content;
   }
 }
 </style>

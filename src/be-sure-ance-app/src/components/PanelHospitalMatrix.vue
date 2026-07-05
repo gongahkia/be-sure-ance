@@ -1,38 +1,38 @@
 <template>
-  <section class="matrix-page">
+  <section class="matrix-page hub-panel">
     <div class="matrix-top">
       <div>
-        <p class="eyebrow">Panel Matrix</p>
-        <h2>Hospital coverage by carrier</h2>
+        <p class="eyebrow">{{ t('ui.matrix.eyebrow') }}</p>
+        <h2>{{ t('ui.matrix.title') }}</h2>
       </div>
       <input
         v-model="searchModel"
         class="matrix-search"
         type="search"
-        placeholder="is Mt Elizabeth Novena on AIA's panel"
+        :placeholder="t('ui.matrix.placeholder')"
       />
     </div>
 
-    <div class="legend-row" aria-label="Matrix status legend">
-      <span class="status-pill status-yes">Yes</span>
-      <span class="status-pill status-no">No</span>
-      <span class="status-pill status-unknown">Unknown</span>
-      <span class="status-pill status-stale">Stale</span>
+    <div class="legend-row" :aria-label="t('ui.matrix.legend')">
+      <span class="status-pill status-yes">{{ t('ui.matrix.yes') }}</span>
+      <span class="status-pill status-no">{{ t('ui.matrix.no') }}</span>
+      <span class="status-pill status-unknown">{{ t('ui.matrix.unknown') }}</span>
+      <span class="status-pill status-stale">{{ t('ui.matrix.stale') }}</span>
     </div>
 
     <div v-if="hospitalRows.length === 0" class="empty-state">
-      No panel hospital facts are loaded yet.
+      {{ t('ui.matrix.empty') }}
     </div>
 
     <div v-else-if="visibleRows.length === 0" class="empty-state">
-      No hospitals match the current lookup.
+      {{ t('ui.matrix.noMatch') }}
     </div>
 
     <div v-else class="matrix-scroll">
       <table>
         <thead>
           <tr>
-            <th class="hospital-column">Hospital</th>
+            <th class="hospital-column">{{ t('ui.matrix.hospital') }}</th>
             <th v-for="provider in visibleProviders" :key="provider.key">
               {{ provider.name }}
             </th>
@@ -42,7 +42,7 @@
           <tr v-for="row in visibleRows" :key="row.key">
             <th class="hospital-column" scope="row">
               <span>{{ row.name }}</span>
-              <small v-if="row.reviewRequired">Review</small>
+              <small v-if="row.reviewRequired">{{ t('ui.matrix.review') }}</small>
             </th>
             <td v-for="provider in visibleProviders" :key="`${row.key}:${provider.key}`">
               <div :class="['matrix-cell', `cell-${cellFor(row, provider).status}`]">
@@ -56,7 +56,7 @@
                     rel="noopener noreferrer"
                     referrerpolicy="no-referrer"
                   >
-                    Source
+                    {{ t('ui.matrix.source') }}
                   </a>
                 </template>
                 <span v-else>{{ cellFor(row, provider).note }}</span>
@@ -72,6 +72,7 @@
 <script setup>
 import { computed } from 'vue'
 
+import { useI18n } from '../i18n'
 import { safeExternalUrl } from '../utils/links'
 import { factItems, itemLabel } from '../utils/planFacts'
 
@@ -93,6 +94,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['update:query'])
+const { t } = useI18n()
 
 const searchModel = computed({
   get: () => props.query,
@@ -166,7 +168,7 @@ function cellFor(row, provider) {
     const displayMatches = freshMatches.length > 0 ? freshMatches : matches
     return {
       status: freshMatches.length > 0 ? 'yes' : 'stale',
-      label: freshMatches.length > 0 ? 'Yes' : 'Stale',
+      label: freshMatches.length > 0 ? t('ui.matrix.yes') : t('ui.matrix.stale'),
       matches: displayMatches,
       planNames: displayMatches.map((entry) => entry.plan.plan_name).join(', '),
       sourceUrl: displayMatches[0]?.fact?.source_url || displayMatches[0]?.plan?.plan_url || '',
@@ -181,20 +183,20 @@ function cellFor(row, provider) {
   if (hasPanelFacts) {
     return {
       status: 'no',
-      label: 'No',
+      label: t('ui.matrix.no'),
       matches: [],
       planNames: '',
       sourceUrl: '',
-      note: 'Not listed in loaded panel facts',
+      note: t('ui.matrix.notListed'),
     }
   }
   return {
     status: 'unknown',
-    label: 'Unknown',
+    label: t('ui.matrix.unknown'),
     matches: [],
     planNames: '',
     sourceUrl: '',
-    note: 'No panel facts loaded',
+    note: t('ui.matrix.noFacts'),
   }
 }
 
@@ -273,11 +275,7 @@ function slugify(value) {
 .matrix-page {
   display: grid;
   gap: 1rem;
-  padding: 1.35rem;
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(16, 39, 71, 0.1);
-  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.08);
+  padding: 18px;
 }
 
 .matrix-top {
@@ -294,19 +292,18 @@ h2 {
 
 .eyebrow {
   margin-bottom: 0.35rem;
-  color: var(--muted-ink);
+  color: var(--hf-muted);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .matrix-search {
   width: min(440px, 100%);
   padding: 0.85rem 1rem;
-  border: 1px solid rgba(16, 39, 71, 0.14);
+  border: 1px solid var(--hf-border);
   border-radius: 999px;
-  background: #ffffff;
+  background: var(--hf-neutral);
+  color: var(--hf-primary);
 }
 
 .legend-row {
@@ -324,30 +321,30 @@ h2 {
 
 .status-yes,
 .cell-yes {
-  color: #14532d;
-  background: #dcfce7;
+  color: #bbf7d0;
+  background: rgba(22, 101, 52, 0.36);
 }
 
 .status-no,
 .cell-no {
-  color: #7f1d1d;
-  background: #fee2e2;
+  color: #fecdd3;
+  background: rgba(127, 29, 29, 0.36);
 }
 
 .status-unknown,
 .cell-unknown {
-  color: #334155;
-  background: #e2e8f0;
+  color: var(--hf-secondary);
+  background: var(--hf-surface-2);
 }
 
 .status-stale,
 .cell-stale {
-  color: #7c2d12;
-  background: #ffedd5;
+  color: #fde68a;
+  background: rgba(124, 45, 18, 0.36);
 }
 
 .empty-state {
-  color: var(--muted-ink);
+  color: var(--hf-secondary);
 }
 
 .matrix-scroll {
@@ -363,15 +360,14 @@ table {
 th,
 td {
   padding: 0.75rem;
-  border-bottom: 1px solid rgba(16, 39, 71, 0.08);
+  border-bottom: 1px solid var(--hf-border);
   text-align: left;
   vertical-align: top;
 }
 
 thead th {
-  color: var(--muted-ink);
+  color: var(--hf-muted);
   font-size: 0.76rem;
-  text-transform: uppercase;
 }
 
 .hospital-column {
@@ -379,7 +375,7 @@ thead th {
   left: 0;
   z-index: 1;
   width: 220px;
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--hf-surface);
 }
 
 .hospital-column span,
@@ -389,7 +385,7 @@ thead th {
 
 .hospital-column small {
   margin-top: 0.25rem;
-  color: #7c2d12;
+  color: #fde68a;
 }
 
 .matrix-cell {

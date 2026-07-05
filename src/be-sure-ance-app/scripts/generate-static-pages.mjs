@@ -129,22 +129,38 @@ function renderStaticPlanMarkup(plan, facts) {
   const sourceRows =
     facts.length > 0
       ? facts.map(renderFactArticle).join('\n')
-      : '<p>No source-traceable facts have been published for this plan page yet.</p>'
+      : '<p class="static-muted">No source-traceable facts have been published for this plan page yet.</p>'
   const planUrl = safeHttpUrl(plan.plan_url)
   const brochureUrl = safeHttpUrl(plan.product_brochure_url)
 
   return `
     <main class="static-plan-page">
-      <p>For Insurance Agents</p>
-      <h1>${escapeHtml(plan.plan_name)}</h1>
-      <p>${escapeHtml(plan.providerName)}</p>
-      <p>${escapeHtml(plan.plan_description || plan.plan_overview || 'Source-traceable qualitative plan metadata.')}</p>
-      <p>This page is not financial advice, insurance advice, a quote, or a recommendation.</p>
-      <nav>
-        ${planUrl ? `<a href="${escapeHtml(planUrl)}">Carrier product page</a>` : ''}
-        ${brochureUrl ? `<a href="${escapeHtml(brochureUrl)}">Brochure</a>` : ''}
+      <header class="static-topbar">
+        <a href="/" class="static-brand"><span>B</span> Be-sure-ance</a>
+        <nav>
+          <a href="/">Models</a>
+          <a href="/matrix/panel-hospitals">Datasets</a>
+          <a href="/status">Status</a>
+        </nav>
+      </header>
+      <section class="static-repo-heading">
+        <div>
+          <p>${escapeHtml(plan.providerName)}</p>
+          <h1>${escapeHtml(plan.plan_name)}</h1>
+          <p>${escapeHtml(plan.plan_description || plan.plan_overview || 'Source-traceable qualitative plan metadata.')}</p>
+          <p class="static-disclaimer">Research only. Not financial advice, insurance advice, a quote, ranking, or recommendation.</p>
+        </div>
+        <nav>
+          ${planUrl ? `<a href="${escapeHtml(planUrl)}">Carrier product page</a>` : ''}
+          ${brochureUrl ? `<a href="${escapeHtml(brochureUrl)}">Brochure</a>` : ''}
+        </nav>
+      </section>
+      <nav class="static-tabs">
+        <a href="/">Model card</a>
+        <a href="/">Facts</a>
+        <a href="/">Files and versions</a>
       </nav>
-      <section>
+      <section class="static-facts">
         <h2>Source-traceable facts</h2>
         ${sourceRows}
       </section>
@@ -154,7 +170,7 @@ function renderStaticPlanMarkup(plan, facts) {
 function renderFactArticle(fact) {
   const sourceUrl = safeHttpUrl(fact.source_url)
   return `
-    <article>
+    <article class="static-fact-card">
       <h3>${escapeHtml(fieldLabel(fact.field_name))}</h3>
       <p>${escapeHtml(summarizeFieldValue(fact.field_value))}</p>
       <p>

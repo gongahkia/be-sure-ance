@@ -1,17 +1,38 @@
 <template>
-  <section class="brief-export">
-    <div>
-      <p class="eyebrow">PDF Brief</p>
-      <h2>Export selected plans</h2>
+  <section class="brief-export" :class="{ compact }">
+    <div v-if="!compact" class="panel-heading">
+      <p>{{ t('ui.pdf.eyebrow') }}</p>
+      <h2>{{ t('ui.pdf.title') }}</h2>
     </div>
 
-    <div class="brief-fields">
+    <details v-if="compact" class="compact-export">
+      <summary class="hub-button primary">{{ t('ui.pdf.download') }}</summary>
+      <div class="brief-fields popover-fields">
+        <label>
+          <span>{{ t('ui.pdf.agent') }}</span>
+          <input v-model="agentName" type="text" autocomplete="off" />
+        </label>
+        <label>
+          <span>{{ t('ui.pdf.rep') }}</span>
+          <input v-model="masRepNumber" type="text" autocomplete="off" />
+        </label>
+        <button
+          type="button"
+          :disabled="selectedPlans.length === 0 || exporting"
+          @click="downloadPdf"
+        >
+          {{ exporting ? t('ui.pdf.preparing') : t('ui.pdf.export') }}
+        </button>
+      </div>
+    </details>
+
+    <div v-else class="brief-fields">
       <label>
-        <span>Agent name</span>
+        <span>{{ t('ui.pdf.agent') }}</span>
         <input v-model="agentName" type="text" autocomplete="off" />
       </label>
       <label>
-        <span>MAS rep no.</span>
+        <span>{{ t('ui.pdf.rep') }}</span>
         <input v-model="masRepNumber" type="text" autocomplete="off" />
       </label>
       <button
@@ -19,7 +40,7 @@
         :disabled="selectedPlans.length === 0 || exporting"
         @click="downloadPdf"
       >
-        {{ exporting ? 'Preparing PDF' : 'Download PDF' }}
+        {{ exporting ? t('ui.pdf.preparingPdf') : t('ui.pdf.download') }}
       </button>
     </div>
 
@@ -30,13 +51,17 @@
 <script setup>
 import { computed, ref } from 'vue'
 
+import { useI18n } from '../i18n'
+
 const props = defineProps({
   selectedPlans: {
     type: Array,
     default: () => [],
   },
+  compact: Boolean,
 })
 
+const { t } = useI18n()
 const agentName = ref('')
 const masRepNumber = ref('')
 const exporting = ref(false)
@@ -47,7 +72,7 @@ const pdfBriefEndpoint = computed(
 
 async function downloadPdf() {
   if (props.selectedPlans.length === 0) {
-    statusMessage.value = 'Select at least one plan.'
+    statusMessage.value = t('ui.pdf.selectOne')
     return
   }
 
@@ -67,9 +92,9 @@ async function downloadPdf() {
     }
     const blob = await response.blob()
     triggerDownload(blob)
-    statusMessage.value = 'PDF ready.'
+    statusMessage.value = t('ui.pdf.ready')
   } catch (error) {
-    statusMessage.value = error?.message || 'PDF export failed.'
+    statusMessage.value = error?.message || t('ui.pdf.failed')
   } finally {
     exporting.value = false
   }
@@ -109,75 +134,106 @@ function triggerDownload(blob) {
 <style scoped>
 .brief-export {
   display: grid;
-  gap: 1rem;
-  padding: 1.35rem;
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(16, 39, 71, 0.1);
-  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.08);
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-lg);
+  background: var(--hf-surface);
 }
 
-.eyebrow,
-h2 {
+.brief-export.compact {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.panel-heading p,
+.panel-heading h2,
+.export-status {
   margin: 0;
 }
 
-.eyebrow {
-  margin-bottom: 0.35rem;
-  color: var(--muted-ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.panel-heading p {
+  color: var(--hf-muted);
+  font-size: 14px;
 }
 
 .brief-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
-  gap: 0.75rem;
+  gap: 10px;
   align-items: end;
+}
+
+.compact-export {
+  position: relative;
+}
+
+.compact-export summary {
+  list-style: none;
+}
+
+.compact-export summary::-webkit-details-marker {
+  display: none;
+}
+
+.popover-fields {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  width: min(520px, calc(100vw - 28px));
+  padding: 14px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-lg);
+  background: var(--hf-surface);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
 }
 
 label {
   display: grid;
-  gap: 0.3rem;
+  gap: 5px;
 }
 
 label span,
 .export-status {
-  color: var(--muted-ink);
-  font-size: 0.84rem;
+  color: var(--hf-muted);
+  font-size: 14px;
 }
 
 input {
   min-width: 0;
-  padding: 0.75rem 0.8rem;
-  border: 1px solid rgba(16, 39, 71, 0.14);
-  border-radius: 0.7rem;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-md);
+  background: var(--hf-neutral);
+  color: var(--hf-primary);
 }
 
 button {
-  min-height: 42px;
-  padding: 0.75rem 1rem;
-  border: 0;
-  border-radius: 0.7rem;
-  background: var(--ink);
-  color: #ffffff;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-full);
+  background: var(--hf-primary);
+  color: #111827;
   font-weight: 700;
 }
 
 button:disabled {
-  cursor: not-allowed;
   opacity: 0.5;
-}
-
-.export-status {
-  margin: 0;
 }
 
 @media (max-width: 720px) {
   .brief-fields {
     grid-template-columns: 1fr;
+  }
+
+  .popover-fields {
+    left: 0;
+    right: auto;
   }
 }
 </style>

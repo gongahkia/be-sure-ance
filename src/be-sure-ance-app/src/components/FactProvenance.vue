@@ -6,7 +6,7 @@
       class="provenance-entry"
       :class="{ warning: provenanceState(entry) !== 'Verified' }"
     >
-      <span class="provenance-fields">{{ entry.fields.join(', ') }}</span>
+      <span class="provenance-fields">{{ fieldText(entry) }}</span>
       <span>{{ sourceTypeText(entry.sourceType) }}</span>
       <a
         v-if="safeExternalUrl(entry.sourceUrl)"
@@ -54,6 +54,19 @@ function sourceTypeText(sourceType) {
   return t(`sourceType.${sourceType || 'source'}`)
 }
 
+function fieldText(entry) {
+  const fieldKeys = entry.fieldKeys || []
+  if (fieldKeys.length === 0) {
+    return entry.fields.join(', ')
+  }
+  return fieldKeys.map(fieldLabelText).join(', ')
+}
+
+function fieldLabelText(fieldKey) {
+  const translated = t(`field.${fieldKey}`)
+  return translated.startsWith('[missing:') ? fieldKey : translated
+}
+
 function provenanceStateText(entry) {
   const keyByState = {
     Verified: 'provenance.state.verified',
@@ -67,19 +80,25 @@ function provenanceStateText(entry) {
 
 <style scoped>
 .provenance-list {
-  display: grid;
-  gap: 0.35rem;
-  margin-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
 }
 
 .provenance-entry {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.3rem 0.55rem;
+  gap: 4px 8px;
+  align-items: center;
   margin: 0;
-  color: var(--muted-ink);
-  font-size: 0.78rem;
-  line-height: 1.35;
+  padding: 4px 8px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-full);
+  background: var(--hf-surface-2);
+  color: var(--hf-muted);
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .provenance-entry span,
@@ -89,21 +108,20 @@ function provenanceStateText(entry) {
 }
 
 .provenance-entry.warning strong {
-  color: #7a1d21;
+  color: #fde68a;
 }
 
 .provenance-fields {
   font-weight: 700;
-  color: var(--ink);
+  color: var(--hf-secondary);
 }
 
 .compact {
-  margin-top: 0.35rem;
+  margin-top: 6px;
 }
 
 .compact .provenance-entry {
-  display: grid;
-  gap: 0.15rem;
-  font-size: 0.74rem;
+  gap: 4px 6px;
+  font-size: 12px;
 }
 </style>

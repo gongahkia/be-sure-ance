@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build:data": "cd ../.. && python3 -m src.lib.static_app_data --fallback-demo --output src/be-sure-ance-app/public/data/app-data.json",
+    "export:data:local": "cd ../.. && ${PYTHON:-python3} -m src.lib.static_app_data --output src/be-sure-ance-app/public/data/app-data.json",
+    "scrape:data:smoke": "cd ../.. && PY=${PYTHON:-python3}; BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data $PY -m src.scrapers.run_all --only great_eastern,hsbc,singlife && BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data $PY -m src.scrapers.moh_institutions && BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data $PY -m src.scrapers.lia_claim_turnaround && BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data $PY -m src.scrapers.carrier_canonicalization && BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data $PY -m src.scrapers.brochure_facts && BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data $PY -m src.scrapers.panel_resources --insurers great_eastern,hsbc,singlife --max-plans 3 --request-timeout 5 && BE_SURE_ANCE_DATA_DIR=src/be-sure-ance-app/public/data $PY -m src.scrapers.comparison_facts && $PY -m src.lib.static_app_data --output src/be-sure-ance-app/public/data/app-data.json",
     "build:app": "vite build && node scripts/generate-static-pages.mjs",
     "build": "npm run build:data && npm run build:app",
+    "build:local": "npm run export:data:local && npm run build:app",
     "lint": "eslint \"src/**/*.{js,vue}\" \"scripts/**/*.mjs\" vite.config.js",
     "format": "prettier --write \"src/**/*.{js,vue,css}\" \"scripts/**/*.mjs\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",
     "format:check": "prettier --check \"src/**/*.{js,vue,css}\" \"scripts/**/*.mjs\" index.html vite.config.js eslint.config.js package.json .prettierrc.json",

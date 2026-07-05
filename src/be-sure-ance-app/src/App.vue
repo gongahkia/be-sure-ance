@@ -1,98 +1,81 @@
 <template>
-  <div id="app" class="app-shell">
-    <header class="hero">
-      <div class="hero-copy">
-        <div class="hero-topline">
-          <p class="eyebrow">{{ t('hero.eyebrow') }}</p>
-          <div class="language-toggle" :aria-label="t('language.label')">
-            <button
-              v-for="option in supportedLocales"
-              :key="option.code"
-              type="button"
-              :class="{ active: locale === option.code }"
-              :aria-pressed="locale === option.code"
-              @click="setLocale(option.code)"
-            >
-              {{ option.label }}
-            </button>
-          </div>
-        </div>
-        <h1>{{ t('hero.title') }}</h1>
-        <p class="hero-text">
-          {{ t('hero.text') }}
-        </p>
-        <nav class="route-tabs" aria-label="Workspace views">
-          <a
-            href="/"
-            :class="{ active: activeView === 'workspace' }"
-            @click="navigateTo('/', $event)"
-          >
-            {{ t('route.workspace') }}
-          </a>
-          <a
-            href="/matrix/panel-hospitals"
-            :class="{ active: activeView === 'panelMatrix' }"
-            @click="navigateTo('/matrix/panel-hospitals', $event)"
-          >
-            {{ t('route.panelHospitals') }}
-          </a>
-          <a
-            href="/status"
-            :class="{ active: activeView === 'scraperStatus' }"
-            @click="navigateTo('/status', $event)"
-          >
-            {{ t('route.status') }}
-          </a>
-        </nav>
-      </div>
+  <div id="app" class="hub-app">
+    <header class="hub-topbar">
+      <a href="/" class="brand" @click="navigateTo('/', $event)">
+        <span class="brand-mark">B</span>
+        <span>Be-sure-ance</span>
+      </a>
 
-      <div class="hero-stats">
-        <article>
-          <span>{{ t('stats.carriers') }}</span>
-          <strong>{{ providers.length }}</strong>
-        </article>
-        <article>
-          <span>{{ t('stats.plans') }}</span>
-          <strong>{{ totalPlanCount }}</strong>
-        </article>
-        <article>
-          <span>{{ t('stats.briefReady') }}</span>
-          <strong>{{ planFactProfileCount }}</strong>
-        </article>
-        <article>
-          <span>{{ t('stats.plansInBrief') }}</span>
-          <strong>{{ selectedPlans.length }}</strong>
-        </article>
+      <label class="global-search">
+        <span class="sr-only">{{ t('ui.searchPlans') }}</span>
+        <input
+          v-model="searchQuery"
+          class="hub-input"
+          type="search"
+          :placeholder="t('ui.searchPlaceholder')"
+        />
+      </label>
+
+      <nav class="top-nav" aria-label="Workspace routes">
+        <a
+          href="/"
+          :class="{ active: activeView === 'workspace' }"
+          @click="navigateTo('/', $event)"
+        >
+          {{ t('ui.nav.models') }}
+        </a>
+        <a
+          href="/matrix/panel-hospitals"
+          :class="{ active: activeView === 'panelMatrix' }"
+          @click="navigateTo('/matrix/panel-hospitals', $event)"
+        >
+          {{ t('ui.nav.datasets') }}
+        </a>
+        <a
+          href="/status"
+          :class="{ active: activeView === 'scraperStatus' }"
+          @click="navigateTo('/status', $event)"
+        >
+          {{ t('ui.nav.status') }}
+        </a>
+      </nav>
+
+      <div class="language-toggle" :aria-label="t('language.label')">
+        <button
+          v-for="option in supportedLocales"
+          :key="option.code"
+          type="button"
+          :class="{ active: locale === option.code }"
+          :aria-pressed="locale === option.code"
+          @click="setLocale(option.code)"
+        >
+          {{ option.label }}
+        </button>
       </div>
     </header>
 
-    <section class="workflow-strip">
-      <article>
-        <p class="eyebrow dark">{{ t('workflow.meetingPrep.eyebrow') }}</p>
-        <h2>{{ t('workflow.meetingPrep.title') }}</h2>
-        <p>{{ t('workflow.meetingPrep.text') }}</p>
-      </article>
-      <article>
-        <p class="eyebrow dark">{{ t('workflow.panelLookup.eyebrow') }}</p>
-        <h2>{{ t('workflow.panelLookup.title') }}</h2>
-        <p>{{ t('workflow.panelLookup.text') }}</p>
-      </article>
-      <article>
-        <p class="eyebrow dark">{{ t('workflow.carrierResearch.eyebrow') }}</p>
-        <h2>{{ t('workflow.carrierResearch.title') }}</h2>
-        <p>{{ t('workflow.carrierResearch.text') }}</p>
-      </article>
-    </section>
+    <SelectedBriefBar
+      v-if="selectedPlans.length > 0"
+      :selected-plans="selectedPlans"
+      @remove="togglePlanSelection"
+    />
 
     <section v-if="loading" class="status-panel">
-      {{ t('status.loading') }}
+      Loading plan data and qualitative facts...
     </section>
+    <section v-else-if="errorMessage" class="status-panel error">{{ errorMessage }}</section>
 
-    <section v-else-if="errorMessage" class="status-panel error">
-      {{ errorMessage }}
-    </section>
-
-    <main v-else-if="activeView === 'panelMatrix'" class="matrix-workspace">
+    <main v-else-if="activeView === 'panelMatrix'" class="page-shell">
+      <section class="page-heading">
+        <div>
+          <p class="subtle-label">{{ t('ui.dataset') }}</p>
+          <h1>{{ t('ui.panelMatrix.title') }}</h1>
+          <p>{{ t('ui.panelMatrix.copy') }}</p>
+        </div>
+        <span class="hub-chip strong">
+          {{ t('ui.panelMatrix.count', { count: totalPanelHospitalCount }) }}
+        </span>
+      </section>
       <PanelHospitalMatrix
         v-model:query="matrixSearchQuery"
         :plans="enrichedPlans"
@@ -100,89 +83,282 @@
       />
     </main>
 
-    <main v-else-if="activeView === 'scraperStatus'" class="status-workspace">
+    <main v-else-if="activeView === 'scraperStatus'" class="page-shell">
+      <section class="page-heading">
+        <div>
+          <p class="subtle-label">{{ t('ui.operations') }}</p>
+          <h1>{{ t('ui.scraper.title') }}</h1>
+          <p>{{ t('ui.scraper.copy') }}</p>
+        </div>
+        <span class="hub-chip strong">
+          {{ t('ui.scraper.count', { count: providers.length }) }}
+        </span>
+      </section>
       <ScraperStatusDashboard :health-rows="scraperHealth" :providers="providers" />
     </main>
 
-    <section v-else-if="activeView === 'sharedComparison'" class="shared-workspace">
-      <main class="main-stage">
-        <section class="toolbar">
-          <div>
-            <p class="eyebrow">{{ t('shared.eyebrow') }}</p>
-            <h2>{{ t('shared.title') }}</h2>
-            <p class="toolbar-copy">{{ SHARE_DISCLAIMER }}</p>
-            <p v-if="sharedComparison?.created_at" class="toolbar-copy">
-              {{
-                t('shared.created', {
-                  date: dateText(sharedComparison.created_at),
-                  views: shareViewText,
-                })
-              }}
-            </p>
-          </div>
+    <main v-else-if="activeView === 'sharedComparison'" class="page-shell">
+      <section class="repo-heading">
+        <div>
+          <p class="repo-owner">{{ t('ui.shared.owner') }}</p>
+          <h1>{{ t('ui.shared.title') }}</h1>
+          <p>{{ SHARE_DISCLAIMER }}</p>
+        </div>
+        <div class="repo-actions">
+          <a href="/" class="hub-link-button" @click="navigateTo('/', $event)">
+            {{ t('ui.shared.browse') }}
+          </a>
+        </div>
+      </section>
 
-          <div class="toolbar-actions">
-            <a href="/" class="provider-link" @click="navigateTo('/', $event)">
-              {{ t('shared.back') }}
+      <section v-if="sharedComparisonError" class="status-panel error">
+        {{ sharedComparisonError }}
+      </section>
+      <section v-else-if="sharedComparison && sharedPlans.length === 0" class="status-panel">
+        {{ t('shared.missingPlans') }}
+      </section>
+      <section v-else-if="!sharedComparison" class="status-panel">
+        {{ t('shared.loading') }}
+      </section>
+      <ComparisonTable v-else :selected-plans="sharedPlans" />
+    </main>
+
+    <main v-else-if="activeView === 'planDetail'" class="page-shell">
+      <section v-if="!detailPlan" class="status-panel">{{ t('empty.routePlan') }}</section>
+      <template v-else>
+        <section class="repo-heading">
+          <div class="repo-heading-title">
+            <ProviderLogo :provider="detailProvider" size="lg" />
+            <div>
+              <p class="repo-owner">{{ detailProvider.name }}</p>
+              <h1>{{ detailPlan.plan_name }}</h1>
+              <div class="chip-row">
+                <span
+                  v-for="tag in coverageTagsForPlan(detailPlan).map(localizedTagLabel)"
+                  :key="tag"
+                  class="hub-chip"
+                >
+                  {{ tag }}
+                </span>
+                <span class="hub-chip">
+                  {{ t('ui.plan.facts', { count: factCount(detailPlan) }) }}
+                </span>
+                <span :class="['hub-chip', verificationChipClass(detailPlan)]">
+                  {{ verificationText(detailPlan) }}
+                </span>
+                <span class="hub-chip">{{ brochureStatusText(detailPlan) }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="repo-actions">
+            <button
+              class="hub-button primary"
+              type="button"
+              @click="togglePlanSelection(detailPlan.key)"
+            >
+              {{
+                selectedPlanKeys.includes(detailPlan.key)
+                  ? t('ui.detail.remove')
+                  : t('ui.detail.add')
+              }}
+            </button>
+            <a
+              v-if="safeExternalUrl(detailPlan.plan_url)"
+              class="hub-link-button"
+              :href="safeExternalUrl(detailPlan.plan_url)"
+              target="_blank"
+              rel="noopener noreferrer"
+              referrerpolicy="no-referrer"
+            >
+              {{ t('plan.productPage') }}
             </a>
           </div>
         </section>
 
-        <section v-if="sharedComparisonError" class="status-panel error">
-          {{ sharedComparisonError }}
-        </section>
-        <section v-else-if="sharedComparison && sharedPlans.length === 0" class="status-panel">
-          {{ t('shared.missingPlans') }}
-        </section>
-        <section v-else-if="!sharedComparison" class="status-panel">
-          {{ t('shared.loading') }}
-        </section>
-        <ComparisonTable v-else :selected-plans="sharedPlans" />
-      </main>
-    </section>
+        <nav class="repo-tabs" :aria-label="t('ui.detail.tabsLabel')">
+          <button
+            v-for="tab in detailTabs"
+            :key="tab.key"
+            type="button"
+            :class="{ active: activeDetailTab === tab.key }"
+            @click="activeDetailTab = tab.key"
+          >
+            {{ tab.label }}
+          </button>
+        </nav>
 
-    <section v-else class="workspace">
+        <section class="repo-layout">
+          <article class="repo-main hub-panel">
+            <template v-if="activeDetailTab === 'card'">
+              <h2>{{ t('ui.detail.planCard') }}</h2>
+              <p class="lead">
+                {{
+                  detailPlan.plan_overview ||
+                  detailPlan.plan_description ||
+                  detailPlan.comparisonFact?.comparison_notes ||
+                  t('ui.detail.noOverview')
+                }}
+              </p>
+              <FactProvenance :entries="profileProvenanceEntry(detailPlan)" compact />
+              <div class="fact-sections">
+                <section v-for="row in factRowsFor(detailPlan)" :key="row.key">
+                  <h3>{{ row.label }}</h3>
+                  <p>{{ row.value }}</p>
+                  <FactProvenance
+                    :entries="provenanceEntriesForFields(detailPlan.facts, row.fields)"
+                  />
+                </section>
+              </div>
+              <RegulatoryEventList :events="detailPlan.regulatoryEvents" />
+            </template>
+
+            <template v-else-if="activeDetailTab === 'facts'">
+              <h2>{{ t('ui.detail.sourceFacts') }}</h2>
+              <div class="fact-table">
+                <div
+                  v-for="fact in planFactsFor(detailPlan)"
+                  :key="fact.field_name"
+                  class="fact-row"
+                >
+                  <strong>{{ labelForTag(fact.field_name) }}</strong>
+                  <span>{{ summarizeFact(fact) }}</span>
+                  <FactProvenance
+                    :entries="provenanceEntriesForFields(detailPlan.facts, [fact.field_name])"
+                    compact
+                  />
+                </div>
+              </div>
+            </template>
+
+            <template v-else-if="activeDetailTab === 'files'">
+              <h2>{{ t('ui.detail.files') }}</h2>
+              <p class="lead">{{ brochureStatusText(detailPlan) }}</p>
+              <BrochureChangeList :changes="detailPlan.brochureChanges" />
+              <FactProvenance
+                :entries="provenanceEntriesForFields(detailPlan.facts, ['brochure_metadata'])"
+              />
+            </template>
+
+            <template v-else>
+              <ComparisonTable :selected-plans="detailComparePlans" />
+            </template>
+          </article>
+
+          <aside class="repo-sidebar">
+            <section class="hub-panel sidebar-card">
+              <h2>{{ t('ui.detail.metadata') }}</h2>
+              <dl>
+                <div>
+                  <dt>{{ t('ui.detail.facts') }}</dt>
+                  <dd>{{ factCount(detailPlan) }}</dd>
+                </div>
+                <div>
+                  <dt>{{ t('ui.detail.sources') }}</dt>
+                  <dd>{{ sourceCount(detailPlan) }}</dd>
+                </div>
+                <div>
+                  <dt>{{ t('ui.detail.verified') }}</dt>
+                  <dd>
+                    {{ formatFactDate(latestVerifiedAt(detailPlan)) || t('ui.detail.missing') }}
+                  </dd>
+                </div>
+                <div>
+                  <dt>{{ t('ui.detail.carrier') }}</dt>
+                  <dd>{{ detailPlan.carrierCanonical?.canonical_name || detailProvider.name }}</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="hub-panel sidebar-card">
+              <h2>{{ t('ui.detail.actions') }}</h2>
+              <a
+                v-if="safeExternalUrl(detailPlan.product_brochure_url)"
+                class="hub-link-button"
+                :href="safeExternalUrl(detailPlan.product_brochure_url)"
+                target="_blank"
+                rel="noopener noreferrer"
+                referrerpolicy="no-referrer"
+              >
+                {{ t('plan.brochureLink') }}
+              </a>
+              <a
+                v-if="safeExternalUrl(detailPlan.plan_url)"
+                class="hub-link-button"
+                :href="safeExternalUrl(detailPlan.plan_url)"
+                target="_blank"
+                rel="noopener noreferrer"
+                referrerpolicy="no-referrer"
+              >
+                {{ t('ui.detail.carrierSource') }}
+              </a>
+            </section>
+
+            <ClaimTurnaroundBoard :metrics="claimTurnaroundMetrics" compact />
+          </aside>
+        </section>
+      </template>
+    </main>
+
+    <main v-else class="browse-shell">
       <ProviderRail
         :providers="providers"
         :active-provider-key="activeProviderKey"
         :provider-counts="providerCounts"
+        :coverage-tags="allCoverageTags"
+        :active-coverage-tags="activeCoverageTags"
+        :verified-only="verifiedOnly"
+        :brochure-only="brochureOnly"
         @select="activeProviderKey = $event"
+        @toggle-coverage="toggleCoverageTag"
+        @update:verified-only="verifiedOnly = $event"
+        @update:brochure-only="brochureOnly = $event"
+        @clear-filters="clearFilters"
       />
 
-      <main class="main-stage">
-        <section class="toolbar">
+      <section class="browse-main">
+        <section class="browse-toolbar">
           <div>
-            <p class="eyebrow">{{ t('toolbar.activeProvider') }}</p>
-            <h2>{{ activeProvider.name }}</h2>
-            <p class="toolbar-copy">{{ activeProvider.focus }} {{ t('toolbar.copySuffix') }}</p>
+            <p class="subtle-label">{{ t('ui.browse.models') }}</p>
+            <h1>
+              {{ activeProviderLabel }}
+              <span>{{ visiblePlans.length.toLocaleString() }}</span>
+            </h1>
           </div>
-
-          <div class="toolbar-actions">
+          <div class="toolbar-controls">
             <input
               v-model="searchQuery"
-              class="search-input"
+              class="hub-input"
               type="search"
-              :placeholder="t('toolbar.searchPlaceholder')"
+              :placeholder="t('ui.browse.filter')"
             />
-            <a
-              v-if="safeExternalUrl(activeProvider.website)"
-              :href="safeExternalUrl(activeProvider.website)"
-              target="_blank"
-              rel="noopener noreferrer"
-              referrerpolicy="no-referrer"
-              class="provider-link"
-            >
-              {{ t('toolbar.openCarrier') }}
-            </a>
+            <label class="toggle-pill">
+              <input v-model="verifiedOnly" type="checkbox" />
+              {{ t('ui.browse.verifiedOnly') }}
+            </label>
+            <label class="toggle-pill">
+              <input v-model="brochureOnly" type="checkbox" />
+              {{ t('ui.browse.brochure') }}
+            </label>
+            <select v-model="sortMode" class="hub-select" :aria-label="t('ui.browse.sortLabel')">
+              <option value="updated">{{ t('ui.browse.sort.updated') }}</option>
+              <option value="name">{{ t('ui.browse.sort.name') }}</option>
+              <option value="carrier">{{ t('ui.browse.sort.carrier') }}</option>
+              <option value="facts">{{ t('ui.browse.sort.facts') }}</option>
+            </select>
           </div>
         </section>
 
-        <section v-if="visiblePlans.length > 0" class="plan-grid">
+        <section class="hub-panel browse-disclaimer">
+          <strong>{{ t('ui.disclaimer.title') }}</strong>
+          <span>{{ t('ui.disclaimer.copy') }}</span>
+        </section>
+
+        <section v-if="visiblePlans.length > 0" class="repo-list">
           <PlanCard
             v-for="plan in visiblePlans"
             :key="plan.key"
             :plan="plan"
-            :provider="activeProvider"
+            :provider="providerFor(plan.providerKey)"
             :facts="plan.facts"
             :comparison-fact="plan.comparisonFact"
             :resources="plan.resources"
@@ -192,39 +368,53 @@
             @toggle-select="togglePlanSelection"
           />
         </section>
+        <section v-else class="status-panel">{{ emptyPlanMessage }}</section>
 
-        <section v-else class="empty-panel">
-          {{ emptyPlanMessage }}
-        </section>
-
-        <ClaimTurnaroundBoard :metrics="claimTurnaroundMetrics" />
-        <BriefExportPanel :selected-plans="selectedPlans" />
-        <ShareComparisonPanel :selected-plans="selectedPlans" />
         <ComparisonTable :selected-plans="selectedPlans" />
-      </main>
-    </section>
+      </section>
+    </main>
   </div>
 </template>
 
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
-import BriefExportPanel from './components/BriefExportPanel.vue'
+import BrochureChangeList from './components/BrochureChangeList.vue'
 import ClaimTurnaroundBoard from './components/ClaimTurnaroundBoard.vue'
 import ComparisonTable from './components/ComparisonTable.vue'
+import FactProvenance from './components/FactProvenance.vue'
 import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
 import PlanCard from './components/PlanCard.vue'
 import ProviderRail from './components/ProviderRail.vue'
+import ProviderLogo from './components/ProviderLogo.vue'
+import RegulatoryEventList from './components/RegulatoryEventList.vue'
 import ScraperStatusDashboard from './components/ScraperStatusDashboard.vue'
-import ShareComparisonPanel from './components/ShareComparisonPanel.vue'
+import SelectedBriefBar from './components/SelectedBriefBar.vue'
+import { useI18n } from './i18n'
 import { buildPlanKey, providers } from './lib/providers'
 import { loadAppData } from './lib/staticData'
-import { useI18n } from './i18n'
 import { safeExternalUrl } from './utils/links'
+import {
+  claimSlaText,
+  coverageTagsForPlan,
+  durationText,
+  factItems,
+  factStateText,
+  factValue,
+  formatFactDate,
+  itemLabel,
+  labelForTag,
+  listText,
+  profileProvenanceEntry,
+  provenanceEntriesForFields,
+  provenanceState,
+  taxonomySuffix,
+} from './utils/planFacts'
 
 const { locale, supportedLocales, setLocale, t } = useI18n()
 const SHARE_DISCLAIMER = computed(() => t('disclaimer.share'))
 const SELECTED_PLANS_STORAGE_KEY = 'be-sure-ance:selected-plan-keys'
+const ALL_PROVIDERS_KEY = 'all'
 
 const loading = ref(true)
 const errorMessage = ref('')
@@ -233,7 +423,7 @@ const sharedComparisonError = ref('')
 const searchQuery = ref('')
 const matrixSearchQuery = ref('')
 const currentPath = ref(locationPath())
-const activeProviderKey = ref(providerKeyFromPath(window.location.pathname) || providers[0].key)
+const activeProviderKey = ref(providerKeyFromPath(window.location.pathname) || ALL_PROVIDERS_KEY)
 const selectedPlanKeys = ref(loadStoredSelectedPlanKeys())
 const plansByProvider = ref({})
 const comparisonFacts = ref([])
@@ -244,6 +434,18 @@ const masRegulatoryEvents = ref([])
 const brochureChangeAlerts = ref([])
 const carrierCanonicalNames = ref([])
 const scraperHealth = ref([])
+const activeCoverageTags = ref([])
+const verifiedOnly = ref(false)
+const brochureOnly = ref(false)
+const sortMode = ref('updated')
+const activeDetailTab = ref('card')
+
+const detailTabs = computed(() => [
+  { key: 'card', label: t('ui.detail.card') },
+  { key: 'facts', label: t('ui.detail.facts') },
+  { key: 'files', label: t('ui.detail.files') },
+  { key: 'compare', label: t('ui.detail.compare') },
+])
 
 async function fetchData() {
   try {
@@ -275,6 +477,7 @@ onBeforeUnmount(() => {
 })
 
 const currentShareRefs = computed(() => parseShareRoute(currentPath.value))
+const routePlanTarget = computed(() => parsePlanRoute(currentPath.value))
 const activeView = computed(() => {
   const path = pathWithoutQuery(currentPath.value)
   if (path === '/matrix/panel-hospitals') {
@@ -286,11 +489,14 @@ const activeView = computed(() => {
   if (currentShareRefs.value.length > 0) {
     return 'sharedComparison'
   }
+  if (routePlanTarget.value) {
+    return 'planDetail'
+  }
   return 'workspace'
 })
-const routePlanTarget = computed(() => parsePlanRoute(currentPath.value))
 
 watch(currentPath, () => {
+  activeDetailTab.value = 'card'
   if (!loading.value) {
     loadShareFromRoute()
   }
@@ -313,7 +519,7 @@ function navigateTo(path, event) {
     return
   }
   event.preventDefault()
-  if (window.location.pathname !== path) {
+  if (window.location.pathname + window.location.search !== path) {
     window.history.pushState({}, '', path)
   }
   setCurrentPath(path)
@@ -396,14 +602,12 @@ function safePlanRef(value) {
 
 function groupPlansByProvider(rows) {
   const groupedPlans = Object.fromEntries(providers.map((provider) => [provider.key, []]))
-
   for (const row of rows) {
     if (!row?.insurer || !groupedPlans[row.insurer]) {
       continue
     }
     groupedPlans[row.insurer].push(row)
   }
-
   return groupedPlans
 }
 
@@ -414,15 +618,11 @@ const comparisonFactMap = computed(() =>
 )
 
 const planFactMap = computed(() => groupPlanFactsByPlan(planFacts.value))
-
-const planFactProfileCount = computed(() => Object.keys(planFactMap.value).length)
-
 function groupPlanFactsByPlan(rows) {
   return rows.reduce((groupedFacts, fact) => {
     if (!fact?.insurer || !fact?.plan_slug || !fact?.field_name) {
       return groupedFacts
     }
-
     const key = buildPlanKey(fact.insurer, fact.plan_slug)
     if (!groupedFacts[key]) {
       groupedFacts[key] = {}
@@ -496,6 +696,85 @@ const enrichedPlans = computed(() =>
   ),
 )
 
+const visiblePlans = computed(() => sortPlans(filteredPlans()))
+
+function filteredPlans() {
+  const query = searchQuery.value.trim().toLowerCase()
+  return enrichedPlans.value.filter((plan) => {
+    if (
+      activeProviderKey.value !== ALL_PROVIDERS_KEY &&
+      plan.providerKey !== activeProviderKey.value
+    ) {
+      return false
+    }
+    if (brochureOnly.value && !hasBrochure(plan)) {
+      return false
+    }
+    if (verifiedOnly.value && planVerificationState(plan) !== 'verified') {
+      return false
+    }
+    if (activeCoverageTags.value.length > 0) {
+      const tags = coverageTagsForPlan(plan)
+      if (!activeCoverageTags.value.every((tag) => tags.includes(tag))) {
+        return false
+      }
+    }
+    if (!query) {
+      return true
+    }
+    return searchableText(plan).includes(query)
+  })
+}
+
+function sortPlans(plans) {
+  return [...plans].sort((left, right) => {
+    if (sortMode.value === 'name') {
+      return String(left.plan_name).localeCompare(String(right.plan_name))
+    }
+    if (sortMode.value === 'carrier') {
+      return String(left.providerName).localeCompare(String(right.providerName))
+    }
+    if (sortMode.value === 'facts') {
+      return factCount(right) - factCount(left)
+    }
+    return String(latestTimestamp(right)).localeCompare(String(latestTimestamp(left)))
+  })
+}
+
+function searchableText(plan) {
+  return [
+    plan.providerName,
+    plan.plan_name,
+    plan.plan_description,
+    plan.plan_overview,
+    (plan.plan_benefits || []).join(' '),
+    plan.comparisonFact?.comparison_notes || '',
+    coverageTagsForPlan(plan).join(' '),
+    stringifyFacts(plan.facts),
+    (plan.resources || [])
+      .map((resource) => `${resource.resource_title || ''} ${resource.resource_description || ''}`)
+      .join(' '),
+  ]
+    .join(' ')
+    .toLowerCase()
+}
+
+const detailPlan = computed(() => {
+  const target = routePlanTarget.value
+  if (!target) {
+    return null
+  }
+  return (
+    enrichedPlans.value.find(
+      (plan) => plan.providerKey === target.providerKey && plan.plan_slug === target.planSlug,
+    ) || null
+  )
+})
+
+const detailProvider = computed(() =>
+  detailPlan.value ? providerFor(detailPlan.value.providerKey) : providers[0],
+)
+
 const sharedPlans = computed(() => {
   const allPlans = enrichedPlans.value
   return (sharedComparison.value?.selected_plans || [])
@@ -507,15 +786,6 @@ const sharedPlans = computed(() => {
     .filter(Boolean)
 })
 
-const shareViewText = computed(() => {
-  const count = Number(sharedComparison.value?.view_count || 0)
-  return `${count} ${count === 1 ? 'view' : 'views'}`
-})
-
-const activeProvider = computed(
-  () => providers.find((provider) => provider.key === activeProviderKey.value) || providers[0],
-)
-
 const providerCounts = computed(() =>
   providers.reduce((accumulator, provider) => {
     accumulator[provider.key] = (plansByProvider.value[provider.key] || []).length
@@ -523,56 +793,16 @@ const providerCounts = computed(() =>
   }, {}),
 )
 
-const totalPlanCount = computed(() =>
-  Object.values(providerCounts.value).reduce((total, count) => total + count, 0),
-)
-
-const visiblePlans = computed(() =>
-  enrichedPlans.value.filter((plan) => {
-    const routeTarget = routePlanTarget.value
-    if (routeTarget) {
-      return plan.providerKey === routeTarget.providerKey && plan.plan_slug === routeTarget.planSlug
-    }
-
-    if (plan.providerKey !== activeProviderKey.value) {
-      return false
-    }
-
-    if (!searchQuery.value.trim()) {
-      return true
-    }
-
-    const searchableText = [
-      plan.plan_name,
-      plan.plan_description,
-      plan.plan_overview,
-      (plan.plan_benefits || []).join(' '),
-      plan.comparisonFact?.comparison_notes || '',
-      (plan.comparisonFact?.coverage_tags || []).join(' '),
-      stringifyFacts(plan.facts),
-      (plan.resources || [])
-        .map(
-          (resource) => `${resource.resource_title || ''} ${resource.resource_description || ''}`,
-        )
-        .join(' '),
-    ]
-      .join(' ')
-      .toLowerCase()
-
-    return searchableText.includes(searchQuery.value.toLowerCase())
-  }),
-)
-
-const emptyPlanMessage = computed(() => {
-  if (routePlanTarget.value) {
-    return t('empty.routePlan')
+const activeProviderLabel = computed(() => {
+  if (activeProviderKey.value === ALL_PROVIDERS_KEY) {
+    return t('ui.browse.plans')
   }
-  const providerPlanCount = (plansByProvider.value[activeProviderKey.value] || []).length
-  if (providerPlanCount === 0 && !searchQuery.value.trim()) {
-    return t('empty.provider')
-  }
-  return t('empty.search')
+  return providerFor(activeProviderKey.value).name
 })
+
+const allCoverageTags = computed(() =>
+  Array.from(new Set(enrichedPlans.value.flatMap((plan) => coverageTagsForPlan(plan)))).sort(),
+)
 
 const selectedPlans = computed(() =>
   selectedPlanKeys.value
@@ -580,18 +810,69 @@ const selectedPlans = computed(() =>
     .filter(Boolean),
 )
 
+const detailComparePlans = computed(() => {
+  if (!detailPlan.value) {
+    return []
+  }
+  const keyed = new Map([[detailPlan.value.key, detailPlan.value]])
+  for (const plan of selectedPlans.value) {
+    keyed.set(plan.key, plan)
+  }
+  return Array.from(keyed.values()).slice(0, 3)
+})
+
+const totalPanelHospitalCount = computed(() =>
+  enrichedPlans.value.reduce(
+    (total, plan) => total + factItems(plan.facts, 'panel_hospitals').length,
+    0,
+  ),
+)
+
+const emptyPlanMessage = computed(() => {
+  const providerPlanCount =
+    activeProviderKey.value === ALL_PROVIDERS_KEY
+      ? enrichedPlans.value.length
+      : providerCounts.value[activeProviderKey.value] || 0
+  if (providerPlanCount === 0 && !searchQuery.value.trim()) {
+    return t('empty.provider')
+  }
+  return t('empty.search')
+})
+
+function providerFor(providerKey) {
+  return providers.find((provider) => provider.key === providerKey) || providers[0]
+}
+
 function togglePlanSelection(planKey) {
-  if (selectedPlanKeys.value.includes(planKey)) {
-    selectedPlanKeys.value = selectedPlanKeys.value.filter((item) => item !== planKey)
+  const key = typeof planKey === 'string' ? planKey : planKey?.key
+  if (!key) {
     return
   }
-
+  if (selectedPlanKeys.value.includes(key)) {
+    selectedPlanKeys.value = selectedPlanKeys.value.filter((item) => item !== key)
+    return
+  }
   if (selectedPlanKeys.value.length >= 3) {
-    selectedPlanKeys.value = [...selectedPlanKeys.value.slice(1), planKey]
+    selectedPlanKeys.value = [...selectedPlanKeys.value.slice(1), key]
     return
   }
+  selectedPlanKeys.value = [...selectedPlanKeys.value, key]
+}
 
-  selectedPlanKeys.value = [...selectedPlanKeys.value, planKey]
+function toggleCoverageTag(tag) {
+  if (activeCoverageTags.value.includes(tag)) {
+    activeCoverageTags.value = activeCoverageTags.value.filter((item) => item !== tag)
+    return
+  }
+  activeCoverageTags.value = [...activeCoverageTags.value, tag]
+}
+
+function clearFilters() {
+  activeProviderKey.value = ALL_PROVIDERS_KEY
+  activeCoverageTags.value = []
+  verifiedOnly.value = false
+  brochureOnly.value = false
+  searchQuery.value = ''
 }
 
 function stringifyFacts(facts) {
@@ -607,7 +888,6 @@ async function loadShareFromRoute() {
   if (shareRefs.length === 0) {
     return
   }
-
   sharedComparison.value = {
     id: 'url',
     selected_plans: shareRefs,
@@ -637,303 +917,584 @@ function storeSelectedPlanKeys(keys) {
   }
 }
 
-function dateText(value) {
-  return String(value || '').slice(0, 10) || 'Unknown date'
+function factRowsFor(plan) {
+  const waitingPeriods = factItems(plan.facts, 'waiting_periods')
+  const claimDeadlines = factItems(plan.facts, 'claim_deadlines')
+  const exclusions = factItems(plan.facts, 'exclusions')
+  return [
+    {
+      key: 'coverage',
+      label: t('field.coverage_tags'),
+      value:
+        coverageTagsForPlan(plan).map(localizedTagLabel).join(', ') ||
+        factStateText(plan.facts, 'coverage_tags'),
+      fields: ['coverage_tags'],
+    },
+    {
+      key: 'network',
+      label: t('field.panel_hospitals'),
+      value:
+        factItems(plan.facts, 'panel_hospitals').map(itemLabel).join(', ') ||
+        factStateText(plan.facts, 'panel_hospitals'),
+      fields: ['panel_hospitals'],
+    },
+    {
+      key: 'process',
+      label: t('plan.process'),
+      value: [
+        waitingPeriods.length
+          ? waitingPeriods.map((item) => durationText(item)).join(', ')
+          : factStateText(plan.facts, 'waiting_periods'),
+        claimDeadlines.length
+          ? claimDeadlines.map((item) => durationText(item, 'deadline_days')).join(', ')
+          : factStateText(plan.facts, 'claim_deadlines'),
+        claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla'),
+      ].join(' / '),
+      fields: ['waiting_periods', 'claim_deadlines', 'claim_sla'],
+    },
+    {
+      key: 'exclusions',
+      label: t('field.exclusions'),
+      value:
+        exclusions.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ') ||
+        factStateText(plan.facts, 'exclusions'),
+      fields: ['exclusions'],
+    },
+    {
+      key: 'source_notes',
+      label: t('field.source_notes'),
+      value: listText(factItems(plan.facts, 'source_notes'), t('empty.search')),
+      fields: ['source_notes'],
+    },
+  ]
+}
+
+function planFactsFor(plan) {
+  return Object.values(plan.facts || {}).sort((left, right) =>
+    String(left.field_name).localeCompare(String(right.field_name)),
+  )
+}
+
+function summarizeFact(fact) {
+  const fieldValue = fact?.field_value || {}
+  if (fieldValue.status && fieldValue.status !== 'known') {
+    return labelForTag(fieldValue.status)
+  }
+  if (fact?.field_name === 'claim_sla') {
+    return claimSlaText({ claim_sla: fact }) || t('ui.state.known')
+  }
+  if (fact?.field_name === 'brochure_metadata') {
+    const value = fieldValue.value || {}
+    return value.sha256
+      ? t('ui.brochure.captured', { hash: String(value.sha256).slice(0, 12) })
+      : t('ui.state.known')
+  }
+  if (Array.isArray(fieldValue.items)) {
+    return fieldValue.items.map(itemLabel).filter(Boolean).join(', ') || t('ui.state.known')
+  }
+  if (fieldValue.value && typeof fieldValue.value === 'object') {
+    return Object.entries(fieldValue.value)
+      .slice(0, 3)
+      .map(([key, value]) => `${labelForTag(key)}: ${value}`)
+      .join(', ')
+  }
+  return String(fieldValue.value || t('ui.state.known'))
+}
+
+function factCount(plan) {
+  return Object.keys(plan?.facts || {}).length
+}
+
+function sourceCount(plan) {
+  return new Set(
+    Object.values(plan?.facts || {})
+      .map((fact) => fact.source_url)
+      .filter(Boolean),
+  ).size
+}
+
+function latestVerifiedAt(plan) {
+  return Object.values(plan?.facts || {})
+    .map((fact) => fact.last_verified_at || fact.scraped_at || '')
+    .filter(Boolean)
+    .sort()
+    .at(-1)
+}
+
+function latestTimestamp(plan) {
+  return latestVerifiedAt(plan) || plan?.scraped_at || ''
+}
+
+function planVerificationState(plan) {
+  const entries = Object.values(plan?.facts || {}).map((fact) => ({
+    sourceUrl: fact.source_url || '',
+    scrapedAt: fact.scraped_at || '',
+    lastVerifiedAt: fact.last_verified_at || '',
+  }))
+  if (entries.length === 0) {
+    return 'missing'
+  }
+  return entries.some((entry) => provenanceState(entry) === 'Verified') ? 'verified' : 'stale'
+}
+
+function verificationText(plan) {
+  const state = planVerificationState(plan)
+  if (state === 'verified') {
+    return t('ui.state.verified')
+  }
+  if (state === 'stale') {
+    return t('ui.state.staleVerification')
+  }
+  return t('ui.state.sourceIncomplete')
+}
+
+function verificationChipClass(plan) {
+  const state = planVerificationState(plan)
+  if (state === 'verified') {
+    return 'good'
+  }
+  if (state === 'stale') {
+    return 'warn'
+  }
+  return 'bad'
+}
+
+function hasBrochure(plan) {
+  return Boolean(factValue(plan?.facts, 'brochure_metadata')?.url || plan?.product_brochure_url)
+}
+
+function brochureStatusText(plan) {
+  const metadata = factValue(plan?.facts, 'brochure_metadata')
+  if (metadata?.sha256) {
+    return t('ui.brochure.captured', { hash: String(metadata.sha256).slice(0, 12) })
+  }
+  if (plan?.product_brochure_url) {
+    return t('ui.brochure.linked')
+  }
+  return factStateText(plan?.facts, 'brochure_metadata', t('ui.plan.noBrochure'))
+}
+
+function localizedTagLabel(tag) {
+  const translated = t(`tag.${tag}`)
+  return translated.startsWith('[missing:') ? labelForTag(tag) : translated
 }
 </script>
 
-<style>
-:root {
-  --ink: #102747;
-  --muted-ink: #567086;
-  --paper: #f4f7fb;
-  --panel: rgba(255, 255, 255, 0.88);
-}
-
-body {
-  margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(194, 225, 255, 0.9), transparent 36%),
-    linear-gradient(180deg, #eef4fb 0%, #f8fafc 100%);
-  color: var(--ink);
-  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-}
-
-a {
-  color: inherit;
-}
-</style>
-
 <style scoped>
-.app-shell {
+.hub-app {
   min-height: 100vh;
-  padding: 2rem;
+  background: var(--hf-neutral);
+  color: var(--hf-primary);
 }
 
-.hero {
+.hub-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: grid;
-  gap: 1.5rem;
-  padding: 2rem;
-  border-radius: 1.75rem;
-  background: linear-gradient(120deg, rgba(16, 39, 71, 0.98), rgba(24, 76, 120, 0.94)), var(--ink);
-  color: #f6fbff;
-  box-shadow: 0 34px 80px rgba(16, 39, 71, 0.18);
+  grid-template-columns: auto minmax(220px, 460px) minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 72px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--hf-border);
+  background: rgba(18, 18, 18, 0.94);
+  backdrop-filter: blur(16px);
 }
 
-.hero-copy {
-  max-width: 52rem;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--hf-primary);
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
 }
 
-.hero-topline {
+.brand-mark {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: var(--hf-radius-md);
+  background: var(--hf-accent);
+  color: #111827;
+  font-weight: 800;
+}
+
+.global-search .hub-input {
+  width: 100%;
+}
+
+.top-nav {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: start;
+  gap: 18px;
+  align-items: center;
+}
+
+.top-nav a {
+  color: var(--hf-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.top-nav a.active,
+.top-nav a:hover {
+  color: var(--hf-primary);
 }
 
 .language-toggle {
-  display: flex;
-  gap: 0.35rem;
+  display: inline-flex;
+  gap: 6px;
 }
 
 .language-toggle button {
-  min-height: 34px;
-  padding: 0.35rem 0.55rem;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 0.55rem;
+  min-height: 32px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-full);
   background: transparent;
-  color: #f6fbff;
+  color: var(--hf-secondary);
+  padding: 4px 10px;
   font-weight: 700;
 }
 
 .language-toggle button.active {
-  background: #f6fbff;
-  color: var(--ink);
+  background: var(--hf-primary);
+  color: #111827;
 }
 
-.eyebrow {
-  margin: 0 0 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+.browse-shell {
+  display: grid;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+  gap: 28px;
+  width: min(var(--hf-page-max), 100%);
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+.browse-main,
+.page-shell {
+  display: grid;
+  min-width: 0;
+  gap: 20px;
+}
+
+.page-shell {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+.browse-toolbar,
+.page-heading,
+.repo-heading {
+  display: flex;
+  min-width: 0;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.repo-heading-title {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  min-width: 0;
+  align-items: start;
+}
+
+.subtle-label,
+.repo-owner {
+  margin: 0 0 4px;
+  color: var(--hf-muted);
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+p {
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
 h1 {
-  margin: 0;
-  max-width: 48rem;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 1.02;
+  font-size: 32px;
+  line-height: 38px;
 }
 
-.hero-text {
-  margin: 1rem 0 0;
-  max-width: 42rem;
-  color: rgba(246, 251, 255, 0.78);
-  font-size: 1.05rem;
+h1 span {
+  margin-left: 10px;
+  color: var(--hf-tertiary);
+  font-weight: 600;
 }
 
-.route-tabs {
+.page-heading p,
+.repo-heading p,
+.lead {
+  margin: 8px 0 0;
+  color: var(--hf-secondary);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.toolbar-controls,
+.repo-actions,
+.chip-row {
   display: flex;
-  gap: 0.75rem;
+  min-width: 0;
   flex-wrap: wrap;
-  margin-top: 1.25rem;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.route-tabs a {
-  padding: 0.55rem 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  color: #f6fbff;
+.toolbar-controls .hub-input {
+  width: min(320px, 100%);
+}
+
+.toggle-pill {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-full);
+  color: var(--hf-secondary);
+  background: var(--hf-surface);
+}
+
+.browse-disclaimer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 16px;
+  color: var(--hf-secondary);
+}
+
+.browse-disclaimer span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.browse-disclaimer strong {
+  color: var(--hf-primary);
+}
+
+.repo-list {
+  display: grid;
+  gap: 12px;
+}
+
+.repo-tabs {
+  display: flex;
+  gap: 22px;
+  min-height: 52px;
+  align-items: end;
+  border-bottom: 1px solid var(--hf-border);
+}
+
+.repo-tabs button {
+  min-height: 52px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--hf-secondary);
   font-weight: 700;
-  text-decoration: none;
 }
 
-.route-tabs a.active {
-  background: #f6fbff;
-  color: var(--ink);
+.repo-tabs button.active {
+  border-bottom-color: var(--hf-primary);
+  color: var(--hf-primary);
 }
 
-.hero-stats {
+.repo-layout {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
 }
 
-.hero-stats article {
-  padding: 1rem;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.hero-stats span {
-  display: block;
-  font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.66);
-}
-
-.hero-stats strong {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 1.7rem;
-}
-
-.workflow-strip {
+.repo-main {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 18px;
+  padding: 24px;
 }
 
-.workflow-strip article {
-  padding: 1.25rem;
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(16, 39, 71, 0.08);
-  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.05);
+.fact-sections {
+  display: grid;
+  gap: 16px;
 }
 
-.workflow-strip h2,
-.workflow-strip p:last-child {
+.fact-sections section,
+.fact-row {
+  border-top: 1px solid var(--hf-border);
+  padding-top: 14px;
+}
+
+.fact-sections h3,
+.fact-row strong {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.fact-sections p,
+.fact-row span {
+  color: var(--hf-secondary);
+}
+
+.fact-table {
+  display: grid;
+  gap: 14px;
+}
+
+.fact-row {
+  display: grid;
+  gap: 6px;
+}
+
+.repo-sidebar {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 16px;
+}
+
+.sidebar-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.sidebar-card dl {
+  display: grid;
+  gap: 12px;
   margin: 0;
 }
 
-.workflow-strip h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.15rem;
+.sidebar-card dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--hf-border);
+  padding-top: 10px;
 }
 
-.eyebrow.dark {
-  color: var(--muted-ink);
+.sidebar-card dt {
+  color: var(--hf-muted);
+}
+
+.sidebar-card dd {
+  margin: 0;
+  text-align: right;
 }
 
 .status-panel,
 .empty-panel {
-  margin-top: 1.5rem;
-  padding: 1.2rem 1.4rem;
-  border-radius: 1rem;
-  background: var(--panel);
-  border: 1px solid rgba(16, 39, 71, 0.08);
-  color: var(--muted-ink);
+  margin: 24px;
+  padding: 16px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-lg);
+  background: var(--hf-surface);
+  color: var(--hf-secondary);
 }
 
 .status-panel.error {
-  color: #7a1d21;
-  border-color: rgba(160, 38, 46, 0.2);
-  background: rgba(255, 243, 244, 0.92);
+  border-color: rgba(229, 72, 77, 0.42);
+  color: #fecdd3;
 }
 
-.workspace {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.matrix-workspace {
-  margin-top: 1.5rem;
-}
-
-.shared-workspace {
-  margin-top: 1.5rem;
-}
-
-.status-workspace {
-  margin-top: 1.5rem;
-}
-
-.main-stage {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: end;
-  padding: 1.35rem;
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(16, 39, 71, 0.08);
-}
-
-.toolbar h2,
-.toolbar-copy {
-  margin: 0;
-}
-
-.toolbar-copy {
-  margin-top: 0.4rem;
-  color: var(--muted-ink);
-}
-
-.toolbar-actions {
-  display: grid;
-  gap: 0.75rem;
-  justify-items: end;
-}
-
-.search-input {
-  width: min(420px, 100%);
-  padding: 0.9rem 1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(16, 39, 71, 0.14);
-  background: #ffffff;
-}
-
-.provider-link {
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.plan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-@media (max-width: 1080px) {
-  .workspace {
+@media (max-width: 1280px) {
+  .browse-shell,
+  .repo-layout {
     grid-template-columns: 1fr;
   }
+}
 
-  .hero-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (max-width: 980px) {
+  .hub-topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+    gap: 10px;
   }
 
-  .workflow-strip {
-    grid-template-columns: 1fr;
+  .global-search,
+  .top-nav {
+    grid-column: 1 / -1;
+  }
+
+  .top-nav,
+  .toolbar-controls,
+  .repo-actions {
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 720px) {
-  .app-shell {
-    padding: 1rem;
+  .hub-topbar,
+  .browse-shell,
+  .page-shell {
+    padding-inline: 14px;
   }
 
-  .hero,
-  .toolbar {
-    padding: 1.25rem;
+  .hub-topbar {
+    position: static;
+    min-height: 0;
+    padding-block: 12px;
   }
 
-  .hero-stats {
-    grid-template-columns: 1fr;
+  .brand {
+    font-size: 18px;
   }
 
-  .toolbar {
-    flex-direction: column;
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .top-nav {
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .browse-toolbar,
+  .page-heading,
+  .repo-heading {
+    display: grid;
     align-items: start;
   }
 
-  .toolbar-actions {
-    width: 100%;
-    justify-items: stretch;
+  .browse-main {
+    order: 1;
   }
 
-  .search-input {
+  .filter-rail {
+    order: 2;
+  }
+
+  .repo-heading-title {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .toolbar-controls,
+  .toolbar-controls .hub-input,
+  .hub-select {
     width: 100%;
+  }
+
+  .repo-main {
+    padding: 16px;
   }
 }
 </style>

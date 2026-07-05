@@ -1,33 +1,30 @@
 <template>
-  <section class="scraper-status-panel">
+  <section class="scraper-status-panel hub-panel">
     <div class="section-top">
       <div>
-        <p class="eyebrow">Scraper Health</p>
-        <h2>Carrier freshness and validation</h2>
+        <p class="eyebrow">{{ t('ui.scraper.eyebrow') }}</p>
+        <h2>{{ t('ui.scraper.panelTitle') }}</h2>
       </div>
-      <p class="section-copy">
-        Public operational metadata: row counts, last run timestamps, and structural validation
-        summaries.
-      </p>
+      <p class="section-copy">{{ t('ui.scraper.panelCopy') }}</p>
     </div>
 
-    <div class="status-summary" aria-label="Scraper health summary">
+    <div class="status-summary" :aria-label="t('ui.scraper.summaryLabel')">
       <article v-for="item in summaryCounts" :key="item.key">
         <span>{{ item.label }}</span>
         <strong>{{ item.count }}</strong>
       </article>
     </div>
 
-    <div class="status-table-wrap" tabindex="0" aria-label="Carrier scraper health table">
+    <div class="status-table-wrap" tabindex="0" :aria-label="t('ui.scraper.tableLabel')">
       <table>
         <thead>
           <tr>
-            <th>Carrier</th>
-            <th>Status</th>
-            <th>Rows</th>
-            <th>Last success</th>
-            <th>Last failure</th>
-            <th>Validation</th>
+            <th>{{ t('ui.scraper.carrier') }}</th>
+            <th>{{ t('ui.scraper.status') }}</th>
+            <th>{{ t('ui.scraper.rows') }}</th>
+            <th>{{ t('ui.scraper.lastSuccess') }}</th>
+            <th>{{ t('ui.scraper.lastFailure') }}</th>
+            <th>{{ t('ui.scraper.validation') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -55,6 +52,8 @@
 <script setup>
 import { computed } from 'vue'
 
+import { useI18n } from '../i18n'
+
 const STALE_AFTER_DAYS = 8
 
 const props = defineProps({
@@ -67,6 +66,8 @@ const props = defineProps({
     default: () => [],
   },
 })
+
+const { t } = useI18n()
 
 const normalizedRows = computed(() => {
   const rowsByKey = new Map(props.healthRows.map((row) => [row.carrier_key, row]))
@@ -88,11 +89,11 @@ const summaryCounts = computed(() => {
     counts[carrierState(row)] += 1
   }
   return [
-    { key: 'errorRate', label: 'Error rate', count: errorRate(counts) },
-    { key: 'fresh', label: 'Fresh', count: counts.fresh },
-    { key: 'stale', label: 'Stale', count: counts.stale },
-    { key: 'failing', label: 'Failing', count: counts.failing },
-    { key: 'unsupported', label: 'Unsupported', count: counts.unsupported },
+    { key: 'errorRate', label: t('ui.scraper.errorRate'), count: errorRate(counts) },
+    { key: 'fresh', label: t('ui.scraper.fresh'), count: counts.fresh },
+    { key: 'stale', label: t('ui.scraper.stale'), count: counts.stale },
+    { key: 'failing', label: t('ui.scraper.failing'), count: counts.failing },
+    { key: 'unsupported', label: t('ui.scraper.unsupported'), count: counts.unsupported },
   ]
 })
 
@@ -140,10 +141,10 @@ function carrierState(row) {
 
 function carrierStateLabel(row) {
   const labels = {
-    fresh: 'Fresh',
-    stale: 'Stale',
-    failing: 'Failing',
-    unsupported: 'Unsupported',
+    fresh: t('ui.scraper.fresh'),
+    stale: t('ui.scraper.stale'),
+    failing: t('ui.scraper.failing'),
+    unsupported: t('ui.scraper.unsupported'),
   }
   return labels[carrierState(row)]
 }
@@ -152,16 +153,16 @@ function validationText(row) {
   const summary = row.validation_summary || {}
   const status = row.validation_status || 'not_run'
   if (status === 'unsupported') {
-    return 'Unsupported scraper'
+    return t('ui.scraper.unsupportedScraper')
   }
   if (status === 'not_run') {
-    return 'Not run'
+    return t('ui.scraper.notRun')
   }
   const parts = [
     status.replace('_', ' '),
-    `${summary.total_targets ?? 0} targets`,
-    `${summary.failed ?? 0} failed`,
-    `${summary.errors ?? 0} errors`,
+    t('ui.scraper.targets', { count: summary.total_targets ?? 0 }),
+    t('ui.scraper.failed', { count: summary.failed ?? 0 }),
+    t('ui.scraper.errors', { count: summary.errors ?? 0 }),
   ]
   return parts.join(' · ')
 }
@@ -175,7 +176,7 @@ function daysSince(value) {
 }
 
 function dateText(value) {
-  return String(value || '').slice(0, 10) || 'Not recorded'
+  return String(value || '').slice(0, 10) || t('ui.scraper.notRecorded')
 }
 </script>
 
@@ -183,10 +184,7 @@ function dateText(value) {
 .scraper-status-panel {
   display: grid;
   gap: 1rem;
-  padding: 1.25rem;
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(16, 39, 71, 0.08);
+  padding: 18px;
 }
 
 .section-top {
@@ -202,24 +200,25 @@ function dateText(value) {
 
 .section-copy {
   max-width: 38rem;
-  color: var(--muted-ink);
+  color: var(--hf-secondary);
 }
 
 .status-summary {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
 .status-summary article {
   padding: 0.9rem;
-  border-radius: 0.9rem;
-  background: #f4f7fb;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-lg);
+  background: var(--hf-surface-2);
 }
 
 .status-summary span {
   display: block;
-  color: var(--muted-ink);
+  color: var(--hf-muted);
   font-weight: 700;
 }
 
@@ -234,7 +233,7 @@ function dateText(value) {
 }
 
 .status-table-wrap:focus {
-  outline: 3px solid #2f73c7;
+  outline: 2px solid rgba(255, 204, 77, 0.78);
   outline-offset: 0.2rem;
 }
 
@@ -247,7 +246,7 @@ table {
 th,
 td {
   padding: 0.8rem;
-  border-bottom: 1px solid rgba(16, 39, 71, 0.08);
+  border-bottom: 1px solid var(--hf-border);
   text-align: left;
   vertical-align: top;
 }
@@ -255,7 +254,7 @@ td {
 td span {
   display: block;
   margin-top: 0.15rem;
-  color: var(--muted-ink);
+  color: var(--hf-muted);
   font-size: 0.84rem;
 }
 
@@ -268,23 +267,23 @@ td span {
 }
 
 .status-fresh {
-  background: #e3f8ed;
-  color: #166237;
+  background: rgba(22, 101, 52, 0.36);
+  color: #bbf7d0;
 }
 
 .status-stale {
-  background: #fff4d6;
-  color: #76540f;
+  background: rgba(124, 45, 18, 0.36);
+  color: #fde68a;
 }
 
 .status-failing {
-  background: #ffe4e8;
-  color: #8a1f32;
+  background: rgba(127, 29, 29, 0.36);
+  color: #fecdd3;
 }
 
 .status-unsupported {
-  background: #edf1f6;
-  color: #4f6275;
+  background: var(--hf-surface-2);
+  color: var(--hf-secondary);
 }
 
 @media (max-width: 780px) {

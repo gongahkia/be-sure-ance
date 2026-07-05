@@ -1,32 +1,34 @@
 <template>
-  <section class="share-panel">
-    <div>
-      <p class="eyebrow">Share Link</p>
-      <h2>Save comparison set</h2>
+  <section class="share-panel" :class="{ compact }">
+    <div v-if="!compact" class="panel-heading">
+      <p>{{ t('ui.share.eyebrow') }}</p>
+      <h2>{{ t('ui.share.title') }}</h2>
     </div>
 
     <div class="share-actions">
       <button type="button" :disabled="selectedPlans.length === 0 || sharing" @click="createShare">
-        {{ sharing ? 'Saving link' : 'Create share link' }}
+        {{ sharing ? t('ui.share.saving') : compact ? t('ui.share.share') : t('ui.share.create') }}
       </button>
       <a
         v-if="safeExternalUrl(shareUrl)"
+        class="hub-link-button"
         :href="safeExternalUrl(shareUrl)"
         target="_blank"
         rel="noopener noreferrer"
         referrerpolicy="no-referrer"
       >
-        Open share link
+        {{ t('ui.share.open') }}
       </a>
     </div>
 
-    <p v-if="statusMessage" class="share-status">{{ statusMessage }}</p>
+    <p v-if="statusMessage && !compact" class="share-status">{{ statusMessage }}</p>
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 
+import { useI18n } from '../i18n'
 import { safeExternalUrl } from '../utils/links'
 
 const props = defineProps({
@@ -34,15 +36,17 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  compact: Boolean,
 })
 
 const sharing = ref(false)
 const statusMessage = ref('')
 const shareUrl = ref('')
+const { t } = useI18n()
 
 function createShare() {
   if (props.selectedPlans.length === 0) {
-    statusMessage.value = 'Select at least one plan.'
+    statusMessage.value = t('ui.pdf.selectOne')
     return
   }
 
@@ -52,9 +56,9 @@ function createShare() {
   try {
     const refs = props.selectedPlans.map(sharePlanPayload).filter(Boolean)
     shareUrl.value = absoluteShareUrl(`/share?plans=${encodeURIComponent(refs.join(','))}`)
-    statusMessage.value = 'Share link ready.'
+    statusMessage.value = t('ui.share.ready')
   } catch (error) {
-    statusMessage.value = error?.message || 'Share link failed.'
+    statusMessage.value = error?.message || t('ui.share.failed')
   } finally {
     sharing.value = false
   }
@@ -78,57 +82,54 @@ function safePlanRef(value) {
 <style scoped>
 .share-panel {
   display: grid;
-  gap: 1rem;
-  padding: 1.35rem;
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(16, 39, 71, 0.1);
-  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.08);
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-lg);
+  background: var(--hf-surface);
 }
 
-.eyebrow,
-h2 {
+.share-panel.compact {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.panel-heading p,
+.panel-heading h2,
+.share-status {
   margin: 0;
 }
 
-.eyebrow {
-  margin-bottom: 0.35rem;
-  color: var(--muted-ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.panel-heading p,
+.share-status {
+  color: var(--hf-muted);
+  font-size: 14px;
 }
 
 .share-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 8px;
   align-items: center;
 }
 
 button {
-  min-height: 42px;
-  padding: 0.75rem 1rem;
-  border: 0;
-  border-radius: 0.7rem;
-  background: var(--ink);
-  color: #ffffff;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-full);
+  background: transparent;
+  color: var(--hf-primary);
   font-weight: 700;
+}
+
+button:hover {
+  border-color: var(--hf-tertiary);
 }
 
 button:disabled {
-  cursor: not-allowed;
   opacity: 0.5;
-}
-
-.share-actions a {
-  font-weight: 700;
-}
-
-.share-status {
-  margin: 0;
-  color: var(--muted-ink);
-  font-size: 0.84rem;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <section v-if="changes.length > 0" class="brochure-changes">
-    <h4>Brochure changes</h4>
+    <h4>{{ t('ui.brochureChanges.title') }}</h4>
     <ul>
       <li v-for="change in sortedChanges" :key="changeKey(change)">
         <div>
           <span class="status-badge">{{ statusText(change) }}</span>
           <strong>{{ dateText(change.change_detected_at) }}</strong>
         </div>
-        <p>{{ change.summary || 'Brochure hash changed; review source document.' }}</p>
+        <p>{{ change.summary || t('ui.brochureChanges.defaultSummary') }}</p>
         <a
           v-if="safeExternalUrl(change.source_url)"
           :href="safeExternalUrl(change.source_url)"
@@ -26,6 +26,7 @@
 import { computed } from 'vue'
 
 import { externalHostname, safeExternalUrl } from '../utils/links'
+import { useI18n } from '../i18n'
 
 const props = defineProps({
   changes: {
@@ -33,6 +34,8 @@ const props = defineProps({
     default: () => [],
   },
 })
+
+const { t } = useI18n()
 
 const sortedChanges = computed(() =>
   [...props.changes]
@@ -48,16 +51,16 @@ function changeKey(change) {
 
 function statusText(change) {
   if (change.alert_status === 'sent') {
-    return 'Alert sent'
+    return t('ui.brochureChanges.alertSent')
   }
   if (change.alert_status === 'suppressed') {
-    return 'Suppressed'
+    return t('ui.brochureChanges.suppressed')
   }
-  return 'Pending alert hook'
+  return t('ui.brochureChanges.pending')
 }
 
 function dateText(value) {
-  return String(value || '').slice(0, 10) || 'Unknown date'
+  return String(value || '').slice(0, 10) || t('ui.brochureChanges.unknownDate')
 }
 </script>
 
@@ -65,6 +68,8 @@ function dateText(value) {
 .brochure-changes {
   display: grid;
   gap: 0.6rem;
+  padding-top: 10px;
+  border-top: 1px solid var(--hf-border);
 }
 
 .brochure-changes h4,
@@ -84,8 +89,9 @@ function dateText(value) {
   display: grid;
   gap: 0.35rem;
   padding: 0.75rem;
-  border: 1px solid rgba(16, 39, 71, 0.08);
-  border-radius: 0.75rem;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-md);
+  background: var(--hf-surface-2);
 }
 
 .brochure-changes div {
@@ -96,14 +102,15 @@ function dateText(value) {
 }
 
 .brochure-changes p {
-  color: var(--muted-ink);
+  color: var(--hf-secondary);
 }
 
 .status-badge {
   padding: 0.28rem 0.5rem;
   border-radius: 999px;
-  background: rgba(219, 234, 194, 0.9);
-  color: #355118;
+  border: 1px solid rgba(250, 204, 21, 0.34);
+  background: rgba(124, 45, 18, 0.36);
+  color: #fde68a;
   font-size: 0.78rem;
   font-weight: 700;
 }

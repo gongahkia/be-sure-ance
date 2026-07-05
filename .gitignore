@@ -1,5 +1,6 @@
 __pycache__
 myenv
+.venv
 .env
 .DS_Store
 node_modules
@@ -20,3 +21,4 @@ pnpm-debug.log*
 .env.*
 !.env.example
 src/be-sure-ance-app/public/data/
+.playwright-cli/

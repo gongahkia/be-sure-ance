@@ -1,6 +1,6 @@
 <template>
   <section v-if="events.length > 0" class="regulatory-events">
-    <h4>MAS regulatory context</h4>
+    <h4>{{ t('ui.regulatory.title') }}</h4>
     <ul>
       <li v-for="event in sortedEvents" :key="eventKey(event)">
         <div>
@@ -25,6 +25,7 @@
 <script setup>
 import { computed } from 'vue'
 
+import { useI18n } from '../i18n'
 import { externalHostname, safeExternalUrl } from '../utils/links'
 
 const props = defineProps({
@@ -33,6 +34,8 @@ const props = defineProps({
     default: () => [],
   },
 })
+
+const { t } = useI18n()
 
 const sortedEvents = computed(() =>
   [...props.events]
@@ -47,13 +50,15 @@ function eventKey(event) {
 }
 
 function statusText(event) {
-  return event.match_status === 'matched' ? 'Source match' : 'Needs review'
+  return event.match_status === 'matched'
+    ? t('ui.regulatory.sourceMatch')
+    : t('ui.regulatory.needsReview')
 }
 
 function eventSummary(event) {
   return event.match_status === 'matched'
     ? event.summary
-    : `Possible carrier match via "${event.matched_alias}". Verify against MAS source.`
+    : t('ui.regulatory.possibleMatch', { alias: event.matched_alias })
 }
 </script>
 
@@ -61,6 +66,8 @@ function eventSummary(event) {
 .regulatory-events {
   display: grid;
   gap: 0.6rem;
+  padding-top: 10px;
+  border-top: 1px solid var(--hf-border);
 }
 
 .regulatory-events h4,
@@ -80,8 +87,9 @@ function eventSummary(event) {
   display: grid;
   gap: 0.35rem;
   padding: 0.75rem;
-  border: 1px solid rgba(16, 39, 71, 0.08);
-  border-radius: 0.75rem;
+  border: 1px solid var(--hf-border);
+  border-radius: var(--hf-radius-md);
+  background: var(--hf-surface-2);
 }
 
 .regulatory-events div {
@@ -92,14 +100,15 @@ function eventSummary(event) {
 }
 
 .regulatory-events p {
-  color: var(--muted-ink);
+  color: var(--hf-secondary);
 }
 
 .status-badge {
   padding: 0.28rem 0.5rem;
   border-radius: 999px;
-  background: rgba(194, 225, 255, 0.72);
-  color: #133d5e;
+  border: 1px solid var(--hf-border);
+  background: var(--hf-neutral);
+  color: var(--hf-secondary);
   font-size: 0.78rem;
   font-weight: 700;
 }

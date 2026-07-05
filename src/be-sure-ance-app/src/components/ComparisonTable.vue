@@ -1,5 +1,5 @@
 <template>
-  <section class="comparison-panel">
+  <section class="comparison-panel hub-panel">
     <div class="section-top">
       <div>
         <p class="eyebrow">{{ t('comparison.eyebrow') }}</p>
@@ -12,7 +12,7 @@
       {{ t('comparison.empty') }}
     </div>
 
-    <div v-else class="comparison-grid">
+    <div v-else class="comparison-grid" tabindex="0" aria-label="Selected plan comparison table">
       <table>
         <thead>
           <tr>
@@ -109,8 +109,13 @@ const rows = computed(() => [
 ])
 
 function coverageValue(plan) {
-  const tags = coverageTagsForPlan(plan).map(labelForTag)
+  const tags = coverageTagsForPlan(plan).map(tagLabel)
   return tags.length > 0 ? tags.join(', ') : factStateText(plan.facts, 'coverage_tags')
+}
+
+function tagLabel(tag) {
+  const translated = t(`tag.${tag}`)
+  return translated.startsWith('[missing:') ? labelForTag(tag) : translated
 }
 
 function qualitativeListValue(plan, fieldName) {
@@ -154,11 +159,7 @@ function brochureValue(plan) {
 .comparison-panel {
   display: grid;
   gap: 1rem;
-  padding: 1.35rem;
-  border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(16, 39, 71, 0.1);
-  box-shadow: 0 24px 60px rgba(16, 39, 71, 0.08);
+  padding: 18px;
 }
 
 .section-top {
@@ -172,9 +173,7 @@ function brochureValue(plan) {
   margin: 0 0 0.35rem;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-ink);
+  color: var(--hf-muted);
 }
 
 h2,
@@ -184,11 +183,16 @@ h2,
 
 .section-copy,
 .empty-state {
-  color: var(--muted-ink);
+  color: var(--hf-secondary);
 }
 
 .comparison-grid {
   overflow-x: auto;
+}
+
+.comparison-grid:focus {
+  outline: 2px solid rgba(255, 204, 77, 0.78);
+  outline-offset: 2px;
 }
 
 table {
@@ -198,21 +202,24 @@ table {
 
 th,
 td {
-  padding: 0.85rem;
-  border-bottom: 1px solid rgba(16, 39, 71, 0.08);
+  padding: 12px;
+  border-bottom: 1px solid var(--hf-border);
   text-align: left;
   vertical-align: top;
 }
 
 th {
   font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted-ink);
+  color: var(--hf-muted);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .cell-value {
   display: block;
+  color: var(--hf-primary);
 }
 
 @media (max-width: 720px) {

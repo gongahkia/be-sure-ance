@@ -75,6 +75,8 @@ Common local commands:
 
 ```sh
 docker compose run --rm scraper
+PYTHON=.venv/bin/python npm --prefix src/be-sure-ance-app run scrape:data:smoke
+PYTHON=.venv/bin/python npm --prefix src/be-sure-ance-app run build:local
 TELEGRAM_BOT_TOKEN=<bot-token> docker compose --profile bot up bot
 docker compose down --volumes
 ```

@@ -150,6 +150,7 @@ export function provenanceEntriesForFields(facts, fieldNames) {
       groupedEntries.set(key, {
         key: `source:${key}`,
         fields: [],
+        fieldKeys: [],
         sourceUrl: fact.source_url || '',
         sourceType: fact.source_type || '',
         scrapedAt: fact.scraped_at || '',
@@ -158,12 +159,14 @@ export function provenanceEntriesForFields(facts, fieldNames) {
     }
 
     groupedEntries.get(key).fields.push(fieldLabel(fieldName))
+    groupedEntries.get(key).fieldKeys.push(fieldName)
   }
 
   if (missingFields.length > 0) {
     groupedEntries.set(`missing:${missingFields.join('|')}`, {
       key: `missing:${missingFields.join('|')}`,
       fields: missingFields,
+      fieldKeys: fieldNames.filter((fieldName) => !facts?.[fieldName]),
       sourceUrl: '',
       sourceType: '',
       scrapedAt: '',
@@ -180,6 +183,7 @@ export function profileProvenanceEntry(plan) {
     {
       key: 'plan-profile',
       fields: [fieldLabel('plan_profile')],
+      fieldKeys: ['plan_profile'],
       sourceUrl: plan?.plan_url || plan?.product_brochure_url || '',
       sourceType: 'product_page',
       scrapedAt: plan?.scraped_at || '',
