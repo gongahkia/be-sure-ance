@@ -35,6 +35,7 @@ from src.scrapers.navigation import gather_scrape_results
 III_BASE_URL = "https://www.iii.com.sg"
 REQUEST_TIMEOUT_SECONDS = 20
 
+
 def normalize_whitespace(value: str | None) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
 
@@ -65,7 +66,7 @@ def first_pdf_url(soup: BeautifulSoup, source_url: str) -> str:
 
 def parse_product_html(html_content: str, source_url: str) -> dict:
     soup = BeautifulSoup(html_content, "html.parser")
-    title_node = soup.select_one("main h1, h1, main h2, h2")
+    title_node = soup.select_one("h1") or soup.select_one("main h2") or soup.select_one("h2")
     title = normalize_whitespace(title_node.get_text(" ", strip=True) if title_node else "")
     title = title or page_title_from_url(source_url)
 
@@ -90,7 +91,7 @@ def parse_product_html(html_content: str, source_url: str) -> dict:
         "plan_description": " ".join(lead_blocks[:2]),
         "plan_overview": " ".join(lead_blocks[:5]),
         "plan_url": source_url,
-        "product_brochure_url": first_pdf_url(soup, source_url) or source_url,
+        "product_brochure_url": first_pdf_url(soup, source_url),
     }
 
 

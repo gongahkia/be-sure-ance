@@ -17,6 +17,7 @@ https://www.chinalife.com.sg/products/protection
 import asyncio
 import html
 import re
+from urllib.parse import urljoin
 
 from playwright.async_api import async_playwright
 
@@ -121,10 +122,8 @@ async def scrape_data(url):
                 "plan_benefits": plan_benefits,
                 "plan_description": plan_description,
                 "plan_overview": "",
-                "plan_url": f"https://www.chinalife.com.sg/{plan_url}" if plan_url else "",
-                "product_brochure_url": (
-                    f"https://www.chinalife.com.sg/{plan_url}" if plan_url else ""
-                ),
+                "plan_url": urljoin("https://www.chinalife.com.sg/", plan_url),
+                "product_brochure_url": "",
             }
 
             scraped_plans.append(formatted_entry)

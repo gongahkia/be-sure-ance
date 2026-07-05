@@ -29,7 +29,10 @@ def fetch_html(url: str, session=requests) -> str:
     )
     response.raise_for_status()
     text = response.text
-    if "Sorry, this service is currently unavailable" in text or "<title>Maintenance</title>" in text:
+    if (
+        "Sorry, this service is currently unavailable" in text
+        or "<title>Maintenance</title>" in text
+    ):
         raise RuntimeError(f"MAS source unavailable: {url}")
     return text
 

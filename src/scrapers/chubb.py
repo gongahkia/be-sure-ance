@@ -26,7 +26,12 @@ from src.scrapers.navigation import gather_scrape_results
 
 CHUBB_BASE_URL = "https://www.chubb.com"
 REQUEST_TIMEOUT_SECONDS = 20
-SKIP_SLUGS = {"individuals-families", "travel-protection", "accident-protection", "personal-protection"}
+SKIP_SLUGS = {
+    "individuals-families",
+    "travel-protection",
+    "accident-protection",
+    "personal-protection",
+}
 
 
 def normalize_whitespace(value: str | None) -> str:
@@ -105,7 +110,7 @@ def parse_product_html(html_content: str, source_url: str) -> dict | None:
         "plan_description": description or " ".join(text_blocks[:2]),
         "plan_overview": " ".join(text_blocks[:4]),
         "plan_url": source_url,
-        "product_brochure_url": first_pdf_url(soup, source_url) or source_url,
+        "product_brochure_url": first_pdf_url(soup, source_url),
     }
 
 
@@ -126,7 +131,19 @@ async def scrape_data(url):
 
 
 async def run_all_tasks(scrape_list):
-    return await gather_scrape_results("chubb", scrape_list, scrape_data)
+    return dedupe_rows(await gather_scrape_results("chubb", scrape_list, scrape_data))
+
+
+def dedupe_rows(rows: list[dict]) -> list[dict]:
+    deduped = []
+    seen = set()
+    for row in rows:
+        key = row.get("plan_url") or row.get("plan_name")
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        deduped.append(row)
+    return deduped
 
 
 # ----- sample execution code -----

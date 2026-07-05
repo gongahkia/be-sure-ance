@@ -135,9 +135,7 @@ def parse_product_html(html_content: str):
                 break
     return {
         "plan_name": product_title(title_content, meta_title, soup),
-        "plan_description": (
-            meta_description.get("content", "") if meta_description else ""
-        ),
+        "plan_description": (meta_description.get("content", "") if meta_description else ""),
         "plan_overview": overview_content.get_text(" ", strip=True) if overview_content else "",
         "product_brochure_url": urljoin(AIA_BASE_URL, cta_url) if cta_url else "",
         "plan_benefits": benefits,

@@ -107,13 +107,19 @@ async def scrape_data(url):
                 if descriptions
             ]
             plan_description = "\n\n".join([description.strip() for description in descriptions])
+            pdf_url = ""
+            for anchor in await plan_page.query_selector_all("a"):
+                href = await anchor.get_attribute("href")
+                if href and ".pdf" in href.lower():
+                    pdf_url = urljoin(plan_url, href)
+                    break
             formatted_row = {
                 "plan_name": plan_name,
                 "plan_benefits": [],
                 "plan_description": plan_description,
                 "plan_overview": plan_overview,
                 "plan_url": plan_url,
-                "product_brochure_url": plan_url,
+                "product_brochure_url": pdf_url,
             }
             # print(scraped_plans)
             scraped_plans.append(formatted_row)

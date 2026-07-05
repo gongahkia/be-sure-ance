@@ -15,6 +15,7 @@ from pypdf import PdfReader
 import src.backend.helper as helper
 from src.backend.helper import initialize_data_store, overwrite_generic_table_data
 from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.local_data_store import LocalDataClient, default_data_dir
 
 SCRAPER_DIR = Path(__file__).resolve().parent
 SUPPORTED_INSURERS = (
@@ -235,6 +236,12 @@ def description_snippet(pdf_text: str) -> str:
 
 
 def fetch_plans(insurer: str) -> list[dict]:
+    if helper.dry_run_enabled():
+        return [
+            row
+            for row in LocalDataClient(default_data_dir()).read_table("plans")
+            if row.get("insurer") == insurer
+        ]
     response = helper.require_client().table("plans").select("*").eq("insurer", insurer).execute()
     return response.data or []
 
