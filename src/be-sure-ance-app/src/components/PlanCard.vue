@@ -9,12 +9,7 @@
             <strong>/{{ plan.plan_name }}</strong>
           </a>
           <p class="repo-summary">
-            {{
-              plan.plan_description ||
-              comparisonFact?.comparison_notes ||
-              plan.plan_overview ||
-              t('ui.plan.noSummary')
-            }}
+            {{ planSummary }}
           </p>
         </div>
         <button class="hub-button" type="button" @click="$emit('toggle-select', plan.key)">
@@ -91,9 +86,9 @@
                   rel="noopener noreferrer"
                   referrerpolicy="no-referrer"
                 >
-                  {{ resource.resource_title || resource.resource_type }}
+                  {{ resourceLabel(resource) }}
                 </a>
-                <span v-else>{{ resource.resource_title || resource.resource_type }}</span>
+                <span v-else>{{ resourceLabel(resource) }}</span>
               </li>
             </ul>
           </section>
@@ -113,6 +108,7 @@ import FactProvenance from './FactProvenance.vue'
 import ProviderLogo from './ProviderLogo.vue'
 import RegulatoryEventList from './RegulatoryEventList.vue'
 import { useI18n } from '../i18n'
+import { translateContent } from '../utils/contentTranslation'
 import { externalHostname, safeExternalUrl } from '../utils/links'
 import {
   claimSlaText,
@@ -152,7 +148,7 @@ const props = defineProps({
 
 defineEmits(['toggle-select'])
 
-const { t } = useI18n()
+const { locale, t } = useI18n()
 const planWithFacts = computed(() => ({
   ...props.plan,
   facts: props.facts,
@@ -165,6 +161,14 @@ const waitingPeriods = computed(() => factItems(props.facts, 'waiting_periods'))
 const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
 const exclusions = computed(() => factItems(props.facts, 'exclusions'))
 const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
+const planSummary = computed(() =>
+  localize(
+    props.plan?.plan_description ||
+      props.comparisonFact?.comparison_notes ||
+      props.plan?.plan_overview ||
+      t('ui.plan.noSummary'),
+  ),
+)
 const planPagePath = computed(() =>
   props.plan?.providerKey && props.plan?.plan_slug
     ? `/plan/${encodeURIComponent(props.plan.providerKey)}/${encodeURIComponent(props.plan.plan_slug)}`
@@ -228,32 +232,46 @@ const brochureSummary = computed(() => {
 
 function tagLabel(tag) {
   const translated = t(`tag.${tag}`)
-  return translated.startsWith('[missing:') ? labelForTag(tag) : translated
+  return translated.startsWith('[missing:') ? localize(labelForTag(tag)) : translated
 }
 
 const networkSummary = computed(() =>
-  panelHospitals.value.length > 0
-    ? panelHospitals.value.map(itemLabel).join(', ')
-    : factStateText(props.facts, 'panel_hospitals', t('ui.matrix.unknown')),
+  localize(
+    panelHospitals.value.length > 0
+      ? panelHospitals.value.map(itemLabel).join(', ')
+      : factStateText(props.facts, 'panel_hospitals', t('ui.matrix.unknown')),
+  ),
 )
 
 const processSummary = computed(() =>
-  [
-    waitingPeriods.value.length
-      ? waitingPeriods.value.map((item) => durationText(item)).join(', ')
-      : factStateText(props.facts, 'waiting_periods', t('ui.matrix.unknown')),
-    claimDeadlines.value.length
-      ? claimDeadlines.value.map((item) => durationText(item, 'deadline_days')).join(', ')
-      : factStateText(props.facts, 'claim_deadlines', t('ui.matrix.unknown')),
-    claimSlaText(props.facts) || factStateText(props.facts, 'claim_sla', t('ui.matrix.unknown')),
-  ].join(' / '),
+  localize(
+    [
+      waitingPeriods.value.length
+        ? waitingPeriods.value.map((item) => durationText(item)).join(', ')
+        : factStateText(props.facts, 'waiting_periods', t('ui.matrix.unknown')),
+      claimDeadlines.value.length
+        ? claimDeadlines.value.map((item) => durationText(item, 'deadline_days')).join(', ')
+        : factStateText(props.facts, 'claim_deadlines', t('ui.matrix.unknown')),
+      claimSlaText(props.facts) || factStateText(props.facts, 'claim_sla', t('ui.matrix.unknown')),
+    ].join(' / '),
+  ),
 )
 
 const exclusionSummary = computed(() =>
-  exclusions.value.length > 0
-    ? exclusions.value.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
-    : factStateText(props.facts, 'exclusions'),
+  localize(
+    exclusions.value.length > 0
+      ? exclusions.value.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
+      : factStateText(props.facts, 'exclusions'),
+  ),
 )
+
+function resourceLabel(resource) {
+  return localize(resource.resource_title || resource.resource_type)
+}
+
+function localize(value) {
+  return translateContent(value, locale.value)
+}
 </script>
 
 <style scoped>

@@ -7,7 +7,7 @@
           <span class="status-badge">{{ statusText(change) }}</span>
           <strong>{{ dateText(change.change_detected_at) }}</strong>
         </div>
-        <p>{{ change.summary || t('ui.brochureChanges.defaultSummary') }}</p>
+        <p>{{ summaryText(change) }}</p>
         <a
           v-if="safeExternalUrl(change.source_url)"
           :href="safeExternalUrl(change.source_url)"
@@ -27,6 +27,7 @@ import { computed } from 'vue'
 
 import { externalHostname, safeExternalUrl } from '../utils/links'
 import { useI18n } from '../i18n'
+import { translateContent } from '../utils/contentTranslation'
 
 const props = defineProps({
   changes: {
@@ -35,7 +36,7 @@ const props = defineProps({
   },
 })
 
-const { t } = useI18n()
+const { locale, t } = useI18n()
 
 const sortedChanges = computed(() =>
   [...props.changes]
@@ -57,6 +58,10 @@ function statusText(change) {
     return t('ui.brochureChanges.suppressed')
   }
   return t('ui.brochureChanges.pending')
+}
+
+function summaryText(change) {
+  return translateContent(change.summary || t('ui.brochureChanges.defaultSummary'), locale.value)
 }
 
 function dateText(value) {

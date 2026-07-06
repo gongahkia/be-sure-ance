@@ -218,7 +218,7 @@ button {
   border: 1px solid var(--hf-border);
   border-radius: var(--hf-radius-full);
   background: var(--hf-primary);
-  color: #111827;
+  color: var(--hf-primary-contrast);
   font-weight: 700;
 }
 

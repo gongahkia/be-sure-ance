@@ -2,7 +2,6 @@
   <div id="app" class="hub-app">
     <header class="hub-topbar">
       <a href="/" class="brand" @click="navigateTo('/', $event)">
-        <span class="brand-mark">B</span>
         <span>Be-sure-ance</span>
       </a>
 
@@ -25,6 +24,13 @@
           {{ t('ui.nav.models') }}
         </a>
         <a
+          href="/compare"
+          :class="{ active: activeView === 'compare' }"
+          @click="navigateTo('/compare', $event)"
+        >
+          {{ t('ui.nav.compare') }}
+        </a>
+        <a
           href="/matrix/panel-hospitals"
           :class="{ active: activeView === 'panelMatrix' }"
           @click="navigateTo('/matrix/panel-hospitals', $event)"
@@ -40,17 +46,28 @@
         </a>
       </nav>
 
-      <div class="language-toggle" :aria-label="t('language.label')">
+      <div class="header-controls">
         <button
-          v-for="option in supportedLocales"
-          :key="option.code"
+          class="theme-toggle"
           type="button"
-          :class="{ active: locale === option.code }"
-          :aria-pressed="locale === option.code"
-          @click="setLocale(option.code)"
+          :aria-label="t('theme.label')"
+          :aria-pressed="theme === 'light'"
+          @click="toggleTheme"
         >
-          {{ option.label }}
+          {{ theme === 'dark' ? t('theme.light') : t('theme.dark') }}
         </button>
+        <div class="language-toggle" :aria-label="t('language.label')">
+          <button
+            v-for="option in supportedLocales"
+            :key="option.code"
+            type="button"
+            :class="{ active: locale === option.code }"
+            :aria-pressed="locale === option.code"
+            @click="setLocale(option.code)"
+          >
+            {{ option.label }}
+          </button>
+        </div>
       </div>
     </header>
 
@@ -60,9 +77,7 @@
       @remove="togglePlanSelection"
     />
 
-    <section v-if="loading" class="status-panel">
-      Loading plan data and qualitative facts...
-    </section>
+    <section v-if="loading" class="status-panel">{{ t('status.loading') }}</section>
     <section v-else-if="errorMessage" class="status-panel error">{{ errorMessage }}</section>
 
     <main v-else-if="activeView === 'panelMatrix'" class="page-shell">
@@ -95,6 +110,10 @@
         </span>
       </section>
       <ScraperStatusDashboard :health-rows="scraperHealth" :providers="providers" />
+    </main>
+
+    <main v-else-if="activeView === 'compare'" class="page-shell">
+      <ComparisonTable :selected-plans="selectedPlans" />
     </main>
 
     <main v-else-if="activeView === 'sharedComparison'" class="page-shell">
@@ -191,14 +210,7 @@
           <article class="repo-main hub-panel">
             <template v-if="activeDetailTab === 'card'">
               <h2>{{ t('ui.detail.planCard') }}</h2>
-              <p class="lead">
-                {{
-                  detailPlan.plan_overview ||
-                  detailPlan.plan_description ||
-                  detailPlan.comparisonFact?.comparison_notes ||
-                  t('ui.detail.noOverview')
-                }}
-              </p>
+              <p class="lead">{{ detailLeadText }}</p>
               <FactProvenance :entries="profileProvenanceEntry(detailPlan)" compact />
               <div class="fact-sections">
                 <section v-for="row in factRowsFor(detailPlan)" :key="row.key">
@@ -220,7 +232,7 @@
                   :key="fact.field_name"
                   class="fact-row"
                 >
-                  <strong>{{ labelForTag(fact.field_name) }}</strong>
+                  <strong>{{ sourceFactLabel(fact.field_name) }}</strong>
                   <span>{{ summarizeFact(fact) }}</span>
                   <FactProvenance
                     :entries="provenanceEntriesForFields(detailPlan.facts, [fact.field_name])"
@@ -306,12 +318,8 @@
         :provider-counts="providerCounts"
         :coverage-tags="allCoverageTags"
         :active-coverage-tags="activeCoverageTags"
-        :verified-only="verifiedOnly"
-        :brochure-only="brochureOnly"
         @select="activeProviderKey = $event"
         @toggle-coverage="toggleCoverageTag"
-        @update:verified-only="verifiedOnly = $event"
-        @update:brochure-only="brochureOnly = $event"
         @clear-filters="clearFilters"
       />
 
@@ -348,11 +356,6 @@
           </div>
         </section>
 
-        <section class="hub-panel browse-disclaimer">
-          <strong>{{ t('ui.disclaimer.title') }}</strong>
-          <span>{{ t('ui.disclaimer.copy') }}</span>
-        </section>
-
         <section v-if="visiblePlans.length > 0" class="repo-list">
           <PlanCard
             v-for="plan in visiblePlans"
@@ -369,8 +372,6 @@
           />
         </section>
         <section v-else class="status-panel">{{ emptyPlanMessage }}</section>
-
-        <ComparisonTable :selected-plans="selectedPlans" />
       </section>
     </main>
   </div>
@@ -393,6 +394,7 @@ import SelectedBriefBar from './components/SelectedBriefBar.vue'
 import { useI18n } from './i18n'
 import { buildPlanKey, providers } from './lib/providers'
 import { loadAppData } from './lib/staticData'
+import { translateContent } from './utils/contentTranslation'
 import { safeExternalUrl } from './utils/links'
 import {
   claimSlaText,
@@ -414,6 +416,7 @@ import {
 const { locale, supportedLocales, setLocale, t } = useI18n()
 const SHARE_DISCLAIMER = computed(() => t('disclaimer.share'))
 const SELECTED_PLANS_STORAGE_KEY = 'be-sure-ance:selected-plan-keys'
+const THEME_STORAGE_KEY = 'be-sure-ance-theme'
 const ALL_PROVIDERS_KEY = 'all'
 
 const loading = ref(true)
@@ -439,6 +442,9 @@ const verifiedOnly = ref(false)
 const brochureOnly = ref(false)
 const sortMode = ref('updated')
 const activeDetailTab = ref('card')
+const theme = ref(initialTheme())
+
+applyTheme(theme.value)
 
 const detailTabs = computed(() => [
   { key: 'card', label: t('ui.detail.card') },
@@ -482,6 +488,9 @@ const activeView = computed(() => {
   const path = pathWithoutQuery(currentPath.value)
   if (path === '/matrix/panel-hospitals') {
     return 'panelMatrix'
+  }
+  if (path === '/compare') {
+    return 'compare'
   }
   if (path === '/status') {
     return 'scraperStatus'
@@ -742,7 +751,7 @@ function sortPlans(plans) {
 }
 
 function searchableText(plan) {
-  return [
+  const parts = [
     plan.providerName,
     plan.plan_name,
     plan.plan_description,
@@ -755,8 +764,10 @@ function searchableText(plan) {
       .map((resource) => `${resource.resource_title || ''} ${resource.resource_description || ''}`)
       .join(' '),
   ]
-    .join(' ')
-    .toLowerCase()
+  if (locale.value === 'zh-SG') {
+    parts.push(...parts.map((part) => translateContent(part, locale.value)))
+  }
+  return parts.join(' ').toLowerCase()
 }
 
 const detailPlan = computed(() => {
@@ -774,6 +785,18 @@ const detailPlan = computed(() => {
 const detailProvider = computed(() =>
   detailPlan.value ? providerFor(detailPlan.value.providerKey) : providers[0],
 )
+
+const detailLeadText = computed(() => {
+  if (!detailPlan.value) {
+    return ''
+  }
+  return localize(
+    detailPlan.value.plan_overview ||
+      detailPlan.value.plan_description ||
+      detailPlan.value.comparisonFact?.comparison_notes ||
+      t('ui.detail.noOverview'),
+  )
+})
 
 const sharedPlans = computed(() => {
   const allPlans = enrichedPlans.value
@@ -917,6 +940,40 @@ function storeSelectedPlanKeys(keys) {
   }
 }
 
+function initialTheme() {
+  if (typeof window === 'undefined') {
+    return 'dark'
+  }
+  const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY)
+  if (storedTheme === 'light' || storedTheme === 'dark') {
+    return storedTheme
+  }
+  return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+}
+
+function toggleTheme() {
+  setTheme(theme.value === 'dark' ? 'light' : 'dark')
+}
+
+function setTheme(nextTheme) {
+  if (!['dark', 'light'].includes(nextTheme)) {
+    return
+  }
+  theme.value = nextTheme
+  applyTheme(nextTheme)
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme)
+  } catch {
+    return
+  }
+}
+
+function applyTheme(nextTheme) {
+  if (typeof document !== 'undefined') {
+    document.documentElement.dataset.theme = nextTheme
+  }
+}
+
 function factRowsFor(plan) {
   const waitingPeriods = factItems(plan.facts, 'waiting_periods')
   const claimDeadlines = factItems(plan.facts, 'claim_deadlines')
@@ -927,15 +984,16 @@ function factRowsFor(plan) {
       label: t('field.coverage_tags'),
       value:
         coverageTagsForPlan(plan).map(localizedTagLabel).join(', ') ||
-        factStateText(plan.facts, 'coverage_tags'),
+        localize(factStateText(plan.facts, 'coverage_tags')),
       fields: ['coverage_tags'],
     },
     {
       key: 'network',
       label: t('field.panel_hospitals'),
-      value:
+      value: localize(
         factItems(plan.facts, 'panel_hospitals').map(itemLabel).join(', ') ||
-        factStateText(plan.facts, 'panel_hospitals'),
+          factStateText(plan.facts, 'panel_hospitals'),
+      ),
       fields: ['panel_hospitals'],
     },
     {
@@ -943,27 +1001,28 @@ function factRowsFor(plan) {
       label: t('plan.process'),
       value: [
         waitingPeriods.length
-          ? waitingPeriods.map((item) => durationText(item)).join(', ')
-          : factStateText(plan.facts, 'waiting_periods'),
+          ? localize(waitingPeriods.map((item) => durationText(item)).join(', '))
+          : localize(factStateText(plan.facts, 'waiting_periods')),
         claimDeadlines.length
-          ? claimDeadlines.map((item) => durationText(item, 'deadline_days')).join(', ')
-          : factStateText(plan.facts, 'claim_deadlines'),
-        claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla'),
+          ? localize(claimDeadlines.map((item) => durationText(item, 'deadline_days')).join(', '))
+          : localize(factStateText(plan.facts, 'claim_deadlines')),
+        localize(claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla')),
       ].join(' / '),
       fields: ['waiting_periods', 'claim_deadlines', 'claim_sla'],
     },
     {
       key: 'exclusions',
       label: t('field.exclusions'),
-      value:
+      value: localize(
         exclusions.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ') ||
-        factStateText(plan.facts, 'exclusions'),
+          factStateText(plan.facts, 'exclusions'),
+      ),
       fields: ['exclusions'],
     },
     {
       key: 'source_notes',
       label: t('field.source_notes'),
-      value: listText(factItems(plan.facts, 'source_notes'), t('empty.search')),
+      value: localize(listText(factItems(plan.facts, 'source_notes'), t('empty.search'))),
       fields: ['source_notes'],
     },
   ]
@@ -978,10 +1037,10 @@ function planFactsFor(plan) {
 function summarizeFact(fact) {
   const fieldValue = fact?.field_value || {}
   if (fieldValue.status && fieldValue.status !== 'known') {
-    return labelForTag(fieldValue.status)
+    return localize(labelForTag(fieldValue.status))
   }
   if (fact?.field_name === 'claim_sla') {
-    return claimSlaText({ claim_sla: fact }) || t('ui.state.known')
+    return localize(claimSlaText({ claim_sla: fact }) || t('ui.state.known'))
   }
   if (fact?.field_name === 'brochure_metadata') {
     const value = fieldValue.value || {}
@@ -990,15 +1049,19 @@ function summarizeFact(fact) {
       : t('ui.state.known')
   }
   if (Array.isArray(fieldValue.items)) {
-    return fieldValue.items.map(itemLabel).filter(Boolean).join(', ') || t('ui.state.known')
+    return localize(
+      fieldValue.items.map(itemLabel).filter(Boolean).join(', ') || t('ui.state.known'),
+    )
   }
   if (fieldValue.value && typeof fieldValue.value === 'object') {
-    return Object.entries(fieldValue.value)
-      .slice(0, 3)
-      .map(([key, value]) => `${labelForTag(key)}: ${value}`)
-      .join(', ')
+    return localize(
+      Object.entries(fieldValue.value)
+        .slice(0, 3)
+        .map(([key, value]) => `${labelForTag(key)}: ${value}`)
+        .join(', '),
+    )
   }
-  return String(fieldValue.value || t('ui.state.known'))
+  return localize(String(fieldValue.value || t('ui.state.known')))
 }
 
 function factCount(plan) {
@@ -1071,12 +1134,21 @@ function brochureStatusText(plan) {
   if (plan?.product_brochure_url) {
     return t('ui.brochure.linked')
   }
-  return factStateText(plan?.facts, 'brochure_metadata', t('ui.plan.noBrochure'))
+  return localize(factStateText(plan?.facts, 'brochure_metadata', t('ui.plan.noBrochure')))
 }
 
 function localizedTagLabel(tag) {
   const translated = t(`tag.${tag}`)
-  return translated.startsWith('[missing:') ? labelForTag(tag) : translated
+  return translated.startsWith('[missing:') ? localize(labelForTag(tag)) : translated
+}
+
+function sourceFactLabel(fieldName) {
+  const translated = t(`field.${fieldName}`)
+  return translated.startsWith('[missing:') ? localize(labelForTag(fieldName)) : translated
+}
+
+function localize(value) {
+  return translateContent(value, locale.value)
 }
 </script>
 
@@ -1098,7 +1170,7 @@ function localizedTagLabel(tag) {
   min-height: 72px;
   padding: 12px 24px;
   border-bottom: 1px solid var(--hf-border);
-  background: rgba(18, 18, 18, 0.94);
+  background: var(--hf-topbar);
   backdrop-filter: blur(16px);
 }
 
@@ -1110,17 +1182,6 @@ function localizedTagLabel(tag) {
   font-size: 20px;
   font-weight: 800;
   text-decoration: none;
-}
-
-.brand-mark {
-  display: inline-grid;
-  width: 32px;
-  height: 32px;
-  place-items: center;
-  border-radius: var(--hf-radius-md);
-  background: var(--hf-accent);
-  color: #111827;
-  font-weight: 800;
 }
 
 .global-search .hub-input {
@@ -1144,12 +1205,20 @@ function localizedTagLabel(tag) {
   color: var(--hf-primary);
 }
 
+.header-controls {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .language-toggle {
   display: inline-flex;
   gap: 6px;
 }
 
-.language-toggle button {
+.language-toggle button,
+.theme-toggle {
   min-height: 32px;
   border: 1px solid var(--hf-border);
   border-radius: var(--hf-radius-full);
@@ -1161,7 +1230,7 @@ function localizedTagLabel(tag) {
 
 .language-toggle button.active {
   background: var(--hf-primary);
-  color: #111827;
+  color: var(--hf-primary-contrast);
 }
 
 .browse-shell {
@@ -1269,23 +1338,6 @@ h1 span {
   border-radius: var(--hf-radius-full);
   color: var(--hf-secondary);
   background: var(--hf-surface);
-}
-
-.browse-disclaimer {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 12px 16px;
-  color: var(--hf-secondary);
-}
-
-.browse-disclaimer span {
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-.browse-disclaimer strong {
-  color: var(--hf-primary);
 }
 
 .repo-list {
@@ -1451,11 +1503,6 @@ h1 span {
 
   .brand {
     font-size: 18px;
-  }
-
-  .brand-mark {
-    width: 28px;
-    height: 28px;
   }
 
   .top-nav {

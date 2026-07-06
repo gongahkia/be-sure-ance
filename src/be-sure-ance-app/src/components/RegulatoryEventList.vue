@@ -5,7 +5,7 @@
       <li v-for="event in sortedEvents" :key="eventKey(event)">
         <div>
           <span class="status-badge">{{ statusText(event) }}</span>
-          <strong>{{ event.event_title }}</strong>
+          <strong>{{ eventTitle(event) }}</strong>
         </div>
         <p>{{ eventSummary(event) }}</p>
         <a
@@ -26,6 +26,7 @@
 import { computed } from 'vue'
 
 import { useI18n } from '../i18n'
+import { translateContent } from '../utils/contentTranslation'
 import { externalHostname, safeExternalUrl } from '../utils/links'
 
 const props = defineProps({
@@ -35,7 +36,7 @@ const props = defineProps({
   },
 })
 
-const { t } = useI18n()
+const { locale, t } = useI18n()
 
 const sortedEvents = computed(() =>
   [...props.events]
@@ -55,10 +56,17 @@ function statusText(event) {
     : t('ui.regulatory.needsReview')
 }
 
+function eventTitle(event) {
+  return translateContent(event.event_title, locale.value)
+}
+
 function eventSummary(event) {
-  return event.match_status === 'matched'
-    ? event.summary
-    : t('ui.regulatory.possibleMatch', { alias: event.matched_alias })
+  return translateContent(
+    event.match_status === 'matched'
+      ? event.summary
+      : t('ui.regulatory.possibleMatch', { alias: event.matched_alias }),
+    locale.value,
+  )
 }
 </script>
 

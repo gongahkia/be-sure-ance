@@ -52,7 +52,7 @@ const { t } = useI18n()
   align-items: center;
   padding: 10px 24px;
   border-bottom: 1px solid var(--hf-border);
-  background: rgba(23, 26, 32, 0.96);
+  background: var(--hf-briefbar);
   backdrop-filter: blur(16px);
 }
 

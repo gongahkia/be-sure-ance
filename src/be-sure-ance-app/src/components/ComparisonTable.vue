@@ -39,6 +39,7 @@ import { computed } from 'vue'
 
 import FactProvenance from './FactProvenance.vue'
 import { useI18n } from '../i18n'
+import { translateContent } from '../utils/contentTranslation'
 import {
   claimSlaText,
   coverageTagsForPlan,
@@ -56,7 +57,7 @@ defineProps({
   selectedPlans: Array,
 })
 
-const { t } = useI18n()
+const { locale, t } = useI18n()
 const rows = computed(() => [
   {
     key: 'coverage_tags',
@@ -85,7 +86,7 @@ const rows = computed(() => [
   {
     key: 'claim_sla',
     label: t('field.claim_sla'),
-    render: (plan) => claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla'),
+    render: (plan) => localize(claimSlaText(plan.facts) || factStateText(plan.facts, 'claim_sla')),
     provenance: (plan) => provenanceEntriesForFields(plan.facts, ['claim_sla']),
   },
   {
@@ -110,34 +111,38 @@ const rows = computed(() => [
 
 function coverageValue(plan) {
   const tags = coverageTagsForPlan(plan).map(tagLabel)
-  return tags.length > 0 ? tags.join(', ') : factStateText(plan.facts, 'coverage_tags')
+  return tags.length > 0 ? tags.join(', ') : localize(factStateText(plan.facts, 'coverage_tags'))
 }
 
 function tagLabel(tag) {
   const translated = t(`tag.${tag}`)
-  return translated.startsWith('[missing:') ? labelForTag(tag) : translated
+  return translated.startsWith('[missing:') ? localize(labelForTag(tag)) : translated
 }
 
 function qualitativeListValue(plan, fieldName) {
   const items = factItems(plan.facts, fieldName)
-  return items.length > 0 ? listText(items) : factStateText(plan.facts, fieldName)
+  return localize(items.length > 0 ? listText(items) : factStateText(plan.facts, fieldName))
 }
 
 function exclusionValue(plan) {
   const items = factItems(plan.facts, 'exclusions')
-  return items.length > 0
-    ? items.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
-    : factStateText(plan.facts, 'exclusions')
+  return localize(
+    items.length > 0
+      ? items.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
+      : factStateText(plan.facts, 'exclusions'),
+  )
 }
 
 function durationListValue(plan, fieldName, durationFieldName) {
   const items = factItems(plan.facts, fieldName)
-  return items.length > 0
-    ? items
-        .map((item) => durationText(item, durationFieldName))
-        .filter(Boolean)
-        .join(', ')
-    : factStateText(plan.facts, fieldName)
+  return localize(
+    items.length > 0
+      ? items
+          .map((item) => durationText(item, durationFieldName))
+          .filter(Boolean)
+          .join(', ')
+      : factStateText(plan.facts, fieldName),
+  )
 }
 
 function brochureValue(plan) {
@@ -151,7 +156,11 @@ function brochureValue(plan) {
   ) {
     return t('common.available')
   }
-  return factStateText(plan.facts, 'brochure_metadata')
+  return localize(factStateText(plan.facts, 'brochure_metadata'))
+}
+
+function localize(value) {
+  return translateContent(value, locale.value)
 }
 </script>
 
@@ -214,7 +223,7 @@ th {
 }
 
 tbody tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--hf-hover);
 }
 
 .cell-value {

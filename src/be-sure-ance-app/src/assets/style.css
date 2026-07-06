@@ -14,12 +14,48 @@
   --hf-good: #4ade80;
   --hf-warn: #facc15;
   --hf-accent: #ffcc4d;
+  --hf-topbar: rgba(18, 18, 18, 0.94);
+  --hf-briefbar: rgba(23, 26, 32, 0.96);
+  --hf-hover: rgba(255, 255, 255, 0.04);
+  --hf-link-underline: rgba(255, 255, 255, 0.38);
+  --hf-primary-contrast: #111827;
+  --hf-active-border: rgba(255, 255, 255, 0.72);
+  --hf-good-text: #bbf7d0;
+  --hf-warn-text: #fde68a;
+  --hf-bad-text: #fecdd3;
+  --hf-focus: rgba(255, 204, 77, 0.78);
   --hf-radius-sm: 4px;
   --hf-radius-md: 8px;
   --hf-radius-lg: 12px;
   --hf-radius-xl: 16px;
   --hf-radius-full: 9999px;
   --hf-page-max: 1680px;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --hf-primary: #111827;
+  --hf-secondary: #4b5563;
+  --hf-tertiary: #6b7280;
+  --hf-neutral: #f8fafc;
+  --hf-surface: #ffffff;
+  --hf-surface-2: #eef2f7;
+  --hf-border: #d8dee8;
+  --hf-muted: #667085;
+  --hf-error: #b42318;
+  --hf-good: #047857;
+  --hf-warn: #b45309;
+  --hf-accent: #f5c542;
+  --hf-topbar: rgba(255, 255, 255, 0.94);
+  --hf-briefbar: rgba(255, 255, 255, 0.96);
+  --hf-hover: rgba(15, 23, 42, 0.05);
+  --hf-link-underline: rgba(15, 23, 42, 0.38);
+  --hf-primary-contrast: #ffffff;
+  --hf-active-border: rgba(17, 24, 39, 0.72);
+  --hf-good-text: #166534;
+  --hf-warn-text: #92400e;
+  --hf-bad-text: #b91c1c;
+  --hf-focus: rgba(217, 119, 6, 0.62);
 }
 
 * {
@@ -65,7 +101,7 @@ button:disabled {
 
 a {
   color: var(--hf-primary);
-  text-decoration-color: rgba(255, 255, 255, 0.38);
+  text-decoration-color: var(--hf-link-underline);
   text-underline-offset: 3px;
 }
 
@@ -105,17 +141,17 @@ a:hover {
 
 .hub-chip.good {
   border-color: rgba(74, 222, 128, 0.34);
-  color: #bbf7d0;
+  color: var(--hf-good-text);
 }
 
 .hub-chip.warn {
   border-color: rgba(250, 204, 21, 0.34);
-  color: #fde68a;
+  color: var(--hf-warn-text);
 }
 
 .hub-chip.bad {
   border-color: rgba(229, 72, 77, 0.34);
-  color: #fecdd3;
+  color: var(--hf-bad-text);
 }
 
 .hub-button,
@@ -139,12 +175,12 @@ a:hover {
 .hub-button:hover,
 .hub-link-button:hover {
   border-color: var(--hf-tertiary);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--hf-hover);
 }
 
 .hub-button.primary {
   background: var(--hf-primary);
-  color: #111827;
+  color: var(--hf-primary-contrast);
 }
 
 .hub-input,
@@ -168,7 +204,7 @@ a:hover {
 .hub-link-button:focus-visible,
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid rgba(255, 204, 77, 0.78);
+  outline: 2px solid var(--hf-focus);
   outline-offset: 2px;
 }
 
@@ -222,7 +258,7 @@ button:focus-visible {
   place-items: center;
   border-radius: var(--hf-radius-md);
   background: var(--hf-accent);
-  color: #111827;
+  color: var(--hf-primary-contrast);
 }
 
 .static-topbar nav,

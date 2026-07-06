@@ -24,8 +24,8 @@
         </thead>
         <tbody>
           <tr v-for="metric in displayMetrics" :key="metricKey(metric)">
-            <td>{{ metric.metric_label }}</td>
-            <td>{{ metric.carrier_name }}</td>
+            <td>{{ localize(metric.metric_label) }}</td>
+            <td>{{ localize(metric.carrier_name) }}</td>
             <td>{{ metricValue(metric) }}</td>
             <td>{{ rankText(metric) }}</td>
             <td>
@@ -52,6 +52,7 @@
 import { computed } from 'vue'
 
 import { useI18n } from '../i18n'
+import { translateContent } from '../utils/contentTranslation'
 import { externalHostname, safeExternalUrl } from '../utils/links'
 
 const props = defineProps({
@@ -62,7 +63,7 @@ const props = defineProps({
   compact: Boolean,
 })
 
-const { t } = useI18n()
+const { locale, t } = useI18n()
 
 const sortedMetrics = computed(() =>
   [...props.metrics].sort(
@@ -99,7 +100,11 @@ function rankText(metric) {
 }
 
 function limitationText(metric) {
-  return (metric.limitations || []).join(' ')
+  return localize((metric.limitations || []).join(' '))
+}
+
+function localize(value) {
+  return translateContent(value, locale.value)
 }
 </script>
 

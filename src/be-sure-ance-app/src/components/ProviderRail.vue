@@ -1,11 +1,5 @@
 <template>
   <aside class="filter-rail">
-    <div class="rail-tabs">
-      <button type="button" class="active">{{ t('ui.rail.main') }}</button>
-      <button type="button" disabled>{{ t('ui.rail.tasks') }}</button>
-      <button type="button" disabled>{{ t('ui.rail.sources') }}</button>
-    </div>
-
     <section>
       <div class="section-head">
         <h2>{{ t('ui.rail.carriers') }}</h2>
@@ -46,26 +40,6 @@
         </button>
       </div>
     </section>
-
-    <section>
-      <h2>{{ t('ui.rail.evidence') }}</h2>
-      <label class="rail-toggle">
-        <input
-          type="checkbox"
-          :checked="verifiedOnly"
-          @change="$emit('update:verified-only', $event.target.checked)"
-        />
-        {{ t('ui.rail.verifiedFactsOnly') }}
-      </label>
-      <label class="rail-toggle">
-        <input
-          type="checkbox"
-          :checked="brochureOnly"
-          @change="$emit('update:brochure-only', $event.target.checked)"
-        />
-        {{ t('ui.rail.hasBrochure') }}
-      </label>
-    </section>
   </aside>
 </template>
 
@@ -74,6 +48,7 @@ import { computed } from 'vue'
 
 import ProviderLogo from './ProviderLogo.vue'
 import { useI18n } from '../i18n'
+import { translateContent } from '../utils/contentTranslation'
 import { labelForTag } from '../utils/planFacts'
 
 const props = defineProps({
@@ -94,26 +69,20 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
-  verifiedOnly: Boolean,
-  brochureOnly: Boolean,
 })
 
-defineEmits([
-  'select',
-  'toggle-coverage',
-  'update:verified-only',
-  'update:brochure-only',
-  'clear-filters',
-])
+defineEmits(['select', 'toggle-coverage', 'clear-filters'])
 
-const { t } = useI18n()
+const { locale, t } = useI18n()
 const totalCount = computed(() =>
   Object.values(props.providerCounts).reduce((total, count) => total + Number(count || 0), 0),
 )
 
 function tagLabel(tag) {
   const translated = t(`tag.${tag}`)
-  return translated.startsWith('[missing:') ? labelForTag(tag) : translated
+  return translated.startsWith('[missing:')
+    ? translateContent(labelForTag(tag), locale.value)
+    : translated
 }
 </script>
 
@@ -128,31 +97,6 @@ function tagLabel(tag) {
   max-height: calc(100vh - 120px);
   overflow: auto;
   padding-right: 6px;
-}
-
-.rail-tabs {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.rail-tabs button {
-  min-height: 32px;
-  border: 0;
-  border-radius: var(--hf-radius-full);
-  background: transparent;
-  color: var(--hf-muted);
-  padding: 4px 10px;
-  font-weight: 700;
-}
-
-.rail-tabs button.active {
-  background: var(--hf-primary);
-  color: #111827;
-}
-
-.rail-tabs button:disabled {
-  opacity: 0.6;
 }
 
 section {
@@ -200,7 +144,7 @@ h2 {
 
 .filter-chip.active,
 .tag-chip.active {
-  border-color: rgba(255, 255, 255, 0.72);
+  border-color: var(--hf-active-border);
   color: var(--hf-primary);
 }
 
@@ -233,14 +177,6 @@ h2 {
   padding: 5px 10px;
 }
 
-.rail-toggle {
-  display: flex;
-  min-height: 36px;
-  align-items: center;
-  gap: 8px;
-  color: var(--hf-secondary);
-}
-
 @media (max-width: 1280px) {
   .filter-rail {
     position: static;
@@ -253,11 +189,6 @@ h2 {
 @media (max-width: 720px) {
   .filter-rail {
     gap: 20px;
-  }
-
-  .rail-tabs {
-    overflow-x: auto;
-    padding-bottom: 2px;
   }
 }
 </style>

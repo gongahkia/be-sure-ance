@@ -24,13 +24,13 @@
           </a>
           <span v-else>{{ plan.plan_name }}</span>
         </td>
-        <td>{{ plan.plan_description }}</td>
+        <td>{{ localize(plan.plan_description) }}</td>
         <td>
           <ul>
-            <li v-for="benefit in plan.plan_benefits" :key="benefit">{{ benefit }}</li>
+            <li v-for="benefit in plan.plan_benefits" :key="benefit">{{ localize(benefit) }}</li>
           </ul>
         </td>
-        <td>{{ plan.plan_overview }}</td>
+        <td>{{ localize(plan.plan_overview) }}</td>
         <td>
           <a
             v-if="safeExternalUrl(plan.product_brochure_url)"
@@ -56,11 +56,11 @@
                 referrerpolicy="no-referrer"
                 target="_blank"
               >
-                {{ resource.resource_title || resource.resource_type }}
+                {{ localize(resource.resource_title || resource.resource_type) }}
               </a>
-              <span v-else>{{ resource.resource_title || resource.resource_type }}</span>
+              <span v-else>{{ localize(resource.resource_title || resource.resource_type) }}</span>
               <span v-if="resource.resource_description">
-                - {{ resource.resource_description }}</span
+                - {{ localize(resource.resource_description) }}</span
               >
             </li>
           </ul>
@@ -75,6 +75,8 @@
 <script setup>
 import { computed } from 'vue'
 
+import { useI18n } from '../i18n'
+import { translateContent } from '../utils/contentTranslation'
 import { safeExternalUrl } from '../utils/links'
 
 const props = defineProps({
@@ -82,6 +84,8 @@ const props = defineProps({
   insurerKey: String,
   specialistResources: Array,
 })
+
+const { locale } = useI18n()
 
 const planResourceMap = computed(() => {
   const resources = Array.isArray(props.specialistResources) ? props.specialistResources : []
@@ -99,5 +103,9 @@ const planResourceMap = computed(() => {
 
 function resourcesForPlan(plan) {
   return planResourceMap.value[plan.plan_name] || []
+}
+
+function localize(value) {
+  return translateContent(value, locale.value)
 }
 </script>
