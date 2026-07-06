@@ -1,10 +1,12 @@
 SUPPORTED_SCRAPERS = (
     "aia",
+    "allianz",
     "china_life",
     "chubb",
     "etiqa",
     "fwd",
     "great_eastern",
+    "hl_assurance",
     "hsbc",
     "iii",
     "income",
@@ -12,22 +14,20 @@ SUPPORTED_SCRAPERS = (
     "prudential",
     "raffles_health",
     "singlife",
+    "sompo",
     "sunlife",
     "tokio_marine",
     "uoi",
 )
 
 EXPERIMENTAL_SCRAPERS = (
-    "allianz",
     "china_taiping",
     "allied_world",
     "aig",
     "ergo",
-    "hl_assurance",
     "liberty",
     "lonpac",
     "qbe",
-    "sompo",
     "direct_asia",
 )
 

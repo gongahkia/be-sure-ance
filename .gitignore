@@ -20,5 +20,6 @@ pnpm-debug.log*
 *.sw?
 .env.*
 !.env.example
-src/be-sure-ance-app/public/data/
+src/be-sure-ance-app/public/data/*
+!src/be-sure-ance-app/public/data/app-data.json
 .playwright-cli/

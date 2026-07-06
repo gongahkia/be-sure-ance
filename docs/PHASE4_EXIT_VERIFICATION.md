@@ -16,7 +16,7 @@ README positioning, metrics, cost transparency, and limitations are visible:
 
 - Positioning: public-good IFA pre-meeting research tool that complements compareFIRST and does not replace carrier brochures, licensed advisers, or regulated advisory workflows.
 - No-advice boundary: no advice, quotes, recommendations, suitability rankings, premium estimates, or cost projections.
-- Metrics: portfolio status records 16 supported scheduled carriers, 5,305 MOH institutions, 12 LIA claim metrics, open dataset artifact workflow, WCAG evidence, and unavailable production analytics/alerts.
+- Metrics: portfolio status records 19 supported scheduled carriers, 5,305 MOH institutions, 12 LIA claim metrics, open dataset artifact workflow, WCAG evidence, and unavailable production analytics/alerts.
 - Cost posture: `$0/mo` target during portfolio validation on free-tier infrastructure; paid upgrades must be documented before launch.
 - OGP/GovTech scope: ADR 0007 documents Postman.gov.sg, FormSG, and Go.gov.sg evaluation and defers integration until public-sector ownership, access, and governance are confirmed.
 

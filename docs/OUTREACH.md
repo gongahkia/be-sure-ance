@@ -14,7 +14,7 @@ Feedback channels to monitor after any post:
 ## Guardrails
 
 - Do not claim financial advice, insurance advice, quotes, recommendations, rankings, premium estimates, or cost projections.
-- Do not claim all Singapore carriers are supported. Current scheduled support is 10 carriers; other scrapers remain experimental opt-in.
+- Do not claim all Singapore carriers are supported. Current scheduled support is 19 carriers; other scrapers remain experimental opt-in.
 - Do not claim production analytics, alert dispatch, Google/Bing indexing, OGP integration, Postman, FormSG, or Go.gov.sg integration unless those statuses are separately verified.
 - Do not post to communities that disallow self-promotion or require moderator approval.
 - Prefer feedback requests over launch announcements.
@@ -46,7 +46,7 @@ What it does:
 Limitations:
 - not financial advice, insurance advice, a quote, a recommendation, a ranking, or a purchase path
 - no premium estimates or cost projections
-- 16 scheduled carriers only; other scrapers are experimental and not part of the public scheduled set
+- 19 scheduled carriers only; other scrapers are experimental and not part of the public scheduled set
 - source data can be stale or incomplete, so every fact still needs verification against carrier documents and compareFIRST where applicable
 
 I’m mainly looking for feedback on whether the panel-hospital workflow is useful and where the source/limitation wording is unclear.
@@ -69,7 +69,7 @@ Current scope:
 - qualitative facts only: panel clues, exclusions, waiting periods, claim process text, brochure provenance, and related source links
 - no advice, recommendation, suitability ranking, premium estimate, quote, or purchase flow
 - no client names, NRICs, contact details, health profile, or policyholder data
-- 16 scheduled carriers; unsupported or uncertain fields are shown as incomplete instead of inferred
+- 19 scheduled carriers; unsupported or uncertain fields are shown as incomplete instead of inferred
 
 Feedback I’m looking for:
 - is the PDF brief format useful before a client meeting?

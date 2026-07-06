@@ -26,7 +26,7 @@ class LaunchOutreachTests(unittest.TestCase):
             "not financial advice",
             "insurance advice",
             "no premium estimates or cost projections",
-            "16 scheduled carriers",
+            "19 scheduled carriers",
             "not a complete carrier database",
             "not a substitute for compareFIRST",
             "source data can be stale or incomplete",

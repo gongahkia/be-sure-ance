@@ -25,7 +25,7 @@ Current behavior:
 - No client names, NRIC/FIN, contact details, health information, financial profile, or meeting notes are stored.
 - PDF brief generation accepts up to three selected plan payloads plus optional session-only agent name and MAS representative number, returns a PDF response, and does not persist client or agent details.
 - Frontend reads public `plans`, `plan_facts`, and provider-resource data from `/data/app-data.json`.
-- Build-time scrapers write only plan/source metadata into local JSON tables that are exported into static app data.
+- Scheduled GitHub Actions scrapers write only plan/source metadata into local JSON tables that are exported into static app data.
 - MAS regulatory-event rows are source-linked and dated; low-confidence carrier matches must be shown as review-needed context, not definitive carrier findings.
 - Brochure change-alert rows store source URLs, hashes, timestamps, generated diffs, and alert status only; no subscriber, client, or agent PII is stored.
 - Share links encode only selected `insurer` and `plan_slug` references in the URL. No server-side share records, visitor records, cookies, IP addresses, user agents, or view counts are stored.

@@ -32,10 +32,32 @@ if __package__ in {None, ""}:
 
     sys.path.append(str(Path(__file__).resolve().parents[2]))
 
-from src.scrapers._generic_domain import GenericScraperConfig, run_cli_scraper
+from src.scrapers._static_pages import run_static_product_scraper
 
-CONFIG = GenericScraperConfig(table_name="hl_assurance")
+PRODUCT_URLS = [
+    "https://www.hlas.com.sg/personal-insurance/travel-insurance/",
+    "https://www.hlas.com.sg/personal-insurance/car-insurance/",
+    "https://www.hlas.com.sg/personal-insurance/choice-protect360/",
+    "https://www.hlas.com.sg/hlas-corporate-employee-program/",
+    "https://www.hlas.com.sg/personal-insurance/critical-illness-insurance/",
+    "https://www.hlas.com.sg/personal-insurance/early-critical-illness-insurance/",
+    "https://www.hlas.com.sg/personal-insurance/fraud-protect360-plus/",
+    "https://www.hlas.com.sg/personal-insurance/fire-insurance/",
+    "https://www.hlas.com.sg/personal-insurance/home-protect360/",
+    "https://www.hlas.com.sg/personal-insurance/home-protectlite/",
+    "https://www.hlas.com.sg/personal-insurance/hospital-protect360/",
+    "https://www.hlas.com.sg/personal-insurance/maid-insurance/",
+    "https://www.hlas.com.sg/personal-insurance/mobile-phone-insurance/",
+    "https://www.hlas.com.sg/personal-insurance/accident-protect360/",
+    "https://www.hlas.com.sg/personal-insurance/family-protect360/",
+    "https://www.hlas.com.sg/singapore-travel-pass/",
+    "https://www.hlas.com.sg/businesspackages/",
+    "https://www.hlas.com.sg/casualtyinsurance/",
+    "https://www.hlas.com.sg/corporate-travel360/",
+    "https://www.hlas.com.sg/engineeringinsurance/",
+    "https://www.hlas.com.sg/propertyinsurance/",
+]
 
 
 if __name__ == "__main__":
-    run_cli_scraper(CONFIG, __doc__)
+    run_static_product_scraper("hl_assurance", PRODUCT_URLS)

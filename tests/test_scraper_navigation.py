@@ -94,7 +94,11 @@ class ScraperNavigationTests(unittest.TestCase):
         for scraper_name in SUPPORTED_SCRAPERS:
             source = (SCRAPER_DIR / f"{scraper_name}.py").read_text()
             with self.subTest(scraper=scraper_name):
-                self.assertIn("gather_scrape_results", source)
+                self.assertTrue(
+                    "gather_scrape_results" in source
+                    or "run_static_product_scraper" in source
+                    or "run_cli_scraper" in source
+                )
 
     def test_no_direct_page_goto_outside_navigation_helper(self):
         for path in SCRAPER_DIR.glob("*.py"):

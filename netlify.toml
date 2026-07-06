@@ -1,7 +1,8 @@
 [build]
-  command = "python3 -m pip install -r requirements.txt && python3 -m playwright install chromium && npm --prefix src/be-sure-ance-app ci && python3 -m src.lib.static_app_data --run-scrapers --fallback-demo --output src/be-sure-ance-app/public/data/app-data.json && npm --prefix src/be-sure-ance-app run build:app"
+  command = "npm --prefix src/be-sure-ance-app ci && npm --prefix src/be-sure-ance-app run build:app"
   publish = "src/be-sure-ance-app/dist"
   functions = "netlify/functions"
+  ignore = "bash ./scripts/netlify_ignore_data_refresh.sh"
 
 [[redirects]]
   from = "/*"

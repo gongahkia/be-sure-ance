@@ -31,6 +31,7 @@ Expected locations:
 - Sentry: project DSN and alert recipients in Sentry project settings and GitHub secrets.
 - Hosting provider: Netlify restore is the selected Phase 5 path; Cloudflare Pages remains the fallback if Netlify is blocked.
 - Netlify scheduled refresh: build hook URL stored only as a GitHub Actions secret.
+- Static app data: generated, validated, and committed by `refresh-static-data`; consumed by Netlify builds.
 
 Never commit:
 
@@ -48,7 +49,7 @@ Only public `VITE_*` values can be present in frontend build settings.
 Use [Post-launch operations cadence](./OPERATIONS.md) for weekly, monthly, and quarterly review issue templates.
 
 1. Check GitHub Actions for `refresh-static-data`, `validate-scraper-snapshots`, `publish-open-dataset`, and CI.
-2. Check the latest Netlify deploy log for static data generation status.
+2. Check the latest `refresh-static-data` run for static data generation and validation status.
 3. Review `/status` for stale, failing, unsupported, or validation-failed carriers.
 4. Triage `brochure_change_alerts` rows before dispatching any public alert.
 5. Check Sentry for new frontend or scraper error groups if DSNs are configured.

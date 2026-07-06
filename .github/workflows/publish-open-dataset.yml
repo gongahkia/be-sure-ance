@@ -26,7 +26,10 @@ jobs:
         run: python3 -m playwright install chromium
 
       - name: Generate static app data
-        run: python3 -m src.lib.static_app_data --run-scrapers --fallback-demo --output src/be-sure-ance-app/public/data/app-data.json
+        run: python3 -m src.lib.static_app_data --run-scrapers --output src/be-sure-ance-app/public/data/app-data.json
+
+      - name: Validate static app data
+        run: python3 scripts/validate_static_app_data.py --path src/be-sure-ance-app/public/data/app-data.json
 
       - name: Export open dataset snapshot
         run: |

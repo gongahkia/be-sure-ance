@@ -32,7 +32,12 @@ class EnvironmentContractTests(unittest.TestCase):
         workflow = read(".github/workflows/refresh-static-data.yml")
 
         self.assertIn("NETLIFY_BUILD_HOOK_URL", workflow)
-        self.assertIn("curl -fsS -X POST", workflow)
+        self.assertIn("contents: write", workflow)
+        self.assertIn("static_app_data --run-scrapers --output", workflow)
+        self.assertIn("scripts/validate_static_app_data.py", workflow)
+        self.assertIn('git commit -m "chore(data): refresh static app data [skip ci]"', workflow)
+        self.assertIn("curl -fsS -X POST -d '{}'", workflow)
+        self.assertNotIn("--fallback-demo", workflow)
         self.assertNotIn("SUPABASE", workflow)
 
     def test_readme_documents_local_and_actions_secrets(self):
@@ -57,13 +62,27 @@ class EnvironmentContractTests(unittest.TestCase):
         self.assertIn(".env", gitignore)
         self.assertIn(".env.*", gitignore)
         self.assertIn("!.env.example", gitignore)
+        self.assertIn("src/be-sure-ance-app/public/data/*", gitignore)
+        self.assertIn("!src/be-sure-ance-app/public/data/app-data.json", gitignore)
 
     def test_netlify_uses_vite_dist_output(self):
         netlify = read("netlify.toml")
 
         self.assertIn('publish = "src/be-sure-ance-app/dist"', netlify)
         self.assertIn('functions = "netlify/functions"', netlify)
-        self.assertIn("static_app_data --run-scrapers --fallback-demo", netlify)
+        self.assertIn("npm --prefix src/be-sure-ance-app run build:app", netlify)
+        self.assertIn("scripts/netlify_ignore_data_refresh.sh", netlify)
+        self.assertNotIn("static_app_data --run-scrapers", netlify)
+        self.assertNotIn("playwright install", netlify)
+        self.assertNotIn("pip install -r requirements.txt", netlify)
+
+    def test_netlify_ignore_skips_scheduled_data_refresh_commits_only(self):
+        ignore_script = read("scripts/netlify_ignore_data_refresh.sh")
+
+        self.assertIn("src/be-sure-ance-app/public/data/app-data.json", ignore_script)
+        self.assertIn("chore(data): refresh static app data", ignore_script)
+        self.assertIn("exit 0", ignore_script)
+        self.assertIn("exit 1", ignore_script)
 
 
 if __name__ == "__main__":

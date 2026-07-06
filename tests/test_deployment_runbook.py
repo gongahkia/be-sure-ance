@@ -48,6 +48,7 @@ class DeploymentRunbookTests(unittest.TestCase):
         for required in (
             'publish = "src/be-sure-ance-app/dist"',
             'functions = "netlify/functions"',
+            'ignore = "bash ./scripts/netlify_ignore_data_refresh.sh"',
             'from = "/*"',
             'to = "/index.html"',
             "Content-Security-Policy",
@@ -61,6 +62,10 @@ class DeploymentRunbookTests(unittest.TestCase):
         self.assertIn(
             "Update README with the live URL only after the production URL works.", DEPLOYMENT
         )
+
+    def test_deployment_consumes_committed_static_data(self):
+        self.assertIn("committed `src/be-sure-ance-app/public/data/app-data.json`", DEPLOYMENT)
+        self.assertIn("Scheduled scraping runs in GitHub Actions", DEPLOYMENT)
 
 
 if __name__ == "__main__":

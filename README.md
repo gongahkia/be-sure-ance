@@ -12,7 +12,7 @@ The app does not provide financial advice, insurance advice, quotes, recommendat
 
 | Signal | Current value | Evidence / caveat |
 | :-- | :-- | :-- |
-| Supported scheduled carriers | 16 | Test-backed from `src/scrapers/registry.py`; 11 more carriers remain experimental opt-in scrapers. |
+| Supported scheduled carriers | 19 | Test-backed from `src/scrapers/registry.py`; 8 more carriers remain experimental opt-in scrapers. |
 | MOH institutions available for panel normalization | 5,305 | Latest local dry-run on 2026-07-02; production refresh still depends on Phase 5 deployment. |
 | LIA claim metrics extracted | 12 | Latest local dry-run on 2026-07-02 against fixture/live parser path. |
 | Civic carrier canonicalization | Available locally | MAS FID Insurance and LIA member-directory cross-checks produce source-backed canonical names and mismatch flags. |
@@ -55,7 +55,7 @@ No production deployment is claimed during Phases 1-4. Phase 5 is the launch gat
 Deployment decision: restore Netlify first; see [deployment runbook](./docs/DEPLOYMENT.md). Production URL is not published from this repository yet.
 Before any public launch, run the [launch pre-flight](./docs/LAUNCH_PREFLIGHT.md) workflow against staging and record compliance sign-off status.
 
-Sites are refreshed weekly on [SGT Monday 12am](./.github/workflows/refresh-static-data.yml). The scheduled workflow triggers a Netlify build hook; the build generates `/data/app-data.json`.
+Sites are refreshed weekly on [SGT Monday 12am](./.github/workflows/refresh-static-data.yml). The scheduled workflow scrapes in GitHub Actions, validates and commits `public/data/app-data.json`, then triggers the Netlify build hook.
 The public scraper health dashboard is available at `/status` after the app is deployed.
 
 > [!IMPORTANT]
@@ -109,7 +109,7 @@ SENTRY_TRACES_SAMPLE_RATE=0
 
 Netlify only needs `VITE_STATIC_DATA_PATH`, `VITE_SITE_ORIGIN`, optional `VITE_PDF_BRIEF_ENDPOINT`, and optional `VITE_SENTRY_*` variables for frontend-only error reporting.
 
-GitHub Actions uses `NETLIFY_BUILD_HOOK_URL` to trigger scheduled rebuilds. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Scraper observability is optional through `SENTRY_DSN`. Never expose `SENTRY_DSN` or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
+GitHub Actions uses `NETLIFY_BUILD_HOOK_URL` after a valid static-data refresh. The Telegram worker requires `TELEGRAM_BOT_TOKEN`. Scraper observability is optional through `SENTRY_DSN`. Never expose `SENTRY_DSN` or `TELEGRAM_BOT_TOKEN` through `VITE_*` variables.
 
 ## Local checks
 
@@ -138,7 +138,7 @@ See [Telegram bot beta](./docs/TELEGRAM_BOT.md) for token handling, commands, an
 
 ## Static plan pages and sitemap
 
-`npm run build` generates `public/data/app-data.json`, runs Vite, then generates `dist/plan/<insurer>/<plan-slug>/index.html`, `dist/sitemap.xml`, and `dist/robots.txt`. The static page generator reads `plans` and `plan_facts` from the same app-data JSON used by the browser.
+`npm run build` uses the committed `public/data/app-data.json`, runs Vite, then generates `dist/plan/<insurer>/<plan-slug>/index.html`, `dist/sitemap.xml`, and `dist/robots.txt`. The static page generator reads `plans` and `plan_facts` from the same app-data JSON used by the browser.
 
 Set `VITE_SITE_ORIGIN` to the canonical production origin before Phase 5 launch. Submit `<origin>/sitemap.xml` in Google Search Console and Bing Webmaster Tools only after deployment is restored.
 Use [search indexing](./docs/SEARCH_INDEXING.md) to record sitemap pre-flight, Google submission, and Bing submission status.
@@ -179,9 +179,10 @@ sequenceDiagram
     participant Backend API
     participant IFA
 
-    GitHub Workflow->>Backend Scraper: Trigger Netlify build hook weekly
+    GitHub Workflow->>Backend Scraper: Run scheduled scrape weekly
     Backend Scraper->>Backend Scraper: Scrape plan pages and capture source metadata
-    Backend Scraper->>Static JSON: Write app-data.json during build
+    Backend Scraper->>Static JSON: Validate and commit app-data.json
+    GitHub Workflow->>Frontend Vue.js: Trigger Netlify build hook
     Frontend Vue.js->>Static JSON: Fetch plans, plan_facts, and provider resources
     Frontend Vue.js->>Backend API: Request no-PII PDF brief for up to 3 selected plans and session branding
     Frontend Vue.js->>IFA: Render qualitative comparison workspace with provenance
@@ -238,11 +239,13 @@ erDiagram
 | Provider | Runtime status | Decision |
 | :--- | :--- | :--- |
 | [AIA Singapore Pte Ltd](https://www.aia.com.sg/en/index) | Supported - scheduled | Implemented 08/03/2025 |
+| [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | Supported - scheduled | Promoted 06/07/2026 after live dry-run produced plan rows |
 | [China Life Insurance (Singapore) Pte Ltd](https://www.chinalife.com.sg/) | Supported - scheduled | Implemented 12/03/2025 |
 | [Chubb Singapore Pte Ltd](https://www.chubb.com/sg-en/) | Supported - scheduled | Implemented 13/03/2025 |
 | [Etiqa Insurance Pte Ltd](https://www.etiqa.com.sg/) | Supported - scheduled | Promoted 05/07/2026 after static scraper live dry-run produced plan rows |
 | [FWD Singapore Pte Ltd](https://www.fwd.com.sg/) | Supported - scheduled | Promoted 05/07/2026 after live dry-run produced plan rows |
 | [Great Eastern Life Assurance Co Ltd](https://www.greateasternlife.com/sg/en/about-us.html) | Supported - scheduled | Implemented 15/03/2025 |
+| [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | Supported - scheduled | Promoted 06/07/2026 after static scraper live dry-run produced plan rows |
 | [HSBC Life (Singapore) Pte Ltd](https://www.insurance.hsbc.com.sg/) | Supported - scheduled | Implemented 15/03/2025 |
 | [India International Insurance Pte Ltd](https://www.iii.com.sg/) | Supported - scheduled | Implemented 15/03/2025 |
 | [Income Insurance Pte Ltd](https://www.income.com.sg/) | Supported - scheduled | Promoted 05/07/2026 after static scraper live dry-run produced plan rows |
@@ -250,19 +253,17 @@ erDiagram
 | [Prudential Assurance Company (Singapore) Pte Ltd](https://www.prudential.com.sg/) | Supported - scheduled | Promoted 05/07/2026 after live dry-run produced plan rows |
 | [Raffles Health Insurance Pte Ltd](https://www.raffleshealthinsurance.com/) | Supported - scheduled | Promoted 05/07/2026 after live dry-run produced plan rows |
 | [Singapore Life Ltd](https://singlife.com/en) | Supported - scheduled | Implemented 13/03/2025 |
+| [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | Supported - scheduled | Promoted 06/07/2026 after static scraper live dry-run produced plan rows |
 | [Sun Life Assurance Company of Canada Singapore Branch](https://www.sunlife.com.sg/en/) | Supported - scheduled | Implemented 13/03/2025 |
 | [Tokio Marine Insurance (Singapore) Pte Ltd](https://www.tokiomarine.com/sg/en.html) | Supported - scheduled | Implemented 13/03/2025 |
 | [United Overseas Insurance Pte Ltd](https://www.uoi.com.sg/index.page) | Supported - scheduled | Implemented 08/03/2025 |
-| [Allianz Insurance (Singapore) Pte Ltd](https://www.allianz.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [China Taiping Insurance (Singapore) Pte Ltd](https://www.sg.cntaiping.com/en/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [Allied World Assurance Company Pte Ltd (Singapore)](https://alliedworldinsurance.com/singapore/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [AIG Singapore](https://www.aig.sg/home) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [ERGO Insurance Pte Ltd](https://www.ergo.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
-| [HL Assurance Pte Ltd](https://www.hlas.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [Liberty Insurance Pte Ltd](https://www.libertyinsurance.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [Lonpac Insurance Bhd](https://www.lonpac.com/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [QBE Insurance (Singapore) Pte Ltd](https://www.qbe.com/sg) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
-| [Sompo Insurance (Singapore) Pte Ltd](https://www.sompo.com.sg/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 | [Direct Asia Insurance (Singapore) Pte Ltd](https://www.directasia.com/) | Experimental - opt-in only | Defer until Phase 2 golden scraper coverage |
 
 ## Issues

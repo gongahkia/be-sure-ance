@@ -37,10 +37,39 @@ if __package__ in {None, ""}:
 
     sys.path.append(str(Path(__file__).resolve().parents[2]))
 
-from src.scrapers._generic_domain import GenericScraperConfig, run_cli_scraper
+from src.scrapers._static_pages import run_static_product_scraper
 
-CONFIG = GenericScraperConfig(table_name="sompo", max_seed_pages=34)
+PRODUCT_URLS = [
+    "https://www.sompo.com.sg/products/travel",
+    "https://www.sompo.com.sg/products/home",
+    "https://www.sompo.com.sg/products/pa-ease",
+    "https://www.sompo.com.sg/products/private-car",
+    "https://www.sompo.com.sg/products/pa-star",
+    "https://www.sompo.com.sg/products/maidease",
+    "https://www.sompo.com.sg/products/pa-junior",
+    "https://www.sompo.com.sg/products/overseas-travel",
+    "https://www.sompo.com.sg/commercial-insurance-products/property",
+    "https://www.sompo.com.sg/commercial-insurance-products/burglary",
+    "https://www.sompo.com.sg/commercial-insurance-products/money",
+    "https://www.sompo.com.sg/commercial-insurance-products/plate-glass",
+    "https://www.sompo.com.sg/commercial-insurance-products/fidelity-guarantee",
+    "https://www.sompo.com.sg/commercial-insurance-products/group-mediwell-classic",
+    "https://www.sompo.com.sg/commercial-insurance-products/group-personal-accident",
+    "https://www.sompo.com.sg/commercial-insurance-products/work-injury-compensation",
+    "https://www.sompo.com.sg/commercial-insurance-products/public-liability",
+    "https://www.sompo.com.sg/commercial-insurance-products/marine-cargo",
+    "https://www.sompo.com.sg/commercial-insurance-products/bailees-forwarders-liability-move-@360",
+    "https://www.sompo.com.sg/commercial-insurance-products/spectra-office",
+    "https://www.sompo.com.sg/commercial-insurance-products/spectra-light-industrial",
+    "https://www.sompo.com.sg/commercial-insurance-products/sme",
+    "https://www.sompo.com.sg/commercial-insurance-products/spectra-service",
+    "https://www.sompo.com.sg/commercial-insurance-products/sme-data-cyber-security",
+    "https://www.sompo.com.sg/commercial-insurance-products/spectra-retail",
+    "https://www.sompo.com.sg/commercial-insurance-products/pleasurecraft-sail@360",
+    "https://www.sompo.com.sg/commercial-insurance-products/spectra-food-beverage",
+    "https://www.sompo.com.sg/commercial-insurance-products/commercial-motor",
+]
 
 
 if __name__ == "__main__":
-    run_cli_scraper(CONFIG, __doc__)
+    run_static_product_scraper("sompo", PRODUCT_URLS)

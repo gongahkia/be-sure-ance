@@ -24,6 +24,7 @@ Use the existing `netlify.toml`:
 - Build command: from `netlify.toml`
 - Publish directory: `src/be-sure-ance-app/dist`
 - Functions directory: `netlify/functions`
+- Data source: committed `src/be-sure-ance-app/public/data/app-data.json`
 - SPA redirect: `/*` to `/index.html`
 - Security headers: CSP, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, and HSTS
 
@@ -41,7 +42,7 @@ Never configure these private values in Netlify frontend build settings:
 - `TELEGRAM_BOT_TOKEN`
 - `SENTRY_DSN`
 
-Set `NETLIFY_BUILD_HOOK_URL` only in GitHub Actions secrets. Set Telegram and backend observability secrets only in the relevant backend worker environment.
+Set `NETLIFY_BUILD_HOOK_URL` only in GitHub Actions secrets. Scheduled scraping runs in GitHub Actions, commits validated static app data, then calls the build hook. Set Telegram and backend observability secrets only in the relevant backend worker environment.
 
 ## Restore Procedure
 
@@ -51,13 +52,14 @@ Set `NETLIFY_BUILD_HOOK_URL` only in GitHub Actions secrets. Set Telegram and ba
 4. Configure only the allowed frontend public environment variables.
 5. Store `NETLIFY_BUILD_HOOK_URL` in GitHub Actions secrets for scheduled refresh.
 6. Set `VITE_SITE_ORIGIN` to the canonical production origin.
-7. Deploy to a staging or deploy-preview URL first.
-8. Run the `staging-preflight` workflow with `STAGING_ORIGIN` set to that URL.
-9. Confirm no private variables appear in Netlify build logs or browser-exposed `import.meta.env` usage.
-10. Obtain compliance sign-off recorded outside the repository.
-11. Promote the deploy to production.
-12. Verify the production URL routes, sitemap, robots file, security headers, and Lighthouse scores.
-13. Update README with the live URL only after the production URL works.
+7. Confirm `src/be-sure-ance-app/public/data/app-data.json` is present in the deployed commit.
+8. Deploy to a staging or deploy-preview URL first.
+9. Run the `staging-preflight` workflow with `STAGING_ORIGIN` set to that URL.
+10. Confirm no private variables appear in Netlify build logs or browser-exposed `import.meta.env` usage.
+11. Obtain compliance sign-off recorded outside the repository.
+12. Promote the deploy to production.
+13. Verify the production URL routes, sitemap, robots file, security headers, and Lighthouse scores.
+14. Update README with the live URL only after the production URL works.
 
 ## Required Route Checks
 

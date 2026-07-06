@@ -33,7 +33,7 @@ class RunAllTests(unittest.TestCase):
 
     def test_experimental_scrapers_require_explicit_opt_in(self):
         with (
-            patch.object(sys, "argv", ["run_all.py", "--only", "allianz"]),
+            patch.object(sys, "argv", ["run_all.py", "--only", "china_taiping"]),
             self.assertRaises(SystemExit) as context,
         ):
             run_all.main()
@@ -47,7 +47,7 @@ class RunAllTests(unittest.TestCase):
             patch.object(
                 sys,
                 "argv",
-                ["run_all.py", "--only", "allianz", "--include-experimental", "--dry-run"],
+                ["run_all.py", "--only", "china_taiping", "--include-experimental", "--dry-run"],
             ),
             patch("src.scrapers.run_all.subprocess.run", return_value=completed) as run,
         ):
@@ -55,7 +55,7 @@ class RunAllTests(unittest.TestCase):
 
         run.assert_called_once()
         command = run.call_args.args[0]
-        self.assertEqual(command[:3], [sys.executable, "-m", "src.scrapers.allianz"])
+        self.assertEqual(command[:3], [sys.executable, "-m", "src.scrapers.china_taiping"])
         self.assertIn("--dry-run", command)
 
 
