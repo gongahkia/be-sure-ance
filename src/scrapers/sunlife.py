@@ -7,133 +7,246 @@ https://www.sunlife.com.sg/en/product-solutions/life-insurance/
 https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/
 """
 
-# ----- required imports -----
+from __future__ import annotations
 
-import asyncio
-import html
+import argparse
 import re
+from urllib.parse import urldefrag, urljoin
 
-from playwright.async_api import async_playwright
+import requests
+from bs4 import BeautifulSoup
 
-from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
-from src.scrapers.navigation import gather_scrape_results, goto_with_retry, new_bot_context
+if __package__ in {None, ""}:
+    import sys
+    from pathlib import Path
 
-# ----- functions -----
+    sys.path.append(str(Path(__file__).resolve().parents[2]))
+
+from src.backend.helper import (
+    format_plan_rows,
+    initialize_data_store,
+    overwrite_plans_for_insurer,
+)
+from src.lib.http_identity import BOT_USER_AGENT
+from src.lib.scraper_health import record_scraper_failure
+from src.scrapers.navigation import gather_scrape_results
+from src.validation.plan_quality import validate_plan_rows
+
+TABLE_NAME = "sunlife"
+REQUEST_TIMEOUT_SECONDS = 20
+
+CANONICAL_PLAN_NAMES = {
+    "https://www.sunlife.com.sg/en/product-solutions/life-insurance/": ("SunBrilliance Whole Life"),
+    "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/": (
+        "SunBrilliance Indexed Universal Life II"
+    ),
+}
+
+PRODUCT_URLS = tuple(CANONICAL_PLAN_NAMES)
+REJECTED_SOURCE_URLS = ("https://www.sunlife.com.sg/en/",)
+
+CHROME_PATTERNS = (
+    "about us",
+    "additional details",
+    "client complaint",
+    "contact us",
+    "distributor portal",
+    "faqs on",
+    "get more bright ideas",
+    "insights",
+    "personal information collection statement",
+    "product solutions",
+    "related documents",
+)
+
+NON_PRODUCT_PATTERNS = (
+    "campaign is valid",
+    "download brochure",
+    "learn more",
+    "peace of mind",
+    "premium discount campaign",
+    "premium top up campaign",
+    "we're looking for",
+    "your name",
+)
+
+BENEFIT_KEYWORDS = (
+    "benefit",
+    "cash",
+    "coverage",
+    "death",
+    "flexibility",
+    "growth",
+    "guaranteed",
+    "legacy",
+    "lifetime",
+    "premium",
+    "protection",
+)
 
 
-def remove_excess_newlines(inp):
-    if not isinstance(inp, str):
-        raise TypeError(f"Input must be type <string> but was type <{type(inp).__name__}>")
-    inp = re.sub(r"\n+", "\n", inp)
-    inp = re.sub(r"[ \t\u200b]+", " ", inp)
-    return inp.strip()
+def normalize_url(url: str) -> str:
+    clean_url = urldefrag(str(url or "").strip()).url
+    return clean_url if clean_url.endswith("/") else f"{clean_url}/"
 
 
-def remove_html_entities(inp):
-    inp2 = html.unescape(inp)
-    replacements = {
-        "\xa0": " ",  # Non-breaking space
-        "\u200b": "",  # Zero-width space
-        "\u2013": "-",  # En dash
-        "\u2014": "--",  # Em dash
-        "\u2026": "...",  # Ellipsis
-        "\u2018": "'",  # Left single quote
-        "\u2019": "'",  # Right single quote
-        "\u201c": '"',  # Left double quote
-        "\u201d": '"',  # Right double quote
-        "\u00ab": '"',  # Left guillemet
-        "\u00bb": '"',  # Right guillemet
-        "\u02c6": "^",  # Circumflex
-        "\u2039": "<",  # Single left angle quote
-        "\u203a": ">",  # Single right angle quote
-        "\u02dc": "~",  # Small tilde
-        "\u00a9": "(c)",  # Copyright symbol
-        "\u00ae": "(R)",  # Registered trademark symbol
-        "\u2122": "(TM)",  # Trademark symbol
-        "\u00b0": "°",  # Degree symbol
-        "\u00b7": "*",  # Middle dot
-        "\u00b1": "+/-",  # Plus-minus symbol
-        "\u00bc": "1/4",  # One-quarter fraction
-        "\u00bd": "1/2",  # One-half fraction
-        "\u00be": "3/4",  # Three-quarters fraction
-        "&lt;": "<",  # Less-than sign (HTML entity)
-        "&gt;": ">",  # Greater-than sign (HTML entity)
-        "&amp;": "&",  # Ampersand (HTML entity)
-        "&quot;": '"',  # Quotation mark (HTML entity)
-        "&apos;": "'",  # Apostrophe (HTML entity)
+def normalize_whitespace(value: str | None) -> str:
+    return re.sub(r"\s+", " ", value or "").strip()
+
+
+def fetch_html(url: str, session=requests) -> str:
+    response = session.get(
+        url,
+        timeout=REQUEST_TIMEOUT_SECONDS,
+        headers={"User-Agent": BOT_USER_AGENT},
+    )
+    response.raise_for_status()
+    return response.text
+
+
+def parse_product_html(html: str, url: str) -> dict | None:
+    source_url = normalize_url(url)
+    if source_url in REJECTED_SOURCE_URLS or source_url not in CANONICAL_PLAN_NAMES:
+        return None
+
+    soup = BeautifulSoup(html, "html.parser")
+    plan_name = CANONICAL_PLAN_NAMES[source_url]
+    description = product_description(soup)
+    benefits = benefit_blocks(soup)
+
+    return {
+        "plan_name": plan_name,
+        "plan_benefits": benefits,
+        "plan_description": description,
+        "plan_overview": compact_text(" ".join(benefits[:3])),
+        "plan_url": source_url,
+        "product_brochure_url": brochure_url(soup, source_url),
     }
-    for old_char, new_char in replacements.items():
-        inp2 = inp2.replace(old_char, new_char)
-    return inp2
+
+
+def product_description(soup: BeautifulSoup) -> str:
+    for element in soup.select(".text.aem-GridColumn.aem-GridColumn--default--12"):
+        text = compact_text(element.get_text(" ", strip=True), limit=500)
+        if text.lower().startswith(("key benefits", "related documents", "additional details")):
+            continue
+        if "sunbrilliance" in text.lower():
+            return text
+        if is_content_text(text):
+            return text
+    return ""
+
+
+def benefit_blocks(soup: BeautifulSoup) -> list[str]:
+    benefits = []
+    seen = set()
+    for element in soup.select("div.card-body"):
+        text = normalize_whitespace(element.get_text(" ", strip=True))
+        lowered = text.lower()
+        if text in seen or not is_content_text(text) or len(text) > 260:
+            continue
+        if any(keyword in lowered for keyword in BENEFIT_KEYWORDS):
+            benefits.append(text)
+            seen.add(text)
+    return benefits[:8]
+
+
+def brochure_url(soup: BeautifulSoup, source_url: str) -> str:
+    for anchor in soup.select("a[href]"):
+        href = anchor.get("href") or ""
+        text = normalize_whitespace(anchor.get_text(" ", strip=True)).lower()
+        if ".pdf" not in href.lower():
+            continue
+        if "download brochure" not in text:
+            continue
+        if "chinese" in text or "simplified" in text:
+            continue
+        return urljoin(source_url, href)
+    return ""
+
+
+def is_content_text(text: str) -> bool:
+    lowered = normalize_whitespace(text).lower()
+    if len(lowered) < 20 or len(lowered) > 900:
+        return False
+    if any(pattern in lowered for pattern in CHROME_PATTERNS):
+        return False
+    return not any(pattern in lowered for pattern in NON_PRODUCT_PATTERNS)
+
+
+def compact_text(text: str, limit: int = 900) -> str:
+    text = normalize_whitespace(text)
+    return text if len(text) <= limit else f"{text[: limit - 3].rstrip()}..."
+
+
+def dedupe_rows(rows: list[dict]) -> list[dict]:
+    deduped = []
+    seen = set()
+    for row in rows:
+        key = (
+            normalize_whitespace(row.get("plan_name")).lower(),
+            normalize_url(row.get("plan_url")),
+        )
+        if not all(key) or key in seen:
+            continue
+        seen.add(key)
+        deduped.append(row)
+    return deduped
+
+
+def scrape_sunlife(session=requests) -> list[dict]:
+    rows = []
+    for url in PRODUCT_URLS:
+        try:
+            row = parse_product_html(fetch_html(url, session=session), url)
+        except Exception as exc:
+            print(f"[{TABLE_NAME}] skipping product {url}: {exc}")
+            continue
+        if row:
+            rows.append(row)
+    return dedupe_rows(rows)
 
 
 async def scrape_data(url):
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await new_bot_context(browser)
-        page = await context.new_page()
-        await goto_with_retry(page, url)
-        scraped_plans = []
-        title_element = await page.query_selector(
-            "div.bright.card-content-overlay h1.h1.card-title"
-        )
-        plan_name = (await title_element.text_content()).strip() if title_element else ""
-        description_elements = [
-            await page.query_selector("div.bright.card-content-overlay div.card_text"),
-            await page.query_selector("div.text.aem-GridColumn.aem-GridColumn--default--12"),
-        ]
-        plan_description = " ".join(
-            [(await desc.text_content()).strip() for desc in description_elements if desc]
-        )
-        benefit_elements = await page.query_selector_all("div.card-body")
-        plan_benefits = [(await benefit.text_content()).strip() for benefit in benefit_elements]
-        overview_elements = await page.query_selector_all("h3.h3.accordion-header")
-        plan_overview = ""
-        for overview in overview_elements:
-            button_element = await overview.query_selector("button")
-            if button_element:
-                header_text = (await overview.text_content()).strip()
-                plan_overview += header_text + "\n"
-                await button_element.click()
-                accordion_content = await overview.evaluate_handle(
-                    "(header) => header.nextElementSibling"
-                )
-                if accordion_content:
-                    accordion_text = (await accordion_content.text_content()).strip()
-                    plan_overview += accordion_text + "\n"
-        anchor_tags = await page.query_selector_all("a")
-        plan_brochure_url = ""
-        for anchor in anchor_tags:
-            href = await anchor.get_attribute("href")
-            if href and href.endswith(".pdf"):
-                plan_brochure_url = href
-                break
-        formatted_row = {
-            "plan_name": plan_name,
-            "plan_benefits": plan_benefits,
-            "plan_description": plan_description,
-            "plan_overview": plan_overview.strip(),
-            "plan_url": url,
-            "product_brochure_url": (
-                f"https://www.sunlife.com.sg{plan_brochure_url}" if plan_brochure_url else ""
-            ),
-        }
-        scraped_plans.append(formatted_row)
-        await browser.close()
-        return scraped_plans
+    row = parse_product_html(fetch_html(url), url)
+    return [row] if row else []
 
 
 async def run_all_tasks(scrape_list):
-    return await gather_scrape_results("sunlife", scrape_list, scrape_data)
+    return await gather_scrape_results(TABLE_NAME, scrape_list, scrape_data)
 
 
-# ----- sample execution code -----
+def assert_semantic_quality(rows: list[dict]) -> None:
+    findings = validate_plan_rows(format_plan_rows(TABLE_NAME, rows))
+    if findings:
+        details = "; ".join(finding.format() for finding in findings[:5])
+        raise ValueError(f"Sun Life scraper produced invalid plan rows: {details}")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dry-run", action="store_true")
+    args = parser.parse_args()
+
+    try:
+        rows = scrape_sunlife()
+        assert_semantic_quality(rows)
+    except Exception as error:
+        if not args.dry_run:
+            record_scraper_failure(TABLE_NAME, error)
+        raise
+
+    print(f"[{TABLE_NAME}] produced {len(rows)} plan rows")
+    if args.dry_run:
+        overwrite_plans_for_insurer(TABLE_NAME, rows)
+        return 0
+    if not rows:
+        record_scraper_failure(TABLE_NAME, "no plan rows produced")
+        return 1
+
+    initialize_data_store()
+    overwrite_plans_for_insurer(TABLE_NAME, rows)
+    return 0
+
 
 if __name__ == "__main__":
-    scrape_list = [
-        "https://www.sunlife.com.sg/en/product-solutions/life-insurance/",
-        "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/",
-    ]
-    initialize_data_store()
-    output = asyncio.run(run_all_tasks(scrape_list))
-    overwrite_plans_for_insurer("sunlife", output)
+    raise SystemExit(main())

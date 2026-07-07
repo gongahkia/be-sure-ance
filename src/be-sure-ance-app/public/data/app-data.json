@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T03:04:02+00:00",
+  "generated_at": "2026-07-07T03:11:45+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -3319,7 +3319,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:21:03.776313+00:00",
+          "fetched_at": "2026-07-07T03:11:43.709338+00:00",
           "last_modified_at": null,
           "sha256": "45c19d27452bec180feaede45c8ce63ffc8726dbe02d0251728b640632da785d",
           "size_bytes": 10346601,
@@ -3329,9 +3329,9 @@
         }
       },
       "insurer": "sunlife",
-      "last_verified_at": "2026-07-05T07:21:03.776313+00:00",
+      "last_verified_at": "2026-07-07T03:11:43.709338+00:00",
       "plan_slug": "sunbrilliance-whole-life",
-      "scraped_at": "2026-07-05T07:21:03.776313+00:00",
+      "scraped_at": "2026-07-07T03:11:43.709338+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/sbwholelife-productbrochure-en-feb2025.pdf"
     },
@@ -3343,7 +3343,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:21:04.384072+00:00",
+          "fetched_at": "2026-07-07T03:11:44.307542+00:00",
           "last_modified_at": null,
           "sha256": "ad5d3c7476c9f943ced3d3acefd608be6e373c81f2bed7ab1e4db172af9bb6c4",
           "size_bytes": 8746651,
@@ -3353,9 +3353,9 @@
         }
       },
       "insurer": "sunlife",
-      "last_verified_at": "2026-07-05T07:21:04.384072+00:00",
+      "last_verified_at": "2026-07-07T03:11:44.307542+00:00",
       "plan_slug": "sunbrilliance-indexed-universal-life-ii",
-      "scraped_at": "2026-07-05T07:21:04.384072+00:00",
+      "scraped_at": "2026-07-07T03:11:44.307542+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf"
     },
@@ -7642,44 +7642,6 @@
       "scraped_at": "2026-07-05T07:19:26.579642+00:00"
     },
     {
-      "insurer": "sunlife",
-      "plan_benefits": [
-        "Lifetime coverage with 3 options for Guaranteed Death Benefit",
-        "Stronger legacy through Death Benefit and cash value growth",
-        "High guaranteed cash value allowing accumulation over time",
-        "Legacy Plus an option to receive Death Benefit payout in a single lump sum of in yearly instalments for up to 10 years",
-        "Extension of coverage added flexibility through the extension of Sun MultiX expiry age, from age 85 to life, offered by NextGen.",
-        "Flexibility in premium payment terms from single pay to multi-pay",
-        "Get more bright ideas How to use life insurance as a wealth-building tool What to know about life insurance payouts in Singapore Legacy or loss? Insurance and the great wealth transfer Reimagining Life Insurance"
-      ],
-      "plan_description": "SunBrilliance Whole Life is a life insurance policy that gives you lifetime protection with 3 options for Guaranteed Death Benefit and flexibility in premium payment terms. With a high Guaranteed Cash Value, SunBrilliance Whole Life provides access to liquidity, combined with growth potential through Annual Additions and a Final Addition for additional peace of mind.",
-      "plan_name": "SunBrilliance Whole Life",
-      "plan_overview": "Key product details\nMinimum coverage\n100 and 70: Sum Assured of $1,000,000 | NextGen: Sum Assured of $400,000 and Sun MultiX of $1,000,000\nCurrency\nUS dollar\nBenefit term\nWhole life\nPremium structure\nPremium is level and guaranteed\nPremium payment term\nAge 0 - 75 : Single Pay | Age 0 - 70 : Multi Pay 5 years | Age 0 - 65 : Multi Pay 10 years\nPhilanthropic Pledge\nEvery purchase of SunBrilliance Whole Life policy triggers us to donate 0.5% from the premiums received with a cap of US$20,000 per policy towards philanthropy and charity programmes in Singapore.\nLearn more opens an internal link\nPremium discount campaign\nBoost your savings by enjoying up to 20% off initial or first year premium for a limited period, when you purchase our SunBrilliance Whole Life policy! \nCampaign is valid for a limited period and is subject to terms and conditions.\nLearn more\nWhat is a Whole Life insurance?\nA Whole Life insurance is a way to protect your loved ones financially when you pass away.  The payouts provide your beneficiaries the financial resource at their discretion. You can choose from different types of life insurance plans in Singapore, depending on your needs and goals.\nWhy is a Whole Life insurance important\nIf you are worrying whether your loved ones are financially secured when you are not around, you may consider a Whole Life insurance plan that can protect them from financial hardships and help them achieve their dreams. A life insurance policy is a way of creating your lasting legacy of your values and vision.\nHow is Whole Life insurance different from Term Insurance?\nWhole Life insurance provides lifetime protection, while Term insurance offers coverage for a predetermined period. Additionally, Whole Life insurance usually includes a cash value component that grows over time, creating a savings component alongside the death benefit protection. Term insurance only provides insurance coverage without any savings element.\nWhat are the key features of a Whole Life insurance plan?\nWhole Life insurance generally provides lifetime coverage and a guaranteed cash value component. Premium payments are generally also structured to remain level and locked in a policy inception. The death benefit component provides a guaranteed payout of sum insured and any bonuses to beneficiaries.\nWhat are the benefits of Whole Life insurance?\nWhole Life insurance provides lifelong financial protection for your beneficiaries, offering coverage that remains in force regardless of changes in age or health status. The cash value accumulation creates disciplined wealth building through tax-deferred growth, providing accessible funds (via partial surrenders) when needed such as an emergency fund, or fund major expenses like education. The death benefit also facilitates efficient wealth transfer while helping to preserve family wealth across generations.\nWho should consider buying Whole Life insurance?\nWhole Life insurance is suitable for individuals who want lifelong protection and long-term saving.  It is also ideal for High-Net-Worth individuals who seek additional wealth accumulation.\nWhat should I consider before buying Whole Life insurance?\nWhole Life insurance is designed to provide lifelong coverage, with the potential to accumulate cash value over time. When considering this type of policy, it is important to think about your long‑term objectives, such as providing financial protection, meeting future obligations, or planning a legacy for beneficiaries. You may also wish to consider the level of coverage required, the premium payment commitment, and whether the policy’s features and access to cash value align with your long‑term financial plans.",
-      "plan_slug": "sunbrilliance-whole-life",
-      "plan_url": "https://www.sunlife.com.sg/en/product-solutions/life-insurance/",
-      "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/sbwholelife-productbrochure-en-feb2025.pdf",
-      "scraped_at": "2026-07-05T07:21:03.773233+00:00"
-    },
-    {
-      "insurer": "sunlife",
-      "plan_benefits": [
-        "Lifetime coverage To leave a legacyMore on Lifetime coverage. Dependents receive a death benefit from the policy, as well as any savings or investments.",
-        "High potential growth Through an Indexed Account linked to the S&P 500 index performance and A guaranteed loyalty bonus (from policy year 11 onwards) to increase your account value every year",
-        "Downside protection 0% p.a. floor on the Indexed Account Guaranteed 2.50% p.a. crediting rate for the Fixed Account in the first 20 years Guaranteed loyalty bonus credited every year (from policy year 11 onwards)",
-        "Legacy Plus Offers the option to receive Death Benefit payout in a single lump sum or in instalments for up to 10 years",
-        "Flexibility To customise premium amount and allocation between Fixed, Optimum or Multiplier Indexed Account based on your preference To rebalance the account value between Fixed and Indexed Accounts after first policy year To change the life insured in the future1",
-        "Spreading out of risks from market volatility With Dollar Cost Averaging which spreads the premium allocated to the Indexed Accounts to create Index Segments over 12 months",
-        "Get more bright ideas Building a legacy: How High Net Worth families use life insurance to secure wealth Sun Life : Shaping wealth legacies for generations with insurance Choosing between an Indexed Universal Life and a Universal Life insurance policy How to leave a legacy with Indexed Universal Life (IUL) insurance"
-      ],
-      "plan_description": "SunBrilliance Indexed Universal Life (IUL) II is a flexible plan that’s indexed to the S&P 500 and designed to give you a good balance of lifetime coverage and high potential growth, with downside protection.",
-      "plan_name": "SunBrilliance Indexed Universal Life II",
-      "plan_overview": "Key product details\nSum assured\n$500,000\nCurrency\nUS dollar\nBenefit term\nWhole life\nEntry age\n0 - 75\nPhilanthropic Pledge\nEvery purchase of SunBrilliance Indexed Universal Life (IUL) II triggers us to donate 0.5% from the premiums received with a cap of US$20,000 per policy towards philanthropy and charity programmes in Singapore.\nLearn more opens an internal link\nQuit Smoking Incentive\nStrive for healthy living from day one with our incentive programme where you enjoy non-smoker policy charges for the first three policy years while working on quitting smoking. \n\nRemain smoke-free for 12 consecutive months during this period, and these savings may become permanent. Prioritise your health and receive lasting financial benefits for your commitment.\nPremium top up campaign\nBoost your savings by enjoying up to 12% Premium Top-Up for a limited period, when you purchase our SunBrilliance Indexed Universal Life (IUL) II policy! \nCampaign is valid for a limited period and is subject to terms and conditions.\nPDF Learn more\nWhat is an Indexed Universal life insurance (IUL) ?\nIndexed Universal Life (IUL) insurance is a life insurance that offers lifetime coverage and the indexed accounts to grow your cash value. The crediting rate to an indexed account is linked to the performance of an underlying index, such as the S&P 500, with a minimum guaranteed floor. An Indexed Universal Life (IUL) policy also allows you to adjust your premium payments and death benefits within certain limits, helping you protect and grow your wealth based on your protection needs and financial goals.\nWhy is an Indexed Universal Life (IUL)  insurance important?\nLife insurance can be used in your wealth planning for its insurance coverage and certain underlying guaranteed components. An Indexed Universal Life (IUL) insurance offers life coverage and allows you to participate in the potential upside of an index while having the built-in downside protection.\nHow is Indexed Universal Life (IUL) insurance different from Whole Life insurance?\nBoth Indexed Universal Life insurance and Whole Life insurance are permanent life insurance policies that provide lifelong coverage, but they work differently.  Indexed Universal Life (IUL) insurance offers more flexibility, allowing you to adjust premiums and death benefits, with cash value growth tied to market index performance (e.g. S&P 500). Whole Life insurance offers predictable, guaranteed cash value growth at rates predetermined by the insurance company, with fixed premiums and guaranteed benefits.\nWhat are the key features of an Indexed Universal Life (IUL) insurance plan?\nIndexed Universal Life (IUL) insurance offers flexibility in premium payments and death benefits, allowing adjustments within policy limits as your financial circumstances change. The cash value can grow through fixed interest rate accounts for stable returns or indexed accounts that track market performance for potential higher growth. IUL policies include built-in protection mechanisms: a \"floor\" (minimum interest rate, often 0%) ensures your returns are not below the floor rate during market downturns, while a \"cap\" limits maximum gains during strong market performance.\nWhat are the benefits of Indexed Universal Life (IUL) insurance?\nIndexed Universal Life (IUL) insurance offers potential for higher cash value growth compared to traditional whole life insurance when markets perform well, flexibility to adjust premiums and death benefits based on changing financial circumstances, and the ability to access cash value through loans or partial surrenders. Additionally, the policy provides downside protection against market losses while allowing participation in market upside.\nWho should consider buying Indexed Universal Life (IUL) insurance?\nIUL may be more suitable for individuals who want additional wealth growth opportunities, business owners seeking estate planning solutions, or individuals seeking retirement planning strategies with lifelong protection.\nWhat should I consider before buying Indexed Universal Life insurance?\nIndexed Universal Life (IUL) insurance offers lifetime coverage with policy value growth linked to the performance of a market index, subject to policy terms such as caps and charges. Before purchasing, it is important to understand how premiums are allocated, how charges and policy values work, and how index-linked crediting operates. You may also wish to consider whether this type of policy aligns with both your protection needs and long-term accumulation objectives, as policy value growth linked to an index can vary over time.\nIndex disclaimers\nThe S&P 500® is a product of S&P Dow Jones Indices LLC or its affiliates (“SPDJI”), and has been licensed for use by Sun Life Assurance Company of Canada Singapore Branch. Standard & Poor’s® and S&P® are registered trademarks of Standard & Poor’s Financial Services LLC (“S&P”) and Dow Jones® is a registered trademark of Dow Jones Trademark Holdings LLC (“Dow Jones”). The trademarks have been licensed to SPDJI and have been sublicensed for use for certain purposes by Sun Life Assurance Company of Canada Singapore Branch. SunBrilliance Indexed Universal Life II Insurance product is not sponsored, endorsed, sold or promoted by SPDJI, Dow Jones, S&P, any of their respective affiliates (collectively, “S&P Dow Jones Indices”). S&P Dow Jones Indices does not make any representation or warranty, express or implied, to the owners of the SunBrilliance Indexed Universal Life II Insurance product or any member of the public regarding the advisability of investing in securities generally or in SunBrilliance Indexed Universal Life II Insurance product particularly or the ability of the S&P 500® to track general market performance. S&P Dow Jones Indices only relationship to Sun Life Assurance Company of Canada Singapore Branch with respect to the S&P 500® is the licensing of the Index and certain trademarks, service marks and/or trade names of S&P Dow Jones Indices and/or its licensors. The S&P 500® is determined, composed and calculated by S&P Dow Jones Indices without regard to Sun Life Assurance Company of Canada Singapore Branch or the SunBrilliance Indexed Universal Life Insurance II product. S&P Dow Jones Indices have no obligation to take the needs of Sun Life Assurance Company of Canada Singapore Branch or the owners of SunBrilliance Indexed Universal Life II Insurance product into consideration in determining, composing or calculating the S&P 500®. S&P Dow Jones Indices is not responsible for and have not participated in the determination of the prices, and amount of SunBrilliance Indexed Universal Life II Insurance product or the timing of the issuance or sale of SunBrilliance Indexed Universal Life II Insurance product or in the determination or calculation of the equation by which SunBrilliance Indexed Universal Life II Insurance product is to be converted into cash, surrendered or redeemed, as the case may be. S&P Dow Jones Indices has no obligation or liability in connection with the administration, marketing or trading of SunBrilliance Indexed Universal Life II Insurance product. There is no assurance that investment products based on the S&P 500® will accurately track index performance or provide positive investment returns. S&P Dow Jones Indices LLC is not an investment advisor. Inclusion of a security within an index is not a recommendation by S&P Dow Jones Indices to buy, sell, or hold such security, nor is it considered to be investment advice.\nS&P Dow Jones Indices does not guarantee the adequacy, accuracy, timelines and/or the completeness of the S&P 500® or any data related thereto or any communication, including but not limited to oral or written communication (including electronic communications) with respect thereto. S&P Dow Jones Indices shall not be subject to any damages or liability for any errors, omissions, or delays therein. S&P Dow Jones Indices makes no expires or implied warranties, and expressly disclaims all warranties, of merchantability or fitness for a particular purpose or use or as to results to be obtained by Sun Life Assurance Company of Canada Singapore Branch, owners of the SunBrilliance Indexed Universal Life II insurance product, or any other person or entity from the use of the S&P 500® or with respect to any data related thereto. Without limiting any of the foregoing, in no event whatsoever shall S&P Dow Jones Indices be liable for any indirect, special, incidental, punitive or consequential damages including but not limited to, loss or profits, trading losses, lost time or goodwill, even if they have been advised of the possibility of such damages, whether in contract, tort, strict liability, or otherwise. There are no third party beneficiaries of any agreements or arrangements between S&P Dow Jones Indices and Sun Life Assurance Company of Canada Singapore Branch, other than the licensors of S&P Dow Jones Indices.",
-      "plan_slug": "sunbrilliance-indexed-universal-life-ii",
-      "plan_url": "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/",
-      "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf",
-      "scraped_at": "2026-07-05T07:21:03.773233+00:00"
-    },
-    {
       "insurer": "tokio_marine",
       "plan_benefits": [],
       "plan_description": "Options\nWe provide three main types of motor insurance: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive\n\nApproved Workshops Plan\nOther Workshops Plan \n\nThird Party Fire and Theft\nThird Party\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nOur underwriting criteria\n\n\n\n\n\n\n2\nYour No Claim Discount (NCD) entitlement",
@@ -10625,6 +10587,41 @@
       "plan_url": "https://singlife.com/en/business/corporate-insurance/mybenefits-plus",
       "product_brochure_url": "https://singlife.com/content/dam/business/sg/documents/CD-536_MyBenefitsPlus_Broch-Digital-FA.pdf",
       "scraped_at": "2026-07-07T03:03:41.618618+00:00"
+    },
+    {
+      "insurer": "sunlife",
+      "plan_benefits": [
+        "Lifetime coverage with 3 options for Guaranteed Death Benefit",
+        "Stronger legacy through Death Benefit and cash value growth",
+        "High guaranteed cash value allowing accumulation over time",
+        "Legacy Plus an option to receive Death Benefit payout in a single lump sum of in yearly instalments for up to 10 years",
+        "Extension of coverage added flexibility through the extension of Sun MultiX expiry age, from age 85 to life, offered by NextGen.",
+        "Flexibility in premium payment terms from single pay to multi-pay"
+      ],
+      "plan_description": "SunBrilliance Whole Life is a life insurance policy that gives you lifetime protection with 3 options for Guaranteed Death Benefit and flexibility in premium payment terms. With a high Guaranteed Cash Value, SunBrilliance Whole Life provides access to liquidity, combined with growth potential through Annual Additions and a Final Addition for additional peace of mind.",
+      "plan_name": "SunBrilliance Whole Life",
+      "plan_overview": "Lifetime coverage with 3 options for Guaranteed Death Benefit Stronger legacy through Death Benefit and cash value growth High guaranteed cash value allowing accumulation over time",
+      "plan_slug": "sunbrilliance-whole-life",
+      "plan_url": "https://www.sunlife.com.sg/en/product-solutions/life-insurance/",
+      "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/sbwholelife-productbrochure-en-feb2025.pdf",
+      "scraped_at": "2026-07-07T03:11:43.700002+00:00"
+    },
+    {
+      "insurer": "sunlife",
+      "plan_benefits": [
+        "Lifetime coverage To leave a legacy . Dependents receive a death benefit from the policy, as well as any savings or investments.",
+        "High potential growth Through an Indexed Account linked to the S&P 500 index performance and A guaranteed loyalty bonus (from policy year 11 onwards) to increase your account value every year",
+        "Downside protection 0% p.a. floor on the Indexed Account Guaranteed 2.50% p.a. crediting rate for the Fixed Account in the first 20 years Guaranteed loyalty bonus credited every year (from policy year 11 onwards)",
+        "Legacy Plus Offers the option to receive Death Benefit payout in a single lump sum or in instalments for up to 10 years",
+        "Spreading out of risks from market volatility With Dollar Cost Averaging which spreads the premium allocated to the Indexed Accounts to create Index Segments over 12 months"
+      ],
+      "plan_description": "SunBrilliance Indexed Universal Life (IUL) II is a flexible plan that’s indexed to the S&P 500 and designed to give you a good balance of lifetime coverage and high potential growth, with downside protection.",
+      "plan_name": "SunBrilliance Indexed Universal Life II",
+      "plan_overview": "Lifetime coverage To leave a legacy . Dependents receive a death benefit from the policy, as well as any savings or investments. High potential growth Through an Indexed Account linked to the S&P 500 index performance and A guaranteed loyalty bonus (from policy year 11 onwards) to increase your account value every year Downside protection 0% p.a. floor on the Indexed Account Guaranteed 2.50% p.a. crediting rate for the Fixed Account in the first 20 years Guaranteed loyalty bonus credited every year (from policy year 11 onwards)",
+      "plan_slug": "sunbrilliance-indexed-universal-life-ii",
+      "plan_url": "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/",
+      "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf",
+      "scraped_at": "2026-07-07T03:11:43.700002+00:00"
     }
   ],
   "scraper_health": [
@@ -10637,7 +10634,7 @@
       "last_success_at": "2026-07-07T02:10:00.090896+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10648,7 +10645,7 @@
       "last_success_at": "2026-07-05T07:18:04.037817+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10659,7 +10656,7 @@
       "last_success_at": "2026-07-05T07:18:05.385324+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10670,7 +10667,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10681,7 +10678,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10692,7 +10689,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10703,18 +10700,18 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:02.152937+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "sunlife",
       "display_name": "Sunlife",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:21:04.785877+00:00",
-      "last_success_at": "2026-07-05T07:21:04.785877+00:00",
+      "last_run_at": "2026-07-07T03:11:44.929496+00:00",
+      "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:11:44.929496+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10725,7 +10722,7 @@
       "last_success_at": "2026-07-05T07:21:18.419782+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10736,7 +10733,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10744,7 +10741,7 @@
       "display_name": "Allianz",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10752,7 +10749,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10763,7 +10760,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10774,7 +10771,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10785,7 +10782,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10796,7 +10793,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10804,7 +10801,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10812,7 +10809,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10820,7 +10817,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10831,7 +10828,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10839,7 +10836,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10850,7 +10847,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10858,7 +10855,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10866,7 +10863,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10874,7 +10871,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10882,7 +10879,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10890,7 +10887,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.645011+00:00",
+      "updated_at": "2026-07-07T03:04:31.228617+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10906,8 +10903,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:52:50.644845+00:00",
-      "validation_checked_at": "2026-07-07T02:52:50.644845+00:00",
+      "updated_at": "2026-07-07T03:04:31.227942+00:00",
+      "validation_checked_at": "2026-07-07T03:04:31.227942+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -31790,7 +31787,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:21:03.776313+00:00",
+            "fetched_at": "2026-07-07T03:11:43.709338+00:00",
             "last_modified_at": null,
             "sha256": "45c19d27452bec180feaede45c8ce63ffc8726dbe02d0251728b640632da785d",
             "size_bytes": 10346601,
@@ -31800,9 +31797,9 @@
           }
         },
         "insurer": "sunlife",
-        "last_verified_at": "2026-07-05T07:21:03.776313+00:00",
+        "last_verified_at": "2026-07-07T03:11:43.709338+00:00",
         "plan_slug": "sunbrilliance-whole-life",
-        "scraped_at": "2026-07-05T07:21:03.776313+00:00",
+        "scraped_at": "2026-07-07T03:11:43.709338+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/sbwholelife-productbrochure-en-feb2025.pdf"
       },
@@ -31814,7 +31811,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:21:04.384072+00:00",
+            "fetched_at": "2026-07-07T03:11:44.307542+00:00",
             "last_modified_at": null,
             "sha256": "ad5d3c7476c9f943ced3d3acefd608be6e373c81f2bed7ab1e4db172af9bb6c4",
             "size_bytes": 8746651,
@@ -31824,9 +31821,9 @@
           }
         },
         "insurer": "sunlife",
-        "last_verified_at": "2026-07-05T07:21:04.384072+00:00",
+        "last_verified_at": "2026-07-07T03:11:44.307542+00:00",
         "plan_slug": "sunbrilliance-indexed-universal-life-ii",
-        "scraped_at": "2026-07-05T07:21:04.384072+00:00",
+        "scraped_at": "2026-07-07T03:11:44.307542+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf"
       },
@@ -36113,44 +36110,6 @@
         "scraped_at": "2026-07-05T07:19:26.579642+00:00"
       },
       {
-        "insurer": "sunlife",
-        "plan_benefits": [
-          "Lifetime coverage with 3 options for Guaranteed Death Benefit",
-          "Stronger legacy through Death Benefit and cash value growth",
-          "High guaranteed cash value allowing accumulation over time",
-          "Legacy Plus an option to receive Death Benefit payout in a single lump sum of in yearly instalments for up to 10 years",
-          "Extension of coverage added flexibility through the extension of Sun MultiX expiry age, from age 85 to life, offered by NextGen.",
-          "Flexibility in premium payment terms from single pay to multi-pay",
-          "Get more bright ideas How to use life insurance as a wealth-building tool What to know about life insurance payouts in Singapore Legacy or loss? Insurance and the great wealth transfer Reimagining Life Insurance"
-        ],
-        "plan_description": "SunBrilliance Whole Life is a life insurance policy that gives you lifetime protection with 3 options for Guaranteed Death Benefit and flexibility in premium payment terms. With a high Guaranteed Cash Value, SunBrilliance Whole Life provides access to liquidity, combined with growth potential through Annual Additions and a Final Addition for additional peace of mind.",
-        "plan_name": "SunBrilliance Whole Life",
-        "plan_overview": "Key product details\nMinimum coverage\n100 and 70: Sum Assured of $1,000,000 | NextGen: Sum Assured of $400,000 and Sun MultiX of $1,000,000\nCurrency\nUS dollar\nBenefit term\nWhole life\nPremium structure\nPremium is level and guaranteed\nPremium payment term\nAge 0 - 75 : Single Pay | Age 0 - 70 : Multi Pay 5 years | Age 0 - 65 : Multi Pay 10 years\nPhilanthropic Pledge\nEvery purchase of SunBrilliance Whole Life policy triggers us to donate 0.5% from the premiums received with a cap of US$20,000 per policy towards philanthropy and charity programmes in Singapore.\nLearn more opens an internal link\nPremium discount campaign\nBoost your savings by enjoying up to 20% off initial or first year premium for a limited period, when you purchase our SunBrilliance Whole Life policy! \nCampaign is valid for a limited period and is subject to terms and conditions.\nLearn more\nWhat is a Whole Life insurance?\nA Whole Life insurance is a way to protect your loved ones financially when you pass away.  The payouts provide your beneficiaries the financial resource at their discretion. You can choose from different types of life insurance plans in Singapore, depending on your needs and goals.\nWhy is a Whole Life insurance important\nIf you are worrying whether your loved ones are financially secured when you are not around, you may consider a Whole Life insurance plan that can protect them from financial hardships and help them achieve their dreams. A life insurance policy is a way of creating your lasting legacy of your values and vision.\nHow is Whole Life insurance different from Term Insurance?\nWhole Life insurance provides lifetime protection, while Term insurance offers coverage for a predetermined period. Additionally, Whole Life insurance usually includes a cash value component that grows over time, creating a savings component alongside the death benefit protection. Term insurance only provides insurance coverage without any savings element.\nWhat are the key features of a Whole Life insurance plan?\nWhole Life insurance generally provides lifetime coverage and a guaranteed cash value component. Premium payments are generally also structured to remain level and locked in a policy inception. The death benefit component provides a guaranteed payout of sum insured and any bonuses to beneficiaries.\nWhat are the benefits of Whole Life insurance?\nWhole Life insurance provides lifelong financial protection for your beneficiaries, offering coverage that remains in force regardless of changes in age or health status. The cash value accumulation creates disciplined wealth building through tax-deferred growth, providing accessible funds (via partial surrenders) when needed such as an emergency fund, or fund major expenses like education. The death benefit also facilitates efficient wealth transfer while helping to preserve family wealth across generations.\nWho should consider buying Whole Life insurance?\nWhole Life insurance is suitable for individuals who want lifelong protection and long-term saving.  It is also ideal for High-Net-Worth individuals who seek additional wealth accumulation.\nWhat should I consider before buying Whole Life insurance?\nWhole Life insurance is designed to provide lifelong coverage, with the potential to accumulate cash value over time. When considering this type of policy, it is important to think about your long‑term objectives, such as providing financial protection, meeting future obligations, or planning a legacy for beneficiaries. You may also wish to consider the level of coverage required, the premium payment commitment, and whether the policy’s features and access to cash value align with your long‑term financial plans.",
-        "plan_slug": "sunbrilliance-whole-life",
-        "plan_url": "https://www.sunlife.com.sg/en/product-solutions/life-insurance/",
-        "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/sbwholelife-productbrochure-en-feb2025.pdf",
-        "scraped_at": "2026-07-05T07:21:03.773233+00:00"
-      },
-      {
-        "insurer": "sunlife",
-        "plan_benefits": [
-          "Lifetime coverage To leave a legacyMore on Lifetime coverage. Dependents receive a death benefit from the policy, as well as any savings or investments.",
-          "High potential growth Through an Indexed Account linked to the S&P 500 index performance and A guaranteed loyalty bonus (from policy year 11 onwards) to increase your account value every year",
-          "Downside protection 0% p.a. floor on the Indexed Account Guaranteed 2.50% p.a. crediting rate for the Fixed Account in the first 20 years Guaranteed loyalty bonus credited every year (from policy year 11 onwards)",
-          "Legacy Plus Offers the option to receive Death Benefit payout in a single lump sum or in instalments for up to 10 years",
-          "Flexibility To customise premium amount and allocation between Fixed, Optimum or Multiplier Indexed Account based on your preference To rebalance the account value between Fixed and Indexed Accounts after first policy year To change the life insured in the future1",
-          "Spreading out of risks from market volatility With Dollar Cost Averaging which spreads the premium allocated to the Indexed Accounts to create Index Segments over 12 months",
-          "Get more bright ideas Building a legacy: How High Net Worth families use life insurance to secure wealth Sun Life : Shaping wealth legacies for generations with insurance Choosing between an Indexed Universal Life and a Universal Life insurance policy How to leave a legacy with Indexed Universal Life (IUL) insurance"
-        ],
-        "plan_description": "SunBrilliance Indexed Universal Life (IUL) II is a flexible plan that’s indexed to the S&P 500 and designed to give you a good balance of lifetime coverage and high potential growth, with downside protection.",
-        "plan_name": "SunBrilliance Indexed Universal Life II",
-        "plan_overview": "Key product details\nSum assured\n$500,000\nCurrency\nUS dollar\nBenefit term\nWhole life\nEntry age\n0 - 75\nPhilanthropic Pledge\nEvery purchase of SunBrilliance Indexed Universal Life (IUL) II triggers us to donate 0.5% from the premiums received with a cap of US$20,000 per policy towards philanthropy and charity programmes in Singapore.\nLearn more opens an internal link\nQuit Smoking Incentive\nStrive for healthy living from day one with our incentive programme where you enjoy non-smoker policy charges for the first three policy years while working on quitting smoking. \n\nRemain smoke-free for 12 consecutive months during this period, and these savings may become permanent. Prioritise your health and receive lasting financial benefits for your commitment.\nPremium top up campaign\nBoost your savings by enjoying up to 12% Premium Top-Up for a limited period, when you purchase our SunBrilliance Indexed Universal Life (IUL) II policy! \nCampaign is valid for a limited period and is subject to terms and conditions.\nPDF Learn more\nWhat is an Indexed Universal life insurance (IUL) ?\nIndexed Universal Life (IUL) insurance is a life insurance that offers lifetime coverage and the indexed accounts to grow your cash value. The crediting rate to an indexed account is linked to the performance of an underlying index, such as the S&P 500, with a minimum guaranteed floor. An Indexed Universal Life (IUL) policy also allows you to adjust your premium payments and death benefits within certain limits, helping you protect and grow your wealth based on your protection needs and financial goals.\nWhy is an Indexed Universal Life (IUL)  insurance important?\nLife insurance can be used in your wealth planning for its insurance coverage and certain underlying guaranteed components. An Indexed Universal Life (IUL) insurance offers life coverage and allows you to participate in the potential upside of an index while having the built-in downside protection.\nHow is Indexed Universal Life (IUL) insurance different from Whole Life insurance?\nBoth Indexed Universal Life insurance and Whole Life insurance are permanent life insurance policies that provide lifelong coverage, but they work differently.  Indexed Universal Life (IUL) insurance offers more flexibility, allowing you to adjust premiums and death benefits, with cash value growth tied to market index performance (e.g. S&P 500). Whole Life insurance offers predictable, guaranteed cash value growth at rates predetermined by the insurance company, with fixed premiums and guaranteed benefits.\nWhat are the key features of an Indexed Universal Life (IUL) insurance plan?\nIndexed Universal Life (IUL) insurance offers flexibility in premium payments and death benefits, allowing adjustments within policy limits as your financial circumstances change. The cash value can grow through fixed interest rate accounts for stable returns or indexed accounts that track market performance for potential higher growth. IUL policies include built-in protection mechanisms: a \"floor\" (minimum interest rate, often 0%) ensures your returns are not below the floor rate during market downturns, while a \"cap\" limits maximum gains during strong market performance.\nWhat are the benefits of Indexed Universal Life (IUL) insurance?\nIndexed Universal Life (IUL) insurance offers potential for higher cash value growth compared to traditional whole life insurance when markets perform well, flexibility to adjust premiums and death benefits based on changing financial circumstances, and the ability to access cash value through loans or partial surrenders. Additionally, the policy provides downside protection against market losses while allowing participation in market upside.\nWho should consider buying Indexed Universal Life (IUL) insurance?\nIUL may be more suitable for individuals who want additional wealth growth opportunities, business owners seeking estate planning solutions, or individuals seeking retirement planning strategies with lifelong protection.\nWhat should I consider before buying Indexed Universal Life insurance?\nIndexed Universal Life (IUL) insurance offers lifetime coverage with policy value growth linked to the performance of a market index, subject to policy terms such as caps and charges. Before purchasing, it is important to understand how premiums are allocated, how charges and policy values work, and how index-linked crediting operates. You may also wish to consider whether this type of policy aligns with both your protection needs and long-term accumulation objectives, as policy value growth linked to an index can vary over time.\nIndex disclaimers\nThe S&P 500® is a product of S&P Dow Jones Indices LLC or its affiliates (“SPDJI”), and has been licensed for use by Sun Life Assurance Company of Canada Singapore Branch. Standard & Poor’s® and S&P® are registered trademarks of Standard & Poor’s Financial Services LLC (“S&P”) and Dow Jones® is a registered trademark of Dow Jones Trademark Holdings LLC (“Dow Jones”). The trademarks have been licensed to SPDJI and have been sublicensed for use for certain purposes by Sun Life Assurance Company of Canada Singapore Branch. SunBrilliance Indexed Universal Life II Insurance product is not sponsored, endorsed, sold or promoted by SPDJI, Dow Jones, S&P, any of their respective affiliates (collectively, “S&P Dow Jones Indices”). S&P Dow Jones Indices does not make any representation or warranty, express or implied, to the owners of the SunBrilliance Indexed Universal Life II Insurance product or any member of the public regarding the advisability of investing in securities generally or in SunBrilliance Indexed Universal Life II Insurance product particularly or the ability of the S&P 500® to track general market performance. S&P Dow Jones Indices only relationship to Sun Life Assurance Company of Canada Singapore Branch with respect to the S&P 500® is the licensing of the Index and certain trademarks, service marks and/or trade names of S&P Dow Jones Indices and/or its licensors. The S&P 500® is determined, composed and calculated by S&P Dow Jones Indices without regard to Sun Life Assurance Company of Canada Singapore Branch or the SunBrilliance Indexed Universal Life Insurance II product. S&P Dow Jones Indices have no obligation to take the needs of Sun Life Assurance Company of Canada Singapore Branch or the owners of SunBrilliance Indexed Universal Life II Insurance product into consideration in determining, composing or calculating the S&P 500®. S&P Dow Jones Indices is not responsible for and have not participated in the determination of the prices, and amount of SunBrilliance Indexed Universal Life II Insurance product or the timing of the issuance or sale of SunBrilliance Indexed Universal Life II Insurance product or in the determination or calculation of the equation by which SunBrilliance Indexed Universal Life II Insurance product is to be converted into cash, surrendered or redeemed, as the case may be. S&P Dow Jones Indices has no obligation or liability in connection with the administration, marketing or trading of SunBrilliance Indexed Universal Life II Insurance product. There is no assurance that investment products based on the S&P 500® will accurately track index performance or provide positive investment returns. S&P Dow Jones Indices LLC is not an investment advisor. Inclusion of a security within an index is not a recommendation by S&P Dow Jones Indices to buy, sell, or hold such security, nor is it considered to be investment advice.\nS&P Dow Jones Indices does not guarantee the adequacy, accuracy, timelines and/or the completeness of the S&P 500® or any data related thereto or any communication, including but not limited to oral or written communication (including electronic communications) with respect thereto. S&P Dow Jones Indices shall not be subject to any damages or liability for any errors, omissions, or delays therein. S&P Dow Jones Indices makes no expires or implied warranties, and expressly disclaims all warranties, of merchantability or fitness for a particular purpose or use or as to results to be obtained by Sun Life Assurance Company of Canada Singapore Branch, owners of the SunBrilliance Indexed Universal Life II insurance product, or any other person or entity from the use of the S&P 500® or with respect to any data related thereto. Without limiting any of the foregoing, in no event whatsoever shall S&P Dow Jones Indices be liable for any indirect, special, incidental, punitive or consequential damages including but not limited to, loss or profits, trading losses, lost time or goodwill, even if they have been advised of the possibility of such damages, whether in contract, tort, strict liability, or otherwise. There are no third party beneficiaries of any agreements or arrangements between S&P Dow Jones Indices and Sun Life Assurance Company of Canada Singapore Branch, other than the licensors of S&P Dow Jones Indices.",
-        "plan_slug": "sunbrilliance-indexed-universal-life-ii",
-        "plan_url": "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/",
-        "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf",
-        "scraped_at": "2026-07-05T07:21:03.773233+00:00"
-      },
-      {
         "insurer": "tokio_marine",
         "plan_benefits": [],
         "plan_description": "Options\nWe provide three main types of motor insurance: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive\n\nApproved Workshops Plan\nOther Workshops Plan \n\nThird Party Fire and Theft\nThird Party\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nOur underwriting criteria\n\n\n\n\n\n\n2\nYour No Claim Discount (NCD) entitlement",
@@ -39096,6 +39055,41 @@
         "plan_url": "https://singlife.com/en/business/corporate-insurance/mybenefits-plus",
         "product_brochure_url": "https://singlife.com/content/dam/business/sg/documents/CD-536_MyBenefitsPlus_Broch-Digital-FA.pdf",
         "scraped_at": "2026-07-07T03:03:41.618618+00:00"
+      },
+      {
+        "insurer": "sunlife",
+        "plan_benefits": [
+          "Lifetime coverage with 3 options for Guaranteed Death Benefit",
+          "Stronger legacy through Death Benefit and cash value growth",
+          "High guaranteed cash value allowing accumulation over time",
+          "Legacy Plus an option to receive Death Benefit payout in a single lump sum of in yearly instalments for up to 10 years",
+          "Extension of coverage added flexibility through the extension of Sun MultiX expiry age, from age 85 to life, offered by NextGen.",
+          "Flexibility in premium payment terms from single pay to multi-pay"
+        ],
+        "plan_description": "SunBrilliance Whole Life is a life insurance policy that gives you lifetime protection with 3 options for Guaranteed Death Benefit and flexibility in premium payment terms. With a high Guaranteed Cash Value, SunBrilliance Whole Life provides access to liquidity, combined with growth potential through Annual Additions and a Final Addition for additional peace of mind.",
+        "plan_name": "SunBrilliance Whole Life",
+        "plan_overview": "Lifetime coverage with 3 options for Guaranteed Death Benefit Stronger legacy through Death Benefit and cash value growth High guaranteed cash value allowing accumulation over time",
+        "plan_slug": "sunbrilliance-whole-life",
+        "plan_url": "https://www.sunlife.com.sg/en/product-solutions/life-insurance/",
+        "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/sbwholelife-productbrochure-en-feb2025.pdf",
+        "scraped_at": "2026-07-07T03:11:43.700002+00:00"
+      },
+      {
+        "insurer": "sunlife",
+        "plan_benefits": [
+          "Lifetime coverage To leave a legacy . Dependents receive a death benefit from the policy, as well as any savings or investments.",
+          "High potential growth Through an Indexed Account linked to the S&P 500 index performance and A guaranteed loyalty bonus (from policy year 11 onwards) to increase your account value every year",
+          "Downside protection 0% p.a. floor on the Indexed Account Guaranteed 2.50% p.a. crediting rate for the Fixed Account in the first 20 years Guaranteed loyalty bonus credited every year (from policy year 11 onwards)",
+          "Legacy Plus Offers the option to receive Death Benefit payout in a single lump sum or in instalments for up to 10 years",
+          "Spreading out of risks from market volatility With Dollar Cost Averaging which spreads the premium allocated to the Indexed Accounts to create Index Segments over 12 months"
+        ],
+        "plan_description": "SunBrilliance Indexed Universal Life (IUL) II is a flexible plan that’s indexed to the S&P 500 and designed to give you a good balance of lifetime coverage and high potential growth, with downside protection.",
+        "plan_name": "SunBrilliance Indexed Universal Life II",
+        "plan_overview": "Lifetime coverage To leave a legacy . Dependents receive a death benefit from the policy, as well as any savings or investments. High potential growth Through an Indexed Account linked to the S&P 500 index performance and A guaranteed loyalty bonus (from policy year 11 onwards) to increase your account value every year Downside protection 0% p.a. floor on the Indexed Account Guaranteed 2.50% p.a. crediting rate for the Fixed Account in the first 20 years Guaranteed loyalty bonus credited every year (from policy year 11 onwards)",
+        "plan_slug": "sunbrilliance-indexed-universal-life-ii",
+        "plan_url": "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/",
+        "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf",
+        "scraped_at": "2026-07-07T03:11:43.700002+00:00"
       }
     ],
     "scraper_health": [
@@ -39108,7 +39102,7 @@
         "last_success_at": "2026-07-07T02:10:00.090896+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39119,7 +39113,7 @@
         "last_success_at": "2026-07-05T07:18:04.037817+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39130,7 +39124,7 @@
         "last_success_at": "2026-07-05T07:18:05.385324+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39141,7 +39135,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39152,7 +39146,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39163,7 +39157,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39174,18 +39168,18 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:02.152937+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "sunlife",
         "display_name": "Sunlife",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:21:04.785877+00:00",
-        "last_success_at": "2026-07-05T07:21:04.785877+00:00",
+        "last_run_at": "2026-07-07T03:11:44.929496+00:00",
+        "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:11:44.929496+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39196,7 +39190,7 @@
         "last_success_at": "2026-07-05T07:21:18.419782+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39207,7 +39201,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39215,7 +39209,7 @@
         "display_name": "Allianz",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39223,7 +39217,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39234,7 +39228,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39245,7 +39239,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39256,7 +39250,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39267,7 +39261,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39275,7 +39269,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39283,7 +39277,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39291,7 +39285,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39302,7 +39296,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39310,7 +39304,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39321,7 +39315,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39329,7 +39323,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39337,7 +39331,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39345,7 +39339,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39353,7 +39347,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39361,7 +39355,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.645011+00:00",
+        "updated_at": "2026-07-07T03:04:31.228617+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39377,8 +39371,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:52:50.644845+00:00",
-        "validation_checked_at": "2026-07-07T02:52:50.644845+00:00",
+        "updated_at": "2026-07-07T03:04:31.227942+00:00",
+        "validation_checked_at": "2026-07-07T03:04:31.227942+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,

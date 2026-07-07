@@ -11,6 +11,7 @@ from src.scrapers import (
     prudential,
     raffles_health,
     singlife,
+    sunlife,
     uoi,
 )
 from src.validation.plan_quality import validate_plan_rows
@@ -279,6 +280,28 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual(
             [], singlife.parse_source_html(html, "https://singlife.com/en/grow-with-singlife")
         )
+
+    def test_sunlife_product_parser_compacts_accordion_noise(self):
+        html = (FIXTURES_DIR / "sunlife_product.html").read_text()
+        row = sunlife.parse_product_html(
+            html,
+            "https://www.sunlife.com.sg/en/product-solutions/life-insurance/",
+        )
+
+        self.assertEqual(row["plan_name"], "SunBrilliance Whole Life")
+        self.assertIn("lifetime protection", row["plan_description"])
+        self.assertNotIn("Get more bright ideas", row["plan_overview"])
+        self.assertLess(len(row["plan_overview"]), 500)
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.sunlife.com.sg/content/dam/sbwholelife-productbrochure-en-feb2025.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(sunlife.TABLE_NAME, [row])))
+
+    def test_sunlife_rejects_homepage_as_plan_row(self):
+        html = (FIXTURES_DIR / "sunlife_reject.html").read_text()
+
+        self.assertIsNone(sunlife.parse_product_html(html, "https://www.sunlife.com.sg/en/"))
 
     def test_raffles_product_parser_scopes_out_navigation_chrome(self):
         html = (FIXTURES_DIR / "raffles_health_product.html").read_text()
