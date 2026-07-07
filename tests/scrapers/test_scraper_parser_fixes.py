@@ -1,6 +1,11 @@
 import unittest
+from pathlib import Path
 
-from src.scrapers import chubb, iii, panel_resources, uoi
+from src.backend.helper import format_plan_rows
+from src.scrapers import chubb, iii, panel_resources, raffles_health, uoi
+from src.validation.plan_quality import validate_plan_rows
+
+FIXTURES_DIR = Path(__file__).resolve().parents[1] / "fixtures"
 
 
 class FakeStreamingResponse:
@@ -9,6 +14,22 @@ class FakeStreamingResponse:
 
     def iter_content(self, chunk_size):
         return iter(self.chunks)
+
+
+class FakeHTTPResponse:
+    def __init__(self, text):
+        self.text = text
+
+    def raise_for_status(self):
+        return None
+
+
+class FakeSession:
+    def __init__(self, html_by_url):
+        self.html_by_url = html_by_url
+
+    def get(self, url, timeout, headers):
+        return FakeHTTPResponse(self.html_by_url[url])
 
 
 class ScraperParserFixTests(unittest.TestCase):
@@ -78,6 +99,66 @@ class ScraperParserFixTests(unittest.TestCase):
                 max_bytes=6,
             ),
             b"aaaabb",
+        )
+
+    def test_raffles_product_parser_scopes_out_navigation_chrome(self):
+        html = (FIXTURES_DIR / "raffles_health_product.html").read_text()
+        row = raffles_health.parse_product_html(
+            html,
+            "https://www.raffleshealthinsurance.com/products/raffles-critical-illness-plan/",
+        )
+
+        self.assertEqual(row["plan_name"], "Raffles Critical Illness Plan")
+        self.assertIn("37 critical illnesses", row["plan_description"])
+        self.assertNotIn("Products For Individuals", row["plan_overview"])
+        self.assertNotIn("Contact Us X Contact Us", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.raffleshealthinsurance.com/wp-content/uploads/2026/06/Raffles-Critical-Illness-Plan-Brochure.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(raffles_health.TABLE_NAME, [row])),
+        )
+
+    def test_raffles_rejects_category_and_tpa_pages_as_plan_rows(self):
+        html = (FIXTURES_DIR / "raffles_health_reject.html").read_text()
+
+        self.assertIsNone(
+            raffles_health.parse_product_html(
+                html,
+                "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/",
+            )
+        )
+        self.assertIsNone(
+            raffles_health.parse_product_html(
+                html,
+                "https://www.raffleshealthinsurance.com/products/business/third-party-administration/",
+            )
+        )
+
+    def test_raffles_scraper_has_exact_allowlisted_products(self):
+        html = (FIXTURES_DIR / "raffles_health_product.html").read_text()
+        session = FakeSession({url: html for url in raffles_health.PRODUCT_URLS})
+        rows = raffles_health.scrape_raffles_health(session=session)
+
+        self.assertEqual(
+            [
+                "Raffles Shield",
+                "Raffles Critical Illness Plan",
+                "Raffles Elite Care",
+                "Lifeline",
+                "Worldwide Health Options",
+                "Customised Group Insurance",
+                "Raffles Corporate Care Enhanced III",
+                "Foreign Workers Medical Insurance (FWMI) Enhanced II",
+            ],
+            [row["plan_name"] for row in rows],
+        )
+        self.assertNotIn("Third Party Administration", [row["plan_name"] for row in rows])
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(raffles_health.TABLE_NAME, rows)),
         )
 
 

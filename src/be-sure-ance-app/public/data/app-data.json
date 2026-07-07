@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T01:34:31+00:00",
+  "generated_at": "2026-07-07T02:19:57+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -4267,6 +4267,174 @@
       "scraped_at": "2026-07-05T07:52:56.716802+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:19:44.095498+00:00",
+          "last_modified_at": "Tue, 04 Jul 2023 01:38:43 GMT",
+          "sha256": "f48603620a6d2bf78cd92bd68f6f9bdf7300a7a23c6525cf55aa272bd4d7586e",
+          "size_bytes": 691888,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/raffles-health/raffles-shield/f48603620a6d2bf78cd92bd68f6f9bdf7300a7a23c6525cf55aa272bd4d7586e.pdf",
+          "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/07/Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf"
+        }
+      },
+      "insurer": "raffles_health",
+      "last_verified_at": "2026-07-07T02:19:44.095498+00:00",
+      "plan_slug": "raffles-shield",
+      "scraped_at": "2026-07-07T02:19:44.095498+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/07/Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:19:44.707004+00:00",
+          "last_modified_at": "Thu, 16 May 2024 06:55:44 GMT",
+          "sha256": "8ffda4165c0f85569c0ff7a22980219764d892343b30299cc8b3f6aa2f8bd11a",
+          "size_bytes": 479131,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/raffles-health/raffles-critical-illness-plan/8ffda4165c0f85569c0ff7a22980219764d892343b30299cc8b3f6aa2f8bd11a.pdf",
+          "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2024/05/CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf"
+        }
+      },
+      "insurer": "raffles_health",
+      "last_verified_at": "2026-07-07T02:19:44.707004+00:00",
+      "plan_slug": "raffles-critical-illness-plan",
+      "scraped_at": "2026-07-07T02:19:44.707004+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2024/05/CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Raffles-Elite-Care-15-May-25-V2.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:19:44.874125+00:00",
+          "last_modified_at": "Tue, 20 May 2025 08:15:46 GMT",
+          "sha256": "6b50bcaab37a88ee9df8ec651586af2747e459d8378d6f25ab914ffc43c6c199",
+          "size_bytes": 214817,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/raffles-health/raffles-elite-care/6b50bcaab37a88ee9df8ec651586af2747e459d8378d6f25ab914ffc43c6c199.pdf",
+          "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/05/Raffles-Elite-Care-15-May-25-V2.pdf"
+        }
+      },
+      "insurer": "raffles_health",
+      "last_verified_at": "2026-07-07T02:19:44.874125+00:00",
+      "plan_slug": "raffles-elite-care",
+      "scraped_at": "2026-07-07T02:19:44.874125+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/05/Raffles-Elite-Care-15-May-25-V2.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:19:45.016542+00:00",
+          "last_modified_at": "Tue, 04 Apr 2023 08:18:01 GMT",
+          "sha256": "31fa084ff6d8136c19396d2037866e32bca859f5cf8083a16a91662fc33bf9ad",
+          "size_bytes": 299046,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/raffles-health/lifeline/31fa084ff6d8136c19396d2037866e32bca859f5cf8083a16a91662fc33bf9ad.pdf",
+          "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/04/SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf"
+        }
+      },
+      "insurer": "raffles_health",
+      "last_verified_at": "2026-07-07T02:19:45.016542+00:00",
+      "plan_slug": "lifeline",
+      "scraped_at": "2026-07-07T02:19:45.016542+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/04/SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:19:45.205660+00:00",
+          "last_modified_at": "Thu, 04 Dec 2025 01:15:21 GMT",
+          "sha256": "97bdb137911b4856c7cbb13d0729303254ce52bd5c4f2fc59803f1305dfa3ba7",
+          "size_bytes": 224339,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/raffles-health/worldwide-health-options/97bdb137911b4856c7cbb13d0729303254ce52bd5c4f2fc59803f1305dfa3ba7.pdf",
+          "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/12/SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf"
+        }
+      },
+      "insurer": "raffles_health",
+      "last_verified_at": "2026-07-07T02:19:45.205660+00:00",
+      "plan_slug": "worldwide-health-options",
+      "scraped_at": "2026-07-07T02:19:45.205660+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/12/SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "RCC-Enhanced-III-Brochure-17-Sep-2025.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:19:45.339124+00:00",
+          "last_modified_at": "Thu, 18 Sep 2025 02:09:08 GMT",
+          "sha256": "8ef17e9bb065e94947f6136c55ec3d128a926dee97145cb4d2075f9b24768ecc",
+          "size_bytes": 873937,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/raffles-health/raffles-corporate-care-enhanced-iii/8ef17e9bb065e94947f6136c55ec3d128a926dee97145cb4d2075f9b24768ecc.pdf",
+          "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/09/RCC-Enhanced-III-Brochure-17-Sep-2025.pdf"
+        }
+      },
+      "insurer": "raffles_health",
+      "last_verified_at": "2026-07-07T02:19:45.339124+00:00",
+      "plan_slug": "raffles-corporate-care-enhanced-iii",
+      "scraped_at": "2026-07-07T02:19:45.339124+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/09/RCC-Enhanced-III-Brochure-17-Sep-2025.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "FWMI-Enhanced-II-Brochure-29-May-2025.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:19:45.660306+00:00",
+          "last_modified_at": "Mon, 30 Jun 2025 03:49:16 GMT",
+          "sha256": "2a7f227fe6181f2622029eef76d93ef64c5c800690a8b368fdceb75944f0571b",
+          "size_bytes": 17041996,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/raffles-health/foreign-workers-medical-insurance-fwmi-enhanced-ii/2a7f227fe6181f2622029eef76d93ef64c5c800690a8b368fdceb75944f0571b.pdf",
+          "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/06/FWMI-Enhanced-II-Brochure-29-May-2025.pdf"
+        }
+      },
+      "insurer": "raffles_health",
+      "last_verified_at": "2026-07-07T02:19:45.660306+00:00",
+      "plan_slug": "foreign-workers-medical-insurance-fwmi-enhanced-ii",
+      "scraped_at": "2026-07-07T02:19:45.660306+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/06/FWMI-Enhanced-II-Brochure-29-May-2025.pdf"
     }
   ],
   "plans": [
@@ -7043,56 +7211,162 @@
     {
       "insurer": "raffles_health",
       "plan_benefits": [
-        "Home",
-        "Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA)",
-        "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
-        "Singapore Coverage Raffles Shield Raffles Critical Illness Plan",
-        "Raffles Shield",
-        "Raffles Critical Illness Plan"
+        "We help cover medical expenses so that you can focus on making the best healthcare decisions for you and your family.",
+        "Raffles Shield is a medical insurance plan in Singapore that protects you against unexpected medical bills and can be paid by MediSave",
+        "File a Raffles Shield claim",
+        "Search for a Raffles Shield Panel Specialist",
+        "Book an appointment with a Raffles Shield Panel Specialist",
+        "Read health articles curated by healthcare professionals",
+        "File a medical claim on behalf of my clients",
+        "This will apply to all Insured who receive COVID-19 vaccinations approved by the Health Sciences Authority (HSA). This special coverage will be provided till 31 December 2022."
       ],
-      "plan_description": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Group Insurance Letter of Guarantee (LOG) For Our Partners Agent Resource Forms and Downloads Resource Centre About Us Blog Webinar Resource Library COVID-19 Resource Library Insurance Education Forms and Downloads Social Media Facebook Instagram Linkedin Contact Us X Contact Us",
-      "plan_name": "Best Health Insurance Plans in Singapore for Everyone",
-      "plan_overview": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For In…",
-      "plan_slug": "best-health-insurance-plans-in-singapore-for-everyone",
-      "plan_url": "https://www.raffleshealthinsurance.com/",
-      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2026/05/FAQ_on_Raffles-Riders_May-2026.pdf",
-      "scraped_at": "2026-07-05T07:54:01.529941+00:00"
+      "plan_description": "Raffles Shield is one of the best medical insurance plans in Singapore due to its comprehensive coverage, integration with MediSave, and focus on providing financial protection.",
+      "plan_name": "Raffles Shield",
+      "plan_overview": "We help cover medical expenses so that you can focus on making the best healthcare decisions for you and your family. How can we help you today? Use our navigation panel to get to where you want quickly and easily.",
+      "plan_slug": "raffles-shield",
+      "plan_url": "https://www.raffleshealthinsurance.com/products/raffles-shield/",
+      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/07/Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf",
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
     },
     {
       "insurer": "raffles_health",
       "plan_benefits": [
-        "Home",
-        "Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA)",
-        "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
-        "Singapore Coverage Raffles Shield Raffles Critical Illness Plan",
-        "Raffles Shield",
-        "Raffles Critical Illness Plan"
+        "Safeguard your financial future against the unexpected challenges of Critical Illness",
+        "This plan covers for 37 critical illnesses with an option for early and intermediate stage critical illness coverage.",
+        "Start Your Protection Early with Raffles Critical Illness Plan",
+        "Receive 100%⁵ of lump sum cash payout upon diagnosis of the covered 37 major stage critical illnesses, as defined in LIA⁶.",
+        "100% Payout for 37 Critical Illnesses",
+        "Enhanced protection against early & intermediate stage critical illnesses",
+        "Choose to cover for an additional sum assured of 50% to 100%⁷ for 9 common Early and Intermediate Stage critical illnesses.",
+        "Option to add Early Critical Illness Rider"
       ],
-      "plan_description": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Group Insurance Letter of Guarantee (LOG) For Our Partners Agent Resource Forms and Downloads Resource Centre About Us Blog Webinar Resource Library COVID-19 Resource Library Insurance Education Forms and Downloads Social Media Facebook Instagram Linkedin Contact Us X Contact Us",
-      "plan_name": "Be the boss that provides health insurance benefits that keep both your employees and business thriving in Singapore.",
-      "plan_overview": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For In…",
-      "plan_slug": "be-the-boss-that-provides-health-insurance-benefits-that-keep-both-your-employees-and-business-thriving-in-singapore",
-      "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:54:01.529941+00:00"
+      "plan_description": "The Raffles Critical Illness Plan provides essential financial protection, offering comprehensive coverage for 37 critical illnesses. Click here to learn more.",
+      "plan_name": "Raffles Critical Illness Plan",
+      "plan_overview": "Safeguard your financial future against the unexpected challenges of Critical Illness This plan covers for 37 critical illnesses with an option for early and intermediate stage critical illness coverage. AVERAGE HEART ATTACK CASES A DAY IN SINGAPORE 3",
+      "plan_slug": "raffles-critical-illness-plan",
+      "plan_url": "https://www.raffleshealthinsurance.com/products/raffles-critical-illness-plan/",
+      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2024/05/CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf",
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
     },
     {
       "insurer": "raffles_health",
       "plan_benefits": [
-        "Home",
-        "Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA)",
-        "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
-        "Singapore Coverage Raffles Shield Raffles Critical Illness Plan",
-        "Raffles Shield",
-        "Raffles Critical Illness Plan"
+        "^Areas of cover include Singapore, Malaysia, Indonesia, Philippines, Thailand, Brunei, Vietnam, Myanmar, Cambodia, Laos, China (excluding Hong Kong), India and South Korea.",
+        "An All-Inclusive Healthcare Cover",
+        "Including General Practitioner (GP), Specialist, Teleconsultation and Traditional Chinese Medicine (TCM) visits",
+        "First Dollar Coverage",
+        "Receive payout once an insurable event occurs. No deductible and co-payment required.",
+        "Daily Hospital Cash Benefit",
+        "Receive up to S$200 cash benefit per day for admissions to Raffles Hospital, Singapore.",
+        "Medical Second Opinion"
       ],
-      "plan_description": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Group Insurance Letter of Guarantee (LOG) For Our Partners Agent Resource Forms and Downloads Resource Centre About Us Blog Webinar Resource Library COVID-19 Resource Library Insurance Education Forms and Downloads Social Media Facebook Instagram Linkedin Contact Us X Contact Us",
-      "plan_name": "Third Party Administration",
-      "plan_overview": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For In…",
-      "plan_slug": "third-party-administration",
-      "plan_url": "https://www.raffleshealthinsurance.com/products/business/third-party-administration/",
+      "plan_description": "Raffles Elite Care will take care of your healthcare needs when working or living in Singapore, Malaysia, Indonesia, Philippines, Thailand, Brunei, Vietnam, Myanmar, Cambodia, Laos, China (excluding Hong Kong), India and South Korea.",
+      "plan_name": "Raffles Elite Care",
+      "plan_overview": "^Areas of cover include Singapore, Malaysia, Indonesia, Philippines, Thailand, Brunei, Vietnam, Myanmar, Cambodia, Laos, China (excluding Hong Kong), India and South Korea. An All-Inclusive Healthcare Cover Including General Practitioner (GP), Specialist, Teleconsultation and Traditional Chinese Medicine (TCM) visits",
+      "plan_slug": "raffles-elite-care",
+      "plan_url": "https://www.raffleshealthinsurance.com/products/personal/regional-medical-cover/raffles-elite-care/",
+      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/05/Raffles-Elite-Care-15-May-25-V2.pdf",
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+    },
+    {
+      "insurer": "raffles_health",
+      "plan_benefits": [
+        "A premium international health plan that helps give you peace of mind at home and abroad. Insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+        "Connecting you with global medical expertise",
+        "The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+        "An expandable health plan for at home and abroad",
+        "Critical illness and cancer cover",
+        "Direct settlement with a large worldwide network of over 1.7 million providers",
+        "Direct access to specialist treatment without the need for a GP referral",
+        "Deductible options to manage the cost of your plan"
+      ],
+      "plan_description": "Lifeline is a premium international health plan that helps give you peace of mind at home and abroad. Insured by Raffles Health Insurance and administered by Bupa Global.",
+      "plan_name": "Lifeline",
+      "plan_overview": "A premium international health plan that helps give you peace of mind at home and abroad. Insured by Raffles Health Insurance and internationally administered by Bupa Global. Connecting you with global medical expertise The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+      "plan_slug": "lifeline",
+      "plan_url": "https://www.raffleshealthinsurance.com/products/personal/global-medical-cover/lifeline-3/",
+      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/04/SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf",
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+    },
+    {
+      "insurer": "raffles_health",
+      "plan_benefits": [
+        "A modular international health insurance plan for individuals and families insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+        "The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+        "An expandable health plan for at home and abroad",
+        "Customisable plan to suit your specific health needs",
+        "Critical illness and cancer cover",
+        "Direct access to specialist treatment without the need for a GP referral",
+        "A choice of preventive care to help maintain your health",
+        "Direct settlement with a large worldwide network of over 2.1 million providers"
+      ],
+      "plan_description": "With this Worldwide Health Options plan, you have the freedom to customise your health insurance to your needs and your family's way of life.",
+      "plan_name": "Worldwide Health Options",
+      "plan_overview": "A modular international health insurance plan for individuals and families insured by Raffles Health Insurance and internationally administered by Bupa Global. The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global. An expandable health plan for at home and abroad",
+      "plan_slug": "worldwide-health-options",
+      "plan_url": "https://www.raffleshealthinsurance.com/worldwide-health-options/",
+      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/12/SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf",
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+    },
+    {
+      "insurer": "raffles_health",
+      "plan_benefits": [
+        "Our employee healthcare benefits are in the following areas:",
+        "Group Hospitalisation & Surgical",
+        "Group Critical Illness",
+        "Enjoy More Flexibility in Benefits and Price",
+        "You have a choice of healthcare providers, benefits and features. The flexible schemes we provide are:",
+        "RHI broad network coverage of clinics",
+        "Raffles Medical Group clinics",
+        "Special corporate rates for vaccinations, health screening, pre-employment, work-permit, employment pass examinations, dental, GP and specialist clinics"
+      ],
+      "plan_description": "In order to give employees a seamless and integrated healthcare experience, we build employee benefit solutions that meet the needs and financial constraints of the businesses.",
+      "plan_name": "Customised Group Insurance",
+      "plan_overview": "Raffles Health Insurance (RHI) provides comprehensive healthcare and wellness benefits for employers seeking coverage for their employees. Backed by in-house medical expertise, we design employee benefit solution that suit the company needs and budget, manage their employee benefit plan to provide a seamless and integrated healthcare experience to their employees. Our employee healthcare benefits are in the following areas: Group Hospitalisation & Surgical",
+      "plan_slug": "customised-group-insurance",
+      "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/customised-group-insurance/",
       "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:54:01.529941+00:00"
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+    },
+    {
+      "insurer": "raffles_health",
+      "plan_benefits": [
+        "Let Raffles Corporate Care Enhanced III provide your employees with the right coverage in an easy and cost-effective way.",
+        "Allows you to start your policy with just 1 employee* in the first year",
+        "Raffles Hospital Option",
+        "Access to private healthcare services at a lower cost",
+        "Premium rates are determined based on the claims experience of the entire Raffles Corporate Care Enhanced III portfolio",
+        "Fuss-free experience with our mobile app and enjoy cashless payment at panel clinics under Raffles Health Insurance (RHI)",
+        "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
+        "Singapore Coverage Raffles Shield Raffles Critical Illness Plan"
+      ],
+      "plan_description": "Let our corporate insurance plan be your partner in safeguarding the health & welfare of your employees. Raffles Corporate Care Enhanced II is an “off-the-shelf” Employee Benefits Solution.",
+      "plan_name": "Raffles Corporate Care Enhanced III",
+      "plan_overview": "It helps to alleviate your employees’ costs for hospitalisation, outpatient treatments, dental and non-medical needs. Our solution offers flexibility and extensive coverage, ensuring your employees receive the right medical treatment and financial protection during unforeseen illnesses and accidents. Employers can also choose to extend this coverage to their employees’ dependants. Allows you to start your policy with just 1 employee* in the first year Raffles Hospital Option",
+      "plan_slug": "raffles-corporate-care-enhanced-iii",
+      "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/raffles-corporate-care-enhanced-iii/",
+      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/09/RCC-Enhanced-III-Brochure-17-Sep-2025.pdf",
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+    },
+    {
+      "insurer": "raffles_health",
+      "plan_benefits": [
+        "Comprehensive Benefits of RHI FWMI Enhanced II Plan:",
+        "As charged up to S$100,000 per policy year for eligible hospitalisation expenses",
+        "Compliant with Ministry of Manpower’s (MOM) Enhanced Medical Insurance Requirements.",
+        "Flexibility to choose from 2 plans with annual limits of up to S$100,000, co-insurance of 25% applicable for claims in excess of S$15,000 per policy year.",
+        "Choice of including rider to waive 25% co-insurance.",
+        "No waiting period. Pre-existing conditions are covered from inception.",
+        "Coverage can start from just 1 foreign worker. Eligibility applies to employees aged 16 to 70 (age next birthday), with coverage renewable up to age 75.",
+        "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline"
+      ],
+      "plan_description": "Ensure the well-being of your foreign workforce with our Foreign Workers Plan. It offers coverage for your foreign employee against hospitalization, surgery cost and other related expenses.",
+      "plan_name": "Foreign Workers Medical Insurance (FWMI) Enhanced II",
+      "plan_overview": "Starting from 1 July 2025, employers will be required to provide medical insurance for their foreign workers, which must include enhanced features such as an annual coverage limit of at least S$60,000, co-insurance for amounts exceeding the first S$15,000 of coverage, standardised exclusion clauses, age-differentiated premium rates in two age bands, and direct reimbursement to hospitals upon admissibility of a medical claim. Comprehensive Benefits of RHI FWMI Enhanced II Plan: As charged up to S$100,000 per policy year for eligible hospitalisation expenses",
+      "plan_slug": "foreign-workers-medical-insurance-fwmi-enhanced-ii",
+      "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/foreign-workers-plan/",
+      "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/06/FWMI-Enhanced-II-Brochure-29-May-2025.pdf",
+      "scraped_at": "2026-07-07T02:19:44.089320+00:00"
     }
   ],
   "scraper_health": [
@@ -7101,11 +7375,11 @@
       "display_name": "Aia",
       "last_error": null,
       "last_failure_at": "2026-07-05T07:48:38.453026+00:00",
-      "last_run_at": "2026-07-06T02:26:50.250977+00:00",
-      "last_success_at": "2026-07-06T02:26:50.250977+00:00",
+      "last_run_at": "2026-07-07T02:10:00.090896+00:00",
+      "last_success_at": "2026-07-07T02:10:00.090896+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7116,7 +7390,7 @@
       "last_success_at": "2026-07-05T07:18:04.037817+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7127,7 +7401,7 @@
       "last_success_at": "2026-07-05T07:18:05.385324+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7138,7 +7412,7 @@
       "last_success_at": "2026-07-05T07:19:16.257332+00:00",
       "row_count": 19,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7149,7 +7423,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7160,7 +7434,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7171,7 +7445,7 @@
       "last_success_at": "2026-07-05T07:19:56.760391+00:00",
       "row_count": 19,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7182,7 +7456,7 @@
       "last_success_at": "2026-07-05T07:21:04.785877+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7193,7 +7467,7 @@
       "last_success_at": "2026-07-05T07:21:18.419782+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7204,7 +7478,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7212,7 +7486,7 @@
       "display_name": "Allianz",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7220,7 +7494,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7231,7 +7505,7 @@
       "last_success_at": "2026-07-05T07:52:57.059452+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7242,7 +7516,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7253,18 +7527,18 @@
       "last_success_at": "2026-07-05T07:53:45.995815+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "raffles_health",
       "display_name": "Raffles Health",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:54:01.671788+00:00",
-      "last_success_at": "2026-07-05T07:54:01.671788+00:00",
-      "row_count": 3,
+      "last_run_at": "2026-07-07T02:19:47.089571+00:00",
+      "last_success_at": "2026-07-07T02:19:47.089571+00:00",
+      "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:19:47.089571+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7272,7 +7546,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7280,7 +7554,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7288,7 +7562,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7299,7 +7573,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7307,7 +7581,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7318,7 +7592,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7326,7 +7600,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7334,7 +7608,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7342,7 +7616,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7350,7 +7624,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "not_run"
     },
     {
@@ -7358,7 +7632,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:43:12.294516+00:00",
+      "updated_at": "2026-07-07T02:10:42.517028+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -7374,8 +7648,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-06T02:26:50.880409+00:00",
-      "validation_checked_at": "2026-07-06T02:26:50.880409+00:00",
+      "updated_at": "2026-07-07T02:10:42.516737+00:00",
+      "validation_checked_at": "2026-07-07T02:10:42.516737+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -29206,6 +29480,174 @@
         "scraped_at": "2026-07-05T07:52:56.716802+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:19:44.095498+00:00",
+            "last_modified_at": "Tue, 04 Jul 2023 01:38:43 GMT",
+            "sha256": "f48603620a6d2bf78cd92bd68f6f9bdf7300a7a23c6525cf55aa272bd4d7586e",
+            "size_bytes": 691888,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/raffles-health/raffles-shield/f48603620a6d2bf78cd92bd68f6f9bdf7300a7a23c6525cf55aa272bd4d7586e.pdf",
+            "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/07/Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf"
+          }
+        },
+        "insurer": "raffles_health",
+        "last_verified_at": "2026-07-07T02:19:44.095498+00:00",
+        "plan_slug": "raffles-shield",
+        "scraped_at": "2026-07-07T02:19:44.095498+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/07/Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:19:44.707004+00:00",
+            "last_modified_at": "Thu, 16 May 2024 06:55:44 GMT",
+            "sha256": "8ffda4165c0f85569c0ff7a22980219764d892343b30299cc8b3f6aa2f8bd11a",
+            "size_bytes": 479131,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/raffles-health/raffles-critical-illness-plan/8ffda4165c0f85569c0ff7a22980219764d892343b30299cc8b3f6aa2f8bd11a.pdf",
+            "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2024/05/CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf"
+          }
+        },
+        "insurer": "raffles_health",
+        "last_verified_at": "2026-07-07T02:19:44.707004+00:00",
+        "plan_slug": "raffles-critical-illness-plan",
+        "scraped_at": "2026-07-07T02:19:44.707004+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2024/05/CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Raffles-Elite-Care-15-May-25-V2.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:19:44.874125+00:00",
+            "last_modified_at": "Tue, 20 May 2025 08:15:46 GMT",
+            "sha256": "6b50bcaab37a88ee9df8ec651586af2747e459d8378d6f25ab914ffc43c6c199",
+            "size_bytes": 214817,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/raffles-health/raffles-elite-care/6b50bcaab37a88ee9df8ec651586af2747e459d8378d6f25ab914ffc43c6c199.pdf",
+            "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/05/Raffles-Elite-Care-15-May-25-V2.pdf"
+          }
+        },
+        "insurer": "raffles_health",
+        "last_verified_at": "2026-07-07T02:19:44.874125+00:00",
+        "plan_slug": "raffles-elite-care",
+        "scraped_at": "2026-07-07T02:19:44.874125+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/05/Raffles-Elite-Care-15-May-25-V2.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:19:45.016542+00:00",
+            "last_modified_at": "Tue, 04 Apr 2023 08:18:01 GMT",
+            "sha256": "31fa084ff6d8136c19396d2037866e32bca859f5cf8083a16a91662fc33bf9ad",
+            "size_bytes": 299046,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/raffles-health/lifeline/31fa084ff6d8136c19396d2037866e32bca859f5cf8083a16a91662fc33bf9ad.pdf",
+            "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/04/SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf"
+          }
+        },
+        "insurer": "raffles_health",
+        "last_verified_at": "2026-07-07T02:19:45.016542+00:00",
+        "plan_slug": "lifeline",
+        "scraped_at": "2026-07-07T02:19:45.016542+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/04/SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:19:45.205660+00:00",
+            "last_modified_at": "Thu, 04 Dec 2025 01:15:21 GMT",
+            "sha256": "97bdb137911b4856c7cbb13d0729303254ce52bd5c4f2fc59803f1305dfa3ba7",
+            "size_bytes": 224339,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/raffles-health/worldwide-health-options/97bdb137911b4856c7cbb13d0729303254ce52bd5c4f2fc59803f1305dfa3ba7.pdf",
+            "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/12/SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf"
+          }
+        },
+        "insurer": "raffles_health",
+        "last_verified_at": "2026-07-07T02:19:45.205660+00:00",
+        "plan_slug": "worldwide-health-options",
+        "scraped_at": "2026-07-07T02:19:45.205660+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/12/SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "RCC-Enhanced-III-Brochure-17-Sep-2025.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:19:45.339124+00:00",
+            "last_modified_at": "Thu, 18 Sep 2025 02:09:08 GMT",
+            "sha256": "8ef17e9bb065e94947f6136c55ec3d128a926dee97145cb4d2075f9b24768ecc",
+            "size_bytes": 873937,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/raffles-health/raffles-corporate-care-enhanced-iii/8ef17e9bb065e94947f6136c55ec3d128a926dee97145cb4d2075f9b24768ecc.pdf",
+            "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/09/RCC-Enhanced-III-Brochure-17-Sep-2025.pdf"
+          }
+        },
+        "insurer": "raffles_health",
+        "last_verified_at": "2026-07-07T02:19:45.339124+00:00",
+        "plan_slug": "raffles-corporate-care-enhanced-iii",
+        "scraped_at": "2026-07-07T02:19:45.339124+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/09/RCC-Enhanced-III-Brochure-17-Sep-2025.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "FWMI-Enhanced-II-Brochure-29-May-2025.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:19:45.660306+00:00",
+            "last_modified_at": "Mon, 30 Jun 2025 03:49:16 GMT",
+            "sha256": "2a7f227fe6181f2622029eef76d93ef64c5c800690a8b368fdceb75944f0571b",
+            "size_bytes": 17041996,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/raffles-health/foreign-workers-medical-insurance-fwmi-enhanced-ii/2a7f227fe6181f2622029eef76d93ef64c5c800690a8b368fdceb75944f0571b.pdf",
+            "url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/06/FWMI-Enhanced-II-Brochure-29-May-2025.pdf"
+          }
+        },
+        "insurer": "raffles_health",
+        "last_verified_at": "2026-07-07T02:19:45.660306+00:00",
+        "plan_slug": "foreign-workers-medical-insurance-fwmi-enhanced-ii",
+        "scraped_at": "2026-07-07T02:19:45.660306+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/06/FWMI-Enhanced-II-Brochure-29-May-2025.pdf"
       }
     ],
     "plans": [
@@ -31982,56 +32424,162 @@
       {
         "insurer": "raffles_health",
         "plan_benefits": [
-          "Home",
-          "Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA)",
-          "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
-          "Singapore Coverage Raffles Shield Raffles Critical Illness Plan",
-          "Raffles Shield",
-          "Raffles Critical Illness Plan"
+          "We help cover medical expenses so that you can focus on making the best healthcare decisions for you and your family.",
+          "Raffles Shield is a medical insurance plan in Singapore that protects you against unexpected medical bills and can be paid by MediSave",
+          "File a Raffles Shield claim",
+          "Search for a Raffles Shield Panel Specialist",
+          "Book an appointment with a Raffles Shield Panel Specialist",
+          "Read health articles curated by healthcare professionals",
+          "File a medical claim on behalf of my clients",
+          "This will apply to all Insured who receive COVID-19 vaccinations approved by the Health Sciences Authority (HSA). This special coverage will be provided till 31 December 2022."
         ],
-        "plan_description": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Group Insurance Letter of Guarantee (LOG) For Our Partners Agent Resource Forms and Downloads Resource Centre About Us Blog Webinar Resource Library COVID-19 Resource Library Insurance Education Forms and Downloads Social Media Facebook Instagram Linkedin Contact Us X Contact Us",
-        "plan_name": "Best Health Insurance Plans in Singapore for Everyone",
-        "plan_overview": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For In…",
-        "plan_slug": "best-health-insurance-plans-in-singapore-for-everyone",
-        "plan_url": "https://www.raffleshealthinsurance.com/",
-        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2026/05/FAQ_on_Raffles-Riders_May-2026.pdf",
-        "scraped_at": "2026-07-05T07:54:01.529941+00:00"
+        "plan_description": "Raffles Shield is one of the best medical insurance plans in Singapore due to its comprehensive coverage, integration with MediSave, and focus on providing financial protection.",
+        "plan_name": "Raffles Shield",
+        "plan_overview": "We help cover medical expenses so that you can focus on making the best healthcare decisions for you and your family. How can we help you today? Use our navigation panel to get to where you want quickly and easily.",
+        "plan_slug": "raffles-shield",
+        "plan_url": "https://www.raffleshealthinsurance.com/products/raffles-shield/",
+        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/07/Raffles-Shield-Product-Summary-1-April-2023-Final-v3.pdf",
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
       },
       {
         "insurer": "raffles_health",
         "plan_benefits": [
-          "Home",
-          "Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA)",
-          "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
-          "Singapore Coverage Raffles Shield Raffles Critical Illness Plan",
-          "Raffles Shield",
-          "Raffles Critical Illness Plan"
+          "Safeguard your financial future against the unexpected challenges of Critical Illness",
+          "This plan covers for 37 critical illnesses with an option for early and intermediate stage critical illness coverage.",
+          "Start Your Protection Early with Raffles Critical Illness Plan",
+          "Receive 100%⁵ of lump sum cash payout upon diagnosis of the covered 37 major stage critical illnesses, as defined in LIA⁶.",
+          "100% Payout for 37 Critical Illnesses",
+          "Enhanced protection against early & intermediate stage critical illnesses",
+          "Choose to cover for an additional sum assured of 50% to 100%⁷ for 9 common Early and Intermediate Stage critical illnesses.",
+          "Option to add Early Critical Illness Rider"
         ],
-        "plan_description": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Group Insurance Letter of Guarantee (LOG) For Our Partners Agent Resource Forms and Downloads Resource Centre About Us Blog Webinar Resource Library COVID-19 Resource Library Insurance Education Forms and Downloads Social Media Facebook Instagram Linkedin Contact Us X Contact Us",
-        "plan_name": "Be the boss that provides health insurance benefits that keep both your employees and business thriving in Singapore.",
-        "plan_overview": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For In…",
-        "plan_slug": "be-the-boss-that-provides-health-insurance-benefits-that-keep-both-your-employees-and-business-thriving-in-singapore",
-        "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:54:01.529941+00:00"
+        "plan_description": "The Raffles Critical Illness Plan provides essential financial protection, offering comprehensive coverage for 37 critical illnesses. Click here to learn more.",
+        "plan_name": "Raffles Critical Illness Plan",
+        "plan_overview": "Safeguard your financial future against the unexpected challenges of Critical Illness This plan covers for 37 critical illnesses with an option for early and intermediate stage critical illness coverage. AVERAGE HEART ATTACK CASES A DAY IN SINGAPORE 3",
+        "plan_slug": "raffles-critical-illness-plan",
+        "plan_url": "https://www.raffleshealthinsurance.com/products/raffles-critical-illness-plan/",
+        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2024/05/CCD24010013-Critical-Illness-Brochure_9-May-2024.pdf",
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
       },
       {
         "insurer": "raffles_health",
         "plan_benefits": [
-          "Home",
-          "Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA)",
-          "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
-          "Singapore Coverage Raffles Shield Raffles Critical Illness Plan",
-          "Raffles Shield",
-          "Raffles Critical Illness Plan"
+          "^Areas of cover include Singapore, Malaysia, Indonesia, Philippines, Thailand, Brunei, Vietnam, Myanmar, Cambodia, Laos, China (excluding Hong Kong), India and South Korea.",
+          "An All-Inclusive Healthcare Cover",
+          "Including General Practitioner (GP), Specialist, Teleconsultation and Traditional Chinese Medicine (TCM) visits",
+          "First Dollar Coverage",
+          "Receive payout once an insurable event occurs. No deductible and co-payment required.",
+          "Daily Hospital Cash Benefit",
+          "Receive up to S$200 cash benefit per day for admissions to Raffles Hospital, Singapore.",
+          "Medical Second Opinion"
         ],
-        "plan_description": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Group Insurance Letter of Guarantee (LOG) For Our Partners Agent Resource Forms and Downloads Resource Centre About Us Blog Webinar Resource Library COVID-19 Resource Library Insurance Education Forms and Downloads Social Media Facebook Instagram Linkedin Contact Us X Contact Us",
-        "plan_name": "Third Party Administration",
-        "plan_overview": "Home Products For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline Worldwide Health Options For Businesses and Employers Singapore/Regional Coverage Customised Group Insurance Raffles Corporate Care Enhanced III Foreign Workers Medical Insurance (FWMI) Enhanced II Global Coverage Company Oil and Gas Maritime Third Party Administration (TPA) For Our Clients For Individuals (Personal Insurance) File A Personal Claim Request for Letter of Guarantee (LOG) Raffles Shield Specialists Find A Specialist Book A Specialist Appointment Raffles Shield Pre-Authorisation Request Extended Panel Specialist For Employees (Group Insurance) File A Company Claim Request for Letter of Guarantee (LOG) For In…",
-        "plan_slug": "third-party-administration",
-        "plan_url": "https://www.raffleshealthinsurance.com/products/business/third-party-administration/",
+        "plan_description": "Raffles Elite Care will take care of your healthcare needs when working or living in Singapore, Malaysia, Indonesia, Philippines, Thailand, Brunei, Vietnam, Myanmar, Cambodia, Laos, China (excluding Hong Kong), India and South Korea.",
+        "plan_name": "Raffles Elite Care",
+        "plan_overview": "^Areas of cover include Singapore, Malaysia, Indonesia, Philippines, Thailand, Brunei, Vietnam, Myanmar, Cambodia, Laos, China (excluding Hong Kong), India and South Korea. An All-Inclusive Healthcare Cover Including General Practitioner (GP), Specialist, Teleconsultation and Traditional Chinese Medicine (TCM) visits",
+        "plan_slug": "raffles-elite-care",
+        "plan_url": "https://www.raffleshealthinsurance.com/products/personal/regional-medical-cover/raffles-elite-care/",
+        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/05/Raffles-Elite-Care-15-May-25-V2.pdf",
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+      },
+      {
+        "insurer": "raffles_health",
+        "plan_benefits": [
+          "A premium international health plan that helps give you peace of mind at home and abroad. Insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+          "Connecting you with global medical expertise",
+          "The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+          "An expandable health plan for at home and abroad",
+          "Critical illness and cancer cover",
+          "Direct settlement with a large worldwide network of over 1.7 million providers",
+          "Direct access to specialist treatment without the need for a GP referral",
+          "Deductible options to manage the cost of your plan"
+        ],
+        "plan_description": "Lifeline is a premium international health plan that helps give you peace of mind at home and abroad. Insured by Raffles Health Insurance and administered by Bupa Global.",
+        "plan_name": "Lifeline",
+        "plan_overview": "A premium international health plan that helps give you peace of mind at home and abroad. Insured by Raffles Health Insurance and internationally administered by Bupa Global. Connecting you with global medical expertise The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+        "plan_slug": "lifeline",
+        "plan_url": "https://www.raffleshealthinsurance.com/products/personal/global-medical-cover/lifeline-3/",
+        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2023/04/SGP-LIFE-SALE-EN-XXXX-2301-0041414-LR.pdf",
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+      },
+      {
+        "insurer": "raffles_health",
+        "plan_benefits": [
+          "A modular international health insurance plan for individuals and families insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+          "The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global.",
+          "An expandable health plan for at home and abroad",
+          "Customisable plan to suit your specific health needs",
+          "Critical illness and cancer cover",
+          "Direct access to specialist treatment without the need for a GP referral",
+          "A choice of preventive care to help maintain your health",
+          "Direct settlement with a large worldwide network of over 2.1 million providers"
+        ],
+        "plan_description": "With this Worldwide Health Options plan, you have the freedom to customise your health insurance to your needs and your family's way of life.",
+        "plan_name": "Worldwide Health Options",
+        "plan_overview": "A modular international health insurance plan for individuals and families insured by Raffles Health Insurance and internationally administered by Bupa Global. The health plans are insured by Raffles Health Insurance and internationally administered by Bupa Global. An expandable health plan for at home and abroad",
+        "plan_slug": "worldwide-health-options",
+        "plan_url": "https://www.raffleshealthinsurance.com/worldwide-health-options/",
+        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/12/SGP-BWHO-SALE-EN-XXXX-2510-0060995-LR.pdf",
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+      },
+      {
+        "insurer": "raffles_health",
+        "plan_benefits": [
+          "Our employee healthcare benefits are in the following areas:",
+          "Group Hospitalisation & Surgical",
+          "Group Critical Illness",
+          "Enjoy More Flexibility in Benefits and Price",
+          "You have a choice of healthcare providers, benefits and features. The flexible schemes we provide are:",
+          "RHI broad network coverage of clinics",
+          "Raffles Medical Group clinics",
+          "Special corporate rates for vaccinations, health screening, pre-employment, work-permit, employment pass examinations, dental, GP and specialist clinics"
+        ],
+        "plan_description": "In order to give employees a seamless and integrated healthcare experience, we build employee benefit solutions that meet the needs and financial constraints of the businesses.",
+        "plan_name": "Customised Group Insurance",
+        "plan_overview": "Raffles Health Insurance (RHI) provides comprehensive healthcare and wellness benefits for employers seeking coverage for their employees. Backed by in-house medical expertise, we design employee benefit solution that suit the company needs and budget, manage their employee benefit plan to provide a seamless and integrated healthcare experience to their employees. Our employee healthcare benefits are in the following areas: Group Hospitalisation & Surgical",
+        "plan_slug": "customised-group-insurance",
+        "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/customised-group-insurance/",
         "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:54:01.529941+00:00"
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+      },
+      {
+        "insurer": "raffles_health",
+        "plan_benefits": [
+          "Let Raffles Corporate Care Enhanced III provide your employees with the right coverage in an easy and cost-effective way.",
+          "Allows you to start your policy with just 1 employee* in the first year",
+          "Raffles Hospital Option",
+          "Access to private healthcare services at a lower cost",
+          "Premium rates are determined based on the claims experience of the entire Raffles Corporate Care Enhanced III portfolio",
+          "Fuss-free experience with our mobile app and enjoy cashless payment at panel clinics under Raffles Health Insurance (RHI)",
+          "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline",
+          "Singapore Coverage Raffles Shield Raffles Critical Illness Plan"
+        ],
+        "plan_description": "Let our corporate insurance plan be your partner in safeguarding the health & welfare of your employees. Raffles Corporate Care Enhanced II is an “off-the-shelf” Employee Benefits Solution.",
+        "plan_name": "Raffles Corporate Care Enhanced III",
+        "plan_overview": "It helps to alleviate your employees’ costs for hospitalisation, outpatient treatments, dental and non-medical needs. Our solution offers flexibility and extensive coverage, ensuring your employees receive the right medical treatment and financial protection during unforeseen illnesses and accidents. Employers can also choose to extend this coverage to their employees’ dependants. Allows you to start your policy with just 1 employee* in the first year Raffles Hospital Option",
+        "plan_slug": "raffles-corporate-care-enhanced-iii",
+        "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/raffles-corporate-care-enhanced-iii/",
+        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/09/RCC-Enhanced-III-Brochure-17-Sep-2025.pdf",
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
+      },
+      {
+        "insurer": "raffles_health",
+        "plan_benefits": [
+          "Comprehensive Benefits of RHI FWMI Enhanced II Plan:",
+          "As charged up to S$100,000 per policy year for eligible hospitalisation expenses",
+          "Compliant with Ministry of Manpower’s (MOM) Enhanced Medical Insurance Requirements.",
+          "Flexibility to choose from 2 plans with annual limits of up to S$100,000, co-insurance of 25% applicable for claims in excess of S$15,000 per policy year.",
+          "Choice of including rider to waive 25% co-insurance.",
+          "No waiting period. Pre-existing conditions are covered from inception.",
+          "Coverage can start from just 1 foreign worker. Eligibility applies to employees aged 16 to 70 (age next birthday), with coverage renewable up to age 75.",
+          "For Individuals and Families Singapore Coverage Raffles Shield Raffles Critical Illness Plan Regional Coverage Raffles Elite Care Global Coverage Lifeline"
+        ],
+        "plan_description": "Ensure the well-being of your foreign workforce with our Foreign Workers Plan. It offers coverage for your foreign employee against hospitalization, surgery cost and other related expenses.",
+        "plan_name": "Foreign Workers Medical Insurance (FWMI) Enhanced II",
+        "plan_overview": "Starting from 1 July 2025, employers will be required to provide medical insurance for their foreign workers, which must include enhanced features such as an annual coverage limit of at least S$60,000, co-insurance for amounts exceeding the first S$15,000 of coverage, standardised exclusion clauses, age-differentiated premium rates in two age bands, and direct reimbursement to hospitals upon admissibility of a medical claim. Comprehensive Benefits of RHI FWMI Enhanced II Plan: As charged up to S$100,000 per policy year for eligible hospitalisation expenses",
+        "plan_slug": "foreign-workers-medical-insurance-fwmi-enhanced-ii",
+        "plan_url": "https://www.raffleshealthinsurance.com/products/business/singapore-regional-medical-cover/foreign-workers-plan/",
+        "product_brochure_url": "https://www.raffleshealthinsurance.com/wp-content/uploads/2025/06/FWMI-Enhanced-II-Brochure-29-May-2025.pdf",
+        "scraped_at": "2026-07-07T02:19:44.089320+00:00"
       }
     ],
     "scraper_health": [
@@ -32040,11 +32588,11 @@
         "display_name": "Aia",
         "last_error": null,
         "last_failure_at": "2026-07-05T07:48:38.453026+00:00",
-        "last_run_at": "2026-07-06T02:26:50.250977+00:00",
-        "last_success_at": "2026-07-06T02:26:50.250977+00:00",
+        "last_run_at": "2026-07-07T02:10:00.090896+00:00",
+        "last_success_at": "2026-07-07T02:10:00.090896+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32055,7 +32603,7 @@
         "last_success_at": "2026-07-05T07:18:04.037817+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32066,7 +32614,7 @@
         "last_success_at": "2026-07-05T07:18:05.385324+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32077,7 +32625,7 @@
         "last_success_at": "2026-07-05T07:19:16.257332+00:00",
         "row_count": 19,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32088,7 +32636,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32099,7 +32647,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32110,7 +32658,7 @@
         "last_success_at": "2026-07-05T07:19:56.760391+00:00",
         "row_count": 19,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32121,7 +32669,7 @@
         "last_success_at": "2026-07-05T07:21:04.785877+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32132,7 +32680,7 @@
         "last_success_at": "2026-07-05T07:21:18.419782+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32143,7 +32691,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32151,7 +32699,7 @@
         "display_name": "Allianz",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32159,7 +32707,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32170,7 +32718,7 @@
         "last_success_at": "2026-07-05T07:52:57.059452+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32181,7 +32729,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32192,18 +32740,18 @@
         "last_success_at": "2026-07-05T07:53:45.995815+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "raffles_health",
         "display_name": "Raffles Health",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:54:01.671788+00:00",
-        "last_success_at": "2026-07-05T07:54:01.671788+00:00",
-        "row_count": 3,
+        "last_run_at": "2026-07-07T02:19:47.089571+00:00",
+        "last_success_at": "2026-07-07T02:19:47.089571+00:00",
+        "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:19:47.089571+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32211,7 +32759,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32219,7 +32767,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32227,7 +32775,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32238,7 +32786,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32246,7 +32794,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32257,7 +32805,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32265,7 +32813,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32273,7 +32821,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32281,7 +32829,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32289,7 +32837,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "not_run"
       },
       {
@@ -32297,7 +32845,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:43:12.294516+00:00",
+        "updated_at": "2026-07-07T02:10:42.517028+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -32313,8 +32861,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-06T02:26:50.880409+00:00",
-        "validation_checked_at": "2026-07-06T02:26:50.880409+00:00",
+        "updated_at": "2026-07-07T02:10:42.516737+00:00",
+        "validation_checked_at": "2026-07-07T02:10:42.516737+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
