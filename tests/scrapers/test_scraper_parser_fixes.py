@@ -13,6 +13,7 @@ from src.scrapers import (
     hsbc,
     iii,
     income,
+    manulife,
     panel_resources,
     prudential,
     raffles_health,
@@ -342,6 +343,24 @@ class ScraperParserFixTests(unittest.TestCase):
                 "https://www.income.com.sg/claims/travel-claims",
             )
         )
+
+    def test_manulife_listing_parser_extracts_plan_cards(self):
+        html = (FIXTURES_DIR / "manulife_listing.html").read_text()
+        rows = manulife.parse_listing_html(html, manulife.LIFE_URL)
+
+        self.assertEqual(1, len(rows))
+        self.assertEqual(rows[0]["plan_name"], "LifeReady Plus (II)")
+        self.assertIn("Boost your coverage", rows[0]["plan_overview"])
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(manulife.TABLE_NAME, rows)),
+        )
+
+    def test_manulife_rejects_access_denied_pages(self):
+        html = (FIXTURES_DIR / "manulife_reject.html").read_text()
+
+        self.assertEqual([], manulife.parse_listing_html(html, manulife.LIFE_URL))
+        self.assertEqual([], manulife.catalog_rows_for_url("https://www.manulife.com.sg/"))
 
     def test_uoi_parser_treats_brochure_pdf_as_optional(self):
         row = uoi.parse_product_html(
