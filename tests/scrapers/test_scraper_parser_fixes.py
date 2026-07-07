@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 
 from src.backend.helper import format_plan_rows
-from src.scrapers import chubb, iii, panel_resources, raffles_health, uoi
+from src.scrapers import chubb, iii, panel_resources, prudential, raffles_health, uoi
 from src.validation.plan_quality import validate_plan_rows
 
 FIXTURES_DIR = Path(__file__).resolve().parents[1] / "fixtures"
@@ -160,6 +160,55 @@ class ScraperParserFixTests(unittest.TestCase):
             [],
             validate_plan_rows(format_plan_rows(raffles_health.TABLE_NAME, rows)),
         )
+
+    def test_prudential_product_parser_rejects_category_hero_copy(self):
+        category_html = (FIXTURES_DIR / "prudential_category.html").read_text()
+
+        self.assertIsNone(
+            prudential.parse_product_html(
+                category_html,
+                "https://www.prudential.com.sg/products/health-insurance",
+            )
+        )
+
+    def test_prudential_product_parser_extracts_detail_page(self):
+        product_html = (FIXTURES_DIR / "prudential_product.html").read_text()
+        row = prudential.parse_product_html(
+            product_html,
+            "https://www.prudential.com.sg/products/life-insurance/term-life-insurance/pruactive-term",
+        )
+
+        self.assertEqual(row["plan_name"], "PRU Active Term")
+        self.assertIn("term life insurance plan", row["plan_description"])
+        self.assertNotIn("Protect you and your family", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.prudential.com.sg/-/media/project/prudential/pdf/ebrochures/pruactive-term/pruactive_term_ebrochure_english.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(prudential.TABLE_NAME, [row])),
+        )
+
+    def test_prudential_discovery_filters_to_product_details(self):
+        category_url = "https://www.prudential.com.sg/products/health-insurance"
+        product_url = (
+            "https://www.prudential.com.sg/products/life-insurance/term-life-insurance/"
+            "pruactive-term/"
+        )
+        session = FakeSession(
+            {
+                category_url: (FIXTURES_DIR / "prudential_category.html").read_text(),
+                product_url: (FIXTURES_DIR / "prudential_product.html").read_text(),
+            }
+        )
+
+        self.assertEqual(
+            [product_url],
+            prudential.discover_product_urls(session=session, discovery_urls=[category_url]),
+        )
+        rows = prudential.scrape_prudential(session=session, discovery_urls=[category_url])
+        self.assertEqual(["PRU Active Term"], [row["plan_name"] for row in rows])
 
 
 if __name__ == "__main__":
