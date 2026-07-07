@@ -364,21 +364,47 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual([], manulife.catalog_rows_for_url("https://www.manulife.com.sg/"))
 
     def test_uoi_parser_treats_brochure_pdf_as_optional(self):
+        html = (FIXTURES_DIR / "uoi_product.html").read_text()
+        row = uoi.parse_product_html(
+            html,
+            "https://www.uoi.com.sg/personal/travel-insurance.page",
+        )
+
+        self.assertEqual(row["plan_name"], "UniTravel Insurance")
+        self.assertIn("Pack your bags", row["plan_description"])
+        self.assertIn("Medical expenses", row["plan_benefits"][1])
+        self.assertNotIn("Very good service", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.uoi.com.sg/assets/web-resources/uoi/pdfs/insurance/unitravel-brochure.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(uoi.TABLE_NAME, [row])))
+
+    def test_uoi_parser_allows_missing_brochure_pdf(self):
         row = uoi.parse_product_html(
             """
             <html><head><title>UniTravel Insurance</title></head><body>
             <h1>UniTravel Insurance</h1><p>Travel protection.</p><li>Medical expenses</li>
-            <a href="/assets/unitravel-brochure.pdf">UniTravel Brochure</a>
             </body></html>
             """,
             "https://www.uoi.com.sg/personal/travel-insurance.page",
         )
 
         self.assertEqual(row["plan_name"], "UniTravel Insurance")
-        self.assertEqual(
-            row["product_brochure_url"],
-            "https://www.uoi.com.sg/assets/unitravel-brochure.pdf",
-        )
+        self.assertEqual(row["product_brochure_url"], "")
+
+    def test_uoi_rejects_home_commercial_claims_and_takaful_pages(self):
+        html = (FIXTURES_DIR / "uoi_reject.html").read_text()
+
+        for url in (
+            "https://www.uoi.com.sg/index.page",
+            "https://www.uoi.com.sg/commercial/general-insurance.page",
+            "https://www.uoi.com.sg/commercial/specialised-insurance.page",
+            "https://www.uoi.com.sg/claims-assistance.page",
+            "https://www.uoi.com.sg/takaful.page",
+        ):
+            with self.subTest(url=url):
+                self.assertIsNone(uoi.parse_product_html(html, url))
 
     def test_panel_pdf_reader_caps_streamed_bytes(self):
         with self.assertRaises(ValueError):
