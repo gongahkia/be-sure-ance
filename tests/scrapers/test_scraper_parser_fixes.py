@@ -111,6 +111,29 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual(row["plan_name"], "Personal Accident Insurance")
         self.assertEqual(row["plan_description"], "Personal accident cover.")
         self.assertIn("Accident-related injury protection", row["plan_benefits"])
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(chubb.TABLE_NAME, [row])),
+        )
+
+    def test_chubb_rejects_listing_and_support_pages_as_plan_rows(self):
+        html = """
+        <html><body><h1>Contact Us</h1>
+        <p>Explore Chubb claims centre and contact us pages.</p></body></html>
+        """
+
+        self.assertIsNone(
+            chubb.parse_product_html(
+                html,
+                "https://www.chubb.com/sg-en/individuals-families.html",
+            )
+        )
+        self.assertIsNone(
+            chubb.parse_product_html(
+                html,
+                "https://www.chubb.com/sg-en/contact-us.html",
+            )
+        )
 
     def test_china_life_product_parser_extracts_summary_and_brochure(self):
         html = (FIXTURES_DIR / "china_life_product.html").read_text()

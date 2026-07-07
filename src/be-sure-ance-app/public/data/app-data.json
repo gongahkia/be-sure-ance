@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T03:46:19+00:00",
+  "generated_at": "2026-07-07T03:51:27+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -6959,222 +6959,6 @@
   ],
   "plans": [
     {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Staycation Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "Whether you’re going on vacation or taking a business trip, Chubb Travel Insurance offers personalised travel insurance coverage (incl. COVID-19) you need to travel with confidence, security, and greater peace of mind.",
-        "Unlimited coverage for emergency medical evacuation and repatriation",
-        "Emergency cover up to $20,000 for travel expenses, accommodation, meals and more",
-        "4 hours travel delay cover"
-      ],
-      "plan_description": "Chubb Travel Insurance offers customisable travel insurance cover for individuals and families with worldwide access to medical assistance.",
-      "plan_name": "Overseas Travel Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "overseas-travel-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/travel-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "In support of the Singapore Government’s effort to boost local tourism and to provide Singapore residents greater confidence to head out and explore the city, Chubb now offers Travel Local - a domestic travel insurance product designed to provide Singapore residents with greater peace of mind when taking a local holiday or staycation, with cover for personal accident and staycation inconvenience.",
-        "If you are taking a Singapoliday , why not complement it with Travel Local so you can rediscover Singapore with greater confidence!",
-        "S$10,000 Accidental Death and Disablement benefit",
-        "S$1,000 Staycation Cancellation benefit"
-      ],
-      "plan_description": "Travel Local is a staycation insurance plan specially designed to provide domestic travellers with greater peace of mind when taking a local holiday or staycation, while supporting local businesses.",
-      "plan_name": "Staycation Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "staycation-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/staycation-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Staycation Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "Chubb offers Coach & Ferry Travel Insurance, through our partners and intermediaries, to provide travellers to Malaysia, Indonesia & Thailand with greater peace of mind knowing you're covered for travel inconveniences, personal accident and medical expenses.",
-        "Accidental death & permanent disablement benefit",
-        "The Coach & Ferry Travel Insurance is distributed through our partners and intermediaries. If are keen to partner with Chubb, get in touch with our Travel Team.",
-        "SDIC Policy Owners' Protection Scheme"
-      ],
-      "plan_description": "A plan that provides protection against travel inconveniences and medical coverages for coach and ferry commuters.",
-      "plan_name": "Coach & Ferry Travel Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "coach-ferry-travel-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/coach-and-ferry-travel-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Staycation Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "At Chubb, when it comes to helping you protect your valuable possessions, we go beyond your expectations. Our Masterpiece ® policy provides coverage for individuals with significant assets to protect, and who appreciate superior levels of insurance cover and service for their homes, contents, fine art, jewellery, antiques, collections and personal liability.",
-        "Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service.",
-        "Handbags were stolen from our customer's home in Singapore and were never recovered. Chubb paid S$140,000 to replace the bags."
-      ],
-      "plan_description": "Chubb’s flagship prestige home and contents offering, Masterpiece is for people with significant assets to insure, who appreciate a premium level of cover and service that’s customisable to their needs.",
-      "plan_name": "Home and Valuables Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "home-and-valuables-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/home-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Staycation Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "With Chubb PAL Protect ® II (Chubb Personal Accident & Lifestyle Protect ® II), you can rest easy knowing that you and your loved ones are covered for accident-related injuries and disabilities, as well as up to 14 types of covered diseases.",
-        "Up to S$1,000,000 lump sum payout to your estate in the event of accidental death. Coverage amount is doubled if the accident happens on a public conveyance.",
-        "Covers 14 infectious diseases including Dengue Fever, Hand, Foot & Mouth Disease (HFMD), food poisoning, and more."
-      ],
-      "plan_description": "Accidents happen whenever and wherever you least expect them. That's why a comprehensive personal accident insurance that provides cover when you are abroad is so important. Contact Chubb Singapore for more information.",
-      "plan_name": "Personal Accident Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "personal-accident-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/personal-accident-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Staycation Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "Dental care in Singapore can be costly. Often overlooked, dental care costs are usually not extensively covered in basic health insurance plans. Yet, routine dental visits and preventive treatments are essential to maintain your dental health.",
-        "To help you manage the high cost of dental bills, Chubb offers dental insurance, through our partners and intermediaries, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits for cleaning and fluoride.",
-        "Coverage on emergency dental treatments, routine preventive treatments and X-rays",
-        "Coverage on teeth extractions and root canal treatments"
-      ],
-      "plan_description": "Chubb offers dental insurance, through our partners, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits.",
-      "plan_name": "Dental Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "dental-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/dental-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Staycation Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "When accidents or illnesses happen, they can lead to costly hospital charges, as well as loss of income. Protect yourself and receive coverage for your hospitalisation expenses with our hospital income insurance.",
-        "Chubb offers hospital income insurance, through our partners and intermediaries, to provide daily hospital cash benefits, additional supplementary income and more, to ease some of your financial burdens so you can focus on your recovery.",
-        "Daily hospital cash benefit due to accidents or illnesses",
-        "ICU daily hospital cash benefit"
-      ],
-      "plan_description": "Chubb offers protection against loss of income from hospitalisation, due to accidents and illnesses, so you can focus on your recovery.",
-      "plan_name": "Hospital Income Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "hospital-income-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/hospital-income-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Staycation Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Mobile Phone Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "Please note that effective 14 February 2025, the administrative service provider for Jewellery and Watch Cover policies will be changed from Q Report (Jewellers Loop Asia Pte. Ltd.) to Chubb Insurance Singapore Limited.",
-        "Accordingly, we will also be migrating the Jewellery & Watch Cover e-commerce website from the current domain to a new domain. The current domain will be retired on 1 January 2025. To support this transition, purchase of any new Jewellery & Watch Cover policies is currently unavailable.",
-        "Purchase of new Jewellery & Watch Cover policies is currently unavailable. You can consider purchasing Masterpiece ® , Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service."
-      ],
-      "plan_description": "A lifestyle insurance plan designed protect your jewellery and watches so that you can wear them with confidence.",
-      "plan_name": "Jewellery & Watch Cover",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "jewellery-watch-cover",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/jewellery-watch-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "chubb",
-      "plan_benefits": [
-        "Overseas Travel Insurance",
-        "Staycation Insurance",
-        "Coach & Ferry Travel Insurance",
-        "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-        "Dental Insurance",
-        "Hospital Income Insurance",
-        "Jewellery and Watch Insurance",
-        "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-        "Mobile phones have become a vital part of our lives, and many of us are heavily reliant on them. We use them to manage our social calendars, store memories by recording videos and taking photographs, keep in touch with our friends and family members, and so much more. So, it makes sense to take steps to protect them. What happens if your mobile phone is damaged? While we may not be able to retrieve those memories for you, we will be able to help alleviate further anxiety. Chubb offers mobile phone protection, through our partners, which provides coverage for accidental or malicious damage and repair or replacement of your device.",
-        "Coverage for loss, theft and damage to mobile phone (including accidental damage, screen damage or water/liquid damage)",
-        "Accidental and malicious cover for devices up to 36 months old, at point of enrolment",
-        "Worldwide coverage"
-      ],
-      "plan_description": "Chubb offers mobile phone protection, through our partners, to provide coverage for accidental or malicious damage and repair or replacement of your device.",
-      "plan_name": "Mobile Phone Insurance",
-      "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-      "plan_slug": "mobile-phone-insurance",
-      "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
       "insurer": "hsbc",
       "plan_benefits": [],
       "plan_description": "A whole life insurance plan with multiplied coverage, a payout option and optional riders to enhance your critical illness protection.",
@@ -12192,6 +11976,174 @@
       "plan_url": "https://www.chinalife.com.sg/products/china-life-multiplier-guardian-supreme",
       "product_brochure_url": "https://www.chinalife.com.sg/sites/default/files/product/China%20Life%20Multiplier%20Guardian%20Supreme%20brochure_ENG.pdf",
       "scraped_at": "2026-07-07T03:45:27.556661+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "Whether you’re going on vacation or taking a business trip, Chubb Travel Insurance offers personalised travel insurance coverage (incl. COVID-19) you need to travel with confidence, security, and greater peace of mind.",
+        "Overseas medical expenses up to $2,000,000",
+        "Medical expenses in Singapore up to $20,000",
+        "Unlimited coverage for emergency medical evacuation and repatriation",
+        "Emergency cover up to $20,000 for travel expenses, accommodation, meals and more",
+        "4 hours travel delay cover",
+        "\"Very prompt and responsive. Great claims experience.\" - Matthew X",
+        "\"Thank you for the quick respond [sic]! Was very upset when I realised I lost my wallet and cash together with it. Thank you for hassle-free claim. Really appreciate it! Thank you once again\" - Rukumany A",
+        "Chubb Travel Insurance offers 4 plan types with 6 different optional add-on benefits for every traveller, destination and budget."
+      ],
+      "plan_description": "Chubb Travel Insurance offers customisable travel insurance cover for individuals and families with worldwide access to medical assistance.",
+      "plan_name": "Overseas Travel Insurance",
+      "plan_overview": "Whether you’re going on vacation or taking a business trip, Chubb Travel Insurance offers personalised travel insurance coverage (incl. COVID-19) you need to travel with confidence, security, and greater peace of mind. Overseas medical expenses up to $2,000,000 Medical expenses in Singapore up to $20,000 Unlimited coverage for emergency medical evacuation and repatriation",
+      "plan_slug": "overseas-travel-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/travel-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "In support of the Singapore Government’s effort to boost local tourism and to provide Singapore residents greater confidence to head out and explore the city, Chubb now offers Travel Local - a domestic travel insurance product designed to provide Singapore residents with greater peace of mind when taking a local holiday or staycation, with cover for personal accident and staycation inconvenience.",
+        "If you are taking a Singapoliday , why not complement it with Travel Local so you can rediscover Singapore with greater confidence!",
+        "S$10,000 Accidental Death and Disablement benefit",
+        "S$1,000 Staycation Cancellation benefit",
+        "This policy covers you up to 30 days of staycation.",
+        "Chubb Travel Insurance offers 4 plan types with 6 different optional add-on benefits for every traveller, destination and budget."
+      ],
+      "plan_description": "Travel Local is a staycation insurance plan specially designed to provide domestic travellers with greater peace of mind when taking a local holiday or staycation, while supporting local businesses.",
+      "plan_name": "Staycation Insurance",
+      "plan_overview": "In support of the Singapore Government’s effort to boost local tourism and to provide Singapore residents greater confidence to head out and explore the city, Chubb now offers Travel Local - a domestic travel insurance product designed to provide Singapore residents with greater peace of mind when taking a local holiday or staycation, with cover for personal accident and staycation inconvenience. If you are taking a Singapoliday , why not complement it with Travel Local so you can rediscover Singapore with greater confidence! S$10,000 Accidental Death and Disablement benefit S$1,000 Staycation Cancellation benefit",
+      "plan_slug": "staycation-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/staycation-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "Whether you’re travelling to Malaysia for a day trip or heading to Indonesia and Thailand for the weekend via coach/ferry, mishaps may happen, leading to costly medical expenses and other unplanned expenses.",
+        "Chubb offers Coach & Ferry Travel Insurance, through our partners and intermediaries, to provide travellers to Malaysia, Indonesia & Thailand with greater peace of mind knowing you're covered for travel inconveniences, personal accident and medical expenses.",
+        "Overseas medical expenses up to S$35,000",
+        "Emergency medical evacuation & repatriation up to S$35,000",
+        "Accidental death & permanent disablement benefit",
+        "Accidental medical expenses reimbursement",
+        "Emergency medical evacuation & repatriation up to S$5,000",
+        "The Coach & Ferry Travel Insurance is distributed through our partners and intermediaries. If are keen to partner with Chubb, get in touch with our Travel Team."
+      ],
+      "plan_description": "A plan that provides protection against travel inconveniences and medical coverages for coach and ferry commuters.",
+      "plan_name": "Coach & Ferry Travel Insurance",
+      "plan_overview": "Whether you’re travelling to Malaysia for a day trip or heading to Indonesia and Thailand for the weekend via coach/ferry, mishaps may happen, leading to costly medical expenses and other unplanned expenses. Chubb offers Coach & Ferry Travel Insurance, through our partners and intermediaries, to provide travellers to Malaysia, Indonesia & Thailand with greater peace of mind knowing you're covered for travel inconveniences, personal accident and medical expenses. Overseas medical expenses up to S$35,000 Emergency medical evacuation & repatriation up to S$35,000",
+      "plan_slug": "coach-ferry-travel-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/coach-and-ferry-travel-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "At Chubb, when it comes to helping you protect your valuable possessions, we go beyond your expectations. Our Masterpiece ® policy provides coverage for individuals with significant assets to protect, and who appreciate superior levels of insurance cover and service for their homes, contents, fine art, jewellery, antiques, collections and personal liability.",
+        "Right from the start, you’ll see that Chubb is different. We don’t simply process claims. We look for ways to prevent damage from happening and go out of our way to make the claim process easy for you if something happens to you or your valued possessions.",
+        "Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service.",
+        "A kitchen fire broke out in an apartment and our customer incurred fees for temporary accommodation and for the replacement cost of damaged appliances and furniture. Chubb paid S$93,000 for this claim.",
+        "Handbags were stolen from our customer's home in Singapore and were never recovered. Chubb paid S$140,000 to replace the bags.",
+        "We agree with you upfront, exactly what is insured and for how much. This eliminates over and under-insurance, and any haggling after the event. We also offer ‘agreed value’ for valuables and fine art - so you know the exact sum you will receive in the event of a loss.",
+        "We provide ‘all risks’ cover (including accidental damage) with minimal restrictive conditions, no under-insurance penalties and no small print. It comes from understanding what we are insuring.",
+        "The moment you make a claim, we are ready to deal with it in a fast, fair and fuss-free way.",
+        "\"Chubb Masterpiece is a must have product for keeping all the belongings of you and your family secure and giving you peace of mind. My pride and joy watch was badly damaged in an accident and the claim was handled extremely quickly and professionally. And this isn't the first time Chubb and their agents have swooped to the rescue in such a fashion. The lifesaver that transformed my feelings of heartbreak into relief was Gayle Shepherdson. Thank you Gayle.\" - Mike P.",
+        "\"We have insured with Chubb for the past 7 years in Singapore and in that time had to claim for 2 items, both of which were accidental damages. Chubb have been very prompt, very helpful, and very quick in processing our claims, none of which I could fault. Whilst there are cheaper offers in the marketplace for contents insurance I would thoroughly recommend Chubb as you get what you pay for. I have heard of many a nightmare claims with other insurance companies. Chubb have been in my opinion by far the best contents insurance company to deal with and would thoroughly recommend them.\" - Nigel C.",
+        "\"I submitted a claim for my home insurance as my home alarm system was damaged by lightning strike. Chubb team was very professional and responsive with guiding me (on) the process and paperwork to get my claim done. Very impressed with Gayle Shepherdson who represented Chubb in dealing with my claim. Good job.\" - TC Ng",
+        "\"I feel confident recommending Chubb’s products because of their sterling history in claims handling and customer service.\""
+      ],
+      "plan_description": "Chubb’s flagship prestige home and contents offering, Masterpiece is for people with significant assets to insure, who appreciate a premium level of cover and service that’s customisable to their needs.",
+      "plan_name": "Home and Valuables Insurance",
+      "plan_overview": "At Chubb, when it comes to helping you protect your valuable possessions, we go beyond your expectations. Our Masterpiece ® policy provides coverage for individuals with significant assets to protect, and who appreciate superior levels of insurance cover and service for their homes, contents, fine art, jewellery, antiques, collections and personal liability. Right from the start, you’ll see that Chubb is different. We don’t simply process claims. We look for ways to prevent damage from happening and go out of our way to make the claim process easy for you if something happens to you or your valued possessions. Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service. A kitchen fire broke out in an apartment and our customer incurred fees for temporary accommodation and f...",
+      "plan_slug": "home-and-valuables-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/home-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "With Chubb PAL Protect ® II (Chubb Personal Accident & Lifestyle Protect ® II), you can rest easy knowing that you and your loved ones are covered for accident-related injuries and disabilities, as well as up to 14 types of covered diseases.",
+        "Up to S$1,000,000 lump sum payout to your estate in the event of accidental death. Coverage amount is doubled if the accident happens on a public conveyance.",
+        "Receive reimbursement for your medical expenses - including treatment by an alternative medical physician such as Traditional Chinese Medicine (TCM) practitioner or a chiropractor.",
+        "Covers 14 infectious diseases including Dengue Fever, Hand, Foot & Mouth Disease (HFMD), food poisoning, and more.",
+        "Free automatic dependent child(ren) cover for Couple Plan (up to 4 children)."
+      ],
+      "plan_description": "Accidents happen whenever and wherever you least expect them. That's why a comprehensive personal accident insurance that provides cover when you are abroad is so important. Contact Chubb Singapore for more information.",
+      "plan_name": "Personal Accident Insurance",
+      "plan_overview": "We understand that accidents can happen when you least expect them, leading to unplanned financial expenses and burden on you and your family. With Chubb PAL Protect ® II (Chubb Personal Accident & Lifestyle Protect ® II), you can rest easy knowing that you and your loved ones are covered for accident-related injuries and disabilities, as well as up to 14 types of covered diseases. When you make contingencies for the unexpected, you can better protect yourself and your loved ones. Up to S$1,000,000 lump sum payout to your estate in the event of accidental death. Coverage amount is doubled if the accident happens on a public conveyance.",
+      "plan_slug": "personal-accident-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/personal-accident-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "Dental care in Singapore can be costly. Often overlooked, dental care costs are usually not extensively covered in basic health insurance plans. Yet, routine dental visits and preventive treatments are essential to maintain your dental health.",
+        "To help you manage the high cost of dental bills, Chubb offers dental insurance, through our partners and intermediaries, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits for cleaning and fluoride.",
+        "Coverage on emergency dental treatments, routine preventive treatments and X-rays",
+        "Coverage on teeth extractions and root canal treatments",
+        "The Dental Insurance is distributed through our partners and intermediaries. If you are keen to partner with Chubb, get in touch with us."
+      ],
+      "plan_description": "Chubb offers dental insurance, through our partners, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits.",
+      "plan_name": "Dental Insurance",
+      "plan_overview": "Dental care in Singapore can be costly. Often overlooked, dental care costs are usually not extensively covered in basic health insurance plans. Yet, routine dental visits and preventive treatments are essential to maintain your dental health. To help you manage the high cost of dental bills, Chubb offers dental insurance, through our partners and intermediaries, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits for cleaning and fluoride. Coverage on emergency dental treatments, routine preventive treatments and X-rays Coverage on teeth extractions and root canal treatments",
+      "plan_slug": "dental-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/dental-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "When accidents or illnesses happen, they can lead to costly hospital charges, as well as loss of income. Protect yourself and receive coverage for your hospitalisation expenses with our hospital income insurance.",
+        "Chubb offers hospital income insurance, through our partners and intermediaries, to provide daily hospital cash benefits, additional supplementary income and more, to ease some of your financial burdens so you can focus on your recovery.",
+        "Daily hospital cash benefit due to accidents or illnesses",
+        "ICU daily hospital cash benefit",
+        "24-hour worldwide coverage",
+        "The Hospital Income Insurance is distributed through our partners and intermediaries. If you are keen to partner with Chubb, get in touch with us."
+      ],
+      "plan_description": "Chubb offers protection against loss of income from hospitalisation, due to accidents and illnesses, so you can focus on your recovery.",
+      "plan_name": "Hospital Income Insurance",
+      "plan_overview": "When accidents or illnesses happen, they can lead to costly hospital charges, as well as loss of income. Protect yourself and receive coverage for your hospitalisation expenses with our hospital income insurance. Chubb offers hospital income insurance, through our partners and intermediaries, to provide daily hospital cash benefits, additional supplementary income and more, to ease some of your financial burdens so you can focus on your recovery. Daily hospital cash benefit due to accidents or illnesses ICU daily hospital cash benefit",
+      "plan_slug": "hospital-income-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/hospital-income-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "Please note that effective 14 February 2025, the administrative service provider for Jewellery and Watch Cover policies will be changed from Q Report (Jewellers Loop Asia Pte. Ltd.) to Chubb Insurance Singapore Limited.",
+        "Accordingly, we will also be migrating the Jewellery & Watch Cover e-commerce website from the current domain to a new domain. The current domain will be retired on 1 January 2025. To support this transition, purchase of any new Jewellery & Watch Cover policies is currently unavailable.",
+        "Purchase of new Jewellery & Watch Cover policies is currently unavailable. You can consider purchasing Masterpiece ® , Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service.",
+        "All existing policies will continue to be in force and your policy coverage will not be affected. However, policy auto-renewal has been disabled, and a renewal notice will be sent to you 45 days before your policy renewal date. Please make payment via the URL provided if you wish to renew your policy. If you have any enquiries or need to make any amendments to your policy, please contact Chubb via email at Jewellery.SG@chubb.com , via call at +65 6398 8788 or via WhatsApp at https://wa.me/6562990988 (Mondays - Fridays, 9.00am to 5.00pm; excluding Public Holidays)."
+      ],
+      "plan_description": "A lifestyle insurance plan designed protect your jewellery and watches so that you can wear them with confidence.",
+      "plan_name": "Jewellery & Watch Cover",
+      "plan_overview": "Please note that effective 14 February 2025, the administrative service provider for Jewellery and Watch Cover policies will be changed from Q Report (Jewellers Loop Asia Pte. Ltd.) to Chubb Insurance Singapore Limited. Accordingly, we will also be migrating the Jewellery & Watch Cover e-commerce website from the current domain to a new domain. The current domain will be retired on 1 January 2025. To support this transition, purchase of any new Jewellery & Watch Cover policies is currently unavailable. Purchase of new Jewellery & Watch Cover policies is currently unavailable. You can consider purchasing Masterpiece ® , Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service. All existing policies will continue to be in force and your policy coverage will not be affected...",
+      "plan_slug": "jewellery-watch-cover",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/jewellery-watch-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "chubb",
+      "plan_benefits": [
+        "Mobile phones have become a vital part of our lives, and many of us are heavily reliant on them. We use them to manage our social calendars, store memories by recording videos and taking photographs, keep in touch with our friends and family members, and so much more. So, it makes sense to take steps to protect them. What happens if your mobile phone is damaged? While we may not be able to retrieve those memories for you, we will be able to help alleviate further anxiety. Chubb offers mobile phone protection, through our partners, which provides coverage for accidental or malicious damage and repair or replacement of your device.",
+        "Coverage for loss, theft and damage to mobile phone (including accidental damage, screen damage or water/liquid damage)",
+        "Accidental and malicious cover for devices up to 36 months old, at point of enrolment",
+        "Worldwide coverage",
+        "The Mobile Phone Insurance is distributed through our partners and intermediaries. If you are keen to partner with Chubb, get in touch with us."
+      ],
+      "plan_description": "Chubb offers mobile phone protection, through our partners, to provide coverage for accidental or malicious damage and repair or replacement of your device.",
+      "plan_name": "Mobile Phone Insurance",
+      "plan_overview": "Mobile phones have become a vital part of our lives, and many of us are heavily reliant on them. We use them to manage our social calendars, store memories by recording videos and taking photographs, keep in touch with our friends and family members, and so much more. So, it makes sense to take steps to protect them. What happens if your mobile phone is damaged? While we may not be able to retrieve those memories for you, we will be able to help alleviate further anxiety. Chubb offers mobile phone protection, through our partners, which provides coverage for accidental or malicious damage and repair or replacement of your device. Coverage for loss, theft and damage to mobile phone (including accidental damage, screen damage or water/liquid damage) Professional repair and replacement services via authorised vendors Accidental and malicious cover for devices up to 36 months old, at poin...",
+      "plan_slug": "mobile-phone-insurance",
+      "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:51:27.235129+00:00"
     }
   ],
   "scraper_health": [
@@ -12204,7 +12156,7 @@
       "last_success_at": "2026-07-07T03:34:08.824050+00:00",
       "row_count": 44,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12215,18 +12167,18 @@
       "last_success_at": "2026-07-07T03:46:19.376563+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:46:19.376563+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "chubb",
       "display_name": "Chubb",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:18:05.385324+00:00",
-      "last_success_at": "2026-07-05T07:18:05.385324+00:00",
+      "last_run_at": "2026-07-07T03:51:27.242218+00:00",
+      "last_success_at": "2026-07-07T03:51:27.242218+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:27.242218+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12237,7 +12189,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12248,7 +12200,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12259,7 +12211,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12270,7 +12222,7 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12281,7 +12233,7 @@
       "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12292,7 +12244,7 @@
       "last_success_at": "2026-07-07T03:20:04.296570+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12303,7 +12255,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12314,7 +12266,7 @@
       "last_success_at": "2026-07-07T03:39:55.246857+00:00",
       "row_count": 18,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12322,7 +12274,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12333,7 +12285,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12344,7 +12296,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12355,7 +12307,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12366,7 +12318,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12374,7 +12326,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12382,7 +12334,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12390,7 +12342,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12401,7 +12353,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12409,7 +12361,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12420,7 +12372,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12428,7 +12380,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12436,7 +12388,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12444,7 +12396,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12452,7 +12404,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12460,7 +12412,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.462161+00:00",
+      "updated_at": "2026-07-07T03:51:26.614235+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12476,8 +12428,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:45:03.461730+00:00",
-      "validation_checked_at": "2026-07-07T03:45:03.461730+00:00",
+      "updated_at": "2026-07-07T03:51:26.614063+00:00",
+      "validation_checked_at": "2026-07-07T03:51:26.614063+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -37000,222 +36952,6 @@
     ],
     "plans": [
       {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Staycation Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "Whether you’re going on vacation or taking a business trip, Chubb Travel Insurance offers personalised travel insurance coverage (incl. COVID-19) you need to travel with confidence, security, and greater peace of mind.",
-          "Unlimited coverage for emergency medical evacuation and repatriation",
-          "Emergency cover up to $20,000 for travel expenses, accommodation, meals and more",
-          "4 hours travel delay cover"
-        ],
-        "plan_description": "Chubb Travel Insurance offers customisable travel insurance cover for individuals and families with worldwide access to medical assistance.",
-        "plan_name": "Overseas Travel Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "overseas-travel-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/travel-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "In support of the Singapore Government’s effort to boost local tourism and to provide Singapore residents greater confidence to head out and explore the city, Chubb now offers Travel Local - a domestic travel insurance product designed to provide Singapore residents with greater peace of mind when taking a local holiday or staycation, with cover for personal accident and staycation inconvenience.",
-          "If you are taking a Singapoliday , why not complement it with Travel Local so you can rediscover Singapore with greater confidence!",
-          "S$10,000 Accidental Death and Disablement benefit",
-          "S$1,000 Staycation Cancellation benefit"
-        ],
-        "plan_description": "Travel Local is a staycation insurance plan specially designed to provide domestic travellers with greater peace of mind when taking a local holiday or staycation, while supporting local businesses.",
-        "plan_name": "Staycation Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "staycation-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/staycation-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Staycation Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "Chubb offers Coach & Ferry Travel Insurance, through our partners and intermediaries, to provide travellers to Malaysia, Indonesia & Thailand with greater peace of mind knowing you're covered for travel inconveniences, personal accident and medical expenses.",
-          "Accidental death & permanent disablement benefit",
-          "The Coach & Ferry Travel Insurance is distributed through our partners and intermediaries. If are keen to partner with Chubb, get in touch with our Travel Team.",
-          "SDIC Policy Owners' Protection Scheme"
-        ],
-        "plan_description": "A plan that provides protection against travel inconveniences and medical coverages for coach and ferry commuters.",
-        "plan_name": "Coach & Ferry Travel Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "coach-ferry-travel-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/coach-and-ferry-travel-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Staycation Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "At Chubb, when it comes to helping you protect your valuable possessions, we go beyond your expectations. Our Masterpiece ® policy provides coverage for individuals with significant assets to protect, and who appreciate superior levels of insurance cover and service for their homes, contents, fine art, jewellery, antiques, collections and personal liability.",
-          "Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service.",
-          "Handbags were stolen from our customer's home in Singapore and were never recovered. Chubb paid S$140,000 to replace the bags."
-        ],
-        "plan_description": "Chubb’s flagship prestige home and contents offering, Masterpiece is for people with significant assets to insure, who appreciate a premium level of cover and service that’s customisable to their needs.",
-        "plan_name": "Home and Valuables Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "home-and-valuables-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/home-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Staycation Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "With Chubb PAL Protect ® II (Chubb Personal Accident & Lifestyle Protect ® II), you can rest easy knowing that you and your loved ones are covered for accident-related injuries and disabilities, as well as up to 14 types of covered diseases.",
-          "Up to S$1,000,000 lump sum payout to your estate in the event of accidental death. Coverage amount is doubled if the accident happens on a public conveyance.",
-          "Covers 14 infectious diseases including Dengue Fever, Hand, Foot & Mouth Disease (HFMD), food poisoning, and more."
-        ],
-        "plan_description": "Accidents happen whenever and wherever you least expect them. That's why a comprehensive personal accident insurance that provides cover when you are abroad is so important. Contact Chubb Singapore for more information.",
-        "plan_name": "Personal Accident Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "personal-accident-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/personal-accident-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Staycation Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "Dental care in Singapore can be costly. Often overlooked, dental care costs are usually not extensively covered in basic health insurance plans. Yet, routine dental visits and preventive treatments are essential to maintain your dental health.",
-          "To help you manage the high cost of dental bills, Chubb offers dental insurance, through our partners and intermediaries, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits for cleaning and fluoride.",
-          "Coverage on emergency dental treatments, routine preventive treatments and X-rays",
-          "Coverage on teeth extractions and root canal treatments"
-        ],
-        "plan_description": "Chubb offers dental insurance, through our partners, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits.",
-        "plan_name": "Dental Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "dental-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/dental-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Staycation Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "When accidents or illnesses happen, they can lead to costly hospital charges, as well as loss of income. Protect yourself and receive coverage for your hospitalisation expenses with our hospital income insurance.",
-          "Chubb offers hospital income insurance, through our partners and intermediaries, to provide daily hospital cash benefits, additional supplementary income and more, to ease some of your financial burdens so you can focus on your recovery.",
-          "Daily hospital cash benefit due to accidents or illnesses",
-          "ICU daily hospital cash benefit"
-        ],
-        "plan_description": "Chubb offers protection against loss of income from hospitalisation, due to accidents and illnesses, so you can focus on your recovery.",
-        "plan_name": "Hospital Income Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "hospital-income-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/hospital-income-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Staycation Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Mobile Phone Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "Please note that effective 14 February 2025, the administrative service provider for Jewellery and Watch Cover policies will be changed from Q Report (Jewellers Loop Asia Pte. Ltd.) to Chubb Insurance Singapore Limited.",
-          "Accordingly, we will also be migrating the Jewellery & Watch Cover e-commerce website from the current domain to a new domain. The current domain will be retired on 1 January 2025. To support this transition, purchase of any new Jewellery & Watch Cover policies is currently unavailable.",
-          "Purchase of new Jewellery & Watch Cover policies is currently unavailable. You can consider purchasing Masterpiece ® , Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service."
-        ],
-        "plan_description": "A lifestyle insurance plan designed protect your jewellery and watches so that you can wear them with confidence.",
-        "plan_name": "Jewellery & Watch Cover",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "jewellery-watch-cover",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/jewellery-watch-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "chubb",
-        "plan_benefits": [
-          "Overseas Travel Insurance",
-          "Staycation Insurance",
-          "Coach & Ferry Travel Insurance",
-          "Designed to cover you and your family in the event of accident-related injuries and disabilities.",
-          "Dental Insurance",
-          "Hospital Income Insurance",
-          "Jewellery and Watch Insurance",
-          "Today's multinational organizations face complex and interconnected risks. We offer insurance solutions that are tailored to global needs as well as local requirements, helping them address their risk management challenges.",
-          "Mobile phones have become a vital part of our lives, and many of us are heavily reliant on them. We use them to manage our social calendars, store memories by recording videos and taking photographs, keep in touch with our friends and family members, and so much more. So, it makes sense to take steps to protect them. What happens if your mobile phone is damaged? While we may not be able to retrieve those memories for you, we will be able to help alleviate further anxiety. Chubb offers mobile phone protection, through our partners, which provides coverage for accidental or malicious damage and repair or replacement of your device.",
-          "Coverage for loss, theft and damage to mobile phone (including accidental damage, screen damage or water/liquid damage)",
-          "Accidental and malicious cover for devices up to 36 months old, at point of enrolment",
-          "Worldwide coverage"
-        ],
-        "plan_description": "Chubb offers mobile phone protection, through our partners, to provide coverage for accidental or malicious damage and repair or replacement of your device.",
-        "plan_name": "Mobile Phone Insurance",
-        "plan_overview": "Individuals & Families Businesses Partners & Agents Travel",
-        "plan_slug": "mobile-phone-insurance",
-        "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
         "insurer": "hsbc",
         "plan_benefits": [],
         "plan_description": "A whole life insurance plan with multiplied coverage, a payout option and optional riders to enhance your critical illness protection.",
@@ -42233,6 +41969,174 @@
         "plan_url": "https://www.chinalife.com.sg/products/china-life-multiplier-guardian-supreme",
         "product_brochure_url": "https://www.chinalife.com.sg/sites/default/files/product/China%20Life%20Multiplier%20Guardian%20Supreme%20brochure_ENG.pdf",
         "scraped_at": "2026-07-07T03:45:27.556661+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "Whether you’re going on vacation or taking a business trip, Chubb Travel Insurance offers personalised travel insurance coverage (incl. COVID-19) you need to travel with confidence, security, and greater peace of mind.",
+          "Overseas medical expenses up to $2,000,000",
+          "Medical expenses in Singapore up to $20,000",
+          "Unlimited coverage for emergency medical evacuation and repatriation",
+          "Emergency cover up to $20,000 for travel expenses, accommodation, meals and more",
+          "4 hours travel delay cover",
+          "\"Very prompt and responsive. Great claims experience.\" - Matthew X",
+          "\"Thank you for the quick respond [sic]! Was very upset when I realised I lost my wallet and cash together with it. Thank you for hassle-free claim. Really appreciate it! Thank you once again\" - Rukumany A",
+          "Chubb Travel Insurance offers 4 plan types with 6 different optional add-on benefits for every traveller, destination and budget."
+        ],
+        "plan_description": "Chubb Travel Insurance offers customisable travel insurance cover for individuals and families with worldwide access to medical assistance.",
+        "plan_name": "Overseas Travel Insurance",
+        "plan_overview": "Whether you’re going on vacation or taking a business trip, Chubb Travel Insurance offers personalised travel insurance coverage (incl. COVID-19) you need to travel with confidence, security, and greater peace of mind. Overseas medical expenses up to $2,000,000 Medical expenses in Singapore up to $20,000 Unlimited coverage for emergency medical evacuation and repatriation",
+        "plan_slug": "overseas-travel-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/travel-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "In support of the Singapore Government’s effort to boost local tourism and to provide Singapore residents greater confidence to head out and explore the city, Chubb now offers Travel Local - a domestic travel insurance product designed to provide Singapore residents with greater peace of mind when taking a local holiday or staycation, with cover for personal accident and staycation inconvenience.",
+          "If you are taking a Singapoliday , why not complement it with Travel Local so you can rediscover Singapore with greater confidence!",
+          "S$10,000 Accidental Death and Disablement benefit",
+          "S$1,000 Staycation Cancellation benefit",
+          "This policy covers you up to 30 days of staycation.",
+          "Chubb Travel Insurance offers 4 plan types with 6 different optional add-on benefits for every traveller, destination and budget."
+        ],
+        "plan_description": "Travel Local is a staycation insurance plan specially designed to provide domestic travellers with greater peace of mind when taking a local holiday or staycation, while supporting local businesses.",
+        "plan_name": "Staycation Insurance",
+        "plan_overview": "In support of the Singapore Government’s effort to boost local tourism and to provide Singapore residents greater confidence to head out and explore the city, Chubb now offers Travel Local - a domestic travel insurance product designed to provide Singapore residents with greater peace of mind when taking a local holiday or staycation, with cover for personal accident and staycation inconvenience. If you are taking a Singapoliday , why not complement it with Travel Local so you can rediscover Singapore with greater confidence! S$10,000 Accidental Death and Disablement benefit S$1,000 Staycation Cancellation benefit",
+        "plan_slug": "staycation-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/staycation-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "Whether you’re travelling to Malaysia for a day trip or heading to Indonesia and Thailand for the weekend via coach/ferry, mishaps may happen, leading to costly medical expenses and other unplanned expenses.",
+          "Chubb offers Coach & Ferry Travel Insurance, through our partners and intermediaries, to provide travellers to Malaysia, Indonesia & Thailand with greater peace of mind knowing you're covered for travel inconveniences, personal accident and medical expenses.",
+          "Overseas medical expenses up to S$35,000",
+          "Emergency medical evacuation & repatriation up to S$35,000",
+          "Accidental death & permanent disablement benefit",
+          "Accidental medical expenses reimbursement",
+          "Emergency medical evacuation & repatriation up to S$5,000",
+          "The Coach & Ferry Travel Insurance is distributed through our partners and intermediaries. If are keen to partner with Chubb, get in touch with our Travel Team."
+        ],
+        "plan_description": "A plan that provides protection against travel inconveniences and medical coverages for coach and ferry commuters.",
+        "plan_name": "Coach & Ferry Travel Insurance",
+        "plan_overview": "Whether you’re travelling to Malaysia for a day trip or heading to Indonesia and Thailand for the weekend via coach/ferry, mishaps may happen, leading to costly medical expenses and other unplanned expenses. Chubb offers Coach & Ferry Travel Insurance, through our partners and intermediaries, to provide travellers to Malaysia, Indonesia & Thailand with greater peace of mind knowing you're covered for travel inconveniences, personal accident and medical expenses. Overseas medical expenses up to S$35,000 Emergency medical evacuation & repatriation up to S$35,000",
+        "plan_slug": "coach-ferry-travel-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/coach-and-ferry-travel-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "At Chubb, when it comes to helping you protect your valuable possessions, we go beyond your expectations. Our Masterpiece ® policy provides coverage for individuals with significant assets to protect, and who appreciate superior levels of insurance cover and service for their homes, contents, fine art, jewellery, antiques, collections and personal liability.",
+          "Right from the start, you’ll see that Chubb is different. We don’t simply process claims. We look for ways to prevent damage from happening and go out of our way to make the claim process easy for you if something happens to you or your valued possessions.",
+          "Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service.",
+          "A kitchen fire broke out in an apartment and our customer incurred fees for temporary accommodation and for the replacement cost of damaged appliances and furniture. Chubb paid S$93,000 for this claim.",
+          "Handbags were stolen from our customer's home in Singapore and were never recovered. Chubb paid S$140,000 to replace the bags.",
+          "We agree with you upfront, exactly what is insured and for how much. This eliminates over and under-insurance, and any haggling after the event. We also offer ‘agreed value’ for valuables and fine art - so you know the exact sum you will receive in the event of a loss.",
+          "We provide ‘all risks’ cover (including accidental damage) with minimal restrictive conditions, no under-insurance penalties and no small print. It comes from understanding what we are insuring.",
+          "The moment you make a claim, we are ready to deal with it in a fast, fair and fuss-free way.",
+          "\"Chubb Masterpiece is a must have product for keeping all the belongings of you and your family secure and giving you peace of mind. My pride and joy watch was badly damaged in an accident and the claim was handled extremely quickly and professionally. And this isn't the first time Chubb and their agents have swooped to the rescue in such a fashion. The lifesaver that transformed my feelings of heartbreak into relief was Gayle Shepherdson. Thank you Gayle.\" - Mike P.",
+          "\"We have insured with Chubb for the past 7 years in Singapore and in that time had to claim for 2 items, both of which were accidental damages. Chubb have been very prompt, very helpful, and very quick in processing our claims, none of which I could fault. Whilst there are cheaper offers in the marketplace for contents insurance I would thoroughly recommend Chubb as you get what you pay for. I have heard of many a nightmare claims with other insurance companies. Chubb have been in my opinion by far the best contents insurance company to deal with and would thoroughly recommend them.\" - Nigel C.",
+          "\"I submitted a claim for my home insurance as my home alarm system was damaged by lightning strike. Chubb team was very professional and responsive with guiding me (on) the process and paperwork to get my claim done. Very impressed with Gayle Shepherdson who represented Chubb in dealing with my claim. Good job.\" - TC Ng",
+          "\"I feel confident recommending Chubb’s products because of their sterling history in claims handling and customer service.\""
+        ],
+        "plan_description": "Chubb’s flagship prestige home and contents offering, Masterpiece is for people with significant assets to insure, who appreciate a premium level of cover and service that’s customisable to their needs.",
+        "plan_name": "Home and Valuables Insurance",
+        "plan_overview": "At Chubb, when it comes to helping you protect your valuable possessions, we go beyond your expectations. Our Masterpiece ® policy provides coverage for individuals with significant assets to protect, and who appreciate superior levels of insurance cover and service for their homes, contents, fine art, jewellery, antiques, collections and personal liability. Right from the start, you’ll see that Chubb is different. We don’t simply process claims. We look for ways to prevent damage from happening and go out of our way to make the claim process easy for you if something happens to you or your valued possessions. Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service. A kitchen fire broke out in an apartment and our customer incurred fees for temporary accommodation and f...",
+        "plan_slug": "home-and-valuables-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/home-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "With Chubb PAL Protect ® II (Chubb Personal Accident & Lifestyle Protect ® II), you can rest easy knowing that you and your loved ones are covered for accident-related injuries and disabilities, as well as up to 14 types of covered diseases.",
+          "Up to S$1,000,000 lump sum payout to your estate in the event of accidental death. Coverage amount is doubled if the accident happens on a public conveyance.",
+          "Receive reimbursement for your medical expenses - including treatment by an alternative medical physician such as Traditional Chinese Medicine (TCM) practitioner or a chiropractor.",
+          "Covers 14 infectious diseases including Dengue Fever, Hand, Foot & Mouth Disease (HFMD), food poisoning, and more.",
+          "Free automatic dependent child(ren) cover for Couple Plan (up to 4 children)."
+        ],
+        "plan_description": "Accidents happen whenever and wherever you least expect them. That's why a comprehensive personal accident insurance that provides cover when you are abroad is so important. Contact Chubb Singapore for more information.",
+        "plan_name": "Personal Accident Insurance",
+        "plan_overview": "We understand that accidents can happen when you least expect them, leading to unplanned financial expenses and burden on you and your family. With Chubb PAL Protect ® II (Chubb Personal Accident & Lifestyle Protect ® II), you can rest easy knowing that you and your loved ones are covered for accident-related injuries and disabilities, as well as up to 14 types of covered diseases. When you make contingencies for the unexpected, you can better protect yourself and your loved ones. Up to S$1,000,000 lump sum payout to your estate in the event of accidental death. Coverage amount is doubled if the accident happens on a public conveyance.",
+        "plan_slug": "personal-accident-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/personal-accident-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "Dental care in Singapore can be costly. Often overlooked, dental care costs are usually not extensively covered in basic health insurance plans. Yet, routine dental visits and preventive treatments are essential to maintain your dental health.",
+          "To help you manage the high cost of dental bills, Chubb offers dental insurance, through our partners and intermediaries, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits for cleaning and fluoride.",
+          "Coverage on emergency dental treatments, routine preventive treatments and X-rays",
+          "Coverage on teeth extractions and root canal treatments",
+          "The Dental Insurance is distributed through our partners and intermediaries. If you are keen to partner with Chubb, get in touch with us."
+        ],
+        "plan_description": "Chubb offers dental insurance, through our partners, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits.",
+        "plan_name": "Dental Insurance",
+        "plan_overview": "Dental care in Singapore can be costly. Often overlooked, dental care costs are usually not extensively covered in basic health insurance plans. Yet, routine dental visits and preventive treatments are essential to maintain your dental health. To help you manage the high cost of dental bills, Chubb offers dental insurance, through our partners and intermediaries, to provide coverage for a variety of treatments, from emergency dental treatments to routine dental visits for cleaning and fluoride. Coverage on emergency dental treatments, routine preventive treatments and X-rays Coverage on teeth extractions and root canal treatments",
+        "plan_slug": "dental-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/dental-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "When accidents or illnesses happen, they can lead to costly hospital charges, as well as loss of income. Protect yourself and receive coverage for your hospitalisation expenses with our hospital income insurance.",
+          "Chubb offers hospital income insurance, through our partners and intermediaries, to provide daily hospital cash benefits, additional supplementary income and more, to ease some of your financial burdens so you can focus on your recovery.",
+          "Daily hospital cash benefit due to accidents or illnesses",
+          "ICU daily hospital cash benefit",
+          "24-hour worldwide coverage",
+          "The Hospital Income Insurance is distributed through our partners and intermediaries. If you are keen to partner with Chubb, get in touch with us."
+        ],
+        "plan_description": "Chubb offers protection against loss of income from hospitalisation, due to accidents and illnesses, so you can focus on your recovery.",
+        "plan_name": "Hospital Income Insurance",
+        "plan_overview": "When accidents or illnesses happen, they can lead to costly hospital charges, as well as loss of income. Protect yourself and receive coverage for your hospitalisation expenses with our hospital income insurance. Chubb offers hospital income insurance, through our partners and intermediaries, to provide daily hospital cash benefits, additional supplementary income and more, to ease some of your financial burdens so you can focus on your recovery. Daily hospital cash benefit due to accidents or illnesses ICU daily hospital cash benefit",
+        "plan_slug": "hospital-income-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/hospital-income-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "Please note that effective 14 February 2025, the administrative service provider for Jewellery and Watch Cover policies will be changed from Q Report (Jewellers Loop Asia Pte. Ltd.) to Chubb Insurance Singapore Limited.",
+          "Accordingly, we will also be migrating the Jewellery & Watch Cover e-commerce website from the current domain to a new domain. The current domain will be retired on 1 January 2025. To support this transition, purchase of any new Jewellery & Watch Cover policies is currently unavailable.",
+          "Purchase of new Jewellery & Watch Cover policies is currently unavailable. You can consider purchasing Masterpiece ® , Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service.",
+          "All existing policies will continue to be in force and your policy coverage will not be affected. However, policy auto-renewal has been disabled, and a renewal notice will be sent to you 45 days before your policy renewal date. Please make payment via the URL provided if you wish to renew your policy. If you have any enquiries or need to make any amendments to your policy, please contact Chubb via email at Jewellery.SG@chubb.com , via call at +65 6398 8788 or via WhatsApp at https://wa.me/6562990988 (Mondays - Fridays, 9.00am to 5.00pm; excluding Public Holidays)."
+        ],
+        "plan_description": "A lifestyle insurance plan designed protect your jewellery and watches so that you can wear them with confidence.",
+        "plan_name": "Jewellery & Watch Cover",
+        "plan_overview": "Please note that effective 14 February 2025, the administrative service provider for Jewellery and Watch Cover policies will be changed from Q Report (Jewellers Loop Asia Pte. Ltd.) to Chubb Insurance Singapore Limited. Accordingly, we will also be migrating the Jewellery & Watch Cover e-commerce website from the current domain to a new domain. The current domain will be retired on 1 January 2025. To support this transition, purchase of any new Jewellery & Watch Cover policies is currently unavailable. Purchase of new Jewellery & Watch Cover policies is currently unavailable. You can consider purchasing Masterpiece ® , Chubb’s flagship prestige home and valuables offering for families and individuals with significant assets to insure and who appreciate a premium level of cover and service. All existing policies will continue to be in force and your policy coverage will not be affected...",
+        "plan_slug": "jewellery-watch-cover",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/jewellery-watch-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "chubb",
+        "plan_benefits": [
+          "Mobile phones have become a vital part of our lives, and many of us are heavily reliant on them. We use them to manage our social calendars, store memories by recording videos and taking photographs, keep in touch with our friends and family members, and so much more. So, it makes sense to take steps to protect them. What happens if your mobile phone is damaged? While we may not be able to retrieve those memories for you, we will be able to help alleviate further anxiety. Chubb offers mobile phone protection, through our partners, which provides coverage for accidental or malicious damage and repair or replacement of your device.",
+          "Coverage for loss, theft and damage to mobile phone (including accidental damage, screen damage or water/liquid damage)",
+          "Accidental and malicious cover for devices up to 36 months old, at point of enrolment",
+          "Worldwide coverage",
+          "The Mobile Phone Insurance is distributed through our partners and intermediaries. If you are keen to partner with Chubb, get in touch with us."
+        ],
+        "plan_description": "Chubb offers mobile phone protection, through our partners, to provide coverage for accidental or malicious damage and repair or replacement of your device.",
+        "plan_name": "Mobile Phone Insurance",
+        "plan_overview": "Mobile phones have become a vital part of our lives, and many of us are heavily reliant on them. We use them to manage our social calendars, store memories by recording videos and taking photographs, keep in touch with our friends and family members, and so much more. So, it makes sense to take steps to protect them. What happens if your mobile phone is damaged? While we may not be able to retrieve those memories for you, we will be able to help alleviate further anxiety. Chubb offers mobile phone protection, through our partners, which provides coverage for accidental or malicious damage and repair or replacement of your device. Coverage for loss, theft and damage to mobile phone (including accidental damage, screen damage or water/liquid damage) Professional repair and replacement services via authorised vendors Accidental and malicious cover for devices up to 36 months old, at poin...",
+        "plan_slug": "mobile-phone-insurance",
+        "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:51:27.235129+00:00"
       }
     ],
     "scraper_health": [
@@ -42245,7 +42149,7 @@
         "last_success_at": "2026-07-07T03:34:08.824050+00:00",
         "row_count": 44,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42256,18 +42160,18 @@
         "last_success_at": "2026-07-07T03:46:19.376563+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:46:19.376563+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "chubb",
         "display_name": "Chubb",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:18:05.385324+00:00",
-        "last_success_at": "2026-07-05T07:18:05.385324+00:00",
+        "last_run_at": "2026-07-07T03:51:27.242218+00:00",
+        "last_success_at": "2026-07-07T03:51:27.242218+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:27.242218+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42278,7 +42182,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42289,7 +42193,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42300,7 +42204,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42311,7 +42215,7 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42322,7 +42226,7 @@
         "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42333,7 +42237,7 @@
         "last_success_at": "2026-07-07T03:20:04.296570+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42344,7 +42248,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42355,7 +42259,7 @@
         "last_success_at": "2026-07-07T03:39:55.246857+00:00",
         "row_count": 18,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42363,7 +42267,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42374,7 +42278,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42385,7 +42289,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42396,7 +42300,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42407,7 +42311,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42415,7 +42319,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42423,7 +42327,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42431,7 +42335,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42442,7 +42346,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42450,7 +42354,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42461,7 +42365,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42469,7 +42373,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42477,7 +42381,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42485,7 +42389,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42493,7 +42397,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42501,7 +42405,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.462161+00:00",
+        "updated_at": "2026-07-07T03:51:26.614235+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42517,8 +42421,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:45:03.461730+00:00",
-        "validation_checked_at": "2026-07-07T03:45:03.461730+00:00",
+        "updated_at": "2026-07-07T03:51:26.614063+00:00",
+        "validation_checked_at": "2026-07-07T03:51:26.614063+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
