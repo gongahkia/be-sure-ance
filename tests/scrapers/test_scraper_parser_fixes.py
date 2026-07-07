@@ -10,6 +10,7 @@ from src.scrapers import (
     fwd,
     great_eastern,
     hl_assurance,
+    hsbc,
     iii,
     panel_resources,
     prudential,
@@ -220,6 +221,42 @@ class ScraperParserFixTests(unittest.TestCase):
                 html,
                 "https://www.hlas.com.sg/claim-forms/",
             )
+        )
+
+    def test_hsbc_product_parser_uses_meta_and_real_brochure_pdf(self):
+        html = (FIXTURES_DIR / "hsbc_product.html").read_text()
+        row = hsbc.parse_product_html(
+            html,
+            "https://www.insurance.hsbc.com.sg/life-and-critical-illness/products/life-treasure-iii/",
+        )
+
+        self.assertEqual(row["plan_name"], "HSBC Life – Life Treasure III")
+        self.assertIn("multiplied coverage", row["plan_description"])
+        self.assertIn("critical illness rider", " ".join(row["plan_benefits"]))
+        self.assertNotIn("Help and support", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.insurance.hsbc.com.sg/content/dam/hsbc/insn/documents/life/life-treasure-iii-product-brochure.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(hsbc.TABLE_NAME, [row])),
+        )
+
+    def test_hsbc_rejects_support_pages_and_legacy_report(self):
+        html = (FIXTURES_DIR / "hsbc_reject.html").read_text()
+
+        self.assertIsNone(
+            hsbc.parse_product_html(
+                html,
+                "https://www.insurance.hsbc.com.sg/claims/",
+            )
+        )
+        self.assertEqual(
+            [],
+            hsbc.scrape_product_url(
+                "https://www.insurance.hsbc.com.sg/content/dam/hsbc/insn/documents/life-hnw-legacy-research-report.pdf"
+            ),
         )
 
     def test_uoi_parser_treats_brochure_pdf_as_optional(self):
