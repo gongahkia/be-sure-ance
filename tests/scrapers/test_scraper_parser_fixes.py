@@ -12,6 +12,7 @@ from src.scrapers import (
     raffles_health,
     singlife,
     sunlife,
+    tokio_marine,
     uoi,
 )
 from src.validation.plan_quality import validate_plan_rows
@@ -302,6 +303,33 @@ class ScraperParserFixTests(unittest.TestCase):
         html = (FIXTURES_DIR / "sunlife_reject.html").read_text()
 
         self.assertIsNone(sunlife.parse_product_html(html, "https://www.sunlife.com.sg/en/"))
+
+    def test_tokio_marine_product_parser_compacts_long_sections(self):
+        html = (FIXTURES_DIR / "tokio_marine_product.html").read_text()
+        row = tokio_marine.parse_product_html(
+            html,
+            "https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html",
+        )
+
+        self.assertEqual(row["plan_name"], "TM365")
+        self.assertEqual(row["plan_description"], "Comforting news for your family.")
+        self.assertLessEqual(len(row["plan_overview"]), 900)
+        self.assertIn("Accidental death", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.tokiomarine.com/content/dam/tm365.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(tokio_marine.TABLE_NAME, [row])))
+
+    def test_tokio_marine_parser_rejects_empty_non_product_source(self):
+        html = (FIXTURES_DIR / "tokio_marine_reject.html").read_text()
+
+        self.assertIsNone(
+            tokio_marine.parse_product_html(
+                html,
+                "https://www.tokiomarine.com/sg/en/life/claim/submit-a-claim.html",
+            )
+        )
 
     def test_raffles_product_parser_scopes_out_navigation_chrome(self):
         html = (FIXTURES_DIR / "raffles_health_product.html").read_text()

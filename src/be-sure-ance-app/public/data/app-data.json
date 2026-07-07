@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T03:11:45+00:00",
+  "generated_at": "2026-07-07T03:20:05+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -3367,8 +3367,8 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:21:18.043269+00:00",
-          "last_modified_at": "Mon, 02 Feb 2026 05:58:12 GMT",
+          "fetched_at": "2026-07-07T03:20:01.901238+00:00",
+          "last_modified_at": "Mon, 02 Feb 2026 01:18:57 GMT",
           "sha256": "8ac08fded4e3418cacd7ba68f47c191aad92a5b9497fb2788124f1a176cb4114",
           "size_bytes": 116812,
           "storage_bucket": "plan-brochures",
@@ -3377,9 +3377,9 @@
         }
       },
       "insurer": "tokio_marine",
-      "last_verified_at": "2026-07-05T07:21:18.043269+00:00",
+      "last_verified_at": "2026-07-07T03:20:01.901238+00:00",
       "plan_slug": "tm-flexi-home-enhance",
-      "scraped_at": "2026-07-05T07:21:18.043269+00:00",
+      "scraped_at": "2026-07-07T03:20:01.901238+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/home/Tokio%20Marine-Flexi%20Home%20Brochure_Aug%202025_v5.pdf"
     },
@@ -3391,7 +3391,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:21:18.235515+00:00",
+          "fetched_at": "2026-07-07T03:20:03.569030+00:00",
           "last_modified_at": "Thu, 29 Dec 2022 03:17:13 GMT",
           "sha256": "7fb099ef36d11e27edb976f7b8a9266ffeb0877ea406b0ddff3bb50afebcb671",
           "size_bytes": 195317,
@@ -3401,9 +3401,9 @@
         }
       },
       "insurer": "tokio_marine",
-      "last_verified_at": "2026-07-05T07:21:18.235515+00:00",
+      "last_verified_at": "2026-07-07T03:20:03.569030+00:00",
       "plan_slug": "tm365",
-      "scraped_at": "2026-07-05T07:21:18.235515+00:00",
+      "scraped_at": "2026-07-07T03:20:03.569030+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf"
     },
@@ -7642,39 +7642,6 @@
       "scraped_at": "2026-07-05T07:19:26.579642+00:00"
     },
     {
-      "insurer": "tokio_marine",
-      "plan_benefits": [],
-      "plan_description": "Options\nWe provide three main types of motor insurance: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive\n\nApproved Workshops Plan\nOther Workshops Plan \n\nThird Party Fire and Theft\nThird Party\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nOur underwriting criteria\n\n\n\n\n\n\n2\nYour No Claim Discount (NCD) entitlement",
-      "plan_name": "Private Motor Insurance",
-      "plan_overview": "Step on the assurance. Drive up your confidence",
-      "plan_slug": "private-motor-insurance",
-      "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/motor.html",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:21:18.040169+00:00"
-    },
-    {
-      "insurer": "tokio_marine",
-      "plan_benefits": [],
-      "plan_description": "Key Coverages of Standard Cover\nThere are four key sections:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSection One: Building cover*\nDepending on your choice of coverage, provides cover for loss or damage to Your Building caused by an Accident or a Named Peril during the Policy Period\nSection Two: Contents cover**\nProvides cover for loss or damage to Contents caused by an Accident whilst contained in the Building during the Policy Period\nSection Three: Worldwide Family Liability (Excluding USA/Canada)\nCovers against claim from Third Party for property damage or bodily injury caused to them which You and Your Family is/are legally liable.\nSection Four: Personal Accident\nCovers You and Your Family against death or permanent disability as a result of an accidental injury.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote:\n*/** You must purchase cover at least for either Building cover or Contents cover. Covers for Worldwide Family Liability (Excluding USA/Canada) and Family Personal Accident will automatically apply as the case may be. \n** If the Building is lent let or sublet by You, Section Two is covered on a Named Peril basis and certain automatic extensions will not be applicable. Please contact our insurance agents for further details.\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nCover selected\n\n\n\n\n\n\n2\nThe coverage amount \n\n\n\n\n\n\n3\nOur underwriting requirements",
-      "plan_name": "TM Flexi-Home Enhance",
-      "plan_overview": "Designed to bring You the essential protection for Your assets and lifestyle under one single Policy",
-      "plan_slug": "tm-flexi-home-enhance",
-      "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/home.html",
-      "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/home/Tokio%20Marine-Flexi%20Home%20Brochure_Aug%202025_v5.pdf",
-      "scraped_at": "2026-07-05T07:21:18.040169+00:00"
-    },
-    {
-      "insurer": "tokio_marine",
-      "plan_benefits": [],
-      "plan_description": "Options\nChoose among our four offerings:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlan A\n\nSum Insured for accidental death or permanent disablement: $50,000\nMedical expenses for accidents: $2,000\n\nPlan B\n\nSum Insured for accidental death or permanent disablement: $100,000\nMedical expenses for accidents: $4,000\n\nPlan C\n\nSum Insured for accidental death or permanent disablement: $200,000\nMedical expenses for accidents: $6,000\n\nPlan D\n\nSum Insured for accidental death or permanent disablement: $300,000\nMedical expenses for accidents: $8,000\n\nImportant Notes\nHere is are some key points to take note:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll amounts shown are in Singapore Dollars\nBenefits under this insurance will be payable only upon death, permanent disablement or injury due to an accident.\nAll those who are insured must be a Singapore citizen, Singapore Permanent Resident or foreigner who is holding a valid employment pass, work permit, dependent pass, student pass or social visit pass and residing in Singapore.\nYou or your spouse must be at least 18 years old and below the age of 70 at the commencement of this insurance. If enrolled under this insurance before 65 years old and there is no lapse in cover, this insurance is renewable until the age of 85. However, once you or your spouse is 75 years old and above, only  Plan A, B or C can be selected.\nYour dependent child(ren) must be at least 1 month old at the commencement of this insurance and you can continue to cover them under this insurance until they are 21 or 25 (if the child is studying full-time in a tertiary institution).\nIf you or your spouse is a homemaker, full-time student, retiree or unemployed, only Plan A, B or C can be selected\nIf you, your spouse or your dependent child(ren) has/have more than one policy with us covering against Terrorism, the maximum amount payable for Acts of Terrorism for all the policies shall not exceed $500,000 per person.\nWhen more than one person is insured under the policy, the total maximum amount payable under the policy is further subjected to a conveyance/event limit.\nPremium rates are non-guaranteed and may be reviewed from time to time\n\nYou or we may cancel the policy by giving each other prior notice in writing. Please refer to the policy wordings for the cancellation conditions and applicable charges.\nIf you or your spouse wish(es) to nominate a beneficiary, please contact your intermediary for the relevant forms.\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nThe type of plan selected\n\n\n\n \n\n\n\n\n\n2\nYour nature of work\n\n\n\n\n\n\n3\nOur underwriting requirements",
-      "plan_name": "TM365",
-      "plan_overview": "Comforting news for your family. Thoughtful planning for the unexpected.",
-      "plan_slug": "tm365",
-      "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html",
-      "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf",
-      "scraped_at": "2026-07-05T07:21:18.040169+00:00"
-    },
-    {
       "insurer": "uoi",
       "plan_benefits": [
         "About UOI Our Management Corporate Development Risk Management Credit Rating 1 August 2024 – AM Best has affirmed UOI’s Financial Strength Rating of A+ (Superior) and Long-Term Issuer Credit Rating of “aa-” (Superior). The outlook of these Credit Ratings is stable.",
@@ -10622,6 +10589,49 @@
       "plan_url": "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/",
       "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf",
       "scraped_at": "2026-07-07T03:11:43.700002+00:00"
+    },
+    {
+      "insurer": "tokio_marine",
+      "plan_benefits": [
+        "Options We provide three main types of motor insurance: Comprehensive Approved Workshops Plan Other Workshops Plan Third Party Fire and Theft Third Party",
+        "How much is my premium? Your premium may vary, depending on: 1 Our underwriting criteria 2 Your No Claim Discount (NCD) entitlement"
+      ],
+      "plan_description": "Step on the assurance. Drive up your confidence",
+      "plan_name": "Private Motor Insurance",
+      "plan_overview": "Options We provide three main types of motor insurance: Comprehensive Approved Workshops Plan Other Workshops Plan Third Party Fire and Theft Third Party How much is my premium? Your premium may vary, depending on: 1 Our underwriting criteria 2 Your No Claim Discount (NCD) entitlement",
+      "plan_slug": "private-motor-insurance",
+      "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/motor.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:20:01.872695+00:00"
+    },
+    {
+      "insurer": "tokio_marine",
+      "plan_benefits": [
+        "Key Coverages of Standard Cover There are four key sections: Section One: Building cover* Depending on your choice of coverage, provides cover for loss or damage to Your Building caused by an Accident or a Named Peril...",
+        "How much is my premium? Your premium may vary, depending on: 1 Cover selected 2 The coverage amount 3 Our underwriting requirements"
+      ],
+      "plan_description": "Designed to bring You the essential protection for Your assets and lifestyle under one single Policy",
+      "plan_name": "TM Flexi-Home Enhance",
+      "plan_overview": "Key Coverages of Standard Cover There are four key sections: Section One: Building cover* Depending on your choice of coverage, provides cover for loss or damage to Your Building caused by an Accident or a Named Peril during the Policy Period Section Two: Contents cover** Provides cover for loss or damage to Contents caused by an Accident whilst contained in the Building during the Policy Period Section Three: Worldwide Family Liability (Excluding USA/Canada) Covers against claim from Third Party for property damage or bodily injury caused to them which You and Your Family is/are legally liable. Section Four: Personal Accident Covers You and Your Family against death or permanent disability as a result of an accidental injury. Note: */** You must purchase cover at least for either Building cover or Contents cover. Covers for Worldwide Family Liability (Excluding USA/Canada) and Family...",
+      "plan_slug": "tm-flexi-home-enhance",
+      "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/home.html",
+      "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/home/Tokio%20Marine-Flexi%20Home%20Brochure_Aug%202025_v5.pdf",
+      "scraped_at": "2026-07-07T03:20:01.872695+00:00"
+    },
+    {
+      "insurer": "tokio_marine",
+      "plan_benefits": [
+        "Options Choose among our four offerings: Plan A Sum Insured for accidental death or permanent disablement: $50,000 Medical expenses for accidents: $2,000 Plan B Sum Insured for accidental death or permanent disablemen...",
+        "Important Notes Here is are some key points to take note: All amounts shown are in Singapore Dollars Benefits under this insurance will be payable only upon death, permanent disablement or injury due to an accident. A...",
+        "How much is my premium? Your premium may vary, depending on: 1 The type of plan selected 2 Your nature of work 3 Our underwriting requirements"
+      ],
+      "plan_description": "Comforting news for your family. Thoughtful planning for the unexpected.",
+      "plan_name": "TM365",
+      "plan_overview": "Options Choose among our four offerings: Plan A Sum Insured for accidental death or permanent disablement: $50,000 Medical expenses for accidents: $2,000 Plan B Sum Insured for accidental death or permanent disablement: $100,000 Medical expenses for accidents: $4,000 Plan C Sum Insured for accidental death or permanent disablement: $200,000 Medical expenses for accidents: $6,000 Plan D Sum Insured for accidental death or permanent disablement: $300,000 Medical expenses for accidents: $8,000 Important Notes Here is are some key points to take note: All amounts shown are in Singapore Dollars Benefits under this insurance will be payable only upon death, permanent disablement or injury due to an accident. All those who are insured must be a Singapore citizen, Singapore Permanent Resident or foreigner who is holding a valid employment pass, work permit, dependent pass, student pass or soc...",
+      "plan_slug": "tm365",
+      "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html",
+      "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf",
+      "scraped_at": "2026-07-07T03:20:01.872695+00:00"
     }
   ],
   "scraper_health": [
@@ -10634,7 +10644,7 @@
       "last_success_at": "2026-07-07T02:10:00.090896+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10645,7 +10655,7 @@
       "last_success_at": "2026-07-05T07:18:04.037817+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10656,7 +10666,7 @@
       "last_success_at": "2026-07-05T07:18:05.385324+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10667,7 +10677,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10678,7 +10688,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10689,7 +10699,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10700,7 +10710,7 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10711,18 +10721,18 @@
       "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:44.929496+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "tokio_marine",
       "display_name": "Tokio Marine",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:21:18.419782+00:00",
-      "last_success_at": "2026-07-05T07:21:18.419782+00:00",
+      "last_run_at": "2026-07-07T03:20:04.296570+00:00",
+      "last_success_at": "2026-07-07T03:20:04.296570+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:20:04.296570+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10733,7 +10743,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10741,7 +10751,7 @@
       "display_name": "Allianz",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10749,7 +10759,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10760,7 +10770,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10771,7 +10781,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10782,7 +10792,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10793,7 +10803,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10801,7 +10811,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10809,7 +10819,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10817,7 +10827,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10828,7 +10838,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10836,7 +10846,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10847,7 +10857,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10855,7 +10865,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10863,7 +10873,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10871,7 +10881,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10879,7 +10889,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10887,7 +10897,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.228617+00:00",
+      "updated_at": "2026-07-07T03:11:59.974534+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10903,8 +10913,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:04:31.227942+00:00",
-      "validation_checked_at": "2026-07-07T03:04:31.227942+00:00",
+      "updated_at": "2026-07-07T03:11:59.974320+00:00",
+      "validation_checked_at": "2026-07-07T03:11:59.974320+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -31835,8 +31845,8 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:21:18.043269+00:00",
-            "last_modified_at": "Mon, 02 Feb 2026 05:58:12 GMT",
+            "fetched_at": "2026-07-07T03:20:01.901238+00:00",
+            "last_modified_at": "Mon, 02 Feb 2026 01:18:57 GMT",
             "sha256": "8ac08fded4e3418cacd7ba68f47c191aad92a5b9497fb2788124f1a176cb4114",
             "size_bytes": 116812,
             "storage_bucket": "plan-brochures",
@@ -31845,9 +31855,9 @@
           }
         },
         "insurer": "tokio_marine",
-        "last_verified_at": "2026-07-05T07:21:18.043269+00:00",
+        "last_verified_at": "2026-07-07T03:20:01.901238+00:00",
         "plan_slug": "tm-flexi-home-enhance",
-        "scraped_at": "2026-07-05T07:21:18.043269+00:00",
+        "scraped_at": "2026-07-07T03:20:01.901238+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/home/Tokio%20Marine-Flexi%20Home%20Brochure_Aug%202025_v5.pdf"
       },
@@ -31859,7 +31869,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:21:18.235515+00:00",
+            "fetched_at": "2026-07-07T03:20:03.569030+00:00",
             "last_modified_at": "Thu, 29 Dec 2022 03:17:13 GMT",
             "sha256": "7fb099ef36d11e27edb976f7b8a9266ffeb0877ea406b0ddff3bb50afebcb671",
             "size_bytes": 195317,
@@ -31869,9 +31879,9 @@
           }
         },
         "insurer": "tokio_marine",
-        "last_verified_at": "2026-07-05T07:21:18.235515+00:00",
+        "last_verified_at": "2026-07-07T03:20:03.569030+00:00",
         "plan_slug": "tm365",
-        "scraped_at": "2026-07-05T07:21:18.235515+00:00",
+        "scraped_at": "2026-07-07T03:20:03.569030+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf"
       },
@@ -36110,39 +36120,6 @@
         "scraped_at": "2026-07-05T07:19:26.579642+00:00"
       },
       {
-        "insurer": "tokio_marine",
-        "plan_benefits": [],
-        "plan_description": "Options\nWe provide three main types of motor insurance: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive\n\nApproved Workshops Plan\nOther Workshops Plan \n\nThird Party Fire and Theft\nThird Party\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nOur underwriting criteria\n\n\n\n\n\n\n2\nYour No Claim Discount (NCD) entitlement",
-        "plan_name": "Private Motor Insurance",
-        "plan_overview": "Step on the assurance. Drive up your confidence",
-        "plan_slug": "private-motor-insurance",
-        "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/motor.html",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:21:18.040169+00:00"
-      },
-      {
-        "insurer": "tokio_marine",
-        "plan_benefits": [],
-        "plan_description": "Key Coverages of Standard Cover\nThere are four key sections:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSection One: Building cover*\nDepending on your choice of coverage, provides cover for loss or damage to Your Building caused by an Accident or a Named Peril during the Policy Period\nSection Two: Contents cover**\nProvides cover for loss or damage to Contents caused by an Accident whilst contained in the Building during the Policy Period\nSection Three: Worldwide Family Liability (Excluding USA/Canada)\nCovers against claim from Third Party for property damage or bodily injury caused to them which You and Your Family is/are legally liable.\nSection Four: Personal Accident\nCovers You and Your Family against death or permanent disability as a result of an accidental injury.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote:\n*/** You must purchase cover at least for either Building cover or Contents cover. Covers for Worldwide Family Liability (Excluding USA/Canada) and Family Personal Accident will automatically apply as the case may be. \n** If the Building is lent let or sublet by You, Section Two is covered on a Named Peril basis and certain automatic extensions will not be applicable. Please contact our insurance agents for further details.\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nCover selected\n\n\n\n\n\n\n2\nThe coverage amount \n\n\n\n\n\n\n3\nOur underwriting requirements",
-        "plan_name": "TM Flexi-Home Enhance",
-        "plan_overview": "Designed to bring You the essential protection for Your assets and lifestyle under one single Policy",
-        "plan_slug": "tm-flexi-home-enhance",
-        "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/home.html",
-        "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/home/Tokio%20Marine-Flexi%20Home%20Brochure_Aug%202025_v5.pdf",
-        "scraped_at": "2026-07-05T07:21:18.040169+00:00"
-      },
-      {
-        "insurer": "tokio_marine",
-        "plan_benefits": [],
-        "plan_description": "Options\nChoose among our four offerings:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlan A\n\nSum Insured for accidental death or permanent disablement: $50,000\nMedical expenses for accidents: $2,000\n\nPlan B\n\nSum Insured for accidental death or permanent disablement: $100,000\nMedical expenses for accidents: $4,000\n\nPlan C\n\nSum Insured for accidental death or permanent disablement: $200,000\nMedical expenses for accidents: $6,000\n\nPlan D\n\nSum Insured for accidental death or permanent disablement: $300,000\nMedical expenses for accidents: $8,000\n\nImportant Notes\nHere is are some key points to take note:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll amounts shown are in Singapore Dollars\nBenefits under this insurance will be payable only upon death, permanent disablement or injury due to an accident.\nAll those who are insured must be a Singapore citizen, Singapore Permanent Resident or foreigner who is holding a valid employment pass, work permit, dependent pass, student pass or social visit pass and residing in Singapore.\nYou or your spouse must be at least 18 years old and below the age of 70 at the commencement of this insurance. If enrolled under this insurance before 65 years old and there is no lapse in cover, this insurance is renewable until the age of 85. However, once you or your spouse is 75 years old and above, only  Plan A, B or C can be selected.\nYour dependent child(ren) must be at least 1 month old at the commencement of this insurance and you can continue to cover them under this insurance until they are 21 or 25 (if the child is studying full-time in a tertiary institution).\nIf you or your spouse is a homemaker, full-time student, retiree or unemployed, only Plan A, B or C can be selected\nIf you, your spouse or your dependent child(ren) has/have more than one policy with us covering against Terrorism, the maximum amount payable for Acts of Terrorism for all the policies shall not exceed $500,000 per person.\nWhen more than one person is insured under the policy, the total maximum amount payable under the policy is further subjected to a conveyance/event limit.\nPremium rates are non-guaranteed and may be reviewed from time to time\n\nYou or we may cancel the policy by giving each other prior notice in writing. Please refer to the policy wordings for the cancellation conditions and applicable charges.\nIf you or your spouse wish(es) to nominate a beneficiary, please contact your intermediary for the relevant forms.\n\nHow much is my premium?\nYour premium may vary, depending on:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\nThe type of plan selected\n\n\n\n \n\n\n\n\n\n2\nYour nature of work\n\n\n\n\n\n\n3\nOur underwriting requirements",
-        "plan_name": "TM365",
-        "plan_overview": "Comforting news for your family. Thoughtful planning for the unexpected.",
-        "plan_slug": "tm365",
-        "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html",
-        "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf",
-        "scraped_at": "2026-07-05T07:21:18.040169+00:00"
-      },
-      {
         "insurer": "uoi",
         "plan_benefits": [
           "About UOI Our Management Corporate Development Risk Management Credit Rating 1 August 2024 – AM Best has affirmed UOI’s Financial Strength Rating of A+ (Superior) and Long-Term Issuer Credit Rating of “aa-” (Superior). The outlook of these Credit Ratings is stable.",
@@ -39090,6 +39067,49 @@
         "plan_url": "https://www.sunlife.com.sg/en/product-solutions/indexed-universal-life/",
         "product_brochure_url": "https://www.sunlife.com.sg/content/dam/sunlife/regional/singapore/documents/SunBrillianceIULII-brochure-en-Oct2025.pdf",
         "scraped_at": "2026-07-07T03:11:43.700002+00:00"
+      },
+      {
+        "insurer": "tokio_marine",
+        "plan_benefits": [
+          "Options We provide three main types of motor insurance: Comprehensive Approved Workshops Plan Other Workshops Plan Third Party Fire and Theft Third Party",
+          "How much is my premium? Your premium may vary, depending on: 1 Our underwriting criteria 2 Your No Claim Discount (NCD) entitlement"
+        ],
+        "plan_description": "Step on the assurance. Drive up your confidence",
+        "plan_name": "Private Motor Insurance",
+        "plan_overview": "Options We provide three main types of motor insurance: Comprehensive Approved Workshops Plan Other Workshops Plan Third Party Fire and Theft Third Party How much is my premium? Your premium may vary, depending on: 1 Our underwriting criteria 2 Your No Claim Discount (NCD) entitlement",
+        "plan_slug": "private-motor-insurance",
+        "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/motor.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:20:01.872695+00:00"
+      },
+      {
+        "insurer": "tokio_marine",
+        "plan_benefits": [
+          "Key Coverages of Standard Cover There are four key sections: Section One: Building cover* Depending on your choice of coverage, provides cover for loss or damage to Your Building caused by an Accident or a Named Peril...",
+          "How much is my premium? Your premium may vary, depending on: 1 Cover selected 2 The coverage amount 3 Our underwriting requirements"
+        ],
+        "plan_description": "Designed to bring You the essential protection for Your assets and lifestyle under one single Policy",
+        "plan_name": "TM Flexi-Home Enhance",
+        "plan_overview": "Key Coverages of Standard Cover There are four key sections: Section One: Building cover* Depending on your choice of coverage, provides cover for loss or damage to Your Building caused by an Accident or a Named Peril during the Policy Period Section Two: Contents cover** Provides cover for loss or damage to Contents caused by an Accident whilst contained in the Building during the Policy Period Section Three: Worldwide Family Liability (Excluding USA/Canada) Covers against claim from Third Party for property damage or bodily injury caused to them which You and Your Family is/are legally liable. Section Four: Personal Accident Covers You and Your Family against death or permanent disability as a result of an accidental injury. Note: */** You must purchase cover at least for either Building cover or Contents cover. Covers for Worldwide Family Liability (Excluding USA/Canada) and Family...",
+        "plan_slug": "tm-flexi-home-enhance",
+        "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/home.html",
+        "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/home/Tokio%20Marine-Flexi%20Home%20Brochure_Aug%202025_v5.pdf",
+        "scraped_at": "2026-07-07T03:20:01.872695+00:00"
+      },
+      {
+        "insurer": "tokio_marine",
+        "plan_benefits": [
+          "Options Choose among our four offerings: Plan A Sum Insured for accidental death or permanent disablement: $50,000 Medical expenses for accidents: $2,000 Plan B Sum Insured for accidental death or permanent disablemen...",
+          "Important Notes Here is are some key points to take note: All amounts shown are in Singapore Dollars Benefits under this insurance will be payable only upon death, permanent disablement or injury due to an accident. A...",
+          "How much is my premium? Your premium may vary, depending on: 1 The type of plan selected 2 Your nature of work 3 Our underwriting requirements"
+        ],
+        "plan_description": "Comforting news for your family. Thoughtful planning for the unexpected.",
+        "plan_name": "TM365",
+        "plan_overview": "Options Choose among our four offerings: Plan A Sum Insured for accidental death or permanent disablement: $50,000 Medical expenses for accidents: $2,000 Plan B Sum Insured for accidental death or permanent disablement: $100,000 Medical expenses for accidents: $4,000 Plan C Sum Insured for accidental death or permanent disablement: $200,000 Medical expenses for accidents: $6,000 Plan D Sum Insured for accidental death or permanent disablement: $300,000 Medical expenses for accidents: $8,000 Important Notes Here is are some key points to take note: All amounts shown are in Singapore Dollars Benefits under this insurance will be payable only upon death, permanent disablement or injury due to an accident. All those who are insured must be a Singapore citizen, Singapore Permanent Resident or foreigner who is holding a valid employment pass, work permit, dependent pass, student pass or soc...",
+        "plan_slug": "tm365",
+        "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html",
+        "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf",
+        "scraped_at": "2026-07-07T03:20:01.872695+00:00"
       }
     ],
     "scraper_health": [
@@ -39102,7 +39122,7 @@
         "last_success_at": "2026-07-07T02:10:00.090896+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39113,7 +39133,7 @@
         "last_success_at": "2026-07-05T07:18:04.037817+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39124,7 +39144,7 @@
         "last_success_at": "2026-07-05T07:18:05.385324+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39135,7 +39155,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39146,7 +39166,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39157,7 +39177,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39168,7 +39188,7 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39179,18 +39199,18 @@
         "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:44.929496+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "tokio_marine",
         "display_name": "Tokio Marine",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:21:18.419782+00:00",
-        "last_success_at": "2026-07-05T07:21:18.419782+00:00",
+        "last_run_at": "2026-07-07T03:20:04.296570+00:00",
+        "last_success_at": "2026-07-07T03:20:04.296570+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:20:04.296570+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39201,7 +39221,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39209,7 +39229,7 @@
         "display_name": "Allianz",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39217,7 +39237,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39228,7 +39248,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39239,7 +39259,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39250,7 +39270,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39261,7 +39281,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39269,7 +39289,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39277,7 +39297,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39285,7 +39305,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39296,7 +39316,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39304,7 +39324,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39315,7 +39335,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39323,7 +39343,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39331,7 +39351,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39339,7 +39359,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39347,7 +39367,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39355,7 +39375,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.228617+00:00",
+        "updated_at": "2026-07-07T03:11:59.974534+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39371,8 +39391,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:04:31.227942+00:00",
-        "validation_checked_at": "2026-07-07T03:04:31.227942+00:00",
+        "updated_at": "2026-07-07T03:11:59.974320+00:00",
+        "validation_checked_at": "2026-07-07T03:11:59.974320+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
