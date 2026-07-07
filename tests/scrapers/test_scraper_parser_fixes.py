@@ -10,6 +10,7 @@ from src.scrapers import (
     panel_resources,
     prudential,
     raffles_health,
+    singlife,
     uoi,
 )
 from src.validation.plan_quality import validate_plan_rows
@@ -237,6 +238,47 @@ class ScraperParserFixTests(unittest.TestCase):
             direct_product_urls=[],
         )
         self.assertEqual(["GREAT EV Protect | Car Insurance"], [row["plan_name"] for row in rows])
+
+    def test_singlife_card_parser_sanitizes_category_banner_text(self):
+        html = (FIXTURES_DIR / "singlife_category.html").read_text()
+        rows = singlife.parse_source_html(
+            html, "https://singlife.com/en/critical-illness-insurance"
+        )
+
+        self.assertEqual(
+            ["Singlife Multipay Critical Illness II"], [row["plan_name"] for row in rows]
+        )
+        self.assertEqual("Critical Illness Insurance", rows[0]["plan_description"])
+        self.assertNotIn("Speak to us", rows[0]["plan_description"])
+        self.assertIn("multiple-payout plan", rows[0]["plan_overview"])
+        self.assertEqual(
+            rows[0]["product_brochure_url"],
+            "https://singlife.com/content/dam/public/sg/documents/critical-illness-insurance/singlife-multipay-critical-illness-ii/brochure.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(singlife.TABLE_NAME, rows)))
+
+    def test_singlife_direct_product_parser_extracts_single_plan(self):
+        html = (FIXTURES_DIR / "singlife_direct.html").read_text()
+        rows = singlife.parse_source_html(html, "https://singlife.com/en/flexi-retirement-ii")
+
+        self.assertEqual(
+            ["Singlife Flexi Retirement II: Retirement Income & Savings Plan"],
+            [row["plan_name"] for row in rows],
+        )
+        self.assertIn("flexible annuity plan", rows[0]["plan_description"])
+        self.assertNotIn("Enjoy these special savings", rows[0]["plan_overview"])
+        self.assertEqual(
+            rows[0]["product_brochure_url"],
+            "https://singlife.com/content/dam/public/sg/documents/retirement/singlife-flexi-retirement-ii/brochure.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(singlife.TABLE_NAME, rows)))
+
+    def test_singlife_rejects_non_plan_source_pages(self):
+        html = (FIXTURES_DIR / "singlife_reject.html").read_text()
+
+        self.assertEqual(
+            [], singlife.parse_source_html(html, "https://singlife.com/en/grow-with-singlife")
+        )
 
     def test_raffles_product_parser_scopes_out_navigation_chrome(self):
         html = (FIXTURES_DIR / "raffles_health_product.html").read_text()
