@@ -194,6 +194,34 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual(row["plan_description"], "Simple travel coverage.")
         self.assertEqual(row["plan_benefits"], ["Trip delay"])
 
+    def test_iii_product_parser_stops_before_support_chrome(self):
+        html = (FIXTURES_DIR / "iii_product.html").read_text()
+        row = iii.parse_product_html(
+            html,
+            "https://www.iii.com.sg/products/travel-insurance",
+        )
+
+        self.assertEqual(row["plan_name"], "Travel Insurance")
+        self.assertIn("reliable travel insurance", row["plan_description"])
+        self.assertIn("Medical expenses", " ".join(row["plan_benefits"]))
+        self.assertNotIn("Still Have Queries", row["plan_overview"])
+        self.assertNotIn("pncuw@iii.com.sg", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.iii.com.sg/sites/default/files/2024-08/travel.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(iii.TABLE_NAME, [row])))
+
+    def test_iii_rejects_homepage_as_plan_row(self):
+        html = (FIXTURES_DIR / "iii_reject.html").read_text()
+
+        self.assertIsNone(
+            iii.parse_product_html(
+                html,
+                "https://www.iii.com.sg/",
+            )
+        )
+
     def test_hl_assurance_product_parser_uses_meta_and_brochure(self):
         html = (FIXTURES_DIR / "hl_assurance_product.html").read_text()
         row = hl_assurance.parse_product_html(

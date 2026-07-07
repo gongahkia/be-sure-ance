@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T04:20:38+00:00",
+  "generated_at": "2026-07-07T04:28:10+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -2887,7 +2887,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:19:26.582532+00:00",
+          "fetched_at": "2026-07-07T04:28:08.993607+00:00",
           "last_modified_at": "Wed, 11 Sep 2024 15:59:27 GMT",
           "sha256": "16884269cc7c76b8eedaaf0ab8cc47199a9958588333dfe09ce43d7dc0aa629e",
           "size_bytes": 580257,
@@ -2897,9 +2897,9 @@
         }
       },
       "insurer": "iii",
-      "last_verified_at": "2026-07-05T07:19:26.582532+00:00",
+      "last_verified_at": "2026-07-07T04:28:08.993607+00:00",
       "plan_slug": "travel-insurance",
-      "scraped_at": "2026-07-05T07:19:26.582532+00:00",
+      "scraped_at": "2026-07-07T04:28:08.993607+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.iii.com.sg/sites/default/files/2024-08/travel.pdf"
     },
@@ -8254,370 +8254,6 @@
     }
   ],
   "plans": [
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance From as low as S$500/Year",
-      "plan_name": "Motor Insurance",
-      "plan_overview": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance From as low as S$500/Year As a driver, driving a vehicle on the road carries different risks, whether it is damage to your own car or getting a claim from a third-party in an accident. If you have just purchased a new car or bike, you would want to get your vehicle insured as soon as possible. Motor insurance is one of the key essentials, yet often overlooked aspects of owning a motor vehicle in Singapore. There are several types of bike and car insurance plans as well as insurers to select from in Singapore. However, knowing which one suits your needs best is crucial. Most motor vehicle owners typically go for the cheapest car insurance. However, rather than prioritising just cost, being aware of what the policy covers and the variety of coverage available are the ideal ways to purchase the best motor insurance . If you are looking for affordable motor vehicle insurance, India International Insurance is able to provide you with the right solution. With our comprehensive coverage, you are assured of protection and coverage of your motor vehicle, the other party's motor vehicle, and, most importantly, yourself while driving or riding on the road. Our policy also provides you with added coverage over loss from natural disasters and theft.",
-      "plan_slug": "motor-insurance",
-      "plan_url": "https://www.iii.com.sg/products/motor-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home. FROM AS LOW AS S$10/MONTH",
-      "plan_name": "Home Insurance",
-      "plan_overview": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home. FROM AS LOW AS S$10/MONTH Policy covers Building, fixtures, fittings & contents. You are covered for Personal Accident & legal liability as well. (Sections indemnified as selected by Proposer). III provides you the most affordable Home Insurance. Unfortunate events due to Fire, lightning, thunderbolt, subterranean fire, explosion, Aircraft and other aerial devices and/or articles dropped therefrom. Impact damage, Bursting or overflowing, theft, hurricane, cyclone, typhoon, windstorm, earthquake, volcanic eruptions & flood.",
-      "plan_slug": "home-insurance",
-      "plan_url": "https://www.iii.com.sg/products/home-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies. FROM LESS THAN S$ 0.8/DAY",
-      "plan_name": "Travel Insurance",
-      "plan_overview": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies. FROM LESS THAN S$ 0.8/DAY Travel insurance, also known as travellers insurance, is the best way to protect yourself from financial loss due to the unexpected. Travelling is an exciting experience, but anything can happen while you're away from home. Moreover, certain countries require proof of sufficient travel insurance as a condition of entry or visa approval. Specific coverage and benefits vary, but most comprehensive travel insurance policies offer benefits including trip cancellation, flight cancellation, baggage delay, loss of baggage, trip interruption, travel accident coverage, medical benefits and emergency medical evacuation, loss of passport and travel documents, kidnap/ransom requests, and many other travel-related events and expenses. A leisure or business trip — wherever your travels take you — we offer coverage to protect your international trips with our globally accepted and affordable travel insurance policies. Don't leave home without knowing where to buy travel insurance in Singapore. You can even purchase travel insurance online for added convenience. Get cheap travel insurance quotes today and travel with peace of mind.",
-      "plan_slug": "travel-insurance",
-      "plan_url": "https://www.iii.com.sg/products/travel-insurance",
-      "product_brochure_url": "https://www.iii.com.sg/sites/default/files/2024-08/travel.pdf",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury. FROM AS LOW AS S$ 1/DAY",
-      "plan_name": "Personal Accident Insurance",
-      "plan_overview": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury. FROM AS LOW AS S$ 1/DAY It protects you or your family following bodily injury caused to the person insured by violent, accidental, external and visible means during the period of insurance as long as such injury shall, solely and independently of any other cause, result in death or disablement. It also covers you for Medical expenses incurred for the treatment related to accident covered in the policy and few specific diseases. You are covered 24 hours worldwide including Terrorism (excluding nuclear, chemical, biological) No, your proposal will be accepted based on your health declarations on your application form.",
-      "plan_slug": "personal-accident-insurance",
-      "plan_url": "https://www.iii.com.sg/products/personal-accident-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled. FROM LESS THAN S$45/MONTH​",
-      "plan_name": "Maid Insurance",
-      "plan_overview": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled. FROM LESS THAN S$45/MONTH​ Resident of Singapore Holds NRIC or FIN Employs helper/maid",
-      "plan_slug": "maid-insurance",
-      "plan_url": "https://www.iii.com.sg/products/maid-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd. FROM LESS THAN S$1/DAY",
-      "plan_name": "Pet Insurance",
-      "plan_overview": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd. FROM LESS THAN S$1/DAY You are the owner of the furry kid Not a working dog At least 12 weeks old",
-      "plan_slug": "pet-insurance",
-      "plan_url": "https://www.iii.com.sg/products/pet-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk. FROM S$60/MONTH",
-      "plan_name": "Marine Insurance",
-      "plan_overview": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk. FROM S$60/MONTH As one of the Top 5 Marine Hull insurers in Singapore, we are world renowned underwriters of Marine Hull businesses. We offer end-to-end coverage for Marine Hull businesses from end-to-end, ensuring full and proper coverage for your interests. Our insurance coverage extends to various types of ships including tankers, bulkers, LNG carriers, containers etc., and we specialize in blue-water fleets. Our team works toward providing a seamless and hassle-free insurance protection for ships, machinery, ancillary interests, builder’s risks and ship repairer’s liability. We provide support to clients with offshore energy insurance requirements including third party liability cover. Our energy risk portfolio is on a worldwide basis and helping clients mitigate the various risks and challenges in an increasingly uncertain scenario and interest areas are",
-      "plan_slug": "marine-insurance",
-      "plan_url": "https://www.iii.com.sg/products/marine-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow. FROM S$60/MONTH",
-      "plan_name": "Property Insurance",
-      "plan_overview": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow. FROM S$60/MONTH We also cover territories outside of Asia on an incidental basis, where the Insured’s major business resides within Singapore or ASEAN countries. We also cover territories outside of Asia on an incidental basis, where the Insured’s major business resides within Singapore or ASEAN countries. We are eager to answer your questions. You can contact us by emailing pncuw@iii.com.sg or by clicking the \"Make an enquiry\" button below.",
-      "plan_slug": "property-insurance",
-      "plan_url": "https://www.iii.com.sg/products/property-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation. FROM S$60/MONTH",
-      "plan_name": "Liability Insurance",
-      "plan_overview": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation. FROM S$60/MONTH Our territorial focus is within Singapore and Asia Professional Indemnity Insurance Public Liability Insurance",
-      "plan_slug": "liability-insurance",
-      "plan_url": "https://www.iii.com.sg/products/liability-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market. FROM S$60/MONTH",
-      "plan_name": "Engineering Insurance",
-      "plan_overview": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market. FROM S$60/MONTH The flexibility in our Construction or Erection All Risk Insurance as a Blanket Insurance Scheme covers Principals (project owners) against damages and liability arising from works carried out by its appointed contractors/service providers. The works that are covered include major infrastructure and property projects. Within a construction or engineering setting, equipment that keeps your daily operations running are expensive and costly to maintain. As such, replacement or repair may be an expensive affair.",
-      "plan_slug": "engineering-insurance",
-      "plan_url": "https://www.iii.com.sg/products/engineering-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts. FROM S$60/MONTH",
-      "plan_name": "Surety Insurance",
-      "plan_overview": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts. FROM S$60/MONTH India International Insurance We are eager to answer your questions. You can contact us by emailing pncuw@iii.com.sg or by clicking the \"Make an enquiry\" button below.",
-      "plan_slug": "surety-insurance",
-      "plan_url": "https://www.iii.com.sg/products/surety-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly. FROM S$60/MONTH",
-      "plan_name": "Motor Fleet Insurance",
-      "plan_overview": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly. FROM S$60/MONTH The following are the different levels of coverage that we offer: Our Comprehensive Private Motor Insurance plan provides coverage for the following: We offer coverage to the types of vehicles listed below:",
-      "plan_slug": "motor-fleet-insurance",
-      "plan_url": "https://www.iii.com.sg/products/motor-fleet-insurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
-    {
-      "insurer": "iii",
-      "plan_benefits": [
-        "Login",
-        "individual insurance products",
-        "Motor Insurance",
-        "Home Insurance",
-        "Travel Insurance",
-        "Personal Accident Insurance",
-        "Maid Insurance",
-        "Pet Insurance",
-        "business insurance products",
-        "Marine Insurance",
-        "Property Insurance",
-        "Liability Insurance",
-        "Engineering Insurance",
-        "Surety Insurance",
-        "Motor Fleet Insurance",
-        "reinsurance"
-      ],
-      "plan_description": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape FROM S$60/MONTH",
-      "plan_name": "Reinsurance",
-      "plan_overview": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape FROM S$60/MONTH As an experienced facultative inward reinsurer, we are able to work large cases and conduct an in-depth assessment on high sums- assured, primarily with a great focus on property in the ASEAN region, as well as North Asia (South Korea, Taiwan). III accepts offers from insurance companies by facultative placement. We specialize in writing risks for various industries including Petrochemical, Semi-conductor, Power plants, and Telecommunications. With a significant capacity to underwrite risks, coupled with a fast turnaround time owing to our single-office operations, our timely service and prudence in servicing all accounts that we underwrite is the reason we enjoy a great reputation and an impressive portfolio.",
-      "plan_slug": "reinsurance",
-      "plan_url": "https://www.iii.com.sg/products/reinsurance",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-    },
     {
       "insurer": "uoi",
       "plan_benefits": [
@@ -14186,6 +13822,175 @@
       "plan_url": "https://www.insurance.hsbc.com.sg/personal-accident/products/band-aid/",
       "product_brochure_url": "https://www.insurance.hsbc.com.sg/content/dam/hsbc/insn/documents/hsbc-life-band-aid-brochure.pdf",
       "scraped_at": "2026-07-07T04:19:52.595029+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Comprehensive motor insurance for private and commercial vehicles."
+      ],
+      "plan_description": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance",
+      "plan_name": "Motor Insurance",
+      "plan_overview": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance Comprehensive and Affordable Coverage Motor Insurance In SG. As a driver, driving a vehicle on the road carries different risks, whether it is damage to your own car or getting a claim from a third-party in an accident. If you have just purchased a new car or bike, you would want to get your vehicle insured as soon as possible.",
+      "plan_slug": "motor-insurance",
+      "plan_url": "https://www.iii.com.sg/products/motor-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Home insurance for building, fixtures, fittings and contents."
+      ],
+      "plan_description": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home.",
+      "plan_name": "Home Insurance",
+      "plan_overview": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home.",
+      "plan_slug": "home-insurance",
+      "plan_url": "https://www.iii.com.sg/products/home-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Travel insurance for overseas trips, medical emergencies and travel inconvenience."
+      ],
+      "plan_description": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies.",
+      "plan_name": "Travel Insurance",
+      "plan_overview": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies.",
+      "plan_slug": "travel-insurance",
+      "plan_url": "https://www.iii.com.sg/products/travel-insurance",
+      "product_brochure_url": "https://www.iii.com.sg/sites/default/files/2024-08/travel.pdf",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Personal accident cover for disability, death and medical expenses."
+      ],
+      "plan_description": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury.",
+      "plan_name": "Personal Accident Insurance",
+      "plan_overview": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury.",
+      "plan_slug": "personal-accident-insurance",
+      "plan_url": "https://www.iii.com.sg/products/personal-accident-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Maid insurance and bond package for foreign domestic workers."
+      ],
+      "plan_description": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled.",
+      "plan_name": "Maid Insurance",
+      "plan_overview": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled.",
+      "plan_slug": "maid-insurance",
+      "plan_url": "https://www.iii.com.sg/products/maid-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Pet insurance for accidents and illness affecting eligible pets."
+      ],
+      "plan_description": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd.",
+      "plan_name": "Pet Insurance",
+      "plan_overview": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd.",
+      "plan_slug": "pet-insurance",
+      "plan_url": "https://www.iii.com.sg/products/pet-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Marine insurance for hull, cargo, oil and energy risks."
+      ],
+      "plan_description": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk.",
+      "plan_name": "Marine Insurance",
+      "plan_overview": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk.",
+      "plan_slug": "marine-insurance",
+      "plan_url": "https://www.iii.com.sg/products/marine-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Commercial property insurance for assets and business property risks."
+      ],
+      "plan_description": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow.",
+      "plan_name": "Property Insurance",
+      "plan_overview": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow.",
+      "plan_slug": "property-insurance",
+      "plan_url": "https://www.iii.com.sg/products/property-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Liability insurance for professional indemnity, public liability and related risks."
+      ],
+      "plan_description": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation.",
+      "plan_name": "Liability Insurance",
+      "plan_overview": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation.",
+      "plan_slug": "liability-insurance",
+      "plan_url": "https://www.iii.com.sg/products/liability-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Engineering insurance for construction, erection, plant and machinery risks."
+      ],
+      "plan_description": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market.",
+      "plan_name": "Engineering Insurance",
+      "plan_overview": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market.",
+      "plan_slug": "engineering-insurance",
+      "plan_url": "https://www.iii.com.sg/products/engineering-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Surety insurance for bonds and contractual performance obligations."
+      ],
+      "plan_description": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts.",
+      "plan_name": "Surety Insurance",
+      "plan_overview": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts.",
+      "plan_slug": "surety-insurance",
+      "plan_url": "https://www.iii.com.sg/products/surety-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Motor fleet insurance for commercial vehicle operations."
+      ],
+      "plan_description": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly.",
+      "plan_name": "Motor Fleet Insurance",
+      "plan_overview": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly.",
+      "plan_slug": "motor-fleet-insurance",
+      "plan_url": "https://www.iii.com.sg/products/motor-fleet-insurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+    },
+    {
+      "insurer": "iii",
+      "plan_benefits": [
+        "Facultative reinsurance for property and regional commercial risks."
+      ],
+      "plan_description": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape",
+      "plan_name": "Reinsurance",
+      "plan_overview": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape",
+      "plan_slug": "reinsurance",
+      "plan_url": "https://www.iii.com.sg/products/reinsurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:28:08.985079+00:00"
     }
   ],
   "scraper_health": [
@@ -14198,7 +14003,7 @@
       "last_success_at": "2026-07-07T03:34:08.824050+00:00",
       "row_count": 44,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14209,7 +14014,7 @@
       "last_success_at": "2026-07-07T03:46:19.376563+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14220,7 +14025,7 @@
       "last_success_at": "2026-07-07T03:51:27.242218+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14231,7 +14036,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14242,18 +14047,18 @@
       "last_success_at": "2026-07-07T04:20:37.298343+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:20:37.298343+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "iii",
       "display_name": "India International Insurance",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:19:28.162614+00:00",
-      "last_success_at": "2026-07-05T07:19:28.162614+00:00",
+      "last_run_at": "2026-07-07T04:28:10.665012+00:00",
+      "last_success_at": "2026-07-07T04:28:10.665012+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:28:10.665012+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14264,7 +14069,7 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14275,7 +14080,7 @@
       "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14286,7 +14091,7 @@
       "last_success_at": "2026-07-07T03:20:04.296570+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14297,7 +14102,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14308,7 +14113,7 @@
       "last_success_at": "2026-07-07T03:39:55.246857+00:00",
       "row_count": 18,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14316,7 +14121,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14327,7 +14132,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14338,7 +14143,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14349,7 +14154,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14360,7 +14165,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14368,7 +14173,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14376,7 +14181,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14384,7 +14189,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14395,7 +14200,7 @@
       "last_success_at": "2026-07-07T04:01:47.198478+00:00",
       "row_count": 21,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14406,7 +14211,7 @@
       "last_success_at": "2026-07-07T04:10:20.509017+00:00",
       "row_count": 21,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:10:20.509017+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14417,7 +14222,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14425,7 +14230,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14433,7 +14238,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14441,7 +14246,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14449,7 +14254,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "not_run"
     },
     {
@@ -14457,7 +14262,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.654464+00:00",
+      "updated_at": "2026-07-07T04:21:00.808887+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -14473,8 +14278,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:09:31.652990+00:00",
-      "validation_checked_at": "2026-07-07T04:09:31.652990+00:00",
+      "updated_at": "2026-07-07T04:21:00.807517+00:00",
+      "validation_checked_at": "2026-07-07T04:21:00.807517+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -34925,7 +34730,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:19:26.582532+00:00",
+            "fetched_at": "2026-07-07T04:28:08.993607+00:00",
             "last_modified_at": "Wed, 11 Sep 2024 15:59:27 GMT",
             "sha256": "16884269cc7c76b8eedaaf0ab8cc47199a9958588333dfe09ce43d7dc0aa629e",
             "size_bytes": 580257,
@@ -34935,9 +34740,9 @@
           }
         },
         "insurer": "iii",
-        "last_verified_at": "2026-07-05T07:19:26.582532+00:00",
+        "last_verified_at": "2026-07-07T04:28:08.993607+00:00",
         "plan_slug": "travel-insurance",
-        "scraped_at": "2026-07-05T07:19:26.582532+00:00",
+        "scraped_at": "2026-07-07T04:28:08.993607+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.iii.com.sg/sites/default/files/2024-08/travel.pdf"
       },
@@ -40292,370 +40097,6 @@
       }
     ],
     "plans": [
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance From as low as S$500/Year",
-        "plan_name": "Motor Insurance",
-        "plan_overview": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance From as low as S$500/Year As a driver, driving a vehicle on the road carries different risks, whether it is damage to your own car or getting a claim from a third-party in an accident. If you have just purchased a new car or bike, you would want to get your vehicle insured as soon as possible. Motor insurance is one of the key essentials, yet often overlooked aspects of owning a motor vehicle in Singapore. There are several types of bike and car insurance plans as well as insurers to select from in Singapore. However, knowing which one suits your needs best is crucial. Most motor vehicle owners typically go for the cheapest car insurance. However, rather than prioritising just cost, being aware of what the policy covers and the variety of coverage available are the ideal ways to purchase the best motor insurance . If you are looking for affordable motor vehicle insurance, India International Insurance is able to provide you with the right solution. With our comprehensive coverage, you are assured of protection and coverage of your motor vehicle, the other party's motor vehicle, and, most importantly, yourself while driving or riding on the road. Our policy also provides you with added coverage over loss from natural disasters and theft.",
-        "plan_slug": "motor-insurance",
-        "plan_url": "https://www.iii.com.sg/products/motor-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home. FROM AS LOW AS S$10/MONTH",
-        "plan_name": "Home Insurance",
-        "plan_overview": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home. FROM AS LOW AS S$10/MONTH Policy covers Building, fixtures, fittings & contents. You are covered for Personal Accident & legal liability as well. (Sections indemnified as selected by Proposer). III provides you the most affordable Home Insurance. Unfortunate events due to Fire, lightning, thunderbolt, subterranean fire, explosion, Aircraft and other aerial devices and/or articles dropped therefrom. Impact damage, Bursting or overflowing, theft, hurricane, cyclone, typhoon, windstorm, earthquake, volcanic eruptions & flood.",
-        "plan_slug": "home-insurance",
-        "plan_url": "https://www.iii.com.sg/products/home-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies. FROM LESS THAN S$ 0.8/DAY",
-        "plan_name": "Travel Insurance",
-        "plan_overview": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies. FROM LESS THAN S$ 0.8/DAY Travel insurance, also known as travellers insurance, is the best way to protect yourself from financial loss due to the unexpected. Travelling is an exciting experience, but anything can happen while you're away from home. Moreover, certain countries require proof of sufficient travel insurance as a condition of entry or visa approval. Specific coverage and benefits vary, but most comprehensive travel insurance policies offer benefits including trip cancellation, flight cancellation, baggage delay, loss of baggage, trip interruption, travel accident coverage, medical benefits and emergency medical evacuation, loss of passport and travel documents, kidnap/ransom requests, and many other travel-related events and expenses. A leisure or business trip — wherever your travels take you — we offer coverage to protect your international trips with our globally accepted and affordable travel insurance policies. Don't leave home without knowing where to buy travel insurance in Singapore. You can even purchase travel insurance online for added convenience. Get cheap travel insurance quotes today and travel with peace of mind.",
-        "plan_slug": "travel-insurance",
-        "plan_url": "https://www.iii.com.sg/products/travel-insurance",
-        "product_brochure_url": "https://www.iii.com.sg/sites/default/files/2024-08/travel.pdf",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury. FROM AS LOW AS S$ 1/DAY",
-        "plan_name": "Personal Accident Insurance",
-        "plan_overview": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury. FROM AS LOW AS S$ 1/DAY It protects you or your family following bodily injury caused to the person insured by violent, accidental, external and visible means during the period of insurance as long as such injury shall, solely and independently of any other cause, result in death or disablement. It also covers you for Medical expenses incurred for the treatment related to accident covered in the policy and few specific diseases. You are covered 24 hours worldwide including Terrorism (excluding nuclear, chemical, biological) No, your proposal will be accepted based on your health declarations on your application form.",
-        "plan_slug": "personal-accident-insurance",
-        "plan_url": "https://www.iii.com.sg/products/personal-accident-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled. FROM LESS THAN S$45/MONTH​",
-        "plan_name": "Maid Insurance",
-        "plan_overview": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled. FROM LESS THAN S$45/MONTH​ Resident of Singapore Holds NRIC or FIN Employs helper/maid",
-        "plan_slug": "maid-insurance",
-        "plan_url": "https://www.iii.com.sg/products/maid-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd. FROM LESS THAN S$1/DAY",
-        "plan_name": "Pet Insurance",
-        "plan_overview": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd. FROM LESS THAN S$1/DAY You are the owner of the furry kid Not a working dog At least 12 weeks old",
-        "plan_slug": "pet-insurance",
-        "plan_url": "https://www.iii.com.sg/products/pet-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk. FROM S$60/MONTH",
-        "plan_name": "Marine Insurance",
-        "plan_overview": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk. FROM S$60/MONTH As one of the Top 5 Marine Hull insurers in Singapore, we are world renowned underwriters of Marine Hull businesses. We offer end-to-end coverage for Marine Hull businesses from end-to-end, ensuring full and proper coverage for your interests. Our insurance coverage extends to various types of ships including tankers, bulkers, LNG carriers, containers etc., and we specialize in blue-water fleets. Our team works toward providing a seamless and hassle-free insurance protection for ships, machinery, ancillary interests, builder’s risks and ship repairer’s liability. We provide support to clients with offshore energy insurance requirements including third party liability cover. Our energy risk portfolio is on a worldwide basis and helping clients mitigate the various risks and challenges in an increasingly uncertain scenario and interest areas are",
-        "plan_slug": "marine-insurance",
-        "plan_url": "https://www.iii.com.sg/products/marine-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow. FROM S$60/MONTH",
-        "plan_name": "Property Insurance",
-        "plan_overview": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow. FROM S$60/MONTH We also cover territories outside of Asia on an incidental basis, where the Insured’s major business resides within Singapore or ASEAN countries. We also cover territories outside of Asia on an incidental basis, where the Insured’s major business resides within Singapore or ASEAN countries. We are eager to answer your questions. You can contact us by emailing pncuw@iii.com.sg or by clicking the \"Make an enquiry\" button below.",
-        "plan_slug": "property-insurance",
-        "plan_url": "https://www.iii.com.sg/products/property-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation. FROM S$60/MONTH",
-        "plan_name": "Liability Insurance",
-        "plan_overview": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation. FROM S$60/MONTH Our territorial focus is within Singapore and Asia Professional Indemnity Insurance Public Liability Insurance",
-        "plan_slug": "liability-insurance",
-        "plan_url": "https://www.iii.com.sg/products/liability-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market. FROM S$60/MONTH",
-        "plan_name": "Engineering Insurance",
-        "plan_overview": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market. FROM S$60/MONTH The flexibility in our Construction or Erection All Risk Insurance as a Blanket Insurance Scheme covers Principals (project owners) against damages and liability arising from works carried out by its appointed contractors/service providers. The works that are covered include major infrastructure and property projects. Within a construction or engineering setting, equipment that keeps your daily operations running are expensive and costly to maintain. As such, replacement or repair may be an expensive affair.",
-        "plan_slug": "engineering-insurance",
-        "plan_url": "https://www.iii.com.sg/products/engineering-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts. FROM S$60/MONTH",
-        "plan_name": "Surety Insurance",
-        "plan_overview": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts. FROM S$60/MONTH India International Insurance We are eager to answer your questions. You can contact us by emailing pncuw@iii.com.sg or by clicking the \"Make an enquiry\" button below.",
-        "plan_slug": "surety-insurance",
-        "plan_url": "https://www.iii.com.sg/products/surety-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly. FROM S$60/MONTH",
-        "plan_name": "Motor Fleet Insurance",
-        "plan_overview": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly. FROM S$60/MONTH The following are the different levels of coverage that we offer: Our Comprehensive Private Motor Insurance plan provides coverage for the following: We offer coverage to the types of vehicles listed below:",
-        "plan_slug": "motor-fleet-insurance",
-        "plan_url": "https://www.iii.com.sg/products/motor-fleet-insurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
-      {
-        "insurer": "iii",
-        "plan_benefits": [
-          "Login",
-          "individual insurance products",
-          "Motor Insurance",
-          "Home Insurance",
-          "Travel Insurance",
-          "Personal Accident Insurance",
-          "Maid Insurance",
-          "Pet Insurance",
-          "business insurance products",
-          "Marine Insurance",
-          "Property Insurance",
-          "Liability Insurance",
-          "Engineering Insurance",
-          "Surety Insurance",
-          "Motor Fleet Insurance",
-          "reinsurance"
-        ],
-        "plan_description": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape FROM S$60/MONTH",
-        "plan_name": "Reinsurance",
-        "plan_overview": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape FROM S$60/MONTH As an experienced facultative inward reinsurer, we are able to work large cases and conduct an in-depth assessment on high sums- assured, primarily with a great focus on property in the ASEAN region, as well as North Asia (South Korea, Taiwan). III accepts offers from insurance companies by facultative placement. We specialize in writing risks for various industries including Petrochemical, Semi-conductor, Power plants, and Telecommunications. With a significant capacity to underwrite risks, coupled with a fast turnaround time owing to our single-office operations, our timely service and prudence in servicing all accounts that we underwrite is the reason we enjoy a great reputation and an impressive portfolio.",
-        "plan_slug": "reinsurance",
-        "plan_url": "https://www.iii.com.sg/products/reinsurance",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:19:26.579642+00:00"
-      },
       {
         "insurer": "uoi",
         "plan_benefits": [
@@ -46224,6 +45665,175 @@
         "plan_url": "https://www.insurance.hsbc.com.sg/personal-accident/products/band-aid/",
         "product_brochure_url": "https://www.insurance.hsbc.com.sg/content/dam/hsbc/insn/documents/hsbc-life-band-aid-brochure.pdf",
         "scraped_at": "2026-07-07T04:19:52.595029+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Comprehensive motor insurance for private and commercial vehicles."
+        ],
+        "plan_description": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance",
+        "plan_name": "Motor Insurance",
+        "plan_overview": "Secure your journey, safeguard your vehicle with our comprehensive motor insurance Comprehensive and Affordable Coverage Motor Insurance In SG. As a driver, driving a vehicle on the road carries different risks, whether it is damage to your own car or getting a claim from a third-party in an accident. If you have just purchased a new car or bike, you would want to get your vehicle insured as soon as possible.",
+        "plan_slug": "motor-insurance",
+        "plan_url": "https://www.iii.com.sg/products/motor-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Home insurance for building, fixtures, fittings and contents."
+        ],
+        "plan_description": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home.",
+        "plan_name": "Home Insurance",
+        "plan_overview": "III provides you the best Home Insurance Policy in Singapore which does not only protects your property's building but also what is inside your home.",
+        "plan_slug": "home-insurance",
+        "plan_url": "https://www.iii.com.sg/products/home-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Travel insurance for overseas trips, medical emergencies and travel inconvenience."
+        ],
+        "plan_description": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies.",
+        "plan_name": "Travel Insurance",
+        "plan_overview": "Planning a dream getaway or business trip? With over 30 years of experience, III offers reliable travel insurance plans to protect you every step of the way. Get peace of mind knowing you're covered, from unexpected delays to medical emergencies.",
+        "plan_slug": "travel-insurance",
+        "plan_url": "https://www.iii.com.sg/products/travel-insurance",
+        "product_brochure_url": "https://www.iii.com.sg/sites/default/files/2024-08/travel.pdf",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Personal accident cover for disability, death and medical expenses."
+        ],
+        "plan_description": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury.",
+        "plan_name": "Personal Accident Insurance",
+        "plan_overview": "Make sure your Personal Accident cover protects you from accidental setbacks, whether it is disability, death or medical expenses for an injury.",
+        "plan_slug": "personal-accident-insurance",
+        "plan_url": "https://www.iii.com.sg/products/personal-accident-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Maid insurance and bond package for foreign domestic workers."
+        ],
+        "plan_description": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled.",
+        "plan_name": "Maid Insurance",
+        "plan_overview": "Hiring a maid makes you legally liable for the health and safety of your helper. MOM has mandated Maid Insurance as one of the basic requirements to be fulfilled.",
+        "plan_slug": "maid-insurance",
+        "plan_url": "https://www.iii.com.sg/products/maid-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Pet insurance for accidents and illness affecting eligible pets."
+        ],
+        "plan_description": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd.",
+        "plan_name": "Pet Insurance",
+        "plan_overview": "i-Fur Kidz (Pet Insurance) is marketed exclusively through III Agent, AsiaOne Agency Pte Ltd.",
+        "plan_slug": "pet-insurance",
+        "plan_url": "https://www.iii.com.sg/products/pet-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Marine insurance for hull, cargo, oil and energy risks."
+        ],
+        "plan_description": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk.",
+        "plan_name": "Marine Insurance",
+        "plan_overview": "Marine insurance gives the protection against financial damages and/or losses from areas like Marine Hull, Cargo and Oil & Energy Risk.",
+        "plan_slug": "marine-insurance",
+        "plan_url": "https://www.iii.com.sg/products/marine-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Commercial property insurance for assets and business property risks."
+        ],
+        "plan_description": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow.",
+        "plan_name": "Property Insurance",
+        "plan_overview": "Shielding your investments, securing your dreams. III's property insurance, your key to a worry-free tomorrow.",
+        "plan_slug": "property-insurance",
+        "plan_url": "https://www.iii.com.sg/products/property-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Liability insurance for professional indemnity, public liability and related risks."
+        ],
+        "plan_description": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation.",
+        "plan_name": "Liability Insurance",
+        "plan_overview": "Protecting your assets and providing peace of mind, our comprehensive liability insurance ensures you're covered against unforeseen risks, safeguarding your financial well-being and reputation.",
+        "plan_slug": "liability-insurance",
+        "plan_url": "https://www.iii.com.sg/products/liability-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Engineering insurance for construction, erection, plant and machinery risks."
+        ],
+        "plan_description": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market.",
+        "plan_name": "Engineering Insurance",
+        "plan_overview": "III has the expertise to understand the dynamics of Engineering Insurance and is able to provide additional covers required by the market.",
+        "plan_slug": "engineering-insurance",
+        "plan_url": "https://www.iii.com.sg/products/engineering-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Surety insurance for bonds and contractual performance obligations."
+        ],
+        "plan_description": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts.",
+        "plan_name": "Surety Insurance",
+        "plan_overview": "Surety insurance provides financial security and peace of mind by guaranteeing performance, completion, or payment obligations in various contracts.",
+        "plan_slug": "surety-insurance",
+        "plan_url": "https://www.iii.com.sg/products/surety-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Motor fleet insurance for commercial vehicle operations."
+        ],
+        "plan_description": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly.",
+        "plan_name": "Motor Fleet Insurance",
+        "plan_overview": "With tailored policies and expert support, safeguard your fleet and keep your operations running smoothly.",
+        "plan_slug": "motor-fleet-insurance",
+        "plan_url": "https://www.iii.com.sg/products/motor-fleet-insurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
+      },
+      {
+        "insurer": "iii",
+        "plan_benefits": [
+          "Facultative reinsurance for property and regional commercial risks."
+        ],
+        "plan_description": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape",
+        "plan_name": "Reinsurance",
+        "plan_overview": "Our Reinsurance Solutions Provide Stability and Confidence in an Ever-Changing Insurance Landscape",
+        "plan_slug": "reinsurance",
+        "plan_url": "https://www.iii.com.sg/products/reinsurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:28:08.985079+00:00"
       }
     ],
     "scraper_health": [
@@ -46236,7 +45846,7 @@
         "last_success_at": "2026-07-07T03:34:08.824050+00:00",
         "row_count": 44,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46247,7 +45857,7 @@
         "last_success_at": "2026-07-07T03:46:19.376563+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46258,7 +45868,7 @@
         "last_success_at": "2026-07-07T03:51:27.242218+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46269,7 +45879,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46280,18 +45890,18 @@
         "last_success_at": "2026-07-07T04:20:37.298343+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:20:37.298343+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "iii",
         "display_name": "India International Insurance",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:19:28.162614+00:00",
-        "last_success_at": "2026-07-05T07:19:28.162614+00:00",
+        "last_run_at": "2026-07-07T04:28:10.665012+00:00",
+        "last_success_at": "2026-07-07T04:28:10.665012+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:28:10.665012+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46302,7 +45912,7 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46313,7 +45923,7 @@
         "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46324,7 +45934,7 @@
         "last_success_at": "2026-07-07T03:20:04.296570+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46335,7 +45945,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46346,7 +45956,7 @@
         "last_success_at": "2026-07-07T03:39:55.246857+00:00",
         "row_count": 18,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46354,7 +45964,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46365,7 +45975,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46376,7 +45986,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46387,7 +45997,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46398,7 +46008,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46406,7 +46016,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46414,7 +46024,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46422,7 +46032,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46433,7 +46043,7 @@
         "last_success_at": "2026-07-07T04:01:47.198478+00:00",
         "row_count": 21,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46444,7 +46054,7 @@
         "last_success_at": "2026-07-07T04:10:20.509017+00:00",
         "row_count": 21,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:10:20.509017+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46455,7 +46065,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46463,7 +46073,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46471,7 +46081,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46479,7 +46089,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46487,7 +46097,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "not_run"
       },
       {
@@ -46495,7 +46105,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.654464+00:00",
+        "updated_at": "2026-07-07T04:21:00.808887+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -46511,8 +46121,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:09:31.652990+00:00",
-        "validation_checked_at": "2026-07-07T04:09:31.652990+00:00",
+        "updated_at": "2026-07-07T04:21:00.807517+00:00",
+        "validation_checked_at": "2026-07-07T04:21:00.807517+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
