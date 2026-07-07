@@ -3,6 +3,7 @@ from pathlib import Path
 
 from src.backend.helper import format_plan_rows
 from src.scrapers import (
+    allianz,
     chubb,
     fwd,
     great_eastern,
@@ -45,6 +46,56 @@ class FakeSession:
 
 
 class ScraperParserFixTests(unittest.TestCase):
+    def test_allianz_product_parser_scopes_out_navigation_chrome(self):
+        html = (FIXTURES_DIR / "allianz_product.html").read_text()
+        row = allianz.parse_product_html(
+            html,
+            "https://www.allianz.sg/individual-solutions/allianz-home-protect.html",
+        )
+
+        self.assertEqual(row["plan_name"], "Allianz Home Protect")
+        self.assertIn("Home contents", row["plan_description"])
+        self.assertNotIn("Contact Us", row["plan_overview"])
+        self.assertIn("Covers your home contents", row["plan_benefits"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.allianz.sg/content/dam/onemarketing/azsg/allianz-home-protect-policy-wording.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(allianz.TABLE_NAME, [row])),
+        )
+
+    def test_allianz_rejects_claims_and_unknown_pages_as_plan_rows(self):
+        reject_html = (FIXTURES_DIR / "allianz_reject.html").read_text()
+
+        self.assertIsNone(
+            allianz.parse_product_html(
+                reject_html,
+                "https://www.allianz.sg/claims.html",
+            )
+        )
+        self.assertIsNone(
+            allianz.parse_product_html(
+                reject_html,
+                "https://www.allianz.sg/news.html",
+            )
+        )
+
+    def test_allianz_catalog_outputs_exact_supported_rows(self):
+        rows = allianz.scrape_allianz()
+        names = [row["plan_name"] for row in rows]
+
+        self.assertIn("Allianz Motor Protect", names)
+        self.assertIn("Allianz Cyber360 Protect", names)
+        self.assertIn("Commercial Motor Insurance", names)
+        self.assertNotIn("Claims", names)
+        self.assertEqual(18, len(rows))
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(allianz.TABLE_NAME, rows)),
+        )
+
     def test_chubb_product_parser_extracts_personal_plan(self):
         row = chubb.parse_product_html(
             """

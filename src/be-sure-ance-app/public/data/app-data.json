@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T03:34:09+00:00",
+  "generated_at": "2026-07-07T03:39:55+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -11292,6 +11292,276 @@
       "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-wealth-venture-ii",
       "product_brochure_url": "",
       "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Lifetime warranty on accident repairs at authorised workshops.",
+        "Complimentary courtesy car and 24/7 roadside assistance.",
+        "New-for-old replacement if an eligible car is less than 2 years old."
+      ],
+      "plan_description": "Motor insurance with comprehensive, third-party, and third-party fire and theft options.",
+      "plan_name": "Allianz Motor Protect",
+      "plan_overview": "Lifetime warranty on accident repairs at authorised workshops. Complimentary courtesy car and 24/7 roadside assistance. New-for-old replacement if an eligible car is less than 2 years old.",
+      "plan_slug": "allianz-motor-protect",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-motor-protect.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "24/7 roadside assistance for accidents and breakdowns.",
+        "Portable charging cable coverage for accident, fire and theft.",
+        "Private and public charging station liability and compassionate cover."
+      ],
+      "plan_description": "Electric vehicle motor insurance with EV-specific charging and component benefits.",
+      "plan_name": "Allianz Electric Motor Protect",
+      "plan_overview": "24/7 roadside assistance for accidents and breakdowns. Portable charging cable coverage for accident, fire and theft. Private and public charging station liability and compassionate cover.",
+      "plan_slug": "allianz-electric-motor-protect",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-electric-motor-protect.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Medical expenses, hospital stay and permanent disability protection.",
+        "Coverage for 27 infectious diseases including Dengue and HFMD.",
+        "Food poisoning, TCM and physiotherapy treatment benefits."
+      ],
+      "plan_description": "Personal accident insurance with worldwide 24/7 protection.",
+      "plan_name": "Allianz Accident Protect Plus",
+      "plan_overview": "Medical expenses, hospital stay and permanent disability protection. Coverage for 27 infectious diseases including Dengue and HFMD. Food poisoning, TCM and physiotherapy treatment benefits.",
+      "plan_slug": "allianz-accident-protect-plus",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-accident-protect-plus.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Major cancer lump sum benefit.",
+        "Non-invasive cancer benefit.",
+        "Monthly income benefit of up to S$3,500 for 12 months."
+      ],
+      "plan_description": "Cancer insurance with lump sum and monthly income benefits.",
+      "plan_name": "Allianz Cancer Protect",
+      "plan_overview": "Major cancer lump sum benefit. Non-invasive cancer benefit. Monthly income benefit of up to S$3,500 for 12 months.",
+      "plan_slug": "allianz-cancer-protect",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-cancer-protect.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Home contents protection against fire, theft, water damage and other covered events.",
+        "Renovation cover up to S$150,000.",
+        "Worldwide personal liability cover up to S$2,000,000."
+      ],
+      "plan_description": "Home contents and renovation insurance for Singapore homes.",
+      "plan_name": "Allianz Home Protect",
+      "plan_overview": "Home contents protection against fire, theft, water damage and other covered events. Renovation cover up to S$150,000. Worldwide personal liability cover up to S$2,000,000.",
+      "plan_slug": "allianz-home-protect",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-home-protect.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Daily hospital cash for illness or injury hospitalisation.",
+        "ICU cash and recuperation benefits.",
+        "Infectious disease lump sum benefit for selected diseases."
+      ],
+      "plan_description": "Hospital cash insurance that pays fixed daily benefits during hospitalisation.",
+      "plan_name": "Allianz Hospital Income Protect",
+      "plan_overview": "Daily hospital cash for illness or injury hospitalisation. ICU cash and recuperation benefits. Infectious disease lump sum benefit for selected diseases.",
+      "plan_slug": "allianz-hospital-income-protect",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-hospital-income-protect.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Trip cancellation and interruption cover up to S$15,000.",
+        "Search and rescue cover up to S$10,000.",
+        "Paperless online claims process."
+      ],
+      "plan_description": "Travel insurance with trip disruption, medical and emergency support benefits.",
+      "plan_name": "Allianz Travel Protect",
+      "plan_overview": "Trip cancellation and interruption cover up to S$15,000. Search and rescue cover up to S$10,000. Paperless online claims process.",
+      "plan_slug": "allianz-travel-protect",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-travel-protect.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Banking protection for phishing, smishing and unauthorised transactions.",
+        "Shopping protection for undelivered, delayed, damaged or incorrect purchases.",
+        "Worldwide coverage with locally handled claims."
+      ],
+      "plan_description": "Personal cyber insurance for fraud, identity theft and online shopping risks.",
+      "plan_name": "Allianz Cyber360 Protect",
+      "plan_overview": "Banking protection for phishing, smishing and unauthorised transactions. Shopping protection for undelivered, delayed, damaged or incorrect purchases. Worldwide coverage with locally handled claims.",
+      "plan_slug": "allianz-cyber360-protect",
+      "plan_url": "https://www.allianz.sg/individual-solutions/allianz-cyber360-protect.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Doctor visits, vaccinations, surgery and diagnostic test options.",
+        "Prescribed medication and cancer treatment cover options.",
+        "24/7 support, TeleHealth and second medical opinion services."
+      ],
+      "plan_description": "Private international healthcare plans for individuals and families in Singapore.",
+      "plan_name": "International Healthcare Plans",
+      "plan_overview": "Doctor visits, vaccinations, surgery and diagnostic test options. Prescribed medication and cancer treatment cover options. 24/7 support, TeleHealth and second medical opinion services.",
+      "plan_slug": "international-healthcare-plans",
+      "plan_url": "https://www.allianz.sg/individual-solutions/international-health.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Business interruption benefit.",
+        "Contents, stocks, public liability and money cover options.",
+        "Optional work injury compensation and double-limit benefits."
+      ],
+      "plan_description": "Packaged SME insurance for Singapore companies with up to 25 employees.",
+      "plan_name": "Allianz Smart SME",
+      "plan_overview": "Business interruption benefit. Contents, stocks, public liability and money cover options. Optional work injury compensation and double-limit benefits.",
+      "plan_slug": "allianz-smart-sme",
+      "plan_url": "https://www.allianz.sg/sme-solutions.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Worldwide employee health coverage.",
+        "Optional dental, optical and repatriation plans.",
+        "Employer portal and employee digital health services."
+      ],
+      "plan_description": "International healthcare plans for SMEs with expatriate or travelling employees.",
+      "plan_name": "Summit for Singapore International Healthcare Plans",
+      "plan_overview": "Worldwide employee health coverage. Optional dental, optical and repatriation plans. Employer portal and employee digital health services.",
+      "plan_slug": "summit-for-singapore-international-healthcare-plans",
+      "plan_url": "https://www.allianz.sg/sme-solutions/international-health.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Public liability insurance.",
+        "Product liability insurance.",
+        "Combined general liability insurance."
+      ],
+      "plan_description": "Corporate liability insurance for accidental third-party damage or injury exposures.",
+      "plan_name": "Casualty Insurance",
+      "plan_overview": "Public liability insurance. Product liability insurance. Combined general liability insurance.",
+      "plan_slug": "casualty-insurance",
+      "plan_url": "https://www.allianz.sg/corporate-solutions/casualty-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Contractors' all risks and erection all risks cover.",
+        "Electronic equipment insurance.",
+        "Machinery all risks and machinery breakdown insurance."
+      ],
+      "plan_description": "Engineering insurance for construction projects, machinery and electronic equipment.",
+      "plan_name": "Engineering Insurance",
+      "plan_overview": "Contractors' all risks and erection all risks cover. Electronic equipment insurance. Machinery all risks and machinery breakdown insurance.",
+      "plan_slug": "engineering-insurance",
+      "plan_url": "https://www.allianz.sg/corporate-solutions/engineering-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Financial protection for accident-related expenses.",
+        "Support for medical expenses, permanent disablement and death due to accident.",
+        "Designed for businesses and employees."
+      ],
+      "plan_description": "Corporate personal accident insurance for employees.",
+      "plan_name": "Group Personal Accident Insurance",
+      "plan_overview": "Financial protection for accident-related expenses. Support for medical expenses, permanent disablement and death due to accident. Designed for businesses and employees.",
+      "plan_slug": "group-personal-accident-insurance",
+      "plan_url": "https://www.allianz.sg/corporate-solutions/group-personal-accident-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Goods in transit cover.",
+        "Single voyage and annual policy options.",
+        "Marine cargo open cover policy option."
+      ],
+      "plan_description": "Marine cargo insurance for goods in transit by air, land or sea.",
+      "plan_name": "Marine Insurance",
+      "plan_overview": "Goods in transit cover. Single voyage and annual policy options. Marine cargo open cover policy option.",
+      "plan_slug": "marine-insurance",
+      "plan_url": "https://www.allianz.sg/corporate-solutions/marine-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Fire insurance.",
+        "Business interruption insurance.",
+        "Industrial all risks insurance."
+      ],
+      "plan_description": "Corporate property insurance for property, business interruption and industrial all risks.",
+      "plan_name": "Property Insurance",
+      "plan_overview": "Fire insurance. Business interruption insurance. Industrial all risks insurance.",
+      "plan_slug": "property-insurance",
+      "plan_url": "https://www.allianz.sg/corporate-solutions/property-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Medical care and income compensation for injured workers.",
+        "Lump sum compensation for death or permanent incapacity.",
+        "Medical leave wages cover."
+      ],
+      "plan_description": "Statutory employer insurance under the Work Injury Compensation Act.",
+      "plan_name": "Work Injury Compensation Insurance",
+      "plan_overview": "Medical care and income compensation for injured workers. Lump sum compensation for death or permanent incapacity. Medical leave wages cover.",
+      "plan_slug": "work-injury-compensation-insurance",
+      "plan_url": "https://www.allianz.sg/corporate-solutions/work-injury-compensation-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+    },
+    {
+      "insurer": "allianz",
+      "plan_benefits": [
+        "Third-party liability cover.",
+        "Vehicle damage after accidents.",
+        "Theft or attempted theft cover depending on selected policy."
+      ],
+      "plan_description": "Commercial motor insurance for business vehicles and fleets.",
+      "plan_name": "Commercial Motor Insurance",
+      "plan_overview": "Third-party liability cover. Vehicle damage after accidents. Theft or attempted theft cover depending on selected policy.",
+      "plan_slug": "commercial-motor-insurance",
+      "plan_url": "https://www.allianz.sg/corporate-solutions/commercial-motor-insurance.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:39:55.237445+00:00"
     }
   ],
   "scraper_health": [
@@ -11304,7 +11574,7 @@
       "last_success_at": "2026-07-07T03:34:08.824050+00:00",
       "row_count": 44,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:34:08.824050+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11315,7 +11585,7 @@
       "last_success_at": "2026-07-05T07:18:04.037817+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11326,7 +11596,7 @@
       "last_success_at": "2026-07-05T07:18:05.385324+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11337,7 +11607,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11348,7 +11618,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11359,7 +11629,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11370,7 +11640,7 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11381,7 +11651,7 @@
       "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11392,7 +11662,7 @@
       "last_success_at": "2026-07-07T03:20:04.296570+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11403,15 +11673,18 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "allianz",
       "display_name": "Allianz",
-      "row_count": 0,
+      "last_error": null,
+      "last_run_at": "2026-07-07T03:39:55.246857+00:00",
+      "last_success_at": "2026-07-07T03:39:55.246857+00:00",
+      "row_count": 18,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:55.246857+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11419,7 +11692,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11430,7 +11703,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11441,7 +11714,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11452,7 +11725,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11463,7 +11736,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11471,7 +11744,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11479,7 +11752,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11487,7 +11760,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11498,7 +11771,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11506,7 +11779,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11517,7 +11790,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11525,7 +11798,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11533,7 +11806,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11541,7 +11814,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11549,7 +11822,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "not_run"
     },
     {
@@ -11557,7 +11830,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817875+00:00",
+      "updated_at": "2026-07-07T03:39:45.235651+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -11573,8 +11846,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:33:57.817665+00:00",
-      "validation_checked_at": "2026-07-07T03:33:57.817665+00:00",
+      "updated_at": "2026-07-07T03:39:45.235461+00:00",
+      "validation_checked_at": "2026-07-07T03:39:45.235461+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -40430,6 +40703,276 @@
         "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-wealth-venture-ii",
         "product_brochure_url": "",
         "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Lifetime warranty on accident repairs at authorised workshops.",
+          "Complimentary courtesy car and 24/7 roadside assistance.",
+          "New-for-old replacement if an eligible car is less than 2 years old."
+        ],
+        "plan_description": "Motor insurance with comprehensive, third-party, and third-party fire and theft options.",
+        "plan_name": "Allianz Motor Protect",
+        "plan_overview": "Lifetime warranty on accident repairs at authorised workshops. Complimentary courtesy car and 24/7 roadside assistance. New-for-old replacement if an eligible car is less than 2 years old.",
+        "plan_slug": "allianz-motor-protect",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-motor-protect.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "24/7 roadside assistance for accidents and breakdowns.",
+          "Portable charging cable coverage for accident, fire and theft.",
+          "Private and public charging station liability and compassionate cover."
+        ],
+        "plan_description": "Electric vehicle motor insurance with EV-specific charging and component benefits.",
+        "plan_name": "Allianz Electric Motor Protect",
+        "plan_overview": "24/7 roadside assistance for accidents and breakdowns. Portable charging cable coverage for accident, fire and theft. Private and public charging station liability and compassionate cover.",
+        "plan_slug": "allianz-electric-motor-protect",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-electric-motor-protect.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Medical expenses, hospital stay and permanent disability protection.",
+          "Coverage for 27 infectious diseases including Dengue and HFMD.",
+          "Food poisoning, TCM and physiotherapy treatment benefits."
+        ],
+        "plan_description": "Personal accident insurance with worldwide 24/7 protection.",
+        "plan_name": "Allianz Accident Protect Plus",
+        "plan_overview": "Medical expenses, hospital stay and permanent disability protection. Coverage for 27 infectious diseases including Dengue and HFMD. Food poisoning, TCM and physiotherapy treatment benefits.",
+        "plan_slug": "allianz-accident-protect-plus",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-accident-protect-plus.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Major cancer lump sum benefit.",
+          "Non-invasive cancer benefit.",
+          "Monthly income benefit of up to S$3,500 for 12 months."
+        ],
+        "plan_description": "Cancer insurance with lump sum and monthly income benefits.",
+        "plan_name": "Allianz Cancer Protect",
+        "plan_overview": "Major cancer lump sum benefit. Non-invasive cancer benefit. Monthly income benefit of up to S$3,500 for 12 months.",
+        "plan_slug": "allianz-cancer-protect",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-cancer-protect.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Home contents protection against fire, theft, water damage and other covered events.",
+          "Renovation cover up to S$150,000.",
+          "Worldwide personal liability cover up to S$2,000,000."
+        ],
+        "plan_description": "Home contents and renovation insurance for Singapore homes.",
+        "plan_name": "Allianz Home Protect",
+        "plan_overview": "Home contents protection against fire, theft, water damage and other covered events. Renovation cover up to S$150,000. Worldwide personal liability cover up to S$2,000,000.",
+        "plan_slug": "allianz-home-protect",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-home-protect.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Daily hospital cash for illness or injury hospitalisation.",
+          "ICU cash and recuperation benefits.",
+          "Infectious disease lump sum benefit for selected diseases."
+        ],
+        "plan_description": "Hospital cash insurance that pays fixed daily benefits during hospitalisation.",
+        "plan_name": "Allianz Hospital Income Protect",
+        "plan_overview": "Daily hospital cash for illness or injury hospitalisation. ICU cash and recuperation benefits. Infectious disease lump sum benefit for selected diseases.",
+        "plan_slug": "allianz-hospital-income-protect",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-hospital-income-protect.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Trip cancellation and interruption cover up to S$15,000.",
+          "Search and rescue cover up to S$10,000.",
+          "Paperless online claims process."
+        ],
+        "plan_description": "Travel insurance with trip disruption, medical and emergency support benefits.",
+        "plan_name": "Allianz Travel Protect",
+        "plan_overview": "Trip cancellation and interruption cover up to S$15,000. Search and rescue cover up to S$10,000. Paperless online claims process.",
+        "plan_slug": "allianz-travel-protect",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-travel-protect.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Banking protection for phishing, smishing and unauthorised transactions.",
+          "Shopping protection for undelivered, delayed, damaged or incorrect purchases.",
+          "Worldwide coverage with locally handled claims."
+        ],
+        "plan_description": "Personal cyber insurance for fraud, identity theft and online shopping risks.",
+        "plan_name": "Allianz Cyber360 Protect",
+        "plan_overview": "Banking protection for phishing, smishing and unauthorised transactions. Shopping protection for undelivered, delayed, damaged or incorrect purchases. Worldwide coverage with locally handled claims.",
+        "plan_slug": "allianz-cyber360-protect",
+        "plan_url": "https://www.allianz.sg/individual-solutions/allianz-cyber360-protect.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Doctor visits, vaccinations, surgery and diagnostic test options.",
+          "Prescribed medication and cancer treatment cover options.",
+          "24/7 support, TeleHealth and second medical opinion services."
+        ],
+        "plan_description": "Private international healthcare plans for individuals and families in Singapore.",
+        "plan_name": "International Healthcare Plans",
+        "plan_overview": "Doctor visits, vaccinations, surgery and diagnostic test options. Prescribed medication and cancer treatment cover options. 24/7 support, TeleHealth and second medical opinion services.",
+        "plan_slug": "international-healthcare-plans",
+        "plan_url": "https://www.allianz.sg/individual-solutions/international-health.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Business interruption benefit.",
+          "Contents, stocks, public liability and money cover options.",
+          "Optional work injury compensation and double-limit benefits."
+        ],
+        "plan_description": "Packaged SME insurance for Singapore companies with up to 25 employees.",
+        "plan_name": "Allianz Smart SME",
+        "plan_overview": "Business interruption benefit. Contents, stocks, public liability and money cover options. Optional work injury compensation and double-limit benefits.",
+        "plan_slug": "allianz-smart-sme",
+        "plan_url": "https://www.allianz.sg/sme-solutions.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Worldwide employee health coverage.",
+          "Optional dental, optical and repatriation plans.",
+          "Employer portal and employee digital health services."
+        ],
+        "plan_description": "International healthcare plans for SMEs with expatriate or travelling employees.",
+        "plan_name": "Summit for Singapore International Healthcare Plans",
+        "plan_overview": "Worldwide employee health coverage. Optional dental, optical and repatriation plans. Employer portal and employee digital health services.",
+        "plan_slug": "summit-for-singapore-international-healthcare-plans",
+        "plan_url": "https://www.allianz.sg/sme-solutions/international-health.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Public liability insurance.",
+          "Product liability insurance.",
+          "Combined general liability insurance."
+        ],
+        "plan_description": "Corporate liability insurance for accidental third-party damage or injury exposures.",
+        "plan_name": "Casualty Insurance",
+        "plan_overview": "Public liability insurance. Product liability insurance. Combined general liability insurance.",
+        "plan_slug": "casualty-insurance",
+        "plan_url": "https://www.allianz.sg/corporate-solutions/casualty-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Contractors' all risks and erection all risks cover.",
+          "Electronic equipment insurance.",
+          "Machinery all risks and machinery breakdown insurance."
+        ],
+        "plan_description": "Engineering insurance for construction projects, machinery and electronic equipment.",
+        "plan_name": "Engineering Insurance",
+        "plan_overview": "Contractors' all risks and erection all risks cover. Electronic equipment insurance. Machinery all risks and machinery breakdown insurance.",
+        "plan_slug": "engineering-insurance",
+        "plan_url": "https://www.allianz.sg/corporate-solutions/engineering-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Financial protection for accident-related expenses.",
+          "Support for medical expenses, permanent disablement and death due to accident.",
+          "Designed for businesses and employees."
+        ],
+        "plan_description": "Corporate personal accident insurance for employees.",
+        "plan_name": "Group Personal Accident Insurance",
+        "plan_overview": "Financial protection for accident-related expenses. Support for medical expenses, permanent disablement and death due to accident. Designed for businesses and employees.",
+        "plan_slug": "group-personal-accident-insurance",
+        "plan_url": "https://www.allianz.sg/corporate-solutions/group-personal-accident-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Goods in transit cover.",
+          "Single voyage and annual policy options.",
+          "Marine cargo open cover policy option."
+        ],
+        "plan_description": "Marine cargo insurance for goods in transit by air, land or sea.",
+        "plan_name": "Marine Insurance",
+        "plan_overview": "Goods in transit cover. Single voyage and annual policy options. Marine cargo open cover policy option.",
+        "plan_slug": "marine-insurance",
+        "plan_url": "https://www.allianz.sg/corporate-solutions/marine-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Fire insurance.",
+          "Business interruption insurance.",
+          "Industrial all risks insurance."
+        ],
+        "plan_description": "Corporate property insurance for property, business interruption and industrial all risks.",
+        "plan_name": "Property Insurance",
+        "plan_overview": "Fire insurance. Business interruption insurance. Industrial all risks insurance.",
+        "plan_slug": "property-insurance",
+        "plan_url": "https://www.allianz.sg/corporate-solutions/property-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Medical care and income compensation for injured workers.",
+          "Lump sum compensation for death or permanent incapacity.",
+          "Medical leave wages cover."
+        ],
+        "plan_description": "Statutory employer insurance under the Work Injury Compensation Act.",
+        "plan_name": "Work Injury Compensation Insurance",
+        "plan_overview": "Medical care and income compensation for injured workers. Lump sum compensation for death or permanent incapacity. Medical leave wages cover.",
+        "plan_slug": "work-injury-compensation-insurance",
+        "plan_url": "https://www.allianz.sg/corporate-solutions/work-injury-compensation-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
+      },
+      {
+        "insurer": "allianz",
+        "plan_benefits": [
+          "Third-party liability cover.",
+          "Vehicle damage after accidents.",
+          "Theft or attempted theft cover depending on selected policy."
+        ],
+        "plan_description": "Commercial motor insurance for business vehicles and fleets.",
+        "plan_name": "Commercial Motor Insurance",
+        "plan_overview": "Third-party liability cover. Vehicle damage after accidents. Theft or attempted theft cover depending on selected policy.",
+        "plan_slug": "commercial-motor-insurance",
+        "plan_url": "https://www.allianz.sg/corporate-solutions/commercial-motor-insurance.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:39:55.237445+00:00"
       }
     ],
     "scraper_health": [
@@ -40442,7 +40985,7 @@
         "last_success_at": "2026-07-07T03:34:08.824050+00:00",
         "row_count": 44,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:34:08.824050+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40453,7 +40996,7 @@
         "last_success_at": "2026-07-05T07:18:04.037817+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40464,7 +41007,7 @@
         "last_success_at": "2026-07-05T07:18:05.385324+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40475,7 +41018,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40486,7 +41029,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40497,7 +41040,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40508,7 +41051,7 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40519,7 +41062,7 @@
         "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40530,7 +41073,7 @@
         "last_success_at": "2026-07-07T03:20:04.296570+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40541,15 +41084,18 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "allianz",
         "display_name": "Allianz",
-        "row_count": 0,
+        "last_error": null,
+        "last_run_at": "2026-07-07T03:39:55.246857+00:00",
+        "last_success_at": "2026-07-07T03:39:55.246857+00:00",
+        "row_count": 18,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:55.246857+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40557,7 +41103,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40568,7 +41114,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40579,7 +41125,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40590,7 +41136,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40601,7 +41147,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40609,7 +41155,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40617,7 +41163,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40625,7 +41171,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40636,7 +41182,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40644,7 +41190,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40655,7 +41201,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40663,7 +41209,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40671,7 +41217,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40679,7 +41225,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40687,7 +41233,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "not_run"
       },
       {
@@ -40695,7 +41241,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817875+00:00",
+        "updated_at": "2026-07-07T03:39:45.235651+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -40711,8 +41257,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:33:57.817665+00:00",
-        "validation_checked_at": "2026-07-07T03:33:57.817665+00:00",
+        "updated_at": "2026-07-07T03:39:45.235461+00:00",
+        "validation_checked_at": "2026-07-07T03:39:45.235461+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
