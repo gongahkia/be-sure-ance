@@ -12,6 +12,7 @@ from src.scrapers import (
     hl_assurance,
     hsbc,
     iii,
+    income,
     panel_resources,
     prudential,
     raffles_health,
@@ -285,6 +286,61 @@ class ScraperParserFixTests(unittest.TestCase):
             hsbc.scrape_product_url(
                 "https://www.insurance.hsbc.com.sg/content/dam/hsbc/insn/documents/life-hnw-legacy-research-report.pdf"
             ),
+        )
+
+    def test_income_discovers_product_detail_links_from_listing(self):
+        html = (FIXTURES_DIR / "income_listing.html").read_text()
+        session = FakeSession(
+            {
+                "https://www.income.com.sg/health-insurance": html,
+            }
+        )
+
+        self.assertEqual(
+            income.discover_product_urls(
+                session=session,
+                listing_urls=["https://www.income.com.sg/health-insurance"],
+            ),
+            [
+                "https://www.income.com.sg/travel-insurance",
+                "https://www.income.com.sg/enhanced-prex-travel-insurance",
+                "https://www.income.com.sg/drivo-car-insurance",
+                "https://www.income.com.sg/edrivo-car-insurance",
+                "https://www.income.com.sg/motorcycle-insurance",
+                "https://www.income.com.sg/enhanced-home-insurance",
+                "https://www.income.com.sg/domestic-helper-insurance",
+                "https://www.income.com.sg/happy-tails-pet-insurance",
+                "https://www.income.com.sg/overseas-study-protection-plan",
+                "https://www.income.com.sg/home-ultimate-protect",
+                "https://www.income.com.sg/health-insurance/enhanced-incomeshield",
+            ],
+        )
+
+    def test_income_product_parser_filters_chrome_and_wrong_pdfs(self):
+        html = (FIXTURES_DIR / "income_product.html").read_text()
+        row = income.parse_product_html(
+            html,
+            "https://www.income.com.sg/drivo-car-insurance",
+        )
+
+        self.assertEqual(row["plan_name"], "Drivo Car Insurance")
+        self.assertIn("affordable car insurance", row["plan_description"])
+        self.assertIn("roadside assistance", row["plan_overview"])
+        self.assertNotIn("Download My Income App", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://assets.example/drivo-car-insurance-brochure.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(income.TABLE_NAME, [row])))
+
+    def test_income_rejects_claim_pages_as_plan_rows(self):
+        html = (FIXTURES_DIR / "income_reject.html").read_text()
+
+        self.assertIsNone(
+            income.parse_product_html(
+                html,
+                "https://www.income.com.sg/claims/travel-claims",
+            )
         )
 
     def test_uoi_parser_treats_brochure_pdf_as_optional(self):
