@@ -18,6 +18,7 @@ from src.scrapers import (
     prudential,
     raffles_health,
     singlife,
+    sompo,
     sunlife,
     tokio_marine,
     uoi,
@@ -750,6 +751,49 @@ class ScraperParserFixTests(unittest.TestCase):
         )
         rows = prudential.scrape_prudential(session=session, discovery_urls=[category_url])
         self.assertEqual(["PRU Active Term"], [row["plan_name"] for row in rows])
+
+    def test_sompo_product_parser_scopes_to_product_body(self):
+        html = (FIXTURES_DIR / "sompo_product.html").read_text()
+        row = sompo.parse_product_html(
+            html,
+            "https://www.sompo.com.sg/products/travel",
+        )
+
+        self.assertEqual(row["plan_name"], "Travel Insurance")
+        self.assertIn("trip cancellation", row["plan_description"])
+        self.assertIn("Overseas Medical Expenses", row["plan_benefits"])
+        self.assertNotIn("Submit A Claim", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.sompo.com.sg/docs/default-source/products-downloads/products/travel/travel_brochure.pdf",
+        )
+        self.assertEqual([], validate_plan_rows(format_plan_rows(sompo.TABLE_NAME, [row])))
+
+    def test_sompo_rejects_home_claims_and_404_pages(self):
+        html = (FIXTURES_DIR / "sompo_reject.html").read_text()
+
+        self.assertIsNone(sompo.parse_product_html(html, "https://www.sompo.com.sg/"))
+        self.assertIsNone(
+            sompo.parse_product_html(html, "https://www.sompo.com.sg/claims/claims-list")
+        )
+        self.assertIsNone(
+            sompo.parse_product_html(
+                html,
+                "https://www.sompo.com.sg/commercial-insurance-products/sme",
+            )
+        )
+
+    def test_sompo_scraper_filters_configured_404_source(self):
+        html = (FIXTURES_DIR / "sompo_product.html").read_text()
+        reject_html = (FIXTURES_DIR / "sompo_reject.html").read_text()
+        source_url = "https://www.sompo.com.sg/products/travel"
+        rejected_url = "https://www.sompo.com.sg/commercial-insurance-products/sme"
+        session = FakeSession({source_url: html, rejected_url: reject_html})
+
+        rows = sompo.scrape_sompo(session=session, product_urls=[source_url, rejected_url])
+
+        self.assertEqual(["Travel Insurance"], [row["plan_name"] for row in rows])
+        self.assertEqual([], validate_plan_rows(format_plan_rows(sompo.TABLE_NAME, rows)))
 
 
 if __name__ == "__main__":
