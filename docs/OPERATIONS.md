@@ -6,6 +6,8 @@ Owner: Gabriel Ong Zhe Mian.
 
 Primary contact: `gabrielzmong@gmail.com`.
 
+First scheduled review: [#99 Weekly scraper health review - 2026-07-14](https://github.com/gongahkia/be-sure-ance/issues/99).
+
 ## Weekly Scraper Health Review
 
 Open a `Weekly scraper health review` issue from the GitHub issue form.

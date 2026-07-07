@@ -46,6 +46,8 @@ class Phase5ExitVerificationTests(unittest.TestCase):
             "compliance",
             "metrics",
             "IFA trial",
+            "first scheduled review issue",
+            "#99",
             "Closed Phase 5 prep",
             "#74",
             "outreach drafts are complete and issue-closed",
@@ -60,7 +62,6 @@ class Phase5ExitVerificationTests(unittest.TestCase):
             "compliance lawyer outcome",
             "usage metrics",
             "at least one IFA",
-            "first post-launch operations review issue",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PHASE5)

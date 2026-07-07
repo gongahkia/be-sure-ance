@@ -31,7 +31,7 @@ Production URL:
 Open Phase 5 blockers:
 
 - `#73`: Google Search Console and Bing Webmaster Tools sitemap submission is not complete.
-- Phase 5 P0 blockers remain for compliance, metrics, IFA trial, and operations review.
+- Phase 5 P0 blockers remain for compliance, metrics, and IFA trial.
 
 Closed Phase 5 prep:
 
@@ -59,7 +59,7 @@ IFA trial:
 - `docs/LAUNCH_PREFLIGHT.md`: staging smoke/load/security/Lighthouse/compliance gate.
 - `docs/SEARCH_INDEXING.md`: Google/Bing sitemap submission runbook and indexing pre-flight.
 - `docs/OUTREACH.md`: Seedly, SG IFA, Reddit, Show HN, and MAS/OGP/GovTech drafts with no-advice limitations.
-- `docs/OPERATIONS.md`: weekly, monthly, and quarterly post-launch cadence with owner and issue templates.
+- `docs/OPERATIONS.md`: weekly, monthly, and quarterly post-launch cadence with owner, issue templates, and first scheduled review issue [#99](https://github.com/gongahkia/be-sure-ance/issues/99) for 2026-07-14.
 
 ## Required To Pass
 
@@ -67,8 +67,7 @@ IFA trial:
 2. Obtain and privately file compliance lawyer outcome; update public status only.
 3. Confirm usage metrics are recording or keep metrics unavailable without launch claims.
 4. Record at least one IFA who has tried or agreed to try weekly PDF export.
-5. Open the first post-launch operations review issue with a concrete review date.
 
 ## Conclusion
 
-Production app and pre-submission indexing gates are live on Netlify, but search-console submission, compliance, metrics, IFA trial, and operations-review gates are not complete.
+Production app and pre-submission indexing gates are live on Netlify, but search-console submission, compliance, metrics, and IFA trial gates are not complete.

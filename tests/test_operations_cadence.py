@@ -26,6 +26,7 @@ class OperationsCadenceTests(unittest.TestCase):
             "publish-open-dataset",
             "Sentry",
             "First health review can be performed from existing dashboards/artifacts",
+            "#99 Weekly scraper health review - 2026-07-14",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, OPERATIONS)
