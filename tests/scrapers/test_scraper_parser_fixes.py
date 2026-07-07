@@ -9,6 +9,7 @@ from src.scrapers import (
     etiqa,
     fwd,
     great_eastern,
+    hl_assurance,
     iii,
     panel_resources,
     prudential,
@@ -191,6 +192,35 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual(row["plan_name"], "Travel Insurance")
         self.assertEqual(row["plan_description"], "Simple travel coverage.")
         self.assertEqual(row["plan_benefits"], ["Trip delay"])
+
+    def test_hl_assurance_product_parser_uses_meta_and_brochure(self):
+        html = (FIXTURES_DIR / "hl_assurance_product.html").read_text()
+        row = hl_assurance.parse_product_html(
+            html,
+            "https://www.hlas.com.sg/personal-insurance/travel-insurance/",
+        )
+
+        self.assertEqual(row["plan_name"], "Travel Insurance")
+        self.assertIn("no claims discount", row["plan_description"])
+        self.assertIn("emergency evacuation cover", " ".join(row["plan_benefits"]))
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.hlas.com.sg/wp-content/uploads/travel-insurance-policy-wording.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(hl_assurance.TABLE_NAME, [row])),
+        )
+
+    def test_hl_assurance_rejects_claim_pages_as_plan_rows(self):
+        html = (FIXTURES_DIR / "hl_assurance_reject.html").read_text()
+
+        self.assertIsNone(
+            hl_assurance.parse_product_html(
+                html,
+                "https://www.hlas.com.sg/claim-forms/",
+            )
+        )
 
     def test_uoi_parser_treats_brochure_pdf_as_optional(self):
         row = uoi.parse_product_html(

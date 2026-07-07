@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T04:01:47+00:00",
+  "generated_at": "2026-07-07T04:10:20+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -7027,6 +7027,366 @@
       "scraped_at": "2026-07-07T04:01:47.053370+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "HL-Assurance-Motor-Insurance-Policy-Wording.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:08.948999+00:00",
+          "last_modified_at": "Tue, 03 Oct 2023 02:56:26 GMT",
+          "sha256": "3bddfa5ef568754a67d0abe0b8670a598aff30d11fedd5c57f5b3ec8ff7a1ff4",
+          "size_bytes": 597222,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/car-insurance/3bddfa5ef568754a67d0abe0b8670a598aff30d11fedd5c57f5b3ec8ff7a1ff4.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2023/10/HL-Assurance-Motor-Insurance-Policy-Wording.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:08.948999+00:00",
+      "plan_slug": "car-insurance",
+      "scraped_at": "2026-07-07T04:10:08.948999+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2023/10/HL-Assurance-Motor-Insurance-Policy-Wording.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Choice_Protect360_PW_Master_without_PA_Top_Up.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:10.040375+00:00",
+          "last_modified_at": "Tue, 09 Sep 2025 09:54:30 GMT",
+          "sha256": "82f513575fb8a4442e8e137fb094fa5e1fe8440b63a5e186693f68ea1e37fc47",
+          "size_bytes": 1983625,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/choice-protect360/82f513575fb8a4442e8e137fb094fa5e1fe8440b63a5e186693f68ea1e37fc47.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CHOICE_PROTECT360_INSURANCE/Choice_Protect360_PW_Master_without_PA_Top_Up.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:10.040375+00:00",
+      "plan_slug": "choice-protect360",
+      "scraped_at": "2026-07-07T04:10:10.040375+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CHOICE_PROTECT360_INSURANCE/Choice_Protect360_PW_Master_without_PA_Top_Up.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "CI_Protect360_PW.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:11.402205+00:00",
+          "last_modified_at": "Mon, 16 Jun 2025 06:31:49 GMT",
+          "sha256": "6f185c213baa59bb87298ff82900fe4d9bb829995af37cc24976f496ddc3e598",
+          "size_bytes": 945335,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/critical-illness-insurance/6f185c213baa59bb87298ff82900fe4d9bb829995af37cc24976f496ddc3e598.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CRITICAL_ILLNESS_PROTECT360_INSURANCE/CI_Protect360_PW.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:11.402205+00:00",
+      "plan_slug": "critical-illness-insurance",
+      "scraped_at": "2026-07-07T04:10:11.402205+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CRITICAL_ILLNESS_PROTECT360_INSURANCE/CI_Protect360_PW.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Early_Protect360_Plus_PW.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:12.338612+00:00",
+          "last_modified_at": "Mon, 16 Jun 2025 06:31:48 GMT",
+          "sha256": "01fb3114796bc5383f4c27c71c8d791f4861615b75ee8e58379a192fd2b5467f",
+          "size_bytes": 653028,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/early-critical-illness-insurance/01fb3114796bc5383f4c27c71c8d791f4861615b75ee8e58379a192fd2b5467f.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/EARLY_PROTECT360_INSURANCE/Early_Protect360_Plus_PW.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:12.338612+00:00",
+      "plan_slug": "early-critical-illness-insurance",
+      "scraped_at": "2026-07-07T04:10:12.338612+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/EARLY_PROTECT360_INSURANCE/Early_Protect360_Plus_PW.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Fraud_Protect360_Plus_PW.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:13.040377+00:00",
+          "last_modified_at": "Tue, 03 Mar 2026 09:52:08 GMT",
+          "sha256": "25bb7f1cff0d9943df5f4ce474f0e644259f034ad53221ef081729dc5be505d9",
+          "size_bytes": 726017,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/fraud-protect360-plus/25bb7f1cff0d9943df5f4ce474f0e644259f034ad53221ef081729dc5be505d9.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2026/03/Fraud_Protect360_Plus_PW.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:13.040377+00:00",
+      "plan_slug": "fraud-protect360-plus",
+      "scraped_at": "2026-07-07T04:10:13.040377+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2026/03/Fraud_Protect360_Plus_PW.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "hla_fire_claim_form.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:06:35.705838+00:00",
+          "last_modified_at": "Sat, 21 Mar 2020 16:01:30 GMT",
+          "sha256": "9033a72a2af0bddcb6b264062ac0499b719fa22c4d468197bd698b14c62f1a82",
+          "size_bytes": 51103,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/fire-insurance/9033a72a2af0bddcb6b264062ac0499b719fa22c4d468197bd698b14c62f1a82.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/hla_fire_claim_form.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:06:35.705838+00:00",
+      "plan_slug": "fire-insurance",
+      "scraped_at": "2026-07-07T04:06:35.705838+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/hla_fire_claim_form.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Terms-and-Conditions-for-Home-Protect360-Campaign.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:06:36.474242+00:00",
+          "last_modified_at": "Tue, 28 Apr 2026 13:51:03 GMT",
+          "sha256": "29ea2204c28d4ad04dd3ea1d72c47991bd3edb8886634bf23c38fb9ecb946509",
+          "size_bytes": 69675,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/home-protect360/29ea2204c28d4ad04dd3ea1d72c47991bd3edb8886634bf23c38fb9ecb946509.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2026/04/Terms-and-Conditions-for-Home-Protect360-Campaign.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:06:36.474242+00:00",
+      "plan_slug": "home-protect360",
+      "scraped_at": "2026-07-07T04:06:36.474242+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2026/04/Terms-and-Conditions-for-Home-Protect360-Campaign.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Home_ProtectLite_Policy_Wording.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:14.723824+00:00",
+          "last_modified_at": "Tue, 10 Sep 2024 11:29:59 GMT",
+          "sha256": "3355e36412b65393d7f92e3a90ab805f6480f5e9c8467260a1393c372e2165a8",
+          "size_bytes": 479187,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/home-protectlite/3355e36412b65393d7f92e3a90ab805f6480f5e9c8467260a1393c372e2165a8.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Home_ProtectLite_Policy_Wording.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:14.723824+00:00",
+      "plan_slug": "home-protectlite",
+      "scraped_at": "2026-07-07T04:10:14.723824+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Home_ProtectLite_Policy_Wording.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Hospital_Protect360_Policy_Wording.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:15.804438+00:00",
+          "last_modified_at": "Tue, 10 Sep 2024 11:18:29 GMT",
+          "sha256": "9bd3146884080d5301f1fd3b28d6b7362706b3aa9af01bc9f90b2210cc72efc7",
+          "size_bytes": 464025,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/hospital-protect360/9bd3146884080d5301f1fd3b28d6b7362706b3aa9af01bc9f90b2210cc72efc7.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Hospital_Protect360_Policy_Wording.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:15.804438+00:00",
+      "plan_slug": "hospital-protect360",
+      "scraped_at": "2026-07-07T04:10:15.804438+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Hospital_Protect360_Policy_Wording.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Maid-Protect360-Pro_PW_V2_11Jan2024.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:16.844907+00:00",
+          "last_modified_at": "Tue, 16 Jan 2024 08:24:53 GMT",
+          "sha256": "018a976493196749fa9d2f5e7fb3b4405d604e6f6c0bffe0db1a5bd4f2e513d4",
+          "size_bytes": 357322,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/maid-insurance/018a976493196749fa9d2f5e7fb3b4405d604e6f6c0bffe0db1a5bd4f2e513d4.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2024/01/Maid-Protect360-Pro_PW_V2_11Jan2024.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:16.844907+00:00",
+      "plan_slug": "maid-insurance",
+      "scraped_at": "2026-07-07T04:10:16.844907+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2024/01/Maid-Protect360-Pro_PW_V2_11Jan2024.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Phone-Protect360_PW_V1_5Jun17.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:18.273915+00:00",
+          "last_modified_at": "Sat, 21 Mar 2020 16:01:30 GMT",
+          "sha256": "646fccbc357425e7c09a590213aae5073cebc8140f7d20d52e85cb1b3df27ef5",
+          "size_bytes": 281249,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/mobile-phone-insurance/646fccbc357425e7c09a590213aae5073cebc8140f7d20d52e85cb1b3df27ef5.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/Phone-Protect360_PW_V1_5Jun17.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:18.273915+00:00",
+      "plan_slug": "mobile-phone-insurance",
+      "scraped_at": "2026-07-07T04:10:18.273915+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/Phone-Protect360_PW_V1_5Jun17.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "HL-Assurance-Accident-Protect360-General-Exclusion-List.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:06:40.330856+00:00",
+          "last_modified_at": "Sat, 21 Mar 2020 16:01:30 GMT",
+          "sha256": "4bec339d4ae6aa37a86b7118da908c1abf26b2a2b85daea8493b64f5551d0809",
+          "size_bytes": 26951,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/accident-protect360/4bec339d4ae6aa37a86b7118da908c1abf26b2a2b85daea8493b64f5551d0809.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/HL-Assurance-Accident-Protect360-General-Exclusion-List.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:06:40.330856+00:00",
+      "plan_slug": "accident-protect360",
+      "scraped_at": "2026-07-07T04:06:40.330856+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/HL-Assurance-Accident-Protect360-General-Exclusion-List.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "FAMILY-PROTECT360-Exclusion-List.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:06:40.660926+00:00",
+          "last_modified_at": "Sat, 21 Mar 2020 16:01:25 GMT",
+          "sha256": "a172107396cfc5d91b04d2445497519bd0f507ac28e97afa4814da33b1134fe2",
+          "size_bytes": 34093,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/family-protect360/a172107396cfc5d91b04d2445497519bd0f507ac28e97afa4814da33b1134fe2.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2018/12/FAMILY-PROTECT360-Exclusion-List.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:06:40.660926+00:00",
+      "plan_slug": "family-protect360",
+      "scraped_at": "2026-07-07T04:06:40.660926+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2018/12/FAMILY-PROTECT360-Exclusion-List.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:18.751560+00:00",
+          "last_modified_at": "Sun, 30 Jul 2023 11:13:45 GMT",
+          "sha256": "150430856580b3518ce971a502d314f2006094b565e1f173f3ba64ffa654ebd4",
+          "size_bytes": 597288,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/corporate-travel360/150430856580b3518ce971a502d314f2006094b565e1f173f3ba64ffa654ebd4.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/2023/07/HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:18.751560+00:00",
+      "plan_slug": "corporate-travel360",
+      "scraped_at": "2026-07-07T04:10:18.751560+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/2023/07/HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Travel_Protect360_PW.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:10:06.791561+00:00",
+          "last_modified_at": "Wed, 17 Jun 2026 01:18:39 GMT",
+          "sha256": "ad70a1d2a9a87ac8562e1f9d2004c17f4d8b1744867521bfc4c30d3087fe23ab",
+          "size_bytes": 649684,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/hl-assurance/travel-insurance/ad70a1d2a9a87ac8562e1f9d2004c17f4d8b1744867521bfc4c30d3087fe23ab.pdf",
+          "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/TRAVEL_PROTECT360_INSURANCE/Travel_Protect360_PW.pdf"
+        }
+      },
+      "insurer": "hl_assurance",
+      "last_verified_at": "2026-07-07T04:10:06.791561+00:00",
+      "plan_slug": "travel-insurance",
+      "scraped_at": "2026-07-07T04:10:06.791561+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/TRAVEL_PROTECT360_INSURANCE/Travel_Protect360_PW.pdf"
     }
   ],
   "plans": [
@@ -12243,6 +12603,279 @@
       "plan_url": "https://www.etiqa.com.sg/business-insurance/property/",
       "product_brochure_url": "",
       "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Travel insurance with no-claims discount, pre-existing condition, miles and flight-delay cover options."
+      ],
+      "plan_description": "Travel confidently with Singapore's first travel insurance offering up to 10% no claims discount. Includes pre-existing conditions, miles, and delay coverage.",
+      "plan_name": "Travel Insurance",
+      "plan_overview": "Travel confidently with Singapore's first travel insurance offering up to 10% no claims discount. Includes pre-existing conditions, miles, and delay coverage. Travel insurance with no-claims discount, pre-existing condition, miles and flight-delay cover options.",
+      "plan_slug": "travel-insurance",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/travel-insurance/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/TRAVEL_PROTECT360_INSURANCE/Travel_Protect360_PW.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Car insurance for Singapore drivers with repair, accident and road protection benefits."
+      ],
+      "plan_description": "The best affordable car insurance in Singapore with comprehensive coverage, 24/7 roadside services and high medical coverage. Get your free quote today!",
+      "plan_name": "Car Insurance",
+      "plan_overview": "The best affordable car insurance in Singapore with comprehensive coverage, 24/7 roadside services and high medical coverage. Get your free quote today! Car insurance for Singapore drivers with repair, accident and road protection benefits.",
+      "plan_slug": "car-insurance",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/car-insurance/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2023/10/HL-Assurance-Motor-Insurance-Policy-Wording.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Personal accident protection for accidental death, disability and medical expenses."
+      ],
+      "plan_description": "With Choice Protect360, get comprehensive PA coverage & save up to 15% when you enhance your plan with add-ons like home, hospital income, & annual travel",
+      "plan_name": "Choice Protect360",
+      "plan_overview": "With Choice Protect360, get comprehensive PA coverage & save up to 15% when you enhance your plan with add-ons like home, hospital income, & annual travel Personal accident protection for accidental death, disability and medical expenses.",
+      "plan_slug": "choice-protect360",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/choice-protect360/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CHOICE_PROTECT360_INSURANCE/Choice_Protect360_PW_Master_without_PA_Top_Up.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Corporate employee insurance programme for discounted personal insurance access."
+      ],
+      "plan_description": "Corporate Employee Program is designed to provide a range of benefits and perks to your employees, including discounts on insurance products | HL Assurance",
+      "plan_name": "HLAS Corporate Employee Program",
+      "plan_overview": "Corporate Employee Program is designed to provide a range of benefits and perks to your employees, including discounts on insurance products | HL Assurance Corporate employee insurance programme for discounted personal insurance access.",
+      "plan_slug": "hlas-corporate-employee-program",
+      "plan_url": "https://www.hlas.com.sg/hlas-corporate-employee-program/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Critical illness insurance for major illness financial protection."
+      ],
+      "plan_description": "The Best Critical Illness (CI) Insurance Plans with financial protection against illnesses in Singapore. Get a free CI insurance coverage quote today!",
+      "plan_name": "Critical Illness Insurance",
+      "plan_overview": "The Best Critical Illness (CI) Insurance Plans with financial protection against illnesses in Singapore. Get a free CI insurance coverage quote today! Critical illness insurance for major illness financial protection.",
+      "plan_slug": "critical-illness-insurance",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/critical-illness-insurance/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CRITICAL_ILLNESS_PROTECT360_INSURANCE/CI_Protect360_PW.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Early critical illness cover for earlier-stage diagnosis support."
+      ],
+      "plan_description": "Protect You And Your Family From Unexpected Finicial Losses from Early Critical Illness With Various Plans & Coverage | HL Assurance",
+      "plan_name": "Early Critical Illness Insurance",
+      "plan_overview": "Protect You And Your Family From Unexpected Finicial Losses from Early Critical Illness With Various Plans & Coverage | HL Assurance Early critical illness cover for earlier-stage diagnosis support.",
+      "plan_slug": "early-critical-illness-insurance",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/early-critical-illness-insurance/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/EARLY_PROTECT360_INSURANCE/Early_Protect360_Plus_PW.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Fraud insurance for online scams, unauthorised transactions and digital financial risks."
+      ],
+      "plan_description": "• Cyber insurance protecting your online presence from frauds, cyber-attacks, and threats. Safeguard digital assets with our tailored solutions.",
+      "plan_name": "Fraud Protect360 Plus",
+      "plan_overview": "• Cyber insurance protecting your online presence from frauds, cyber-attacks, and threats. Safeguard digital assets with our tailored solutions. Fraud insurance for online scams, unauthorised transactions and digital financial risks.",
+      "plan_slug": "fraud-protect360-plus",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/fraud-protect360-plus/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2026/03/Fraud_Protect360_Plus_PW.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Fire insurance for HDB structures, fixtures and fittings."
+      ],
+      "plan_description": "Discover comprehensive fire insurance options for homeowners in Singapore. Protect your property against fire damage with HL Assurance.",
+      "plan_name": "Fire Insurance",
+      "plan_overview": "Discover comprehensive fire insurance options for homeowners in Singapore. Protect your property against fire damage with HL Assurance. Fire insurance for HDB structures, fixtures and fittings.",
+      "plan_slug": "fire-insurance",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/fire-insurance/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Home insurance for contents, renovation, liability and household risks."
+      ],
+      "plan_description": "Discover the best home insurance in Singapore for HDBs and personal belongings. Get comprehensive coverage with HL Assurance Home Protect360.",
+      "plan_name": "Home Protect360",
+      "plan_overview": "Discover the best home insurance in Singapore for HDBs and personal belongings. Get comprehensive coverage with HL Assurance Home Protect360. Home insurance for contents, renovation, liability and household risks.",
+      "plan_slug": "home-protect360",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/home-protect360/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Lite home insurance for essential home and contents protection."
+      ],
+      "plan_description": "Light Home Insurance Covering Furniture, Valuables, Renovations And Liability For HDBO Or Private Property | HL Assurance",
+      "plan_name": "Home ProtectLite",
+      "plan_overview": "Light Home Insurance Covering Furniture, Valuables, Renovations And Liability For HDBO Or Private Property | HL Assurance Lite home insurance for essential home and contents protection.",
+      "plan_slug": "home-protectlite",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/home-protectlite/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Home_ProtectLite_Policy_Wording.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Hospital cash insurance for hospitalisation and recovery expenses."
+      ],
+      "plan_description": "The best hospital income insurance plan you can trust with daily hospital income & COVID-19 benefit. Get your free quote and learn about our policy today!",
+      "plan_name": "Hospital Protect360",
+      "plan_overview": "The best hospital income insurance plan you can trust with daily hospital income & COVID-19 benefit. Get your free quote and learn about our policy today! Hospital cash insurance for hospitalisation and recovery expenses.",
+      "plan_slug": "hospital-protect360",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/hospital-protect360/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Hospital_Protect360_Policy_Wording.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Maid insurance for domestic helper medical, accident and bond needs."
+      ],
+      "plan_description": "Maid Insurance Plans In Singapore. Choose The Best Plan And Only Pay For Coverage Your Helper Needs. | Buy Online Now | HL Assurance",
+      "plan_name": "Maid Insurance",
+      "plan_overview": "Maid Insurance Plans In Singapore. Choose The Best Plan And Only Pay For Coverage Your Helper Needs. | Buy Online Now | HL Assurance Maid insurance for domestic helper medical, accident and bond needs.",
+      "plan_slug": "maid-insurance",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/maid-insurance/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2024/01/Maid-Protect360-Pro_PW_V2_11Jan2024.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Mobile phone insurance against theft and accidental damage."
+      ],
+      "plan_description": "Mobile Phone Insurance Covers Your Phone In Cases Of Accidents. Cover For Your Repair Cost With Phone Protect360 | HL Assurance",
+      "plan_name": "Mobile Phone Insurance",
+      "plan_overview": "Mobile Phone Insurance Covers Your Phone In Cases Of Accidents. Cover For Your Repair Cost With Phone Protect360 | HL Assurance Mobile phone insurance against theft and accidental damage.",
+      "plan_slug": "mobile-phone-insurance",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/mobile-phone-insurance/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/Phone-Protect360_PW_V1_5Jun17.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Personal accident insurance for injury, disability and medical reimbursement."
+      ],
+      "plan_description": "Protect yourself from every angle with the best personal accident insurance in Singapore that even has an income protector. Get your free quote today!",
+      "plan_name": "Accident Protect360",
+      "plan_overview": "Protect yourself from every angle with the best personal accident insurance in Singapore that even has an income protector. Get your free quote today! Personal accident insurance for injury, disability and medical reimbursement.",
+      "plan_slug": "accident-protect360",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/accident-protect360/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Family personal accident protection for household members."
+      ],
+      "plan_description": "Protect Your Family With Insurance Featuring Income Protector, Child Education & More. Get Coverage For Accidents & Infectious Diseases | HL Assurance",
+      "plan_name": "Family Protect360",
+      "plan_overview": "Protect Your Family With Insurance Featuring Income Protector, Child Education & More. Get Coverage For Accidents & Infectious Diseases | HL Assurance Family personal accident protection for household members.",
+      "plan_slug": "family-protect360",
+      "plan_url": "https://www.hlas.com.sg/personal-insurance/family-protect360/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Inbound travel insurance for visitors entering Singapore."
+      ],
+      "plan_description": "Get Singapore Travel Pass For Your Trip In Singapore: Travel Insurance, 100GB Data SIM, Travel Card All-In-One| HL Assurance",
+      "plan_name": "Singapore Travel Pass",
+      "plan_overview": "Get Singapore Travel Pass For Your Trip In Singapore: Travel Insurance, 100GB Data SIM, Travel Card All-In-One| HL Assurance Inbound travel insurance for visitors entering Singapore.",
+      "plan_slug": "singapore-travel-pass",
+      "plan_url": "https://www.hlas.com.sg/singapore-travel-pass/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Business package insurance for offices, retail and small businesses."
+      ],
+      "plan_description": "Get the best all-in-one business insurance in Singapore. Protect your workers and business with comprehensive coverage. Ideal for office, retail, and more.",
+      "plan_name": "Business Protect360",
+      "plan_overview": "Get the best all-in-one business insurance in Singapore. Protect your workers and business with comprehensive coverage. Ideal for office, retail, and more. Business package insurance for offices, retail and small businesses.",
+      "plan_slug": "business-protect360",
+      "plan_url": "https://www.hlas.com.sg/businesspackages/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Casualty insurance for third-party injury, property damage and employee accident exposures."
+      ],
+      "plan_description": "Protect your business with top casualty insurance: covers third-party injury, property damage & employee accidents. Email us!",
+      "plan_name": "Casualty Insurance",
+      "plan_overview": "Protect your business with top casualty insurance: covers third-party injury, property damage & employee accidents. Email us! Casualty insurance for third-party injury, property damage and employee accident exposures.",
+      "plan_slug": "casualty-insurance",
+      "plan_url": "https://www.hlas.com.sg/casualtyinsurance/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Corporate travel insurance for business travel disruption and medical risks."
+      ],
+      "plan_description": "Comprehensive corporate travel insurance covering employees worldwide. Includes both business and leisure trip coverage for the insured period | HLAS",
+      "plan_name": "Corporate Travel360",
+      "plan_overview": "Comprehensive corporate travel insurance covering employees worldwide. Includes both business and leisure trip coverage for the insured period | HLAS Corporate travel insurance for business travel disruption and medical risks.",
+      "plan_slug": "corporate-travel360",
+      "plan_url": "https://www.hlas.com.sg/corporate-travel360/",
+      "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2023/07/HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Engineering insurance for construction, installation and machinery risks."
+      ],
+      "plan_description": "Protect your company from contract works, third-party claims, and damage with Engineering Insurance in Singapore. Includes machinery, equipment, and more.",
+      "plan_name": "Engineering Insurance",
+      "plan_overview": "Protect your company from contract works, third-party claims, and damage with Engineering Insurance in Singapore. Includes machinery, equipment, and more. Engineering insurance for construction, installation and machinery risks.",
+      "plan_slug": "engineering-insurance",
+      "plan_url": "https://www.hlas.com.sg/engineeringinsurance/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+    },
+    {
+      "insurer": "hl_assurance",
+      "plan_benefits": [
+        "Commercial property insurance for business asset damage and loss."
+      ],
+      "plan_description": "Protect valuable assets with Commercial Insurance for property, equipment, and contents. Customize coverage for risks, loss, and business interruption.",
+      "plan_name": "Property Insurance",
+      "plan_overview": "Protect valuable assets with Commercial Insurance for property, equipment, and contents. Customize coverage for risks, loss, and business interruption. Commercial property insurance for business asset damage and loss.",
+      "plan_slug": "property-insurance",
+      "plan_url": "https://www.hlas.com.sg/propertyinsurance/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:10:06.779078+00:00"
     }
   ],
   "scraper_health": [
@@ -12255,7 +12888,7 @@
       "last_success_at": "2026-07-07T03:34:08.824050+00:00",
       "row_count": 44,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12266,7 +12899,7 @@
       "last_success_at": "2026-07-07T03:46:19.376563+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12277,7 +12910,7 @@
       "last_success_at": "2026-07-07T03:51:27.242218+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12288,7 +12921,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12299,7 +12932,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12310,7 +12943,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12321,7 +12954,7 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12332,7 +12965,7 @@
       "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12343,7 +12976,7 @@
       "last_success_at": "2026-07-07T03:20:04.296570+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12354,7 +12987,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12365,7 +12998,7 @@
       "last_success_at": "2026-07-07T03:39:55.246857+00:00",
       "row_count": 18,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12373,7 +13006,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12384,7 +13017,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12395,7 +13028,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12406,7 +13039,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12417,7 +13050,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12425,7 +13058,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12433,7 +13066,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12441,7 +13074,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12452,15 +13085,18 @@
       "last_success_at": "2026-07-07T04:01:47.198478+00:00",
       "row_count": 21,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:01:47.198478+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "hl_assurance",
       "display_name": "Hl Assurance",
-      "row_count": 0,
+      "last_error": null,
+      "last_run_at": "2026-07-07T04:10:20.509017+00:00",
+      "last_success_at": "2026-07-07T04:10:20.509017+00:00",
+      "row_count": 21,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:10:20.509017+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12471,7 +13107,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12479,7 +13115,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12487,7 +13123,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12495,7 +13131,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12503,7 +13139,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12511,7 +13147,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829770+00:00",
+      "updated_at": "2026-07-07T04:09:31.654464+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12527,8 +13163,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T04:00:15.829412+00:00",
-      "validation_checked_at": "2026-07-07T04:00:15.829412+00:00",
+      "updated_at": "2026-07-07T04:09:31.652990+00:00",
+      "validation_checked_at": "2026-07-07T04:09:31.652990+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -37119,6 +37755,366 @@
         "scraped_at": "2026-07-07T04:01:47.053370+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "HL-Assurance-Motor-Insurance-Policy-Wording.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:08.948999+00:00",
+            "last_modified_at": "Tue, 03 Oct 2023 02:56:26 GMT",
+            "sha256": "3bddfa5ef568754a67d0abe0b8670a598aff30d11fedd5c57f5b3ec8ff7a1ff4",
+            "size_bytes": 597222,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/car-insurance/3bddfa5ef568754a67d0abe0b8670a598aff30d11fedd5c57f5b3ec8ff7a1ff4.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2023/10/HL-Assurance-Motor-Insurance-Policy-Wording.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:08.948999+00:00",
+        "plan_slug": "car-insurance",
+        "scraped_at": "2026-07-07T04:10:08.948999+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2023/10/HL-Assurance-Motor-Insurance-Policy-Wording.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Choice_Protect360_PW_Master_without_PA_Top_Up.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:10.040375+00:00",
+            "last_modified_at": "Tue, 09 Sep 2025 09:54:30 GMT",
+            "sha256": "82f513575fb8a4442e8e137fb094fa5e1fe8440b63a5e186693f68ea1e37fc47",
+            "size_bytes": 1983625,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/choice-protect360/82f513575fb8a4442e8e137fb094fa5e1fe8440b63a5e186693f68ea1e37fc47.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CHOICE_PROTECT360_INSURANCE/Choice_Protect360_PW_Master_without_PA_Top_Up.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:10.040375+00:00",
+        "plan_slug": "choice-protect360",
+        "scraped_at": "2026-07-07T04:10:10.040375+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CHOICE_PROTECT360_INSURANCE/Choice_Protect360_PW_Master_without_PA_Top_Up.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "CI_Protect360_PW.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:11.402205+00:00",
+            "last_modified_at": "Mon, 16 Jun 2025 06:31:49 GMT",
+            "sha256": "6f185c213baa59bb87298ff82900fe4d9bb829995af37cc24976f496ddc3e598",
+            "size_bytes": 945335,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/critical-illness-insurance/6f185c213baa59bb87298ff82900fe4d9bb829995af37cc24976f496ddc3e598.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CRITICAL_ILLNESS_PROTECT360_INSURANCE/CI_Protect360_PW.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:11.402205+00:00",
+        "plan_slug": "critical-illness-insurance",
+        "scraped_at": "2026-07-07T04:10:11.402205+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CRITICAL_ILLNESS_PROTECT360_INSURANCE/CI_Protect360_PW.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Early_Protect360_Plus_PW.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:12.338612+00:00",
+            "last_modified_at": "Mon, 16 Jun 2025 06:31:48 GMT",
+            "sha256": "01fb3114796bc5383f4c27c71c8d791f4861615b75ee8e58379a192fd2b5467f",
+            "size_bytes": 653028,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/early-critical-illness-insurance/01fb3114796bc5383f4c27c71c8d791f4861615b75ee8e58379a192fd2b5467f.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/EARLY_PROTECT360_INSURANCE/Early_Protect360_Plus_PW.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:12.338612+00:00",
+        "plan_slug": "early-critical-illness-insurance",
+        "scraped_at": "2026-07-07T04:10:12.338612+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/EARLY_PROTECT360_INSURANCE/Early_Protect360_Plus_PW.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Fraud_Protect360_Plus_PW.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:13.040377+00:00",
+            "last_modified_at": "Tue, 03 Mar 2026 09:52:08 GMT",
+            "sha256": "25bb7f1cff0d9943df5f4ce474f0e644259f034ad53221ef081729dc5be505d9",
+            "size_bytes": 726017,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/fraud-protect360-plus/25bb7f1cff0d9943df5f4ce474f0e644259f034ad53221ef081729dc5be505d9.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2026/03/Fraud_Protect360_Plus_PW.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:13.040377+00:00",
+        "plan_slug": "fraud-protect360-plus",
+        "scraped_at": "2026-07-07T04:10:13.040377+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2026/03/Fraud_Protect360_Plus_PW.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "hla_fire_claim_form.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:06:35.705838+00:00",
+            "last_modified_at": "Sat, 21 Mar 2020 16:01:30 GMT",
+            "sha256": "9033a72a2af0bddcb6b264062ac0499b719fa22c4d468197bd698b14c62f1a82",
+            "size_bytes": 51103,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/fire-insurance/9033a72a2af0bddcb6b264062ac0499b719fa22c4d468197bd698b14c62f1a82.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/hla_fire_claim_form.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:06:35.705838+00:00",
+        "plan_slug": "fire-insurance",
+        "scraped_at": "2026-07-07T04:06:35.705838+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/hla_fire_claim_form.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Terms-and-Conditions-for-Home-Protect360-Campaign.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:06:36.474242+00:00",
+            "last_modified_at": "Tue, 28 Apr 2026 13:51:03 GMT",
+            "sha256": "29ea2204c28d4ad04dd3ea1d72c47991bd3edb8886634bf23c38fb9ecb946509",
+            "size_bytes": 69675,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/home-protect360/29ea2204c28d4ad04dd3ea1d72c47991bd3edb8886634bf23c38fb9ecb946509.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2026/04/Terms-and-Conditions-for-Home-Protect360-Campaign.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:06:36.474242+00:00",
+        "plan_slug": "home-protect360",
+        "scraped_at": "2026-07-07T04:06:36.474242+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2026/04/Terms-and-Conditions-for-Home-Protect360-Campaign.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Home_ProtectLite_Policy_Wording.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:14.723824+00:00",
+            "last_modified_at": "Tue, 10 Sep 2024 11:29:59 GMT",
+            "sha256": "3355e36412b65393d7f92e3a90ab805f6480f5e9c8467260a1393c372e2165a8",
+            "size_bytes": 479187,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/home-protectlite/3355e36412b65393d7f92e3a90ab805f6480f5e9c8467260a1393c372e2165a8.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Home_ProtectLite_Policy_Wording.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:14.723824+00:00",
+        "plan_slug": "home-protectlite",
+        "scraped_at": "2026-07-07T04:10:14.723824+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Home_ProtectLite_Policy_Wording.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Hospital_Protect360_Policy_Wording.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:15.804438+00:00",
+            "last_modified_at": "Tue, 10 Sep 2024 11:18:29 GMT",
+            "sha256": "9bd3146884080d5301f1fd3b28d6b7362706b3aa9af01bc9f90b2210cc72efc7",
+            "size_bytes": 464025,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/hospital-protect360/9bd3146884080d5301f1fd3b28d6b7362706b3aa9af01bc9f90b2210cc72efc7.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Hospital_Protect360_Policy_Wording.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:15.804438+00:00",
+        "plan_slug": "hospital-protect360",
+        "scraped_at": "2026-07-07T04:10:15.804438+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Hospital_Protect360_Policy_Wording.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Maid-Protect360-Pro_PW_V2_11Jan2024.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:16.844907+00:00",
+            "last_modified_at": "Tue, 16 Jan 2024 08:24:53 GMT",
+            "sha256": "018a976493196749fa9d2f5e7fb3b4405d604e6f6c0bffe0db1a5bd4f2e513d4",
+            "size_bytes": 357322,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/maid-insurance/018a976493196749fa9d2f5e7fb3b4405d604e6f6c0bffe0db1a5bd4f2e513d4.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2024/01/Maid-Protect360-Pro_PW_V2_11Jan2024.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:16.844907+00:00",
+        "plan_slug": "maid-insurance",
+        "scraped_at": "2026-07-07T04:10:16.844907+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2024/01/Maid-Protect360-Pro_PW_V2_11Jan2024.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Phone-Protect360_PW_V1_5Jun17.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:18.273915+00:00",
+            "last_modified_at": "Sat, 21 Mar 2020 16:01:30 GMT",
+            "sha256": "646fccbc357425e7c09a590213aae5073cebc8140f7d20d52e85cb1b3df27ef5",
+            "size_bytes": 281249,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/mobile-phone-insurance/646fccbc357425e7c09a590213aae5073cebc8140f7d20d52e85cb1b3df27ef5.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/Phone-Protect360_PW_V1_5Jun17.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:18.273915+00:00",
+        "plan_slug": "mobile-phone-insurance",
+        "scraped_at": "2026-07-07T04:10:18.273915+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/Phone-Protect360_PW_V1_5Jun17.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "HL-Assurance-Accident-Protect360-General-Exclusion-List.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:06:40.330856+00:00",
+            "last_modified_at": "Sat, 21 Mar 2020 16:01:30 GMT",
+            "sha256": "4bec339d4ae6aa37a86b7118da908c1abf26b2a2b85daea8493b64f5551d0809",
+            "size_bytes": 26951,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/accident-protect360/4bec339d4ae6aa37a86b7118da908c1abf26b2a2b85daea8493b64f5551d0809.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/HL-Assurance-Accident-Protect360-General-Exclusion-List.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:06:40.330856+00:00",
+        "plan_slug": "accident-protect360",
+        "scraped_at": "2026-07-07T04:06:40.330856+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/HL-Assurance-Accident-Protect360-General-Exclusion-List.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "FAMILY-PROTECT360-Exclusion-List.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:06:40.660926+00:00",
+            "last_modified_at": "Sat, 21 Mar 2020 16:01:25 GMT",
+            "sha256": "a172107396cfc5d91b04d2445497519bd0f507ac28e97afa4814da33b1134fe2",
+            "size_bytes": 34093,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/family-protect360/a172107396cfc5d91b04d2445497519bd0f507ac28e97afa4814da33b1134fe2.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2018/12/FAMILY-PROTECT360-Exclusion-List.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:06:40.660926+00:00",
+        "plan_slug": "family-protect360",
+        "scraped_at": "2026-07-07T04:06:40.660926+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2018/12/FAMILY-PROTECT360-Exclusion-List.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:18.751560+00:00",
+            "last_modified_at": "Sun, 30 Jul 2023 11:13:45 GMT",
+            "sha256": "150430856580b3518ce971a502d314f2006094b565e1f173f3ba64ffa654ebd4",
+            "size_bytes": 597288,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/corporate-travel360/150430856580b3518ce971a502d314f2006094b565e1f173f3ba64ffa654ebd4.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/2023/07/HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:18.751560+00:00",
+        "plan_slug": "corporate-travel360",
+        "scraped_at": "2026-07-07T04:10:18.751560+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/2023/07/HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Travel_Protect360_PW.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:10:06.791561+00:00",
+            "last_modified_at": "Wed, 17 Jun 2026 01:18:39 GMT",
+            "sha256": "ad70a1d2a9a87ac8562e1f9d2004c17f4d8b1744867521bfc4c30d3087fe23ab",
+            "size_bytes": 649684,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/hl-assurance/travel-insurance/ad70a1d2a9a87ac8562e1f9d2004c17f4d8b1744867521bfc4c30d3087fe23ab.pdf",
+            "url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/TRAVEL_PROTECT360_INSURANCE/Travel_Protect360_PW.pdf"
+          }
+        },
+        "insurer": "hl_assurance",
+        "last_verified_at": "2026-07-07T04:10:06.791561+00:00",
+        "plan_slug": "travel-insurance",
+        "scraped_at": "2026-07-07T04:10:06.791561+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/TRAVEL_PROTECT360_INSURANCE/Travel_Protect360_PW.pdf"
       }
     ],
     "plans": [
@@ -42335,6 +43331,279 @@
         "plan_url": "https://www.etiqa.com.sg/business-insurance/property/",
         "product_brochure_url": "",
         "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Travel insurance with no-claims discount, pre-existing condition, miles and flight-delay cover options."
+        ],
+        "plan_description": "Travel confidently with Singapore's first travel insurance offering up to 10% no claims discount. Includes pre-existing conditions, miles, and delay coverage.",
+        "plan_name": "Travel Insurance",
+        "plan_overview": "Travel confidently with Singapore's first travel insurance offering up to 10% no claims discount. Includes pre-existing conditions, miles, and delay coverage. Travel insurance with no-claims discount, pre-existing condition, miles and flight-delay cover options.",
+        "plan_slug": "travel-insurance",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/travel-insurance/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/TRAVEL_PROTECT360_INSURANCE/Travel_Protect360_PW.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Car insurance for Singapore drivers with repair, accident and road protection benefits."
+        ],
+        "plan_description": "The best affordable car insurance in Singapore with comprehensive coverage, 24/7 roadside services and high medical coverage. Get your free quote today!",
+        "plan_name": "Car Insurance",
+        "plan_overview": "The best affordable car insurance in Singapore with comprehensive coverage, 24/7 roadside services and high medical coverage. Get your free quote today! Car insurance for Singapore drivers with repair, accident and road protection benefits.",
+        "plan_slug": "car-insurance",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/car-insurance/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2023/10/HL-Assurance-Motor-Insurance-Policy-Wording.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Personal accident protection for accidental death, disability and medical expenses."
+        ],
+        "plan_description": "With Choice Protect360, get comprehensive PA coverage & save up to 15% when you enhance your plan with add-ons like home, hospital income, & annual travel",
+        "plan_name": "Choice Protect360",
+        "plan_overview": "With Choice Protect360, get comprehensive PA coverage & save up to 15% when you enhance your plan with add-ons like home, hospital income, & annual travel Personal accident protection for accidental death, disability and medical expenses.",
+        "plan_slug": "choice-protect360",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/choice-protect360/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CHOICE_PROTECT360_INSURANCE/Choice_Protect360_PW_Master_without_PA_Top_Up.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Corporate employee insurance programme for discounted personal insurance access."
+        ],
+        "plan_description": "Corporate Employee Program is designed to provide a range of benefits and perks to your employees, including discounts on insurance products | HL Assurance",
+        "plan_name": "HLAS Corporate Employee Program",
+        "plan_overview": "Corporate Employee Program is designed to provide a range of benefits and perks to your employees, including discounts on insurance products | HL Assurance Corporate employee insurance programme for discounted personal insurance access.",
+        "plan_slug": "hlas-corporate-employee-program",
+        "plan_url": "https://www.hlas.com.sg/hlas-corporate-employee-program/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Critical illness insurance for major illness financial protection."
+        ],
+        "plan_description": "The Best Critical Illness (CI) Insurance Plans with financial protection against illnesses in Singapore. Get a free CI insurance coverage quote today!",
+        "plan_name": "Critical Illness Insurance",
+        "plan_overview": "The Best Critical Illness (CI) Insurance Plans with financial protection against illnesses in Singapore. Get a free CI insurance coverage quote today! Critical illness insurance for major illness financial protection.",
+        "plan_slug": "critical-illness-insurance",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/critical-illness-insurance/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/CRITICAL_ILLNESS_PROTECT360_INSURANCE/CI_Protect360_PW.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Early critical illness cover for earlier-stage diagnosis support."
+        ],
+        "plan_description": "Protect You And Your Family From Unexpected Finicial Losses from Early Critical Illness With Various Plans & Coverage | HL Assurance",
+        "plan_name": "Early Critical Illness Insurance",
+        "plan_overview": "Protect You And Your Family From Unexpected Finicial Losses from Early Critical Illness With Various Plans & Coverage | HL Assurance Early critical illness cover for earlier-stage diagnosis support.",
+        "plan_slug": "early-critical-illness-insurance",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/early-critical-illness-insurance/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/Policy-Wordings/EARLY_PROTECT360_INSURANCE/Early_Protect360_Plus_PW.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Fraud insurance for online scams, unauthorised transactions and digital financial risks."
+        ],
+        "plan_description": "• Cyber insurance protecting your online presence from frauds, cyber-attacks, and threats. Safeguard digital assets with our tailored solutions.",
+        "plan_name": "Fraud Protect360 Plus",
+        "plan_overview": "• Cyber insurance protecting your online presence from frauds, cyber-attacks, and threats. Safeguard digital assets with our tailored solutions. Fraud insurance for online scams, unauthorised transactions and digital financial risks.",
+        "plan_slug": "fraud-protect360-plus",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/fraud-protect360-plus/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2026/03/Fraud_Protect360_Plus_PW.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Fire insurance for HDB structures, fixtures and fittings."
+        ],
+        "plan_description": "Discover comprehensive fire insurance options for homeowners in Singapore. Protect your property against fire damage with HL Assurance.",
+        "plan_name": "Fire Insurance",
+        "plan_overview": "Discover comprehensive fire insurance options for homeowners in Singapore. Protect your property against fire damage with HL Assurance. Fire insurance for HDB structures, fixtures and fittings.",
+        "plan_slug": "fire-insurance",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/fire-insurance/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Home insurance for contents, renovation, liability and household risks."
+        ],
+        "plan_description": "Discover the best home insurance in Singapore for HDBs and personal belongings. Get comprehensive coverage with HL Assurance Home Protect360.",
+        "plan_name": "Home Protect360",
+        "plan_overview": "Discover the best home insurance in Singapore for HDBs and personal belongings. Get comprehensive coverage with HL Assurance Home Protect360. Home insurance for contents, renovation, liability and household risks.",
+        "plan_slug": "home-protect360",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/home-protect360/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Lite home insurance for essential home and contents protection."
+        ],
+        "plan_description": "Light Home Insurance Covering Furniture, Valuables, Renovations And Liability For HDBO Or Private Property | HL Assurance",
+        "plan_name": "Home ProtectLite",
+        "plan_overview": "Light Home Insurance Covering Furniture, Valuables, Renovations And Liability For HDBO Or Private Property | HL Assurance Lite home insurance for essential home and contents protection.",
+        "plan_slug": "home-protectlite",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/home-protectlite/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Home_ProtectLite_Policy_Wording.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Hospital cash insurance for hospitalisation and recovery expenses."
+        ],
+        "plan_description": "The best hospital income insurance plan you can trust with daily hospital income & COVID-19 benefit. Get your free quote and learn about our policy today!",
+        "plan_name": "Hospital Protect360",
+        "plan_overview": "The best hospital income insurance plan you can trust with daily hospital income & COVID-19 benefit. Get your free quote and learn about our policy today! Hospital cash insurance for hospitalisation and recovery expenses.",
+        "plan_slug": "hospital-protect360",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/hospital-protect360/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2024/09/Hospital_Protect360_Policy_Wording.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Maid insurance for domestic helper medical, accident and bond needs."
+        ],
+        "plan_description": "Maid Insurance Plans In Singapore. Choose The Best Plan And Only Pay For Coverage Your Helper Needs. | Buy Online Now | HL Assurance",
+        "plan_name": "Maid Insurance",
+        "plan_overview": "Maid Insurance Plans In Singapore. Choose The Best Plan And Only Pay For Coverage Your Helper Needs. | Buy Online Now | HL Assurance Maid insurance for domestic helper medical, accident and bond needs.",
+        "plan_slug": "maid-insurance",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/maid-insurance/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2024/01/Maid-Protect360-Pro_PW_V2_11Jan2024.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Mobile phone insurance against theft and accidental damage."
+        ],
+        "plan_description": "Mobile Phone Insurance Covers Your Phone In Cases Of Accidents. Cover For Your Repair Cost With Phone Protect360 | HL Assurance",
+        "plan_name": "Mobile Phone Insurance",
+        "plan_overview": "Mobile Phone Insurance Covers Your Phone In Cases Of Accidents. Cover For Your Repair Cost With Phone Protect360 | HL Assurance Mobile phone insurance against theft and accidental damage.",
+        "plan_slug": "mobile-phone-insurance",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/mobile-phone-insurance/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2020/03/Phone-Protect360_PW_V1_5Jun17.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Personal accident insurance for injury, disability and medical reimbursement."
+        ],
+        "plan_description": "Protect yourself from every angle with the best personal accident insurance in Singapore that even has an income protector. Get your free quote today!",
+        "plan_name": "Accident Protect360",
+        "plan_overview": "Protect yourself from every angle with the best personal accident insurance in Singapore that even has an income protector. Get your free quote today! Personal accident insurance for injury, disability and medical reimbursement.",
+        "plan_slug": "accident-protect360",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/accident-protect360/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Family personal accident protection for household members."
+        ],
+        "plan_description": "Protect Your Family With Insurance Featuring Income Protector, Child Education & More. Get Coverage For Accidents & Infectious Diseases | HL Assurance",
+        "plan_name": "Family Protect360",
+        "plan_overview": "Protect Your Family With Insurance Featuring Income Protector, Child Education & More. Get Coverage For Accidents & Infectious Diseases | HL Assurance Family personal accident protection for household members.",
+        "plan_slug": "family-protect360",
+        "plan_url": "https://www.hlas.com.sg/personal-insurance/family-protect360/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Inbound travel insurance for visitors entering Singapore."
+        ],
+        "plan_description": "Get Singapore Travel Pass For Your Trip In Singapore: Travel Insurance, 100GB Data SIM, Travel Card All-In-One| HL Assurance",
+        "plan_name": "Singapore Travel Pass",
+        "plan_overview": "Get Singapore Travel Pass For Your Trip In Singapore: Travel Insurance, 100GB Data SIM, Travel Card All-In-One| HL Assurance Inbound travel insurance for visitors entering Singapore.",
+        "plan_slug": "singapore-travel-pass",
+        "plan_url": "https://www.hlas.com.sg/singapore-travel-pass/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Business package insurance for offices, retail and small businesses."
+        ],
+        "plan_description": "Get the best all-in-one business insurance in Singapore. Protect your workers and business with comprehensive coverage. Ideal for office, retail, and more.",
+        "plan_name": "Business Protect360",
+        "plan_overview": "Get the best all-in-one business insurance in Singapore. Protect your workers and business with comprehensive coverage. Ideal for office, retail, and more. Business package insurance for offices, retail and small businesses.",
+        "plan_slug": "business-protect360",
+        "plan_url": "https://www.hlas.com.sg/businesspackages/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Casualty insurance for third-party injury, property damage and employee accident exposures."
+        ],
+        "plan_description": "Protect your business with top casualty insurance: covers third-party injury, property damage & employee accidents. Email us!",
+        "plan_name": "Casualty Insurance",
+        "plan_overview": "Protect your business with top casualty insurance: covers third-party injury, property damage & employee accidents. Email us! Casualty insurance for third-party injury, property damage and employee accident exposures.",
+        "plan_slug": "casualty-insurance",
+        "plan_url": "https://www.hlas.com.sg/casualtyinsurance/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Corporate travel insurance for business travel disruption and medical risks."
+        ],
+        "plan_description": "Comprehensive corporate travel insurance covering employees worldwide. Includes both business and leisure trip coverage for the insured period | HLAS",
+        "plan_name": "Corporate Travel360",
+        "plan_overview": "Comprehensive corporate travel insurance covering employees worldwide. Includes both business and leisure trip coverage for the insured period | HLAS Corporate travel insurance for business travel disruption and medical risks.",
+        "plan_slug": "corporate-travel360",
+        "plan_url": "https://www.hlas.com.sg/corporate-travel360/",
+        "product_brochure_url": "https://www.hlas.com.sg/wp-content/uploads/2023/07/HLAS-Annual-Corporate-Travel-360-Insurance-Policy-Wording-30072023.pdf",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Engineering insurance for construction, installation and machinery risks."
+        ],
+        "plan_description": "Protect your company from contract works, third-party claims, and damage with Engineering Insurance in Singapore. Includes machinery, equipment, and more.",
+        "plan_name": "Engineering Insurance",
+        "plan_overview": "Protect your company from contract works, third-party claims, and damage with Engineering Insurance in Singapore. Includes machinery, equipment, and more. Engineering insurance for construction, installation and machinery risks.",
+        "plan_slug": "engineering-insurance",
+        "plan_url": "https://www.hlas.com.sg/engineeringinsurance/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
+      },
+      {
+        "insurer": "hl_assurance",
+        "plan_benefits": [
+          "Commercial property insurance for business asset damage and loss."
+        ],
+        "plan_description": "Protect valuable assets with Commercial Insurance for property, equipment, and contents. Customize coverage for risks, loss, and business interruption.",
+        "plan_name": "Property Insurance",
+        "plan_overview": "Protect valuable assets with Commercial Insurance for property, equipment, and contents. Customize coverage for risks, loss, and business interruption. Commercial property insurance for business asset damage and loss.",
+        "plan_slug": "property-insurance",
+        "plan_url": "https://www.hlas.com.sg/propertyinsurance/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:10:06.779078+00:00"
       }
     ],
     "scraper_health": [
@@ -42347,7 +43616,7 @@
         "last_success_at": "2026-07-07T03:34:08.824050+00:00",
         "row_count": 44,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42358,7 +43627,7 @@
         "last_success_at": "2026-07-07T03:46:19.376563+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42369,7 +43638,7 @@
         "last_success_at": "2026-07-07T03:51:27.242218+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42380,7 +43649,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42391,7 +43660,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42402,7 +43671,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42413,7 +43682,7 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42424,7 +43693,7 @@
         "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42435,7 +43704,7 @@
         "last_success_at": "2026-07-07T03:20:04.296570+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42446,7 +43715,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42457,7 +43726,7 @@
         "last_success_at": "2026-07-07T03:39:55.246857+00:00",
         "row_count": 18,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42465,7 +43734,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42476,7 +43745,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42487,7 +43756,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42498,7 +43767,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42509,7 +43778,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42517,7 +43786,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42525,7 +43794,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42533,7 +43802,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42544,15 +43813,18 @@
         "last_success_at": "2026-07-07T04:01:47.198478+00:00",
         "row_count": 21,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:01:47.198478+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "hl_assurance",
         "display_name": "Hl Assurance",
-        "row_count": 0,
+        "last_error": null,
+        "last_run_at": "2026-07-07T04:10:20.509017+00:00",
+        "last_success_at": "2026-07-07T04:10:20.509017+00:00",
+        "row_count": 21,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:10:20.509017+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42563,7 +43835,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42571,7 +43843,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42579,7 +43851,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42587,7 +43859,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42595,7 +43867,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42603,7 +43875,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829770+00:00",
+        "updated_at": "2026-07-07T04:09:31.654464+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42619,8 +43891,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T04:00:15.829412+00:00",
-        "validation_checked_at": "2026-07-07T04:00:15.829412+00:00",
+        "updated_at": "2026-07-07T04:09:31.652990+00:00",
+        "validation_checked_at": "2026-07-07T04:09:31.652990+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
