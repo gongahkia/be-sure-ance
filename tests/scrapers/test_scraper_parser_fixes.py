@@ -4,6 +4,7 @@ from pathlib import Path
 from src.backend.helper import format_plan_rows
 from src.scrapers import (
     allianz,
+    china_life,
     chubb,
     fwd,
     great_eastern,
@@ -110,6 +111,41 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual(row["plan_name"], "Personal Accident Insurance")
         self.assertEqual(row["plan_description"], "Personal accident cover.")
         self.assertIn("Accident-related injury protection", row["plan_benefits"])
+
+    def test_china_life_product_parser_extracts_summary_and_brochure(self):
+        html = (FIXTURES_DIR / "china_life_product.html").read_text()
+        row = china_life.parse_product_html(
+            html,
+            "https://www.chinalife.com.sg/products/china-life-critical-trio",
+        )
+
+        self.assertEqual(row["plan_name"], "China Life Critical Trio")
+        self.assertIn("Cancer, Heart Attack and Stroke", row["plan_description"])
+        self.assertIn("Critical Illness (CI) Benefit", row["plan_benefits"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.chinalife.com.sg/sites/default/files/product/China%20Life%20Critical%20Trio%20Brochure_EN_0.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(china_life.TABLE_NAME, [row])),
+        )
+
+    def test_china_life_rejects_forms_and_category_pages_as_plan_rows(self):
+        html = (FIXTURES_DIR / "china_life_reject.html").read_text()
+
+        self.assertIsNone(
+            china_life.parse_product_html(
+                html,
+                "https://www.chinalife.com.sg/forms",
+            )
+        )
+        self.assertIsNone(
+            china_life.parse_product_html(
+                html,
+                "https://www.chinalife.com.sg/products/protection",
+            )
+        )
 
     def test_chubb_dedupes_listing_and_direct_rows(self):
         rows = chubb.dedupe_rows(
