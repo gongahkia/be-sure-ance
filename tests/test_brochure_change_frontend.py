@@ -5,6 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 APP_VUE = (ROOT / "src/be-sure-ance-app/src/App.vue").read_text()
 PLAN_CARD = (ROOT / "src/be-sure-ance-app/src/components/PlanCard.vue").read_text()
 CHANGE_LIST = (ROOT / "src/be-sure-ance-app/src/components/BrochureChangeList.vue").read_text()
+I18N = (ROOT / "src/be-sure-ance-app/src/i18n.js").read_text()
 
 
 class BrochureChangeFrontendTests(unittest.TestCase):
@@ -31,8 +32,8 @@ class BrochureChangeFrontendTests(unittest.TestCase):
 
     def test_brochure_change_component_uses_safe_links_and_recent_limit(self):
         for required in (
-            "Brochure changes",
-            "Pending alert hook",
+            "t('ui.brochureChanges.title')",
+            "t('ui.brochureChanges.pending')",
             ".slice(0, 3)",
             "safeExternalUrl(change.source_url)",
             "externalHostname(change.source_url)",
@@ -41,6 +42,9 @@ class BrochureChangeFrontendTests(unittest.TestCase):
         ):
             with self.subTest(required=required):
                 self.assertIn(required, CHANGE_LIST)
+        for required in ("Brochure changes", "Pending alert hook"):
+            with self.subTest(required=required):
+                self.assertIn(required, I18N)
 
     def test_component_avoids_suitability_or_alarm_framing(self):
         for forbidden in ("avoid this insurer", "dangerous", "best plan", "worst plan"):

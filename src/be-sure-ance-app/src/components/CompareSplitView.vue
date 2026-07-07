@@ -190,10 +190,7 @@ function initializeSelection() {
     return
   }
   const availableKeys = new Set(props.plans.map(planOptionKey))
-  const seedKeys = uniqueKeys([
-    ...loadStoredKeys(),
-    ...props.initialPlans.map(planOptionKey),
-  ])
+  const seedKeys = uniqueKeys([...loadStoredKeys(), ...props.initialPlans.map(planOptionKey)])
     .filter((key) => availableKeys.has(key))
     .slice(0, 2)
   leftKey.value = seedKeys[0] || ''

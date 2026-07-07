@@ -4,10 +4,14 @@
     <div class="repo-body">
       <div class="repo-title-line">
         <div>
-          <a class="repo-title" :href="planPagePath">
+          <a v-if="planPagePath" class="repo-title" :href="planPagePath">
             <span>{{ provider.name }}</span>
             <strong>/{{ plan.plan_name }}</strong>
           </a>
+          <span v-else class="repo-title">
+            <span>{{ provider.name }}</span>
+            <strong>/{{ plan.plan_name }}</strong>
+          </span>
           <p class="repo-summary">
             {{ planSummary }}
           </p>
@@ -29,6 +33,10 @@
 
       <div class="repo-meta">
         <span>{{ plan.providerKey }}</span>
+        <span v-if="canonicalCarrierText"
+          >{{ t('plan.canonicalCarrier') }}: {{ canonicalCarrierText }}</span
+        >
+        <span v-if="canonicalFlagsText">{{ canonicalFlagsText }}</span>
         <span>{{ brochureSummary }}</span>
         <span>{{ latestVerifiedText }}</span>
         <a
@@ -71,6 +79,14 @@
             <h3>{{ t('field.exclusions') }}</h3>
             <p>{{ exclusionSummary }}</p>
             <FactProvenance :entries="provenanceEntriesForFields(facts, ['exclusions'])" compact />
+          </section>
+          <section>
+            <h3>{{ t('field.source_notes') }}</h3>
+            <p>{{ sourceNotesSummary }}</p>
+            <FactProvenance
+              :entries="provenanceEntriesForFields(facts, ['source_notes'])"
+              compact
+            />
           </section>
           <section v-if="resources.length > 0">
             <h3>{{ t('ui.plan.providerResources') }}</h3>
@@ -160,7 +176,12 @@ const panelHospitals = computed(() => factItems(props.facts, 'panel_hospitals'))
 const waitingPeriods = computed(() => factItems(props.facts, 'waiting_periods'))
 const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
 const exclusions = computed(() => factItems(props.facts, 'exclusions'))
+const sourceNotes = computed(() => factItems(props.facts, 'source_notes'))
 const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
+const canonicalCarrierText = computed(() => props.plan?.carrierCanonical?.canonical_name || '')
+const canonicalFlagsText = computed(() =>
+  (props.plan?.carrierCanonical?.mismatch_flags || []).join(', '),
+)
 const planSummary = computed(() =>
   localize(
     props.plan?.plan_description ||
@@ -172,7 +193,7 @@ const planSummary = computed(() =>
 const planPagePath = computed(() =>
   props.plan?.providerKey && props.plan?.plan_slug
     ? `/plan/${encodeURIComponent(props.plan.providerKey)}/${encodeURIComponent(props.plan.plan_slug)}`
-    : '/',
+    : '',
 )
 
 const factCount = computed(() => Object.keys(props.facts || {}).length)
@@ -263,6 +284,10 @@ const exclusionSummary = computed(() =>
       ? exclusions.value.map((item) => `${listText([item])}${taxonomySuffix(item)}`).join(', ')
       : factStateText(props.facts, 'exclusions'),
   ),
+)
+
+const sourceNotesSummary = computed(() =>
+  localize(listText(sourceNotes.value, factStateText(props.facts, 'source_notes'))),
 )
 
 function resourceLabel(resource) {

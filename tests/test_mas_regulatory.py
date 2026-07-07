@@ -78,7 +78,9 @@ class MasRegulatoryTests(unittest.TestCase):
 
     def test_maintenance_pages_are_source_unavailable(self):
         self.assertTrue(is_mas_unavailable("<title>Maintenance</title>"))
-        self.assertTrue(is_mas_unavailable("This site is currently undergoing scheduled maintenance."))
+        self.assertTrue(
+            is_mas_unavailable("This site is currently undergoing scheduled maintenance.")
+        )
 
     def test_direct_catalog_is_used_when_listing_pages_are_unavailable(self):
         seen_user_agents = []
@@ -94,7 +96,9 @@ class MasRegulatoryTests(unittest.TestCase):
             def get(self, url, timeout, headers):
                 seen_user_agents.append(headers.get("User-Agent"))
                 if url == MAS_DIRECT_NEWS_ITEMS[0][1]:
-                    return Response((ROOT / "tests/fixtures/mas_regulatory_detail.html").read_text())
+                    return Response(
+                        (ROOT / "tests/fixtures/mas_regulatory_detail.html").read_text()
+                    )
                 return Response("<title>Maintenance</title>")
 
         events = scrape_mas_regulatory_events(

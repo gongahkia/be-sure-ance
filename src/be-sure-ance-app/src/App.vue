@@ -772,13 +772,14 @@ function searchableText(plan) {
 }
 
 const detailPlan = computed(() => {
-  const target = routePlanTarget.value
-  if (!target) {
+  const routeTarget = routePlanTarget.value
+  if (!routeTarget) {
     return null
   }
   return (
     enrichedPlans.value.find(
-      (plan) => plan.providerKey === target.providerKey && plan.plan_slug === target.planSlug,
+      (plan) =>
+        plan.providerKey === routeTarget.providerKey && plan.plan_slug === routeTarget.planSlug,
     ) || null
   )
 })

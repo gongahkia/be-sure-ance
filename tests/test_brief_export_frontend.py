@@ -3,22 +3,31 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_VUE = (ROOT / "src/be-sure-ance-app/src/App.vue").read_text()
+SELECTED_BRIEF_BAR = (ROOT / "src/be-sure-ance-app/src/components/SelectedBriefBar.vue").read_text()
 BRIEF_EXPORT = (ROOT / "src/be-sure-ance-app/src/components/BriefExportPanel.vue").read_text()
+I18N = (ROOT / "src/be-sure-ance-app/src/i18n.js").read_text()
 
 
 class BriefExportFrontendTests(unittest.TestCase):
     def test_app_renders_brief_export_panel_for_selected_plans(self):
         for required in (
-            "import BriefExportPanel from './components/BriefExportPanel.vue'",
-            '<BriefExportPanel :selected-plans="selectedPlans" />',
+            "import SelectedBriefBar from './components/SelectedBriefBar.vue'",
+            "<SelectedBriefBar",
+            ':selected-plans="selectedPlans"',
         ):
             with self.subTest(required=required):
                 self.assertIn(required, APP_VUE)
+        for required in (
+            "import BriefExportPanel from './BriefExportPanel.vue'",
+            '<BriefExportPanel :selected-plans="selectedPlans" compact />',
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, SELECTED_BRIEF_BAR)
 
     def test_export_panel_has_session_branding_fields(self):
         for required in (
-            "Agent name",
-            "MAS rep no.",
+            "t('ui.pdf.agent')",
+            "t('ui.pdf.rep')",
             "const agentName = ref('')",
             "const masRepNumber = ref('')",
             'autocomplete="off"',
@@ -26,6 +35,9 @@ class BriefExportFrontendTests(unittest.TestCase):
         ):
             with self.subTest(required=required):
                 self.assertIn(required, BRIEF_EXPORT)
+        for required in ("Agent name", "MAS rep no."):
+            with self.subTest(required=required):
+                self.assertIn(required, I18N)
 
     def test_export_panel_posts_branding_and_selected_plans_only(self):
         for required in (

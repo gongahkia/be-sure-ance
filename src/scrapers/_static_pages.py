@@ -92,15 +92,12 @@ def parse_static_product_page(url: str, session=requests) -> dict | None:
     if not title or title.lower() in {"home", "products", "insurance"}:
         return None
 
-    description = (
-        meta_content(soup, 'meta[name="description"]')
-        or meta_content(soup, 'meta[property="og:description"]')
+    description = meta_content(soup, 'meta[name="description"]') or meta_content(
+        soup, 'meta[property="og:description"]'
     )
     blocks = page_blocks(soup)
     benefits = [
-        block
-        for block in blocks
-        if any(keyword in block.lower() for keyword in PLAN_KEYWORDS)
+        block for block in blocks if any(keyword in block.lower() for keyword in PLAN_KEYWORDS)
     ][:8]
     overview_blocks = [block for block in blocks if block != title][:4]
 

@@ -36,15 +36,12 @@ class FrontendProvenanceTests(unittest.TestCase):
 
     def test_plan_card_marks_each_fact_group_with_provenance(self):
         for required in (
-            ':entries="profileProvenance"',
-            ':entries="highlightProvenance"',
-            ':entries="coverageProvenance"',
-            ':entries="networkProvenance"',
-            ':entries="processProvenance"',
-            ':entries="exclusionProvenance"',
-            ':entries="brochureProvenance"',
-            ':entries="sourceNotesProvenance"',
-            ':entries="resourceProvenance"',
+            ":entries=\"provenanceEntriesForFields(facts, ['panel_hospitals'])\"",
+            "'waiting_periods'",
+            "'claim_deadlines'",
+            "'claim_sla'",
+            ":entries=\"provenanceEntriesForFields(facts, ['exclusions'])\"",
+            ":entries=\"provenanceEntriesForFields(facts, ['source_notes'])\"",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PLAN_CARD)

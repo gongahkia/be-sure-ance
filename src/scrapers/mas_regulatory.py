@@ -13,8 +13,8 @@ from src.lib.mas_regulatory import (
     MAS_ENFORCEMENT_URL,
     MAS_NEWS_URL,
     direct_mas_news_items,
-    extract_events_from_text,
     extract_date,
+    extract_events_from_text,
     is_mas_unavailable,
     parse_mas_news_listing,
 )

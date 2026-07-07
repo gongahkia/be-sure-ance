@@ -27,10 +27,11 @@ class ShareComparisonFrontendTests(unittest.TestCase):
             "props.selectedPlans.map(sharePlanPayload)",
             "const insurer = plan.insurer || plan.providerKey",
             "const planSlug = plan.plan_slug",
-            "Open share link",
+            "t('ui.share.open')",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, SHARE_PANEL)
+        self.assertIn("Open", I18N)
 
     def test_share_panel_does_not_store_or_send_pii(self):
         for forbidden in (

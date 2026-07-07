@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
 from src.backend.helper import initialize_data_store, overwrite_plans_for_insurer
-from src.lib.search import search_wrapper
 from src.lib.scraper_health import record_scraper_failure
+from src.lib.search import search_wrapper
 from src.scrapers.navigation import goto_with_retry, new_bot_context
 
 DEFAULT_SEARCH_QUERY = (

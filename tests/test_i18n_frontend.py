@@ -34,11 +34,12 @@ class FrontendI18nTests(unittest.TestCase):
 
     def test_core_surfaces_use_i18n_keys(self):
         for required in (
-            "t('hero.title')",
+            "t('ui.nav.models')",
+            "t('ui.plan.facts'",
             "t('disclaimer.share')",
             "t('comparison.field')",
             "t('provenance.scraped'",
-            "t('plan.coverage')",
+            "t('field.coverage_tags')",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, APP_VUE + COMPARISON_TABLE + FACT_PROVENANCE + PLAN_CARD)

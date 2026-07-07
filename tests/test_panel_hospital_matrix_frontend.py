@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 APP_VUE = (ROOT / "src/be-sure-ance-app/src/App.vue").read_text()
 MATRIX = (ROOT / "src/be-sure-ance-app/src/components/PanelHospitalMatrix.vue").read_text()
+I18N = (ROOT / "src/be-sure-ance-app/src/i18n.js").read_text()
 
 
 class PanelHospitalMatrixFrontendTests(unittest.TestCase):
@@ -21,8 +22,8 @@ class PanelHospitalMatrixFrontendTests(unittest.TestCase):
 
     def test_matrix_renders_hospitals_by_provider_columns(self):
         for required in (
-            "Hospital coverage by carrier",
-            '<th class="hospital-column">Hospital</th>',
+            "t('ui.matrix.title')",
+            "<th class=\"hospital-column\">{{ t('ui.matrix.hospital') }}</th>",
             'v-for="provider in visibleProviders"',
             "props.plans.filter((plan) => plan.providerKey === provider.key)",
             "factItems(plan.facts, 'panel_hospitals')",
@@ -30,10 +31,13 @@ class PanelHospitalMatrixFrontendTests(unittest.TestCase):
         ):
             with self.subTest(required=required):
                 self.assertIn(required, MATRIX)
+        for required in ("Hospital coverage by carrier", "'ui.matrix.hospital': 'Hospital'"):
+            with self.subTest(required=required):
+                self.assertIn(required, I18N)
 
     def test_matrix_supports_lookup_query_shape(self):
         for required in (
-            "is Mt Elizabeth Novena on AIA's panel",
+            "t('ui.matrix.placeholder')",
             "function providerMatchesQuery(provider, query)",
             "function hospitalQueryTokens(query, providerList)",
             "visibleRows",
@@ -41,6 +45,7 @@ class PanelHospitalMatrixFrontendTests(unittest.TestCase):
         ):
             with self.subTest(required=required):
                 self.assertIn(required, MATRIX)
+        self.assertIn("is Mt Elizabeth Novena on AIA's panel", I18N)
 
     def test_matrix_distinguishes_required_cell_states(self):
         for required in (

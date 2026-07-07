@@ -27,11 +27,11 @@ class ScraperStatusFrontendTests(unittest.TestCase):
 
     def test_dashboard_surfaces_expected_public_states(self):
         for required in (
-            "Fresh",
-            "Stale",
-            "Failing",
-            "Unsupported",
-            "Error rate",
+            "t('ui.scraper.fresh')",
+            "t('ui.scraper.stale')",
+            "t('ui.scraper.failing')",
+            "t('ui.scraper.unsupported')",
+            "t('ui.scraper.errorRate')",
             "validation_summary",
             "row_count",
             "last_success_at",
@@ -43,6 +43,9 @@ class ScraperStatusFrontendTests(unittest.TestCase):
                     self.assertNotIn(required, STATUS_DASHBOARD)
                 else:
                     self.assertIn(required, STATUS_DASHBOARD)
+        for required in ("Fresh", "Stale", "Failing", "Unsupported", "Error rate"):
+            with self.subTest(required=required):
+                self.assertIn(required, I18N)
 
     def test_status_route_is_linked_and_static_hosted(self):
         for required in (

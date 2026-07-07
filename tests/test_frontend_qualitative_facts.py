@@ -23,19 +23,19 @@ class FrontendQualitativeFactsTests(unittest.TestCase):
 
     def test_plan_card_groups_contract_fields(self):
         for required in (
-            "t('plan.coverage')",
-            "t('plan.network')",
+            "coverageTagsForPlan",
+            "t('field.panel_hospitals')",
             "t('plan.process')",
-            "t('plan.exclusions')",
-            "coverage_tags",
+            "t('field.exclusions')",
+            "t('field.source_notes')",
             "panel_hospitals",
             "waiting_periods",
             "claim_deadlines",
             "claim_sla",
             "brochure_metadata",
             "source_notes",
-            "waitingPeriodTags",
-            "exclusionTags",
+            "durationText",
+            "taxonomySuffix",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PLAN_CARD)
