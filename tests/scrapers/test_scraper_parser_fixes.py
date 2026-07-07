@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 
 from src.backend.helper import format_plan_rows
-from src.scrapers import chubb, iii, panel_resources, prudential, raffles_health, uoi
+from src.scrapers import chubb, fwd, iii, panel_resources, prudential, raffles_health, uoi
 from src.validation.plan_quality import validate_plan_rows
 
 FIXTURES_DIR = Path(__file__).resolve().parents[1] / "fixtures"
@@ -99,6 +99,67 @@ class ScraperParserFixTests(unittest.TestCase):
                 max_bytes=6,
             ),
             b"aaaabb",
+        )
+
+    def test_fwd_product_parser_scopes_out_navigation_chrome(self):
+        html = (FIXTURES_DIR / "fwd_product.html").read_text()
+        row = fwd.parse_product_html(
+            html,
+            "https://www.fwd.com.sg/home-insurance/",
+        )
+
+        self.assertEqual(row["plan_name"], "Home insurance")
+        self.assertIn("comprehensive protection", row["plan_description"])
+        self.assertNotIn("Life & health", row["plan_overview"])
+        self.assertNotIn("Check your price", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.fwd.com.sg/documents/home-insurance-policy-wording.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(fwd.TABLE_NAME, [row])),
+        )
+
+    def test_fwd_rejects_homepage_and_inactive_fire_pages_as_plan_rows(self):
+        product_html = (FIXTURES_DIR / "fwd_product.html").read_text()
+        reject_html = (FIXTURES_DIR / "fwd_reject.html").read_text()
+
+        self.assertIsNone(
+            fwd.parse_product_html(
+                product_html,
+                "https://www.fwd.com.sg/",
+            )
+        )
+        self.assertIsNone(
+            fwd.parse_product_html(
+                reject_html,
+                "https://www.fwd.com.sg/fire-insurance/",
+            )
+        )
+
+    def test_fwd_scraper_has_exact_allowlisted_products(self):
+        html = (FIXTURES_DIR / "fwd_product.html").read_text()
+        session = FakeSession({url: html for url in fwd.PRODUCT_URLS})
+        rows = fwd.scrape_fwd(session=session)
+
+        self.assertEqual(
+            [
+                "Home insurance",
+                "Maid insurance",
+                "Car insurance",
+                "Motorcycle insurance",
+                "Travel insurance",
+                "FWD Life PA insurance",
+                "Direct Term Life insurance",
+                "Critical Illness Plus insurance",
+            ],
+            [row["plan_name"] for row in rows],
+        )
+        self.assertNotIn("HDB Fire insurance", [row["plan_name"] for row in rows])
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(fwd.TABLE_NAME, rows)),
         )
 
     def test_raffles_product_parser_scopes_out_navigation_chrome(self):

@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T02:29:58+00:00",
+  "generated_at": "2026-07-07T02:39:25+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -3528,49 +3528,49 @@
       "field_name": "brochure_metadata",
       "field_value": {
         "notes": [],
-        "raw_text": "1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf",
+        "raw_text": "FWD-Home-Policy-Contract-Homeowner.pdf",
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:53.109564+00:00",
-          "last_modified_at": "Fri, 26 Jun 2026 06:56:30 GMT",
-          "sha256": "393eb3e503594d19e25346bd2146ef63feec03b1f50a1cd7d9d359c1190bdd8c",
-          "size_bytes": 252182,
+          "fetched_at": "2026-07-07T02:39:21.682308+00:00",
+          "last_modified_at": "Tue, 23 Jul 2024 01:21:13 GMT",
+          "sha256": "c28b6828e88044960eaada94801087a3002b7ae5c3161aaec6e5cf45897aa994",
+          "size_bytes": 847304,
           "storage_bucket": "plan-brochures",
-          "storage_key": "brochures/fwd/home-insurance/393eb3e503594d19e25346bd2146ef63feec03b1f50a1cd7d9d359c1190bdd8c.pdf",
-          "url": "https://www.fwd.com.sg/assets/fwd-promo/1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf"
+          "storage_key": "brochures/fwd/home-insurance/c28b6828e88044960eaada94801087a3002b7ae5c3161aaec6e5cf45897aa994.pdf",
+          "url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Home-Policy-Contract-Homeowner.pdf"
         }
       },
       "insurer": "fwd",
-      "last_verified_at": "2026-07-05T07:52:53.109564+00:00",
+      "last_verified_at": "2026-07-07T02:39:21.682308+00:00",
       "plan_slug": "home-insurance",
-      "scraped_at": "2026-07-05T07:52:53.109564+00:00",
+      "scraped_at": "2026-07-07T02:39:21.682308+00:00",
       "source_type": "brochure_pdf",
-      "source_url": "https://www.fwd.com.sg/assets/fwd-promo/1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf"
+      "source_url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Home-Policy-Contract-Homeowner.pdf"
     },
     {
       "field_name": "brochure_metadata",
       "field_value": {
         "notes": [],
-        "raw_text": "1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf",
+        "raw_text": "FWD_Maid_Insurance_Policy_Wording_V7.pdf",
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:53.768246+00:00",
-          "last_modified_at": "Thu, 02 Jul 2026 02:17:09 GMT",
-          "sha256": "935486c1f0b4959c65acb8272101b6578fb3920c611e853bb169ad1d9e474298",
-          "size_bytes": 235576,
+          "fetched_at": "2026-07-07T02:39:22.270313+00:00",
+          "last_modified_at": "Tue, 19 May 2026 01:18:01 GMT",
+          "sha256": "f6e3cda2df5c8743d3036c1491c68e2fb7d22027dfbbc26be99db18da296db36",
+          "size_bytes": 883577,
           "storage_bucket": "plan-brochures",
-          "storage_key": "brochures/fwd/maid-insurance/935486c1f0b4959c65acb8272101b6578fb3920c611e853bb169ad1d9e474298.pdf",
-          "url": "https://www.fwd.com.sg/assets/fwd-promo/1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf"
+          "storage_key": "brochures/fwd/maid-insurance/f6e3cda2df5c8743d3036c1491c68e2fb7d22027dfbbc26be99db18da296db36.pdf",
+          "url": "https://www.fwd.com.sg/wp-content/uploads/2026/05/FWD_Maid_Insurance_Policy_Wording_V7.pdf"
         }
       },
       "insurer": "fwd",
-      "last_verified_at": "2026-07-05T07:52:53.768246+00:00",
+      "last_verified_at": "2026-07-07T02:39:22.270313+00:00",
       "plan_slug": "maid-insurance",
-      "scraped_at": "2026-07-05T07:52:53.768246+00:00",
+      "scraped_at": "2026-07-07T02:39:22.270313+00:00",
       "source_type": "brochure_pdf",
-      "source_url": "https://www.fwd.com.sg/assets/fwd-promo/1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf"
+      "source_url": "https://www.fwd.com.sg/wp-content/uploads/2026/05/FWD_Maid_Insurance_Policy_Wording_V7.pdf"
     },
     {
       "field_name": "brochure_metadata",
@@ -3580,7 +3580,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:54.259264+00:00",
+          "fetched_at": "2026-07-07T02:39:22.941483+00:00",
           "last_modified_at": "Mon, 01 Jul 2024 16:22:34 GMT",
           "sha256": "a010b8fa469ce110fd4d2e775646f0e4568680a30f67e39c4e57ca941977c21e",
           "size_bytes": 836607,
@@ -3590,9 +3590,9 @@
         }
       },
       "insurer": "fwd",
-      "last_verified_at": "2026-07-05T07:52:54.259264+00:00",
+      "last_verified_at": "2026-07-07T02:39:22.941483+00:00",
       "plan_slug": "car-insurance",
-      "scraped_at": "2026-07-05T07:52:54.259264+00:00",
+      "scraped_at": "2026-07-07T02:39:22.941483+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.fwd.com.sg/wp-content/uploads/2023/06/Drivo-Car-Insurance-EN.pdf"
     },
@@ -4228,7 +4228,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:55.972458+00:00",
+          "fetched_at": "2026-07-07T02:39:23.349702+00:00",
           "last_modified_at": "Fri, 24 Apr 2026 01:31:05 GMT",
           "sha256": "d6a48ce31b3fb245910951182170054880214eafb7a453a997ef8a6245aa4c09",
           "size_bytes": 1737677,
@@ -4238,9 +4238,9 @@
         }
       },
       "insurer": "fwd",
-      "last_verified_at": "2026-07-05T07:52:55.972458+00:00",
+      "last_verified_at": "2026-07-07T02:39:23.349702+00:00",
       "plan_slug": "travel-insurance",
-      "scraped_at": "2026-07-05T07:52:55.972458+00:00",
+      "scraped_at": "2026-07-07T02:39:23.349702+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.fwd.com.sg/wp-content/uploads/2026/04/FWD-Travel-Insurance-Policy-Wording-V6.pdf"
     },
@@ -4252,7 +4252,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:56.716802+00:00",
+          "fetched_at": "2026-07-07T02:39:23.914565+00:00",
           "last_modified_at": "Sun, 06 Oct 2024 08:45:25 GMT",
           "sha256": "b3d277acc55b0f7999e12b1ab66538021f30c050e599f4b96d5340af2475a080",
           "size_bytes": 804507,
@@ -4262,9 +4262,9 @@
         }
       },
       "insurer": "fwd",
-      "last_verified_at": "2026-07-05T07:52:56.716802+00:00",
+      "last_verified_at": "2026-07-07T02:39:23.914565+00:00",
       "plan_slug": "fwd-life-pa-insurance",
-      "scraped_at": "2026-07-05T07:52:56.716802+00:00",
+      "scraped_at": "2026-07-07T02:39:23.914565+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf"
     },
@@ -5371,6 +5371,54 @@
       "scraped_at": "2026-07-07T02:29:47.282229+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.prudential.com.sg/-/media/project/prudential/pdf/ebrochures/prulinkinvestgrowth/prulink-investgrowth_brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "FWD-Direct-Term-Life-Product-Summary-2025.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:39:24.358725+00:00",
+          "last_modified_at": "Fri, 26 Sep 2025 05:08:10 GMT",
+          "sha256": "70bea91445a833b994dd977bb4299249ce8fda80d26df33e8715b6f897cbd50a",
+          "size_bytes": 163441,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/fwd/direct-term-life-insurance/70bea91445a833b994dd977bb4299249ce8fda80d26df33e8715b6f897cbd50a.pdf",
+          "url": "https://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Direct-Term-Life-Product-Summary-2025.pdf"
+        }
+      },
+      "insurer": "fwd",
+      "last_verified_at": "2026-07-07T02:39:24.358725+00:00",
+      "plan_slug": "direct-term-life-insurance",
+      "scraped_at": "2026-07-07T02:39:24.358725+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Direct-Term-Life-Product-Summary-2025.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:39:24.663220+00:00",
+          "last_modified_at": "Fri, 26 Sep 2025 05:08:05 GMT",
+          "sha256": "3ecc21f7edd040d7b6ac767ee33e60ec3c42270c337cb0fc4eaff967943ddfe8",
+          "size_bytes": 3071142,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/fwd/critical-illness-plus-insurance/3ecc21f7edd040d7b6ac767ee33e60ec3c42270c337cb0fc4eaff967943ddfe8.pdf",
+          "url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf"
+        }
+      },
+      "insurer": "fwd",
+      "last_verified_at": "2026-07-07T02:39:24.663220+00:00",
+      "plan_slug": "critical-illness-plus-insurance",
+      "scraped_at": "2026-07-07T02:39:24.663220+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf"
     }
   ],
   "plans": [
@@ -7662,150 +7710,6 @@
       "scraped_at": "2026-07-05T07:52:12.169042+00:00"
     },
     {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "Celebrate living. We’ve got your back.",
-      "plan_name": "FWD – Online Life and General Insurance in Singapore",
-      "plan_overview": "We believe that insurance is a source of empowerment. Enjoy life and celebrate it – and if anything unexpected happens, have the confidence that we’ve got your back.\n\nInsure and invest with our list of general and life insurance and investment products:\n\nGet covered up to S$1.5 million.",
-      "plan_slug": "fwd-online-life-and-general-insurance-in-singapore",
-      "plan_url": "https://www.fwd.com.sg/",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "From S$30/year for a HDB studio",
-      "plan_name": "Home insurance",
-      "plan_overview": "As Singapore's #1 home insurer for customer experience¹, we provide comprehensive protection for your building, home contents, renovations as well as reimbursement for home assistance services, plus many other benefits. FWD Home insurance is also recommended as a complementary product for your Fire insurance (find out more here ).\n\nWe provide coverage if your pet dog or cat is stolen, passes away or is injured due to an insured event that happens at your home.\n\nIf you’re a landlord and your tenant defaults on rent, we cover up to S$3,000 per month.",
-      "plan_slug": "home-insurance",
-      "plan_url": "https://www.fwd.com.sg/home-insurance/",
-      "product_brochure_url": "https://www.fwd.com.sg/assets/fwd-promo/1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "FWD Insurance is no longer offering HDB Fire insurance with effect from 16 August 2024. HDB Fire insurance only protects the building structure in the event of a fire. If you're looking to protect your home contents, consider FWD Home insurance where you can personalise your cover from as low as S$33.¹",
-      "plan_name": "HDB Fire insurance",
-      "plan_overview": "We keep things simple when the going gets tough.\n\n¹1-year premium for a HDB studio unit with 20k each for Home contents and renovations sum insured.\n\nThis page is for general information only. You can find the detailed terms and conditions of this plan in the policy wording.",
-      "plan_slug": "hdb-fire-insurance",
-      "plan_url": "https://www.fwd.com.sg/fire-insurance/",
-      "product_brochure_url": "",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "From S$313 for a 14-month, Essential plan",
-      "plan_name": "Maid insurance",
-      "plan_overview": "With higher medical coverage for your helper, you'll be financially protected for medical expenses that may arise due to her illness or injury. In line with the Ministry of Manpower's (MOM) requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans.\n\nIn line with MOM’s requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans. You also have the option to increase the limit up to S$120,000.\n\nWe’re the only insurer who does not make you pay if your Security Bond gets forfeited by MOM.",
-      "plan_slug": "maid-insurance",
-      "plan_url": "https://www.fwd.com.sg/maid-insurance/",
-      "product_brochure_url": "https://www.fwd.com.sg/assets/fwd-promo/1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "Distributed by | Underwritten by",
-      "plan_name": "Car insurance",
-      "plan_overview": "Accidents may unexpectedly happen when you are driving on the road. In the event of an accident, you may be in a state of stress and anxiety but there is no need to face this alone. Income's dedicated accident response team, Orange Force, will provide accident assistance from anywhere in Singapore. Safeguard your daily journey with Drivo Car Insurance to enjoy exclusive accident assistance from Orange Force to enjoy greater peace of mind. What's more? Purchase your Car insurance today and enjoy up to 475,000 STAR$ ®^ .\n\nGet your car repaired at a workshop of your choice with Drivo TM Premium plan .\n\nStay protected on the road and enjoy peace of mind with unlimited windscreen cover.",
-      "plan_slug": "car-insurance",
-      "plan_url": "https://www.fwd.com.sg/car-insurance/",
-      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2023/06/Drivo-Car-Insurance-EN.pdf",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "Distributed by | Underwritten by",
-      "plan_name": "Motorcycle insurance",
-      "plan_overview": "With our Motorcycle insurance, you will not only enjoy comprehensive and affordable coverage, but also convenience through our value-added services whenever you need it most. What's more? Purchase your motorcycle insurance today and enjoy up to 150,000 STAR$ ®^ .\n\nUnder the new partnership, we will no longer be able to offer commercial car insurance. Please look for alternative insurance coverage with other insurers.\n\nYour NCD% with FWD will be forwarded to you via an email 60 days before your policy expiry.",
-      "plan_slug": "motorcycle-insurance",
-      "plan_url": "https://www.fwd.com.sg/motorcycle-insurance/",
-      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Motorcycle-Policy-Contract-Comprehensive.pdf",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "From S$14 for a 3-day Single trip, Individual, ASEAN",
-      "plan_name": "Travel insurance",
-      "plan_overview": "*Valid from 4 to 8 July. This additional discount is only applicable for purchase of Single Trip Travel insurance made through FWD SG App. T&Cs apply. Protected up to specified limits by SDIC. This advertisement has not been reviewed by the Monetary Authority of Singapore.\n\n*Valid from 4 to 8 July. This additional discount is only applicable for purchase of Single Trip Travel insurance made through FWD SG App. T&Cs apply. Protected up to specified limits by SDIC. This advertisement has not been reviewed by the Monetary Authority of Singapore.\n\nWe offer comprehensive protection at an affordable price. With our extensive offerings of riders such as Pre-existing Medical Conditions cover, Cancel For Any Reason cover, enhanced COVID-19 cover and more, we empower you to customise the trip coverage based on the travelling needs of yourself and your companions.",
-      "plan_slug": "travel-insurance",
-      "plan_url": "https://www.fwd.com.sg/travel-insurance/",
-      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2026/04/FWD-Travel-Insurance-Policy-Wording-V6.pdf",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
-      "insurer": "fwd",
-      "plan_benefits": [
-        "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-        "Home & Maid Home HDB Fire Maid",
-        "Motor Car Motorcycle",
-        "Travel",
-        "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-        "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-      ],
-      "plan_description": "From S$14/month for an office worker, age 64 and below.",
-      "plan_name": "FWD Life PA insurance",
-      "plan_overview": "From S$14/month for an office worker, age 64 and below.\n\nProtect what matters at every stage of life, with yearly renewals up to age 100 and a lifetime No Claim Discount of 10%¹.\n\nSelect coverage",
-      "plan_slug": "fwd-life-pa-insurance",
-      "plan_url": "https://www.fwd.com.sg/accident-health/life-pa",
-      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf",
-      "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-    },
-    {
       "insurer": "income",
       "plan_benefits": [
         "Make a claim",
@@ -8996,6 +8900,164 @@
       "plan_url": "https://www.prudential.com.sg/products/wealth-accumulation/investments/prulink-investgrowth/",
       "product_brochure_url": "https://www.prudential.com.sg/-/media/project/prudential/pdf/ebrochures/prulinkinvestgrowth/prulink-investgrowth_brochure.pdf",
       "scraped_at": "2026-07-07T02:29:09.892572+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "Up to S$400 coverage for 4 common home assistance services",
+        "Up to S$100K coverage for damage to your renovations",
+        "Up to S$100K coverage for damage to home contents",
+        "Up to S$1,000 personal accident coverage for your pet(s)",
+        "We provide coverage if your pet dog or cat is stolen, passes away or is injured due to an insured event that happens at your home.",
+        "If you’re a landlord and your tenant defaults on rent, we cover up to S$3,000 per month.",
+        "Critical Illness Plus",
+        "Big 3 Critical Illness"
+      ],
+      "plan_description": "FWD Home insurance provides comprehensive protection over your building, home contents, renovations as well as accident coverage for your pets.",
+      "plan_name": "Home insurance",
+      "plan_overview": "Up to S$400 coverage for 4 common home assistance services Up to S$100K coverage for damage to your renovations Up to S$100K coverage for damage to home contents",
+      "plan_slug": "home-insurance",
+      "plan_url": "https://www.fwd.com.sg/home-insurance/",
+      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Home-Policy-Contract-Homeowner.pdf",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "Waiver of co-payment",
+        "Cashless outpatient medical expenses",
+        "Daily hospital allowance",
+        "Enhanced coverage for hospitalisation and surgical expenses",
+        "In line with MOM’s requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans. You also have the option to increase the limit up to S$120,000.",
+        "Optional Enhanced Benefits",
+        "Cashless outpatient medical expenses (for Essential plan only)",
+        "Daily hospital allowance (for Essential plan only)"
+      ],
+      "plan_description": "FWD Maid insurance now comes with enhanced medical coverage of up to S$120k. Get financially protected against your helper's medical expenses.",
+      "plan_name": "Maid insurance",
+      "plan_overview": "With higher medical coverage for your helper, you'll be financially protected for medical expenses that may arise due to her illness or injury. In line with the Ministry of Manpower's (MOM) requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans. Waiver of co-payment Cashless outpatient medical expenses",
+      "plan_slug": "maid-insurance",
+      "plan_url": "https://www.fwd.com.sg/maid-insurance/",
+      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2026/05/FWD_Maid_Insurance_Policy_Wording_V7.pdf",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "No-claim discount protection",
+        "Get your car repaired at a workshop of your choice with Drivo TM Premium plan .",
+        "Unlimited windscreen cover",
+        "Stay protected on the road and enjoy peace of mind with unlimited windscreen cover.",
+        "Third-party property damages cover",
+        "Coverage for third-party property damages arising from accident.",
+        "At authorised workshops chosen by Income Insurance",
+        "Want to save on car expenses in Singapore? Start by having the right insurance cover"
+      ],
+      "plan_description": "Our Car Insurance offers optional NCD protection benefit if it is at least 30% and an accident response team that provides assistance anywhere in Singapore.",
+      "plan_name": "Car insurance",
+      "plan_overview": "Motor insurance partnership No-claim discount protection 24/7 referral services in West Malaysia",
+      "plan_slug": "car-insurance",
+      "plan_url": "https://www.fwd.com.sg/car-insurance/",
+      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2023/06/Drivo-Car-Insurance-EN.pdf",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "Enjoy exclusive accident assistance from Orange Force with Income's Motorcycle insurance",
+        "Complimentary personal accident benefit",
+        "Critical Illness Plus",
+        "Big 3 Critical Illness",
+        "Recover First Get Advice",
+        "Life Income Plus Get Advice"
+      ],
+      "plan_description": "Enjoy complimentary personal accident coverage. Get a 5% loyalty discount on your premium if your motorcycle has been insured with us for more than 3 years.",
+      "plan_name": "Motorcycle insurance",
+      "plan_overview": "Motor insurance partnership Complimentary personal accident benefit Helpful information",
+      "plan_slug": "motorcycle-insurance",
+      "plan_url": "https://www.fwd.com.sg/motorcycle-insurance/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "Why choose FWD Travel insurance?",
+        "Enhanced Travel Delay benefit",
+        "Customisable Pre-existing Medical Conditions coverage",
+        "Overseas medical expenses & coverage of pre-existing medical conditions​",
+        "Unlimited emergency medical evacuation & repatriation",
+        "Delayed, theft of or damage to your baggage",
+        "Optional Enhanced Benefits",
+        "Pre-existing medical conditions"
+      ],
+      "plan_description": "Our affordable travel insurance covers flight delay, trip cancellation, lost baggage, pre-existing medical conditions, medical expenses up to S$1mil and more.",
+      "plan_name": "Travel insurance",
+      "plan_overview": "We offer comprehensive protection at an affordable price. With our extensive offerings of riders such as Pre-existing Medical Conditions cover, Cancel For Any Reason cover, enhanced COVID-19 cover and more, we empower you to customise the trip coverage based on the travelling needs of yourself and your companions. Enhanced Travel Delay benefit Cancel for any reason",
+      "plan_slug": "travel-insurance",
+      "plan_url": "https://www.fwd.com.sg/travel-insurance/",
+      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2026/04/FWD-Travel-Insurance-Policy-Wording-V6.pdf",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "Protect what matters at every stage of life, with yearly renewals up to age 100 and a lifetime No Claim Discount of 10%¹.",
+        "Get up to 3x payout for accidents that occur while commuting or travelling³",
+        "Extensive range of coverage for infectious diseases",
+        "Enhance your cover",
+        "Lifetime 10% No Claim Discount¹",
+        "Get a lifetime 10% discount on premiums payable for your coverage, as long as no claims are made for 3 consecutive policy years.",
+        "Claim for both inpatient and outpatient medical expenses⁵",
+        "Income Support Rider"
+      ],
+      "plan_description": "Pursue your passions with confidence with FWD's personal accident plan. From S$14/month for an office worker, age 64 and below.",
+      "plan_name": "FWD Life PA insurance",
+      "plan_overview": "Protect what matters at every stage of life, with yearly renewals up to age 100 and a lifetime No Claim Discount of 10%¹. Guaranteed² renewals up till age 100 Get up to 3x payout for accidents that occur while commuting or travelling³",
+      "plan_slug": "fwd-life-pa-insurance",
+      "plan_url": "https://www.fwd.com.sg/accident-health/life-pa/",
+      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "Tailored coverage, get just what you need",
+        "Comprehensive coverage to get you started",
+        "Flexibility to enhance your coverage",
+        "Get additional protection with the Critical Illness rider",
+        "Have the flexibility to extend your coverage for another five years, regardless of your health, up to age 80.",
+        "Optional benefits for you",
+        "Critical Illness Benefit",
+        "Premiums are rounded up to the nearest dollar."
+      ],
+      "plan_description": "FWD’s direct term life insurance (DPI) is a pure protection plan which cover you for up to $400K without financial advice.",
+      "plan_name": "Direct Term Life insurance",
+      "plan_overview": "Affordable and straightforward term life protection designed for your needs. Tailored coverage, get just what you need Purchase your policy directly from FWD",
+      "plan_slug": "direct-term-life-insurance",
+      "plan_url": "https://www.fwd.com.sg/life-insurance/direct-purchase-term-life-insurance/",
+      "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Direct-Term-Life-Product-Summary-2025.pdf",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "fwd",
+      "plan_benefits": [
+        "Why choose FWD Critical Illness Plus insurance?",
+        "We cover you for early and intermediate stages of cancer, heart attack, stroke and 37 late-stage critical illnesses.",
+        "Skip the medical checks",
+        "100% payout upon a claim",
+        "Extensive coverage for critical illnesses",
+        "We make sure you get the most comprehensive cover for 37 late-stage critical illnesses and death for your ease of mind.",
+        "Focus on recovery and stay covered at 100% sum insured after the auto-reload period upon a successful claim for early to intermediate stages of cancer, heart attack or stroke.",
+        "Optional benefits for you"
+      ],
+      "plan_description": "Critical Illness Plus Insurance plan covers early-stage cancer, heart attack and stroke in addition to 37 late-stage critical illnesses with multiple payouts.",
+      "plan_name": "Critical Illness Plus insurance",
+      "plan_overview": "We cover you for early and intermediate stages of cancer, heart attack, stroke and 37 late-stage critical illnesses. Protected right from the start Skip the medical checks",
+      "plan_slug": "critical-illness-plus-insurance",
+      "plan_url": "https://www.fwd.com.sg/critical-illness-insurance/critical-illness-plus/",
+      "product_brochure_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf",
+      "scraped_at": "2026-07-07T02:39:21.674100+00:00"
     }
   ],
   "scraper_health": [
@@ -9008,7 +9070,7 @@
       "last_success_at": "2026-07-07T02:10:00.090896+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9019,7 +9081,7 @@
       "last_success_at": "2026-07-05T07:18:04.037817+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9030,7 +9092,7 @@
       "last_success_at": "2026-07-05T07:18:05.385324+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9041,7 +9103,7 @@
       "last_success_at": "2026-07-05T07:19:16.257332+00:00",
       "row_count": 19,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9052,7 +9114,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9063,7 +9125,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9074,7 +9136,7 @@
       "last_success_at": "2026-07-05T07:19:56.760391+00:00",
       "row_count": 19,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9085,7 +9147,7 @@
       "last_success_at": "2026-07-05T07:21:04.785877+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9096,7 +9158,7 @@
       "last_success_at": "2026-07-05T07:21:18.419782+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9107,7 +9169,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9115,7 +9177,7 @@
       "display_name": "Allianz",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9123,18 +9185,18 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
       "carrier_key": "fwd",
       "display_name": "Fwd",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:52:57.059452+00:00",
-      "last_success_at": "2026-07-05T07:52:57.059452+00:00",
+      "last_run_at": "2026-07-07T02:39:25.455387+00:00",
+      "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:39:25.455387+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9145,7 +9207,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9156,7 +9218,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:29:48.132708+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9167,7 +9229,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9175,7 +9237,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9183,7 +9245,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9191,7 +9253,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9202,7 +9264,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9210,7 +9272,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9221,7 +9283,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9229,7 +9291,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9237,7 +9299,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9245,7 +9307,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9253,7 +9315,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9261,7 +9323,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.279179+00:00",
+      "updated_at": "2026-07-07T02:30:19.587898+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9277,8 +9339,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:20:28.278981+00:00",
-      "validation_checked_at": "2026-07-07T02:20:28.278981+00:00",
+      "updated_at": "2026-07-07T02:30:19.586781+00:00",
+      "validation_checked_at": "2026-07-07T02:30:19.586781+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -30370,49 +30432,49 @@
         "field_name": "brochure_metadata",
         "field_value": {
           "notes": [],
-          "raw_text": "1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf",
+          "raw_text": "FWD-Home-Policy-Contract-Homeowner.pdf",
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:53.109564+00:00",
-            "last_modified_at": "Fri, 26 Jun 2026 06:56:30 GMT",
-            "sha256": "393eb3e503594d19e25346bd2146ef63feec03b1f50a1cd7d9d359c1190bdd8c",
-            "size_bytes": 252182,
+            "fetched_at": "2026-07-07T02:39:21.682308+00:00",
+            "last_modified_at": "Tue, 23 Jul 2024 01:21:13 GMT",
+            "sha256": "c28b6828e88044960eaada94801087a3002b7ae5c3161aaec6e5cf45897aa994",
+            "size_bytes": 847304,
             "storage_bucket": "plan-brochures",
-            "storage_key": "brochures/fwd/home-insurance/393eb3e503594d19e25346bd2146ef63feec03b1f50a1cd7d9d359c1190bdd8c.pdf",
-            "url": "https://www.fwd.com.sg/assets/fwd-promo/1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf"
+            "storage_key": "brochures/fwd/home-insurance/c28b6828e88044960eaada94801087a3002b7ae5c3161aaec6e5cf45897aa994.pdf",
+            "url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Home-Policy-Contract-Homeowner.pdf"
           }
         },
         "insurer": "fwd",
-        "last_verified_at": "2026-07-05T07:52:53.109564+00:00",
+        "last_verified_at": "2026-07-07T02:39:21.682308+00:00",
         "plan_slug": "home-insurance",
-        "scraped_at": "2026-07-05T07:52:53.109564+00:00",
+        "scraped_at": "2026-07-07T02:39:21.682308+00:00",
         "source_type": "brochure_pdf",
-        "source_url": "https://www.fwd.com.sg/assets/fwd-promo/1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf"
+        "source_url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Home-Policy-Contract-Homeowner.pdf"
       },
       {
         "field_name": "brochure_metadata",
         "field_value": {
           "notes": [],
-          "raw_text": "1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf",
+          "raw_text": "FWD_Maid_Insurance_Policy_Wording_V7.pdf",
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:53.768246+00:00",
-            "last_modified_at": "Thu, 02 Jul 2026 02:17:09 GMT",
-            "sha256": "935486c1f0b4959c65acb8272101b6578fb3920c611e853bb169ad1d9e474298",
-            "size_bytes": 235576,
+            "fetched_at": "2026-07-07T02:39:22.270313+00:00",
+            "last_modified_at": "Tue, 19 May 2026 01:18:01 GMT",
+            "sha256": "f6e3cda2df5c8743d3036c1491c68e2fb7d22027dfbbc26be99db18da296db36",
+            "size_bytes": 883577,
             "storage_bucket": "plan-brochures",
-            "storage_key": "brochures/fwd/maid-insurance/935486c1f0b4959c65acb8272101b6578fb3920c611e853bb169ad1d9e474298.pdf",
-            "url": "https://www.fwd.com.sg/assets/fwd-promo/1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf"
+            "storage_key": "brochures/fwd/maid-insurance/f6e3cda2df5c8743d3036c1491c68e2fb7d22027dfbbc26be99db18da296db36.pdf",
+            "url": "https://www.fwd.com.sg/wp-content/uploads/2026/05/FWD_Maid_Insurance_Policy_Wording_V7.pdf"
           }
         },
         "insurer": "fwd",
-        "last_verified_at": "2026-07-05T07:52:53.768246+00:00",
+        "last_verified_at": "2026-07-07T02:39:22.270313+00:00",
         "plan_slug": "maid-insurance",
-        "scraped_at": "2026-07-05T07:52:53.768246+00:00",
+        "scraped_at": "2026-07-07T02:39:22.270313+00:00",
         "source_type": "brochure_pdf",
-        "source_url": "https://www.fwd.com.sg/assets/fwd-promo/1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf"
+        "source_url": "https://www.fwd.com.sg/wp-content/uploads/2026/05/FWD_Maid_Insurance_Policy_Wording_V7.pdf"
       },
       {
         "field_name": "brochure_metadata",
@@ -30422,7 +30484,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:54.259264+00:00",
+            "fetched_at": "2026-07-07T02:39:22.941483+00:00",
             "last_modified_at": "Mon, 01 Jul 2024 16:22:34 GMT",
             "sha256": "a010b8fa469ce110fd4d2e775646f0e4568680a30f67e39c4e57ca941977c21e",
             "size_bytes": 836607,
@@ -30432,9 +30494,9 @@
           }
         },
         "insurer": "fwd",
-        "last_verified_at": "2026-07-05T07:52:54.259264+00:00",
+        "last_verified_at": "2026-07-07T02:39:22.941483+00:00",
         "plan_slug": "car-insurance",
-        "scraped_at": "2026-07-05T07:52:54.259264+00:00",
+        "scraped_at": "2026-07-07T02:39:22.941483+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.fwd.com.sg/wp-content/uploads/2023/06/Drivo-Car-Insurance-EN.pdf"
       },
@@ -31070,7 +31132,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:55.972458+00:00",
+            "fetched_at": "2026-07-07T02:39:23.349702+00:00",
             "last_modified_at": "Fri, 24 Apr 2026 01:31:05 GMT",
             "sha256": "d6a48ce31b3fb245910951182170054880214eafb7a453a997ef8a6245aa4c09",
             "size_bytes": 1737677,
@@ -31080,9 +31142,9 @@
           }
         },
         "insurer": "fwd",
-        "last_verified_at": "2026-07-05T07:52:55.972458+00:00",
+        "last_verified_at": "2026-07-07T02:39:23.349702+00:00",
         "plan_slug": "travel-insurance",
-        "scraped_at": "2026-07-05T07:52:55.972458+00:00",
+        "scraped_at": "2026-07-07T02:39:23.349702+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.fwd.com.sg/wp-content/uploads/2026/04/FWD-Travel-Insurance-Policy-Wording-V6.pdf"
       },
@@ -31094,7 +31156,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:56.716802+00:00",
+            "fetched_at": "2026-07-07T02:39:23.914565+00:00",
             "last_modified_at": "Sun, 06 Oct 2024 08:45:25 GMT",
             "sha256": "b3d277acc55b0f7999e12b1ab66538021f30c050e599f4b96d5340af2475a080",
             "size_bytes": 804507,
@@ -31104,9 +31166,9 @@
           }
         },
         "insurer": "fwd",
-        "last_verified_at": "2026-07-05T07:52:56.716802+00:00",
+        "last_verified_at": "2026-07-07T02:39:23.914565+00:00",
         "plan_slug": "fwd-life-pa-insurance",
-        "scraped_at": "2026-07-05T07:52:56.716802+00:00",
+        "scraped_at": "2026-07-07T02:39:23.914565+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf"
       },
@@ -32213,6 +32275,54 @@
         "scraped_at": "2026-07-07T02:29:47.282229+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.prudential.com.sg/-/media/project/prudential/pdf/ebrochures/prulinkinvestgrowth/prulink-investgrowth_brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "FWD-Direct-Term-Life-Product-Summary-2025.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:39:24.358725+00:00",
+            "last_modified_at": "Fri, 26 Sep 2025 05:08:10 GMT",
+            "sha256": "70bea91445a833b994dd977bb4299249ce8fda80d26df33e8715b6f897cbd50a",
+            "size_bytes": 163441,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/fwd/direct-term-life-insurance/70bea91445a833b994dd977bb4299249ce8fda80d26df33e8715b6f897cbd50a.pdf",
+            "url": "https://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Direct-Term-Life-Product-Summary-2025.pdf"
+          }
+        },
+        "insurer": "fwd",
+        "last_verified_at": "2026-07-07T02:39:24.358725+00:00",
+        "plan_slug": "direct-term-life-insurance",
+        "scraped_at": "2026-07-07T02:39:24.358725+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Direct-Term-Life-Product-Summary-2025.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:39:24.663220+00:00",
+            "last_modified_at": "Fri, 26 Sep 2025 05:08:05 GMT",
+            "sha256": "3ecc21f7edd040d7b6ac767ee33e60ec3c42270c337cb0fc4eaff967943ddfe8",
+            "size_bytes": 3071142,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/fwd/critical-illness-plus-insurance/3ecc21f7edd040d7b6ac767ee33e60ec3c42270c337cb0fc4eaff967943ddfe8.pdf",
+            "url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf"
+          }
+        },
+        "insurer": "fwd",
+        "last_verified_at": "2026-07-07T02:39:24.663220+00:00",
+        "plan_slug": "critical-illness-plus-insurance",
+        "scraped_at": "2026-07-07T02:39:24.663220+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf"
       }
     ],
     "plans": [
@@ -34504,150 +34614,6 @@
         "scraped_at": "2026-07-05T07:52:12.169042+00:00"
       },
       {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "Celebrate living. We’ve got your back.",
-        "plan_name": "FWD – Online Life and General Insurance in Singapore",
-        "plan_overview": "We believe that insurance is a source of empowerment. Enjoy life and celebrate it – and if anything unexpected happens, have the confidence that we’ve got your back.\n\nInsure and invest with our list of general and life insurance and investment products:\n\nGet covered up to S$1.5 million.",
-        "plan_slug": "fwd-online-life-and-general-insurance-in-singapore",
-        "plan_url": "https://www.fwd.com.sg/",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "From S$30/year for a HDB studio",
-        "plan_name": "Home insurance",
-        "plan_overview": "As Singapore's #1 home insurer for customer experience¹, we provide comprehensive protection for your building, home contents, renovations as well as reimbursement for home assistance services, plus many other benefits. FWD Home insurance is also recommended as a complementary product for your Fire insurance (find out more here ).\n\nWe provide coverage if your pet dog or cat is stolen, passes away or is injured due to an insured event that happens at your home.\n\nIf you’re a landlord and your tenant defaults on rent, we cover up to S$3,000 per month.",
-        "plan_slug": "home-insurance",
-        "plan_url": "https://www.fwd.com.sg/home-insurance/",
-        "product_brochure_url": "https://www.fwd.com.sg/assets/fwd-promo/1-31 Jul'26 CapitaVoucher campaign - Home Campaign.pdf",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "FWD Insurance is no longer offering HDB Fire insurance with effect from 16 August 2024. HDB Fire insurance only protects the building structure in the event of a fire. If you're looking to protect your home contents, consider FWD Home insurance where you can personalise your cover from as low as S$33.¹",
-        "plan_name": "HDB Fire insurance",
-        "plan_overview": "We keep things simple when the going gets tough.\n\n¹1-year premium for a HDB studio unit with 20k each for Home contents and renovations sum insured.\n\nThis page is for general information only. You can find the detailed terms and conditions of this plan in the policy wording.",
-        "plan_slug": "hdb-fire-insurance",
-        "plan_url": "https://www.fwd.com.sg/fire-insurance/",
-        "product_brochure_url": "",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "From S$313 for a 14-month, Essential plan",
-        "plan_name": "Maid insurance",
-        "plan_overview": "With higher medical coverage for your helper, you'll be financially protected for medical expenses that may arise due to her illness or injury. In line with the Ministry of Manpower's (MOM) requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans.\n\nIn line with MOM’s requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans. You also have the option to increase the limit up to S$120,000.\n\nWe’re the only insurer who does not make you pay if your Security Bond gets forfeited by MOM.",
-        "plan_slug": "maid-insurance",
-        "plan_url": "https://www.fwd.com.sg/maid-insurance/",
-        "product_brochure_url": "https://www.fwd.com.sg/assets/fwd-promo/1-12 Jul 26 Campaign Terms and Conditions - Maid.pdf",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "Distributed by | Underwritten by",
-        "plan_name": "Car insurance",
-        "plan_overview": "Accidents may unexpectedly happen when you are driving on the road. In the event of an accident, you may be in a state of stress and anxiety but there is no need to face this alone. Income's dedicated accident response team, Orange Force, will provide accident assistance from anywhere in Singapore. Safeguard your daily journey with Drivo Car Insurance to enjoy exclusive accident assistance from Orange Force to enjoy greater peace of mind. What's more? Purchase your Car insurance today and enjoy up to 475,000 STAR$ ®^ .\n\nGet your car repaired at a workshop of your choice with Drivo TM Premium plan .\n\nStay protected on the road and enjoy peace of mind with unlimited windscreen cover.",
-        "plan_slug": "car-insurance",
-        "plan_url": "https://www.fwd.com.sg/car-insurance/",
-        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2023/06/Drivo-Car-Insurance-EN.pdf",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "Distributed by | Underwritten by",
-        "plan_name": "Motorcycle insurance",
-        "plan_overview": "With our Motorcycle insurance, you will not only enjoy comprehensive and affordable coverage, but also convenience through our value-added services whenever you need it most. What's more? Purchase your motorcycle insurance today and enjoy up to 150,000 STAR$ ®^ .\n\nUnder the new partnership, we will no longer be able to offer commercial car insurance. Please look for alternative insurance coverage with other insurers.\n\nYour NCD% with FWD will be forwarded to you via an email 60 days before your policy expiry.",
-        "plan_slug": "motorcycle-insurance",
-        "plan_url": "https://www.fwd.com.sg/motorcycle-insurance/",
-        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Motorcycle-Policy-Contract-Comprehensive.pdf",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "From S$14 for a 3-day Single trip, Individual, ASEAN",
-        "plan_name": "Travel insurance",
-        "plan_overview": "*Valid from 4 to 8 July. This additional discount is only applicable for purchase of Single Trip Travel insurance made through FWD SG App. T&Cs apply. Protected up to specified limits by SDIC. This advertisement has not been reviewed by the Monetary Authority of Singapore.\n\n*Valid from 4 to 8 July. This additional discount is only applicable for purchase of Single Trip Travel insurance made through FWD SG App. T&Cs apply. Protected up to specified limits by SDIC. This advertisement has not been reviewed by the Monetary Authority of Singapore.\n\nWe offer comprehensive protection at an affordable price. With our extensive offerings of riders such as Pre-existing Medical Conditions cover, Cancel For Any Reason cover, enhanced COVID-19 cover and more, we empower you to customise the trip coverage based on the travelling needs of yourself and your companions.",
-        "plan_slug": "travel-insurance",
-        "plan_url": "https://www.fwd.com.sg/travel-insurance/",
-        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2026/04/FWD-Travel-Insurance-Policy-Wording-V6.pdf",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
-        "insurer": "fwd",
-        "plan_benefits": [
-          "Life & Health Life Term Life Plus Future First get advice Life Protection get advice Critical Illness Critical Illness Plus Big 3 Critical Illness Cancer 2.0 Heart Attack Stroke Flex Recover First Get Advice Accident & Health Personal Accident International Health FWD Life PA",
-          "Home & Maid Home HDB Fire Maid",
-          "Motor Car Motorcycle",
-          "Travel",
-          "Invest & Save Life Income Plus Get Advice Invest Goal 1 Get Advice Invest First Max Get Advice Invest First Summit Get Advice Invest Flexi Elite Get Advice Invest First Horizon Get Advice Invest Flexi VII Get Advice Save Smart Series 9",
-          "Claims Make a claim online Claims guide Claims forms Workshop & clinic finder"
-        ],
-        "plan_description": "From S$14/month for an office worker, age 64 and below.",
-        "plan_name": "FWD Life PA insurance",
-        "plan_overview": "From S$14/month for an office worker, age 64 and below.\n\nProtect what matters at every stage of life, with yearly renewals up to age 100 and a lifetime No Claim Discount of 10%¹.\n\nSelect coverage",
-        "plan_slug": "fwd-life-pa-insurance",
-        "plan_url": "https://www.fwd.com.sg/accident-health/life-pa",
-        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf",
-        "scraped_at": "2026-07-05T07:52:53.105618+00:00"
-      },
-      {
         "insurer": "income",
         "plan_benefits": [
           "Make a claim",
@@ -35838,6 +35804,164 @@
         "plan_url": "https://www.prudential.com.sg/products/wealth-accumulation/investments/prulink-investgrowth/",
         "product_brochure_url": "https://www.prudential.com.sg/-/media/project/prudential/pdf/ebrochures/prulinkinvestgrowth/prulink-investgrowth_brochure.pdf",
         "scraped_at": "2026-07-07T02:29:09.892572+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "Up to S$400 coverage for 4 common home assistance services",
+          "Up to S$100K coverage for damage to your renovations",
+          "Up to S$100K coverage for damage to home contents",
+          "Up to S$1,000 personal accident coverage for your pet(s)",
+          "We provide coverage if your pet dog or cat is stolen, passes away or is injured due to an insured event that happens at your home.",
+          "If you’re a landlord and your tenant defaults on rent, we cover up to S$3,000 per month.",
+          "Critical Illness Plus",
+          "Big 3 Critical Illness"
+        ],
+        "plan_description": "FWD Home insurance provides comprehensive protection over your building, home contents, renovations as well as accident coverage for your pets.",
+        "plan_name": "Home insurance",
+        "plan_overview": "Up to S$400 coverage for 4 common home assistance services Up to S$100K coverage for damage to your renovations Up to S$100K coverage for damage to home contents",
+        "plan_slug": "home-insurance",
+        "plan_url": "https://www.fwd.com.sg/home-insurance/",
+        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/07/FWD-Home-Policy-Contract-Homeowner.pdf",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "Waiver of co-payment",
+          "Cashless outpatient medical expenses",
+          "Daily hospital allowance",
+          "Enhanced coverage for hospitalisation and surgical expenses",
+          "In line with MOM’s requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans. You also have the option to increase the limit up to S$120,000.",
+          "Optional Enhanced Benefits",
+          "Cashless outpatient medical expenses (for Essential plan only)",
+          "Daily hospital allowance (for Essential plan only)"
+        ],
+        "plan_description": "FWD Maid insurance now comes with enhanced medical coverage of up to S$120k. Get financially protected against your helper's medical expenses.",
+        "plan_name": "Maid insurance",
+        "plan_overview": "With higher medical coverage for your helper, you'll be financially protected for medical expenses that may arise due to her illness or injury. In line with the Ministry of Manpower's (MOM) requirements, our hospitalisation and surgical expenses limits have increased to S$60,000 for all plans. Waiver of co-payment Cashless outpatient medical expenses",
+        "plan_slug": "maid-insurance",
+        "plan_url": "https://www.fwd.com.sg/maid-insurance/",
+        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2026/05/FWD_Maid_Insurance_Policy_Wording_V7.pdf",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "No-claim discount protection",
+          "Get your car repaired at a workshop of your choice with Drivo TM Premium plan .",
+          "Unlimited windscreen cover",
+          "Stay protected on the road and enjoy peace of mind with unlimited windscreen cover.",
+          "Third-party property damages cover",
+          "Coverage for third-party property damages arising from accident.",
+          "At authorised workshops chosen by Income Insurance",
+          "Want to save on car expenses in Singapore? Start by having the right insurance cover"
+        ],
+        "plan_description": "Our Car Insurance offers optional NCD protection benefit if it is at least 30% and an accident response team that provides assistance anywhere in Singapore.",
+        "plan_name": "Car insurance",
+        "plan_overview": "Motor insurance partnership No-claim discount protection 24/7 referral services in West Malaysia",
+        "plan_slug": "car-insurance",
+        "plan_url": "https://www.fwd.com.sg/car-insurance/",
+        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2023/06/Drivo-Car-Insurance-EN.pdf",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "Enjoy exclusive accident assistance from Orange Force with Income's Motorcycle insurance",
+          "Complimentary personal accident benefit",
+          "Critical Illness Plus",
+          "Big 3 Critical Illness",
+          "Recover First Get Advice",
+          "Life Income Plus Get Advice"
+        ],
+        "plan_description": "Enjoy complimentary personal accident coverage. Get a 5% loyalty discount on your premium if your motorcycle has been insured with us for more than 3 years.",
+        "plan_name": "Motorcycle insurance",
+        "plan_overview": "Motor insurance partnership Complimentary personal accident benefit Helpful information",
+        "plan_slug": "motorcycle-insurance",
+        "plan_url": "https://www.fwd.com.sg/motorcycle-insurance/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "Why choose FWD Travel insurance?",
+          "Enhanced Travel Delay benefit",
+          "Customisable Pre-existing Medical Conditions coverage",
+          "Overseas medical expenses & coverage of pre-existing medical conditions​",
+          "Unlimited emergency medical evacuation & repatriation",
+          "Delayed, theft of or damage to your baggage",
+          "Optional Enhanced Benefits",
+          "Pre-existing medical conditions"
+        ],
+        "plan_description": "Our affordable travel insurance covers flight delay, trip cancellation, lost baggage, pre-existing medical conditions, medical expenses up to S$1mil and more.",
+        "plan_name": "Travel insurance",
+        "plan_overview": "We offer comprehensive protection at an affordable price. With our extensive offerings of riders such as Pre-existing Medical Conditions cover, Cancel For Any Reason cover, enhanced COVID-19 cover and more, we empower you to customise the trip coverage based on the travelling needs of yourself and your companions. Enhanced Travel Delay benefit Cancel for any reason",
+        "plan_slug": "travel-insurance",
+        "plan_url": "https://www.fwd.com.sg/travel-insurance/",
+        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2026/04/FWD-Travel-Insurance-Policy-Wording-V6.pdf",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "Protect what matters at every stage of life, with yearly renewals up to age 100 and a lifetime No Claim Discount of 10%¹.",
+          "Get up to 3x payout for accidents that occur while commuting or travelling³",
+          "Extensive range of coverage for infectious diseases",
+          "Enhance your cover",
+          "Lifetime 10% No Claim Discount¹",
+          "Get a lifetime 10% discount on premiums payable for your coverage, as long as no claims are made for 3 consecutive policy years.",
+          "Claim for both inpatient and outpatient medical expenses⁵",
+          "Income Support Rider"
+        ],
+        "plan_description": "Pursue your passions with confidence with FWD's personal accident plan. From S$14/month for an office worker, age 64 and below.",
+        "plan_name": "FWD Life PA insurance",
+        "plan_overview": "Protect what matters at every stage of life, with yearly renewals up to age 100 and a lifetime No Claim Discount of 10%¹. Guaranteed² renewals up till age 100 Get up to 3x payout for accidents that occur while commuting or travelling³",
+        "plan_slug": "fwd-life-pa-insurance",
+        "plan_url": "https://www.fwd.com.sg/accident-health/life-pa/",
+        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2024/10/Life-PA-Brochure-2-10-2024-1.pdf",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "Tailored coverage, get just what you need",
+          "Comprehensive coverage to get you started",
+          "Flexibility to enhance your coverage",
+          "Get additional protection with the Critical Illness rider",
+          "Have the flexibility to extend your coverage for another five years, regardless of your health, up to age 80.",
+          "Optional benefits for you",
+          "Critical Illness Benefit",
+          "Premiums are rounded up to the nearest dollar."
+        ],
+        "plan_description": "FWD’s direct term life insurance (DPI) is a pure protection plan which cover you for up to $400K without financial advice.",
+        "plan_name": "Direct Term Life insurance",
+        "plan_overview": "Affordable and straightforward term life protection designed for your needs. Tailored coverage, get just what you need Purchase your policy directly from FWD",
+        "plan_slug": "direct-term-life-insurance",
+        "plan_url": "https://www.fwd.com.sg/life-insurance/direct-purchase-term-life-insurance/",
+        "product_brochure_url": "https://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Direct-Term-Life-Product-Summary-2025.pdf",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "fwd",
+        "plan_benefits": [
+          "Why choose FWD Critical Illness Plus insurance?",
+          "We cover you for early and intermediate stages of cancer, heart attack, stroke and 37 late-stage critical illnesses.",
+          "Skip the medical checks",
+          "100% payout upon a claim",
+          "Extensive coverage for critical illnesses",
+          "We make sure you get the most comprehensive cover for 37 late-stage critical illnesses and death for your ease of mind.",
+          "Focus on recovery and stay covered at 100% sum insured after the auto-reload period upon a successful claim for early to intermediate stages of cancer, heart attack or stroke.",
+          "Optional benefits for you"
+        ],
+        "plan_description": "Critical Illness Plus Insurance plan covers early-stage cancer, heart attack and stroke in addition to 37 late-stage critical illnesses with multiple payouts.",
+        "plan_name": "Critical Illness Plus insurance",
+        "plan_overview": "We cover you for early and intermediate stages of cancer, heart attack, stroke and 37 late-stage critical illnesses. Protected right from the start Skip the medical checks",
+        "plan_slug": "critical-illness-plus-insurance",
+        "plan_url": "https://www.fwd.com.sg/critical-illness-insurance/critical-illness-plus/",
+        "product_brochure_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf",
+        "scraped_at": "2026-07-07T02:39:21.674100+00:00"
       }
     ],
     "scraper_health": [
@@ -35850,7 +35974,7 @@
         "last_success_at": "2026-07-07T02:10:00.090896+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35861,7 +35985,7 @@
         "last_success_at": "2026-07-05T07:18:04.037817+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35872,7 +35996,7 @@
         "last_success_at": "2026-07-05T07:18:05.385324+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35883,7 +36007,7 @@
         "last_success_at": "2026-07-05T07:19:16.257332+00:00",
         "row_count": 19,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35894,7 +36018,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35905,7 +36029,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35916,7 +36040,7 @@
         "last_success_at": "2026-07-05T07:19:56.760391+00:00",
         "row_count": 19,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35927,7 +36051,7 @@
         "last_success_at": "2026-07-05T07:21:04.785877+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35938,7 +36062,7 @@
         "last_success_at": "2026-07-05T07:21:18.419782+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35949,7 +36073,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35957,7 +36081,7 @@
         "display_name": "Allianz",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35965,18 +36089,18 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
         "carrier_key": "fwd",
         "display_name": "Fwd",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:52:57.059452+00:00",
-        "last_success_at": "2026-07-05T07:52:57.059452+00:00",
+        "last_run_at": "2026-07-07T02:39:25.455387+00:00",
+        "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:39:25.455387+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35987,7 +36111,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35998,7 +36122,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:29:48.132708+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36009,7 +36133,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36017,7 +36141,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36025,7 +36149,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36033,7 +36157,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36044,7 +36168,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36052,7 +36176,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36063,7 +36187,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36071,7 +36195,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36079,7 +36203,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36087,7 +36211,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36095,7 +36219,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36103,7 +36227,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.279179+00:00",
+        "updated_at": "2026-07-07T02:30:19.587898+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36119,8 +36243,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:20:28.278981+00:00",
-        "validation_checked_at": "2026-07-07T02:20:28.278981+00:00",
+        "updated_at": "2026-07-07T02:30:19.586781+00:00",
+        "validation_checked_at": "2026-07-07T02:30:19.586781+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
