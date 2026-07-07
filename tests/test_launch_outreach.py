@@ -53,15 +53,33 @@ class LaunchOutreachTests(unittest.TestCase):
             "gabrielzmong@gmail.com",
             "docs/TAKEDOWN_RUNBOOK.md",
             "at least 7 calendar days",
+            "Owner until delegated: Gabriel Ong.",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, OUTREACH)
 
     def test_community_guidelines_sources_are_recorded(self):
         for required in (
+            "Sources checked on 2026-07-07",
             "seedlysg.zendesk.com",
             "reddit.com/r/reddit.com/wiki/selfpromotion",
+            "support.reddithelp.com/hc/en-us",
             "news.ycombinator.com/showhn.html",
+            "no longer updated",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, OUTREACH)
+
+    def test_channel_publish_gates_are_recorded(self):
+        for required in (
+            "Readiness Matrix",
+            "Recheck Seedly rules",
+            "Ask group admins",
+            "Recheck target subreddit sidebar/wiki",
+            "message mods if unclear",
+            "Live app must be usable without a signup wall",
+            "do not ask for votes",
+            "Track email replies and follow-up action items",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, OUTREACH)

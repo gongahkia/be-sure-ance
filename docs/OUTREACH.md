@@ -10,6 +10,7 @@ Feedback channels to monitor after any post:
 - Takedown contact: `gabrielzmong@gmail.com`.
 - Source-owner or carrier requests under `docs/TAKEDOWN_RUNBOOK.md`.
 - Platform comments or replies for each outreach post for at least 7 calendar days.
+- Owner until delegated: Gabriel Ong.
 
 ## Guardrails
 
@@ -19,11 +20,21 @@ Feedback channels to monitor after any post:
 - Do not post to communities that disallow self-promotion or require moderator approval.
 - Prefer feedback requests over launch announcements.
 
-Sources checked on 2026-07-02:
+Sources checked on 2026-07-07:
 
 - Seedly guidelines apply to user-generated discussions, comments, replies, reviews, and opinions: https://seedlysg.zendesk.com/hc/en-gb/articles/38628154878105-Seedly-Guidelines-Overview
-- Reddit self-promotion guidance says not to spam links and to participate as a community member: https://www.reddit.com/r/reddit.com/wiki/selfpromotion/
+- Reddit's legacy self-promotion page says it is no longer updated and points to Reddit Help, so subreddit rules and moderator approval must be checked immediately before posting: https://www.reddit.com/r/reddit.com/wiki/selfpromotion/ and https://support.reddithelp.com/hc/en-us
 - Show HN is for something people can try and discuss: https://news.ycombinator.com/showhn.html
+
+## Readiness Matrix
+
+| Channel | Draft status | Publish gate | Monitoring gate |
+| :-- | :-- | :-- | :-- |
+| Seedly | Ready, unposted | Recheck Seedly rules, production URL, search-indexing pre-flight, compliance sign-off | Watch replies and GitHub Issues for 7 calendar days |
+| SG IFA Telegram/WhatsApp | Ready, unposted | Ask group admins, production URL, compliance sign-off, no client data | Watch group replies for 7 calendar days |
+| Reddit | Ready, unposted | Recheck target subreddit sidebar/wiki, message mods if unclear, production URL, no vote requests | Watch thread replies and domain mentions for 7 calendar days |
+| Show HN | Ready, unposted | Live app must be usable without a signup wall; do not ask for votes | Watch HN thread replies for 7 calendar days |
+| MAS/OGP/GovTech | Ready, unsent | Production URL, compliance sign-off, search indexing, public docs | Track email replies and follow-up action items |
 
 ## Seedly Draft
 
