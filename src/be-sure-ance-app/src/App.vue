@@ -113,7 +113,7 @@
     </main>
 
     <main v-else-if="activeView === 'compare'" class="page-shell">
-      <ComparisonTable :selected-plans="selectedPlans" />
+      <CompareSplitView :plans="enrichedPlans" :initial-plans="selectedPlans" />
     </main>
 
     <main v-else-if="activeView === 'sharedComparison'" class="page-shell">
@@ -382,6 +382,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import BrochureChangeList from './components/BrochureChangeList.vue'
 import ClaimTurnaroundBoard from './components/ClaimTurnaroundBoard.vue'
+import CompareSplitView from './components/CompareSplitView.vue'
 import ComparisonTable from './components/ComparisonTable.vue'
 import FactProvenance from './components/FactProvenance.vue'
 import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
