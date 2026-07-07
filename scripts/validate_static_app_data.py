@@ -2,7 +2,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from src.validation.plan_quality import validation_error_messages  # noqa: E402
 
 DEFAULT_APP_DATA_PATH = Path("src/be-sure-ance-app/public/data/app-data.json")
 APP_TABLES = (
@@ -67,6 +74,8 @@ def validation_errors(
         )
     if contains_demo_marker(payload):
         errors.append("payload contains seeded demo markers")
+
+    errors.extend(validation_error_messages(plans))
 
     return errors
 

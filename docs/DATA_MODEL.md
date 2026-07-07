@@ -4,6 +4,8 @@
 
 `plans` is the plan catalog. It stores one row per insurer plan with stable `insurer` and `plan_slug` identifiers plus display fields from scraper output.
 
+Generated `plans` rows must pass the static app-data semantic quality gate before scheduled refresh output can be published. The gate rejects rows with missing `plan_url`, duplicate `(insurer, plan_slug)`, unsupported claim/contact/resource URLs in `plan_url`, category or hero copy used as `plan_name`, obvious page chrome in display fields, and overlong descriptions or overviews that look like full-page extraction. Provider-specific exceptions are only valid when the exception includes the affected `insurer`, `plan_slug`, `field`, `code`, and an official `source_url` proving the unusual field is deliberate.
+
 `plan_comparison_facts` is an interim UI summary table. It keeps the current qualitative comparison fields used by the frontend while Phase 2 migrates facts into the source-traceable model.
 
 Share links are URL-only and encode selected plan references; there is no server-side share table.
@@ -147,6 +149,7 @@ Limitations:
 
 - `row_count` only proves a scraper wrote rows, not that every source fact is complete.
 - `validation_status = passed` means structural drift thresholds passed for configured targets; it does not prove the source content is semantically correct.
+- Static app-data publication also runs the `plans` semantic quality gate. That gate is stricter than structural drift validation and is intended to block obvious nav/footer/contact-page extraction before frontend build or dataset publish steps.
 - `unsupported` means the scraper is not part of the scheduled production set.
 
 ## Share Links
