@@ -1,8 +1,8 @@
 # Search Indexing Runbook
 
-Current submission status as of 2026-07-07: pre-submission fix pending.
+Current submission status as of 2026-07-07: ready for owner submission.
 
-Reason: `https://besureance.netlify.app` returns HTTP 200 for `/`, `/sitemap.xml`, `/robots.txt`, `/status`, `/matrix/panel-hospitals`, and a representative `/share` route as of 2026-07-07. Search-indexing preflight still failed because representative plan JSON-LD did not expose `subjectOf` source links when a plan had no plan-fact source rows. Do not submit until the fixed static pages deploy and the preflight passes.
+Reason: `https://besureance.netlify.app` returns HTTP 200 for `/`, `/sitemap.xml`, `/robots.txt`, `/status`, `/matrix/panel-hospitals`, and a representative `/share` route as of 2026-07-07. Search-indexing preflight now passes after static plan JSON-LD gained fallback `subjectOf` source links. Google and Bing submission still require verified site-owner access.
 
 ## Source Guidance
 
@@ -59,7 +59,7 @@ Bing Webmaster Tools:
 | :-- | :-- | :-- | :-- | :-- |
 | 2026-07-02 | `https://be-sure-ance.netlify.app` | Blocked - not submitted | Blocked - not submitted | Origin returned HTTP 404 for sitemap and app routes. |
 | 2026-07-07 | `https://be-sure-ance.netlify.app` | Blocked - not submitted | Blocked - not submitted | `/`, `/sitemap.xml`, `/robots.txt`, and `/status` returned HTTP 404. |
-| 2026-07-07 | `https://besureance.netlify.app` | Pending - not submitted | Pending - not submitted | Routes, sitemap, and robots returned HTTP 200; staging preflight passed; search-indexing preflight failed on missing JSON-LD `subjectOf` source links. |
+| 2026-07-07 | `https://besureance.netlify.app` | Ready - not submitted | Ready - not submitted | Routes, sitemap, and robots returned HTTP 200; staging preflight passed; search-indexing preflight passed after JSON-LD `subjectOf` fallback deploy. |
 
 ## Launch Rule
 

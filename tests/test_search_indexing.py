@@ -14,16 +14,17 @@ WORKFLOW = (ROOT / ".github/workflows/search-indexing-preflight.yml").read_text(
 class SearchIndexingTests(unittest.TestCase):
     def test_runbook_records_submission_blocker_and_official_paths(self):
         for required in (
-            "Current submission status as of 2026-07-07: pre-submission fix pending.",
+            "Current submission status as of 2026-07-07: ready for owner submission.",
             "https://besureance.netlify.app",
             "returns HTTP 200",
-            "missing JSON-LD `subjectOf` source links",
+            "Search-indexing preflight now passes",
+            "verified site-owner access",
             "Google Search Console",
             "Bing Webmaster Tools",
             "owner permissions",
             "Sitemap:",
             "Status Log",
-            "Pending - not submitted",
+            "Ready - not submitted",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, RUNBOOK)

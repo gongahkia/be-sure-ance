@@ -33,6 +33,8 @@ class Phase5ExitVerificationTests(unittest.TestCase):
             "overall_status=failed",
             "scripts/search_indexing_preflight.py",
             "subjectOf",
+            "Live JS bundle check",
+            "SERVICE_ROLE",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PHASE5)
@@ -54,8 +56,6 @@ class Phase5ExitVerificationTests(unittest.TestCase):
 
     def test_acceptance_requirements_to_pass_are_recorded(self):
         for required in (
-            "Deploy the JSON-LD `subjectOf` fix",
-            "no service-role key",
             "Submit sitemap in Google Search Console and Bing Webmaster Tools",
             "compliance lawyer outcome",
             "usage metrics",
