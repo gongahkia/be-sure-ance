@@ -20,6 +20,7 @@ from src.backend.helper import (
 )
 from src.lib.http_identity import BOT_USER_AGENT
 from src.lib.scraper_health import record_scraper_failure
+from src.scrapers.navigation import gather_scrape_results
 from src.validation.plan_quality import validate_plan_rows
 
 TABLE_NAME = "prudential"
@@ -353,6 +354,15 @@ def scrape_prudential(
         if row:
             rows.append(row)
     return dedupe_rows(rows)
+
+
+async def scrape_data(url):
+    row = parse_product_html(fetch_html(url), url)
+    return [row] if row else []
+
+
+async def run_all_tasks(scrape_list):
+    return await gather_scrape_results(TABLE_NAME, scrape_list, scrape_data)
 
 
 def assert_semantic_quality(rows: list[dict]) -> None:

@@ -2,7 +2,16 @@ import unittest
 from pathlib import Path
 
 from src.backend.helper import format_plan_rows
-from src.scrapers import chubb, fwd, iii, panel_resources, prudential, raffles_health, uoi
+from src.scrapers import (
+    chubb,
+    fwd,
+    great_eastern,
+    iii,
+    panel_resources,
+    prudential,
+    raffles_health,
+    uoi,
+)
 from src.validation.plan_quality import validate_plan_rows
 
 FIXTURES_DIR = Path(__file__).resolve().parents[1] / "fixtures"
@@ -161,6 +170,73 @@ class ScraperParserFixTests(unittest.TestCase):
             [],
             validate_plan_rows(format_plan_rows(fwd.TABLE_NAME, rows)),
         )
+
+    def test_great_eastern_product_parser_scopes_out_navigation_chrome(self):
+        html = (FIXTURES_DIR / "great_eastern_product.html").read_text()
+        row = great_eastern.parse_product_html(
+            html,
+            "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/great-ev-protect.html",
+        )
+
+        self.assertEqual(row["plan_name"], "GREAT EV Protect | Car Insurance")
+        self.assertIn("electric vehicle insurance", row["plan_description"])
+        self.assertNotIn("Life and health", row["plan_overview"])
+        self.assertNotIn("How can we help", row["plan_overview"])
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.greateasternlife.com/content/dam/great-ev-protect-brochure.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(great_eastern.TABLE_NAME, [row])),
+        )
+
+    def test_great_eastern_rejects_listing_and_campaign_pages_as_plan_rows(self):
+        html = (FIXTURES_DIR / "great_eastern_reject.html").read_text()
+
+        self.assertIsNone(
+            great_eastern.parse_product_html(
+                html,
+                "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance.html",
+            )
+        )
+        self.assertIsNone(
+            great_eastern.parse_product_html(
+                html,
+                "https://www.greateasternlife.com/sg/en/campaigns/great-legacy-programme.html",
+            )
+        )
+
+    def test_great_eastern_discovery_filters_to_product_details(self):
+        category_url = (
+            "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/"
+            "car-insurance.html"
+        )
+        product_url = (
+            "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/"
+            "car-insurance/great-ev-protect.html"
+        )
+        session = FakeSession(
+            {
+                category_url: (FIXTURES_DIR / "great_eastern_reject.html").read_text(),
+                product_url: (FIXTURES_DIR / "great_eastern_product.html").read_text(),
+            }
+        )
+
+        self.assertEqual(
+            [product_url],
+            great_eastern.discover_product_urls(
+                session=session,
+                category_urls=[category_url],
+                direct_product_urls=[],
+            ),
+        )
+        rows = great_eastern.scrape_great_eastern(
+            session=session,
+            category_urls=[category_url],
+            direct_product_urls=[],
+        )
+        self.assertEqual(["GREAT EV Protect | Car Insurance"], [row["plan_name"] for row in rows])
 
     def test_raffles_product_parser_scopes_out_navigation_chrome(self):
         html = (FIXTURES_DIR / "raffles_health_product.html").read_text()

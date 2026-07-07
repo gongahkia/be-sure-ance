@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T02:39:25+00:00",
+  "generated_at": "2026-07-07T02:51:49+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -5419,6 +5419,606 @@
       "scraped_at": "2026-07-07T02:39:24.663220+00:00",
       "source_type": "brochure_pdf",
       "source_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "great-travelcare-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:17.045357+00:00",
+          "last_modified_at": "Thu, 12 Feb 2026 04:26:58 GMT",
+          "sha256": "eb51c1a20adc2194c8a17eaa3177c8b97aaf2f3a9abb4e63786de11149344269",
+          "size_bytes": 1334354,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-travelcare-comprehensive-travel-insurance/eb51c1a20adc2194c8a17eaa3177c8b97aaf2f3a9abb4e63786de11149344269.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-travelcare/great-travelcare-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:17.045357+00:00",
+      "plan_slug": "great-travelcare-comprehensive-travel-insurance",
+      "scraped_at": "2026-07-07T02:51:17.045357+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-travelcare/great-travelcare-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "ghp-web-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:17.478652+00:00",
+          "last_modified_at": "Thu, 29 Jan 2026 07:59:04 GMT",
+          "sha256": "968c322793b9a20c06be56c83d42e3e7152d0c4e2625ea1f2b44422d105ee82f",
+          "size_bytes": 962021,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-home-protect-home-insurance-all-risks-cover/968c322793b9a20c06be56c83d42e3e7152d0c4e2625ea1f2b44422d105ee82f.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-home-protect/ghp-web-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:17.478652+00:00",
+      "plan_slug": "great-home-protect-home-insurance-all-risks-cover",
+      "scraped_at": "2026-07-07T02:51:17.478652+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-home-protect/ghp-web-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "great-maid-protect-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:17.859147+00:00",
+          "last_modified_at": "Thu, 25 Sep 2025 07:34:52 GMT",
+          "sha256": "9a2e2643cfe329ad468b24b564a3f9bcb7e7e799e4be0995d3a3537b6b423cb9",
+          "size_bytes": 1024941,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-maid-protect-maid-insurance/9a2e2643cfe329ad468b24b564a3f9bcb7e7e799e4be0995d3a3537b6b423cb9.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/maid-insurance/great-maid-protect-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:17.859147+00:00",
+      "plan_slug": "great-maid-protect-maid-insurance",
+      "scraped_at": "2026-07-07T02:51:17.859147+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/maid-insurance/great-maid-protect-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "dps.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:18.133700+00:00",
+          "last_modified_at": "Thu, 28 Aug 2025 03:58:07 GMT",
+          "sha256": "1dbe3cb313b9458433afaae210fc8b3257b9190589c4b92b518273725887bb41",
+          "size_bytes": 482453,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/dependants-protection-scheme/1dbe3cb313b9458433afaae210fc8b3257b9190589c4b92b518273725887bb41.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/life-insurance/dps/dps.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:18.133700+00:00",
+      "plan_slug": "dependants-protection-scheme",
+      "scraped_at": "2026-07-07T02:51:18.133700+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/life-insurance/dps/dps.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "prestige-legacy-index-eng-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:18.383491+00:00",
+          "last_modified_at": "Wed, 26 Nov 2025 02:05:51 GMT",
+          "sha256": "617d884e63d2b2527120fef0e16df9f8447c6993cf54934549179a887a51c724",
+          "size_bytes": 2065508,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/prestige-legacy-index-universal-life-legacy-solution/617d884e63d2b2527120fef0e16df9f8447c6993cf54934549179a887a51c724.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-legacy-index/prestige-legacy-index-eng-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:18.383491+00:00",
+      "plan_slug": "prestige-legacy-index-universal-life-legacy-solution",
+      "scraped_at": "2026-07-07T02:51:18.383491+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-legacy-index/prestige-legacy-index-eng-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gels-pdt-pd-glm-eng-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:22.026381+00:00",
+          "last_modified_at": "Tue, 16 Dec 2025 07:22:12 GMT",
+          "sha256": "30324565325594a90ecbf458c4354ad42d3e02950547f862974fecfb523fbc8a",
+          "size_bytes": 312423,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-life-multiplier-multiplied-lifetime-coverage/30324565325594a90ecbf458c4354ad42d3e02950547f862974fecfb523fbc8a.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-life-multiplier/gels-pdt-pd-glm-eng-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:22.026381+00:00",
+      "plan_slug": "great-life-multiplier-multiplied-lifetime-coverage",
+      "scraped_at": "2026-07-07T02:51:22.026381+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-life-multiplier/gels-pdt-pd-glm-eng-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gels-pdt-pd-gt2-eng-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:22.419209+00:00",
+          "last_modified_at": "Wed, 29 Apr 2026 07:07:55 GMT",
+          "sha256": "feeb6145468b8fe2c0e4d6063840e7e33aeefa5b0fcaf59e6e60adc36f937a61",
+          "size_bytes": 244010,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-term-2-customisable-term-life-insurance/feeb6145468b8fe2c0e4d6063840e7e33aeefa5b0fcaf59e6e60adc36f937a61.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-term-2/gels-pdt-pd-gt2-eng-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:22.419209+00:00",
+      "plan_slug": "great-term-2-customisable-term-life-insurance",
+      "scraped_at": "2026-07-07T02:51:22.419209+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-term-2/gels-pdt-pd-gt2-eng-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gels-pdt-pd-gsh-eng-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:22.699975+00:00",
+          "last_modified_at": "Mon, 04 May 2026 01:50:53 GMT",
+          "sha256": "c48d974f4cf04517fa467173fd0de1e5fba118aea1fe6721f565dd8d1376bae2",
+          "size_bytes": 328071,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-supremehealth-medisave-approved-integrated-shield-plan/c48d974f4cf04517fa467173fd0de1e5fba118aea1fe6721f565dd8d1376bae2.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/great-supremehealth/april-2026/gels-pdt-pd-gsh-eng-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:22.699975+00:00",
+      "plan_slug": "great-supremehealth-medisave-approved-integrated-shield-plan",
+      "scraped_at": "2026-07-07T02:51:22.699975+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/great-supremehealth/april-2026/gels-pdt-pd-gsh-eng-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "cancer-guard-eng-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:23.235515+00:00",
+          "last_modified_at": "Mon, 23 Mar 2026 08:53:22 GMT",
+          "sha256": "882b19bd792b34f6b2637eabac8b9dd563693ee3676c2ddf9a40738e184b0edc",
+          "size_bytes": 142737,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/cancer-guard-covers-all-stages-of-cancer/882b19bd792b34f6b2637eabac8b9dd563693ee3676c2ddf9a40738e184b0edc.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/cancer-guard/cancer-guard-eng-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:23.235515+00:00",
+      "plan_slug": "cancer-guard-covers-all-stages-of-cancer",
+      "scraped_at": "2026-07-07T02:51:23.235515+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/cancer-guard/cancer-guard-eng-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "maternity-protect-series-web-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:23.418460+00:00",
+          "last_modified_at": "Mon, 08 Jun 2026 10:57:11 GMT",
+          "sha256": "146e311fbd883e843009b9096f59f0ddb7ee280aa93b76851a980966b37784d8",
+          "size_bytes": 446285,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/maternity-protect-series-pregnancy-and-newborn-insurance/146e311fbd883e843009b9096f59f0ddb7ee280aa93b76851a980966b37784d8.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/maternity-protect-series/maternity-protect-series-web-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:23.418460+00:00",
+      "plan_slug": "maternity-protect-series-pregnancy-and-newborn-insurance",
+      "scraped_at": "2026-07-07T02:51:23.418460+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/maternity-protect-series/maternity-protect-series-web-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gpa-web-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:23.711675+00:00",
+          "last_modified_at": "Wed, 27 Aug 2025 06:46:32 GMT",
+          "sha256": "5d873e2365692656964ecf3236ed261c4fff2edbb297442c981ae3bcd25b0c6a",
+          "size_bytes": 298617,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-protector-active-high-coverage-personal-accident-plan/5d873e2365692656964ecf3236ed261c4fff2edbb297442c981ae3bcd25b0c6a.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-protector-active/gpa-web-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:23.711675+00:00",
+      "plan_slug": "great-protector-active-high-coverage-personal-accident-plan",
+      "scraped_at": "2026-07-07T02:51:23.711675+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-protector-active/gpa-web-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gjp-web-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:24.040473+00:00",
+          "last_modified_at": "Wed, 06 May 2026 09:55:35 GMT",
+          "sha256": "1eea808c41a79e2b8d73e2a5ea2494162289e7c97e50b74b269fc82b2ba7fea0",
+          "size_bytes": 459323,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-junior-protector-children-s-personal-accident-pa-insurance/1eea808c41a79e2b8d73e2a5ea2494162289e7c97e50b74b269fc82b2ba7fea0.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-junior-protector/gjp-web-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:24.040473+00:00",
+      "plan_slug": "great-junior-protector-children-s-personal-accident-pa-insurance",
+      "scraped_at": "2026-07-07T02:51:24.040473+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-junior-protector/gjp-web-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "ggp-web-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:24.354331+00:00",
+          "last_modified_at": "Tue, 03 Mar 2026 03:25:54 GMT",
+          "sha256": "b224c66d589100107f638d3bd5e64f269b5b54e47bfc38cdc13e2fd51942b2d7",
+          "size_bytes": 710345,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-golden-protector-personal-accident-plan-for-seniors/b224c66d589100107f638d3bd5e64f269b5b54e47bfc38cdc13e2fd51942b2d7.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-golden-protector/ggp-web-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:24.354331+00:00",
+      "plan_slug": "great-golden-protector-personal-accident-plan-for-seniors",
+      "scraped_at": "2026-07-07T02:51:24.354331+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-golden-protector/ggp-web-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "prestige-pacare-english-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:24.758989+00:00",
+          "last_modified_at": "Thu, 23 Oct 2025 09:43:04 GMT",
+          "sha256": "3ed156313c2d475300886a2aa97cc62ddadf0b2f68315bd2e6444dad9705582b",
+          "size_bytes": 992425,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/prestige-pacare-premium-personal-accident-plan/3ed156313c2d475300886a2aa97cc62ddadf0b2f68315bd2e6444dad9705582b.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-pacare/prestige-pacare-english-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:24.758989+00:00",
+      "plan_slug": "prestige-pacare-premium-personal-accident-plan",
+      "scraped_at": "2026-07-07T02:51:24.758989+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-pacare/prestige-pacare-english-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gels-pd-pdt-great-prime-rewards3-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:25.286642+00:00",
+          "last_modified_at": "Thu, 21 Sep 2023 03:46:20 GMT",
+          "sha256": "e32f35bef780ceb06076f462edada9fe64fa51b3b3bc70c79963bdcc0347b7a4",
+          "size_bytes": 1376858,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-prime-rewards-3-guaranteed-income-stream/e32f35bef780ceb06076f462edada9fe64fa51b3b3bc70c79963bdcc0347b7a4.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/retirement/great-prime-rewards/gels-pd-pdt-great-prime-rewards3-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:25.286642+00:00",
+      "plan_slug": "great-prime-rewards-3-guaranteed-income-stream",
+      "scraped_at": "2026-07-07T02:51:25.286642+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/retirement/great-prime-rewards/gels-pd-pdt-great-prime-rewards3-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gels-pdt-pd-glp3-brochure-ri.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:25.748821+00:00",
+          "last_modified_at": "Tue, 27 Jan 2026 10:31:12 GMT",
+          "sha256": "393c2b8c6e6dfb5e1a3dcb437948bbc44bda72e19f5b0009705e18ac716bde29",
+          "size_bytes": 646547,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts/393c2b8c6e6dfb5e1a3dcb437948bbc44bda72e19f5b0009705e18ac716bde29.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-lifetime-payout/documents/gels-pdt-pd-glp3-brochure-ri.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:25.748821+00:00",
+      "plan_slug": "great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts",
+      "scraped_at": "2026-07-07T02:51:25.748821+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-lifetime-payout/documents/gels-pdt-pd-glp3-brochure-ri.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "great-retire-income-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:26.115328+00:00",
+          "last_modified_at": "Wed, 22 Apr 2026 08:52:24 GMT",
+          "sha256": "ebe4823bdc4ae302c60efc706d92a5658845a033629422991f4c741d4c2234d7",
+          "size_bytes": 420785,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-retire-income-monthly-income-stream/ebe4823bdc4ae302c60efc706d92a5658845a033629422991f4c741d4c2234d7.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/retirement-income/great-retire-income-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:26.115328+00:00",
+      "plan_slug": "great-retire-income-monthly-income-stream",
+      "scraped_at": "2026-07-07T02:51:26.115328+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/retirement-income/great-retire-income-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "index-income-usd-eng-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:26.716413+00:00",
+          "last_modified_at": "Sun, 21 Jun 2026 07:55:03 GMT",
+          "sha256": "7150a30ecee1fb6bec57655e1049386c8d326d37d90d1316d37662967e73ba02",
+          "size_bytes": 257844,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/index-income-usd-index-linked-single-premium-endowment-plan/7150a30ecee1fb6bec57655e1049386c8d326d37d90d1316d37662967e73ba02.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/index-income-usd/index-income-usd-eng-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:26.716413+00:00",
+      "plan_slug": "index-income-usd-index-linked-single-premium-endowment-plan",
+      "scraped_at": "2026-07-07T02:51:26.716413+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/index-income-usd/index-income-usd-eng-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "great-wealth-multiplier-english-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:27.724104+00:00",
+          "last_modified_at": "Thu, 05 Feb 2026 08:20:35 GMT",
+          "sha256": "657085d65d3c46670e6f6e5b972e7011ee49415c80df36f946e95fbae262f65f",
+          "size_bytes": 1090812,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-wealth-multiplier-3-participating-endowment/657085d65d3c46670e6f6e5b972e7011ee49415c80df36f946e95fbae262f65f.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-wealth-multiplier-3/great-wealth-multiplier-english-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:27.724104+00:00",
+      "plan_slug": "great-wealth-multiplier-3-participating-endowment",
+      "scraped_at": "2026-07-07T02:51:27.724104+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-wealth-multiplier-3/great-wealth-multiplier-english-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "gels-pdt-pd-gia-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:28.327743+00:00",
+          "last_modified_at": "Fri, 24 Apr 2026 08:46:58 GMT",
+          "sha256": "15fcac802efa79c8aef97927a17afad556137fc49d2f572e8a25d31a662df06c",
+          "size_bytes": 3451002,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-invest-advantage-customisable-investment-linked-insurance-plan/15fcac802efa79c8aef97927a17afad556137fc49d2f572e8a25d31a662df06c.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-invest-advantage/gels-pdt-pd-gia-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:28.327743+00:00",
+      "plan_slug": "great-invest-advantage-customisable-investment-linked-insurance-plan",
+      "scraped_at": "2026-07-07T02:51:28.327743+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-invest-advantage/gels-pdt-pd-gia-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "great-ev-protect-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:38.743233+00:00",
+          "last_modified_at": "Thu, 29 Jan 2026 08:04:41 GMT",
+          "sha256": "03ee6e2a58ee1e5e24c6f6703c642bcbbcdae99e860fd67952f3b4911de42b9c",
+          "size_bytes": 673028,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/great-ev-protect-car-insurance/03ee6e2a58ee1e5e24c6f6703c642bcbbcdae99e860fd67952f3b4911de42b9c.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/great-ev-premier/great-ev-protect-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:38.743233+00:00",
+      "plan_slug": "great-ev-protect-car-insurance",
+      "scraped_at": "2026-07-07T02:51:38.743233+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/great-ev-premier/great-ev-protect-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "drive-and-save-plus-product-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:39.057302+00:00",
+          "last_modified_at": "Thu, 25 Sep 2025 07:07:46 GMT",
+          "sha256": "2bab9fc12dfe16f3a6e7bc86d98738926ce0199f9af95d6094a21dfcf8ad53ec",
+          "size_bytes": 705959,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/drive-and-save-plus-car-insurance/2bab9fc12dfe16f3a6e7bc86d98738926ce0199f9af95d6094a21dfcf8ad53ec.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/drive-and-save-plus/drive-and-save-plus-product-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:39.057302+00:00",
+      "plan_slug": "drive-and-save-plus-car-insurance",
+      "scraped_at": "2026-07-07T02:51:39.057302+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/drive-and-save-plus/drive-and-save-plus-product-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "legacy-income-english-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:39.370674+00:00",
+          "last_modified_at": "Fri, 10 Apr 2026 02:25:05 GMT",
+          "sha256": "8d4df9ee723e29f287d6a09757cd0df6ed1a21e60ad79859e4e18632af4ba7e3",
+          "size_bytes": 1333257,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/legacy-income-usd-single-premium-endowment-plan/8d4df9ee723e29f287d6a09757cd0df6ed1a21e60ad79859e4e18632af4ba7e3.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/legacy-income/legacy-income-english-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:39.370674+00:00",
+      "plan_slug": "legacy-income-usd-single-premium-endowment-plan",
+      "scraped_at": "2026-07-07T02:51:39.370674+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/legacy-income/legacy-income-english-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "prestige-life-rewards-series-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:42.317689+00:00",
+          "last_modified_at": "Mon, 06 Apr 2026 01:38:14 GMT",
+          "sha256": "abbc892f9457243a242d50c113e3b9a70edbae5381cea58bbe9ed45014b62cc2",
+          "size_bytes": 1794730,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/prestige-life-rewards-series-single-premium-wealth-accumulation-plans/abbc892f9457243a242d50c113e3b9a70edbae5381cea58bbe9ed45014b62cc2.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-life-rewards-series/prestige-life-rewards-series-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:42.317689+00:00",
+      "plan_slug": "prestige-life-rewards-series-single-premium-wealth-accumulation-plans",
+      "scraped_at": "2026-07-07T02:51:42.317689+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-life-rewards-series/prestige-life-rewards-series-brochure.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "prestige-wealth-legacy-eng-brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T02:51:45.969100+00:00",
+          "last_modified_at": "Thu, 09 Oct 2025 03:47:07 GMT",
+          "sha256": "559212dda62d245cc52d22a78100cd26222f1b57a11ca19a00ad678b74501ccc",
+          "size_bytes": 1959798,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/great-eastern/prestige-wealth-legacy-usd-participating-whole-life-plan/559212dda62d245cc52d22a78100cd26222f1b57a11ca19a00ad678b74501ccc.pdf",
+          "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-wealth-legacy/prestige-wealth-legacy-eng-brochure.pdf"
+        }
+      },
+      "insurer": "great_eastern",
+      "last_verified_at": "2026-07-07T02:51:45.969100+00:00",
+      "plan_slug": "prestige-wealth-legacy-usd-participating-whole-life-plan",
+      "scraped_at": "2026-07-07T02:51:45.969100+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-wealth-legacy/prestige-wealth-legacy-eng-brochure.pdf"
     }
   ],
   "plans": [
@@ -6052,255 +6652,6 @@
       "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
       "product_brochure_url": "",
       "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "No-frills protection you can rely on Choices for comprehensive critical illness coverage Flexibility to evolve as life changes Added support that matters"
-      ],
-      "plan_description": "More life and health solutions \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance \n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance \n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance",
-      "plan_name": "GREAT Term 2 | Customisable Term Insurance",
-      "plan_overview": "",
-      "plan_slug": "great-term-2-customisable-term-insurance",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-term.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-term.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Complete your protection needs from just S$0.21* a day All-round protection till age 65 Hassle-free application"
-      ],
-      "plan_description": "More life and health solutions \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance \n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance \n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance",
-      "plan_name": "GoGreat Term Life | Enhanced coverage for DPS policyholders",
-      "plan_overview": "",
-      "plan_slug": "gogreat-term-life-enhanced-coverage-for-dps-policyholders",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/gogreat-term-life.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/gogreat-term-life.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "icon / desc / gift-box Get up to 15% cashback on your premiums",
-        "Lifetime protection of up to 13 times2 the premium paid Potential growth with protection from market volatility Flexibility to adapt to your life’s changing needs"
-      ],
-      "plan_description": "More life and health solutions \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance \n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance \n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance",
-      "plan_name": "Prestige Legacy Index | Universal Life Legacy Solution",
-      "plan_overview": "",
-      "plan_slug": "prestige-legacy-index-universal-life-legacy-solution",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Medisave-approved Integrated Shield plan that enhances MediShield Life coverage Offers the most affordable coverage for private hospital Covers treatment anywhere in the world 24/7 Great Medical Care Concierge service for specialist selection and appointment bookings"
-      ],
-      "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance\n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance",
-      "plan_name": "GREAT SupremeHealth | MediSave-Approved Integrated Shield Plan",
-      "plan_overview": "",
-      "plan_slug": "great-supremehealth-medisave-approved-integrated-shield-plan",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "100% cash payout — even for early-stage diagnosis Affordable premiums that do not increase with age Simple, hassle-free application"
-      ],
-      "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance\n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance",
-      "plan_name": "Cancer Guard | Covers All Stages Of Cancer",
-      "plan_overview": "",
-      "plan_slug": "cancer-guard-covers-all-stages-of-cancer",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/cancer-guard.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/cancer-guard.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Care for mum, from delivery to recovery Protection for your child’s early years Guarantee your child's lifelong protection from the very start Support when income is disrupted"
-      ],
-      "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance\n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance",
-      "plan_name": "Maternity Protect Series | Pregnancy and Newborn Insurance",
-      "plan_overview": "",
-      "plan_slug": "maternity-protect-series-pregnancy-and-newborn-insurance",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/maternity-protect.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/maternity-protect.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Up to 3 times payout upon Accidental Death and Permanent Disablement Receive daily hospital cash benefit Reimbursement of up to S$9,000 for Accidental Medical Expenses"
-      ],
-      "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance\n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident",
-      "plan_name": "GREAT Junior Protector | Children's Personal Accident (PA) Insurance",
-      "plan_overview": "",
-      "plan_slug": "great-junior-protector-children-s-personal-accident-pa-insurance",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-junior-protector.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-junior-protector.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Up to 300% payout and up to S$200 daily hospital cash benefit Comprehensive post-accident benefits Payouts of up to S$25,000 for fractures, dislocations or burns Get 25% off premiums on 2nd life assured"
-      ],
-      "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance\n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident",
-      "plan_name": "GREAT Golden Protector | Personal Accident Plan For Seniors",
-      "plan_overview": "",
-      "plan_slug": "great-golden-protector-personal-accident-plan-for-seniors",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-golden-protector.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-golden-protector.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Enjoy up to S$3.5 million coverage against accidents Medical Expense Reimbursement up to S$20,000 for each & every Accident Assurance of 24-hour emergency assistance1, worldwide Worldwide protection that covers terrorism3 Enjoy guaranteed renewability and 5% renewal discount"
-      ],
-      "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance\n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident",
-      "plan_name": "Prestige PACare | Premium Personal Accident Plan",
-      "plan_overview": "",
-      "plan_slug": "prestige-pacare-premium-personal-accident-plan",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/prestige-pacare.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/prestige-pacare.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Lifetime monthly payouts up to 3.15% per annum1 Guaranteed capital and protection in a single plan Option to receive additional guaranteed returns"
-      ],
-      "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/investment/clr-wealth \n \n \n Wealth accumulation \n \n Includes SRS investment, capital guaranteed, endowment, investment-linked, lifetime payout\n \n \n \n \n \n \n \n \n \n \n \n \n Retirement Income",
-      "plan_name": "GREAT Lifetime Payout 3 | Lifetime Income Stream with Guaranteed Monthly Payouts",
-      "plan_overview": "",
-      "plan_slug": "great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-lifetime-payout.html?product-name=GREAT Lifetime Payout 3 |  Lifetime Income Stream with Guaranteed Monthly Payouts",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-lifetime-payout.html?product-name=GREAT Lifetime Payout 3 |  Lifetime Income Stream with Guaranteed Monthly Payouts",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Monthly stream of cash payouts of up to 5.4X your total premium paid 5 Flexibility to suit your budget and retirement needs Additional payouts upon disability"
-      ],
-      "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/investment/clr-wealth \n \n \n Wealth accumulation \n \n Includes SRS investment, capital guaranteed, endowment, investment-linked, lifetime payout\n \n \n \n \n \n \n \n \n \n \n \n \n Retirement Income",
-      "plan_name": "GREAT Retire Income | Monthly Income Stream",
-      "plan_overview": "",
-      "plan_slug": "great-retire-income-monthly-income-stream",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-retire-income.html?product-name=GREAT Retire Income | Monthly Income Stream",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-retire-income.html?product-name=GREAT Retire Income | Monthly Income Stream",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Growth potential with index-linked returns1 100% capital guarantee3 for peace of mind Flexible income options to suit different needs Life protection at no additional cost"
-      ],
-      "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Retirement income\n \n Includes monthly cash payouts, guaranteed income stream\n \n \n \n \n \n \n \n \n \n \n \n \n Wealth Accumulation",
-      "plan_name": "Index Income (USD) | Index-Linked Single Premium Endowment Plan",
-      "plan_overview": "",
-      "plan_slug": "index-income-usd-index-linked-single-premium-endowment-plan",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/index-income.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/index-income.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Receive multiplied returns of up to 8X or more1 of the total premiums paid Build your legacy to support future generations Enjoy the financial flexibility to fund life’s milestones Get more out of your retirement planning with the SRS"
-      ],
-      "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Retirement income\n \n Includes monthly cash payouts, guaranteed income stream\n \n \n \n \n \n \n \n \n \n \n \n \n Wealth Accumulation",
-      "plan_name": "GREAT Wealth Multiplier 3 | Participating Endowment",
-      "plan_overview": "",
-      "plan_slug": "great-wealth-multiplier-3-participating-endowment",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-multiplier.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-multiplier.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Flexible investment options with multiple funding choices Customisable investment portfolios Full cashflow control with no lock-in Insurance coverage at no extra cost"
-      ],
-      "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Retirement income\n \n Includes monthly cash payouts, guaranteed income stream\n \n \n \n \n \n \n \n \n \n \n \n \n Wealth Accumulation",
-      "plan_name": "GREAT Invest Advantage | Customisable Investment-Linked Insurance Plan",
-      "plan_overview": "",
-      "plan_slug": "great-invest-advantage-customisable-investment-linked-insurance-plan",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-invest-advantage.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-invest-advantage.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Coverage for private charging station and home contents due to fire Up to S$2,000 medical expense reimbursement Your choice of any preferred workshop and 24/7 roadside assistance"
-      ],
-      "plan_description": "More lifestyle solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-travel \n \n \n Travel insurance\n \n Covers flight cancellations, delays, loss of items, hospitalisation\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-motor \n \n \n Car insurance\n \n Covers repair services, accident assistance, medical reimbursement\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-house \n \n \n Home insurance\n \n Covers renovation claims, accidental loss of home contents\n \n \n \n \n \n \n \n \n \n \n \n \n Car insurance",
-      "plan_name": "GREAT EV Protect | Car Insurance",
-      "plan_overview": "",
-      "plan_slug": "great-ev-protect-car-insurance",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/great-ev-protect.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/great-ev-protect.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Choice of workshop and waiver of excess 24/7 accident assistance High coverage and medical expense reimbursement Additional premium savings for safe drivers"
-      ],
-      "plan_description": "More lifestyle solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-travel \n \n \n Travel insurance\n \n Covers flight cancellations, delays, loss of items, hospitalisation\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-motor \n \n \n Car insurance\n \n Covers repair services, accident assistance, medical reimbursement\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-house \n \n \n Home insurance\n \n Covers renovation claims, accidental loss of home contents\n \n \n \n \n \n \n \n \n \n \n \n \n Car insurance",
-      "plan_name": "Drive and Save Plus | Car Insurance",
-      "plan_overview": "",
-      "plan_slug": "drive-and-save-plus-car-insurance",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/drive-and-save-plus.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/drive-and-save-plus.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "One-time commitment for a lifetime of payouts and a lasting legacy Enjoy early payouts for your desired lifestyle Your choice for a potentially higher inheritance amount Support your changing financial needs"
-      ],
-      "plan_description": "",
-      "plan_name": "Prestige Life Rewards Series | Single Premium Wealth Accumulation Plans",
-      "plan_overview": "",
-      "plan_slug": "prestige-life-rewards-series-single-premium-wealth-accumulation-plans",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-life-rewards-series.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-life-rewards-series.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "icon / desc / gift-box Get up to 15% cashback on your premiums",
-        "Lifetime protection of up to 13 times2 the premium paid Potential growth with protection from market volatility Flexibility to adapt to your life’s changing needs"
-      ],
-      "plan_description": "",
-      "plan_name": "Prestige Legacy Index | Universal Life Legacy Solution",
-      "plan_overview": "",
-      "plan_slug": "prestige-legacy-index-universal-life-legacy-solution-2",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-    },
-    {
-      "insurer": "great_eastern",
-      "plan_benefits": [
-        "Your legacy is limitless with unlimited generational transfers3 for up to 300 years Confidence from guaranteed cash value and freedom to access your funds2 First-in-market^ promise of care with up to 150% boosted death benefit4 A legacy that begins with ease, without any medical underwriting"
-      ],
-      "plan_description": "",
-      "plan_name": "Prestige Wealth Legacy | USD Participating Whole Life Plan",
-      "plan_overview": "",
-      "plan_slug": "prestige-wealth-legacy-usd-participating-whole-life-plan",
-      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-wealth-legacy.html",
-      "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-wealth-legacy.html",
-      "scraped_at": "2026-07-05T07:19:14.461159+00:00"
     },
     {
       "insurer": "hsbc",
@@ -9058,6 +9409,363 @@
       "plan_url": "https://www.fwd.com.sg/critical-illness-insurance/critical-illness-plus/",
       "product_brochure_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf",
       "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Get comprehensive travel insurance with coverage for pre-existing conditions, travel inconvenience, and protection for leisure adventures and sports equipment.",
+      "plan_name": "GREAT TravelCare | Comprehensive Travel Insurance",
+      "plan_overview": "",
+      "plan_slug": "great-travelcare-comprehensive-travel-insurance",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/travel-insurance/great-travelcare.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-travelcare/great-travelcare-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "GREAT Home Protect provides broad coverage to protect your property, renovations, and household contents. Learn more at Great Eastern Singapore!",
+      "plan_name": "GREAT Home Protect | Home Insurance – All Risks Cover",
+      "plan_overview": "",
+      "plan_slug": "great-home-protect-home-insurance-all-risks-cover",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/home-insurance/great-home-protect.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-home-protect/ghp-web-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Get financial assurance whenever your foreign domestic worker (FDW) got in an accident or falls ill. Protect your domestic helper with our insurance coverage!",
+      "plan_name": "GREAT Maid Protect | Maid Insurance",
+      "plan_overview": "",
+      "plan_slug": "great-maid-protect-maid-insurance",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/maid-insurance/great-maid-protect.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/maid-insurance/great-maid-protect-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "Dependants' Protection Scheme",
+        "Your family deserves the greatest protection.",
+        "Over 2 million Singaporeans and Permanent Residents are currently covered under the Dependants’ Protection Scheme (DPS).",
+        "DPS is a term-life insurance scheme administered by Great Eastern Life to cover death, terminal illness 1 and total permanent disability 2 through your CPF. No cash needed 3 .",
+        "How do you stay covered under DPS?",
+        "You are automatically enrolled when you make a valid CPF working contribution. Policyholder is encouraged to submit the Health Declaration for assessment on eligible coverage.",
+        "Get up to 4X the protection with GoGreat Term Life.",
+        "Exclusive to DPS members, receive up to S$300,000 additional coverage from just S$0.21 daily!"
+      ],
+      "plan_description": "Learn about the Dependants' Protection Scheme - an affordable term insurance for all eligible CPF members in Singapore. Visit Great Eastern Singapore today!",
+      "plan_name": "Dependants' Protection Scheme",
+      "plan_overview": "Your family deserves the greatest protection. Over 2 million Singaporeans and Permanent Residents are currently covered under the Dependants’ Protection Scheme (DPS). DPS is a term-life insurance scheme administered by Great Eastern Life to cover death, terminal illness 1 and total permanent disability 2 through your CPF. No cash needed 3 .",
+      "plan_slug": "dependants-protection-scheme",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/dependants-protection-scheme.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/life-insurance/dps/dps.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "Enjoy preferential premium rates for selected customers with"
+      ],
+      "plan_description": "Protect your legacy with the US dollar-denominated index universal life plan that offers coverage for death and terminal illness, while offering cash value accumulation.",
+      "plan_name": "Prestige Legacy Index | Universal Life Legacy Solution",
+      "plan_overview": "Enjoy preferential premium rates for selected customers with a minimum sum assured of USD10 million and above.",
+      "plan_slug": "prestige-legacy-index-universal-life-legacy-solution",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-legacy-index/prestige-legacy-index-eng-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "Protection for your child",
+        "Protection for your parents",
+        "Protection for yourself",
+        "GREAT Life Multiplier provides financial protection against death, total and permanent disability and terminal illness.",
+        "The table below shows an overview of coverage under GREAT Life Multiplier and the optional Critical Illness Multiplier Riders available:",
+        "For detailed terms and conditions on the benefits payable, you are advised to read the policy/rider contract.",
+        "The premium rates for GREAT Life Multiplier are guaranteed.",
+        "Reversionary bonus; and"
+      ],
+      "plan_description": "Secure your future with a whole life insurance plan that provides lifelong protection and a multiplier that boosts protection when you need it most. Contact us today!",
+      "plan_name": "GREAT Life Multiplier | Multiplied Lifetime Coverage",
+      "plan_overview": "For parents who plan ahead Your greatest wish is a bright, secure future for your child. Give them a head start with GREAT Life Multiplier to safeguard their lifelong financial well-being while also protecting your parents. By planning ahead today, you can ease potential financial burdens tomorrow and make sure your family has the support they need. Protection for your child",
+      "plan_slug": "great-life-multiplier-multiplied-lifetime-coverage",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-life-multiplier.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-life-multiplier/gels-pdt-pd-glm-eng-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "Sign up for GREAT Term 2 with selected critical illness riders to enjoy 5% premium discount.",
+        "To secure your disability coverage with monthly payouts upon the inability to perform just one of the six Activities of Daily Living, consider GREAT CareShield",
+        "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+        "GREAT Hospital Cash",
+        "To enjoy comprehensive coverage against accidents."
+      ],
+      "plan_description": "GREAT Term 2 is a customisable regular premium term life insurance plan with coverage for death and terminal illness to safeguard your family’s financial security.",
+      "plan_name": "GREAT Term 2 | Customisable Term Life Insurance",
+      "plan_overview": "Sign up for GREAT Term 2 with selected critical illness riders to enjoy 5% premium discount. To secure your disability coverage with monthly payouts upon the inability to perform just one of the six Activities of Daily Living, consider GREAT CareShield To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+      "plan_slug": "great-term-2-customisable-term-life-insurance",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-term.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-term-2/gels-pdt-pd-gt2-eng-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "GoGreat Term Life is specially designed for DPS customers to boost their protection with affordable premiums till age 65. Get a quote online now!",
+      "plan_name": "GoGreat Term Life | Enhanced coverage for DPS policyholders",
+      "plan_overview": "",
+      "plan_slug": "gogreat-term-life-enhanced-coverage-for-dps-policyholders",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/gogreat-term-life.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "The Great Medical Care Concierge",
+        "On-site service desks at our Partnering Medical Institutions for immediate, face-to-face assistance",
+        "Referrals to over 800 Private Panel Specialists and priority appointment bookings at both Private and Restructured hospitals",
+        "Applications for Pre-authorisation of eligible medical bills and guidance on treatment options to help manage your hospitalisation out-of-pocket expenses",
+        "GREAT SupremeHealth is an Integrated Shield Plan that provides enhanced coverage and additional benefits beyond those provided by MediShield Life.",
+        "An additional private insurance coverage provided by The Great Eastern Life Assurance Company Limited.",
+        "3. Do I still need to buy GREAT SupremeHealth if I am already covered under MediShield Life or company’s medical insurance?",
+        "You can consider getting GREAT SupremeHealth to complement your MediShield Life coverage or company’s medical insurance if you prefer higher benefit limits and hospital ward class."
+      ],
+      "plan_description": "GREAT SupremeHealth is a MediSave-approved Integrated Shield Plan offering enhanced hospitalisation coverage for restructured hospitals, as well as coverage for private hospitals. Learn more!",
+      "plan_name": "GREAT SupremeHealth | MediSave-Approved Integrated Shield Plan",
+      "plan_overview": "We support you at every life stage with GREAT SupremeHealth and GREAT TotalCare 2 The Great Medical Care Concierge Exclusive to GREAT SupremeHealth policyholders",
+      "plan_slug": "great-supremehealth-medisave-approved-integrated-shield-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/great-supremehealth/april-2026/gels-pdt-pd-gsh-eng-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Great Eastern's Cancer Guard offers a 100% cash payout upon diagnosis of early, intermediate or late-stage cancer. Learn more about this cancer insurance plan.",
+      "plan_name": "Cancer Guard | Covers All Stages Of Cancer",
+      "plan_overview": "",
+      "plan_slug": "cancer-guard-covers-all-stages-of-cancer",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/cancer-guard.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/cancer-guard/cancer-guard-eng-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "Beyond core coverage, Maternity Protect supports your growing family with everyday benefits:",
+        "Secure private hospital coverage for your child with GREAT SupremeHealth P Prime, by answering two simple questions 11 .",
+        "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+        "GREAT Hospital Cash",
+        "To enjoy comprehensive coverage against personal accidents."
+      ],
+      "plan_description": "Maternity Protect Series provides maternity cover for mum and baby, with flexibility to start early and plan ahead for your child’s lifelong protection. Learn more.",
+      "plan_name": "Maternity Protect Series | Pregnancy and Newborn Insurance",
+      "plan_overview": "Beyond core coverage, Maternity Protect supports your growing family with everyday benefits: Secure private hospital coverage for your child with GREAT SupremeHealth P Prime, by answering two simple questions 11 . To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+      "plan_slug": "maternity-protect-series-pregnancy-and-newborn-insurance",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/maternity-protect.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/maternity-protect-series/maternity-protect-series-web-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Stay active with personal accident coverage of up to $4.5 million, including increased-risk activities like rock climbing and scuba diving. Learn more!",
+      "plan_name": "GREAT Protector Active | High Coverage Personal Accident Plan",
+      "plan_overview": "",
+      "plan_slug": "great-protector-active-high-coverage-personal-accident-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-protector-active.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-protector-active/gpa-web-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+        "GREAT Hospital Cash",
+        "For continued coverage against all stages of critical illness.",
+        "GREAT Critical Cover Series",
+        "To multiply your savings with a regular premium endowment plan that grows with you."
+      ],
+      "plan_description": "Safeguard your child with GREAT Junior Protector: affordable personal accident (PA) insurance,covering accidental medical expenses, HFMD & more from just S$0.69/day.",
+      "plan_name": "GREAT Junior Protector | Children's Personal Accident (PA) Insurance",
+      "plan_overview": "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation. GREAT SupremeHealth & GREAT TotalCare GREAT Hospital Cash",
+      "plan_slug": "great-junior-protector-children-s-personal-accident-pa-insurance",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-junior-protector.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-junior-protector/gjp-web-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "To ensure that your retirement is financially comfortable.",
+        "GREAT Lifetime Payout",
+        "Cover yourself for a lifetime with GREAT CareShield, which pays a monthly benefit when you're unable to perform at least one Activities of Daily Living (ADLs)."
+      ],
+      "plan_description": "This personal accident plan offers seniors high coverage against personal accidents & post-accident benefits. Visit Great Eastern now!",
+      "plan_name": "GREAT Golden Protector | Personal Accident Plan For Seniors",
+      "plan_overview": "To ensure that your retirement is financially comfortable. GREAT Lifetime Payout Cover yourself for a lifetime with GREAT CareShield, which pays a monthly benefit when you're unable to perform at least one Activities of Daily Living (ADLs).",
+      "plan_slug": "great-golden-protector-personal-accident-plan-for-seniors",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-golden-protector.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-golden-protector/ggp-web-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Get worldwide medical assistance & up to S$3.5 million coverage for death & TPD plus medical expenses reimbursement due to to an accident.",
+      "plan_name": "Prestige PACare | Premium Personal Accident Plan",
+      "plan_overview": "",
+      "plan_slug": "prestige-pacare-premium-personal-accident-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/prestige-pacare.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-pacare/prestige-pacare-english-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "This single premium participating endowment plan provides a steady stream of income to support your retirement goals. Visit Great Eastern now!",
+      "plan_name": "GREAT Prime Rewards 3 | Guaranteed Income Stream",
+      "plan_overview": "",
+      "plan_slug": "great-prime-rewards-3-guaranteed-income-stream",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-prime-rewards.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/retirement/great-prime-rewards/gels-pd-pdt-great-prime-rewards3-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Enjoy guaranteed lifetime monthly payouts and 100% capital guarantee with GREAT Lifetime Payout 3. Learn more!",
+      "plan_name": "GREAT Lifetime Payout 3 | Lifetime Income Stream with Guaranteed Monthly Payouts",
+      "plan_overview": "",
+      "plan_slug": "great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-lifetime-payout.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-lifetime-payout/documents/gels-pdt-pd-glp3-brochure-ri.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Get monthly income upon reaching desired retirement age and payouts upon disability with our endowment insurance. Visit Great Eastern Singapore today!",
+      "plan_name": "GREAT Retire Income | Monthly Income Stream",
+      "plan_overview": "",
+      "plan_slug": "great-retire-income-monthly-income-stream",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-retire-income.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/retirement-income/great-retire-income-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Kickstart your investment journey to accumulate wealth & plan your legacy with this investment-linked insurance plan. Visit Great Eastern today!",
+      "plan_name": "GREAT Wealth Advantage 4 | Regular Premium Investment-linked Plan",
+      "plan_overview": "GreatLink Funds information Protect your financial wellness",
+      "plan_slug": "great-wealth-advantage-4-regular-premium-investment-linked-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-advantage.html",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "A US dollar-denominated, single premium, non-participating endowment plan that offers index-linked returns based on the performance of forward-looking indices.",
+      "plan_name": "Index Income (USD) | Index-Linked Single Premium Endowment Plan",
+      "plan_overview": "",
+      "plan_slug": "index-income-usd-index-linked-single-premium-endowment-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/index-income.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/index-income-usd/index-income-usd-eng-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "This regular premium endowment plan offers potentially multiplied returns on the total premiums paid. Get this plan to meet your wealth goals. Learn more!",
+      "plan_name": "GREAT Wealth Multiplier 3 | Participating Endowment",
+      "plan_overview": "",
+      "plan_slug": "great-wealth-multiplier-3-participating-endowment",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-multiplier.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-wealth-multiplier-3/great-wealth-multiplier-english-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [
+        "Benefits of investing",
+        "Consider investing in GREAT Invest Advantage using cash, SRS funds or CPF savings under CPFIS",
+        "You may choose between single premium and recurrent single premium.",
+        "GREAT Invest Advantage provides you with financial protection against death and terminal illness.",
+        "There are certain situations when we will not pay the benefits under the plan. These conditions are stated in the policy contract.",
+        "(a) Premium charge",
+        "The interest rates on Ordinary Account (OA), Special Account (SA) and MediSave Account (MA) savings are reviewed quarterly.",
+        "OA savings earn either the legislated minimum 2.5% per annum, or the 3-month average of major local banks’ interest rates, whichever is higher."
+      ],
+      "plan_description": "GREAT Invest Advantage is an investment-linked plan that offers the flexibility to invest using your CPF savings under CPF Investment Scheme (CPFIS), cash or Supplementary Retirement Scheme (SRS) funds.",
+      "plan_name": "GREAT Invest Advantage | Customisable Investment-Linked Insurance Plan",
+      "plan_overview": "Benefits of investing Consider investing in GREAT Invest Advantage using cash, SRS funds or CPF savings under CPFIS GREAT Invest Advantage provides you the access to professionally managed GreatLink Funds that allow potential growth in the long term. With a diversified range of GreatLink Funds with different investment objectives, horizon, liquidity and level of risk, you can customise your investment portfolio based on your individual budget, risk profile, financial needs and preference.",
+      "plan_slug": "great-invest-advantage-customisable-investment-linked-insurance-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-invest-advantage.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-invest-advantage/gels-pdt-pd-gia-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "This electric vehicle (EV) insurance offers comprehensive coverage for your private charging station & home content besides protecting your car. Learn more!",
+      "plan_name": "GREAT EV Protect | Car Insurance",
+      "plan_overview": "",
+      "plan_slug": "great-ev-protect-car-insurance",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/great-ev-protect.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/great-ev-premier/great-ev-protect-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "Safeguard your drive with enhanced protection and greater premium savings with our comprehensive car insurance plan. Get a quote online here!",
+      "plan_name": "Drive and Save Plus | Car Insurance",
+      "plan_overview": "",
+      "plan_slug": "drive-and-save-plus-car-insurance",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/drive-and-save-plus.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/drive-and-save-plus/drive-and-save-plus-product-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "A USD-denominated participating endowment plan designed for visionaries who aspire to shape a future beyond their lifetime.",
+      "plan_name": "Legacy Income | USD Single Premium Endowment Plan",
+      "plan_overview": "",
+      "plan_slug": "legacy-income-usd-single-premium-endowment-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/legacy-income.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/legacy-income/legacy-income-english-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "These whole of life participating plans safeguard your wealth while you build a legacy for future generations. Visit Great Eastern today!",
+      "plan_name": "Prestige Life Rewards Series | Single Premium Wealth Accumulation Plans",
+      "plan_overview": "",
+      "plan_slug": "prestige-life-rewards-series-single-premium-wealth-accumulation-plans",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-life-rewards-series.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-life-rewards-series/prestige-life-rewards-series-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+    },
+    {
+      "insurer": "great_eastern",
+      "plan_benefits": [],
+      "plan_description": "A US dollar-denominated, participating whole life plan with guaranteed cash value over time that is crafted for individuals who seek more than wealth growth.",
+      "plan_name": "Prestige Wealth Legacy | USD Participating Whole Life Plan",
+      "plan_overview": "",
+      "plan_slug": "prestige-wealth-legacy-usd-participating-whole-life-plan",
+      "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-wealth-legacy.html",
+      "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-wealth-legacy/prestige-wealth-legacy-eng-brochure.pdf",
+      "scraped_at": "2026-07-07T02:51:17.023901+00:00"
     }
   ],
   "scraper_health": [
@@ -9070,7 +9778,7 @@
       "last_success_at": "2026-07-07T02:10:00.090896+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9081,7 +9789,7 @@
       "last_success_at": "2026-07-05T07:18:04.037817+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9092,18 +9800,18 @@
       "last_success_at": "2026-07-05T07:18:05.385324+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
       "carrier_key": "great_eastern",
       "display_name": "Great Eastern",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:19:16.257332+00:00",
-      "last_success_at": "2026-07-05T07:19:16.257332+00:00",
-      "row_count": 19,
+      "last_run_at": "2026-07-07T02:51:49.407319+00:00",
+      "last_success_at": "2026-07-07T02:51:49.407319+00:00",
+      "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:51:49.407319+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9114,7 +9822,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9125,7 +9833,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9136,7 +9844,7 @@
       "last_success_at": "2026-07-05T07:19:56.760391+00:00",
       "row_count": 19,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9147,7 +9855,7 @@
       "last_success_at": "2026-07-05T07:21:04.785877+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9158,7 +9866,7 @@
       "last_success_at": "2026-07-05T07:21:18.419782+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9169,7 +9877,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9177,7 +9885,7 @@
       "display_name": "Allianz",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9185,7 +9893,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9196,7 +9904,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:39:25.455387+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9207,7 +9915,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9218,7 +9926,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9229,7 +9937,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9237,7 +9945,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9245,7 +9953,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9253,7 +9961,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9264,7 +9972,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9272,7 +9980,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9283,7 +9991,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9291,7 +9999,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9299,7 +10007,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9307,7 +10015,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9315,7 +10023,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "not_run"
     },
     {
@@ -9323,7 +10031,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.587898+00:00",
+      "updated_at": "2026-07-07T02:39:44.342843+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -9339,8 +10047,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T02:30:19.586781+00:00",
-      "validation_checked_at": "2026-07-07T02:30:19.586781+00:00",
+      "updated_at": "2026-07-07T02:39:44.342382+00:00",
+      "validation_checked_at": "2026-07-07T02:39:44.342382+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -32323,6 +33031,606 @@
         "scraped_at": "2026-07-07T02:39:24.663220+00:00",
         "source_type": "brochure_pdf",
         "source_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "great-travelcare-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:17.045357+00:00",
+            "last_modified_at": "Thu, 12 Feb 2026 04:26:58 GMT",
+            "sha256": "eb51c1a20adc2194c8a17eaa3177c8b97aaf2f3a9abb4e63786de11149344269",
+            "size_bytes": 1334354,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-travelcare-comprehensive-travel-insurance/eb51c1a20adc2194c8a17eaa3177c8b97aaf2f3a9abb4e63786de11149344269.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-travelcare/great-travelcare-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:17.045357+00:00",
+        "plan_slug": "great-travelcare-comprehensive-travel-insurance",
+        "scraped_at": "2026-07-07T02:51:17.045357+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-travelcare/great-travelcare-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "ghp-web-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:17.478652+00:00",
+            "last_modified_at": "Thu, 29 Jan 2026 07:59:04 GMT",
+            "sha256": "968c322793b9a20c06be56c83d42e3e7152d0c4e2625ea1f2b44422d105ee82f",
+            "size_bytes": 962021,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-home-protect-home-insurance-all-risks-cover/968c322793b9a20c06be56c83d42e3e7152d0c4e2625ea1f2b44422d105ee82f.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-home-protect/ghp-web-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:17.478652+00:00",
+        "plan_slug": "great-home-protect-home-insurance-all-risks-cover",
+        "scraped_at": "2026-07-07T02:51:17.478652+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-home-protect/ghp-web-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "great-maid-protect-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:17.859147+00:00",
+            "last_modified_at": "Thu, 25 Sep 2025 07:34:52 GMT",
+            "sha256": "9a2e2643cfe329ad468b24b564a3f9bcb7e7e799e4be0995d3a3537b6b423cb9",
+            "size_bytes": 1024941,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-maid-protect-maid-insurance/9a2e2643cfe329ad468b24b564a3f9bcb7e7e799e4be0995d3a3537b6b423cb9.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/maid-insurance/great-maid-protect-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:17.859147+00:00",
+        "plan_slug": "great-maid-protect-maid-insurance",
+        "scraped_at": "2026-07-07T02:51:17.859147+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/maid-insurance/great-maid-protect-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "dps.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:18.133700+00:00",
+            "last_modified_at": "Thu, 28 Aug 2025 03:58:07 GMT",
+            "sha256": "1dbe3cb313b9458433afaae210fc8b3257b9190589c4b92b518273725887bb41",
+            "size_bytes": 482453,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/dependants-protection-scheme/1dbe3cb313b9458433afaae210fc8b3257b9190589c4b92b518273725887bb41.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/life-insurance/dps/dps.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:18.133700+00:00",
+        "plan_slug": "dependants-protection-scheme",
+        "scraped_at": "2026-07-07T02:51:18.133700+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/life-insurance/dps/dps.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "prestige-legacy-index-eng-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:18.383491+00:00",
+            "last_modified_at": "Wed, 26 Nov 2025 02:05:51 GMT",
+            "sha256": "617d884e63d2b2527120fef0e16df9f8447c6993cf54934549179a887a51c724",
+            "size_bytes": 2065508,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/prestige-legacy-index-universal-life-legacy-solution/617d884e63d2b2527120fef0e16df9f8447c6993cf54934549179a887a51c724.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-legacy-index/prestige-legacy-index-eng-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:18.383491+00:00",
+        "plan_slug": "prestige-legacy-index-universal-life-legacy-solution",
+        "scraped_at": "2026-07-07T02:51:18.383491+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-legacy-index/prestige-legacy-index-eng-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gels-pdt-pd-glm-eng-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:22.026381+00:00",
+            "last_modified_at": "Tue, 16 Dec 2025 07:22:12 GMT",
+            "sha256": "30324565325594a90ecbf458c4354ad42d3e02950547f862974fecfb523fbc8a",
+            "size_bytes": 312423,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-life-multiplier-multiplied-lifetime-coverage/30324565325594a90ecbf458c4354ad42d3e02950547f862974fecfb523fbc8a.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-life-multiplier/gels-pdt-pd-glm-eng-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:22.026381+00:00",
+        "plan_slug": "great-life-multiplier-multiplied-lifetime-coverage",
+        "scraped_at": "2026-07-07T02:51:22.026381+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-life-multiplier/gels-pdt-pd-glm-eng-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gels-pdt-pd-gt2-eng-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:22.419209+00:00",
+            "last_modified_at": "Wed, 29 Apr 2026 07:07:55 GMT",
+            "sha256": "feeb6145468b8fe2c0e4d6063840e7e33aeefa5b0fcaf59e6e60adc36f937a61",
+            "size_bytes": 244010,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-term-2-customisable-term-life-insurance/feeb6145468b8fe2c0e4d6063840e7e33aeefa5b0fcaf59e6e60adc36f937a61.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-term-2/gels-pdt-pd-gt2-eng-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:22.419209+00:00",
+        "plan_slug": "great-term-2-customisable-term-life-insurance",
+        "scraped_at": "2026-07-07T02:51:22.419209+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-term-2/gels-pdt-pd-gt2-eng-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gels-pdt-pd-gsh-eng-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:22.699975+00:00",
+            "last_modified_at": "Mon, 04 May 2026 01:50:53 GMT",
+            "sha256": "c48d974f4cf04517fa467173fd0de1e5fba118aea1fe6721f565dd8d1376bae2",
+            "size_bytes": 328071,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-supremehealth-medisave-approved-integrated-shield-plan/c48d974f4cf04517fa467173fd0de1e5fba118aea1fe6721f565dd8d1376bae2.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/great-supremehealth/april-2026/gels-pdt-pd-gsh-eng-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:22.699975+00:00",
+        "plan_slug": "great-supremehealth-medisave-approved-integrated-shield-plan",
+        "scraped_at": "2026-07-07T02:51:22.699975+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/great-supremehealth/april-2026/gels-pdt-pd-gsh-eng-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "cancer-guard-eng-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:23.235515+00:00",
+            "last_modified_at": "Mon, 23 Mar 2026 08:53:22 GMT",
+            "sha256": "882b19bd792b34f6b2637eabac8b9dd563693ee3676c2ddf9a40738e184b0edc",
+            "size_bytes": 142737,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/cancer-guard-covers-all-stages-of-cancer/882b19bd792b34f6b2637eabac8b9dd563693ee3676c2ddf9a40738e184b0edc.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/cancer-guard/cancer-guard-eng-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:23.235515+00:00",
+        "plan_slug": "cancer-guard-covers-all-stages-of-cancer",
+        "scraped_at": "2026-07-07T02:51:23.235515+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/cancer-guard/cancer-guard-eng-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "maternity-protect-series-web-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:23.418460+00:00",
+            "last_modified_at": "Mon, 08 Jun 2026 10:57:11 GMT",
+            "sha256": "146e311fbd883e843009b9096f59f0ddb7ee280aa93b76851a980966b37784d8",
+            "size_bytes": 446285,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/maternity-protect-series-pregnancy-and-newborn-insurance/146e311fbd883e843009b9096f59f0ddb7ee280aa93b76851a980966b37784d8.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/maternity-protect-series/maternity-protect-series-web-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:23.418460+00:00",
+        "plan_slug": "maternity-protect-series-pregnancy-and-newborn-insurance",
+        "scraped_at": "2026-07-07T02:51:23.418460+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/maternity-protect-series/maternity-protect-series-web-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gpa-web-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:23.711675+00:00",
+            "last_modified_at": "Wed, 27 Aug 2025 06:46:32 GMT",
+            "sha256": "5d873e2365692656964ecf3236ed261c4fff2edbb297442c981ae3bcd25b0c6a",
+            "size_bytes": 298617,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-protector-active-high-coverage-personal-accident-plan/5d873e2365692656964ecf3236ed261c4fff2edbb297442c981ae3bcd25b0c6a.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-protector-active/gpa-web-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:23.711675+00:00",
+        "plan_slug": "great-protector-active-high-coverage-personal-accident-plan",
+        "scraped_at": "2026-07-07T02:51:23.711675+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-protector-active/gpa-web-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gjp-web-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:24.040473+00:00",
+            "last_modified_at": "Wed, 06 May 2026 09:55:35 GMT",
+            "sha256": "1eea808c41a79e2b8d73e2a5ea2494162289e7c97e50b74b269fc82b2ba7fea0",
+            "size_bytes": 459323,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-junior-protector-children-s-personal-accident-pa-insurance/1eea808c41a79e2b8d73e2a5ea2494162289e7c97e50b74b269fc82b2ba7fea0.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-junior-protector/gjp-web-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:24.040473+00:00",
+        "plan_slug": "great-junior-protector-children-s-personal-accident-pa-insurance",
+        "scraped_at": "2026-07-07T02:51:24.040473+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-junior-protector/gjp-web-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "ggp-web-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:24.354331+00:00",
+            "last_modified_at": "Tue, 03 Mar 2026 03:25:54 GMT",
+            "sha256": "b224c66d589100107f638d3bd5e64f269b5b54e47bfc38cdc13e2fd51942b2d7",
+            "size_bytes": 710345,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-golden-protector-personal-accident-plan-for-seniors/b224c66d589100107f638d3bd5e64f269b5b54e47bfc38cdc13e2fd51942b2d7.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-golden-protector/ggp-web-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:24.354331+00:00",
+        "plan_slug": "great-golden-protector-personal-accident-plan-for-seniors",
+        "scraped_at": "2026-07-07T02:51:24.354331+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-golden-protector/ggp-web-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "prestige-pacare-english-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:24.758989+00:00",
+            "last_modified_at": "Thu, 23 Oct 2025 09:43:04 GMT",
+            "sha256": "3ed156313c2d475300886a2aa97cc62ddadf0b2f68315bd2e6444dad9705582b",
+            "size_bytes": 992425,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/prestige-pacare-premium-personal-accident-plan/3ed156313c2d475300886a2aa97cc62ddadf0b2f68315bd2e6444dad9705582b.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-pacare/prestige-pacare-english-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:24.758989+00:00",
+        "plan_slug": "prestige-pacare-premium-personal-accident-plan",
+        "scraped_at": "2026-07-07T02:51:24.758989+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-pacare/prestige-pacare-english-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gels-pd-pdt-great-prime-rewards3-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:25.286642+00:00",
+            "last_modified_at": "Thu, 21 Sep 2023 03:46:20 GMT",
+            "sha256": "e32f35bef780ceb06076f462edada9fe64fa51b3b3bc70c79963bdcc0347b7a4",
+            "size_bytes": 1376858,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-prime-rewards-3-guaranteed-income-stream/e32f35bef780ceb06076f462edada9fe64fa51b3b3bc70c79963bdcc0347b7a4.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/retirement/great-prime-rewards/gels-pd-pdt-great-prime-rewards3-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:25.286642+00:00",
+        "plan_slug": "great-prime-rewards-3-guaranteed-income-stream",
+        "scraped_at": "2026-07-07T02:51:25.286642+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/retirement/great-prime-rewards/gels-pd-pdt-great-prime-rewards3-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gels-pdt-pd-glp3-brochure-ri.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:25.748821+00:00",
+            "last_modified_at": "Tue, 27 Jan 2026 10:31:12 GMT",
+            "sha256": "393c2b8c6e6dfb5e1a3dcb437948bbc44bda72e19f5b0009705e18ac716bde29",
+            "size_bytes": 646547,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts/393c2b8c6e6dfb5e1a3dcb437948bbc44bda72e19f5b0009705e18ac716bde29.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-lifetime-payout/documents/gels-pdt-pd-glp3-brochure-ri.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:25.748821+00:00",
+        "plan_slug": "great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts",
+        "scraped_at": "2026-07-07T02:51:25.748821+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-lifetime-payout/documents/gels-pdt-pd-glp3-brochure-ri.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "great-retire-income-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:26.115328+00:00",
+            "last_modified_at": "Wed, 22 Apr 2026 08:52:24 GMT",
+            "sha256": "ebe4823bdc4ae302c60efc706d92a5658845a033629422991f4c741d4c2234d7",
+            "size_bytes": 420785,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-retire-income-monthly-income-stream/ebe4823bdc4ae302c60efc706d92a5658845a033629422991f4c741d4c2234d7.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/retirement-income/great-retire-income-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:26.115328+00:00",
+        "plan_slug": "great-retire-income-monthly-income-stream",
+        "scraped_at": "2026-07-07T02:51:26.115328+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/retirement-income/great-retire-income-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "index-income-usd-eng-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:26.716413+00:00",
+            "last_modified_at": "Sun, 21 Jun 2026 07:55:03 GMT",
+            "sha256": "7150a30ecee1fb6bec57655e1049386c8d326d37d90d1316d37662967e73ba02",
+            "size_bytes": 257844,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/index-income-usd-index-linked-single-premium-endowment-plan/7150a30ecee1fb6bec57655e1049386c8d326d37d90d1316d37662967e73ba02.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/index-income-usd/index-income-usd-eng-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:26.716413+00:00",
+        "plan_slug": "index-income-usd-index-linked-single-premium-endowment-plan",
+        "scraped_at": "2026-07-07T02:51:26.716413+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/index-income-usd/index-income-usd-eng-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "great-wealth-multiplier-english-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:27.724104+00:00",
+            "last_modified_at": "Thu, 05 Feb 2026 08:20:35 GMT",
+            "sha256": "657085d65d3c46670e6f6e5b972e7011ee49415c80df36f946e95fbae262f65f",
+            "size_bytes": 1090812,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-wealth-multiplier-3-participating-endowment/657085d65d3c46670e6f6e5b972e7011ee49415c80df36f946e95fbae262f65f.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-wealth-multiplier-3/great-wealth-multiplier-english-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:27.724104+00:00",
+        "plan_slug": "great-wealth-multiplier-3-participating-endowment",
+        "scraped_at": "2026-07-07T02:51:27.724104+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-wealth-multiplier-3/great-wealth-multiplier-english-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "gels-pdt-pd-gia-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:28.327743+00:00",
+            "last_modified_at": "Fri, 24 Apr 2026 08:46:58 GMT",
+            "sha256": "15fcac802efa79c8aef97927a17afad556137fc49d2f572e8a25d31a662df06c",
+            "size_bytes": 3451002,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-invest-advantage-customisable-investment-linked-insurance-plan/15fcac802efa79c8aef97927a17afad556137fc49d2f572e8a25d31a662df06c.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-invest-advantage/gels-pdt-pd-gia-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:28.327743+00:00",
+        "plan_slug": "great-invest-advantage-customisable-investment-linked-insurance-plan",
+        "scraped_at": "2026-07-07T02:51:28.327743+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-invest-advantage/gels-pdt-pd-gia-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "great-ev-protect-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:38.743233+00:00",
+            "last_modified_at": "Thu, 29 Jan 2026 08:04:41 GMT",
+            "sha256": "03ee6e2a58ee1e5e24c6f6703c642bcbbcdae99e860fd67952f3b4911de42b9c",
+            "size_bytes": 673028,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/great-ev-protect-car-insurance/03ee6e2a58ee1e5e24c6f6703c642bcbbcdae99e860fd67952f3b4911de42b9c.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/great-ev-premier/great-ev-protect-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:38.743233+00:00",
+        "plan_slug": "great-ev-protect-car-insurance",
+        "scraped_at": "2026-07-07T02:51:38.743233+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/great-ev-premier/great-ev-protect-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "drive-and-save-plus-product-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:39.057302+00:00",
+            "last_modified_at": "Thu, 25 Sep 2025 07:07:46 GMT",
+            "sha256": "2bab9fc12dfe16f3a6e7bc86d98738926ce0199f9af95d6094a21dfcf8ad53ec",
+            "size_bytes": 705959,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/drive-and-save-plus-car-insurance/2bab9fc12dfe16f3a6e7bc86d98738926ce0199f9af95d6094a21dfcf8ad53ec.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/drive-and-save-plus/drive-and-save-plus-product-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:39.057302+00:00",
+        "plan_slug": "drive-and-save-plus-car-insurance",
+        "scraped_at": "2026-07-07T02:51:39.057302+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/drive-and-save-plus/drive-and-save-plus-product-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "legacy-income-english-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:39.370674+00:00",
+            "last_modified_at": "Fri, 10 Apr 2026 02:25:05 GMT",
+            "sha256": "8d4df9ee723e29f287d6a09757cd0df6ed1a21e60ad79859e4e18632af4ba7e3",
+            "size_bytes": 1333257,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/legacy-income-usd-single-premium-endowment-plan/8d4df9ee723e29f287d6a09757cd0df6ed1a21e60ad79859e4e18632af4ba7e3.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/legacy-income/legacy-income-english-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:39.370674+00:00",
+        "plan_slug": "legacy-income-usd-single-premium-endowment-plan",
+        "scraped_at": "2026-07-07T02:51:39.370674+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/legacy-income/legacy-income-english-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "prestige-life-rewards-series-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:42.317689+00:00",
+            "last_modified_at": "Mon, 06 Apr 2026 01:38:14 GMT",
+            "sha256": "abbc892f9457243a242d50c113e3b9a70edbae5381cea58bbe9ed45014b62cc2",
+            "size_bytes": 1794730,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/prestige-life-rewards-series-single-premium-wealth-accumulation-plans/abbc892f9457243a242d50c113e3b9a70edbae5381cea58bbe9ed45014b62cc2.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-life-rewards-series/prestige-life-rewards-series-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:42.317689+00:00",
+        "plan_slug": "prestige-life-rewards-series-single-premium-wealth-accumulation-plans",
+        "scraped_at": "2026-07-07T02:51:42.317689+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-life-rewards-series/prestige-life-rewards-series-brochure.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "prestige-wealth-legacy-eng-brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T02:51:45.969100+00:00",
+            "last_modified_at": "Thu, 09 Oct 2025 03:47:07 GMT",
+            "sha256": "559212dda62d245cc52d22a78100cd26222f1b57a11ca19a00ad678b74501ccc",
+            "size_bytes": 1959798,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/great-eastern/prestige-wealth-legacy-usd-participating-whole-life-plan/559212dda62d245cc52d22a78100cd26222f1b57a11ca19a00ad678b74501ccc.pdf",
+            "url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-wealth-legacy/prestige-wealth-legacy-eng-brochure.pdf"
+          }
+        },
+        "insurer": "great_eastern",
+        "last_verified_at": "2026-07-07T02:51:45.969100+00:00",
+        "plan_slug": "prestige-wealth-legacy-usd-participating-whole-life-plan",
+        "scraped_at": "2026-07-07T02:51:45.969100+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-wealth-legacy/prestige-wealth-legacy-eng-brochure.pdf"
       }
     ],
     "plans": [
@@ -32956,255 +34264,6 @@
         "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
         "product_brochure_url": "",
         "scraped_at": "2026-07-05T07:18:05.383874+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "No-frills protection you can rely on Choices for comprehensive critical illness coverage Flexibility to evolve as life changes Added support that matters"
-        ],
-        "plan_description": "More life and health solutions \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance \n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance \n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance",
-        "plan_name": "GREAT Term 2 | Customisable Term Insurance",
-        "plan_overview": "",
-        "plan_slug": "great-term-2-customisable-term-insurance",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-term.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-term.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Complete your protection needs from just S$0.21* a day All-round protection till age 65 Hassle-free application"
-        ],
-        "plan_description": "More life and health solutions \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance \n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance \n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance",
-        "plan_name": "GoGreat Term Life | Enhanced coverage for DPS policyholders",
-        "plan_overview": "",
-        "plan_slug": "gogreat-term-life-enhanced-coverage-for-dps-policyholders",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/gogreat-term-life.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/gogreat-term-life.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "icon / desc / gift-box Get up to 15% cashback on your premiums",
-          "Lifetime protection of up to 13 times2 the premium paid Potential growth with protection from market volatility Flexibility to adapt to your life’s changing needs"
-        ],
-        "plan_description": "More life and health solutions \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance \n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance \n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance",
-        "plan_name": "Prestige Legacy Index | Universal Life Legacy Solution",
-        "plan_overview": "",
-        "plan_slug": "prestige-legacy-index-universal-life-legacy-solution",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Medisave-approved Integrated Shield plan that enhances MediShield Life coverage Offers the most affordable coverage for private hospital Covers treatment anywhere in the world 24/7 Great Medical Care Concierge service for specialist selection and appointment bookings"
-        ],
-        "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance\n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance",
-        "plan_name": "GREAT SupremeHealth | MediSave-Approved Integrated Shield Plan",
-        "plan_overview": "",
-        "plan_slug": "great-supremehealth-medisave-approved-integrated-shield-plan",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "100% cash payout — even for early-stage diagnosis Affordable premiums that do not increase with age Simple, hassle-free application"
-        ],
-        "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance\n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance",
-        "plan_name": "Cancer Guard | Covers All Stages Of Cancer",
-        "plan_overview": "",
-        "plan_slug": "cancer-guard-covers-all-stages-of-cancer",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/cancer-guard.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/cancer-guard.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Care for mum, from delivery to recovery Protection for your child’s early years Guarantee your child's lifelong protection from the very start Support when income is disrupted"
-        ],
-        "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident insurance\n \n Covers fractures, burns, dengue, infectious diseases, medical reimbursement, accident\n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance",
-        "plan_name": "Maternity Protect Series | Pregnancy and Newborn Insurance",
-        "plan_overview": "",
-        "plan_slug": "maternity-protect-series-pregnancy-and-newborn-insurance",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/maternity-protect.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/maternity-protect.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Up to 3 times payout upon Accidental Death and Permanent Disablement Receive daily hospital cash benefit Reimbursement of up to S$9,000 for Accidental Medical Expenses"
-        ],
-        "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance\n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident",
-        "plan_name": "GREAT Junior Protector | Children's Personal Accident (PA) Insurance",
-        "plan_overview": "",
-        "plan_slug": "great-junior-protector-children-s-personal-accident-pa-insurance",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-junior-protector.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-junior-protector.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Up to 300% payout and up to S$200 daily hospital cash benefit Comprehensive post-accident benefits Payouts of up to S$25,000 for fractures, dislocations or burns Get 25% off premiums on 2nd life assured"
-        ],
-        "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance\n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident",
-        "plan_name": "GREAT Golden Protector | Personal Accident Plan For Seniors",
-        "plan_overview": "",
-        "plan_slug": "great-golden-protector-personal-accident-plan-for-seniors",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-golden-protector.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-golden-protector.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Enjoy up to S$3.5 million coverage against accidents Medical Expense Reimbursement up to S$20,000 for each & every Accident Assurance of 24-hour emergency assistance1, worldwide Worldwide protection that covers terrorism3 Enjoy guaranteed renewability and 5% renewal discount"
-        ],
-        "plan_description": "More life and health solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Life insurance\n \n Covers death, total permanent disability, terminal illness\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Health insurance\n \n Covers hospitalisation, critical illness, disability, maternity\n \n \n \n \n \n \n \n \n \n \n \n \n Personal accident",
-        "plan_name": "Prestige PACare | Premium Personal Accident Plan",
-        "plan_overview": "",
-        "plan_slug": "prestige-pacare-premium-personal-accident-plan",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/prestige-pacare.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/prestige-pacare.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Lifetime monthly payouts up to 3.15% per annum1 Guaranteed capital and protection in a single plan Option to receive additional guaranteed returns"
-        ],
-        "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/investment/clr-wealth \n \n \n Wealth accumulation \n \n Includes SRS investment, capital guaranteed, endowment, investment-linked, lifetime payout\n \n \n \n \n \n \n \n \n \n \n \n \n Retirement Income",
-        "plan_name": "GREAT Lifetime Payout 3 | Lifetime Income Stream with Guaranteed Monthly Payouts",
-        "plan_overview": "",
-        "plan_slug": "great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-lifetime-payout.html?product-name=GREAT Lifetime Payout 3 |  Lifetime Income Stream with Guaranteed Monthly Payouts",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-lifetime-payout.html?product-name=GREAT Lifetime Payout 3 |  Lifetime Income Stream with Guaranteed Monthly Payouts",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Monthly stream of cash payouts of up to 5.4X your total premium paid 5 Flexibility to suit your budget and retirement needs Additional payouts upon disability"
-        ],
-        "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/investment/clr-wealth \n \n \n Wealth accumulation \n \n Includes SRS investment, capital guaranteed, endowment, investment-linked, lifetime payout\n \n \n \n \n \n \n \n \n \n \n \n \n Retirement Income",
-        "plan_name": "GREAT Retire Income | Monthly Income Stream",
-        "plan_overview": "",
-        "plan_slug": "great-retire-income-monthly-income-stream",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-retire-income.html?product-name=GREAT Retire Income | Monthly Income Stream",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-retire-income.html?product-name=GREAT Retire Income | Monthly Income Stream",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Growth potential with index-linked returns1 100% capital guarantee3 for peace of mind Flexible income options to suit different needs Life protection at no additional cost"
-        ],
-        "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Retirement income\n \n Includes monthly cash payouts, guaranteed income stream\n \n \n \n \n \n \n \n \n \n \n \n \n Wealth Accumulation",
-        "plan_name": "Index Income (USD) | Index-Linked Single Premium Endowment Plan",
-        "plan_overview": "",
-        "plan_slug": "index-income-usd-index-linked-single-premium-endowment-plan",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/index-income.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/index-income.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Receive multiplied returns of up to 8X or more1 of the total premiums paid Build your legacy to support future generations Enjoy the financial flexibility to fund life’s milestones Get more out of your retirement planning with the SRS"
-        ],
-        "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Retirement income\n \n Includes monthly cash payouts, guaranteed income stream\n \n \n \n \n \n \n \n \n \n \n \n \n Wealth Accumulation",
-        "plan_name": "GREAT Wealth Multiplier 3 | Participating Endowment",
-        "plan_overview": "",
-        "plan_slug": "great-wealth-multiplier-3-participating-endowment",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-multiplier.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-multiplier.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Flexible investment options with multiple funding choices Customisable investment portfolios Full cashflow control with no lock-in Insurance coverage at no extra cost"
-        ],
-        "plan_description": "More wealth solutions\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Retirement income\n \n Includes monthly cash payouts, guaranteed income stream\n \n \n \n \n \n \n \n \n \n \n \n \n Wealth Accumulation",
-        "plan_name": "GREAT Invest Advantage | Customisable Investment-Linked Insurance Plan",
-        "plan_overview": "",
-        "plan_slug": "great-invest-advantage-customisable-investment-linked-insurance-plan",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-invest-advantage.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-invest-advantage.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Coverage for private charging station and home contents due to fire Up to S$2,000 medical expense reimbursement Your choice of any preferred workshop and 24/7 roadside assistance"
-        ],
-        "plan_description": "More lifestyle solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-travel \n \n \n Travel insurance\n \n Covers flight cancellations, delays, loss of items, hospitalisation\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-motor \n \n \n Car insurance\n \n Covers repair services, accident assistance, medical reimbursement\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-house \n \n \n Home insurance\n \n Covers renovation claims, accidental loss of home contents\n \n \n \n \n \n \n \n \n \n \n \n \n Car insurance",
-        "plan_name": "GREAT EV Protect | Car Insurance",
-        "plan_overview": "",
-        "plan_slug": "great-ev-protect-car-insurance",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/great-ev-protect.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/great-ev-protect.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Choice of workshop and waiver of excess 24/7 accident assistance High coverage and medical expense reimbursement Additional premium savings for safe drivers"
-        ],
-        "plan_description": "More lifestyle solutions\n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-travel \n \n \n Travel insurance\n \n Covers flight cancellations, delays, loss of items, hospitalisation\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-motor \n \n \n Car insurance\n \n Covers repair services, accident assistance, medical reimbursement\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n icons/prod cat/lifestyle/clr-house \n \n \n Home insurance\n \n Covers renovation claims, accidental loss of home contents\n \n \n \n \n \n \n \n \n \n \n \n \n Car insurance",
-        "plan_name": "Drive and Save Plus | Car Insurance",
-        "plan_overview": "",
-        "plan_slug": "drive-and-save-plus-car-insurance",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/drive-and-save-plus.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/drive-and-save-plus.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "One-time commitment for a lifetime of payouts and a lasting legacy Enjoy early payouts for your desired lifestyle Your choice for a potentially higher inheritance amount Support your changing financial needs"
-        ],
-        "plan_description": "",
-        "plan_name": "Prestige Life Rewards Series | Single Premium Wealth Accumulation Plans",
-        "plan_overview": "",
-        "plan_slug": "prestige-life-rewards-series-single-premium-wealth-accumulation-plans",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-life-rewards-series.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-life-rewards-series.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "icon / desc / gift-box Get up to 15% cashback on your premiums",
-          "Lifetime protection of up to 13 times2 the premium paid Potential growth with protection from market volatility Flexibility to adapt to your life’s changing needs"
-        ],
-        "plan_description": "",
-        "plan_name": "Prestige Legacy Index | Universal Life Legacy Solution",
-        "plan_overview": "",
-        "plan_slug": "prestige-legacy-index-universal-life-legacy-solution-2",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
-      },
-      {
-        "insurer": "great_eastern",
-        "plan_benefits": [
-          "Your legacy is limitless with unlimited generational transfers3 for up to 300 years Confidence from guaranteed cash value and freedom to access your funds2 First-in-market^ promise of care with up to 150% boosted death benefit4 A legacy that begins with ease, without any medical underwriting"
-        ],
-        "plan_description": "",
-        "plan_name": "Prestige Wealth Legacy | USD Participating Whole Life Plan",
-        "plan_overview": "",
-        "plan_slug": "prestige-wealth-legacy-usd-participating-whole-life-plan",
-        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-wealth-legacy.html",
-        "product_brochure_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-wealth-legacy.html",
-        "scraped_at": "2026-07-05T07:19:14.461159+00:00"
       },
       {
         "insurer": "hsbc",
@@ -35962,6 +37021,363 @@
         "plan_url": "https://www.fwd.com.sg/critical-illness-insurance/critical-illness-plus/",
         "product_brochure_url": "http://www.fwd.com.sg/wp-content/uploads/2025/09/FWD-Critical-Illness-Plus-Policy-Contract-2025.pdf",
         "scraped_at": "2026-07-07T02:39:21.674100+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Get comprehensive travel insurance with coverage for pre-existing conditions, travel inconvenience, and protection for leisure adventures and sports equipment.",
+        "plan_name": "GREAT TravelCare | Comprehensive Travel Insurance",
+        "plan_overview": "",
+        "plan_slug": "great-travelcare-comprehensive-travel-insurance",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/travel-insurance/great-travelcare.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-travelcare/great-travelcare-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "GREAT Home Protect provides broad coverage to protect your property, renovations, and household contents. Learn more at Great Eastern Singapore!",
+        "plan_name": "GREAT Home Protect | Home Insurance – All Risks Cover",
+        "plan_overview": "",
+        "plan_slug": "great-home-protect-home-insurance-all-risks-cover",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/home-insurance/great-home-protect.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/great-home-protect/ghp-web-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Get financial assurance whenever your foreign domestic worker (FDW) got in an accident or falls ill. Protect your domestic helper with our insurance coverage!",
+        "plan_name": "GREAT Maid Protect | Maid Insurance",
+        "plan_overview": "",
+        "plan_slug": "great-maid-protect-maid-insurance",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/maid-insurance/great-maid-protect.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/maid-insurance/great-maid-protect-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "Dependants' Protection Scheme",
+          "Your family deserves the greatest protection.",
+          "Over 2 million Singaporeans and Permanent Residents are currently covered under the Dependants’ Protection Scheme (DPS).",
+          "DPS is a term-life insurance scheme administered by Great Eastern Life to cover death, terminal illness 1 and total permanent disability 2 through your CPF. No cash needed 3 .",
+          "How do you stay covered under DPS?",
+          "You are automatically enrolled when you make a valid CPF working contribution. Policyholder is encouraged to submit the Health Declaration for assessment on eligible coverage.",
+          "Get up to 4X the protection with GoGreat Term Life.",
+          "Exclusive to DPS members, receive up to S$300,000 additional coverage from just S$0.21 daily!"
+        ],
+        "plan_description": "Learn about the Dependants' Protection Scheme - an affordable term insurance for all eligible CPF members in Singapore. Visit Great Eastern Singapore today!",
+        "plan_name": "Dependants' Protection Scheme",
+        "plan_overview": "Your family deserves the greatest protection. Over 2 million Singaporeans and Permanent Residents are currently covered under the Dependants’ Protection Scheme (DPS). DPS is a term-life insurance scheme administered by Great Eastern Life to cover death, terminal illness 1 and total permanent disability 2 through your CPF. No cash needed 3 .",
+        "plan_slug": "dependants-protection-scheme",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/dependants-protection-scheme.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/life-insurance/dps/dps.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "Enjoy preferential premium rates for selected customers with"
+        ],
+        "plan_description": "Protect your legacy with the US dollar-denominated index universal life plan that offers coverage for death and terminal illness, while offering cash value accumulation.",
+        "plan_name": "Prestige Legacy Index | Universal Life Legacy Solution",
+        "plan_overview": "Enjoy preferential premium rates for selected customers with a minimum sum assured of USD10 million and above.",
+        "plan_slug": "prestige-legacy-index-universal-life-legacy-solution",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/prestige-legacy-index.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-legacy-index/prestige-legacy-index-eng-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "Protection for your child",
+          "Protection for your parents",
+          "Protection for yourself",
+          "GREAT Life Multiplier provides financial protection against death, total and permanent disability and terminal illness.",
+          "The table below shows an overview of coverage under GREAT Life Multiplier and the optional Critical Illness Multiplier Riders available:",
+          "For detailed terms and conditions on the benefits payable, you are advised to read the policy/rider contract.",
+          "The premium rates for GREAT Life Multiplier are guaranteed.",
+          "Reversionary bonus; and"
+        ],
+        "plan_description": "Secure your future with a whole life insurance plan that provides lifelong protection and a multiplier that boosts protection when you need it most. Contact us today!",
+        "plan_name": "GREAT Life Multiplier | Multiplied Lifetime Coverage",
+        "plan_overview": "For parents who plan ahead Your greatest wish is a bright, secure future for your child. Give them a head start with GREAT Life Multiplier to safeguard their lifelong financial well-being while also protecting your parents. By planning ahead today, you can ease potential financial burdens tomorrow and make sure your family has the support they need. Protection for your child",
+        "plan_slug": "great-life-multiplier-multiplied-lifetime-coverage",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-life-multiplier.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-life-multiplier/gels-pdt-pd-glm-eng-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "Sign up for GREAT Term 2 with selected critical illness riders to enjoy 5% premium discount.",
+          "To secure your disability coverage with monthly payouts upon the inability to perform just one of the six Activities of Daily Living, consider GREAT CareShield",
+          "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+          "GREAT Hospital Cash",
+          "To enjoy comprehensive coverage against accidents."
+        ],
+        "plan_description": "GREAT Term 2 is a customisable regular premium term life insurance plan with coverage for death and terminal illness to safeguard your family’s financial security.",
+        "plan_name": "GREAT Term 2 | Customisable Term Life Insurance",
+        "plan_overview": "Sign up for GREAT Term 2 with selected critical illness riders to enjoy 5% premium discount. To secure your disability coverage with monthly payouts upon the inability to perform just one of the six Activities of Daily Living, consider GREAT CareShield To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+        "plan_slug": "great-term-2-customisable-term-life-insurance",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/great-term.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/life-insurance-/great-term-2/gels-pdt-pd-gt2-eng-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "GoGreat Term Life is specially designed for DPS customers to boost their protection with affordable premiums till age 65. Get a quote online now!",
+        "plan_name": "GoGreat Term Life | Enhanced coverage for DPS policyholders",
+        "plan_overview": "",
+        "plan_slug": "gogreat-term-life-enhanced-coverage-for-dps-policyholders",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/life-insurance/gogreat-term-life.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "The Great Medical Care Concierge",
+          "On-site service desks at our Partnering Medical Institutions for immediate, face-to-face assistance",
+          "Referrals to over 800 Private Panel Specialists and priority appointment bookings at both Private and Restructured hospitals",
+          "Applications for Pre-authorisation of eligible medical bills and guidance on treatment options to help manage your hospitalisation out-of-pocket expenses",
+          "GREAT SupremeHealth is an Integrated Shield Plan that provides enhanced coverage and additional benefits beyond those provided by MediShield Life.",
+          "An additional private insurance coverage provided by The Great Eastern Life Assurance Company Limited.",
+          "3. Do I still need to buy GREAT SupremeHealth if I am already covered under MediShield Life or company’s medical insurance?",
+          "You can consider getting GREAT SupremeHealth to complement your MediShield Life coverage or company’s medical insurance if you prefer higher benefit limits and hospital ward class."
+        ],
+        "plan_description": "GREAT SupremeHealth is a MediSave-approved Integrated Shield Plan offering enhanced hospitalisation coverage for restructured hospitals, as well as coverage for private hospitals. Learn more!",
+        "plan_name": "GREAT SupremeHealth | MediSave-Approved Integrated Shield Plan",
+        "plan_overview": "We support you at every life stage with GREAT SupremeHealth and GREAT TotalCare 2 The Great Medical Care Concierge Exclusive to GREAT SupremeHealth policyholders",
+        "plan_slug": "great-supremehealth-medisave-approved-integrated-shield-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/great-supremehealth/april-2026/gels-pdt-pd-gsh-eng-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Great Eastern's Cancer Guard offers a 100% cash payout upon diagnosis of early, intermediate or late-stage cancer. Learn more about this cancer insurance plan.",
+        "plan_name": "Cancer Guard | Covers All Stages Of Cancer",
+        "plan_overview": "",
+        "plan_slug": "cancer-guard-covers-all-stages-of-cancer",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/cancer-guard.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/cancer-guard/cancer-guard-eng-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "Beyond core coverage, Maternity Protect supports your growing family with everyday benefits:",
+          "Secure private hospital coverage for your child with GREAT SupremeHealth P Prime, by answering two simple questions 11 .",
+          "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+          "GREAT Hospital Cash",
+          "To enjoy comprehensive coverage against personal accidents."
+        ],
+        "plan_description": "Maternity Protect Series provides maternity cover for mum and baby, with flexibility to start early and plan ahead for your child’s lifelong protection. Learn more.",
+        "plan_name": "Maternity Protect Series | Pregnancy and Newborn Insurance",
+        "plan_overview": "Beyond core coverage, Maternity Protect supports your growing family with everyday benefits: Secure private hospital coverage for your child with GREAT SupremeHealth P Prime, by answering two simple questions 11 . To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+        "plan_slug": "maternity-protect-series-pregnancy-and-newborn-insurance",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/maternity-protect.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/health-insurance-/maternity-protect-series/maternity-protect-series-web-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Stay active with personal accident coverage of up to $4.5 million, including increased-risk activities like rock climbing and scuba diving. Learn more!",
+        "plan_name": "GREAT Protector Active | High Coverage Personal Accident Plan",
+        "plan_overview": "",
+        "plan_slug": "great-protector-active-high-coverage-personal-accident-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-protector-active.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-protector-active/gpa-web-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation.",
+          "GREAT Hospital Cash",
+          "For continued coverage against all stages of critical illness.",
+          "GREAT Critical Cover Series",
+          "To multiply your savings with a regular premium endowment plan that grows with you."
+        ],
+        "plan_description": "Safeguard your child with GREAT Junior Protector: affordable personal accident (PA) insurance,covering accidental medical expenses, HFMD & more from just S$0.69/day.",
+        "plan_name": "GREAT Junior Protector | Children's Personal Accident (PA) Insurance",
+        "plan_overview": "To cover the cost of hospitalisation, surgical or medical expenses - and make up for loss of income due to hospitalisation. GREAT SupremeHealth & GREAT TotalCare GREAT Hospital Cash",
+        "plan_slug": "great-junior-protector-children-s-personal-accident-pa-insurance",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-junior-protector.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-junior-protector/gjp-web-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "To ensure that your retirement is financially comfortable.",
+          "GREAT Lifetime Payout",
+          "Cover yourself for a lifetime with GREAT CareShield, which pays a monthly benefit when you're unable to perform at least one Activities of Daily Living (ADLs)."
+        ],
+        "plan_description": "This personal accident plan offers seniors high coverage against personal accidents & post-accident benefits. Visit Great Eastern now!",
+        "plan_name": "GREAT Golden Protector | Personal Accident Plan For Seniors",
+        "plan_overview": "To ensure that your retirement is financially comfortable. GREAT Lifetime Payout Cover yourself for a lifetime with GREAT CareShield, which pays a monthly benefit when you're unable to perform at least one Activities of Daily Living (ADLs).",
+        "plan_slug": "great-golden-protector-personal-accident-plan-for-seniors",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/great-golden-protector.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/personal-accident/great-golden-protector/ggp-web-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Get worldwide medical assistance & up to S$3.5 million coverage for death & TPD plus medical expenses reimbursement due to to an accident.",
+        "plan_name": "Prestige PACare | Premium Personal Accident Plan",
+        "plan_overview": "",
+        "plan_slug": "prestige-pacare-premium-personal-accident-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/personal-accident-insurance/prestige-pacare.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-pacare/prestige-pacare-english-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "This single premium participating endowment plan provides a steady stream of income to support your retirement goals. Visit Great Eastern now!",
+        "plan_name": "GREAT Prime Rewards 3 | Guaranteed Income Stream",
+        "plan_overview": "",
+        "plan_slug": "great-prime-rewards-3-guaranteed-income-stream",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-prime-rewards.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/retirement/great-prime-rewards/gels-pd-pdt-great-prime-rewards3-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Enjoy guaranteed lifetime monthly payouts and 100% capital guarantee with GREAT Lifetime Payout 3. Learn more!",
+        "plan_name": "GREAT Lifetime Payout 3 | Lifetime Income Stream with Guaranteed Monthly Payouts",
+        "plan_overview": "",
+        "plan_slug": "great-lifetime-payout-3-lifetime-income-stream-with-guaranteed-monthly-payouts",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-lifetime-payout.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-lifetime-payout/documents/gels-pdt-pd-glp3-brochure-ri.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Get monthly income upon reaching desired retirement age and payouts upon disability with our endowment insurance. Visit Great Eastern Singapore today!",
+        "plan_name": "GREAT Retire Income | Monthly Income Stream",
+        "plan_overview": "",
+        "plan_slug": "great-retire-income-monthly-income-stream",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/retirement-income/great-retire-income.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/homepage/personal-insurance/our-products/retirement-income/great-retire-income-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Kickstart your investment journey to accumulate wealth & plan your legacy with this investment-linked insurance plan. Visit Great Eastern today!",
+        "plan_name": "GREAT Wealth Advantage 4 | Regular Premium Investment-linked Plan",
+        "plan_overview": "GreatLink Funds information Protect your financial wellness",
+        "plan_slug": "great-wealth-advantage-4-regular-premium-investment-linked-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-advantage.html",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "A US dollar-denominated, single premium, non-participating endowment plan that offers index-linked returns based on the performance of forward-looking indices.",
+        "plan_name": "Index Income (USD) | Index-Linked Single Premium Endowment Plan",
+        "plan_overview": "",
+        "plan_slug": "index-income-usd-index-linked-single-premium-endowment-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/index-income.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/index-income-usd/index-income-usd-eng-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "This regular premium endowment plan offers potentially multiplied returns on the total premiums paid. Get this plan to meet your wealth goals. Learn more!",
+        "plan_name": "GREAT Wealth Multiplier 3 | Participating Endowment",
+        "plan_overview": "",
+        "plan_slug": "great-wealth-multiplier-3-participating-endowment",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-wealth-multiplier.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-wealth-multiplier-3/great-wealth-multiplier-english-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [
+          "Benefits of investing",
+          "Consider investing in GREAT Invest Advantage using cash, SRS funds or CPF savings under CPFIS",
+          "You may choose between single premium and recurrent single premium.",
+          "GREAT Invest Advantage provides you with financial protection against death and terminal illness.",
+          "There are certain situations when we will not pay the benefits under the plan. These conditions are stated in the policy contract.",
+          "(a) Premium charge",
+          "The interest rates on Ordinary Account (OA), Special Account (SA) and MediSave Account (MA) savings are reviewed quarterly.",
+          "OA savings earn either the legislated minimum 2.5% per annum, or the 3-month average of major local banks’ interest rates, whichever is higher."
+        ],
+        "plan_description": "GREAT Invest Advantage is an investment-linked plan that offers the flexibility to invest using your CPF savings under CPF Investment Scheme (CPFIS), cash or Supplementary Retirement Scheme (SRS) funds.",
+        "plan_name": "GREAT Invest Advantage | Customisable Investment-Linked Insurance Plan",
+        "plan_overview": "Benefits of investing Consider investing in GREAT Invest Advantage using cash, SRS funds or CPF savings under CPFIS GREAT Invest Advantage provides you the access to professionally managed GreatLink Funds that allow potential growth in the long term. With a diversified range of GreatLink Funds with different investment objectives, horizon, liquidity and level of risk, you can customise your investment portfolio based on your individual budget, risk profile, financial needs and preference.",
+        "plan_slug": "great-invest-advantage-customisable-investment-linked-insurance-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/great-invest-advantage.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/great-invest-advantage/gels-pdt-pd-gia-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "This electric vehicle (EV) insurance offers comprehensive coverage for your private charging station & home content besides protecting your car. Learn more!",
+        "plan_name": "GREAT EV Protect | Car Insurance",
+        "plan_overview": "",
+        "plan_slug": "great-ev-protect-car-insurance",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/great-ev-protect.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/great-ev-premier/great-ev-protect-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "Safeguard your drive with enhanced protection and greater premium savings with our comprehensive car insurance plan. Get a quote online here!",
+        "plan_name": "Drive and Save Plus | Car Insurance",
+        "plan_overview": "",
+        "plan_slug": "drive-and-save-plus-car-insurance",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/car-insurance/drive-and-save-plus.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/general-insurance/car-insurance/drive-and-save-plus/drive-and-save-plus-product-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "A USD-denominated participating endowment plan designed for visionaries who aspire to shape a future beyond their lifetime.",
+        "plan_name": "Legacy Income | USD Single Premium Endowment Plan",
+        "plan_overview": "",
+        "plan_slug": "legacy-income-usd-single-premium-endowment-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/legacy-income.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/wealth-accumulation/legacy-income/legacy-income-english-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "These whole of life participating plans safeguard your wealth while you build a legacy for future generations. Visit Great Eastern today!",
+        "plan_name": "Prestige Life Rewards Series | Single Premium Wealth Accumulation Plans",
+        "plan_overview": "",
+        "plan_slug": "prestige-life-rewards-series-single-premium-wealth-accumulation-plans",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-life-rewards-series.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-life-rewards-series/prestige-life-rewards-series-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
+      },
+      {
+        "insurer": "great_eastern",
+        "plan_benefits": [],
+        "plan_description": "A US dollar-denominated, participating whole life plan with guaranteed cash value over time that is crafted for individuals who seek more than wealth growth.",
+        "plan_name": "Prestige Wealth Legacy | USD Participating Whole Life Plan",
+        "plan_overview": "",
+        "plan_slug": "prestige-wealth-legacy-usd-participating-whole-life-plan",
+        "plan_url": "https://www.greateasternlife.com/sg/en/personal-insurance/our-products/wealth-accumulation/prestige-wealth-legacy.html",
+        "product_brochure_url": "https://www.greateasternlife.com/content/dam/corp-site/great-eastern/sg/gels-ftrp-imc-cm/prestige-/prestige-wealth-legacy/prestige-wealth-legacy-eng-brochure.pdf",
+        "scraped_at": "2026-07-07T02:51:17.023901+00:00"
       }
     ],
     "scraper_health": [
@@ -35974,7 +37390,7 @@
         "last_success_at": "2026-07-07T02:10:00.090896+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35985,7 +37401,7 @@
         "last_success_at": "2026-07-05T07:18:04.037817+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -35996,18 +37412,18 @@
         "last_success_at": "2026-07-05T07:18:05.385324+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
         "carrier_key": "great_eastern",
         "display_name": "Great Eastern",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:19:16.257332+00:00",
-        "last_success_at": "2026-07-05T07:19:16.257332+00:00",
-        "row_count": 19,
+        "last_run_at": "2026-07-07T02:51:49.407319+00:00",
+        "last_success_at": "2026-07-07T02:51:49.407319+00:00",
+        "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:51:49.407319+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36018,7 +37434,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36029,7 +37445,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36040,7 +37456,7 @@
         "last_success_at": "2026-07-05T07:19:56.760391+00:00",
         "row_count": 19,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36051,7 +37467,7 @@
         "last_success_at": "2026-07-05T07:21:04.785877+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36062,7 +37478,7 @@
         "last_success_at": "2026-07-05T07:21:18.419782+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36073,7 +37489,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36081,7 +37497,7 @@
         "display_name": "Allianz",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36089,7 +37505,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36100,7 +37516,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:39:25.455387+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36111,7 +37527,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36122,7 +37538,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36133,7 +37549,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36141,7 +37557,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36149,7 +37565,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36157,7 +37573,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36168,7 +37584,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36176,7 +37592,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36187,7 +37603,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36195,7 +37611,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36203,7 +37619,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36211,7 +37627,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36219,7 +37635,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "not_run"
       },
       {
@@ -36227,7 +37643,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.587898+00:00",
+        "updated_at": "2026-07-07T02:39:44.342843+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -36243,8 +37659,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T02:30:19.586781+00:00",
-        "validation_checked_at": "2026-07-07T02:30:19.586781+00:00",
+        "updated_at": "2026-07-07T02:39:44.342382+00:00",
+        "validation_checked_at": "2026-07-07T02:39:44.342382+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,
