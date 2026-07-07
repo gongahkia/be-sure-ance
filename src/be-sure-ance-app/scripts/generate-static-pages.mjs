@@ -183,8 +183,13 @@ function renderFactArticle(fact) {
 }
 
 function financialProductJsonLd(plan, facts, canonicalUrl, description) {
-  const sourceUrls = unique(facts.map((fact) => safeHttpUrl(fact.source_url)).filter(Boolean))
   const carrierUrl = safeHttpUrl(plan.plan_url)
+  const brochureUrl = safeHttpUrl(plan.product_brochure_url)
+  const sourceUrls = unique([
+    ...facts.map((fact) => safeHttpUrl(fact.source_url)).filter(Boolean),
+    brochureUrl,
+    carrierUrl,
+  ]).filter(Boolean)
   return cleanObject({
     '@context': 'https://schema.org',
     '@type': 'FinancialProduct',

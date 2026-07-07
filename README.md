@@ -13,7 +13,7 @@ The app does not provide financial advice, insurance advice, quotes, recommendat
 | Signal | Current value | Evidence / caveat |
 | :-- | :-- | :-- |
 | Supported scheduled carriers | 19 | Test-backed from `src/scrapers/registry.py`; 8 more carriers remain experimental opt-in scrapers. |
-| MOH institutions available for panel normalization | 5,305 | Latest local dry-run on 2026-07-02; production refresh still depends on Phase 5 deployment. |
+| MOH institutions available for panel normalization | 5,305 | Latest local dry-run on 2026-07-02; production refresh is pending Netlify build-hook configuration. |
 | LIA claim metrics extracted | 12 | Latest local dry-run on 2026-07-02 against fixture/live parser path. |
 | Civic carrier canonicalization | Available locally | MAS FID Insurance and LIA member-directory cross-checks produce source-backed canonical names and mismatch flags. |
 | Open dataset snapshots | Artifact workflow | Weekly CC-BY-4.0 CSV artifacts export plan facts, source URLs, and verification dates. |
@@ -51,12 +51,12 @@ Portfolio artifacts:
 
 ## Usage
 
-No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate for restoring Netlify or moving to another static host.
-Deployment decision: restore Netlify first; see [deployment runbook](./docs/DEPLOYMENT.md). Production URL is not published from this repository yet.
+Production app: https://besureance.netlify.app/.
+Deployment decision: restored on Netlify; see [deployment runbook](./docs/DEPLOYMENT.md).
 Before any public launch, run the [launch pre-flight](./docs/LAUNCH_PREFLIGHT.md) workflow against staging and record compliance sign-off status.
 
 Sites are refreshed weekly on [SGT Monday 12am](./.github/workflows/refresh-static-data.yml). The scheduled workflow scrapes in GitHub Actions, validates and commits `public/data/app-data.json`, then triggers the Netlify build hook.
-The public scraper health dashboard is available at `/status` after the app is deployed.
+The public scraper health dashboard is available at `https://besureance.netlify.app/status`.
 
 > [!IMPORTANT]
 > Read the [compliance posture](./docs/COMPLIANCE.md) and [legal disclaimer](#legal-disclaimer) before using `Be-sure-ance`.

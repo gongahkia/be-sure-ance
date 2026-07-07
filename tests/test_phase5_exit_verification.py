@@ -14,7 +14,7 @@ class Phase5ExitVerificationTests(unittest.TestCase):
         for required in (
             "Phase 5 exit is blocked.",
             "Do not publicly launch yet.",
-            "Production app is not live",
+            "Production deployment is restored",
             "Phase 5 P0 blockers remain",
             "launch exit criteria are not met",
         ):
@@ -24,22 +24,26 @@ class Phase5ExitVerificationTests(unittest.TestCase):
     def test_live_url_and_indexing_failures_are_recorded(self):
         for required in (
             "https://be-sure-ance.netlify.app",
+            "https://besureance.netlify.app",
             "returned HTTP 404",
+            "returned HTTP 200",
             "on 2026-07-07",
             "scripts/staging_preflight.py",
+            "overall_status=passed",
             "overall_status=failed",
             "scripts/search_indexing_preflight.py",
-            "HTTP Error 404: Not Found",
+            "subjectOf",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, PHASE5)
 
     def test_open_issue_blockers_are_recorded(self):
         for required in (
-            "#72",
             "#73",
-            "production deployment is not restored",
             "sitemap submission is not complete",
+            "compliance",
+            "metrics",
+            "IFA trial",
             "Closed Phase 5 prep",
             "#74",
             "outreach drafts are complete and issue-closed",
@@ -50,8 +54,7 @@ class Phase5ExitVerificationTests(unittest.TestCase):
 
     def test_acceptance_requirements_to_pass_are_recorded(self):
         for required in (
-            "Restore or migrate production deployment.",
-            "Update README with the verified live URL only after it works.",
+            "Deploy the JSON-LD `subjectOf` fix",
             "no service-role key",
             "Submit sitemap in Google Search Console and Bing Webmaster Tools",
             "compliance lawyer outcome",

@@ -1,8 +1,8 @@
 # Deployment Runbook
 
-Current production URL status: not published from this repository.
+Current production URL status: `https://besureance.netlify.app/` is live.
 
-No deploy, push, DNS change, or custom-domain change was performed in this session.
+No DNS change or custom-domain change was performed in this session.
 
 ## Platform Decision
 
@@ -14,7 +14,7 @@ Rationale:
 - Netlify restore is lower-risk than changing hosting providers during the launch gate.
 - Cloudflare Pages remains a fallback if Netlify free-tier limits, domain requirements, or operational access block launch.
 
-Do not claim a live URL in README until the production URL works and staging pre-flight evidence has been captured.
+README may claim `https://besureance.netlify.app/` after the 2026-07-07 route and pre-flight checks.
 
 ## Netlify Settings
 
@@ -47,11 +47,11 @@ Set `NETLIFY_BUILD_HOOK_URL` only in GitHub Actions secrets. Scheduled scraping 
 ## Restore Procedure
 
 1. Confirm Phase 4 exit verification and launch pre-flight runbook are current.
-2. Restore or create the Netlify site from this repository.
+2. Restore or create the Netlify site from this repository. Done: `https://besureance.netlify.app/`.
 3. Apply the Netlify settings from `netlify.toml`.
 4. Configure only the allowed frontend public environment variables.
 5. Store `NETLIFY_BUILD_HOOK_URL` in GitHub Actions secrets for scheduled refresh.
-6. Set `VITE_SITE_ORIGIN` to the canonical production origin.
+6. Set `VITE_SITE_ORIGIN` to `https://besureance.netlify.app`.
 7. Confirm `src/be-sure-ance-app/public/data/app-data.json` is present in the deployed commit.
 8. Deploy to a staging or deploy-preview URL first.
 9. Run the `staging-preflight` workflow with `STAGING_ORIGIN` set to that URL.
@@ -77,6 +77,14 @@ Use:
 ```sh
 python3 scripts/staging_preflight.py --origin "$STAGING_ORIGIN" --output output/staging-preflight/preflight.json
 ```
+
+2026-07-07 production check:
+
+```sh
+python3 scripts/staging_preflight.py --origin https://besureance.netlify.app --output /tmp/bsa-staging-preflight.json --load-requests 6 --load-concurrency 2 --max-p95-ms 2500
+```
+
+Result: `overall_status=passed`.
 
 ## Cloudflare Pages Fallback
 

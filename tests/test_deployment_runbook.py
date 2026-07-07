@@ -10,19 +10,19 @@ NETLIFY = (ROOT / "netlify.toml").read_text()
 
 
 class DeploymentRunbookTests(unittest.TestCase):
-    def test_readme_links_deployment_runbook_without_live_url_claim(self):
+    def test_readme_links_deployment_runbook_with_live_url_claim(self):
         self.assertIn("[Deployment runbook](./docs/DEPLOYMENT.md)", README)
-        self.assertIn("Deployment decision: restore Netlify first", README)
-        self.assertIn("Production URL is not published from this repository yet.", README)
+        self.assertIn("Deployment decision: restored on Netlify", README)
+        self.assertIn("https://besureance.netlify.app/", README)
         self.assertNotIn("Use the live website", README)
 
     def test_netlify_restore_decision_and_cloudflare_fallback_are_documented(self):
         for required in (
             "Restore Netlify first.",
             "Cloudflare Pages remains a fallback",
-            "No deploy, push, DNS change, or custom-domain change was performed",
-            "Do not claim a live URL in README until the production URL works",
-            "Netlify restore is the selected Phase 5 path",
+            "No DNS change or custom-domain change was performed",
+            "README may claim `https://besureance.netlify.app/`",
+            "Hosting provider: Netlify at `https://besureance.netlify.app/`",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, DEPLOYMENT + SUCCESSION)

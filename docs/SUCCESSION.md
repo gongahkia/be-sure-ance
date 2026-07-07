@@ -10,7 +10,7 @@ Primary contact: `gabrielzmong@gmail.com`.
 
 ## Launch State
 
-No production deployment is claimed during Phases 1-4. Phase 5 is the launch gate.
+Production deployment is restored at `https://besureance.netlify.app/`, but Phase 5 remains the public-launch gate.
 
 Before any public relaunch, confirm:
 
@@ -29,7 +29,7 @@ Expected locations:
 - GitHub Actions: repository or organisation secrets.
 - Telegram beta: BotFather token stored only in local `.env` or GitHub/environment secrets.
 - Sentry: project DSN and alert recipients in Sentry project settings and GitHub secrets.
-- Hosting provider: Netlify restore is the selected Phase 5 path; Cloudflare Pages remains the fallback if Netlify is blocked.
+- Hosting provider: Netlify at `https://besureance.netlify.app/`; Cloudflare Pages remains the fallback if Netlify is blocked.
 - Netlify scheduled refresh: build hook URL stored only as a GitHub Actions secret.
 - Static app data: generated, validated, and committed by `refresh-static-data`; consumed by Netlify builds.
 

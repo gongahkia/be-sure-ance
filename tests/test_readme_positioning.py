@@ -24,10 +24,10 @@ class ReadmePositioningTests(unittest.TestCase):
         )
         self.assertIn(required_sentence, README)
 
-    def test_readme_does_not_claim_live_deployment_before_phase_5(self):
-        self.assertIn("No production deployment is claimed during Phases 1-4.", README)
+    def test_readme_claims_verified_netlify_deployment_without_public_launch(self):
+        self.assertIn("Production app: https://besureance.netlify.app/.", README)
+        self.assertIn("Before any public launch", README)
         self.assertNotIn("Use the live website", README)
-        self.assertNotIn("be-sure-ance.netlify.app", README)
 
     def test_readme_documents_current_data_model(self):
         for required in (

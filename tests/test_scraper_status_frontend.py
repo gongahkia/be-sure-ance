@@ -51,7 +51,7 @@ class ScraperStatusFrontendTests(unittest.TestCase):
         for required in (
             "'/status'",
             "/status /index.html 200",
-            "public scraper health dashboard is available at `/status`",
+            "public scraper health dashboard is available at `https://besureance.netlify.app/status`",
             "'route.status': 'Scraper status'",
             "'route.status': '爬取状态'",
         ):
