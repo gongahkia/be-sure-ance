@@ -14,7 +14,7 @@ WORKFLOW = (ROOT / ".github/workflows/search-indexing-preflight.yml").read_text(
 class SearchIndexingTests(unittest.TestCase):
     def test_runbook_records_submission_blocker_and_official_paths(self):
         for required in (
-            "Current submission status as of 2026-07-02: blocked.",
+            "Current submission status as of 2026-07-07: blocked.",
             "returns HTTP 404",
             "Google Search Console",
             "Bing Webmaster Tools",

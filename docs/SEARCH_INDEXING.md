@@ -1,8 +1,8 @@
 # Search Indexing Runbook
 
-Current submission status as of 2026-07-02: blocked.
+Current submission status as of 2026-07-07: blocked.
 
-Reason: `https://be-sure-ance.netlify.app` returns HTTP 404 for `/`, `/sitemap.xml`, `/robots.txt`, `/status`, `/matrix/panel-hospitals`, and representative share routes. Do not submit a sitemap until the production URL works.
+Reason: `https://be-sure-ance.netlify.app` returns HTTP 404 for `/`, `/sitemap.xml`, `/robots.txt`, and `/status` as of 2026-07-07. The 2026-07-02 pre-flight also failed for `/matrix/panel-hospitals` and representative share routes. Do not submit a sitemap until the production URL works.
 
 ## Source Guidance
 
@@ -58,6 +58,7 @@ Bing Webmaster Tools:
 | Date | Origin | Google status | Bing status | Evidence |
 | :-- | :-- | :-- | :-- | :-- |
 | 2026-07-02 | `https://be-sure-ance.netlify.app` | Blocked - not submitted | Blocked - not submitted | Origin returned HTTP 404 for sitemap and app routes. |
+| 2026-07-07 | `https://be-sure-ance.netlify.app` | Blocked - not submitted | Blocked - not submitted | `/`, `/sitemap.xml`, `/robots.txt`, and `/status` returned HTTP 404. |
 
 ## Launch Rule
 

@@ -1,6 +1,6 @@
 # Phase 5 Exit Verification
 
-Date: 2026-07-02
+Date: 2026-07-07
 Branch: `main`
 
 ## Status
@@ -15,6 +15,7 @@ Production URL:
 
 - GitHub repository homepage is `https://be-sure-ance.netlify.app`.
 - `https://be-sure-ance.netlify.app` returned HTTP 404 for `/`, `/matrix/panel-hospitals`, `/status`, `/share?plans=aia:healthshield-gold-max-demo`, `/sitemap.xml`, and `/robots.txt` on 2026-07-02.
+- `https://be-sure-ance.netlify.app` returned HTTP 404 for `/`, `/status`, `/sitemap.xml`, and `/robots.txt` on 2026-07-07.
 - `scripts/staging_preflight.py` against `https://be-sure-ance.netlify.app` returned `overall_status=failed`.
 - `scripts/search_indexing_preflight.py` against `https://be-sure-ance.netlify.app` returned `overall_status=failed` with `HTTP Error 404: Not Found`.
 
@@ -22,11 +23,14 @@ Open Phase 5 blockers:
 
 - `#72`: production deployment is not restored; README must not claim a live URL.
 - `#73`: Google Search Console and Bing Webmaster Tools sitemap submission is not complete.
-- `#74`: outreach drafts exist, but no outreach should be posted until production URL, indexing, pre-flight, and compliance sign-off are complete.
+
+Closed Phase 5 prep:
+
+- `#74`: outreach drafts are complete and issue-closed, but no outreach should be posted until production URL, indexing, pre-flight, and compliance sign-off are complete.
 
 Compliance:
 
-- Compliance lawyer sign-off is not obtained as of 2026-07-02.
+- Compliance lawyer sign-off is not obtained as of 2026-07-07.
 - `docs/LAUNCH_PREFLIGHT.md` records compliance sign-off status as blocked.
 - Private legal/compliance notes must stay outside this repository.
 

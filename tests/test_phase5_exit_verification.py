@@ -25,6 +25,7 @@ class Phase5ExitVerificationTests(unittest.TestCase):
         for required in (
             "https://be-sure-ance.netlify.app",
             "returned HTTP 404",
+            "on 2026-07-07",
             "scripts/staging_preflight.py",
             "overall_status=failed",
             "scripts/search_indexing_preflight.py",
@@ -37,9 +38,11 @@ class Phase5ExitVerificationTests(unittest.TestCase):
         for required in (
             "#72",
             "#73",
-            "#74",
             "production deployment is not restored",
             "sitemap submission is not complete",
+            "Closed Phase 5 prep",
+            "#74",
+            "outreach drafts are complete and issue-closed",
             "no outreach should be posted",
         ):
             with self.subTest(required=required):
