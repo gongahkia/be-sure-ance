@@ -81,6 +81,7 @@ function provenanceStateText(entry) {
 <style scoped>
 .provenance-list {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 8px;

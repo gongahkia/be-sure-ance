@@ -1371,12 +1371,15 @@ h1 span {
 
 .repo-layout {
   display: grid;
+  align-items: start;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 24px;
 }
 
 .repo-main {
   display: grid;
+  align-content: start;
+  align-self: start;
   gap: 18px;
   padding: 24px;
 }

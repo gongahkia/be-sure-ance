@@ -10,6 +10,39 @@
 
     <div v-if="displayMetrics.length === 0" class="empty-state">{{ t('ui.claims.empty') }}</div>
 
+    <div v-else-if="compact" class="claim-list">
+      <article v-for="metric in displayMetrics" :key="metricKey(metric)" class="claim-list-item">
+        <strong>{{ localize(metric.metric_label) }}</strong>
+        <dl>
+          <div>
+            <dt>{{ t('ui.claims.value') }}</dt>
+            <dd>{{ metricValue(metric) }}</dd>
+          </div>
+          <div>
+            <dt>{{ t('ui.claims.source') }}</dt>
+            <dd>
+              <a
+                v-if="safeExternalUrl(metric.source_url)"
+                :href="safeExternalUrl(metric.source_url)"
+                target="_blank"
+                rel="noopener noreferrer"
+                referrerpolicy="no-referrer"
+              >
+                {{ externalHostname(metric.source_url) }} · {{ metric.source_year }}
+              </a>
+              <span v-else>{{ metric.source_year }}</span>
+            </dd>
+          </div>
+          <div v-if="limitationText(metric)" class="claim-list-limitations">
+            <dt>{{ t('ui.claims.limitations') }}</dt>
+            <dd class="claim-limitations" :title="limitationText(metric)">
+              {{ limitationText(metric) }}
+            </dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+
     <div v-else class="claim-table">
       <table>
         <thead>
@@ -119,6 +152,22 @@ function localize(value) {
   padding: 18px;
 }
 
+.claim-board.compact .section-top {
+  display: grid;
+  gap: 8px;
+  align-items: start;
+}
+
+.claim-board.compact h2 {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.claim-board.compact .section-copy {
+  font-size: 14px;
+  line-height: 20px;
+}
+
 .section-top {
   display: flex;
   justify-content: space-between;
@@ -145,6 +194,64 @@ h2,
 
 .claim-table {
   overflow-x: auto;
+}
+
+.claim-list {
+  display: grid;
+  gap: 12px;
+}
+
+.claim-list-item {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid var(--hf-border);
+  padding-top: 12px;
+}
+
+.claim-list-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.claim-list-item strong {
+  color: var(--hf-primary);
+  line-height: 20px;
+}
+
+.claim-list-item dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  margin: 0;
+}
+
+.claim-list-item dl div {
+  display: grid;
+  gap: 2px;
+}
+
+.claim-list-item dt {
+  color: var(--hf-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.claim-list-item dd {
+  margin: 0;
+  color: var(--hf-secondary);
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+
+.claim-list-limitations {
+  grid-column: 1 / -1;
+}
+
+.claim-limitations {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 table {

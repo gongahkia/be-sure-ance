@@ -37,6 +37,21 @@ class ClaimTurnaroundFrontendTests(unittest.TestCase):
             with self.subTest(required=required):
                 self.assertIn(required, I18N)
 
+    def test_compact_claim_board_uses_stacked_rows(self):
+        for required in (
+            'v-else-if="compact"',
+            'class="claim-list"',
+            'class="claim-list-item"',
+            'class="claim-list-limitations"',
+            'class="claim-limitations"',
+            ".claim-list {",
+            ".claim-list-item {",
+            "-webkit-line-clamp: 2",
+            "overflow-wrap: anywhere",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, CLAIM_BOARD)
+
     def test_claim_board_does_not_claim_suitability_or_certainty(self):
         for forbidden in ("best insurer", "guaranteed", "recommended carrier"):
             with self.subTest(forbidden=forbidden):

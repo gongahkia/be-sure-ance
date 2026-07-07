@@ -59,6 +59,17 @@ class StaticPlanPagesTests(unittest.TestCase):
             with self.subTest(required=required):
                 self.assertIn(required, APP_VUE)
 
+    def test_detail_plan_layout_does_not_stretch_sparse_cards(self):
+        for required in (
+            ".repo-layout {",
+            "align-items: start",
+            ".repo-main {",
+            "align-content: start",
+            "align-self: start",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, APP_VUE)
+
     def test_plan_cards_link_to_static_plan_pages(self):
         for required in (
             'v-if="planPagePath"',

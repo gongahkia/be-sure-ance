@@ -34,6 +34,15 @@ class FrontendProvenanceTests(unittest.TestCase):
                 self.assertIn(required, FACT_PROVENANCE)
         self.assertIn("Source URL missing", I18N)
 
+    def test_provenance_component_does_not_stretch_pills(self):
+        for required in (
+            ".provenance-list {",
+            "align-items: flex-start",
+            "display: inline-flex",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, FACT_PROVENANCE)
+
     def test_plan_card_marks_each_fact_group_with_provenance(self):
         for required in (
             ":entries=\"provenanceEntriesForFields(facts, ['panel_hospitals'])\"",
