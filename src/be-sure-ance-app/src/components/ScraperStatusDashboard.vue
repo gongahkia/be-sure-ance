@@ -15,7 +15,7 @@
       </article>
     </div>
 
-    <div class="status-table-wrap" tabindex="0" :aria-label="t('ui.scraper.tableLabel')">
+    <div class="status-table-wrap" tabindex="0" aria-label="Carrier scraper health table">
       <table>
         <thead>
           <tr>
@@ -41,7 +41,12 @@
             <td>{{ row.row_count ?? 0 }}</td>
             <td>{{ dateText(row.last_success_at) }}</td>
             <td>{{ dateText(row.last_failure_at) }}</td>
-            <td>{{ validationText(row) }}</td>
+            <td>
+              {{ validationText(row) }}
+              <span v-if="validationNotes(row)" class="validation-note">
+                {{ validationNotes(row) }}
+              </span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -167,6 +172,14 @@ function validationText(row) {
   return parts.join(' · ')
 }
 
+function validationNotes(row) {
+  if (!['failed', 'error'].includes(row.validation_status)) {
+    return ''
+  }
+  const notes = row.validation_summary?.notes || []
+  return notes.slice(0, 2).join(' · ')
+}
+
 function daysSince(value) {
   const timestamp = new Date(value).getTime()
   if (Number.isNaN(timestamp)) {
@@ -256,6 +269,10 @@ td span {
   margin-top: 0.15rem;
   color: var(--hf-muted);
   font-size: 0.84rem;
+}
+
+.validation-note {
+  max-width: 34rem;
 }
 
 .status-pill {

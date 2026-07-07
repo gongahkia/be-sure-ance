@@ -14,6 +14,8 @@ from src.validation.differ import (
     write_snapshot_artifacts,
 )
 
+ROOT = Path(__file__).resolve().parents[1]
+
 
 class ValidationDifferTests(unittest.TestCase):
     def setUp(self):
@@ -77,6 +79,102 @@ class ValidationDifferTests(unittest.TestCase):
         self.assertEqual(comparison["status"], "failed")
         self.assertTrue(comparison["failures"])
 
+    def test_canonicalization_ignores_volatile_attributes_and_text_for_status(self):
+        target = ValidationTarget(
+            insurer="demo",
+            url="https://example.com/products/plan",
+            domain="example.com",
+            source_file="demo.py",
+            page_role="product_detail",
+            expected_selectors=("main h1",),
+        )
+        baseline = snapshot_from_html(
+            target,
+            """
+            <html><body><main id="old" data-build="1">
+              <h1 class="hero">Plan A</h1><p>Price 2025</p>
+            </main></body></html>
+            """,
+        )
+        current = snapshot_from_html(
+            target,
+            """
+            <html><body><main id="new" data-build="2">
+              <h1 class="hero-new">Plan A</h1><p>Price 2026</p>
+            </main></body></html>
+            """,
+        )
+
+        comparison = compare_snapshot_pair(
+            baseline_snapshot=baseline,
+            current_snapshot=current,
+            max_path_drift=0.0,
+            max_tag_drift=0.0,
+        )
+
+        self.assertEqual(comparison["status"], "passed")
+        self.assertTrue(comparison["text_hash_changed"])
+
+    def test_selector_missing_fails_validation(self):
+        target = ValidationTarget(
+            insurer="demo",
+            url="https://example.com/products/plan",
+            domain="example.com",
+            source_file="demo.py",
+            page_role="product_detail",
+            expected_selectors=("main h1",),
+        )
+        baseline = snapshot_from_html(
+            target, "<html><body><main><h1>Plan</h1></main></body></html>"
+        )
+        current = snapshot_from_html(target, "<html><body><main><p>Plan</p></main></body></html>")
+
+        comparison = compare_snapshot_pair(
+            baseline_snapshot=baseline,
+            current_snapshot=current,
+            max_path_drift=1,
+            max_tag_drift=1,
+        )
+
+        self.assertEqual(comparison["status"], "failed")
+        self.assertTrue(any("Expected selector missing" in item for item in comparison["failures"]))
+
+    def test_plan_count_swing_fails_validation(self):
+        target = ValidationTarget(
+            insurer="demo",
+            url="https://example.com/products",
+            domain="example.com",
+            source_file="demo.py",
+            page_role="listing",
+            expected_selectors=("main",),
+            max_plan_count_delta=1,
+        )
+        baseline = snapshot_from_html(
+            target,
+            """
+            <html><body><main>
+              <a href="/a">Plan A Insurance</a>
+              <a href="/b">Plan B Insurance</a>
+              <a href="/c">Plan C Insurance</a>
+            </main></body></html>
+            """,
+        )
+        current = snapshot_from_html(target, "<html><body><main></main></body></html>")
+
+        comparison = compare_snapshot_pair(
+            baseline_snapshot=baseline,
+            current_snapshot=current,
+            max_path_drift=1,
+            max_tag_drift=1,
+        )
+
+        self.assertEqual(comparison["status"], "failed")
+        self.assertTrue(
+            any(
+                "Accepted plan count changed from 3 to 0" in item for item in comparison["failures"]
+            )
+        )
+
     def test_run_validation_writes_machine_readable_report_and_fails_on_drift(self):
         with (
             tempfile.TemporaryDirectory() as baseline_tmp,
@@ -111,6 +209,19 @@ class ValidationDifferTests(unittest.TestCase):
             self.assertEqual(exit_code, 1)
             self.assertEqual(report["summary"]["failed"], 1)
             self.assertEqual(report["results"][0]["status"], "failed")
+            self.assertIn("structure_hash", report["results"][0])
+            self.assertIn("selector_presence", report["results"][0])
+            self.assertIn("accepted_plan_count", report["results"][0])
+            self.assertIn(
+                "| Target | Role | Status | Plans | Selectors |",
+                (output_dir / "summary.md").read_text(),
+            )
+
+    def test_workflow_verifies_json_report_and_human_summary_artifacts(self):
+        workflow = (ROOT / ".github/workflows/validate-scraper-snapshots.yml").read_text()
+
+        self.assertIn("test -s .validation-output/report.json", workflow)
+        self.assertIn("test -s .validation-output/summary.md", workflow)
 
 
 if __name__ == "__main__":

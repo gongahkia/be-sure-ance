@@ -61,6 +61,12 @@ jobs:
           fi
           "${command[@]}"
 
+      - name: Verify validation artifacts
+        if: always()
+        run: |
+          test -s .validation-output/report.json
+          test -s .validation-output/summary.md
+
       - name: Upload validation artifacts
         if: always()
         uses: actions/upload-artifact@v4

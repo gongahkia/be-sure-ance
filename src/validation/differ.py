@@ -7,7 +7,7 @@ import hashlib
 import json
 import re
 import shutil
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
@@ -32,6 +32,57 @@ class ValidationTarget:
     url: str
     domain: str
     source_file: str
+    page_role: str = "unknown"
+    expected_selectors: tuple[str, ...] = field(default_factory=tuple)
+    expected_plan_count: int | None = None
+    max_plan_count_delta: int = 2
+    noise_patterns: tuple[str, ...] = field(default_factory=tuple)
+    max_noise_count: int | None = None
+
+
+DEFAULT_SELECTORS_BY_ROLE = {
+    "product_detail": ("body", "h1, h2, title"),
+    "listing": ("body", "a[href]"),
+    "reject": ("body",),
+    "unknown": ("body",),
+}
+
+PROVIDER_TARGET_CONFIG = {
+    "uoi": {
+        "product_detail_urls": (
+            "https://www.uoi.com.sg/personal/travel-insurance.page",
+            "https://www.uoi.com.sg/personal/motor-insurance.page",
+            "https://www.uoi.com.sg/personal/home-contents-insurance.page",
+            "https://www.uoi.com.sg/personal/accident-protection.page",
+        ),
+        "rejected_urls": (
+            "https://www.uoi.com.sg/index.page",
+            "https://www.uoi.com.sg/commercial/general-insurance.page",
+            "https://www.uoi.com.sg/commercial/specialised-insurance.page",
+            "https://www.uoi.com.sg/claims-assistance.page",
+            "https://www.uoi.com.sg/takaful.page",
+        ),
+        "selectors_by_role": {
+            "product_detail": ("h2", "a[href$='.pdf']"),
+            "reject": ("body",),
+        },
+    },
+    "sompo": {
+        "product_detail_path_prefixes": (
+            "/products/",
+            "/commercial-insurance-products/",
+        ),
+        "rejected_urls": (
+            "https://www.sompo.com.sg/",
+            "https://www.sompo.com.sg/claims/claims-list",
+            "https://www.sompo.com.sg/commercial-insurance-products/sme",
+        ),
+        "selectors_by_role": {
+            "product_detail": ("h1, h2, title", "a[href]"),
+            "reject": ("body",),
+        },
+    },
+}
 
 
 def slugify(value: str) -> str:
@@ -59,6 +110,49 @@ def extract_urls(module_doc: str | None) -> list[str]:
     return unique_urls
 
 
+def infer_page_role(url: str) -> str:
+    path = urlparse(url).path.lower()
+    if any(token in path for token in ("/claim", "/contact", "/privacy", "/terms")):
+        return "reject"
+    if any(token in path for token in ("/products/", "/product/", "/personal/")):
+        return "product_detail"
+    if any(token in path for token in ("/commercial/", "/insurance", "/plans")):
+        return "listing"
+    return "unknown"
+
+
+def target_metadata(insurer: str, url: str) -> dict:
+    provider_config = PROVIDER_TARGET_CONFIG.get(insurer, {})
+    parsed_path = urlparse(url).path
+
+    role = infer_page_role(url)
+    if url in provider_config.get("product_detail_urls", ()):
+        role = "product_detail"
+    elif url in provider_config.get("listing_urls", ()):
+        role = "listing"
+    elif url in provider_config.get("rejected_urls", ()):
+        role = "reject"
+    else:
+        for prefix in provider_config.get("product_detail_path_prefixes", ()):
+            if parsed_path.startswith(prefix):
+                role = "product_detail"
+                break
+
+    selectors = provider_config.get("selectors_by_role", {}).get(
+        role,
+        DEFAULT_SELECTORS_BY_ROLE.get(role, DEFAULT_SELECTORS_BY_ROLE["unknown"]),
+    )
+    expected_plan_count = 1 if role == "product_detail" else 0 if role == "reject" else None
+
+    return {
+        "page_role": role,
+        "expected_selectors": tuple(selectors),
+        "expected_plan_count": expected_plan_count,
+        "noise_patterns": tuple(provider_config.get("noise_patterns", ())),
+        "max_noise_count": provider_config.get("max_noise_count"),
+    }
+
+
 def discover_targets(
     scraper_dir: Path = SCRAPER_DIR,
     max_urls_per_insurer: int = 2,
@@ -74,12 +168,14 @@ def discover_targets(
         urls = extract_urls(ast.get_docstring(tree))
         for url in urls[:max_urls_per_insurer]:
             domain = urlparse(url).netloc.lower().removeprefix("www.")
+            metadata = target_metadata(path.stem, url)
             targets.append(
                 ValidationTarget(
                     insurer=path.stem,
                     url=url,
                     domain=domain,
                     source_file=path.name,
+                    **metadata,
                 )
             )
     return targets
@@ -138,6 +234,36 @@ def collect_paths(node: Tag, parent_path: str = "") -> list[str]:
     return paths
 
 
+def selector_presence(soup: BeautifulSoup, selectors: Iterable[str]) -> dict[str, bool]:
+    return {selector: bool(soup.select(selector)) for selector in selectors}
+
+
+def accepted_plan_count(soup: BeautifulSoup, target: ValidationTarget) -> int:
+    if target.page_role == "reject":
+        return 0
+    if target.page_role == "product_detail":
+        return 1 if all(selector_presence(soup, target.expected_selectors).values()) else 0
+    if target.page_role == "listing":
+        return len(
+            {
+                normalize_text(anchor.get_text(" ", strip=True))
+                for anchor in soup.select("a[href]")
+                if looks_like_plan_link(anchor.get("href") or "", anchor.get_text(" ", strip=True))
+            }
+        )
+    return 0
+
+
+def looks_like_plan_link(href: str, label: str) -> bool:
+    text = f"{href} {label}".lower()
+    return any(token in text for token in ("insurance", "cover", "protection", "plan"))
+
+
+def rejected_noise_count(root: Tag, target: ValidationTarget) -> int:
+    normalized = normalize_text(" ".join(root.stripped_strings)).lower()
+    return sum(normalized.count(pattern.lower()) for pattern in target.noise_patterns)
+
+
 def snapshot_from_html(target: ValidationTarget, html: str) -> dict:
     soup = sanitize_html(html)
     root = soup.body or soup
@@ -151,12 +277,14 @@ def snapshot_from_html(target: ValidationTarget, html: str) -> dict:
     if parsed_url.query:
         path_identifier = f"{path_identifier}?{parsed_url.query}"
     path_slug = slugify(path_identifier)
+    selectors = selector_presence(soup, target.expected_selectors)
 
     return {
         "insurer": target.insurer,
         "url": target.url,
         "domain": target.domain,
         "source_file": target.source_file,
+        "page_role": target.page_role,
         "path_slug": path_slug,
         "captured_at": datetime.now(timezone.utc).isoformat(),
         "root_tag": root.name,
@@ -167,6 +295,14 @@ def snapshot_from_html(target: ValidationTarget, html: str) -> dict:
         "structure_hash": sha256_text("\n".join(unique_paths)),
         "text_hash": sha256_text(normalized_text),
         "normalized_html": normalized_html,
+        "expected_selectors": list(target.expected_selectors),
+        "selector_presence": selectors,
+        "missing_selectors": [selector for selector, present in selectors.items() if not present],
+        "accepted_plan_count": accepted_plan_count(soup, target),
+        "expected_plan_count": target.expected_plan_count,
+        "max_plan_count_delta": target.max_plan_count_delta,
+        "rejected_noise_count": rejected_noise_count(root, target),
+        "max_noise_count": target.max_noise_count,
     }
 
 
@@ -174,6 +310,22 @@ def load_snapshot(snapshot_path: Path) -> dict | None:
     if not snapshot_path.exists():
         return None
     return json.loads(snapshot_path.read_text())
+
+
+def current_snapshot_failures(current_snapshot: dict) -> list[str]:
+    failures = []
+    if current_snapshot.get("missing_selectors"):
+        failures.append(
+            "Expected selector missing: " + ", ".join(current_snapshot["missing_selectors"][:5])
+        )
+
+    max_noise_count = current_snapshot.get("max_noise_count")
+    rejected_count = current_snapshot.get("rejected_noise_count", 0)
+    if max_noise_count is not None and rejected_count > max_noise_count:
+        failures.append(
+            f"Rejected noise count {rejected_count} exceeded threshold {max_noise_count}"
+        )
+    return failures
 
 
 def compare_snapshot_pair(
@@ -208,12 +360,30 @@ def compare_snapshot_pair(
         failures.append(f"Path drift {path_drift:.3f} exceeded threshold {max_path_drift:.3f}")
     if tag_drift > max_tag_drift:
         failures.append(f"Tag drift {tag_drift:.3f} exceeded threshold {max_tag_drift:.3f}")
+    failures.extend(current_snapshot_failures(current_snapshot))
+
+    baseline_plan_count = baseline_snapshot.get("accepted_plan_count")
+    current_plan_count = current_snapshot.get("accepted_plan_count")
+    max_plan_count_delta = current_snapshot.get("max_plan_count_delta", 2)
+    if baseline_plan_count is not None and current_plan_count is not None:
+        plan_count_delta = abs(int(current_plan_count) - int(baseline_plan_count))
+        if plan_count_delta > int(max_plan_count_delta):
+            failures.append(
+                f"Accepted plan count changed from {baseline_plan_count} "
+                f"to {current_plan_count}"
+            )
 
     return {
         "status": "failed" if failures else "passed",
+        "comparison_status": "failed" if failures else "passed",
         "path_drift": round(path_drift, 6),
         "tag_drift": round(tag_drift, 6),
         "tag_similarity": round(tag_similarity, 6),
+        "accepted_plan_count_delta": (
+            abs(int(current_plan_count) - int(baseline_plan_count))
+            if baseline_plan_count is not None and current_plan_count is not None
+            else None
+        ),
         "structure_hash_changed": baseline_snapshot["structure_hash"]
         != current_snapshot["structure_hash"],
         "text_hash_changed": baseline_snapshot["text_hash"] != current_snapshot["text_hash"],
@@ -266,15 +436,18 @@ def build_summary_markdown(report: dict) -> str:
         f'- Errors: {report["summary"]["errors"]}',
         f'- No baseline: {report["summary"]["no_baseline"]}',
         "",
-        "| Target | Status | Path Drift | Tag Drift | Notes |",
-        "| --- | --- | --- | --- | --- |",
+        "| Target | Role | Status | Plans | Selectors | Path Drift | Tag Drift | Notes |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
 
     for result in report["results"]:
         target_name = f'{result["insurer"]}::{result["domain"]}'
         notes = "; ".join(result.get("failures", []) or result.get("errors", []) or ["-"])
+        selectors = result.get("selector_presence", {})
+        selector_text = f"{sum(1 for present in selectors.values() if present)}/{len(selectors)}"
         lines.append(
-            f"| {target_name} | {result['status']} | "
+            f"| {target_name} | {result.get('page_role', '-')} | {result['status']} | "
+            f"{result.get('accepted_plan_count', '-')} | {selector_text} | "
             f"{result.get('path_drift', '-')} | {result.get('tag_drift', '-')} | {notes} |"
         )
     lines.append("")
@@ -312,6 +485,19 @@ def run_validation(
             )
             result["snapshot_json"] = str(current_json_path)
             result["snapshot_html"] = str(current_html_path)
+            for key in (
+                "captured_at",
+                "page_role",
+                "structure_hash",
+                "text_hash",
+                "expected_selectors",
+                "selector_presence",
+                "missing_selectors",
+                "accepted_plan_count",
+                "expected_plan_count",
+                "rejected_noise_count",
+            ):
+                result[key] = current_snapshot.get(key)
         except Exception as exc:
             result["status"] = "error"
             result["errors"] = [str(exc)]
@@ -319,15 +505,28 @@ def run_validation(
             has_failures = True
             continue
 
+        gate_failures = current_snapshot_failures(current_snapshot)
         if baseline_dir is None:
-            result["status"] = "no_baseline"
+            if gate_failures:
+                result["status"] = "failed"
+                result["comparison_status"] = "failed"
+                result["failures"] = gate_failures
+                has_failures = True
+            else:
+                result["status"] = "no_baseline"
             results.append(result)
             continue
 
         baseline_path = baseline_snapshot_path(baseline_dir, current_snapshot)
         baseline_snapshot = load_snapshot(baseline_path)
         if baseline_snapshot is None:
-            result["status"] = "no_baseline"
+            if gate_failures:
+                result["status"] = "failed"
+                result["comparison_status"] = "failed"
+                result["failures"] = gate_failures
+                has_failures = True
+            else:
+                result["status"] = "no_baseline"
             results.append(result)
             continue
 
