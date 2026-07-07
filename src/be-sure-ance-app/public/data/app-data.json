@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T03:20:05+00:00",
+  "generated_at": "2026-07-07T03:34:09+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -10632,6 +10632,666 @@
       "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html",
       "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf",
       "scraped_at": "2026-07-07T03:20:01.872695+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "High annual claim limit of up to S$2 million per policy year.",
+        "Lifetime coverage with policy-year claim limit reset.",
+        "Pre- and post-hospitalisation coverage when treated by an AIA preferred provider."
+      ],
+      "plan_description": "A MediSave-approved Integrated Shield Plan with private insurance coverage for public or private hospital treatment.",
+      "plan_name": "AIA HealthShield Gold Max",
+      "plan_overview": "High annual claim limit of up to S$2 million per policy year. Lifetime coverage with policy-year claim limit reset. Pre- and post-hospitalisation coverage when treated by an AIA preferred provider.",
+      "plan_slug": "aia-healthshield-gold-max",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-healthshield-gold-max",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Global medical care with high lifetime limit.",
+        "Outpatient treatment and accidental dental treatment coverage.",
+        "Teladoc Health support for specialist guidance and second opinions."
+      ],
+      "plan_description": "Lifetime global medical coverage with access to care in Singapore and overseas.",
+      "plan_name": "AIA Platinum International Health",
+      "plan_overview": "Global medical care with high lifetime limit. Outpatient treatment and accidental dental treatment coverage. Teladoc Health support for specialist guidance and second opinions.",
+      "plan_slug": "aia-platinum-international-health",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/accident-health/aia-platinum-international-health",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Daily cash support during hospitalisation.",
+        "AIA Vitality premium discount eligibility.",
+        "Complements medical insurance for recovery expenses."
+      ],
+      "plan_description": "Hospital income cover that provides a financial buffer during recovery.",
+      "plan_name": "AIA Hospital Income",
+      "plan_overview": "Daily cash support during hospitalisation. AIA Vitality premium discount eligibility. Complements medical insurance for recovery expenses.",
+      "plan_slug": "aia-hospital-income",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-hospital-income",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Protection for pregnancy-related complications.",
+        "Newborn congenital illness coverage.",
+        "Guaranteed lifelong protection option for the child."
+      ],
+      "plan_description": "Maternity insurance for mother and child from pregnancy through post-birth protection.",
+      "plan_name": "AIA Mum2Baby Choices",
+      "plan_overview": "Protection for pregnancy-related complications. Newborn congenital illness coverage. Guaranteed lifelong protection option for the child.",
+      "plan_slug": "aia-mum2baby-choices",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-mum2baby-choices",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Medical insurance support for foreign workers.",
+        "Designed for employers with work pass obligations.",
+        "AIA corporate medical insurance coverage."
+      ],
+      "plan_description": "Corporate medical insurance plan for foreign worker protection.",
+      "plan_name": "AIA Foreign Worker Protector Plus",
+      "plan_overview": "Medical insurance support for foreign workers. Designed for employers with work pass obligations. AIA corporate medical insurance coverage.",
+      "plan_slug": "aia-foreign-worker-protector-plus",
+      "plan_url": "https://www.aia.com.sg/en/our-products/corporate-medical-insurance/aia-foreign-worker-protector-plus",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Regular income support during disability.",
+        "Designed to protect family financial stability.",
+        "Covers inability to work due to covered disability events."
+      ],
+      "plan_description": "Disability income insurance with regular payouts when illness or injury prevents work.",
+      "plan_name": "AIA Premier Disability Cover",
+      "plan_overview": "Regular income support during disability. Designed to protect family financial stability. Covers inability to work due to covered disability events.",
+      "plan_slug": "aia-premier-disability-cover",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/disability-income-insurance/aia-premier-disability-cover",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Income safeguard up to age 65.",
+        "Includes injury, illness and mental condition triggers.",
+        "AIA Vitality premium discount eligibility."
+      ],
+      "plan_description": "Income protection for career pauses caused by injury, illness, mental conditions or job loss.",
+      "plan_name": "AIA Pay Protector",
+      "plan_overview": "Income safeguard up to age 65. Includes injury, illness and mental condition triggers. AIA Vitality premium discount eligibility.",
+      "plan_slug": "aia-pay-protector",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/disability-income-insurance/aia-pay-protector",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Coverage for 150 medical conditions.",
+        "Protection across early, intermediate and major stages.",
+        "Optional relapse protection through UCC Enhancer add-on."
+      ],
+      "plan_description": "Critical illness plan covering early, intermediate and major stages across 150 medical conditions.",
+      "plan_name": "AIA Ultimate Critical Cover",
+      "plan_overview": "Coverage for 150 medical conditions. Protection across early, intermediate and major stages. Optional relapse protection through UCC Enhancer add-on.",
+      "plan_slug": "aia-ultimate-critical-cover",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-ultimate-critical-cover",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Coverage for 187 conditions.",
+        "Choice of coverage terms up to age 65, 75 or 100.",
+        "Safety net cover benefit for selected ICU admissions."
+      ],
+      "plan_description": "Term critical illness plan covering multi-stage, chronic, age-related and future diseases.",
+      "plan_name": "AIA Absolute Critical Cover",
+      "plan_overview": "Coverage for 187 conditions. Choice of coverage terms up to age 65, 75 or 100. Safety net cover benefit for selected ICU admissions.",
+      "plan_slug": "aia-absolute-critical-cover",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-absolute-critical-cover",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Protection for 43 major critical illnesses and 5 relapse conditions.",
+        "Mental illness benefit for covered conditions.",
+        "Premium refund benefit at the end of the policy term."
+      ],
+      "plan_description": "Critical illness plan with major-stage, relapse and mental illness protection.",
+      "plan_name": "AIA Beyond Critical Care",
+      "plan_overview": "Protection for 43 major critical illnesses and 5 relapse conditions. Mental illness benefit for covered conditions. Premium refund benefit at the end of the policy term.",
+      "plan_slug": "aia-beyond-critical-care",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-beyond-critical-care",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Coverage for death, critical illnesses and special conditions.",
+        "Early payouts for selected age-related conditions.",
+        "Health screening benefit."
+      ],
+      "plan_description": "Critical illness plan for adults aged 40 to 70, with cover extending up to age 100.",
+      "plan_name": "AIA Prime Critical Cover",
+      "plan_overview": "Coverage for death, critical illnesses and special conditions. Early payouts for selected age-related conditions. Health screening benefit.",
+      "plan_slug": "aia-prime-critical-cover",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-prime-critical-cover",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Coverage for women-specific critical illnesses.",
+        "Includes osteoporosis, rheumatoid arthritis and breast cancer support.",
+        "Reimbursement for reconstructive surgery after accident or burns."
+      ],
+      "plan_description": "Critical illness plan tailored for women.",
+      "plan_name": "AIA Glow of Life",
+      "plan_overview": "Coverage for women-specific critical illnesses. Includes osteoporosis, rheumatoid arthritis and breast cancer support. Reimbursement for reconstructive surgery after accident or burns.",
+      "plan_slug": "aia-glow-of-life",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-glow-of-life",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Coverage of up to S$700,000.",
+        "100% coverage amount for first diagnosis.",
+        "Coverage for up to 2 major-stage relapses of major cancer."
+      ],
+      "plan_description": "Cancer protection plan with high coverage and relapse benefits.",
+      "plan_name": "AIA Enhanced Cancer Protect",
+      "plan_overview": "Coverage of up to S$700,000. 100% coverage amount for first diagnosis. Coverage for up to 2 major-stage relapses of major cancer.",
+      "plan_slug": "aia-enhanced-cancer-protect",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-enhanced-cancer-protect",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Financial support for key diabetes-related conditions.",
+        "AIA Vitality premium discount eligibility.",
+        "Cancer cover option mentioned by AIA."
+      ],
+      "plan_description": "Critical illness cover created for pre-diabetics and Type 2 diabetics.",
+      "plan_name": "AIA Diabetes Care",
+      "plan_overview": "Financial support for key diabetes-related conditions. AIA Vitality premium discount eligibility. Cancer cover option mentioned by AIA.",
+      "plan_slug": "aia-diabetes-care",
+      "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-diabetes-care",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Coverage for death and total permanent disability.",
+        "Flexible coverage booster.",
+        "Potential accumulated cash value."
+      ],
+      "plan_description": "Participating whole life plan with lifelong coverage and cash value accumulation.",
+      "plan_name": "AIA Guaranteed Protect Plus (IV)",
+      "plan_overview": "Coverage for death and total permanent disability. Flexible coverage booster. Potential accumulated cash value.",
+      "plan_slug": "aia-guaranteed-protect-plus-iv",
+      "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-guaranteed-protect-plus-iv",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Death and terminal illness coverage up to age 100.",
+        "Total and permanent disability benefits up to age 65.",
+        "Potential annual and terminal bonuses."
+      ],
+      "plan_description": "Direct Purchase Insurance whole life plan with protection up to age 100.",
+      "plan_name": "Direct AIA Whole Life Cover (II)",
+      "plan_overview": "Death and terminal illness coverage up to age 100. Total and permanent disability benefits up to age 65. Potential annual and terminal bonuses.",
+      "plan_slug": "direct-aia-whole-life-cover-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/direct-aia-whole-life-cover-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Death, terminal illness and total permanent disability protection.",
+        "Choice of 5-year, 20-year or age-65 coverage terms.",
+        "Designed for affordable premiums."
+      ],
+      "plan_description": "Direct Purchase term insurance for cost-effective family protection.",
+      "plan_name": "Direct - AIA Term Cover",
+      "plan_overview": "Death, terminal illness and total permanent disability protection. Choice of 5-year, 20-year or age-65 coverage terms. Designed for affordable premiums.",
+      "plan_slug": "direct-aia-term-cover",
+      "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/direct-aia-term-cover",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Long-term protection and returns.",
+        "Death, disability and multi-stage critical illness coverage.",
+        "AIA Vitality premium discount eligibility."
+      ],
+      "plan_description": "Whole life protection and investment plan covering death, disability and multi-stage critical illnesses.",
+      "plan_name": "AIA Pro Lifetime Protector (II)",
+      "plan_overview": "Long-term protection and returns. Death, disability and multi-stage critical illness coverage. AIA Vitality premium discount eligibility.",
+      "plan_slug": "aia-pro-lifetime-protector-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-pro-lifetime-protector-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Affordable term life coverage.",
+        "Flexible protection options.",
+        "Designed to safeguard family financial needs."
+      ],
+      "plan_description": "Flexible term life insurance plan for family protection.",
+      "plan_name": "AIA Secure Flexi Term",
+      "plan_overview": "Affordable term life coverage. Flexible protection options. Designed to safeguard family financial needs.",
+      "plan_slug": "aia-secure-flexi-term",
+      "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/aia-secure-flexi-term",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Pay premiums for 10 years.",
+        "Protection up to age 100.",
+        "Flexibility to withdraw annual dividends."
+      ],
+      "plan_description": "Whole life plan with 10-year premium payment and protection up to age 100.",
+      "plan_name": "AIA Life Dividends",
+      "plan_overview": "Pay premiums for 10 years. Protection up to age 100. Flexibility to withdraw annual dividends.",
+      "plan_slug": "aia-life-dividends",
+      "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-life-dividends",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Covers outstanding housing loan on death, disability or terminal illness.",
+        "Premium waiver for covered disability, terminal illness or critical illness.",
+        "Coverage can continue after loan repayment or home sale up to age 75."
+      ],
+      "plan_description": "Mortgage protection insurance covering outstanding housing loan obligations.",
+      "plan_name": "AIA Mortgage Reducing Term Assurance",
+      "plan_overview": "Covers outstanding housing loan on death, disability or terminal illness. Premium waiver for covered disability, terminal illness or critical illness. Coverage can continue after loan repayment or home sale up to age 75.",
+      "plan_slug": "aia-mortgage-reducing-term-assurance",
+      "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/aia-mortgage-reducing-term-assurance",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "24/7 worldwide personal accident coverage.",
+        "Medical and TCM treatment cost reimbursement.",
+        "Food poisoning and dengue fever coverage."
+      ],
+      "plan_description": "Personal accident cover with worldwide accident, dengue, medical and TCM treatment protection.",
+      "plan_name": "AIA Solitaire PA (II)",
+      "plan_overview": "24/7 worldwide personal accident coverage. Medical and TCM treatment cost reimbursement. Food poisoning and dengue fever coverage.",
+      "plan_slug": "aia-solitaire-pa-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-solitaire-personal-accident",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Personal accident protection.",
+        "Optional Alzheimer's Disease, Severe Dementia and Parkinson's Disease benefits.",
+        "Designed to address gaps in standard personal accident cover."
+      ],
+      "plan_description": "Personal accident plan with optional benefits for selected age-related diseases.",
+      "plan_name": "AIA Centurion PA",
+      "plan_overview": "Personal accident protection. Optional Alzheimer's Disease, Severe Dementia and Parkinson's Disease benefits. Designed to address gaps in standard personal accident cover.",
+      "plan_slug": "aia-centurion-pa",
+      "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-centurion-pa",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Coverage of up to S$5 million for accidental death, dismemberment and burns.",
+        "Overseas coverage for frequent travellers.",
+        "Basic health screening at no charge."
+      ],
+      "plan_description": "High-cover personal accident plan for worldwide accident protection.",
+      "plan_name": "AIA Platinum AccidentCare",
+      "plan_overview": "Coverage of up to S$5 million for accidental death, dismemberment and burns. Overseas coverage for frequent travellers. Basic health screening at no charge.",
+      "plan_slug": "aia-platinum-accidentcare",
+      "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-platinum-accidentcare",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Worldwide protection for accidental injuries and burns.",
+        "Coverage for 16 common diseases.",
+        "Designed for children."
+      ],
+      "plan_description": "Child accident protection with worldwide injury, burn and disease coverage.",
+      "plan_name": "AIA Star Protector Plus",
+      "plan_overview": "Worldwide protection for accidental injuries and burns. Coverage for 16 common diseases. Designed for children.",
+      "plan_slug": "aia-star-protector-plus",
+      "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-star-protector-plus",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Accident-related medical cost reimbursement.",
+        "Device damage coverage.",
+        "Unused gym membership and missed entertainment event reimbursement."
+      ],
+      "plan_description": "Personal accident plan for active lifestyles.",
+      "plan_name": "AIA #GenFit PA",
+      "plan_overview": "Accident-related medical cost reimbursement. Device damage coverage. Unused gym membership and missed entertainment event reimbursement.",
+      "plan_slug": "aia-genfit-pa",
+      "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-genfit-pa",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Accidental injury and age-related illness coverage.",
+        "Hospital cash support for accident hospitalisation.",
+        "Reimbursement for home care, mobility aids and selected alternative treatment."
+      ],
+      "plan_description": "Senior-focused accident protection with age-related illness benefits.",
+      "plan_name": "AIA Prime Assured",
+      "plan_overview": "Accidental injury and age-related illness coverage. Hospital cash support for accident hospitalisation. Reimbursement for home care, mobility aids and selected alternative treatment.",
+      "plan_slug": "aia-prime-assured",
+      "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-prime-assured",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Trip cancellation and postponement coverage.",
+        "Travel delay, personal accident and medical expense protection.",
+        "Single-trip and annual multi-trip options."
+      ],
+      "plan_description": "Travel insurance for pre-trip to post-trip protection.",
+      "plan_name": "AIA Around the World Plus (II)",
+      "plan_overview": "Trip cancellation and postponement coverage. Travel delay, personal accident and medical expense protection. Single-trip and annual multi-trip options.",
+      "plan_slug": "aia-around-the-world-plus-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/travel-and-lifestyle/travel/aia-around-the-world-plus-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Home and household protection.",
+        "Family and pet coverage.",
+        "Travel-linked home protection benefits."
+      ],
+      "plan_description": "Home insurance solution covering household, family and pets.",
+      "plan_name": "AIA Elite HomeCare",
+      "plan_overview": "Home and household protection. Family and pet coverage. Travel-linked home protection benefits.",
+      "plan_slug": "aia-elite-homecare",
+      "plan_url": "https://www.aia.com.sg/en/our-products/travel-and-lifestyle/home/aia-elite-homecare",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "100% of regular premiums invested from day one.",
+        "Welcome and special bonus features.",
+        "Optional riders for additional protection."
+      ],
+      "plan_description": "Regular premium investment-linked plan combining wealth accumulation with life protection.",
+      "plan_name": "AIA Pro Achiever 3.0",
+      "plan_overview": "100% of regular premiums invested from day one. Welcome and special bonus features. Optional riders for additional protection.",
+      "plan_slug": "aia-pro-achiever-3-0",
+      "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/investment-linked/aia-pro-achiever-iii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Flexible withdrawals without charges.",
+        "Broad fund and portfolio options.",
+        "Designed for effortless investing."
+      ],
+      "plan_description": "Investment-linked plan for flexible investing using cash, CPF or SRS funds.",
+      "plan_name": "AIA Invest Easy",
+      "plan_overview": "Flexible withdrawals without charges. Broad fund and portfolio options. Designed for effortless investing.",
+      "plan_slug": "aia-invest-easy",
+      "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/investment-linked/aia-invest-easy",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Invest from S$300 a month.",
+        "No medical questions for application.",
+        "Capital guaranteed on basic premiums."
+      ],
+      "plan_description": "Investment-linked whole life plan with capital guarantee on basic premiums.",
+      "plan_name": "AIA Elite Secure Income",
+      "plan_overview": "Invest from S$300 a month. No medical questions for application. Capital guaranteed on basic premiums.",
+      "plan_slug": "aia-elite-secure-income",
+      "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/investment-linked/aia-elite-secure-income",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Designed for long-term wealth accumulation.",
+        "Flexibility to withdraw funds.",
+        "Supports education, retirement and other savings goals."
+      ],
+      "plan_description": "Participating savings plans for wealth accumulation and flexible withdrawals.",
+      "plan_name": "AIA Smart Wealth Builder Series",
+      "plan_overview": "Designed for long-term wealth accumulation. Flexibility to withdraw funds. Supports education, retirement and other savings goals.",
+      "plan_slug": "aia-smart-wealth-builder-series",
+      "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-smart-wealth-builder-series",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Savings insurance for wealth growth.",
+        "Future goal planning support.",
+        "Participating policy benefits."
+      ],
+      "plan_description": "Participating savings plan to grow wealth and budget for future goals.",
+      "plan_name": "AIA Smart Flexi Growth",
+      "plan_overview": "Savings insurance for wealth growth. Future goal planning support. Participating policy benefits.",
+      "plan_slug": "aia-smart-flexi-growth",
+      "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-smart-flexi-growth",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Yearly guaranteed coupon.",
+        "Preferred payment and coverage period options.",
+        "Optional riders to waive future premiums."
+      ],
+      "plan_description": "Flexible savings plan with yearly guaranteed coupon options.",
+      "plan_name": "AIA Smart Flexi Rewards (II)",
+      "plan_overview": "Yearly guaranteed coupon. Preferred payment and coverage period options. Optional riders to waive future premiums.",
+      "plan_slug": "aia-smart-flexi-rewards-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-smart-flexi-rewards-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Designed for retirement savings.",
+        "No medical check-up needed.",
+        "Supports planning before retirement age."
+      ],
+      "plan_description": "Retirement savings plan that can be started without a medical check-up.",
+      "plan_name": "AIA Retirement Saver (IV)",
+      "plan_overview": "Designed for retirement savings. No medical check-up needed. Supports planning before retirement age.",
+      "plan_slug": "aia-retirement-saver-iv",
+      "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-retirement-saver-iv",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Estate transfer and legacy planning.",
+        "US dollar whole life structure.",
+        "Supports intergenerational wealth planning."
+      ],
+      "plan_description": "Legacy planning plan to enhance financial assets and transfer estate according to wishes.",
+      "plan_name": "AIA Platinum Legacy (IX)",
+      "plan_overview": "Estate transfer and legacy planning. US dollar whole life structure. Supports intergenerational wealth planning.",
+      "plan_slug": "aia-platinum-legacy-ix",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-legacy-ix",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Lifetime assurance for policyholder and family.",
+        "Death and terminal illness coverage up to age 100.",
+        "Designed for stable wealth growth."
+      ],
+      "plan_description": "Whole life legacy plan with high guaranteed coverage up to age 100.",
+      "plan_name": "AIA Platinum Heritage Wealth (II)",
+      "plan_overview": "Lifetime assurance for policyholder and family. Death and terminal illness coverage up to age 100. Designed for stable wealth growth.",
+      "plan_slug": "aia-platinum-heritage-wealth-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-heritage-wealth-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "S&P 500-linked indexed strategy.",
+        "Downside protection features.",
+        "Flexible legacy planning."
+      ],
+      "plan_description": "Indexed universal life plan for S&P 500-linked growth and legacy planning.",
+      "plan_name": "AIA Platinum Indexed Legacy (II)",
+      "plan_overview": "S&P 500-linked indexed strategy. Downside protection features. Flexible legacy planning.",
+      "plan_slug": "aia-platinum-indexed-legacy-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-indexed-legacy-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Yearly guaranteed cash coupons from the 10th policy year-end.",
+        "Potential non-guaranteed annual and terminal dividends.",
+        "Designed to extend legacy up to 3 generations."
+      ],
+      "plan_description": "Legacy plan to protect, preserve and grow wealth across generations.",
+      "plan_name": "AIA Platinum Generations (II)",
+      "plan_overview": "Yearly guaranteed cash coupons from the 10th policy year-end. Potential non-guaranteed annual and terminal dividends. Designed to extend legacy up to 3 generations.",
+      "plan_slug": "aia-platinum-generations-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-generations-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Guaranteed return of capital as early as 7th policy year.",
+        "Policy split, change of insured and secondary insured options.",
+        "Single premium or 5-year regular premium options."
+      ],
+      "plan_description": "Wealth accumulation plan with lifetime coverage and liquidity options.",
+      "plan_name": "AIA Platinum Infinite Wealth (II)",
+      "plan_overview": "Guaranteed return of capital as early as 7th policy year. Policy split, change of insured and secondary insured options. Single premium or 5-year regular premium options.",
+      "plan_slug": "aia-platinum-infinite-wealth-ii",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-infinite-wealth-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Single premium and 5-year regular premium options.",
+        "Choice of target monthly retirement income and retirement age.",
+        "Access to AIA Elite Conservative, Balanced and Adventurous portfolios."
+      ],
+      "plan_description": "Retirement plan with SGD and USD wealth accumulation options.",
+      "plan_name": "AIA Platinum Retirement Elite",
+      "plan_overview": "Single premium and 5-year regular premium options. Choice of target monthly retirement income and retirement age. Access to AIA Elite Conservative, Balanced and Adventurous portfolios.",
+      "plan_slug": "aia-platinum-retirement-elite",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-retirement-elite",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Guaranteed monthly coupon up to age 120.",
+        "Non-guaranteed monthly dividend potential.",
+        "Option to change life insured for policy continuity."
+      ],
+      "plan_description": "Wealth accumulation plan designed to supplement lives across three generations.",
+      "plan_name": "AIA Platinum Gift for Life Series",
+      "plan_overview": "Guaranteed monthly coupon up to age 120. Non-guaranteed monthly dividend potential. Option to change life insured for policy continuity.",
+      "plan_slug": "aia-platinum-gift-for-life-series",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-gift-for-life-series",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+    },
+    {
+      "insurer": "aia",
+      "plan_benefits": [
+        "Pay premiums for 5 years.",
+        "Dividend income and reinvestment options through selected ILP funds.",
+        "Welcome and investment bonus features."
+      ],
+      "plan_description": "Investment-linked plan with a short 5-year premium commitment.",
+      "plan_name": "AIA Platinum Wealth Venture 2.0",
+      "plan_overview": "Pay premiums for 5 years. Dividend income and reinvestment options through selected ILP funds. Welcome and investment bonus features.",
+      "plan_slug": "aia-platinum-wealth-venture-2-0",
+      "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-wealth-venture-ii",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T03:34:08.802071+00:00"
     }
   ],
   "scraper_health": [
@@ -10640,11 +11300,11 @@
       "display_name": "Aia",
       "last_error": null,
       "last_failure_at": "2026-07-05T07:48:38.453026+00:00",
-      "last_run_at": "2026-07-07T02:10:00.090896+00:00",
-      "last_success_at": "2026-07-07T02:10:00.090896+00:00",
-      "row_count": 1,
+      "last_run_at": "2026-07-07T03:34:08.824050+00:00",
+      "last_success_at": "2026-07-07T03:34:08.824050+00:00",
+      "row_count": 44,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:34:08.824050+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10655,7 +11315,7 @@
       "last_success_at": "2026-07-05T07:18:04.037817+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10666,7 +11326,7 @@
       "last_success_at": "2026-07-05T07:18:05.385324+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10677,7 +11337,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10688,7 +11348,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10699,7 +11359,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10710,7 +11370,7 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10721,7 +11381,7 @@
       "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10732,7 +11392,7 @@
       "last_success_at": "2026-07-07T03:20:04.296570+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:20:04.296570+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10743,7 +11403,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10751,7 +11411,7 @@
       "display_name": "Allianz",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10759,7 +11419,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10770,7 +11430,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10781,7 +11441,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10792,7 +11452,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10803,7 +11463,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10811,7 +11471,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10819,7 +11479,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10827,7 +11487,7 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10838,7 +11498,7 @@
       "last_success_at": "2026-07-05T07:52:15.650481+00:00",
       "row_count": 16,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10846,7 +11506,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10857,7 +11517,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10865,7 +11525,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10873,7 +11533,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10881,7 +11541,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10889,7 +11549,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "not_run"
     },
     {
@@ -10897,7 +11557,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974534+00:00",
+      "updated_at": "2026-07-07T03:33:57.817875+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -10913,8 +11573,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:11:59.974320+00:00",
-      "validation_checked_at": "2026-07-07T03:11:59.974320+00:00",
+      "updated_at": "2026-07-07T03:33:57.817665+00:00",
+      "validation_checked_at": "2026-07-07T03:33:57.817665+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -39110,6 +39770,666 @@
         "plan_url": "https://www.tokiomarine.com/sg/en/non-life/products/personal/accident/TM-365.html",
         "product_brochure_url": "https://www.tokiomarine.com/content/dam/tokiomarine/sg/non-life/product-personal/accident/TM%20365%20Personal%20Accident%20Insurance_15112022_v2.pdf",
         "scraped_at": "2026-07-07T03:20:01.872695+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "High annual claim limit of up to S$2 million per policy year.",
+          "Lifetime coverage with policy-year claim limit reset.",
+          "Pre- and post-hospitalisation coverage when treated by an AIA preferred provider."
+        ],
+        "plan_description": "A MediSave-approved Integrated Shield Plan with private insurance coverage for public or private hospital treatment.",
+        "plan_name": "AIA HealthShield Gold Max",
+        "plan_overview": "High annual claim limit of up to S$2 million per policy year. Lifetime coverage with policy-year claim limit reset. Pre- and post-hospitalisation coverage when treated by an AIA preferred provider.",
+        "plan_slug": "aia-healthshield-gold-max",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-healthshield-gold-max",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Global medical care with high lifetime limit.",
+          "Outpatient treatment and accidental dental treatment coverage.",
+          "Teladoc Health support for specialist guidance and second opinions."
+        ],
+        "plan_description": "Lifetime global medical coverage with access to care in Singapore and overseas.",
+        "plan_name": "AIA Platinum International Health",
+        "plan_overview": "Global medical care with high lifetime limit. Outpatient treatment and accidental dental treatment coverage. Teladoc Health support for specialist guidance and second opinions.",
+        "plan_slug": "aia-platinum-international-health",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/accident-health/aia-platinum-international-health",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Daily cash support during hospitalisation.",
+          "AIA Vitality premium discount eligibility.",
+          "Complements medical insurance for recovery expenses."
+        ],
+        "plan_description": "Hospital income cover that provides a financial buffer during recovery.",
+        "plan_name": "AIA Hospital Income",
+        "plan_overview": "Daily cash support during hospitalisation. AIA Vitality premium discount eligibility. Complements medical insurance for recovery expenses.",
+        "plan_slug": "aia-hospital-income",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-hospital-income",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Protection for pregnancy-related complications.",
+          "Newborn congenital illness coverage.",
+          "Guaranteed lifelong protection option for the child."
+        ],
+        "plan_description": "Maternity insurance for mother and child from pregnancy through post-birth protection.",
+        "plan_name": "AIA Mum2Baby Choices",
+        "plan_overview": "Protection for pregnancy-related complications. Newborn congenital illness coverage. Guaranteed lifelong protection option for the child.",
+        "plan_slug": "aia-mum2baby-choices",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/medical-insurance/aia-mum2baby-choices",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Medical insurance support for foreign workers.",
+          "Designed for employers with work pass obligations.",
+          "AIA corporate medical insurance coverage."
+        ],
+        "plan_description": "Corporate medical insurance plan for foreign worker protection.",
+        "plan_name": "AIA Foreign Worker Protector Plus",
+        "plan_overview": "Medical insurance support for foreign workers. Designed for employers with work pass obligations. AIA corporate medical insurance coverage.",
+        "plan_slug": "aia-foreign-worker-protector-plus",
+        "plan_url": "https://www.aia.com.sg/en/our-products/corporate-medical-insurance/aia-foreign-worker-protector-plus",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Regular income support during disability.",
+          "Designed to protect family financial stability.",
+          "Covers inability to work due to covered disability events."
+        ],
+        "plan_description": "Disability income insurance with regular payouts when illness or injury prevents work.",
+        "plan_name": "AIA Premier Disability Cover",
+        "plan_overview": "Regular income support during disability. Designed to protect family financial stability. Covers inability to work due to covered disability events.",
+        "plan_slug": "aia-premier-disability-cover",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/disability-income-insurance/aia-premier-disability-cover",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Income safeguard up to age 65.",
+          "Includes injury, illness and mental condition triggers.",
+          "AIA Vitality premium discount eligibility."
+        ],
+        "plan_description": "Income protection for career pauses caused by injury, illness, mental conditions or job loss.",
+        "plan_name": "AIA Pay Protector",
+        "plan_overview": "Income safeguard up to age 65. Includes injury, illness and mental condition triggers. AIA Vitality premium discount eligibility.",
+        "plan_slug": "aia-pay-protector",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/disability-income-insurance/aia-pay-protector",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Coverage for 150 medical conditions.",
+          "Protection across early, intermediate and major stages.",
+          "Optional relapse protection through UCC Enhancer add-on."
+        ],
+        "plan_description": "Critical illness plan covering early, intermediate and major stages across 150 medical conditions.",
+        "plan_name": "AIA Ultimate Critical Cover",
+        "plan_overview": "Coverage for 150 medical conditions. Protection across early, intermediate and major stages. Optional relapse protection through UCC Enhancer add-on.",
+        "plan_slug": "aia-ultimate-critical-cover",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-ultimate-critical-cover",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Coverage for 187 conditions.",
+          "Choice of coverage terms up to age 65, 75 or 100.",
+          "Safety net cover benefit for selected ICU admissions."
+        ],
+        "plan_description": "Term critical illness plan covering multi-stage, chronic, age-related and future diseases.",
+        "plan_name": "AIA Absolute Critical Cover",
+        "plan_overview": "Coverage for 187 conditions. Choice of coverage terms up to age 65, 75 or 100. Safety net cover benefit for selected ICU admissions.",
+        "plan_slug": "aia-absolute-critical-cover",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-absolute-critical-cover",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Protection for 43 major critical illnesses and 5 relapse conditions.",
+          "Mental illness benefit for covered conditions.",
+          "Premium refund benefit at the end of the policy term."
+        ],
+        "plan_description": "Critical illness plan with major-stage, relapse and mental illness protection.",
+        "plan_name": "AIA Beyond Critical Care",
+        "plan_overview": "Protection for 43 major critical illnesses and 5 relapse conditions. Mental illness benefit for covered conditions. Premium refund benefit at the end of the policy term.",
+        "plan_slug": "aia-beyond-critical-care",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-beyond-critical-care",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Coverage for death, critical illnesses and special conditions.",
+          "Early payouts for selected age-related conditions.",
+          "Health screening benefit."
+        ],
+        "plan_description": "Critical illness plan for adults aged 40 to 70, with cover extending up to age 100.",
+        "plan_name": "AIA Prime Critical Cover",
+        "plan_overview": "Coverage for death, critical illnesses and special conditions. Early payouts for selected age-related conditions. Health screening benefit.",
+        "plan_slug": "aia-prime-critical-cover",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-prime-critical-cover",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Coverage for women-specific critical illnesses.",
+          "Includes osteoporosis, rheumatoid arthritis and breast cancer support.",
+          "Reimbursement for reconstructive surgery after accident or burns."
+        ],
+        "plan_description": "Critical illness plan tailored for women.",
+        "plan_name": "AIA Glow of Life",
+        "plan_overview": "Coverage for women-specific critical illnesses. Includes osteoporosis, rheumatoid arthritis and breast cancer support. Reimbursement for reconstructive surgery after accident or burns.",
+        "plan_slug": "aia-glow-of-life",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-glow-of-life",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Coverage of up to S$700,000.",
+          "100% coverage amount for first diagnosis.",
+          "Coverage for up to 2 major-stage relapses of major cancer."
+        ],
+        "plan_description": "Cancer protection plan with high coverage and relapse benefits.",
+        "plan_name": "AIA Enhanced Cancer Protect",
+        "plan_overview": "Coverage of up to S$700,000. 100% coverage amount for first diagnosis. Coverage for up to 2 major-stage relapses of major cancer.",
+        "plan_slug": "aia-enhanced-cancer-protect",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-enhanced-cancer-protect",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Financial support for key diabetes-related conditions.",
+          "AIA Vitality premium discount eligibility.",
+          "Cancer cover option mentioned by AIA."
+        ],
+        "plan_description": "Critical illness cover created for pre-diabetics and Type 2 diabetics.",
+        "plan_name": "AIA Diabetes Care",
+        "plan_overview": "Financial support for key diabetes-related conditions. AIA Vitality premium discount eligibility. Cancer cover option mentioned by AIA.",
+        "plan_slug": "aia-diabetes-care",
+        "plan_url": "https://www.aia.com.sg/en/our-products/health/critical-illness/aia-diabetes-care",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Coverage for death and total permanent disability.",
+          "Flexible coverage booster.",
+          "Potential accumulated cash value."
+        ],
+        "plan_description": "Participating whole life plan with lifelong coverage and cash value accumulation.",
+        "plan_name": "AIA Guaranteed Protect Plus (IV)",
+        "plan_overview": "Coverage for death and total permanent disability. Flexible coverage booster. Potential accumulated cash value.",
+        "plan_slug": "aia-guaranteed-protect-plus-iv",
+        "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-guaranteed-protect-plus-iv",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Death and terminal illness coverage up to age 100.",
+          "Total and permanent disability benefits up to age 65.",
+          "Potential annual and terminal bonuses."
+        ],
+        "plan_description": "Direct Purchase Insurance whole life plan with protection up to age 100.",
+        "plan_name": "Direct AIA Whole Life Cover (II)",
+        "plan_overview": "Death and terminal illness coverage up to age 100. Total and permanent disability benefits up to age 65. Potential annual and terminal bonuses.",
+        "plan_slug": "direct-aia-whole-life-cover-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/direct-aia-whole-life-cover-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Death, terminal illness and total permanent disability protection.",
+          "Choice of 5-year, 20-year or age-65 coverage terms.",
+          "Designed for affordable premiums."
+        ],
+        "plan_description": "Direct Purchase term insurance for cost-effective family protection.",
+        "plan_name": "Direct - AIA Term Cover",
+        "plan_overview": "Death, terminal illness and total permanent disability protection. Choice of 5-year, 20-year or age-65 coverage terms. Designed for affordable premiums.",
+        "plan_slug": "direct-aia-term-cover",
+        "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/direct-aia-term-cover",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Long-term protection and returns.",
+          "Death, disability and multi-stage critical illness coverage.",
+          "AIA Vitality premium discount eligibility."
+        ],
+        "plan_description": "Whole life protection and investment plan covering death, disability and multi-stage critical illnesses.",
+        "plan_name": "AIA Pro Lifetime Protector (II)",
+        "plan_overview": "Long-term protection and returns. Death, disability and multi-stage critical illness coverage. AIA Vitality premium discount eligibility.",
+        "plan_slug": "aia-pro-lifetime-protector-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-pro-lifetime-protector-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Affordable term life coverage.",
+          "Flexible protection options.",
+          "Designed to safeguard family financial needs."
+        ],
+        "plan_description": "Flexible term life insurance plan for family protection.",
+        "plan_name": "AIA Secure Flexi Term",
+        "plan_overview": "Affordable term life coverage. Flexible protection options. Designed to safeguard family financial needs.",
+        "plan_slug": "aia-secure-flexi-term",
+        "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/aia-secure-flexi-term",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Pay premiums for 10 years.",
+          "Protection up to age 100.",
+          "Flexibility to withdraw annual dividends."
+        ],
+        "plan_description": "Whole life plan with 10-year premium payment and protection up to age 100.",
+        "plan_name": "AIA Life Dividends",
+        "plan_overview": "Pay premiums for 10 years. Protection up to age 100. Flexibility to withdraw annual dividends.",
+        "plan_slug": "aia-life-dividends",
+        "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/whole-life-insurance/aia-life-dividends",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Covers outstanding housing loan on death, disability or terminal illness.",
+          "Premium waiver for covered disability, terminal illness or critical illness.",
+          "Coverage can continue after loan repayment or home sale up to age 75."
+        ],
+        "plan_description": "Mortgage protection insurance covering outstanding housing loan obligations.",
+        "plan_name": "AIA Mortgage Reducing Term Assurance",
+        "plan_overview": "Covers outstanding housing loan on death, disability or terminal illness. Premium waiver for covered disability, terminal illness or critical illness. Coverage can continue after loan repayment or home sale up to age 75.",
+        "plan_slug": "aia-mortgage-reducing-term-assurance",
+        "plan_url": "https://www.aia.com.sg/en/our-products/life-insurance/term-insurance/aia-mortgage-reducing-term-assurance",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "24/7 worldwide personal accident coverage.",
+          "Medical and TCM treatment cost reimbursement.",
+          "Food poisoning and dengue fever coverage."
+        ],
+        "plan_description": "Personal accident cover with worldwide accident, dengue, medical and TCM treatment protection.",
+        "plan_name": "AIA Solitaire PA (II)",
+        "plan_overview": "24/7 worldwide personal accident coverage. Medical and TCM treatment cost reimbursement. Food poisoning and dengue fever coverage.",
+        "plan_slug": "aia-solitaire-pa-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-solitaire-personal-accident",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Personal accident protection.",
+          "Optional Alzheimer's Disease, Severe Dementia and Parkinson's Disease benefits.",
+          "Designed to address gaps in standard personal accident cover."
+        ],
+        "plan_description": "Personal accident plan with optional benefits for selected age-related diseases.",
+        "plan_name": "AIA Centurion PA",
+        "plan_overview": "Personal accident protection. Optional Alzheimer's Disease, Severe Dementia and Parkinson's Disease benefits. Designed to address gaps in standard personal accident cover.",
+        "plan_slug": "aia-centurion-pa",
+        "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-centurion-pa",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Coverage of up to S$5 million for accidental death, dismemberment and burns.",
+          "Overseas coverage for frequent travellers.",
+          "Basic health screening at no charge."
+        ],
+        "plan_description": "High-cover personal accident plan for worldwide accident protection.",
+        "plan_name": "AIA Platinum AccidentCare",
+        "plan_overview": "Coverage of up to S$5 million for accidental death, dismemberment and burns. Overseas coverage for frequent travellers. Basic health screening at no charge.",
+        "plan_slug": "aia-platinum-accidentcare",
+        "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-platinum-accidentcare",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Worldwide protection for accidental injuries and burns.",
+          "Coverage for 16 common diseases.",
+          "Designed for children."
+        ],
+        "plan_description": "Child accident protection with worldwide injury, burn and disease coverage.",
+        "plan_name": "AIA Star Protector Plus",
+        "plan_overview": "Worldwide protection for accidental injuries and burns. Coverage for 16 common diseases. Designed for children.",
+        "plan_slug": "aia-star-protector-plus",
+        "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-star-protector-plus",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Accident-related medical cost reimbursement.",
+          "Device damage coverage.",
+          "Unused gym membership and missed entertainment event reimbursement."
+        ],
+        "plan_description": "Personal accident plan for active lifestyles.",
+        "plan_name": "AIA #GenFit PA",
+        "plan_overview": "Accident-related medical cost reimbursement. Device damage coverage. Unused gym membership and missed entertainment event reimbursement.",
+        "plan_slug": "aia-genfit-pa",
+        "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-genfit-pa",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Accidental injury and age-related illness coverage.",
+          "Hospital cash support for accident hospitalisation.",
+          "Reimbursement for home care, mobility aids and selected alternative treatment."
+        ],
+        "plan_description": "Senior-focused accident protection with age-related illness benefits.",
+        "plan_name": "AIA Prime Assured",
+        "plan_overview": "Accidental injury and age-related illness coverage. Hospital cash support for accident hospitalisation. Reimbursement for home care, mobility aids and selected alternative treatment.",
+        "plan_slug": "aia-prime-assured",
+        "plan_url": "https://www.aia.com.sg/en/our-products/accident-protection/aia-prime-assured",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Trip cancellation and postponement coverage.",
+          "Travel delay, personal accident and medical expense protection.",
+          "Single-trip and annual multi-trip options."
+        ],
+        "plan_description": "Travel insurance for pre-trip to post-trip protection.",
+        "plan_name": "AIA Around the World Plus (II)",
+        "plan_overview": "Trip cancellation and postponement coverage. Travel delay, personal accident and medical expense protection. Single-trip and annual multi-trip options.",
+        "plan_slug": "aia-around-the-world-plus-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/travel-and-lifestyle/travel/aia-around-the-world-plus-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Home and household protection.",
+          "Family and pet coverage.",
+          "Travel-linked home protection benefits."
+        ],
+        "plan_description": "Home insurance solution covering household, family and pets.",
+        "plan_name": "AIA Elite HomeCare",
+        "plan_overview": "Home and household protection. Family and pet coverage. Travel-linked home protection benefits.",
+        "plan_slug": "aia-elite-homecare",
+        "plan_url": "https://www.aia.com.sg/en/our-products/travel-and-lifestyle/home/aia-elite-homecare",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "100% of regular premiums invested from day one.",
+          "Welcome and special bonus features.",
+          "Optional riders for additional protection."
+        ],
+        "plan_description": "Regular premium investment-linked plan combining wealth accumulation with life protection.",
+        "plan_name": "AIA Pro Achiever 3.0",
+        "plan_overview": "100% of regular premiums invested from day one. Welcome and special bonus features. Optional riders for additional protection.",
+        "plan_slug": "aia-pro-achiever-3-0",
+        "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/investment-linked/aia-pro-achiever-iii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Flexible withdrawals without charges.",
+          "Broad fund and portfolio options.",
+          "Designed for effortless investing."
+        ],
+        "plan_description": "Investment-linked plan for flexible investing using cash, CPF or SRS funds.",
+        "plan_name": "AIA Invest Easy",
+        "plan_overview": "Flexible withdrawals without charges. Broad fund and portfolio options. Designed for effortless investing.",
+        "plan_slug": "aia-invest-easy",
+        "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/investment-linked/aia-invest-easy",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Invest from S$300 a month.",
+          "No medical questions for application.",
+          "Capital guaranteed on basic premiums."
+        ],
+        "plan_description": "Investment-linked whole life plan with capital guarantee on basic premiums.",
+        "plan_name": "AIA Elite Secure Income",
+        "plan_overview": "Invest from S$300 a month. No medical questions for application. Capital guaranteed on basic premiums.",
+        "plan_slug": "aia-elite-secure-income",
+        "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/investment-linked/aia-elite-secure-income",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Designed for long-term wealth accumulation.",
+          "Flexibility to withdraw funds.",
+          "Supports education, retirement and other savings goals."
+        ],
+        "plan_description": "Participating savings plans for wealth accumulation and flexible withdrawals.",
+        "plan_name": "AIA Smart Wealth Builder Series",
+        "plan_overview": "Designed for long-term wealth accumulation. Flexibility to withdraw funds. Supports education, retirement and other savings goals.",
+        "plan_slug": "aia-smart-wealth-builder-series",
+        "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-smart-wealth-builder-series",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Savings insurance for wealth growth.",
+          "Future goal planning support.",
+          "Participating policy benefits."
+        ],
+        "plan_description": "Participating savings plan to grow wealth and budget for future goals.",
+        "plan_name": "AIA Smart Flexi Growth",
+        "plan_overview": "Savings insurance for wealth growth. Future goal planning support. Participating policy benefits.",
+        "plan_slug": "aia-smart-flexi-growth",
+        "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-smart-flexi-growth",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Yearly guaranteed coupon.",
+          "Preferred payment and coverage period options.",
+          "Optional riders to waive future premiums."
+        ],
+        "plan_description": "Flexible savings plan with yearly guaranteed coupon options.",
+        "plan_name": "AIA Smart Flexi Rewards (II)",
+        "plan_overview": "Yearly guaranteed coupon. Preferred payment and coverage period options. Optional riders to waive future premiums.",
+        "plan_slug": "aia-smart-flexi-rewards-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-smart-flexi-rewards-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Designed for retirement savings.",
+          "No medical check-up needed.",
+          "Supports planning before retirement age."
+        ],
+        "plan_description": "Retirement savings plan that can be started without a medical check-up.",
+        "plan_name": "AIA Retirement Saver (IV)",
+        "plan_overview": "Designed for retirement savings. No medical check-up needed. Supports planning before retirement age.",
+        "plan_slug": "aia-retirement-saver-iv",
+        "plan_url": "https://www.aia.com.sg/en/our-products/save-and-invest/participating-savings/aia-retirement-saver-iv",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Estate transfer and legacy planning.",
+          "US dollar whole life structure.",
+          "Supports intergenerational wealth planning."
+        ],
+        "plan_description": "Legacy planning plan to enhance financial assets and transfer estate according to wishes.",
+        "plan_name": "AIA Platinum Legacy (IX)",
+        "plan_overview": "Estate transfer and legacy planning. US dollar whole life structure. Supports intergenerational wealth planning.",
+        "plan_slug": "aia-platinum-legacy-ix",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-legacy-ix",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Lifetime assurance for policyholder and family.",
+          "Death and terminal illness coverage up to age 100.",
+          "Designed for stable wealth growth."
+        ],
+        "plan_description": "Whole life legacy plan with high guaranteed coverage up to age 100.",
+        "plan_name": "AIA Platinum Heritage Wealth (II)",
+        "plan_overview": "Lifetime assurance for policyholder and family. Death and terminal illness coverage up to age 100. Designed for stable wealth growth.",
+        "plan_slug": "aia-platinum-heritage-wealth-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-heritage-wealth-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "S&P 500-linked indexed strategy.",
+          "Downside protection features.",
+          "Flexible legacy planning."
+        ],
+        "plan_description": "Indexed universal life plan for S&P 500-linked growth and legacy planning.",
+        "plan_name": "AIA Platinum Indexed Legacy (II)",
+        "plan_overview": "S&P 500-linked indexed strategy. Downside protection features. Flexible legacy planning.",
+        "plan_slug": "aia-platinum-indexed-legacy-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-indexed-legacy-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Yearly guaranteed cash coupons from the 10th policy year-end.",
+          "Potential non-guaranteed annual and terminal dividends.",
+          "Designed to extend legacy up to 3 generations."
+        ],
+        "plan_description": "Legacy plan to protect, preserve and grow wealth across generations.",
+        "plan_name": "AIA Platinum Generations (II)",
+        "plan_overview": "Yearly guaranteed cash coupons from the 10th policy year-end. Potential non-guaranteed annual and terminal dividends. Designed to extend legacy up to 3 generations.",
+        "plan_slug": "aia-platinum-generations-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/legacy-planning/aia-platinum-generations-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Guaranteed return of capital as early as 7th policy year.",
+          "Policy split, change of insured and secondary insured options.",
+          "Single premium or 5-year regular premium options."
+        ],
+        "plan_description": "Wealth accumulation plan with lifetime coverage and liquidity options.",
+        "plan_name": "AIA Platinum Infinite Wealth (II)",
+        "plan_overview": "Guaranteed return of capital as early as 7th policy year. Policy split, change of insured and secondary insured options. Single premium or 5-year regular premium options.",
+        "plan_slug": "aia-platinum-infinite-wealth-ii",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-infinite-wealth-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Single premium and 5-year regular premium options.",
+          "Choice of target monthly retirement income and retirement age.",
+          "Access to AIA Elite Conservative, Balanced and Adventurous portfolios."
+        ],
+        "plan_description": "Retirement plan with SGD and USD wealth accumulation options.",
+        "plan_name": "AIA Platinum Retirement Elite",
+        "plan_overview": "Single premium and 5-year regular premium options. Choice of target monthly retirement income and retirement age. Access to AIA Elite Conservative, Balanced and Adventurous portfolios.",
+        "plan_slug": "aia-platinum-retirement-elite",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-retirement-elite",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Guaranteed monthly coupon up to age 120.",
+          "Non-guaranteed monthly dividend potential.",
+          "Option to change life insured for policy continuity."
+        ],
+        "plan_description": "Wealth accumulation plan designed to supplement lives across three generations.",
+        "plan_name": "AIA Platinum Gift for Life Series",
+        "plan_overview": "Guaranteed monthly coupon up to age 120. Non-guaranteed monthly dividend potential. Option to change life insured for policy continuity.",
+        "plan_slug": "aia-platinum-gift-for-life-series",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-gift-for-life-series",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
+      },
+      {
+        "insurer": "aia",
+        "plan_benefits": [
+          "Pay premiums for 5 years.",
+          "Dividend income and reinvestment options through selected ILP funds.",
+          "Welcome and investment bonus features."
+        ],
+        "plan_description": "Investment-linked plan with a short 5-year premium commitment.",
+        "plan_name": "AIA Platinum Wealth Venture 2.0",
+        "plan_overview": "Pay premiums for 5 years. Dividend income and reinvestment options through selected ILP funds. Welcome and investment bonus features.",
+        "plan_slug": "aia-platinum-wealth-venture-2-0",
+        "plan_url": "https://www.aia.com.sg/en/our-products/platinum/wealth-accumulation/aia-platinum-wealth-venture-ii",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T03:34:08.802071+00:00"
       }
     ],
     "scraper_health": [
@@ -39118,11 +40438,11 @@
         "display_name": "Aia",
         "last_error": null,
         "last_failure_at": "2026-07-05T07:48:38.453026+00:00",
-        "last_run_at": "2026-07-07T02:10:00.090896+00:00",
-        "last_success_at": "2026-07-07T02:10:00.090896+00:00",
-        "row_count": 1,
+        "last_run_at": "2026-07-07T03:34:08.824050+00:00",
+        "last_success_at": "2026-07-07T03:34:08.824050+00:00",
+        "row_count": 44,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:34:08.824050+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39133,7 +40453,7 @@
         "last_success_at": "2026-07-05T07:18:04.037817+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39144,7 +40464,7 @@
         "last_success_at": "2026-07-05T07:18:05.385324+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39155,7 +40475,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39166,7 +40486,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39177,7 +40497,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39188,7 +40508,7 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39199,7 +40519,7 @@
         "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39210,7 +40530,7 @@
         "last_success_at": "2026-07-07T03:20:04.296570+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:20:04.296570+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39221,7 +40541,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39229,7 +40549,7 @@
         "display_name": "Allianz",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39237,7 +40557,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39248,7 +40568,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39259,7 +40579,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39270,7 +40590,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39281,7 +40601,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39289,7 +40609,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39297,7 +40617,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39305,7 +40625,7 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39316,7 +40636,7 @@
         "last_success_at": "2026-07-05T07:52:15.650481+00:00",
         "row_count": 16,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39324,7 +40644,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39335,7 +40655,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39343,7 +40663,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39351,7 +40671,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39359,7 +40679,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39367,7 +40687,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "not_run"
       },
       {
@@ -39375,7 +40695,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974534+00:00",
+        "updated_at": "2026-07-07T03:33:57.817875+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -39391,8 +40711,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:11:59.974320+00:00",
-        "validation_checked_at": "2026-07-07T03:11:59.974320+00:00",
+        "updated_at": "2026-07-07T03:33:57.817665+00:00",
+        "validation_checked_at": "2026-07-07T03:33:57.817665+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,

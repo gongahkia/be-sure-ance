@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from src.backend.helper import format_plan_rows
 from src.scrapers.aia import (
     AIA_DIRECT_PRODUCT_URLS,
     build_plan_row,
@@ -13,8 +14,10 @@ from src.scrapers.aia import (
     parse_listing_html,
     parse_product_html,
     parse_product_text,
+    scrape_aia,
 )
 from src.scrapers.comparison_facts import build_fact_row
+from src.validation.plan_quality import validate_plan_rows
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = ROOT / "tests/fixtures"
@@ -134,6 +137,26 @@ class AiaGoldenTests(unittest.TestCase):
         self.assertIn("/accident-protection/aia-prime-assured", urls)
         self.assertIn("/corporate-medical-insurance/aia-foreign-worker-protector-plus", urls)
         self.assertNotIn("/term-life-insurance/", urls)
+
+    def test_category_pages_are_rejected_as_plan_rows(self):
+        row = parse_product_html(
+            (FIXTURES / "aia_reject_category.html").read_text(),
+            "https://www.aia.com.sg/en/our-products/life-insurance",
+        )
+
+        self.assertIsNone(row)
+
+    def test_audited_catalog_outputs_sanitized_supported_rows(self):
+        rows = scrape_aia()
+        names = [row["plan_name"] for row in rows]
+
+        self.assertIn("AIA HealthShield Gold Max", names)
+        self.assertIn("AIA Platinum International Health", names)
+        self.assertIn("AIA Around the World Plus (II)", names)
+        self.assertIn("AIA Platinum Wealth Venture 2.0", names)
+        self.assertNotIn("Life Insurance", names)
+        self.assertGreaterEqual(len(rows), 40)
+        self.assertEqual([], validate_plan_rows(format_plan_rows("aia", rows)))
 
 
 if __name__ == "__main__":
