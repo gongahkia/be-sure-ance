@@ -575,7 +575,7 @@
       "source_year": 2024
     }
   ],
-  "generated_at": "2026-07-07T03:51:27+00:00",
+  "generated_at": "2026-07-07T04:01:47+00:00",
   "mas_regulatory_events": [],
   "plan_comparison_facts": [
     {
@@ -3772,7 +3772,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:13.149476+00:00",
+          "fetched_at": "2026-07-07T04:01:44.919596+00:00",
           "last_modified_at": "Thu, 13 Mar 2025 09:51:42 GMT",
           "sha256": "09be95b0f769f88629d5d6f8bec59ea343f1f7d22d811b31bd2d3384b934b158",
           "size_bytes": 289524,
@@ -3782,9 +3782,9 @@
         }
       },
       "insurer": "etiqa",
-      "last_verified_at": "2026-07-05T07:52:13.149476+00:00",
+      "last_verified_at": "2026-07-07T04:01:44.919596+00:00",
       "plan_slug": "personal-cyber-insurance",
-      "scraped_at": "2026-07-05T07:52:13.149476+00:00",
+      "scraped_at": "2026-07-07T04:01:44.919596+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Etiqa_Policy_Wording_Personal-Cyber-V4-March-2025.pdf"
     },
@@ -3796,7 +3796,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:13.451392+00:00",
+          "fetched_at": "2026-07-07T04:01:45.290804+00:00",
           "last_modified_at": "Tue, 11 Mar 2025 07:59:19 GMT",
           "sha256": "c14dcc3ba984b59e8c65b6454bc89b9d316fc17487a44ba81c38ed60012ffa65",
           "size_bytes": 223450,
@@ -3806,9 +3806,9 @@
         }
       },
       "insurer": "etiqa",
-      "last_verified_at": "2026-07-05T07:52:13.451392+00:00",
+      "last_verified_at": "2026-07-07T04:01:45.290804+00:00",
       "plan_slug": "maid-insurance",
-      "scraped_at": "2026-07-05T07:52:13.451392+00:00",
+      "scraped_at": "2026-07-07T04:01:45.290804+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/maid-insurance-memo.pdf"
     },
@@ -3844,7 +3844,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:13.735340+00:00",
+          "fetched_at": "2026-07-07T04:01:45.394493+00:00",
           "last_modified_at": "Wed, 21 Feb 2024 01:48:55 GMT",
           "sha256": "556718f572fa67d28f07970154ca787a9360d79016ce36b1bde35cb880b6946b",
           "size_bytes": 247941,
@@ -3854,9 +3854,9 @@
         }
       },
       "insurer": "etiqa",
-      "last_verified_at": "2026-07-05T07:52:13.735340+00:00",
+      "last_verified_at": "2026-07-07T04:01:45.394493+00:00",
       "plan_slug": "home-insurance",
-      "scraped_at": "2026-07-05T07:52:13.735340+00:00",
+      "scraped_at": "2026-07-07T04:01:45.394493+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf"
     },
@@ -3868,7 +3868,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:13.927260+00:00",
+          "fetched_at": "2026-07-07T04:01:45.653942+00:00",
           "last_modified_at": "Wed, 12 Jun 2024 02:04:53 GMT",
           "sha256": "1cf0c6ef75a67f748c66f461f6bd33c6067244ecac21b6c6cbf15fb16a42589a",
           "size_bytes": 602503,
@@ -3878,9 +3878,9 @@
         }
       },
       "insurer": "etiqa",
-      "last_verified_at": "2026-07-05T07:52:13.927260+00:00",
+      "last_verified_at": "2026-07-07T04:01:45.653942+00:00",
       "plan_slug": "hdb-fire-insurance",
-      "scraped_at": "2026-07-05T07:52:13.927260+00:00",
+      "scraped_at": "2026-07-07T04:01:45.653942+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/06/hdb-fireinsurance-tcs.pdf"
     },
@@ -3892,7 +3892,7 @@
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:14.160046+00:00",
+          "fetched_at": "2026-07-07T04:01:45.969966+00:00",
           "last_modified_at": "Wed, 04 Jun 2025 07:18:09 GMT",
           "sha256": "4032dd975fd2f64fa9a2fce2ab75c368248809b0aec4be1833089aea52e79d35",
           "size_bytes": 148423,
@@ -3902,9 +3902,9 @@
         }
       },
       "insurer": "etiqa",
-      "last_verified_at": "2026-07-05T07:52:14.160046+00:00",
+      "last_verified_at": "2026-07-07T04:01:45.969966+00:00",
       "plan_slug": "pet-insurance",
-      "scraped_at": "2026-07-05T07:52:14.160046+00:00",
+      "scraped_at": "2026-07-07T04:01:45.969966+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.tiq.com.sg/wp-content/uploads/2024/05/Pet_Insurance_Clinical_Examination_Form.pdf"
     },
@@ -3912,25 +3912,25 @@
       "field_name": "brochure_metadata",
       "field_value": {
         "notes": [],
-        "raw_text": "ePROTECT_motocycle_Brochure.pdf",
+        "raw_text": "ePROTECT-Motorcycle-Policy-Wording-V5.pdf",
         "status": "known",
         "value": {
           "content_type": "application/pdf",
-          "fetched_at": "2026-07-05T07:52:14.241365+00:00",
-          "last_modified_at": "Tue, 11 Mar 2025 08:03:38 GMT",
-          "sha256": "3c7f14f3629fe82c03fa0be9a68143de82967c6e75af49788e59bd23c13a114c",
-          "size_bytes": 756426,
+          "fetched_at": "2026-07-07T04:01:46.065348+00:00",
+          "last_modified_at": "Wed, 15 Oct 2025 06:31:04 GMT",
+          "sha256": "fdaf2a36c5bdc2915b97dea7fee88a49eac149c8dc4a3fd6b77636225067fded",
+          "size_bytes": 423737,
           "storage_bucket": "plan-brochures",
-          "storage_key": "brochures/etiqa/motor-insurance/3c7f14f3629fe82c03fa0be9a68143de82967c6e75af49788e59bd23c13a114c.pdf",
-          "url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/ePROTECT_motocycle_Brochure.pdf"
+          "storage_key": "brochures/etiqa/motor-insurance/fdaf2a36c5bdc2915b97dea7fee88a49eac149c8dc4a3fd6b77636225067fded.pdf",
+          "url": "https://www.tiq.com.sg/wp-content/uploads/2025/10/ePROTECT-Motorcycle-Policy-Wording-V5.pdf"
         }
       },
       "insurer": "etiqa",
-      "last_verified_at": "2026-07-05T07:52:14.241365+00:00",
+      "last_verified_at": "2026-07-07T04:01:46.065348+00:00",
       "plan_slug": "motor-insurance",
-      "scraped_at": "2026-07-05T07:52:14.241365+00:00",
+      "scraped_at": "2026-07-07T04:01:46.065348+00:00",
       "source_type": "brochure_pdf",
-      "source_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/ePROTECT_motocycle_Brochure.pdf"
+      "source_url": "https://www.tiq.com.sg/wp-content/uploads/2025/10/ePROTECT-Motorcycle-Policy-Wording-V5.pdf"
     },
     {
       "field_name": "brochure_metadata",
@@ -6955,6 +6955,78 @@
       "scraped_at": "2026-07-07T03:46:16.802370+00:00",
       "source_type": "brochure_pdf",
       "source_url": "https://www.chinalife.com.sg/sites/default/files/product/China%20Life%20Multiplier%20Guardian%20Supreme%20brochure_ENG.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Commercial-Motor-Policy-Wording-V4.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:01:46.521897+00:00",
+          "last_modified_at": "Wed, 08 Oct 2025 16:14:17 GMT",
+          "sha256": "fa2c319b3a46421928629ce24681dce7ae08c22870c4d70b9321d5dac1794dff",
+          "size_bytes": 266402,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/etiqa/commercial-vehicle-insurance/fa2c319b3a46421928629ce24681dce7ae08c22870c4d70b9321d5dac1794dff.pdf",
+          "url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf"
+        }
+      },
+      "insurer": "etiqa",
+      "last_verified_at": "2026-07-07T04:01:46.521897+00:00",
+      "plan_slug": "commercial-vehicle-insurance",
+      "scraped_at": "2026-07-07T04:01:46.521897+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:01:46.966659+00:00",
+          "last_modified_at": "Mon, 13 Feb 2023 02:06:58 GMT",
+          "sha256": "ff85afc7ef7b3d4782ab4ba63239615a4302d734b22f16d664ae940e70afab56",
+          "size_bytes": 57366,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/etiqa/corporate-travel-insurance/ff85afc7ef7b3d4782ab4ba63239615a4302d734b22f16d664ae940e70afab56.pdf",
+          "url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf"
+        }
+      },
+      "insurer": "etiqa",
+      "last_verified_at": "2026-07-07T04:01:46.966659+00:00",
+      "plan_slug": "corporate-travel-insurance",
+      "scraped_at": "2026-07-07T04:01:46.966659+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf"
+    },
+    {
+      "field_name": "brochure_metadata",
+      "field_value": {
+        "notes": [],
+        "raw_text": "Business_Owners_Super_Suite_Personal_Services_Brochure.pdf",
+        "status": "known",
+        "value": {
+          "content_type": "application/pdf",
+          "fetched_at": "2026-07-07T04:01:47.053370+00:00",
+          "last_modified_at": "Tue, 11 Mar 2025 07:39:06 GMT",
+          "sha256": "820343f26d73defa26ac23a87f65eccb24bcedf5fc70c06f85fe85409257c31b",
+          "size_bytes": 1486127,
+          "storage_bucket": "plan-brochures",
+          "storage_key": "brochures/etiqa/business-owners-super-suite/820343f26d73defa26ac23a87f65eccb24bcedf5fc70c06f85fe85409257c31b.pdf",
+          "url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf"
+        }
+      },
+      "insurer": "etiqa",
+      "last_verified_at": "2026-07-07T04:01:47.053370+00:00",
+      "plan_slug": "business-owners-super-suite",
+      "scraped_at": "2026-07-07T04:01:47.053370+00:00",
+      "source_type": "brochure_pdf",
+      "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf"
     }
   ],
   "plans": [
@@ -7684,326 +7756,6 @@
       "plan_url": "https://www.uoi.com.sg/personal/accident-protection.page",
       "product_brochure_url": "https://www.uoi.com.sg/assets/web-resources/uoi/pdfs/insurance/unipa-brochure.pdf",
       "scraped_at": "2026-07-05T07:21:19.180618+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Check out Etiqa’s range of whole life, term life and critical illness insurance to safeguard your family’s finances in times of need.",
-      "plan_name": "Life & Critical Illness Protection",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Premier Solutions Investments",
-      "plan_slug": "life-critical-illness-protection",
-      "plan_url": "https://www.etiqa.com.sg/personal/life-critical-illness-protection/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Direct-Purchase-Insurance-Fact-Sheet.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Curating a lasting legacy You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. At Etiqa, we can help support your goals at every life stage—whether you want to enjoy your golden years, […]",
-      "plan_name": "Premier Solutions",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Investments",
-      "plan_slug": "premier-solutions",
-      "plan_url": "https://www.etiqa.com.sg/personal/premier-solutions/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Build your wealth and save for life’s milestones with Etiqa’s investment-linked plans. Protect your savings and future with Etiqa’s insurance today!",
-      "plan_name": "Investments",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "investments",
-      "plan_url": "https://www.etiqa.com.sg/personal/investments/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Save up for your retirement with Etiqa’s savings and retirement plans. Protect your savings and future with Etiqa’s insurance today!",
-      "plan_name": "Savings & Retirement",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "savings-retirement",
-      "plan_url": "https://www.etiqa.com.sg/personal/savings-retirement/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Accidents can happen anytime, anywhere. Cover yourself with Etiqa’s personal accident insurance to protect you in unfortunate situations.",
-      "plan_name": "Personal Accident",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "personal-accident",
-      "plan_url": "https://www.etiqa.com.sg/personal/personal-accident/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Protect your digital identity and minimise risks with Etiqa’s cyber insurance. At less than $10 a month, we insure you for $25,000! Get your quote!",
-      "plan_name": "Personal Cyber Insurance",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "personal-cyber-insurance",
-      "plan_url": "https://www.etiqa.com.sg/personal/personal-cyber-insurance/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Etiqa_Policy_Wording_Personal-Cyber-V4-March-2025.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Maid Insurance Maid Insurance Your domestic helper is a key member of your household. Getting her insured will in turn lessen your burden should the unexpected happen. What you can get Personal accident protection From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in […]",
-      "plan_name": "Maid Insurance",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "maid-insurance",
-      "plan_url": "https://www.etiqa.com.sg/personal/maid-insurance/",
-      "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/maid-insurance-memo.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "We provide travel cover from flight cancellations and delays, lost luggage, medical expenses to emergency evacuation. Get your travel insurance quote today!",
-      "plan_name": "Travel Insurance",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "travel-insurance",
-      "plan_url": "https://www.etiqa.com.sg/personal/travel-insurance/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Keep the home where you belong, and your belongings safe! Etiqa’s home insurance plans protect your property, mortgage and family.",
-      "plan_name": "Home Insurance",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "home-insurance",
-      "plan_url": "https://www.etiqa.com.sg/personal/home-insurance/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Financial protection for the building structures, fixtures and fittings of your HDB flat in the event of a fire.",
-      "plan_name": "HDB Fire Insurance",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "hdb-fire-insurance",
-      "plan_url": "https://www.etiqa.com.sg/personal/fire-insurance/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/06/hdb-fireinsurance-tcs.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Providing the best care for your dogs and cats should never lead to a financial burden. Make a proactive choice to safeguard their health and wellbeing.",
-      "plan_name": "Pet Insurance",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "pet-insurance",
-      "plan_url": "https://www.etiqa.com.sg/personal/pet-insurance/",
-      "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2024/05/Pet_Insurance_Clinical_Examination_Form.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Check out Etiqa’s highly customisable vehicle insurance plans that offer you peace of mind on the roads!",
-      "plan_name": "Motor Insurance",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "motor-insurance",
-      "plan_url": "https://www.etiqa.com.sg/personal/motor-insurance/",
-      "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/ePROTECT_motocycle_Brochure.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Protect your employees against injuries, death and permanent disabilities, with Etiqa’s Accident & Health insurance plan.",
-      "plan_name": "Accident & Health",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "accident-health",
-      "plan_url": "https://www.etiqa.com.sg/business-insurance/accident-health/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/06/Foreign-Workers-Medical-Annual-Policy-Wording_on-and-after-1-July-2023.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Cover your commercial vehicle against accidents with Etiqa’s Commercial Vehicle Insurance!",
-      "plan_name": "Commercial Vehicle",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "commercial-vehicle",
-      "plan_url": "https://www.etiqa.com.sg/business-insurance/commercial-vehicle/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Corporate Travel Insurance Protect your employees for their business travel What you can get High Trip Cancellation Expenses coverage of $10,000 High coverage for medical expenses in Singapore for up to $50,000 Free leisure travel extension for named employees Covers up to 180 days for each business trip Comes with COVID-19 coverage 24-hour emergency travel hotline […]",
-      "plan_name": "Corporate Travel",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "corporate-travel",
-      "plan_url": "https://www.etiqa.com.sg/business-insurance/corporate-travel/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-    },
-    {
-      "insurer": "etiqa",
-      "plan_benefits": [
-        "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-        "Find products & services best suited to your protection needs",
-        "Life & Critical Illness Protection",
-        "Personal Accident",
-        "Personal Cyber Insurance",
-        "Maid Insurance",
-        "Travel Insurance",
-        "Home Insurance"
-      ],
-      "plan_description": "Protect your property from damage or loss with Etiqa’s Property Insurance today!",
-      "plan_name": "Property",
-      "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-      "plan_slug": "property",
-      "plan_url": "https://www.etiqa.com.sg/business-insurance/property/",
-      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Industrial-All-Risks-Insurance-Policy-Wording.pdf",
-      "scraped_at": "2026-07-05T07:52:12.169042+00:00"
     },
     {
       "insurer": "income",
@@ -12144,6 +11896,353 @@
       "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
       "product_brochure_url": "",
       "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Direct Purchase Insurance (DPI) – identified by the prefix “DIRECT” in their product names – are life insurance products that you can buy directly from insurance companies, without paying any intermediary fee.",
+        "You may consider our ePROTECT term life policy, which can provide coverage up till S$2 million.",
+        "Yes, you will be covered as long as you continue paying your premiums.",
+        "The easiest way to get life insurance from Etiqa is through our online portal. You can also contact our friendly Customer Care team ."
+      ],
+      "plan_description": "Check out Etiqa’s range of whole life, term life and critical illness insurance to safeguard your family’s finances in times of need.",
+      "plan_name": "Life & Critical Illness Protection",
+      "plan_overview": "Check out Etiqa’s range of whole life, term life and critical illness insurance to safeguard your family’s finances in times of need. Direct Purchase Insurance (DPI) – identified by the prefix “DIRECT” in their product names – are life insurance products that you can buy directly from insurance companies, without paying any intermediary fee. You may consider our ePROTECT term life policy, which can provide coverage up till S$2 million. Yes, you will be covered as long as you continue paying your premiums.",
+      "plan_slug": "life-critical-illness-protection",
+      "plan_url": "https://www.etiqa.com.sg/personal/life-critical-illness-protection/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation.",
+        "Effectively allocate your wealth to balance risk and potential rewards.",
+        "The overall value of your investment portfolio is well protected against market uncertainty when you diversify with any one of Etiqa’s Premier solutions.",
+        "You can build your wealth to protect your lifestyle and safeguard the future of your loved ones. A well-structured plan will help protect your family’s finances now and later.",
+        "Protect your existing lifestyle even in retirement",
+        "Today’s business landscape can be full of uncertainty. Legacy planning can help protect your business and ensure that it continues to operate smoothly even in today’s unpredictable times.",
+        "Protect the business you’ve built"
+      ],
+      "plan_description": "Curating a lasting legacy You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. At Etiqa, we can help support your goals at every life stage—whether you want to enjoy your golden years, […]",
+      "plan_name": "Premier Solutions",
+      "plan_overview": "Curating a lasting legacy You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. At Etiqa, we can help support your goals at every life stage—whether you want to enjoy your golden years, […] You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. Effectively allocate your wealth to balance risk and potential rewards. The overall value of your investment portfolio is well protected against market uncertainty when you diversify with any one of Etiqa’s Premier solutions.",
+      "plan_slug": "premier-solutions",
+      "plan_url": "https://www.etiqa.com.sg/personal/premier-solutions/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Investment-linked plans for wealth accumulation and life milestones."
+      ],
+      "plan_description": "Build your wealth and save for life’s milestones with Etiqa’s investment-linked plans. Protect your savings and future with Etiqa’s insurance today!",
+      "plan_name": "Investments",
+      "plan_overview": "Build your wealth and save for life’s milestones with Etiqa’s investment-linked plans. Protect your savings and future with Etiqa’s insurance today! Investment-linked plans for wealth accumulation and life milestones.",
+      "plan_slug": "investments",
+      "plan_url": "https://www.etiqa.com.sg/personal/investments/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Savings and retirement insurance plans for future income and goals."
+      ],
+      "plan_description": "Save up for your retirement with Etiqa’s savings and retirement plans. Protect your savings and future with Etiqa’s insurance today!",
+      "plan_name": "Savings & Retirement",
+      "plan_overview": "Save up for your retirement with Etiqa’s savings and retirement plans. Protect your savings and future with Etiqa’s insurance today! Savings and retirement insurance plans for future income and goals.",
+      "plan_slug": "savings-retirement",
+      "plan_url": "https://www.etiqa.com.sg/personal/savings-retirement/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Personal accident insurance for injuries, disability and related financial support."
+      ],
+      "plan_description": "Accidents can happen anytime, anywhere. Cover yourself with Etiqa’s personal accident insurance to protect you in unfortunate situations.",
+      "plan_name": "Personal Accident",
+      "plan_overview": "Accidents can happen anytime, anywhere. Cover yourself with Etiqa’s personal accident insurance to protect you in unfortunate situations. Personal accident insurance for injuries, disability and related financial support.",
+      "plan_slug": "personal-accident",
+      "plan_url": "https://www.etiqa.com.sg/personal/personal-accident/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Cyber insurance for digital identity, online risk and fraud exposure."
+      ],
+      "plan_description": "Protect your digital identity and minimise risks with Etiqa’s cyber insurance. At less than $10 a month, we insure you for $25,000! Get your quote!",
+      "plan_name": "Personal Cyber Insurance",
+      "plan_overview": "Protect your digital identity and minimise risks with Etiqa’s cyber insurance. At less than $10 a month, we insure you for $25,000! Get your quote! Cyber insurance for digital identity, online risk and fraud exposure.",
+      "plan_slug": "personal-cyber-insurance",
+      "plan_url": "https://www.etiqa.com.sg/personal/personal-cyber-insurance/",
+      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Etiqa_Policy_Wording_Personal-Cyber-V4-March-2025.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in the event of an accident or injury.",
+        "Should your helper be hospitalised, we will provide a daily payout for you to hire temporary help. We will also give a recuperation benefit of up to S$20, for each day your helper is hospitalised.",
+        "Coverage for your home contents due to fire, burglary or theft by maid.",
+        "In the event maid causes accidental bodily injury and/or accidental damage to third party."
+      ],
+      "plan_description": "Your domestic helper is a key member of your household. Getting her insured will in turn lessen your burden should the unexpected happen. What you can get Personal accident protection From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in […]",
+      "plan_name": "Maid Insurance",
+      "plan_overview": "Your domestic helper is a key member of your household. Getting her insured will in turn lessen your burden should the unexpected happen. What you can get Personal accident protection From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in […] From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in the event of an accident or injury. Should your helper be hospitalised, we will provide a daily payout for you to hire temporary help. We will also give a recuperation benefit of up to S$20, for each day your helper is hospitalised. Coverage for your home contents due to fire, burglary or theft by maid.",
+      "plan_slug": "maid-insurance",
+      "plan_url": "https://www.etiqa.com.sg/personal/maid-insurance/",
+      "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/maid-insurance-memo.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Our Travel Insurance plans now come with COVID-19 add-on. Should you be diagnosed with COVID-19 before, during or after your trip, we cover you for trip postponement or cancellation, overseas medical, evacuation expenses & more!"
+      ],
+      "plan_description": "We provide travel cover from flight cancellations and delays, lost luggage, medical expenses to emergency evacuation. Get your travel insurance quote today!",
+      "plan_name": "Travel Insurance",
+      "plan_overview": "We provide travel cover from flight cancellations and delays, lost luggage, medical expenses to emergency evacuation. Get your travel insurance quote today! Our Travel Insurance plans now come with COVID-19 add-on. Should you be diagnosed with COVID-19 before, during or after your trip, we cover you for trip postponement or cancellation, overseas medical, evacuation expenses & more!",
+      "plan_slug": "travel-insurance",
+      "plan_url": "https://www.etiqa.com.sg/personal/travel-insurance/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Protect what belongs to you"
+      ],
+      "plan_description": "Keep the home where you belong, and your belongings safe! Etiqa’s home insurance plans protect your property, mortgage and family.",
+      "plan_name": "Home Insurance",
+      "plan_overview": "Keep the home where you belong, and your belongings safe! Etiqa’s home insurance plans protect your property, mortgage and family. Protect what belongs to you",
+      "plan_slug": "home-insurance",
+      "plan_url": "https://www.etiqa.com.sg/personal/home-insurance/",
+      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Appointed Insurer for the HDB Fire Insurance Scheme",
+        "Homeowners with HDB loans commencing on or after 1 September 1994 are required to buy and renew HDB Fire Insurance every 5 years, for the entire loan period.",
+        "Covers damage caused by fire to the building, structures, fixtures, and fittings provided by HDB and its approved developers.",
+        "Includes extension to cover fires in adjoining properties and water damage from burst pipes.",
+        "Boost coverage for your home contents and renovation by adding on Tiq Home Insurance.",
+        "HDB Fire insurance covers fire damage to building structures, fixtures, and fittings provided by the HDB or its approved developers.",
+        "Tiq Home insurance offers a wider coverage as follows:",
+        "loss or damage to home contents and renovations including the cost of removing debris"
+      ],
+      "plan_description": "Financial protection for the building structures, fixtures and fittings of your HDB flat in the event of a fire.",
+      "plan_name": "HDB Fire Insurance",
+      "plan_overview": "Financial protection for the building structures, fixtures and fittings of your HDB flat in the event of a fire. Appointed Insurer for the HDB Fire Insurance Scheme Homeowners with HDB loans commencing on or after 1 September 1994 are required to buy and renew HDB Fire Insurance every 5 years, for the entire loan period. Covers damage caused by fire to the building, structures, fixtures, and fittings provided by HDB and its approved developers.",
+      "plan_slug": "hdb-fire-insurance",
+      "plan_url": "https://www.etiqa.com.sg/personal/fire-insurance/",
+      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/06/hdb-fireinsurance-tcs.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Industry-leading coverage for surgical and non-surgical procedures, accidental injuries, congenital, and hereditary conditions.",
+        "No-claim discounts, multi-pet discounts, and additional coverage for final expenses",
+        "For pet enrolled before the age 4, there will be a 20% Co-Insurance."
+      ],
+      "plan_description": "Providing the best care for your dogs and cats should never lead to a financial burden. Make a proactive choice to safeguard their health and wellbeing.",
+      "plan_name": "Pet Insurance",
+      "plan_overview": "Providing the best care for your dogs and cats should never lead to a financial burden. Make a proactive choice to safeguard their health and wellbeing. Industry-leading coverage for surgical and non-surgical procedures, accidental injuries, congenital, and hereditary conditions. No-claim discounts, multi-pet discounts, and additional coverage for final expenses For pet enrolled before the age 4, there will be a 20% Co-Insurance.",
+      "plan_slug": "pet-insurance",
+      "plan_url": "https://www.etiqa.com.sg/personal/pet-insurance/",
+      "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2024/05/Pet_Insurance_Clinical_Examination_Form.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Customisable motor insurance for road and vehicle protection."
+      ],
+      "plan_description": "Check out Etiqa’s highly customisable vehicle insurance plans that offer you peace of mind on the roads!",
+      "plan_name": "Motor Insurance",
+      "plan_overview": "Check out Etiqa’s highly customisable vehicle insurance plans that offer you peace of mind on the roads! Customisable motor insurance for road and vehicle protection.",
+      "plan_slug": "motor-insurance",
+      "plan_url": "https://www.etiqa.com.sg/personal/motor-insurance/",
+      "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/10/ePROTECT-Motorcycle-Policy-Wording-V5.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Special nursing and medical ancillary services and consumable items",
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+      ],
+      "plan_description": "Protect your employees against injuries, death and permanent disabilities, with Etiqa’s Accident & Health insurance plan.",
+      "plan_name": "Accident & Health Insurance",
+      "plan_overview": "Protect your employees against injuries, death and permanent disabilities, with Etiqa’s Accident & Health insurance plan. Special nursing and medical ancillary services and consumable items Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or... In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+      "plan_slug": "accident-health-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/accident-health/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Keep your business running, by ensuring that your vehicles are protected by our Commercial Vehicle Insurance.",
+        "Enjoy the flexibility of choosing from our range of solutions that include comprehensive cover and third party liabilities.",
+        "Be assured that your claims are processed quickly with Etiqa’s award-winning claims team.",
+        "Claim for a towing service for up to S$200.",
+        "The information contained on this product advertisement is intended to be valid in Singapore only and shall not be construed as an offer to sell or solicitation to buy or provision of any insurance product outside Singapore.",
+        "We offer insurance for vehicles used for commercial purposes that is registered under a company, covering vehicle types like Lorry, Station Wagon, Pickup, Vans and Refrigerated Vehicle. Excluding vehicles that are used for hire, such as Grab or Uber used cars.",
+        "These three types provide different coverage level:",
+        "Comprehensive covers for your legal liability to third party’s bodily injury and property damage, as well as loss or damage to your own vehicle."
+      ],
+      "plan_description": "Cover your commercial vehicle against accidents with Etiqa’s Commercial Vehicle Insurance!",
+      "plan_name": "Commercial Vehicle Insurance",
+      "plan_overview": "Cover your commercial vehicle against accidents with Etiqa’s Commercial Vehicle Insurance! Keep your business running, by ensuring that your vehicles are protected by our Commercial Vehicle Insurance. Enjoy the flexibility of choosing from our range of solutions that include comprehensive cover and third party liabilities. Be assured that your claims are processed quickly with Etiqa’s award-winning claims team.",
+      "plan_slug": "commercial-vehicle-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/commercial-vehicle/",
+      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "We’ve got your business covered if you are found legally responsible for an accident that causes injuries to others or damage to another person’s property.",
+        "Safeguard your business if you are found legally responsible for an accident or property damage arising from the manufacture or sale of products.",
+        "Provide your platform workers with comprehensive coverage against work-related injuries and fatalities",
+        "Our policy protects your employees against injuries or death while doing their job.",
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+      ],
+      "plan_description": "Protect your business with Etiqa’s Casualty insurance plan against accidental damage or injury to others.",
+      "plan_name": "Casualty Insurance",
+      "plan_overview": "Protect your business with Etiqa’s Casualty insurance plan against accidental damage or injury to others. We’ve got your business covered if you are found legally responsible for an accident that causes injuries to others or damage to another person’s property. Safeguard your business if you are found legally responsible for an accident or property damage arising from the manufacture or sale of products. Provide your platform workers with comprehensive coverage against work-related injuries and fatalities",
+      "plan_slug": "casualty-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/casualty/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+      ],
+      "plan_description": "Protect your employees for their business travel What you can get High Trip Cancellation Expenses coverage of $10,000 High coverage for medical expenses in Singapore for up to $50,000 Free leisure travel extension for named employees Covers up to 180 days for each business trip Comes with COVID-19 coverage 24-hour emergency travel hotline […]",
+      "plan_name": "Corporate Travel Insurance",
+      "plan_overview": "Protect your employees for their business travel What you can get High Trip Cancellation Expenses coverage of $10,000 High coverage for medical expenses in Singapore for up to $50,000 Free leisure travel extension for named employees Covers up to 180 days for each business trip Comes with COVID-19 coverage 24-hour emergency travel hotline […] Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or... In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I... In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+      "plan_slug": "corporate-travel-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/corporate-travel/",
+      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "During the construction and erection phases, your business will be covered for any accidents and injuries, and against any loss or damage to the property.",
+        "Get your electronic equipment covered for any loss or damage due to accidents, with our plan that protects for:",
+        "Material damage: Accidental physical loss of or damage to electronic hardware",
+        "Protect your plant and machinery from physical loss, damage and faulty design. Your coverage includes the loss of profits that results from the machinery breakdown.",
+        "Get protection from loss of or damage to refrigerated stock that is on your insured premises.",
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ..."
+      ],
+      "plan_description": "Cover your machines and equipment against unexpected risks during a construction or installation project with Etiqa’s Engineering Insurance!",
+      "plan_name": "Engineering Insurance",
+      "plan_overview": "Cover your machines and equipment against unexpected risks during a construction or installation project with Etiqa’s Engineering Insurance! During the construction and erection phases, your business will be covered for any accidents and injuries, and against any loss or damage to the property. Get your electronic equipment covered for any loss or damage due to accidents, with our plan that protects for: Material damage: Accidental physical loss of or damage to electronic hardware",
+      "plan_slug": "engineering-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/engineering/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Get covered against loss or damage to your cargo when it is in transit between countries, via air, sea, or land.",
+        "Protect your goods against loss or damage while it is being transported by land.",
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+      ],
+      "plan_description": "Protect your cargo from damage or loss while in transit with Etiqa’s Marine Insurance today!",
+      "plan_name": "Marine Insurance",
+      "plan_overview": "Protect your cargo from damage or loss while in transit with Etiqa’s Marine Insurance today! Get covered against loss or damage to your cargo when it is in transit between countries, via air, sea, or land. Protect your goods against loss or damage while it is being transported by land. Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+      "plan_slug": "marine-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/marine/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Clinic and medical centre, excluding contagious and infectious disease extension",
+        "Decline risks: Wet, food and entertainment led with heavy entertainment and late licences with door staff and door charges. Heavy entertainment would include discos/bands with dancing facilities on a regular (weekly) basis with opening hours usually past 1am.",
+        "Insurance brokers and agents",
+        "Drugs and medical products, such as pharmacies",
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+      ],
+      "plan_description": "Our ‘BOSS’ (Business Owners Super Suite) insurance plans make it easy for small and medium-sized businesses to get the protection they need. PERSONAL SERVICES EDUCATION PUB AND RESTAURANT LIGHT INDUSTRIES OFFICE RETAIL PERSONAL SERVICES Personal Services Protect your personal services business and employees from the unexpected with the Etiqa BOSS suite tailored […]",
+      "plan_name": "Business Owners Super Suite",
+      "plan_overview": "Our ‘BOSS’ (Business Owners Super Suite) insurance plans make it easy for small and medium-sized businesses to get the protection they need. PERSONAL SERVICES EDUCATION PUB AND RESTAURANT LIGHT INDUSTRIES OFFICE RETAIL PERSONAL SERVICES Personal Services Protect your personal services business and employees from the unexpected with the Etiqa BOSS suite tailored […] Clinic and medical centre, excluding contagious and infectious disease extension Decline risks: Wet, food and entertainment led with heavy entertainment and late licences with door staff and door charges. Heavy entertainment would include discos/bands with dancing facilities on a regular (weekly) basis with opening hours usually past 1am. Insurance brokers and agents",
+      "plan_slug": "business-owners-super-suite",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/business-owners-super-suite/",
+      "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Protect the glass used in your business with coverage for glass breakage, and the cost of shoring and propping the damaged parts of the insured property.",
+        "If your business handles cash, this will cover you against accidental loss of money and/or securities within your insured premises or during transit.",
+        "Secure your property against any financial loss due to damaged property, theft or attempted theft.",
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+      ],
+      "plan_description": "Guard against various risks with Etiqa’s Miscellaneous Insurance that covers plate glass, money, burglary and fraud!",
+      "plan_name": "Miscellaneous Insurance",
+      "plan_overview": "Guard against various risks with Etiqa’s Miscellaneous Insurance that covers plate glass, money, burglary and fraud! Protect the glass used in your business with coverage for glass breakage, and the cost of shoring and propping the damaged parts of the insured property. If your business handles cash, this will cover you against accidental loss of money and/or securities within your insured premises or during transit. Secure your property against any financial loss due to damaged property, theft or attempted theft.",
+      "plan_slug": "miscellaneous-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/miscellaneous/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+    },
+    {
+      "insurer": "etiqa",
+      "plan_benefits": [
+        "Your property is protected with this comprehensive cover against any accidental loss or damage.",
+        "Cover your property against loss or damage that is caused by:",
+        "Vehicle impact damage",
+        "We have you covered against loss of profits or revenue, if it is due to a business interruption that damaged your property.",
+        "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+      ],
+      "plan_description": "Protect your property from damage or loss with Etiqa’s Property Insurance today!",
+      "plan_name": "Property Insurance",
+      "plan_overview": "Protect your property from damage or loss with Etiqa’s Property Insurance today! Your property is protected with this comprehensive cover against any accidental loss or damage. Cover your property against loss or damage that is caused by: Vehicle impact damage",
+      "plan_slug": "property-insurance",
+      "plan_url": "https://www.etiqa.com.sg/business-insurance/property/",
+      "product_brochure_url": "",
+      "scraped_at": "2026-07-07T04:01:44.911533+00:00"
     }
   ],
   "scraper_health": [
@@ -12156,7 +12255,7 @@
       "last_success_at": "2026-07-07T03:34:08.824050+00:00",
       "row_count": 44,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12167,7 +12266,7 @@
       "last_success_at": "2026-07-07T03:46:19.376563+00:00",
       "row_count": 29,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12178,7 +12277,7 @@
       "last_success_at": "2026-07-07T03:51:27.242218+00:00",
       "row_count": 9,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:27.242218+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12189,7 +12288,7 @@
       "last_success_at": "2026-07-07T02:51:49.407319+00:00",
       "row_count": 27,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12200,7 +12299,7 @@
       "last_success_at": "2026-07-05T07:19:25.287067+00:00",
       "row_count": 24,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12211,7 +12310,7 @@
       "last_success_at": "2026-07-05T07:19:28.162614+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12222,7 +12321,7 @@
       "last_success_at": "2026-07-07T03:04:02.152937+00:00",
       "row_count": 50,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12233,7 +12332,7 @@
       "last_success_at": "2026-07-07T03:11:44.929496+00:00",
       "row_count": 2,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12244,7 +12343,7 @@
       "last_success_at": "2026-07-07T03:20:04.296570+00:00",
       "row_count": 3,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12255,7 +12354,7 @@
       "last_success_at": "2026-07-05T07:21:26.497812+00:00",
       "row_count": 4,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12266,7 +12365,7 @@
       "last_success_at": "2026-07-07T03:39:55.246857+00:00",
       "row_count": 18,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12274,7 +12373,7 @@
       "display_name": "China Taiping",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12285,7 +12384,7 @@
       "last_success_at": "2026-07-07T02:39:25.455387+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12296,7 +12395,7 @@
       "last_success_at": "2026-07-05T07:53:15.533958+00:00",
       "row_count": 1,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12307,7 +12406,7 @@
       "last_success_at": "2026-07-07T02:29:48.132708+00:00",
       "row_count": 39,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12318,7 +12417,7 @@
       "last_success_at": "2026-07-07T02:19:47.089571+00:00",
       "row_count": 8,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12326,7 +12425,7 @@
       "display_name": "Allied World",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12334,7 +12433,7 @@
       "display_name": "Aig",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12342,18 +12441,18 @@
       "display_name": "Ergo",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
       "carrier_key": "etiqa",
       "display_name": "Etiqa",
       "last_error": null,
-      "last_run_at": "2026-07-05T07:52:15.650481+00:00",
-      "last_success_at": "2026-07-05T07:52:15.650481+00:00",
-      "row_count": 16,
+      "last_run_at": "2026-07-07T04:01:47.198478+00:00",
+      "last_success_at": "2026-07-07T04:01:47.198478+00:00",
+      "row_count": 21,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:01:47.198478+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12361,7 +12460,7 @@
       "display_name": "Hl Assurance",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12372,7 +12471,7 @@
       "last_success_at": "2026-07-05T07:53:00.813158+00:00",
       "row_count": 13,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12380,7 +12479,7 @@
       "display_name": "Liberty",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12388,7 +12487,7 @@
       "display_name": "Lonpac",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12396,7 +12495,7 @@
       "display_name": "Qbe",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12404,7 +12503,7 @@
       "display_name": "Sompo",
       "row_count": 0,
       "support_status": "supported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "not_run"
     },
     {
@@ -12412,7 +12511,7 @@
       "display_name": "Direct Asia",
       "row_count": 0,
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614235+00:00",
+      "updated_at": "2026-07-07T04:00:15.829770+00:00",
       "validation_status": "unsupported"
     },
     {
@@ -12428,8 +12527,8 @@
       "carrier_key": "demo",
       "display_name": "Demo",
       "support_status": "unsupported",
-      "updated_at": "2026-07-07T03:51:26.614063+00:00",
-      "validation_checked_at": "2026-07-07T03:51:26.614063+00:00",
+      "updated_at": "2026-07-07T04:00:15.829412+00:00",
+      "validation_checked_at": "2026-07-07T04:00:15.829412+00:00",
       "validation_status": "failed",
       "validation_summary": {
         "errors": 0,
@@ -33765,7 +33864,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:13.149476+00:00",
+            "fetched_at": "2026-07-07T04:01:44.919596+00:00",
             "last_modified_at": "Thu, 13 Mar 2025 09:51:42 GMT",
             "sha256": "09be95b0f769f88629d5d6f8bec59ea343f1f7d22d811b31bd2d3384b934b158",
             "size_bytes": 289524,
@@ -33775,9 +33874,9 @@
           }
         },
         "insurer": "etiqa",
-        "last_verified_at": "2026-07-05T07:52:13.149476+00:00",
+        "last_verified_at": "2026-07-07T04:01:44.919596+00:00",
         "plan_slug": "personal-cyber-insurance",
-        "scraped_at": "2026-07-05T07:52:13.149476+00:00",
+        "scraped_at": "2026-07-07T04:01:44.919596+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Etiqa_Policy_Wording_Personal-Cyber-V4-March-2025.pdf"
       },
@@ -33789,7 +33888,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:13.451392+00:00",
+            "fetched_at": "2026-07-07T04:01:45.290804+00:00",
             "last_modified_at": "Tue, 11 Mar 2025 07:59:19 GMT",
             "sha256": "c14dcc3ba984b59e8c65b6454bc89b9d316fc17487a44ba81c38ed60012ffa65",
             "size_bytes": 223450,
@@ -33799,9 +33898,9 @@
           }
         },
         "insurer": "etiqa",
-        "last_verified_at": "2026-07-05T07:52:13.451392+00:00",
+        "last_verified_at": "2026-07-07T04:01:45.290804+00:00",
         "plan_slug": "maid-insurance",
-        "scraped_at": "2026-07-05T07:52:13.451392+00:00",
+        "scraped_at": "2026-07-07T04:01:45.290804+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/maid-insurance-memo.pdf"
       },
@@ -33837,7 +33936,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:13.735340+00:00",
+            "fetched_at": "2026-07-07T04:01:45.394493+00:00",
             "last_modified_at": "Wed, 21 Feb 2024 01:48:55 GMT",
             "sha256": "556718f572fa67d28f07970154ca787a9360d79016ce36b1bde35cb880b6946b",
             "size_bytes": 247941,
@@ -33847,9 +33946,9 @@
           }
         },
         "insurer": "etiqa",
-        "last_verified_at": "2026-07-05T07:52:13.735340+00:00",
+        "last_verified_at": "2026-07-07T04:01:45.394493+00:00",
         "plan_slug": "home-insurance",
-        "scraped_at": "2026-07-05T07:52:13.735340+00:00",
+        "scraped_at": "2026-07-07T04:01:45.394493+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf"
       },
@@ -33861,7 +33960,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:13.927260+00:00",
+            "fetched_at": "2026-07-07T04:01:45.653942+00:00",
             "last_modified_at": "Wed, 12 Jun 2024 02:04:53 GMT",
             "sha256": "1cf0c6ef75a67f748c66f461f6bd33c6067244ecac21b6c6cbf15fb16a42589a",
             "size_bytes": 602503,
@@ -33871,9 +33970,9 @@
           }
         },
         "insurer": "etiqa",
-        "last_verified_at": "2026-07-05T07:52:13.927260+00:00",
+        "last_verified_at": "2026-07-07T04:01:45.653942+00:00",
         "plan_slug": "hdb-fire-insurance",
-        "scraped_at": "2026-07-05T07:52:13.927260+00:00",
+        "scraped_at": "2026-07-07T04:01:45.653942+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/06/hdb-fireinsurance-tcs.pdf"
       },
@@ -33885,7 +33984,7 @@
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:14.160046+00:00",
+            "fetched_at": "2026-07-07T04:01:45.969966+00:00",
             "last_modified_at": "Wed, 04 Jun 2025 07:18:09 GMT",
             "sha256": "4032dd975fd2f64fa9a2fce2ab75c368248809b0aec4be1833089aea52e79d35",
             "size_bytes": 148423,
@@ -33895,9 +33994,9 @@
           }
         },
         "insurer": "etiqa",
-        "last_verified_at": "2026-07-05T07:52:14.160046+00:00",
+        "last_verified_at": "2026-07-07T04:01:45.969966+00:00",
         "plan_slug": "pet-insurance",
-        "scraped_at": "2026-07-05T07:52:14.160046+00:00",
+        "scraped_at": "2026-07-07T04:01:45.969966+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.tiq.com.sg/wp-content/uploads/2024/05/Pet_Insurance_Clinical_Examination_Form.pdf"
       },
@@ -33905,25 +34004,25 @@
         "field_name": "brochure_metadata",
         "field_value": {
           "notes": [],
-          "raw_text": "ePROTECT_motocycle_Brochure.pdf",
+          "raw_text": "ePROTECT-Motorcycle-Policy-Wording-V5.pdf",
           "status": "known",
           "value": {
             "content_type": "application/pdf",
-            "fetched_at": "2026-07-05T07:52:14.241365+00:00",
-            "last_modified_at": "Tue, 11 Mar 2025 08:03:38 GMT",
-            "sha256": "3c7f14f3629fe82c03fa0be9a68143de82967c6e75af49788e59bd23c13a114c",
-            "size_bytes": 756426,
+            "fetched_at": "2026-07-07T04:01:46.065348+00:00",
+            "last_modified_at": "Wed, 15 Oct 2025 06:31:04 GMT",
+            "sha256": "fdaf2a36c5bdc2915b97dea7fee88a49eac149c8dc4a3fd6b77636225067fded",
+            "size_bytes": 423737,
             "storage_bucket": "plan-brochures",
-            "storage_key": "brochures/etiqa/motor-insurance/3c7f14f3629fe82c03fa0be9a68143de82967c6e75af49788e59bd23c13a114c.pdf",
-            "url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/ePROTECT_motocycle_Brochure.pdf"
+            "storage_key": "brochures/etiqa/motor-insurance/fdaf2a36c5bdc2915b97dea7fee88a49eac149c8dc4a3fd6b77636225067fded.pdf",
+            "url": "https://www.tiq.com.sg/wp-content/uploads/2025/10/ePROTECT-Motorcycle-Policy-Wording-V5.pdf"
           }
         },
         "insurer": "etiqa",
-        "last_verified_at": "2026-07-05T07:52:14.241365+00:00",
+        "last_verified_at": "2026-07-07T04:01:46.065348+00:00",
         "plan_slug": "motor-insurance",
-        "scraped_at": "2026-07-05T07:52:14.241365+00:00",
+        "scraped_at": "2026-07-07T04:01:46.065348+00:00",
         "source_type": "brochure_pdf",
-        "source_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/ePROTECT_motocycle_Brochure.pdf"
+        "source_url": "https://www.tiq.com.sg/wp-content/uploads/2025/10/ePROTECT-Motorcycle-Policy-Wording-V5.pdf"
       },
       {
         "field_name": "brochure_metadata",
@@ -36948,6 +37047,78 @@
         "scraped_at": "2026-07-07T03:46:16.802370+00:00",
         "source_type": "brochure_pdf",
         "source_url": "https://www.chinalife.com.sg/sites/default/files/product/China%20Life%20Multiplier%20Guardian%20Supreme%20brochure_ENG.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Commercial-Motor-Policy-Wording-V4.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:01:46.521897+00:00",
+            "last_modified_at": "Wed, 08 Oct 2025 16:14:17 GMT",
+            "sha256": "fa2c319b3a46421928629ce24681dce7ae08c22870c4d70b9321d5dac1794dff",
+            "size_bytes": 266402,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/etiqa/commercial-vehicle-insurance/fa2c319b3a46421928629ce24681dce7ae08c22870c4d70b9321d5dac1794dff.pdf",
+            "url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf"
+          }
+        },
+        "insurer": "etiqa",
+        "last_verified_at": "2026-07-07T04:01:46.521897+00:00",
+        "plan_slug": "commercial-vehicle-insurance",
+        "scraped_at": "2026-07-07T04:01:46.521897+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:01:46.966659+00:00",
+            "last_modified_at": "Mon, 13 Feb 2023 02:06:58 GMT",
+            "sha256": "ff85afc7ef7b3d4782ab4ba63239615a4302d734b22f16d664ae940e70afab56",
+            "size_bytes": 57366,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/etiqa/corporate-travel-insurance/ff85afc7ef7b3d4782ab4ba63239615a4302d734b22f16d664ae940e70afab56.pdf",
+            "url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf"
+          }
+        },
+        "insurer": "etiqa",
+        "last_verified_at": "2026-07-07T04:01:46.966659+00:00",
+        "plan_slug": "corporate-travel-insurance",
+        "scraped_at": "2026-07-07T04:01:46.966659+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf"
+      },
+      {
+        "field_name": "brochure_metadata",
+        "field_value": {
+          "notes": [],
+          "raw_text": "Business_Owners_Super_Suite_Personal_Services_Brochure.pdf",
+          "status": "known",
+          "value": {
+            "content_type": "application/pdf",
+            "fetched_at": "2026-07-07T04:01:47.053370+00:00",
+            "last_modified_at": "Tue, 11 Mar 2025 07:39:06 GMT",
+            "sha256": "820343f26d73defa26ac23a87f65eccb24bcedf5fc70c06f85fe85409257c31b",
+            "size_bytes": 1486127,
+            "storage_bucket": "plan-brochures",
+            "storage_key": "brochures/etiqa/business-owners-super-suite/820343f26d73defa26ac23a87f65eccb24bcedf5fc70c06f85fe85409257c31b.pdf",
+            "url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf"
+          }
+        },
+        "insurer": "etiqa",
+        "last_verified_at": "2026-07-07T04:01:47.053370+00:00",
+        "plan_slug": "business-owners-super-suite",
+        "scraped_at": "2026-07-07T04:01:47.053370+00:00",
+        "source_type": "brochure_pdf",
+        "source_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf"
       }
     ],
     "plans": [
@@ -37677,326 +37848,6 @@
         "plan_url": "https://www.uoi.com.sg/personal/accident-protection.page",
         "product_brochure_url": "https://www.uoi.com.sg/assets/web-resources/uoi/pdfs/insurance/unipa-brochure.pdf",
         "scraped_at": "2026-07-05T07:21:19.180618+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Check out Etiqa’s range of whole life, term life and critical illness insurance to safeguard your family’s finances in times of need.",
-        "plan_name": "Life & Critical Illness Protection",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Premier Solutions Investments",
-        "plan_slug": "life-critical-illness-protection",
-        "plan_url": "https://www.etiqa.com.sg/personal/life-critical-illness-protection/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Direct-Purchase-Insurance-Fact-Sheet.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Curating a lasting legacy You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. At Etiqa, we can help support your goals at every life stage—whether you want to enjoy your golden years, […]",
-        "plan_name": "Premier Solutions",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Investments",
-        "plan_slug": "premier-solutions",
-        "plan_url": "https://www.etiqa.com.sg/personal/premier-solutions/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Build your wealth and save for life’s milestones with Etiqa’s investment-linked plans. Protect your savings and future with Etiqa’s insurance today!",
-        "plan_name": "Investments",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "investments",
-        "plan_url": "https://www.etiqa.com.sg/personal/investments/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Save up for your retirement with Etiqa’s savings and retirement plans. Protect your savings and future with Etiqa’s insurance today!",
-        "plan_name": "Savings & Retirement",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "savings-retirement",
-        "plan_url": "https://www.etiqa.com.sg/personal/savings-retirement/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Accidents can happen anytime, anywhere. Cover yourself with Etiqa’s personal accident insurance to protect you in unfortunate situations.",
-        "plan_name": "Personal Accident",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "personal-accident",
-        "plan_url": "https://www.etiqa.com.sg/personal/personal-accident/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Protect your digital identity and minimise risks with Etiqa’s cyber insurance. At less than $10 a month, we insure you for $25,000! Get your quote!",
-        "plan_name": "Personal Cyber Insurance",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "personal-cyber-insurance",
-        "plan_url": "https://www.etiqa.com.sg/personal/personal-cyber-insurance/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Etiqa_Policy_Wording_Personal-Cyber-V4-March-2025.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Maid Insurance Maid Insurance Your domestic helper is a key member of your household. Getting her insured will in turn lessen your burden should the unexpected happen. What you can get Personal accident protection From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in […]",
-        "plan_name": "Maid Insurance",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "maid-insurance",
-        "plan_url": "https://www.etiqa.com.sg/personal/maid-insurance/",
-        "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/maid-insurance-memo.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "We provide travel cover from flight cancellations and delays, lost luggage, medical expenses to emergency evacuation. Get your travel insurance quote today!",
-        "plan_name": "Travel Insurance",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "travel-insurance",
-        "plan_url": "https://www.etiqa.com.sg/personal/travel-insurance/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Keep the home where you belong, and your belongings safe! Etiqa’s home insurance plans protect your property, mortgage and family.",
-        "plan_name": "Home Insurance",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "home-insurance",
-        "plan_url": "https://www.etiqa.com.sg/personal/home-insurance/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Financial protection for the building structures, fixtures and fittings of your HDB flat in the event of a fire.",
-        "plan_name": "HDB Fire Insurance",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "hdb-fire-insurance",
-        "plan_url": "https://www.etiqa.com.sg/personal/fire-insurance/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/06/hdb-fireinsurance-tcs.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Providing the best care for your dogs and cats should never lead to a financial burden. Make a proactive choice to safeguard their health and wellbeing.",
-        "plan_name": "Pet Insurance",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "pet-insurance",
-        "plan_url": "https://www.etiqa.com.sg/personal/pet-insurance/",
-        "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2024/05/Pet_Insurance_Clinical_Examination_Form.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Check out Etiqa’s highly customisable vehicle insurance plans that offer you peace of mind on the roads!",
-        "plan_name": "Motor Insurance",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "motor-insurance",
-        "plan_url": "https://www.etiqa.com.sg/personal/motor-insurance/",
-        "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/ePROTECT_motocycle_Brochure.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Protect your employees against injuries, death and permanent disabilities, with Etiqa’s Accident & Health insurance plan.",
-        "plan_name": "Accident & Health",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "accident-health",
-        "plan_url": "https://www.etiqa.com.sg/business-insurance/accident-health/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/06/Foreign-Workers-Medical-Annual-Policy-Wording_on-and-after-1-July-2023.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Cover your commercial vehicle against accidents with Etiqa’s Commercial Vehicle Insurance!",
-        "plan_name": "Commercial Vehicle",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "commercial-vehicle",
-        "plan_url": "https://www.etiqa.com.sg/business-insurance/commercial-vehicle/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Corporate Travel Insurance Protect your employees for their business travel What you can get High Trip Cancellation Expenses coverage of $10,000 High coverage for medical expenses in Singapore for up to $50,000 Free leisure travel extension for named employees Covers up to 180 days for each business trip Comes with COVID-19 coverage 24-hour emergency travel hotline […]",
-        "plan_name": "Corporate Travel",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "corporate-travel",
-        "plan_url": "https://www.etiqa.com.sg/business-insurance/corporate-travel/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
-      },
-      {
-        "insurer": "etiqa",
-        "plan_benefits": [
-          "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance",
-          "Find products & services best suited to your protection needs",
-          "Life & Critical Illness Protection",
-          "Personal Accident",
-          "Personal Cyber Insurance",
-          "Maid Insurance",
-          "Travel Insurance",
-          "Home Insurance"
-        ],
-        "plan_description": "Protect your property from damage or loss with Etiqa’s Property Insurance today!",
-        "plan_name": "Property",
-        "plan_overview": "Personal Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Life & Critical Illness Protection Premier Solutions Investments Savings & Retirement Personal Accident Personal Cyber Insurance Maid Insurance Travel Insurance Home Insurance HDB Fire Insurance Pet Insurance Motor Insurance Find products & services best suited to your protection needs Life & Critical Illness Protection Premier Solutions",
-        "plan_slug": "property",
-        "plan_url": "https://www.etiqa.com.sg/business-insurance/property/",
-        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Industrial-All-Risks-Insurance-Policy-Wording.pdf",
-        "scraped_at": "2026-07-05T07:52:12.169042+00:00"
       },
       {
         "insurer": "income",
@@ -42137,6 +41988,353 @@
         "plan_url": "https://www.chubb.com/sg-en/individuals-families/mobile-phone-insurance.html",
         "product_brochure_url": "",
         "scraped_at": "2026-07-07T03:51:27.235129+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Direct Purchase Insurance (DPI) – identified by the prefix “DIRECT” in their product names – are life insurance products that you can buy directly from insurance companies, without paying any intermediary fee.",
+          "You may consider our ePROTECT term life policy, which can provide coverage up till S$2 million.",
+          "Yes, you will be covered as long as you continue paying your premiums.",
+          "The easiest way to get life insurance from Etiqa is through our online portal. You can also contact our friendly Customer Care team ."
+        ],
+        "plan_description": "Check out Etiqa’s range of whole life, term life and critical illness insurance to safeguard your family’s finances in times of need.",
+        "plan_name": "Life & Critical Illness Protection",
+        "plan_overview": "Check out Etiqa’s range of whole life, term life and critical illness insurance to safeguard your family’s finances in times of need. Direct Purchase Insurance (DPI) – identified by the prefix “DIRECT” in their product names – are life insurance products that you can buy directly from insurance companies, without paying any intermediary fee. You may consider our ePROTECT term life policy, which can provide coverage up till S$2 million. Yes, you will be covered as long as you continue paying your premiums.",
+        "plan_slug": "life-critical-illness-protection",
+        "plan_url": "https://www.etiqa.com.sg/personal/life-critical-illness-protection/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation.",
+          "Effectively allocate your wealth to balance risk and potential rewards.",
+          "The overall value of your investment portfolio is well protected against market uncertainty when you diversify with any one of Etiqa’s Premier solutions.",
+          "You can build your wealth to protect your lifestyle and safeguard the future of your loved ones. A well-structured plan will help protect your family’s finances now and later.",
+          "Protect your existing lifestyle even in retirement",
+          "Today’s business landscape can be full of uncertainty. Legacy planning can help protect your business and ensure that it continues to operate smoothly even in today’s unpredictable times.",
+          "Protect the business you’ve built"
+        ],
+        "plan_description": "Curating a lasting legacy You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. At Etiqa, we can help support your goals at every life stage—whether you want to enjoy your golden years, […]",
+        "plan_name": "Premier Solutions",
+        "plan_overview": "Curating a lasting legacy You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. At Etiqa, we can help support your goals at every life stage—whether you want to enjoy your golden years, […] You have lived a life of distinction. You have worked hard to care for and protect your loved ones. Now, you want to safeguard this success for your retirement and the next generation. Effectively allocate your wealth to balance risk and potential rewards. The overall value of your investment portfolio is well protected against market uncertainty when you diversify with any one of Etiqa’s Premier solutions.",
+        "plan_slug": "premier-solutions",
+        "plan_url": "https://www.etiqa.com.sg/personal/premier-solutions/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Investment-linked plans for wealth accumulation and life milestones."
+        ],
+        "plan_description": "Build your wealth and save for life’s milestones with Etiqa’s investment-linked plans. Protect your savings and future with Etiqa’s insurance today!",
+        "plan_name": "Investments",
+        "plan_overview": "Build your wealth and save for life’s milestones with Etiqa’s investment-linked plans. Protect your savings and future with Etiqa’s insurance today! Investment-linked plans for wealth accumulation and life milestones.",
+        "plan_slug": "investments",
+        "plan_url": "https://www.etiqa.com.sg/personal/investments/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Savings and retirement insurance plans for future income and goals."
+        ],
+        "plan_description": "Save up for your retirement with Etiqa’s savings and retirement plans. Protect your savings and future with Etiqa’s insurance today!",
+        "plan_name": "Savings & Retirement",
+        "plan_overview": "Save up for your retirement with Etiqa’s savings and retirement plans. Protect your savings and future with Etiqa’s insurance today! Savings and retirement insurance plans for future income and goals.",
+        "plan_slug": "savings-retirement",
+        "plan_url": "https://www.etiqa.com.sg/personal/savings-retirement/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Personal accident insurance for injuries, disability and related financial support."
+        ],
+        "plan_description": "Accidents can happen anytime, anywhere. Cover yourself with Etiqa’s personal accident insurance to protect you in unfortunate situations.",
+        "plan_name": "Personal Accident",
+        "plan_overview": "Accidents can happen anytime, anywhere. Cover yourself with Etiqa’s personal accident insurance to protect you in unfortunate situations. Personal accident insurance for injuries, disability and related financial support.",
+        "plan_slug": "personal-accident",
+        "plan_url": "https://www.etiqa.com.sg/personal/personal-accident/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Cyber insurance for digital identity, online risk and fraud exposure."
+        ],
+        "plan_description": "Protect your digital identity and minimise risks with Etiqa’s cyber insurance. At less than $10 a month, we insure you for $25,000! Get your quote!",
+        "plan_name": "Personal Cyber Insurance",
+        "plan_overview": "Protect your digital identity and minimise risks with Etiqa’s cyber insurance. At less than $10 a month, we insure you for $25,000! Get your quote! Cyber insurance for digital identity, online risk and fraud exposure.",
+        "plan_slug": "personal-cyber-insurance",
+        "plan_url": "https://www.etiqa.com.sg/personal/personal-cyber-insurance/",
+        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Etiqa_Policy_Wording_Personal-Cyber-V4-March-2025.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in the event of an accident or injury.",
+          "Should your helper be hospitalised, we will provide a daily payout for you to hire temporary help. We will also give a recuperation benefit of up to S$20, for each day your helper is hospitalised.",
+          "Coverage for your home contents due to fire, burglary or theft by maid.",
+          "In the event maid causes accidental bodily injury and/or accidental damage to third party."
+        ],
+        "plan_description": "Your domestic helper is a key member of your household. Getting her insured will in turn lessen your burden should the unexpected happen. What you can get Personal accident protection From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in […]",
+        "plan_name": "Maid Insurance",
+        "plan_overview": "Your domestic helper is a key member of your household. Getting her insured will in turn lessen your burden should the unexpected happen. What you can get Personal accident protection From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in […] From S$60,000, we will cover your helper in the event of accidental death or permanent disability. We will also reimburse her medical expenses in the event of an accident or injury. Should your helper be hospitalised, we will provide a daily payout for you to hire temporary help. We will also give a recuperation benefit of up to S$20, for each day your helper is hospitalised. Coverage for your home contents due to fire, burglary or theft by maid.",
+        "plan_slug": "maid-insurance",
+        "plan_url": "https://www.etiqa.com.sg/personal/maid-insurance/",
+        "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/03/maid-insurance-memo.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Our Travel Insurance plans now come with COVID-19 add-on. Should you be diagnosed with COVID-19 before, during or after your trip, we cover you for trip postponement or cancellation, overseas medical, evacuation expenses & more!"
+        ],
+        "plan_description": "We provide travel cover from flight cancellations and delays, lost luggage, medical expenses to emergency evacuation. Get your travel insurance quote today!",
+        "plan_name": "Travel Insurance",
+        "plan_overview": "We provide travel cover from flight cancellations and delays, lost luggage, medical expenses to emergency evacuation. Get your travel insurance quote today! Our Travel Insurance plans now come with COVID-19 add-on. Should you be diagnosed with COVID-19 before, during or after your trip, we cover you for trip postponement or cancellation, overseas medical, evacuation expenses & more!",
+        "plan_slug": "travel-insurance",
+        "plan_url": "https://www.etiqa.com.sg/personal/travel-insurance/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Protect what belongs to you"
+        ],
+        "plan_description": "Keep the home where you belong, and your belongings safe! Etiqa’s home insurance plans protect your property, mortgage and family.",
+        "plan_name": "Home Insurance",
+        "plan_overview": "Keep the home where you belong, and your belongings safe! Etiqa’s home insurance plans protect your property, mortgage and family. Protect what belongs to you",
+        "plan_slug": "home-insurance",
+        "plan_url": "https://www.etiqa.com.sg/personal/home-insurance/",
+        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/02/Complimentary-Home-Insurance-Policy-Wording.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Appointed Insurer for the HDB Fire Insurance Scheme",
+          "Homeowners with HDB loans commencing on or after 1 September 1994 are required to buy and renew HDB Fire Insurance every 5 years, for the entire loan period.",
+          "Covers damage caused by fire to the building, structures, fixtures, and fittings provided by HDB and its approved developers.",
+          "Includes extension to cover fires in adjoining properties and water damage from burst pipes.",
+          "Boost coverage for your home contents and renovation by adding on Tiq Home Insurance.",
+          "HDB Fire insurance covers fire damage to building structures, fixtures, and fittings provided by the HDB or its approved developers.",
+          "Tiq Home insurance offers a wider coverage as follows:",
+          "loss or damage to home contents and renovations including the cost of removing debris"
+        ],
+        "plan_description": "Financial protection for the building structures, fixtures and fittings of your HDB flat in the event of a fire.",
+        "plan_name": "HDB Fire Insurance",
+        "plan_overview": "Financial protection for the building structures, fixtures and fittings of your HDB flat in the event of a fire. Appointed Insurer for the HDB Fire Insurance Scheme Homeowners with HDB loans commencing on or after 1 September 1994 are required to buy and renew HDB Fire Insurance every 5 years, for the entire loan period. Covers damage caused by fire to the building, structures, fixtures, and fittings provided by HDB and its approved developers.",
+        "plan_slug": "hdb-fire-insurance",
+        "plan_url": "https://www.etiqa.com.sg/personal/fire-insurance/",
+        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2024/06/hdb-fireinsurance-tcs.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Industry-leading coverage for surgical and non-surgical procedures, accidental injuries, congenital, and hereditary conditions.",
+          "No-claim discounts, multi-pet discounts, and additional coverage for final expenses",
+          "For pet enrolled before the age 4, there will be a 20% Co-Insurance."
+        ],
+        "plan_description": "Providing the best care for your dogs and cats should never lead to a financial burden. Make a proactive choice to safeguard their health and wellbeing.",
+        "plan_name": "Pet Insurance",
+        "plan_overview": "Providing the best care for your dogs and cats should never lead to a financial burden. Make a proactive choice to safeguard their health and wellbeing. Industry-leading coverage for surgical and non-surgical procedures, accidental injuries, congenital, and hereditary conditions. No-claim discounts, multi-pet discounts, and additional coverage for final expenses For pet enrolled before the age 4, there will be a 20% Co-Insurance.",
+        "plan_slug": "pet-insurance",
+        "plan_url": "https://www.etiqa.com.sg/personal/pet-insurance/",
+        "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2024/05/Pet_Insurance_Clinical_Examination_Form.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Customisable motor insurance for road and vehicle protection."
+        ],
+        "plan_description": "Check out Etiqa’s highly customisable vehicle insurance plans that offer you peace of mind on the roads!",
+        "plan_name": "Motor Insurance",
+        "plan_overview": "Check out Etiqa’s highly customisable vehicle insurance plans that offer you peace of mind on the roads! Customisable motor insurance for road and vehicle protection.",
+        "plan_slug": "motor-insurance",
+        "plan_url": "https://www.etiqa.com.sg/personal/motor-insurance/",
+        "product_brochure_url": "https://www.tiq.com.sg/wp-content/uploads/2025/10/ePROTECT-Motorcycle-Policy-Wording-V5.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Special nursing and medical ancillary services and consumable items",
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+          "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+        ],
+        "plan_description": "Protect your employees against injuries, death and permanent disabilities, with Etiqa’s Accident & Health insurance plan.",
+        "plan_name": "Accident & Health Insurance",
+        "plan_overview": "Protect your employees against injuries, death and permanent disabilities, with Etiqa’s Accident & Health insurance plan. Special nursing and medical ancillary services and consumable items Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or... In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+        "plan_slug": "accident-health-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/accident-health/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Keep your business running, by ensuring that your vehicles are protected by our Commercial Vehicle Insurance.",
+          "Enjoy the flexibility of choosing from our range of solutions that include comprehensive cover and third party liabilities.",
+          "Be assured that your claims are processed quickly with Etiqa’s award-winning claims team.",
+          "Claim for a towing service for up to S$200.",
+          "The information contained on this product advertisement is intended to be valid in Singapore only and shall not be construed as an offer to sell or solicitation to buy or provision of any insurance product outside Singapore.",
+          "We offer insurance for vehicles used for commercial purposes that is registered under a company, covering vehicle types like Lorry, Station Wagon, Pickup, Vans and Refrigerated Vehicle. Excluding vehicles that are used for hire, such as Grab or Uber used cars.",
+          "These three types provide different coverage level:",
+          "Comprehensive covers for your legal liability to third party’s bodily injury and property damage, as well as loss or damage to your own vehicle."
+        ],
+        "plan_description": "Cover your commercial vehicle against accidents with Etiqa’s Commercial Vehicle Insurance!",
+        "plan_name": "Commercial Vehicle Insurance",
+        "plan_overview": "Cover your commercial vehicle against accidents with Etiqa’s Commercial Vehicle Insurance! Keep your business running, by ensuring that your vehicles are protected by our Commercial Vehicle Insurance. Enjoy the flexibility of choosing from our range of solutions that include comprehensive cover and third party liabilities. Be assured that your claims are processed quickly with Etiqa’s award-winning claims team.",
+        "plan_slug": "commercial-vehicle-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/commercial-vehicle/",
+        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/10/Commercial-Motor-Policy-Wording-V4.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "We’ve got your business covered if you are found legally responsible for an accident that causes injuries to others or damage to another person’s property.",
+          "Safeguard your business if you are found legally responsible for an accident or property damage arising from the manufacture or sale of products.",
+          "Provide your platform workers with comprehensive coverage against work-related injuries and fatalities",
+          "Our policy protects your employees against injuries or death while doing their job.",
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+          "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+        ],
+        "plan_description": "Protect your business with Etiqa’s Casualty insurance plan against accidental damage or injury to others.",
+        "plan_name": "Casualty Insurance",
+        "plan_overview": "Protect your business with Etiqa’s Casualty insurance plan against accidental damage or injury to others. We’ve got your business covered if you are found legally responsible for an accident that causes injuries to others or damage to another person’s property. Safeguard your business if you are found legally responsible for an accident or property damage arising from the manufacture or sale of products. Provide your platform workers with comprehensive coverage against work-related injuries and fatalities",
+        "plan_slug": "casualty-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/casualty/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+          "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+        ],
+        "plan_description": "Protect your employees for their business travel What you can get High Trip Cancellation Expenses coverage of $10,000 High coverage for medical expenses in Singapore for up to $50,000 Free leisure travel extension for named employees Covers up to 180 days for each business trip Comes with COVID-19 coverage 24-hour emergency travel hotline […]",
+        "plan_name": "Corporate Travel Insurance",
+        "plan_overview": "Protect your employees for their business travel What you can get High Trip Cancellation Expenses coverage of $10,000 High coverage for medical expenses in Singapore for up to $50,000 Free leisure travel extension for named employees Covers up to 180 days for each business trip Comes with COVID-19 coverage 24-hour emergency travel hotline […] Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or... In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I... In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+        "plan_slug": "corporate-travel-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/corporate-travel/",
+        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2023/02/Etiqa-Corporate-Travel-Insurance-FAQ-26-Sep-2022.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "During the construction and erection phases, your business will be covered for any accidents and injuries, and against any loss or damage to the property.",
+          "Get your electronic equipment covered for any loss or damage due to accidents, with our plan that protects for:",
+          "Material damage: Accidental physical loss of or damage to electronic hardware",
+          "Protect your plant and machinery from physical loss, damage and faulty design. Your coverage includes the loss of profits that results from the machinery breakdown.",
+          "Get protection from loss of or damage to refrigerated stock that is on your insured premises.",
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ..."
+        ],
+        "plan_description": "Cover your machines and equipment against unexpected risks during a construction or installation project with Etiqa’s Engineering Insurance!",
+        "plan_name": "Engineering Insurance",
+        "plan_overview": "Cover your machines and equipment against unexpected risks during a construction or installation project with Etiqa’s Engineering Insurance! During the construction and erection phases, your business will be covered for any accidents and injuries, and against any loss or damage to the property. Get your electronic equipment covered for any loss or damage due to accidents, with our plan that protects for: Material damage: Accidental physical loss of or damage to electronic hardware",
+        "plan_slug": "engineering-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/engineering/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Get covered against loss or damage to your cargo when it is in transit between countries, via air, sea, or land.",
+          "Protect your goods against loss or damage while it is being transported by land.",
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+          "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+        ],
+        "plan_description": "Protect your cargo from damage or loss while in transit with Etiqa’s Marine Insurance today!",
+        "plan_name": "Marine Insurance",
+        "plan_overview": "Protect your cargo from damage or loss while in transit with Etiqa’s Marine Insurance today! Get covered against loss or damage to your cargo when it is in transit between countries, via air, sea, or land. Protect your goods against loss or damage while it is being transported by land. Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+        "plan_slug": "marine-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/marine/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Clinic and medical centre, excluding contagious and infectious disease extension",
+          "Decline risks: Wet, food and entertainment led with heavy entertainment and late licences with door staff and door charges. Heavy entertainment would include discos/bands with dancing facilities on a regular (weekly) basis with opening hours usually past 1am.",
+          "Insurance brokers and agents",
+          "Drugs and medical products, such as pharmacies",
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+          "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+        ],
+        "plan_description": "Our ‘BOSS’ (Business Owners Super Suite) insurance plans make it easy for small and medium-sized businesses to get the protection they need. PERSONAL SERVICES EDUCATION PUB AND RESTAURANT LIGHT INDUSTRIES OFFICE RETAIL PERSONAL SERVICES Personal Services Protect your personal services business and employees from the unexpected with the Etiqa BOSS suite tailored […]",
+        "plan_name": "Business Owners Super Suite",
+        "plan_overview": "Our ‘BOSS’ (Business Owners Super Suite) insurance plans make it easy for small and medium-sized businesses to get the protection they need. PERSONAL SERVICES EDUCATION PUB AND RESTAURANT LIGHT INDUSTRIES OFFICE RETAIL PERSONAL SERVICES Personal Services Protect your personal services business and employees from the unexpected with the Etiqa BOSS suite tailored […] Clinic and medical centre, excluding contagious and infectious disease extension Decline risks: Wet, food and entertainment led with heavy entertainment and late licences with door staff and door charges. Heavy entertainment would include discos/bands with dancing facilities on a regular (weekly) basis with opening hours usually past 1am. Insurance brokers and agents",
+        "plan_slug": "business-owners-super-suite",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/business-owners-super-suite/",
+        "product_brochure_url": "https://www.etiqa.com.sg/wp-content/uploads/2025/03/Business_Owners_Super_Suite_Personal_Services_Brochure.pdf",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Protect the glass used in your business with coverage for glass breakage, and the cost of shoring and propping the damaged parts of the insured property.",
+          "If your business handles cash, this will cover you against accidental loss of money and/or securities within your insured premises or during transit.",
+          "Secure your property against any financial loss due to damaged property, theft or attempted theft.",
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+          "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+        ],
+        "plan_description": "Guard against various risks with Etiqa’s Miscellaneous Insurance that covers plate glass, money, burglary and fraud!",
+        "plan_name": "Miscellaneous Insurance",
+        "plan_overview": "Guard against various risks with Etiqa’s Miscellaneous Insurance that covers plate glass, money, burglary and fraud! Protect the glass used in your business with coverage for glass breakage, and the cost of shoring and propping the damaged parts of the insured property. If your business handles cash, this will cover you against accidental loss of money and/or securities within your insured premises or during transit. Secure your property against any financial loss due to damaged property, theft or attempted theft.",
+        "plan_slug": "miscellaneous-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/miscellaneous/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
+      },
+      {
+        "insurer": "etiqa",
+        "plan_benefits": [
+          "Your property is protected with this comprehensive cover against any accidental loss or damage.",
+          "Cover your property against loss or damage that is caused by:",
+          "Vehicle impact damage",
+          "We have you covered against loss of profits or revenue, if it is due to a business interruption that damaged your property.",
+          "Most people never expect to make an insurance claim. But when they do, it often comes during moments of uncertainty. After an accident, an illness, or...",
+          "In my role as Chief Risk Officer, I spend much of my time thinking about uncertainty, what could happen, and how we prepare for it. But over time, I...",
+          "In the insurance industry, we specialise in protecting against the unpredictable. From car and home insurance to health coverage, we safeguard people ...",
+          "Improve financial security and protect your business with a diverse range of affordable and flexible solutions."
+        ],
+        "plan_description": "Protect your property from damage or loss with Etiqa’s Property Insurance today!",
+        "plan_name": "Property Insurance",
+        "plan_overview": "Protect your property from damage or loss with Etiqa’s Property Insurance today! Your property is protected with this comprehensive cover against any accidental loss or damage. Cover your property against loss or damage that is caused by: Vehicle impact damage",
+        "plan_slug": "property-insurance",
+        "plan_url": "https://www.etiqa.com.sg/business-insurance/property/",
+        "product_brochure_url": "",
+        "scraped_at": "2026-07-07T04:01:44.911533+00:00"
       }
     ],
     "scraper_health": [
@@ -42149,7 +42347,7 @@
         "last_success_at": "2026-07-07T03:34:08.824050+00:00",
         "row_count": 44,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42160,7 +42358,7 @@
         "last_success_at": "2026-07-07T03:46:19.376563+00:00",
         "row_count": 29,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42171,7 +42369,7 @@
         "last_success_at": "2026-07-07T03:51:27.242218+00:00",
         "row_count": 9,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:27.242218+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42182,7 +42380,7 @@
         "last_success_at": "2026-07-07T02:51:49.407319+00:00",
         "row_count": 27,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42193,7 +42391,7 @@
         "last_success_at": "2026-07-05T07:19:25.287067+00:00",
         "row_count": 24,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42204,7 +42402,7 @@
         "last_success_at": "2026-07-05T07:19:28.162614+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42215,7 +42413,7 @@
         "last_success_at": "2026-07-07T03:04:02.152937+00:00",
         "row_count": 50,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42226,7 +42424,7 @@
         "last_success_at": "2026-07-07T03:11:44.929496+00:00",
         "row_count": 2,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42237,7 +42435,7 @@
         "last_success_at": "2026-07-07T03:20:04.296570+00:00",
         "row_count": 3,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42248,7 +42446,7 @@
         "last_success_at": "2026-07-05T07:21:26.497812+00:00",
         "row_count": 4,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42259,7 +42457,7 @@
         "last_success_at": "2026-07-07T03:39:55.246857+00:00",
         "row_count": 18,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42267,7 +42465,7 @@
         "display_name": "China Taiping",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42278,7 +42476,7 @@
         "last_success_at": "2026-07-07T02:39:25.455387+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42289,7 +42487,7 @@
         "last_success_at": "2026-07-05T07:53:15.533958+00:00",
         "row_count": 1,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42300,7 +42498,7 @@
         "last_success_at": "2026-07-07T02:29:48.132708+00:00",
         "row_count": 39,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42311,7 +42509,7 @@
         "last_success_at": "2026-07-07T02:19:47.089571+00:00",
         "row_count": 8,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42319,7 +42517,7 @@
         "display_name": "Allied World",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42327,7 +42525,7 @@
         "display_name": "Aig",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42335,18 +42533,18 @@
         "display_name": "Ergo",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
         "carrier_key": "etiqa",
         "display_name": "Etiqa",
         "last_error": null,
-        "last_run_at": "2026-07-05T07:52:15.650481+00:00",
-        "last_success_at": "2026-07-05T07:52:15.650481+00:00",
-        "row_count": 16,
+        "last_run_at": "2026-07-07T04:01:47.198478+00:00",
+        "last_success_at": "2026-07-07T04:01:47.198478+00:00",
+        "row_count": 21,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:01:47.198478+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42354,7 +42552,7 @@
         "display_name": "Hl Assurance",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42365,7 +42563,7 @@
         "last_success_at": "2026-07-05T07:53:00.813158+00:00",
         "row_count": 13,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42373,7 +42571,7 @@
         "display_name": "Liberty",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42381,7 +42579,7 @@
         "display_name": "Lonpac",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42389,7 +42587,7 @@
         "display_name": "Qbe",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42397,7 +42595,7 @@
         "display_name": "Sompo",
         "row_count": 0,
         "support_status": "supported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "not_run"
       },
       {
@@ -42405,7 +42603,7 @@
         "display_name": "Direct Asia",
         "row_count": 0,
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614235+00:00",
+        "updated_at": "2026-07-07T04:00:15.829770+00:00",
         "validation_status": "unsupported"
       },
       {
@@ -42421,8 +42619,8 @@
         "carrier_key": "demo",
         "display_name": "Demo",
         "support_status": "unsupported",
-        "updated_at": "2026-07-07T03:51:26.614063+00:00",
-        "validation_checked_at": "2026-07-07T03:51:26.614063+00:00",
+        "updated_at": "2026-07-07T04:00:15.829412+00:00",
+        "validation_checked_at": "2026-07-07T04:00:15.829412+00:00",
         "validation_status": "failed",
         "validation_summary": {
           "errors": 0,

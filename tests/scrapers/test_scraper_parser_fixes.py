@@ -6,6 +6,7 @@ from src.scrapers import (
     allianz,
     china_life,
     chubb,
+    etiqa,
     fwd,
     great_eastern,
     iii,
@@ -241,6 +242,36 @@ class ScraperParserFixTests(unittest.TestCase):
         self.assertEqual(
             [],
             validate_plan_rows(format_plan_rows(fwd.TABLE_NAME, [row])),
+        )
+
+    def test_etiqa_product_parser_uses_meta_and_scoped_benefits(self):
+        html = (FIXTURES_DIR / "etiqa_product.html").read_text()
+        row = etiqa.parse_product_html(
+            html,
+            "https://www.etiqa.com.sg/personal/travel-insurance/",
+        )
+
+        self.assertEqual(row["plan_name"], "Travel Insurance")
+        self.assertIn("flight cancellations", row["plan_description"])
+        self.assertIn("Trip cancellation benefit", " ".join(row["plan_benefits"]))
+        self.assertEqual(
+            row["product_brochure_url"],
+            "https://www.etiqa.com.sg/wp-content/uploads/2024/02/travel-insurance-policy-wording.pdf",
+        )
+        self.assertEqual(
+            [],
+            validate_plan_rows(format_plan_rows(etiqa.TABLE_NAME, [row])),
+        )
+
+    def test_etiqa_rejects_home_and_claims_pages_as_plan_rows(self):
+        html = (FIXTURES_DIR / "etiqa_reject.html").read_text()
+
+        self.assertIsNone(etiqa.parse_product_html(html, "https://www.etiqa.com.sg/"))
+        self.assertIsNone(
+            etiqa.parse_product_html(
+                html,
+                "https://www.etiqa.com.sg/claims-and-services/",
+            )
         )
 
     def test_fwd_rejects_homepage_and_inactive_fire_pages_as_plan_rows(self):
