@@ -2,6 +2,10 @@
 
 # `Be-sure-ance`
 
+<div align="center">
+    <img src="./assets/logo/logo.png" width="35%">
+</div>
+
 `Be-sure-ance` is a public-good IFA pre-meeting research tool for source-traceable qualitative metadata on Singapore insurance plans. [`compareFIRST`](https://www.comparefirst.sg/wap/homeEvent.action) remains the reference point for regulated quantitative life-insurance comparison; this project complements compareFIRST with plan-grain qualitative facts that it does not try to curate, such as panel/network clues, exclusions, claim process text, regulatory-event context, and brochure provenance.
 
 The civic value is narrow: reduce brochure-by-brochure manual checking, make stale or changed source material visible, and keep qualitative plan facts traceable to public carrier, MOH, LIA, or MAS sources before any licensed advisory workflow starts. Be-sure-ance does not replace compareFIRST, carrier brochures, or licensed financial advisers.
