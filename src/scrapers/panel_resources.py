@@ -5,6 +5,7 @@ import ast
 import io
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
@@ -289,50 +290,43 @@ def build_resource_row(
     }
 
 
-def run_panel_resource_scrape(
-    insurers: list[str],
+def scrape_insurer_resources(
+    insurer: str,
     request_timeout: int,
     max_plans: int | None,
-    max_pdf_bytes: int = DEFAULT_MAX_PDF_BYTES,
+    max_pdf_bytes: int,
 ) -> list[dict]:
     html_cache: dict[str, list[dict]] = {}
     pdf_cache: dict[str, str] = {}
-    rows = []
-    emitted = set()
+    all_plans = fetch_plans(insurer)
+    supported_plans = [plan for plan in all_plans if is_supported_plan(plan)]
+    if max_plans is not None:
+        supported_plans = supported_plans[:max_plans]
 
     with requests.Session() as session:
         session.headers.update({"User-Agent": USER_AGENT})
+        candidates = gather_candidates_for_insurer(
+            insurer=insurer,
+            plans=supported_plans,
+            request_timeout=request_timeout,
+            session=session,
+            html_cache=html_cache,
+        )
 
-        for insurer in insurers:
-            all_plans = fetch_plans(insurer)
-            supported_plans = [plan for plan in all_plans if is_supported_plan(plan)]
-            if max_plans is not None:
-                supported_plans = supported_plans[:max_plans]
-
-            candidates = gather_candidates_for_insurer(
-                insurer=insurer,
-                plans=supported_plans,
+        relevant_resources = []
+        for candidate in candidates:
+            pdf_text = extract_pdf_text(
+                url=candidate["url"],
                 request_timeout=request_timeout,
                 session=session,
-                html_cache=html_cache,
+                pdf_cache=pdf_cache,
+                max_pdf_bytes=max_pdf_bytes,
             )
-
-            relevant_resources = []
-            for candidate in candidates:
-                pdf_text = extract_pdf_text(
-                    url=candidate["url"],
-                    request_timeout=request_timeout,
-                    session=session,
-                    pdf_cache=pdf_cache,
-                    max_pdf_bytes=max_pdf_bytes,
-                )
-                combined_text = normalize_whitespace(
-                    " ".join([candidate["url"], candidate["title"], candidate["context"], pdf_text])
-                )
-                keywords = matched_resource_keywords(combined_text)
-                if len(keywords) < 2:
-                    continue
-
+            combined_text = normalize_whitespace(
+                " ".join([candidate["url"], candidate["title"], candidate["context"], pdf_text])
+            )
+            keywords = matched_resource_keywords(combined_text)
+            if len(keywords) >= 2:
                 relevant_resources.append(
                     {
                         "candidate": candidate,
@@ -341,23 +335,52 @@ def run_panel_resource_scrape(
                     }
                 )
 
-            for plan in supported_plans:
-                for resource in relevant_resources:
-                    key = (insurer, plan["plan_name"], resource["candidate"]["url"])
-                    if key in emitted:
-                        continue
-                    emitted.add(key)
-                    rows.append(
-                        build_resource_row(
-                            insurer=insurer,
-                            plan=plan,
-                            candidate=resource["candidate"],
-                            keywords=resource["keywords"],
-                            pdf_text=resource["pdf_text"],
-                        )
-                    )
+    return [
+        build_resource_row(
+            insurer=insurer,
+            plan=plan,
+            candidate=resource["candidate"],
+            keywords=resource["keywords"],
+            pdf_text=resource["pdf_text"],
+        )
+        for plan in supported_plans
+        for resource in relevant_resources
+    ]
 
-    return rows
+
+def run_panel_resource_scrape(
+    insurers: list[str],
+    request_timeout: int,
+    max_plans: int | None,
+    max_pdf_bytes: int = DEFAULT_MAX_PDF_BYTES,
+    workers: int = 4,
+) -> list[dict]:
+    if workers < 1:
+        raise ValueError("workers must be at least 1")
+
+    rows = []
+    with ThreadPoolExecutor(max_workers=min(workers, len(insurers) or 1)) as executor:
+        futures = {
+            executor.submit(
+                scrape_insurer_resources,
+                insurer,
+                request_timeout,
+                max_plans,
+                max_pdf_bytes,
+            ): insurer
+            for insurer in insurers
+        }
+        for future in as_completed(futures):
+            rows.extend(future.result())
+
+    emitted = set()
+    deduped_rows = []
+    for row in rows:
+        key = (row["insurer"], row["plan_name"], row["resource_url"])
+        if key not in emitted:
+            emitted.add(key)
+            deduped_rows.append(row)
+    return deduped_rows
 
 
 def main():
@@ -367,6 +390,7 @@ def main():
     parser.add_argument("--request-timeout", type=int, default=20)
     parser.add_argument("--max-pdf-bytes", type=int, default=DEFAULT_MAX_PDF_BYTES)
     parser.add_argument("--max-plans", type=int)
+    parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
 
     insurers = (
@@ -381,6 +405,7 @@ def main():
         request_timeout=args.request_timeout,
         max_plans=args.max_plans,
         max_pdf_bytes=args.max_pdf_bytes,
+        workers=args.workers,
     )
 
     summary = {

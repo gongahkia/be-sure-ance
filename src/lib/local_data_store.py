@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+import fcntl
 import json
 import os
 import re
 import shutil
+import tempfile
+from contextlib import contextmanager
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -66,11 +69,32 @@ class LocalDataClient:
     def write_table(self, table_name: str, rows: list[dict]) -> None:
         path = self.table_path(table_name)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(rows, indent=2, sort_keys=True, ensure_ascii=False) + "\n")
+        descriptor, temporary_path = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+        try:
+            with os.fdopen(descriptor, "w") as handle:
+                json.dump(rows, handle, indent=2, sort_keys=True, ensure_ascii=False)
+                handle.write("\n")
+            Path(temporary_path).replace(path)
+        finally:
+            Path(temporary_path).unlink(missing_ok=True)
+
+    @contextmanager
+    def table_lock(self, table_name: str):
+        lock_path = self.table_path(table_name).with_suffix(".lock")
+        lock_path.parent.mkdir(parents=True, exist_ok=True)
+        with lock_path.open("a+") as lock_file:
+            fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
+            try:
+                yield
+            finally:
+                fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
 
     def reset(self) -> None:
-        if self.data_dir.exists():
-            shutil.rmtree(self.data_dir)
+        # Keep the last complete app-data export available while a fresh scrape runs.
+        # The raw tables and brochure storage are the only pipeline inputs that need clearing.
+        for directory in (self.tables_dir, self.data_dir / "storage"):
+            if directory.exists():
+                shutil.rmtree(directory)
         self.tables_dir.mkdir(parents=True, exist_ok=True)
 
 
@@ -133,33 +157,34 @@ class LocalTableQuery:
         return self
 
     def execute(self) -> LocalDataResponse:
-        rows = self.client.read_table(self.table_name)
-        if self.operation == "select":
-            return LocalDataResponse(self.apply_read_projection(rows))
-        if self.operation == "delete":
-            kept = [row for row in rows if not self.matches(row)]
-            deleted = [row for row in rows if self.matches(row)]
-            self.client.write_table(self.table_name, kept)
-            return LocalDataResponse(deleted)
-        if self.operation == "insert":
-            new_rows = normalize_rows(self.payload)
-            self.client.write_table(self.table_name, [*rows, *new_rows])
-            return LocalDataResponse(new_rows)
-        if self.operation == "update":
-            updated = []
-            merged = []
-            for row in rows:
-                if self.matches(row):
-                    next_row = {**row, **dict(self.payload or {})}
-                    updated.append(next_row)
-                    merged.append(next_row)
-                else:
-                    merged.append(row)
-            self.client.write_table(self.table_name, merged)
-            return LocalDataResponse(updated)
-        if self.operation == "upsert":
-            return LocalDataResponse(self.execute_upsert(rows))
-        raise ValueError(f"Unsupported local data operation: {self.operation}")
+        with self.client.table_lock(self.table_name):
+            rows = self.client.read_table(self.table_name)
+            if self.operation == "select":
+                return LocalDataResponse(self.apply_read_projection(rows))
+            if self.operation == "delete":
+                kept = [row for row in rows if not self.matches(row)]
+                deleted = [row for row in rows if self.matches(row)]
+                self.client.write_table(self.table_name, kept)
+                return LocalDataResponse(deleted)
+            if self.operation == "insert":
+                new_rows = normalize_rows(self.payload)
+                self.client.write_table(self.table_name, [*rows, *new_rows])
+                return LocalDataResponse(new_rows)
+            if self.operation == "update":
+                updated = []
+                merged = []
+                for row in rows:
+                    if self.matches(row):
+                        next_row = {**row, **dict(self.payload or {})}
+                        updated.append(next_row)
+                        merged.append(next_row)
+                    else:
+                        merged.append(row)
+                self.client.write_table(self.table_name, merged)
+                return LocalDataResponse(updated)
+            if self.operation == "upsert":
+                return LocalDataResponse(self.execute_upsert(rows))
+            raise ValueError(f"Unsupported local data operation: {self.operation}")
 
     def execute_upsert(self, rows: list[dict]) -> list[dict]:
         new_rows = normalize_rows(self.payload)

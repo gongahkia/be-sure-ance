@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from src.lib.observability import capture_scraper_exception, initialize_observability
@@ -27,9 +28,24 @@ def list_scraper_scripts(include_experimental: bool = False):
     ]
 
 
+def run_scraper(script: Path, scraper_args: list[str], dry_run: bool):
+    command = [sys.executable, "-m", f"src.scrapers.{script.stem}"]
+    if dry_run:
+        command.append("--dry-run")
+    command.extend(scraper_args)
+    print(f"Running {script.stem} ...")
+    return script.stem, command, subprocess.run(command, cwd=SCRAPER_DIR.parent.parent)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", help="Comma-separated list of scraper module stems to run.")
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=4,
+        help="Maximum number of isolated scraper processes to run concurrently.",
+    )
     parser.add_argument(
         "--include-experimental",
         action="store_true",
@@ -61,30 +77,45 @@ def main():
 
     if not scripts:
         raise SystemExit("No scrapers selected.")
+    if args.workers < 1:
+        raise SystemExit("--workers must be at least 1.")
 
     initialize_observability("scraper")
     sync_scraper_registry_statuses(dry_run=args.dry_run)
     failures = []
-    for script in scripts:
-        command = [sys.executable, "-m", f"src.scrapers.{script.stem}"]
-        if args.dry_run:
-            command.append("--dry-run")
-        command.extend(scraper_args)
+    with ThreadPoolExecutor(max_workers=min(args.workers, len(scripts))) as executor:
+        futures = {
+            executor.submit(run_scraper, script, scraper_args, args.dry_run): script
+            for script in scripts
+        }
+        for future in as_completed(futures):
+            script = futures[future]
+            try:
+                scraper_name, command, result = future.result()
+            except Exception as error:
+                scraper_name = script.stem
+                command = [sys.executable, "-m", f"src.scrapers.{scraper_name}"]
+                result = None
+                error_message = str(error)
+            else:
+                error_message = (
+                    f"scraper process exited with code {result.returncode}"
+                    if result.returncode != 0
+                    else ""
+                )
 
-        print(f"Running {script.stem} ...")
-        result = subprocess.run(command, cwd=SCRAPER_DIR.parent.parent)
-        if result.returncode != 0:
-            capture_scraper_exception(
-                script.stem,
-                RuntimeError(f"scraper process exited with code {result.returncode}"),
-                context={"command": " ".join(command)},
-            )
-            record_scraper_failure(
-                script.stem,
-                f"scraper process exited with code {result.returncode}",
-                dry_run=args.dry_run,
-            )
-            failures.append(script.stem)
+            if error_message:
+                capture_scraper_exception(
+                    scraper_name,
+                    RuntimeError(error_message),
+                    context={"command": " ".join(command)},
+                )
+                record_scraper_failure(
+                    scraper_name,
+                    error_message,
+                    dry_run=args.dry_run,
+                )
+                failures.append(scraper_name)
 
     if failures:
         raise SystemExit(f"Scrapers failed: {', '.join(failures)}")
