@@ -1,5 +1,5 @@
 <template>
-  <section class="matrix-page hub-panel">
+  <section class="matrix-page">
     <div class="matrix-top">
       <div>
         <p class="eyebrow">{{ t('ui.matrix.eyebrow') }}</p>
@@ -13,12 +13,6 @@
       />
     </div>
 
-    <div class="legend-row" :aria-label="t('ui.matrix.legend')">
-      <span class="status-pill status-yes">{{ t('ui.matrix.yes') }}</span>
-      <span class="status-pill status-no">{{ t('ui.matrix.no') }}</span>
-      <span class="status-pill status-unknown">{{ t('ui.matrix.unknown') }}</span>
-      <span class="status-pill status-stale">{{ t('ui.matrix.stale') }}</span>
-    </div>
 
     <div v-if="hospitalRows.length === 0" class="empty-state">
       {{ t('ui.matrix.empty') }}
@@ -274,15 +268,17 @@ function slugify(value) {
 <style scoped>
 .matrix-page {
   display: grid;
-  gap: 1rem;
-  padding: 18px;
+  border-top: 1px solid var(--hf-border);
+  border-bottom: 1px solid var(--hf-border);
 }
 
 .matrix-top {
   display: flex;
   gap: 1rem;
-  justify-content: space-between;
   align-items: end;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hf-border);
 }
 
 .eyebrow,
@@ -301,49 +297,13 @@ h2 {
   width: min(440px, 100%);
   padding: 0.85rem 1rem;
   border: 1px solid var(--hf-border);
-  border-radius: 999px;
-  background: var(--hf-neutral);
+  border-radius: 0;
+  background: transparent;
   color: var(--hf-primary);
 }
 
-.legend-row {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.status-pill {
-  padding: 0.28rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.status-yes,
-.cell-yes {
-  color: #bbf7d0;
-  background: rgba(22, 101, 52, 0.36);
-}
-
-.status-no,
-.cell-no {
-  color: #fecdd3;
-  background: rgba(127, 29, 29, 0.36);
-}
-
-.status-unknown,
-.cell-unknown {
-  color: var(--hf-secondary);
-  background: var(--hf-surface-2);
-}
-
-.status-stale,
-.cell-stale {
-  color: #fde68a;
-  background: rgba(124, 45, 18, 0.36);
-}
-
 .empty-state {
+  padding: 18px 0;
   color: var(--hf-secondary);
 }
 
@@ -359,10 +319,23 @@ table {
 
 th,
 td {
-  padding: 0.75rem;
+  border-right: 1px solid var(--hf-border);
   border-bottom: 1px solid var(--hf-border);
   text-align: left;
   vertical-align: top;
+}
+
+th {
+  padding: 0.75rem;
+}
+
+td {
+  padding: 0;
+}
+
+th:last-child,
+td:last-child {
+  border-right: 0;
 }
 
 thead th {
@@ -375,7 +348,7 @@ thead th {
   left: 0;
   z-index: 1;
   width: 220px;
-  background: var(--hf-surface);
+  background: var(--hf-neutral);
 }
 
 .hospital-column span,
@@ -385,16 +358,36 @@ thead th {
 
 .hospital-column small {
   margin-top: 0.25rem;
-  color: #fde68a;
+  color: var(--hf-muted);
 }
 
 .matrix-cell {
   display: grid;
-  gap: 0.25rem;
   min-width: 140px;
-  min-height: 76px;
-  padding: 0.6rem;
-  border-radius: 0.65rem;
+  min-height: 100%;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border-left: 3px solid var(--hf-border);
+}
+
+.cell-yes {
+  color: var(--hf-primary);
+  border-left-color: var(--hf-primary);
+}
+
+.cell-no {
+  color: var(--hf-secondary);
+  border-left-color: var(--hf-secondary);
+}
+
+.cell-unknown {
+  color: var(--hf-secondary);
+  border-left-color: var(--hf-tertiary);
+}
+
+.cell-stale {
+  color: var(--hf-muted);
+  border-left-color: var(--hf-muted);
 }
 
 .matrix-cell span {
@@ -408,10 +401,6 @@ thead th {
 }
 
 @media (max-width: 720px) {
-  .matrix-page {
-    padding: 1rem;
-  }
-
   .matrix-top {
     align-items: stretch;
     flex-direction: column;

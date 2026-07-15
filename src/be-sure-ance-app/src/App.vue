@@ -2,6 +2,7 @@
   <div id="app" class="hub-app">
     <header class="hub-topbar">
       <a href="/" class="brand" @click="navigateTo('/', $event)">
+        <img :src="appLogo" alt="" aria-hidden="true" />
         <span>Be-sure-ance</span>
       </a>
 
@@ -371,7 +372,7 @@
             @toggle-select="togglePlanSelection"
           />
         </section>
-        <section v-else class="status-panel">{{ emptyPlanMessage }}</section>
+        <section v-else class="empty-plan-state">{{ emptyPlanMessage }}</section>
       </section>
     </main>
   </div>
@@ -380,6 +381,7 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
+import appLogo from './assets/logo.png'
 import BrochureChangeList from './components/BrochureChangeList.vue'
 import ClaimTurnaroundBoard from './components/ClaimTurnaroundBoard.vue'
 import CompareSplitView from './components/CompareSplitView.vue'
@@ -1186,6 +1188,13 @@ function localize(value) {
   text-decoration: none;
 }
 
+.brand img {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
 .global-search .hub-input {
   width: 100%;
 }
@@ -1248,6 +1257,7 @@ function localize(value) {
 .page-shell {
   display: grid;
   min-width: 0;
+  align-content: start;
   gap: 20px;
 }
 
@@ -1459,6 +1469,13 @@ h1 span {
   border: 1px solid var(--hf-border);
   border-radius: var(--hf-radius-lg);
   background: var(--hf-surface);
+  color: var(--hf-secondary);
+}
+
+.empty-plan-state {
+  padding: 20px 0;
+  border-top: 1px solid var(--hf-border);
+  border-bottom: 1px solid var(--hf-border);
   color: var(--hf-secondary);
 }
 

@@ -73,12 +73,12 @@ Run the no-credential local demo:
 docker compose up --build
 ```
 
-Open `http://localhost:5173`. The default stack starts the Vue frontend and FastAPI PDF backend, then generates seeded static app data. It does not require production credentials and does not deploy anything.
+Open `http://localhost:5173`. The default stack starts the FastAPI backend, installs Chromium, runs the full supported-carrier scraper pipeline, deduplicates data within each scraper, exports `app-data.json`, then starts the Vue frontend. It does not require production credentials and does not deploy anything; the first startup can take several minutes because it fetches public carrier sources.
 
 Common local commands:
 
 ```sh
-docker compose run --rm scraper
+docker compose run --rm scraper # rerun the full live scrape and static-data export
 PYTHON=.venv/bin/python npm --prefix src/be-sure-ance-app run scrape:data:smoke
 PYTHON=.venv/bin/python npm --prefix src/be-sure-ance-app run build:local
 TELEGRAM_BOT_TOKEN=<bot-token> docker compose --profile bot up bot

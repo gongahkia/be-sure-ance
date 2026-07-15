@@ -52,10 +52,10 @@ class PanelHospitalMatrixFrontendTests(unittest.TestCase):
             "status: 'no'",
             "status: 'unknown'",
             "status: freshMatches.length > 0 ? 'yes' : 'stale'",
-            "status-pill status-yes",
-            "status-pill status-no",
-            "status-pill status-unknown",
-            "status-pill status-stale",
+            "cell-yes",
+            "cell-no",
+            "cell-unknown",
+            "cell-stale",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, MATRIX)
