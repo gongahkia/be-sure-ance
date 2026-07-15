@@ -251,10 +251,6 @@
                 :entries="provenanceEntriesForFields(detailPlan.facts, ['brochure_metadata'])"
               />
             </template>
-
-            <template v-else>
-              <ComparisonTable :selected-plans="detailComparePlans" />
-            </template>
           </article>
 
           <aside class="repo-sidebar">
@@ -460,7 +456,6 @@ const detailTabs = computed(() => [
   { key: 'card', label: t('ui.detail.card') },
   { key: 'facts', label: t('ui.detail.facts') },
   { key: 'files', label: t('ui.detail.files') },
-  { key: 'compare', label: t('ui.detail.compare') },
 ])
 
 async function fetchData() {
@@ -853,17 +848,6 @@ const selectedPlans = computed(() =>
     .map((key) => enrichedPlans.value.find((plan) => plan.key === key))
     .filter(Boolean),
 )
-
-const detailComparePlans = computed(() => {
-  if (!detailPlan.value) {
-    return []
-  }
-  const keyed = new Map([[detailPlan.value.key, detailPlan.value]])
-  for (const plan of selectedPlans.value) {
-    keyed.set(plan.key, plan)
-  }
-  return Array.from(keyed.values()).slice(0, 3)
-})
 
 const totalPanelHospitalCount = computed(() =>
   enrichedPlans.value.reduce(

@@ -30,12 +30,14 @@ class ScraperStatusFrontendTests(unittest.TestCase):
             "t('ui.scraper.fresh')",
             "t('ui.scraper.stale')",
             "t('ui.scraper.failing')",
-            "t('ui.scraper.unsupported')",
-            "t('ui.scraper.errorRate')",
+            "'ui.scraper.allOperational'",
+            "t('ui.scraper.recentObservations')",
             "validation_summary",
             "row_count",
             "last_success_at",
             "last_failure_at",
+            "last_error",
+            "carrier-status-row",
             "Raw failure",
         ):
             with self.subTest(required=required):
@@ -43,9 +45,6 @@ class ScraperStatusFrontendTests(unittest.TestCase):
                     self.assertNotIn(required, STATUS_DASHBOARD)
                 else:
                     self.assertIn(required, STATUS_DASHBOARD)
-        for required in ("Fresh", "Stale", "Failing", "Unsupported", "Error rate"):
-            with self.subTest(required=required):
-                self.assertIn(required, I18N)
 
     def test_status_route_is_linked_and_static_hosted(self):
         for required in (

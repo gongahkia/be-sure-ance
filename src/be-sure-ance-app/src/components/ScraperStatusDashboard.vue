@@ -1,56 +1,50 @@
 <template>
-  <section class="scraper-status-panel hub-panel">
-    <div class="section-top">
+  <section class="status-page" :aria-label="t('ui.scraper.tableLabel')">
+    <header class="status-header">
+      <p class="status-brand">Be-sure-ance status</p>
+      <p>{{ t('ui.scraper.panelCopy') }}</p>
+    </header>
+
+    <section :class="['status-notice', `notice-${overallState}`]" aria-live="polite">
       <div>
-        <p class="eyebrow">{{ t('ui.scraper.eyebrow') }}</p>
-        <h2>{{ t('ui.scraper.panelTitle') }}</h2>
+        <strong>{{ overallTitle }}</strong>
+        <span>{{ t('ui.scraper.updated', { date: dateTimeText(lastUpdatedAt) }) }}</span>
       </div>
-      <p class="section-copy">{{ t('ui.scraper.panelCopy') }}</p>
-    </div>
+      <p>{{ overallCopy }}</p>
+    </section>
 
-    <div class="status-summary" :aria-label="t('ui.scraper.summaryLabel')">
-      <article v-for="item in summaryCounts" :key="item.key">
-        <span>{{ item.label }}</span>
-        <strong>{{ item.count }}</strong>
+    <section class="carrier-statuses">
+      <div class="section-heading">
+        <h2>{{ t('ui.scraper.carrierMonitors') }}</h2>
+        <span>{{ t('ui.scraper.monitorCount', { count: supportedRows.length }) }}</span>
+      </div>
+
+      <article v-for="row in supportedRows" :key="row.carrier_key" class="carrier-status-row">
+        <div>
+          <strong>{{ row.display_name }}</strong>
+          <span>
+            {{ t('ui.scraper.rowCount', { count: row.row_count ?? 0 }) }} ·
+            {{ t('ui.scraper.lastSuccess') }}: {{ dateText(row.last_success_at) }}
+          </span>
+        </div>
+        <div class="carrier-state">
+          <span :class="['state-dot', `dot-${carrierState(row)}`]" aria-hidden="true"></span>
+          <strong>{{ carrierStateLabel(row) }}</strong>
+        </div>
       </article>
-    </div>
+    </section>
 
-    <div class="status-table-wrap" tabindex="0" aria-label="Carrier scraper health table">
-      <table>
-        <thead>
-          <tr>
-            <th>{{ t('ui.scraper.carrier') }}</th>
-            <th>{{ t('ui.scraper.status') }}</th>
-            <th>{{ t('ui.scraper.rows') }}</th>
-            <th>{{ t('ui.scraper.lastSuccess') }}</th>
-            <th>{{ t('ui.scraper.lastFailure') }}</th>
-            <th>{{ t('ui.scraper.validation') }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="row in normalizedRows" :key="row.carrier_key">
-            <td>
-              <strong>{{ row.display_name }}</strong>
-              <span>{{ row.carrier_key }}</span>
-            </td>
-            <td>
-              <span class="status-pill" :class="`status-${carrierState(row)}`">
-                {{ carrierStateLabel(row) }}
-              </span>
-            </td>
-            <td>{{ row.row_count ?? 0 }}</td>
-            <td>{{ dateText(row.last_success_at) }}</td>
-            <td>{{ dateText(row.last_failure_at) }}</td>
-            <td>
-              {{ validationText(row) }}
-              <span v-if="validationNotes(row)" class="validation-note">
-                {{ validationNotes(row) }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <section class="recent-observations">
+      <h2>{{ t('ui.scraper.recentObservations') }}</h2>
+      <template v-if="incidentRows.length > 0">
+        <article v-for="row in incidentRows" :key="row.carrier_key">
+          <p>{{ dateTimeText(row.last_failure_at || row.last_run_at) }}</p>
+          <strong>{{ row.display_name }} · {{ carrierStateLabel(row) }}</strong>
+          <span>{{ row.last_error || validationText(row) }}</span>
+        </article>
+      </template>
+      <p v-else class="no-incidents">{{ t('ui.scraper.noIncidents') }}</p>
+    </section>
   </section>
 </template>
 
@@ -76,31 +70,52 @@ const { t } = useI18n()
 
 const normalizedRows = computed(() => {
   const rowsByKey = new Map(props.healthRows.map((row) => [row.carrier_key, row]))
-  const providerRows = props.providers.map((provider) =>
-    normalizeRow(rowsByKey.get(provider.key), provider),
-  )
-  const providerKeys = new Set(props.providers.map((provider) => provider.key))
-  const extraRows = props.healthRows
-    .filter((row) => row?.carrier_key && !providerKeys.has(row.carrier_key))
-    .map((row) => normalizeRow(row))
-  return [...providerRows, ...extraRows].sort((left, right) =>
-    left.display_name.localeCompare(right.display_name),
-  )
+  return props.providers
+    .map((provider) => normalizeRow(rowsByKey.get(provider.key), provider))
+    .sort((left, right) => left.display_name.localeCompare(right.display_name))
 })
 
-const summaryCounts = computed(() => {
-  const counts = { fresh: 0, stale: 0, failing: 0, unsupported: 0 }
-  for (const row of normalizedRows.value) {
-    counts[carrierState(row)] += 1
+const supportedRows = computed(() =>
+  normalizedRows.value.filter((row) => row.support_status === 'supported'),
+)
+
+const incidentRows = computed(() =>
+  supportedRows.value.filter((row) => ['failing', 'stale'].includes(carrierState(row))),
+)
+
+const overallState = computed(() => {
+  if (incidentRows.value.some((row) => carrierState(row) === 'failing')) {
+    return 'failing'
   }
-  return [
-    { key: 'errorRate', label: t('ui.scraper.errorRate'), count: errorRate(counts) },
-    { key: 'fresh', label: t('ui.scraper.fresh'), count: counts.fresh },
-    { key: 'stale', label: t('ui.scraper.stale'), count: counts.stale },
-    { key: 'failing', label: t('ui.scraper.failing'), count: counts.failing },
-    { key: 'unsupported', label: t('ui.scraper.unsupported'), count: counts.unsupported },
-  ]
+  if (incidentRows.value.length > 0) {
+    return 'stale'
+  }
+  return 'fresh'
 })
+
+const overallTitle = computed(() => {
+  const keyByState = {
+    fresh: 'ui.scraper.allOperational',
+    stale: 'ui.scraper.degraded',
+    failing: 'ui.scraper.incident',
+  }
+  return t(keyByState[overallState.value])
+})
+
+const overallCopy = computed(() => {
+  if (overallState.value === 'fresh') {
+    return t('ui.scraper.allOperationalCopy')
+  }
+  return t('ui.scraper.incidentCopy', { count: incidentRows.value.length })
+})
+
+const lastUpdatedAt = computed(() =>
+  supportedRows.value
+    .flatMap((row) => [row.last_run_at, row.updated_at, row.last_success_at])
+    .filter(Boolean)
+    .sort()
+    .at(-1),
+)
 
 function normalizeRow(row, provider = {}) {
   return {
@@ -110,25 +125,16 @@ function normalizeRow(row, provider = {}) {
     last_success_at: row?.last_success_at || '',
     last_failure_at: row?.last_failure_at || '',
     last_run_at: row?.last_run_at || '',
+    last_error: row?.last_error || '',
     row_count: row?.row_count ?? 0,
     validation_status: row?.validation_status || 'not_run',
     validation_checked_at: row?.validation_checked_at || '',
     validation_summary: row?.validation_summary || {},
+    updated_at: row?.updated_at || '',
   }
-}
-
-function errorRate(counts) {
-  const supportedTotal = counts.fresh + counts.stale + counts.failing
-  if (supportedTotal === 0) {
-    return '0%'
-  }
-  return `${Math.round((counts.failing / supportedTotal) * 100)}%`
 }
 
 function carrierState(row) {
-  if (row.support_status !== 'supported') {
-    return 'unsupported'
-  }
   if (
     row.last_failure_at &&
     (!row.last_success_at || new Date(row.last_failure_at) > new Date(row.last_success_at))
@@ -149,7 +155,6 @@ function carrierStateLabel(row) {
     fresh: t('ui.scraper.fresh'),
     stale: t('ui.scraper.stale'),
     failing: t('ui.scraper.failing'),
-    unsupported: t('ui.scraper.unsupported'),
   }
   return labels[carrierState(row)]
 }
@@ -157,27 +162,14 @@ function carrierStateLabel(row) {
 function validationText(row) {
   const summary = row.validation_summary || {}
   const status = row.validation_status || 'not_run'
-  if (status === 'unsupported') {
-    return t('ui.scraper.unsupportedScraper')
-  }
   if (status === 'not_run') {
     return t('ui.scraper.notRun')
   }
-  const parts = [
+  return [
     status.replace('_', ' '),
     t('ui.scraper.targets', { count: summary.total_targets ?? 0 }),
     t('ui.scraper.failed', { count: summary.failed ?? 0 }),
-    t('ui.scraper.errors', { count: summary.errors ?? 0 }),
-  ]
-  return parts.join(' · ')
-}
-
-function validationNotes(row) {
-  if (!['failed', 'error'].includes(row.validation_status)) {
-    return ''
-  }
-  const notes = row.validation_summary?.notes || []
-  return notes.slice(0, 2).join(' · ')
+  ].join(' · ')
 }
 
 function daysSince(value) {
@@ -185,132 +177,197 @@ function daysSince(value) {
   if (Number.isNaN(timestamp)) {
     return Number.POSITIVE_INFINITY
   }
-  return (Date.now() - timestamp) / (1000 * 60 * 60 * 24)
+  return (Date.now() - timestamp) / 86400000
 }
 
 function dateText(value) {
   return String(value || '').slice(0, 10) || t('ui.scraper.notRecorded')
 }
+
+function dateTimeText(value) {
+  if (!value) {
+    return t('ui.scraper.notRecorded')
+  }
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) {
+    return dateText(value)
+  }
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(date)
+}
 </script>
 
 <style scoped>
-.scraper-status-panel {
-  display: grid;
-  gap: 1rem;
-  padding: 18px;
+.status-page {
+  width: min(880px, 100%);
+  margin: 0 auto;
+  color: var(--hf-primary);
 }
 
-.section-top {
+.status-header {
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
-}
-
-.section-top h2,
-.section-copy {
-  margin: 0;
-}
-
-.section-copy {
-  max-width: 38rem;
-  color: var(--hf-secondary);
-}
-
-.status-summary {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.status-summary article {
-  padding: 0.9rem;
-  border: 1px solid var(--hf-border);
-  border-radius: var(--hf-radius-lg);
-  background: var(--hf-surface-2);
-}
-
-.status-summary span {
-  display: block;
-  color: var(--hf-muted);
-  font-weight: 700;
-}
-
-.status-summary strong {
-  display: block;
-  margin-top: 0.3rem;
-  font-size: 1.5rem;
-}
-
-.status-table-wrap {
-  overflow-x: auto;
-}
-
-.status-table-wrap:focus {
-  outline: 2px solid rgba(255, 204, 77, 0.78);
-  outline-offset: 0.2rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 820px;
-}
-
-th,
-td {
-  padding: 0.8rem;
+  gap: 24px;
+  padding: 8px 0 22px;
   border-bottom: 1px solid var(--hf-border);
-  text-align: left;
-  vertical-align: top;
 }
 
-td span {
-  display: block;
-  margin-top: 0.15rem;
-  color: var(--hf-muted);
-  font-size: 0.84rem;
-}
-
-.validation-note {
-  max-width: 34rem;
-}
-
-.status-pill {
-  display: inline-block;
+.status-header p {
   margin: 0;
-  padding: 0.3rem 0.5rem;
-  border-radius: 999px;
+  color: var(--hf-muted);
+  font-size: 14px;
+}
+
+.status-header .status-brand {
+  color: var(--hf-primary);
   font-weight: 800;
 }
 
-.status-fresh {
-  background: rgba(22, 101, 52, 0.36);
-  color: #bbf7d0;
+.status-notice {
+  display: grid;
+  gap: 8px;
+  margin: 28px 0 34px;
+  padding: 14px 16px;
+  border: 1px solid var(--hf-border);
+  border-left-width: 4px;
 }
 
-.status-stale {
-  background: rgba(124, 45, 18, 0.36);
-  color: #fde68a;
+.status-notice div,
+.carrier-state,
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.status-failing {
-  background: rgba(127, 29, 29, 0.36);
-  color: #fecdd3;
+.status-notice strong,
+.carrier-state strong {
+  font-size: 14px;
 }
 
-.status-unsupported {
-  background: var(--hf-surface-2);
-  color: var(--hf-secondary);
+.status-notice span,
+.status-notice p,
+.carrier-status-row span,
+.recent-observations span,
+.section-heading span {
+  color: var(--hf-muted);
+  font-size: 13px;
 }
 
-@media (max-width: 780px) {
-  .section-top,
-  .status-summary {
-    grid-template-columns: 1fr;
+.status-notice p {
+  margin: 0;
+}
+
+.notice-fresh {
+  border-left-color: var(--hf-primary);
+}
+
+.notice-stale {
+  border-left-color: var(--hf-warn);
+}
+
+.notice-failing {
+  border-left-color: var(--hf-error);
+}
+
+.section-heading {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hf-border);
+}
+
+.section-heading h2,
+.recent-observations h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.carrier-status-row {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--hf-border);
+}
+
+.carrier-status-row > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.carrier-status-row > div:first-child strong {
+  font-size: 14px;
+}
+
+.carrier-state {
+  min-width: 112px;
+  justify-content: flex-end;
+}
+
+.state-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--hf-tertiary);
+}
+
+.dot-fresh {
+  background: var(--hf-primary);
+}
+
+.dot-stale {
+  background: var(--hf-warn);
+}
+
+.dot-failing {
+  background: var(--hf-error);
+}
+
+.recent-observations {
+  margin-top: 42px;
+}
+
+.recent-observations h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hf-border);
+}
+
+.recent-observations article,
+.no-incidents {
+  display: grid;
+  gap: 5px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hf-border);
+}
+
+.recent-observations article p,
+.no-incidents {
+  margin: 0;
+  color: var(--hf-muted);
+  font-size: 13px;
+}
+
+.recent-observations article strong {
+  font-size: 14px;
+}
+
+@media (max-width: 720px) {
+  .status-header,
+  .carrier-status-row {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .section-top {
-    display: grid;
+  .carrier-status-row {
+    gap: 10px;
+    padding: 14px 0;
+  }
+
+  .carrier-state {
+    justify-content: flex-start;
   }
 }
 </style>
