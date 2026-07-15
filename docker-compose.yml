@@ -17,7 +17,10 @@ services:
   frontend:
     image: node:20-alpine
     working_dir: /app/src/be-sure-ance-app
-    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    command: >
+      sh -c "npm ci &&
+      printf '\n\n  Frontend URL: http://localhost:5173\n\n' &&
+      npm run dev -- --host 0.0.0.0"
     depends_on:
       backend:
         condition: service_started

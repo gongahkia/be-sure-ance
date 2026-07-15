@@ -21,33 +21,8 @@
         </button>
       </div>
 
-      <div class="chip-row">
+      <div v-if="coverageBadges.length > 0" class="chip-row">
         <span v-for="badge in coverageBadges" :key="badge" class="hub-chip">{{ badge }}</span>
-        <span class="hub-chip">{{ t('ui.plan.facts', { count: factCount }) }}</span>
-        <span class="hub-chip">{{ t('ui.plan.sources', { count: sourceCount }) }}</span>
-        <span :class="['hub-chip', verificationClass]">{{ verificationText }}</span>
-        <span v-if="resources.length > 0" class="hub-chip good">
-          {{ t('ui.plan.providerLinks', { count: resources.length }) }}
-        </span>
-      </div>
-
-      <div class="repo-meta">
-        <span>{{ plan.providerKey }}</span>
-        <span v-if="canonicalCarrierText"
-          >{{ t('plan.canonicalCarrier') }}: {{ canonicalCarrierText }}</span
-        >
-        <span v-if="canonicalFlagsText">{{ canonicalFlagsText }}</span>
-        <span>{{ brochureSummary }}</span>
-        <span>{{ latestVerifiedText }}</span>
-        <a
-          v-if="safeExternalUrl(plan.plan_url)"
-          :href="safeExternalUrl(plan.plan_url)"
-          target="_blank"
-          rel="noopener noreferrer"
-          referrerpolicy="no-referrer"
-        >
-          {{ externalHostname(plan.plan_url) }}
-        </a>
       </div>
 
       <details class="row-details">
@@ -125,20 +100,17 @@ import ProviderLogo from './ProviderLogo.vue'
 import RegulatoryEventList from './RegulatoryEventList.vue'
 import { useI18n } from '../i18n'
 import { translateContent } from '../utils/contentTranslation'
-import { externalHostname, safeExternalUrl } from '../utils/links'
+import { safeExternalUrl } from '../utils/links'
 import {
   claimSlaText,
   coverageTagsForPlan,
   durationText,
   factItems,
   factStateText,
-  factValue,
-  formatFactDate,
   itemLabel,
   labelForTag,
   listText,
   provenanceEntriesForFields,
-  provenanceState,
   taxonomySuffix,
 } from '../utils/planFacts'
 
@@ -177,11 +149,6 @@ const waitingPeriods = computed(() => factItems(props.facts, 'waiting_periods'))
 const claimDeadlines = computed(() => factItems(props.facts, 'claim_deadlines'))
 const exclusions = computed(() => factItems(props.facts, 'exclusions'))
 const sourceNotes = computed(() => factItems(props.facts, 'source_notes'))
-const brochureMetadata = computed(() => factValue(props.facts, 'brochure_metadata'))
-const canonicalCarrierText = computed(() => props.plan?.carrierCanonical?.canonical_name || '')
-const canonicalFlagsText = computed(() =>
-  (props.plan?.carrierCanonical?.mismatch_flags || []).join(', '),
-)
 const planSummary = computed(() =>
   localize(
     props.plan?.plan_description ||
@@ -195,61 +162,6 @@ const planPagePath = computed(() =>
     ? `/plan/${encodeURIComponent(props.plan.providerKey)}/${encodeURIComponent(props.plan.plan_slug)}`
     : '',
 )
-
-const factCount = computed(() => Object.keys(props.facts || {}).length)
-const sourceCount = computed(
-  () =>
-    new Set(
-      Object.values(props.facts || {})
-        .map((fact) => fact.source_url)
-        .filter(Boolean),
-    ).size,
-)
-
-const latestVerifiedText = computed(() => {
-  const value = Object.values(props.facts || {})
-    .map((fact) => fact.last_verified_at || fact.scraped_at || '')
-    .filter(Boolean)
-    .sort()
-    .at(-1)
-  return value
-    ? t('ui.plan.verifiedDate', { date: formatFactDate(value) })
-    : t('ui.plan.verificationMissing')
-})
-
-const verificationState = computed(() => {
-  const entries = Object.values(props.facts || {}).map((fact) => ({
-    sourceUrl: fact.source_url || '',
-    scrapedAt: fact.scraped_at || '',
-    lastVerifiedAt: fact.last_verified_at || '',
-  }))
-  if (entries.length === 0) {
-    return 'missing'
-  }
-  return entries.some((entry) => provenanceState(entry) === 'Verified') ? 'verified' : 'stale'
-})
-
-const verificationText = computed(() => {
-  if (verificationState.value === 'verified') return t('ui.state.verified')
-  if (verificationState.value === 'stale') return t('ui.state.stale')
-  return t('ui.state.sourceIncomplete')
-})
-
-const verificationClass = computed(() => {
-  if (verificationState.value === 'verified') return 'good'
-  if (verificationState.value === 'stale') return 'warn'
-  return 'bad'
-})
-
-const brochureSummary = computed(() => {
-  if (brochureMetadata.value?.sha256) {
-    return t('ui.plan.brochureHash', { hash: String(brochureMetadata.value.sha256).slice(0, 8) })
-  }
-  if (props.plan?.product_brochure_url) {
-    return t('ui.plan.brochureLinked')
-  }
-  return t('ui.plan.noBrochure')
-})
 
 function tagLabel(tag) {
   const translated = t(`tag.${tag}`)
@@ -353,23 +265,11 @@ function localize(value) {
   line-height: 22px;
 }
 
-.chip-row,
-.repo-meta {
+.chip-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
-}
-
-.repo-meta {
-  color: var(--hf-muted);
-  font-size: 14px;
-}
-
-.repo-meta span,
-.repo-meta a {
-  min-width: 0;
-  overflow-wrap: anywhere;
 }
 
 .row-details {
