@@ -26,20 +26,6 @@
       </button>
     </section>
 
-    <section>
-      <h2>{{ t('ui.rail.tags') }}</h2>
-      <div class="chip-grid">
-        <button
-          v-for="tag in coverageTags"
-          :key="tag"
-          type="button"
-          :class="['tag-chip', { active: activeCoverageTags.includes(tag) }]"
-          @click="$emit('toggle-coverage', tag)"
-        >
-          {{ tagLabel(tag) }}
-        </button>
-      </div>
-    </section>
   </aside>
 </template>
 
@@ -48,8 +34,6 @@ import { computed } from 'vue'
 
 import ProviderLogo from './ProviderLogo.vue'
 import { useI18n } from '../i18n'
-import { translateContent } from '../utils/contentTranslation'
-import { labelForTag } from '../utils/planFacts'
 
 const props = defineProps({
   providers: {
@@ -61,29 +45,14 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
-  coverageTags: {
-    type: Array,
-    default: () => [],
-  },
-  activeCoverageTags: {
-    type: Array,
-    default: () => [],
-  },
 })
 
-defineEmits(['select', 'toggle-coverage', 'clear-filters'])
+defineEmits(['select', 'clear-filters'])
 
-const { locale, t } = useI18n()
+const { t } = useI18n()
 const totalCount = computed(() =>
   Object.values(props.providerCounts).reduce((total, count) => total + Number(count || 0), 0),
 )
-
-function tagLabel(tag) {
-  const translated = t(`tag.${tag}`)
-  return translated.startsWith('[missing:')
-    ? translateContent(labelForTag(tag), locale.value)
-    : translated
-}
 </script>
 
 <style scoped>
@@ -142,8 +111,7 @@ h2 {
   text-align: left;
 }
 
-.filter-chip.active,
-.tag-chip.active {
+.filter-chip.active {
   border-color: var(--hf-active-border);
   color: var(--hf-primary);
 }
@@ -160,21 +128,6 @@ h2 {
 
 .filter-chip strong {
   color: var(--hf-muted);
-}
-
-.chip-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag-chip {
-  min-height: 34px;
-  border: 1px solid var(--hf-border);
-  border-radius: var(--hf-radius-full);
-  background: var(--hf-surface-2);
-  color: var(--hf-secondary);
-  padding: 5px 10px;
 }
 
 @media (max-width: 1280px) {
