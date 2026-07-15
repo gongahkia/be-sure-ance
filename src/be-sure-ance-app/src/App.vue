@@ -876,7 +876,6 @@ function togglePlanSelection(planKey) {
 
 function clearFilters() {
   activeProviderKey.value = ALL_PROVIDERS_KEY
-  activeCoverageTags.value = []
   searchQuery.value = ''
 }
 
