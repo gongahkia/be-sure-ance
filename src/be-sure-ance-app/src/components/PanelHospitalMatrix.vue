@@ -13,7 +13,6 @@
       />
     </div>
 
-
     <div v-if="hospitalRows.length === 0" class="empty-state">
       {{ t('ui.matrix.empty') }}
     </div>

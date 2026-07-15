@@ -6,6 +6,12 @@ export const providers = [
     focus: 'Health, life, and personal protection',
   },
   {
+    key: 'allianz',
+    name: 'Allianz Insurance Singapore',
+    website: 'https://www.allianz.sg/',
+    focus: 'Personal, travel, motor, home, and business insurance',
+  },
+  {
     key: 'china_life',
     name: 'China Life Singapore',
     website: 'https://www.chinalife.com.sg/',
@@ -34,6 +40,12 @@ export const providers = [
     name: 'Great Eastern Singapore',
     website: 'https://www.greateasternlife.com/sg/en/personal-insurance.html',
     focus: 'Life, health, and long-term planning',
+  },
+  {
+    key: 'hl_assurance',
+    name: 'HL Assurance Singapore',
+    website: 'https://www.hlas.com.sg/',
+    focus: 'Motor, travel, home, and personal accident insurance',
   },
   {
     key: 'hsbc',
@@ -76,6 +88,12 @@ export const providers = [
     name: 'Singlife',
     website: 'https://singlife.com/en',
     focus: 'Digital protection, health, and life',
+  },
+  {
+    key: 'sompo',
+    name: 'Sompo Insurance Singapore',
+    website: 'https://www.sompo.com.sg/',
+    focus: 'Travel, motor, home, personal, and business insurance',
   },
   {
     key: 'sunlife',

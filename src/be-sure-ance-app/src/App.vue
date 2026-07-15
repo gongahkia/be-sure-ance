@@ -314,7 +314,7 @@
 
     <main v-else class="browse-shell">
       <ProviderRail
-        :providers="providers"
+        :providers="loadedProviders"
         :active-provider-key="activeProviderKey"
         :provider-counts="providerCounts"
         :coverage-tags="allCoverageTags"
@@ -357,6 +357,10 @@
           </div>
         </section>
 
+        <p v-if="liveScrapeMode" class="scrape-progress" role="status">
+          {{ t('ui.browse.scrapeProgress', { count: loadedProviders.length }) }}
+        </p>
+
         <section v-if="visiblePlans.length > 0" class="repo-list">
           <PlanCard
             v-for="plan in visiblePlans"
@@ -396,7 +400,7 @@ import ScraperStatusDashboard from './components/ScraperStatusDashboard.vue'
 import SelectedBriefBar from './components/SelectedBriefBar.vue'
 import { useI18n } from './i18n'
 import { buildPlanKey, providers } from './lib/providers'
-import { loadAppData } from './lib/staticData'
+import { LIVE_SCRAPE_MODE, loadAppData } from './lib/staticData'
 import { translateContent } from './utils/contentTranslation'
 import { safeExternalUrl } from './utils/links'
 import {
@@ -421,6 +425,9 @@ const SHARE_DISCLAIMER = computed(() => t('disclaimer.share'))
 const SELECTED_PLANS_STORAGE_KEY = 'be-sure-ance:selected-plan-keys'
 const THEME_STORAGE_KEY = 'be-sure-ance-theme'
 const ALL_PROVIDERS_KEY = 'all'
+const LIVE_SCRAPE_REFRESH_MS = 5000
+const liveScrapeMode = LIVE_SCRAPE_MODE
+let liveScrapeRefreshTimer
 
 const loading = ref(true)
 const errorMessage = ref('')
@@ -479,10 +486,16 @@ async function fetchData() {
 onMounted(() => {
   fetchData()
   window.addEventListener('popstate', syncPathFromLocation)
+  if (liveScrapeMode) {
+    liveScrapeRefreshTimer = window.setInterval(fetchData, LIVE_SCRAPE_REFRESH_MS)
+  }
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('popstate', syncPathFromLocation)
+  if (liveScrapeRefreshTimer) {
+    window.clearInterval(liveScrapeRefreshTimer)
+  }
 })
 
 const currentShareRefs = computed(() => parseShareRoute(currentPath.value))
@@ -820,6 +833,10 @@ const providerCounts = computed(() =>
   }, {}),
 )
 
+const loadedProviders = computed(() =>
+  providers.filter((provider) => providerCounts.value[provider.key] > 0),
+)
+
 const activeProviderLabel = computed(() => {
   if (activeProviderKey.value === ALL_PROVIDERS_KEY) {
     return t('ui.browse.plans')
@@ -861,6 +878,9 @@ const emptyPlanMessage = computed(() => {
       ? enrichedPlans.value.length
       : providerCounts.value[activeProviderKey.value] || 0
   if (providerPlanCount === 0 && !searchQuery.value.trim()) {
+    if (liveScrapeMode && loadedProviders.value.length === 0) {
+      return t('empty.loadingProviders')
+    }
     return t('empty.provider')
   }
   return t('empty.search')
@@ -1355,6 +1375,12 @@ h1 span {
 .repo-list {
   display: grid;
   gap: 12px;
+}
+
+.scrape-progress {
+  margin: 0;
+  color: var(--hf-muted);
+  font-size: 14px;
 }
 
 .repo-tabs {

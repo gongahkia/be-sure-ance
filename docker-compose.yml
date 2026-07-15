@@ -21,11 +21,11 @@ services:
     depends_on:
       backend:
         condition: service_started
-      scraper:
-        condition: service_completed_successfully
     environment:
       VITE_PDF_BRIEF_ENDPOINT: http://localhost:8000/briefs/client.pdf
       VITE_STATIC_DATA_PATH: /data/app-data.json
+      VITE_LIVE_SCRAPE_MODE: "true"
+      VITE_LIVE_TABLES_PATH: /data/tables
       VITE_SITE_ORIGIN: http://localhost:5173
     ports:
       - "5173:5173"

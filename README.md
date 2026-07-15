@@ -73,7 +73,7 @@ Run the no-credential local demo:
 docker compose up --build
 ```
 
-Open `http://localhost:5173`. The default stack starts the FastAPI backend, installs Chromium, runs the full supported-carrier scraper pipeline with four concurrent isolated scraper processes, deduplicates data within each scraper, exports `app-data.json`, then starts the Vue frontend. It does not require production credentials and does not deploy anything; the first startup can take several minutes because it fetches public carrier sources. Pass `--workers <count>` to `src.scrapers.run_all` to tune provider-scraper concurrency.
+Open `http://localhost:5173`. The default stack starts the Vue frontend and FastAPI backend immediately, then installs Chromium and runs the full supported-carrier scraper pipeline with four concurrent isolated scraper processes. In Docker live-scrape mode, the frontend polls the raw tables and displays only carriers whose plans have loaded so far. The pipeline deduplicates data within each scraper and exports `app-data.json` when complete. It does not require production credentials and does not deploy anything; the first startup can take several minutes because it fetches public carrier sources. Pass `--workers <count>` to `src.scrapers.run_all` to tune provider-scraper concurrency.
 
 Common local commands:
 

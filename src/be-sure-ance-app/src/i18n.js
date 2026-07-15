@@ -47,6 +47,7 @@ export const messages = {
     'toolbar.openCarrier': 'Open carrier site',
     'empty.routePlan': 'No plan matches this static plan URL yet.',
     'empty.provider': 'No supported plans are loaded for this provider yet.',
+    'empty.loadingProviders': 'Live scrape in progress. Providers will appear as their plans load.',
     'empty.search': 'No plans match the current provider and search filters.',
     'disclaimer.share':
       'This shared comparison is for pre-meeting research only. It is not financial advice, insurance advice, legal advice, a recommendation, a ranking, a quote, or a policy transaction. Verify every fact against the carrier source, compareFIRST where applicable, and the adviser compliance workflow.',
@@ -147,6 +148,7 @@ export const messages = {
     'ui.browse.models': 'Models',
     'ui.browse.plans': 'Plans',
     'ui.browse.filter': 'Filter by name',
+    'ui.browse.scrapeProgress': 'Live scrape in progress · {count} providers loaded',
     'ui.browse.verifiedOnly': 'Verified only',
     'ui.browse.brochure': 'Brochure',
     'ui.browse.sortLabel': 'Sort plans',
@@ -308,6 +310,7 @@ export const messages = {
     'toolbar.openCarrier': '打开保险公司网站',
     'empty.routePlan': '没有计划符合这个静态计划网址。',
     'empty.provider': '这个保险公司尚未载入受支持的计划。',
+    'empty.loadingProviders': '正在进行实时抓取。保险公司会在计划载入后显示。',
     'empty.search': '没有计划符合当前保险公司和搜索条件。',
     'disclaimer.share':
       '此共享比较仅供会前研究使用。它不是财务建议、保险建议、法律建议、推荐、排名、报价或保单交易。请根据保险公司来源、适用时的 compareFIRST，以及顾问的合规流程核实每一项事实。',
@@ -406,6 +409,7 @@ export const messages = {
     'ui.browse.models': '计划',
     'ui.browse.plans': '计划',
     'ui.browse.filter': '按名称筛选',
+    'ui.browse.scrapeProgress': '正在实时抓取 · 已载入 {count} 家保险公司',
     'ui.browse.verifiedOnly': '仅已核实',
     'ui.browse.brochure': '产品册',
     'ui.browse.sortLabel': '排序计划',
