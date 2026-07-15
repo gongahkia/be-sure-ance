@@ -551,8 +551,40 @@ export const messages = {
   },
 }
 
+messages['ms-SG'] = {
+  ...messages.en,
+  'language.label': 'Bahasa',
+  'theme.label': 'Tema',
+  'theme.light': 'Cerah',
+  'theme.dark': 'Gelap',
+  'ui.nav.models': 'Pelan',
+  'ui.nav.compare': 'Bandingkan',
+  'ui.nav.datasets': 'Data',
+  'ui.nav.status': 'Status',
+  'route.workspace': 'Ruang kerja pelan',
+  'route.panelHospitals': 'Hospital panel',
+  'route.status': 'Status pengikis',
+}
+
+messages['ta-SG'] = {
+  ...messages.en,
+  'language.label': 'மொழி',
+  'theme.label': 'தீம்',
+  'theme.light': 'ஒளி',
+  'theme.dark': 'இருள்',
+  'ui.nav.models': 'திட்டங்கள்',
+  'ui.nav.compare': 'ஒப்பிடுக',
+  'ui.nav.datasets': 'தரவு',
+  'ui.nav.status': 'நிலை',
+  'route.workspace': 'திட்டப் பணியிடம்',
+  'route.panelHospitals': 'பேனல் மருத்துவமனைகள்',
+  'route.status': 'ஸ்கிரேப்பர் நிலை',
+}
+
 export const supportedLocales = [
-  { code: 'en', label: 'EN' },
+  { code: 'en', label: 'English' },
+  { code: 'ms-SG', label: 'Bahasa Melayu' },
+  { code: 'ta-SG', label: 'தமிழ்' },
   { code: 'zh-SG', label: '中文' },
 ]
 

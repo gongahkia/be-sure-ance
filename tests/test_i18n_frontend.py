@@ -10,10 +10,12 @@ PLAN_CARD = (ROOT / "src/be-sure-ance-app/src/components/PlanCard.vue").read_tex
 
 
 class FrontendI18nTests(unittest.TestCase):
-    def test_lightweight_i18n_supports_en_and_zh_sg_with_fallback(self):
+    def test_lightweight_i18n_supports_singapore_languages_with_fallback(self):
         for required in (
             "export const messages",
             "en:",
+            "'ms-SG'",
+            "'ta-SG'",
             "'zh-SG':",
             "export function useI18n()",
             "[missing:${key}]",
@@ -25,7 +27,7 @@ class FrontendI18nTests(unittest.TestCase):
     def test_language_toggle_preserves_route_state(self):
         for required in (
             'v-for="option in supportedLocales"',
-            "setLocale(option.code)",
+            "setLocale($event.target.value)",
             "activeView === 'panelMatrix'",
             "window.history.pushState",
         ):

@@ -21,15 +21,15 @@ class CarrierCanonicalizationFrontendTests(unittest.TestCase):
             with self.subTest(required=required):
                 self.assertIn(required, APP_VUE)
 
-    def test_plan_card_surfaces_canonical_name_and_flags(self):
-        for required in (
+    def test_plan_card_omits_canonical_metadata_from_the_browse_card(self):
+        for hidden in (
             "t('plan.canonicalCarrier')",
             "canonicalCarrierText",
             "canonicalFlagsText",
             "mismatch_flags",
         ):
-            with self.subTest(required=required):
-                self.assertIn(required, PLAN_CARD)
+            with self.subTest(hidden=hidden):
+                self.assertNotIn(hidden, PLAN_CARD)
 
     def test_pdf_export_payload_includes_canonical_carrier_context(self):
         for required in (

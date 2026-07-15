@@ -51,24 +51,33 @@
         <button
           class="theme-toggle"
           type="button"
-          :aria-label="t('theme.label')"
+          :aria-label="theme === 'dark' ? t('theme.light') : t('theme.dark')"
+          :title="theme === 'dark' ? t('theme.light') : t('theme.dark')"
           :aria-pressed="theme === 'light'"
           @click="toggleTheme"
         >
-          {{ theme === 'dark' ? t('theme.light') : t('theme.dark') }}
+          <svg v-if="theme === 'dark'" class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+          <svg v-else class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.6 15.8A8.5 8.5 0 0 1 8.2 3.4 8.5 8.5 0 1 0 20.6 15.8Z" />
+          </svg>
         </button>
-        <div class="language-toggle" :aria-label="t('language.label')">
-          <button
-            v-for="option in supportedLocales"
-            :key="option.code"
-            type="button"
-            :class="{ active: locale === option.code }"
-            :aria-pressed="locale === option.code"
-            @click="setLocale(option.code)"
+        <label class="language-toggle">
+          <span class="sr-only">{{ t('language.label') }}</span>
+          <select
+            :value="locale"
+            :aria-label="t('language.label')"
+            @change="setLocale($event.target.value)"
           >
-            {{ option.label }}
-          </button>
-        </div>
+            <option v-for="option in supportedLocales" :key="option.code" :value="option.code">
+              {{ option.label }}
+            </option>
+          </select>
+        </label>
       </div>
     </header>
 
@@ -330,20 +339,6 @@
             </h1>
           </div>
           <div class="toolbar-controls">
-            <input
-              v-model="searchQuery"
-              class="hub-input"
-              type="search"
-              :placeholder="t('ui.browse.filter')"
-            />
-            <label class="toggle-pill">
-              <input v-model="verifiedOnly" type="checkbox" />
-              {{ t('ui.browse.verifiedOnly') }}
-            </label>
-            <label class="toggle-pill">
-              <input v-model="brochureOnly" type="checkbox" />
-              {{ t('ui.browse.brochure') }}
-            </label>
             <select v-model="sortMode" class="hub-select" :aria-label="t('ui.browse.sortLabel')">
               <option value="updated">{{ t('ui.browse.sort.updated') }}</option>
               <option value="name">{{ t('ui.browse.sort.name') }}</option>
@@ -444,8 +439,6 @@ const brochureChangeAlerts = ref([])
 const carrierCanonicalNames = ref([])
 const scraperHealth = ref([])
 const activeCoverageTags = ref([])
-const verifiedOnly = ref(false)
-const brochureOnly = ref(false)
 const sortMode = ref('updated')
 const activeDetailTab = ref('card')
 const theme = ref(initialTheme())
@@ -727,12 +720,6 @@ function filteredPlans() {
     ) {
       return false
     }
-    if (brochureOnly.value && !hasBrochure(plan)) {
-      return false
-    }
-    if (verifiedOnly.value && planVerificationState(plan) !== 'verified') {
-      return false
-    }
     if (activeCoverageTags.value.length > 0) {
       const tags = coverageTagsForPlan(plan)
       if (!activeCoverageTags.value.every((tag) => tags.includes(tag))) {
@@ -901,8 +888,6 @@ function toggleCoverageTag(tag) {
 function clearFilters() {
   activeProviderKey.value = ALL_PROVIDERS_KEY
   activeCoverageTags.value = []
-  verifiedOnly.value = false
-  brochureOnly.value = false
   searchQuery.value = ''
 }
 
@@ -1130,10 +1115,6 @@ function verificationChipClass(plan) {
   return 'bad'
 }
 
-function hasBrochure(plan) {
-  return Boolean(factValue(plan?.facts, 'brochure_metadata')?.url || plan?.product_brochure_url)
-}
-
 function brochureStatusText(plan) {
   const metadata = factValue(plan?.facts, 'brochure_metadata')
   if (metadata?.sha256) {
@@ -1227,25 +1208,40 @@ function localize(value) {
   justify-content: flex-end;
 }
 
-.language-toggle {
-  display: inline-flex;
-  gap: 6px;
-}
-
-.language-toggle button,
-.theme-toggle {
-  min-height: 32px;
+.theme-toggle,
+.language-toggle select {
+  min-height: 36px;
   border: 1px solid var(--hf-border);
   border-radius: var(--hf-radius-full);
   background: transparent;
   color: var(--hf-secondary);
-  padding: 4px 10px;
   font-weight: 700;
 }
 
-.language-toggle button.active {
-  background: var(--hf-primary);
-  color: var(--hf-primary-contrast);
+.theme-toggle {
+  display: inline-grid;
+  width: 36px;
+  place-items: center;
+  padding: 0;
+}
+
+.theme-icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.theme-icon circle {
+  fill: none;
+}
+
+.language-toggle select {
+  appearance: auto;
+  padding: 4px 28px 4px 10px;
 }
 
 .browse-shell {
