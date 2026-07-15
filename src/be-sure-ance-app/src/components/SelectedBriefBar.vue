@@ -2,7 +2,7 @@
   <section class="selected-brief">
     <div class="brief-summary">
       <span class="hub-chip strong">{{
-        t('ui.selected.count', { count: selectedPlans.length })
+        t('ui.selected.count', { count: selectedPlans.length, max: maxPlans })
       }}</span>
       <div class="selected-list">
         <button
@@ -39,6 +39,7 @@ defineProps({
 defineEmits(['remove'])
 
 const { t } = useI18n()
+const maxPlans = 10
 </script>
 
 <style scoped>

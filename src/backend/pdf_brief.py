@@ -1,16 +1,28 @@
 from __future__ import annotations
 
 import io
+import re
 from datetime import datetime, timezone
 from html import escape
+from pathlib import Path
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import (
+    Image,
+    PageBreak,
+    Paragraph,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
+)
+import requests
 
-MAX_PLANS_PER_BRIEF = 3
+MAX_PLANS_PER_BRIEF = 10
+MASCOT_PATH = Path(__file__).resolve().parents[2] / "netlify/functions/mascot.png"
 QUALITATIVE_FIELDS = (
     ("coverage_tags", "Coverage"),
     ("panel_hospitals", "Panel hospitals"),
@@ -40,14 +52,19 @@ def validate_plan_selection(plans: list[dict]) -> None:
         raise ValueError(f"PDF briefs support up to {MAX_PLANS_PER_BRIEF} plans.")
 
 
-def build_pdf_brief(plans: list[dict], generated_at: datetime | None = None) -> bytes:
-    return build_pdf_brief_with_branding(plans, branding=None, generated_at=generated_at)
+def build_pdf_brief(
+    plans: list[dict], generated_at: datetime | None = None, options: dict | None = None
+) -> bytes:
+    return build_pdf_brief_with_branding(
+        plans, branding=None, generated_at=generated_at, options=options
+    )
 
 
 def build_pdf_brief_with_branding(
     plans: list[dict],
     branding: dict | None = None,
     generated_at: datetime | None = None,
+    options: dict | None = None,
 ) -> bytes:
     validate_plan_selection(plans)
     timestamp = generated_timestamp(generated_at)
@@ -63,23 +80,47 @@ def build_pdf_brief_with_branding(
         title="Be-sure-ance Client Brief",
     )
     styles = brief_styles()
+    include_plan_details = (options or {}).get("include_plan_details", True)
     story = [
-        Paragraph("Be-sure-ance Client Brief", styles["Title"]),
-        Paragraph(f"Generated at {timestamp}", styles["Meta"]),
+        brief_header(timestamp, styles),
         Spacer(1, 6 * mm),
         Paragraph(NO_ADVICE_DISCLAIMER, styles["Disclaimer"]),
         Spacer(1, 6 * mm),
-        comparison_table(plans, styles),
+        *comparison_flowables(plans, styles),
         Spacer(1, 6 * mm),
         Paragraph("Sources", styles["Heading2"]),
         source_table(plans, styles),
     ]
+    if include_plan_details:
+        story.extend(
+            [
+                PageBreak(),
+                Paragraph("Plan detail appendices", styles["Heading1"]),
+                *plan_detail_flowables(plans, styles),
+            ]
+        )
     doc.build(
         story,
         onFirstPage=lambda canvas, document: draw_footer(canvas, document, footer_text),
         onLaterPages=lambda canvas, document: draw_footer(canvas, document, footer_text),
     )
     return buffer.getvalue()
+
+
+def brief_header(timestamp: str, styles: dict[str, ParagraphStyle]) -> Table:
+    title = Paragraph(
+        f"Be-sure-ance Client Brief<br/><font size=8>Generated at {escape(timestamp)}</font>",
+        styles["Title"],
+    )
+    cells = [title]
+    widths = [178 * mm]
+    if MASCOT_PATH.exists():
+        mascot = Image(str(MASCOT_PATH), width=24 * mm, height=24 * mm)
+        cells = [mascot, title]
+        widths = [28 * mm, 150 * mm]
+    header = Table([cells], colWidths=widths)
+    header.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
+    return header
 
 
 def brief_styles() -> dict[str, ParagraphStyle]:
@@ -116,6 +157,28 @@ def brief_styles() -> dict[str, ParagraphStyle]:
     return styles
 
 
+def comparison_flowables(plans: list[dict], styles: dict[str, ParagraphStyle]) -> list:
+    if len(plans) <= 3:
+        return [comparison_table(plans, styles)]
+
+    flowables = []
+    for plan in plans:
+        rows = [[Paragraph("Field", styles["Cell"]), Paragraph("Value", styles["Cell"])]]
+        rows.extend(
+            [
+                Paragraph(label, styles["Cell"]),
+                Paragraph(field_text(plan, field_name), styles["Cell"]),
+            ]
+            for field_name, label in QUALITATIVE_FIELDS
+        )
+        table = Table(rows, colWidths=[42 * mm, 136 * mm], repeatRows=1)
+        table.setStyle(base_table_style())
+        flowables.extend(
+            [Paragraph(plan_heading(plan), styles["Heading2"]), table, Spacer(1, 5 * mm)]
+        )
+    return flowables
+
+
 def comparison_table(plans: list[dict], styles: dict[str, ParagraphStyle]) -> Table:
     header = [Paragraph("Field", styles["Cell"])]
     header.extend(Paragraph(plan_heading(plan), styles["Cell"]) for plan in plans)
@@ -130,6 +193,54 @@ def comparison_table(plans: list[dict], styles: dict[str, ParagraphStyle]) -> Ta
     table = Table(rows, colWidths=col_widths, repeatRows=1)
     table.setStyle(base_table_style())
     return table
+
+
+def plan_detail_flowables(plans: list[dict], styles: dict[str, ParagraphStyle]) -> list:
+    flowables = []
+    for plan in plans:
+        heading = Paragraph(plan_heading(plan), styles["Heading2"])
+        logo = provider_logo(plan)
+        if logo:
+            header = Table([[logo, heading]], colWidths=[12 * mm, 166 * mm])
+            header.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
+            flowables.append(header)
+        else:
+            flowables.append(heading)
+        rows = [
+            ["Overview", plan.get("plan_overview") or plan.get("plan_description") or "Unknown"],
+            ["Benefits", "; ".join(plan.get("plan_benefits") or []) or "Unknown"],
+            ["Product page", plan.get("plan_url") or "Not provided"],
+            ["Brochure", plan.get("product_brochure_url") or "Not provided"],
+        ]
+        table = Table(
+            [
+                [Paragraph("Detail", styles["Cell"]), Paragraph("Value", styles["Cell"])],
+                *[
+                    [
+                        Paragraph(label, styles["Cell"]),
+                        Paragraph(linkify_text(value), styles["Cell"]),
+                    ]
+                    for label, value in rows
+                ],
+            ],
+            colWidths=[35 * mm, 143 * mm],
+            repeatRows=1,
+        )
+        table.setStyle(base_table_style())
+        flowables.extend([table, Spacer(1, 6 * mm)])
+    return flowables
+
+
+def provider_logo(plan: dict):
+    url = safe_text(plan.get("provider_logo_url"))
+    if not url.startswith("https://"):
+        return None
+    try:
+        response = requests.get(url, timeout=3)
+        response.raise_for_status()
+        return Image(io.BytesIO(response.content), width=9 * mm, height=9 * mm)
+    except requests.RequestException:
+        return None
 
 
 def source_table(plans: list[dict], styles: dict[str, ParagraphStyle]) -> Table:
@@ -148,7 +259,8 @@ def source_table(plans: list[dict], styles: dict[str, ParagraphStyle]) -> Table:
             [
                 Paragraph(plan_heading(plan), styles["Cell"]),
                 Paragraph(
-                    "<br/>".join(escape(item) for item in sources) or "No sources", styles["Cell"]
+                    "<br/>".join(linkify_text(item) for item in sources) or "No sources",
+                    styles["Cell"],
                 ),
             ]
         )
@@ -214,6 +326,21 @@ def item_text(item, field_name: str) -> str:
         or item.get("details")
         or item.get("raw_text")
     )
+
+
+def linkify_text(value) -> str:
+    text = safe_text(value)
+    if not text:
+        return ""
+    parts = re.split(r"(https?://[^\\s<]+)", text)
+    rendered = []
+    for part in parts:
+        if part.startswith(("https://", "http://")):
+            href = escape(part, quote=True)
+            rendered.append(f'<a href="{href}" color="#1d4ed8"><u>{href}</u></a>')
+        else:
+            rendered.append(escape(part))
+    return "".join(rendered)
 
 
 def safe_text(value) -> str:

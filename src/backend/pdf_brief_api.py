@@ -23,13 +23,16 @@ app.add_middleware(
 
 
 class BriefRequest(BaseModel):
-    plans: list[dict] = Field(..., min_length=1, max_length=3)
+    plans: list[dict] = Field(..., min_length=1, max_length=10)
     branding: dict | None = None
+    options: dict | None = None
 
 
 @app.post("/briefs/client.pdf")
 def create_client_brief(request: BriefRequest):
-    pdf_bytes = build_pdf_brief_with_branding(request.plans, branding=request.branding)
+    pdf_bytes = build_pdf_brief_with_branding(
+        request.plans, branding=request.branding, options=request.options
+    )
     return Response(
         content=pdf_bytes,
         media_type="application/pdf",

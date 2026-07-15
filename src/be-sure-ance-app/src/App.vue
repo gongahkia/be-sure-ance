@@ -62,9 +62,7 @@
               d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
             />
           </svg>
-          <svg v-else class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.6 15.8A8.5 8.5 0 0 1 8.2 3.4 8.5 8.5 0 1 0 20.6 15.8Z" />
-          </svg>
+          <span v-else class="theme-moon" aria-hidden="true">☾</span>
         </button>
         <label class="language-toggle">
           <span class="sr-only">{{ t('language.label') }}</span>
@@ -80,12 +78,6 @@
         </label>
       </div>
     </header>
-
-    <SelectedBriefBar
-      v-if="selectedPlans.length > 0"
-      :selected-plans="selectedPlans"
-      @remove="togglePlanSelection"
-    />
 
     <section v-if="loading" class="status-panel">{{ t('status.loading') }}</section>
     <section v-else-if="errorMessage" class="status-panel error">{{ errorMessage }}</section>
@@ -129,12 +121,45 @@
           <h1>{{ t('ui.brief.title') }}</h1>
           <p>{{ t('ui.brief.copy') }}</p>
         </div>
-        <span class="hub-chip strong">{{ t('ui.selected.count', { count: selectedPlans.length }) }}</span>
+        <span class="hub-chip strong">{{
+          t('ui.selected.count', { count: briefPlans.length, max: MAX_BRIEF_PLANS })
+        }}</span>
       </section>
 
-      <section v-if="selectedPlans.length > 0" class="brief-page-actions">
-        <BriefExportPanel :selected-plans="selectedPlans" />
-        <ShareComparisonPanel :selected-plans="selectedPlans" />
+      <section v-if="briefPlans.length > 0" class="brief-workspace">
+        <aside class="brief-selection">
+          <section class="brief-plan-list">
+            <article v-for="plan in briefPlans" :key="plan.key">
+              <div>
+                <p>{{ plan.providerName }}</p>
+                <strong>{{ plan.plan_name }}</strong>
+              </div>
+              <div v-if="currentBriefRefs.length === 0" class="brief-plan-actions">
+                <button
+                  type="button"
+                  :disabled="briefPlans.indexOf(plan) === 0"
+                  :aria-label="t('ui.selected.moveUp')"
+                  @click="moveBriefPlan(plan.key, -1)"
+                >
+                  ↑
+                </button>
+                <button
+                  type="button"
+                  :disabled="briefPlans.indexOf(plan) === briefPlans.length - 1"
+                  :aria-label="t('ui.selected.moveDown')"
+                  @click="moveBriefPlan(plan.key, 1)"
+                >
+                  ↓
+                </button>
+                <button type="button" @click="togglePlanSelection(plan.key)">
+                  {{ t('ui.selected.remove') }}
+                </button>
+              </div>
+            </article>
+          </section>
+          <ShareComparisonPanel :selected-plans="briefPlans" />
+        </aside>
+        <BriefExportPanel :selected-plans="briefPlans" />
       </section>
       <section v-else class="empty-plan-state">{{ t('ui.brief.empty') }}</section>
     </main>
@@ -358,7 +383,6 @@
           </div>
         </section>
 
-
         <section v-if="visiblePlans.length > 0" class="repo-list">
           <PlanCard
             v-for="plan in visiblePlans"
@@ -395,7 +419,6 @@ import ProviderRail from './components/ProviderRail.vue'
 import ProviderLogo from './components/ProviderLogo.vue'
 import RegulatoryEventList from './components/RegulatoryEventList.vue'
 import ScraperStatusDashboard from './components/ScraperStatusDashboard.vue'
-import SelectedBriefBar from './components/SelectedBriefBar.vue'
 import ShareComparisonPanel from './components/ShareComparisonPanel.vue'
 import { useI18n } from './i18n'
 import { buildPlanKey, providers } from './lib/providers'
@@ -424,6 +447,7 @@ const SHARE_DISCLAIMER = computed(() => t('disclaimer.share'))
 const SELECTED_PLANS_STORAGE_KEY = 'be-sure-ance:selected-plan-keys'
 const THEME_STORAGE_KEY = 'be-sure-ance-theme'
 const ALL_PROVIDERS_KEY = 'all'
+const MAX_BRIEF_PLANS = 10
 const LIVE_SCRAPE_REFRESH_MS = 5000
 const liveScrapeMode = LIVE_SCRAPE_MODE
 let liveScrapeRefreshTimer
@@ -494,6 +518,7 @@ onBeforeUnmount(() => {
 })
 
 const currentShareRefs = computed(() => parseShareRoute(currentPath.value))
+const currentBriefRefs = computed(() => parseBriefRoute(currentPath.value))
 const routePlanTarget = computed(() => parsePlanRoute(currentPath.value))
 const activeView = computed(() => {
   const path = pathWithoutQuery(currentPath.value)
@@ -574,6 +599,14 @@ function parsePlanRoute(path) {
 
 function parseShareRoute(path) {
   if (pathWithoutQuery(path) !== '/share') {
+    return []
+  }
+  const params = new URLSearchParams(queryPart(path))
+  return parseSharePlanRefs(params.get('plans') || '')
+}
+
+function parseBriefRoute(path) {
+  if (pathWithoutQuery(path) !== '/brief') {
     return []
   }
   const params = new URLSearchParams(queryPart(path))
@@ -705,6 +738,7 @@ const enrichedPlans = computed(() =>
         key,
         providerKey: provider.key,
         providerName: provider.name,
+        providerWebsite: provider.website,
         comparisonFact: comparisonFactMap.value[key] || null,
         facts: planFactMap.value[factKey] || {},
         resources: specialistResourceMap.value[key] || [],
@@ -833,6 +867,19 @@ const selectedPlans = computed(() =>
     .filter(Boolean),
 )
 
+const briefPlans = computed(() => {
+  if (currentBriefRefs.value.length === 0) {
+    return selectedPlans.value
+  }
+  return currentBriefRefs.value
+    .map((planRef) =>
+      enrichedPlans.value.find(
+        (plan) => plan.providerKey === planRef.insurer && plan.plan_slug === planRef.plan_slug,
+      ),
+    )
+    .filter(Boolean)
+})
+
 const totalPanelHospitalCount = computed(() =>
   enrichedPlans.value.reduce(
     (total, plan) => total + factItems(plan.facts, 'panel_hospitals').length,
@@ -867,11 +914,22 @@ function togglePlanSelection(planKey) {
     selectedPlanKeys.value = selectedPlanKeys.value.filter((item) => item !== key)
     return
   }
-  if (selectedPlanKeys.value.length >= 3) {
+  if (selectedPlanKeys.value.length >= MAX_BRIEF_PLANS) {
     selectedPlanKeys.value = [...selectedPlanKeys.value.slice(1), key]
     return
   }
   selectedPlanKeys.value = [...selectedPlanKeys.value, key]
+}
+
+function moveBriefPlan(planKey, offset) {
+  const currentIndex = selectedPlanKeys.value.indexOf(planKey)
+  const nextIndex = currentIndex + offset
+  if (currentIndex < 0 || nextIndex < 0 || nextIndex >= selectedPlanKeys.value.length) {
+    return
+  }
+  const reordered = [...selectedPlanKeys.value]
+  ;[reordered[currentIndex], reordered[nextIndex]] = [reordered[nextIndex], reordered[currentIndex]]
+  selectedPlanKeys.value = reordered
 }
 
 function clearFilters() {
@@ -905,7 +963,7 @@ function loadStoredSelectedPlanKeys() {
   try {
     const stored = JSON.parse(window.localStorage.getItem(SELECTED_PLANS_STORAGE_KEY) || '[]')
     if (Array.isArray(stored)) {
-      return stored.filter((item) => typeof item === 'string').slice(0, 3)
+      return stored.filter((item) => typeof item === 'string').slice(0, MAX_BRIEF_PLANS)
     }
   } catch {
     return []
@@ -915,7 +973,10 @@ function loadStoredSelectedPlanKeys() {
 
 function storeSelectedPlanKeys(keys) {
   try {
-    window.localStorage.setItem(SELECTED_PLANS_STORAGE_KEY, JSON.stringify(keys.slice(0, 3)))
+    window.localStorage.setItem(
+      SELECTED_PLANS_STORAGE_KEY,
+      JSON.stringify(keys.slice(0, MAX_BRIEF_PLANS)),
+    )
   } catch {
     return
   }
@@ -1227,6 +1288,13 @@ function localize(value) {
   fill: none;
 }
 
+.theme-moon {
+  color: currentColor;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  line-height: 1;
+}
+
 .language-toggle select {
   appearance: auto;
   padding: 4px 28px 4px 10px;
@@ -1343,6 +1411,64 @@ h1 span {
 .repo-list {
   display: grid;
   gap: 12px;
+}
+
+.brief-plan-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--hf-border);
+}
+
+.brief-plan-list article {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--hf-border);
+}
+
+.brief-plan-list p,
+.brief-plan-list strong {
+  display: block;
+}
+
+.brief-plan-list p {
+  margin: 0 0 3px;
+  color: var(--hf-muted);
+  font-size: 14px;
+}
+
+.brief-plan-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brief-plan-actions button {
+  border: 0;
+  background: transparent;
+  color: var(--hf-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.brief-plan-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+  text-decoration: none;
+}
+
+.brief-workspace {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.brief-selection {
+  display: grid;
+  gap: 18px;
 }
 
 .repo-tabs {
@@ -1525,6 +1651,10 @@ h1 span {
   .repo-heading {
     display: grid;
     align-items: start;
+  }
+
+  .brief-workspace {
+    grid-template-columns: 1fr;
   }
 
   .browse-main {

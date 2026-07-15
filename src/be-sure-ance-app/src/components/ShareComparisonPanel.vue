@@ -55,7 +55,7 @@ function createShare() {
   shareUrl.value = ''
   try {
     const refs = props.selectedPlans.map(sharePlanPayload).filter(Boolean)
-    shareUrl.value = absoluteShareUrl(`/share?plans=${encodeURIComponent(refs.join(','))}`)
+    shareUrl.value = absoluteShareUrl(`/brief?plans=${encodeURIComponent(refs.join(','))}`)
     statusMessage.value = t('ui.share.ready')
   } catch (error) {
     statusMessage.value = error?.message || t('ui.share.failed')

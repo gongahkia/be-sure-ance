@@ -22,8 +22,9 @@ class FrontendPlansQueryTests(unittest.TestCase):
             with self.subTest(required=required):
                 self.assertIn(required, APP_VUE)
 
-    def test_shortlist_limit_remains_three_plans(self):
-        self.assertIn("selectedPlanKeys.value.length >= 3", APP_VUE)
+    def test_brief_selection_supports_ten_plans(self):
+        self.assertIn("const MAX_BRIEF_PLANS = 10", APP_VUE)
+        self.assertIn("selectedPlanKeys.value.length >= MAX_BRIEF_PLANS", APP_VUE)
         self.assertIn("selectedPlanKeys.value.slice(1)", APP_VUE)
 
     def test_empty_provider_state_is_distinct_from_search_miss(self):

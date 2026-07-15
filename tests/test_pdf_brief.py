@@ -90,6 +90,20 @@ class PdfBriefTests(unittest.TestCase):
         self.assertIn("https://example.com/brochure.pdf", text)
         self.assertIn(NO_ADVICE_DISCLAIMER[:60], text)
 
+    def test_pdf_brief_source_urls_are_clickable_links(self):
+        reader = PdfReader(io.BytesIO(build_pdf_brief([sample_plan()])))
+        annotations = reader.pages[0].get("/Annots") or []
+        targets = [annotation.get_object().get("/A", {}).get("/URI") for annotation in annotations]
+
+        self.assertIn("https://example.com/product", targets)
+        self.assertIn("https://example.com/brochure.pdf", targets)
+
+    def test_pdf_brief_includes_the_bee_mascot(self):
+        reader = PdfReader(io.BytesIO(build_pdf_brief([sample_plan()])))
+        images = (reader.pages[0].get("/Resources").get("/XObject") or {}).values()
+
+        self.assertTrue(any(image.get_object().get("/Subtype") == "/Image" for image in images))
+
     def test_pdf_brief_rejects_more_than_three_plans(self):
         plans = [sample_plan(f"Plan {index}") for index in range(MAX_PLANS_PER_BRIEF + 1)]
 

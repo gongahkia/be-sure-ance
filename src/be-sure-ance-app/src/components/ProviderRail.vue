@@ -25,7 +25,6 @@
         <strong>{{ providerCounts[provider.key] || 0 }}</strong>
       </button>
     </section>
-
   </aside>
 </template>
 
