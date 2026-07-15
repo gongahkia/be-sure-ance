@@ -25,11 +25,11 @@
           {{ t('ui.nav.models') }}
         </a>
         <a
-          href="/compare"
-          :class="{ active: activeView === 'compare' }"
-          @click="navigateTo('/compare', $event)"
+          href="/brief"
+          :class="{ active: activeView === 'brief' }"
+          @click="navigateTo('/brief', $event)"
         >
-          {{ t('ui.nav.compare') }}
+          {{ t('ui.nav.brief') }}
         </a>
         <a
           href="/matrix/panel-hospitals"
@@ -122,8 +122,21 @@
       <ScraperStatusDashboard :health-rows="scraperHealth" :providers="providers" />
     </main>
 
-    <main v-else-if="activeView === 'compare'" class="page-shell">
-      <CompareSplitView :plans="enrichedPlans" :initial-plans="selectedPlans" />
+    <main v-else-if="activeView === 'brief'" class="page-shell">
+      <section class="page-heading">
+        <div>
+          <p class="subtle-label">{{ t('ui.brief.eyebrow') }}</p>
+          <h1>{{ t('ui.brief.title') }}</h1>
+          <p>{{ t('ui.brief.copy') }}</p>
+        </div>
+        <span class="hub-chip strong">{{ t('ui.selected.count', { count: selectedPlans.length }) }}</span>
+      </section>
+
+      <section v-if="selectedPlans.length > 0" class="brief-page-actions">
+        <BriefExportPanel :selected-plans="selectedPlans" />
+        <ShareComparisonPanel :selected-plans="selectedPlans" />
+      </section>
+      <section v-else class="empty-plan-state">{{ t('ui.brief.empty') }}</section>
     </main>
 
     <main v-else-if="activeView === 'sharedComparison'" class="page-shell">
@@ -322,10 +335,7 @@
         :providers="loadedProviders"
         :active-provider-key="activeProviderKey"
         :provider-counts="providerCounts"
-        :coverage-tags="allCoverageTags"
-        :active-coverage-tags="activeCoverageTags"
         @select="activeProviderKey = $event"
-        @toggle-coverage="toggleCoverageTag"
         @clear-filters="clearFilters"
       />
 
@@ -348,9 +358,6 @@
           </div>
         </section>
 
-        <p v-if="liveScrapeMode" class="scrape-progress" role="status">
-          {{ t('ui.browse.scrapeProgress', { count: loadedProviders.length }) }}
-        </p>
 
         <section v-if="visiblePlans.length > 0" class="repo-list">
           <PlanCard
@@ -379,7 +386,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import appLogo from './assets/logo.png'
 import BrochureChangeList from './components/BrochureChangeList.vue'
 import ClaimTurnaroundBoard from './components/ClaimTurnaroundBoard.vue'
-import CompareSplitView from './components/CompareSplitView.vue'
+import BriefExportPanel from './components/BriefExportPanel.vue'
 import ComparisonTable from './components/ComparisonTable.vue'
 import FactProvenance from './components/FactProvenance.vue'
 import PanelHospitalMatrix from './components/PanelHospitalMatrix.vue'
@@ -389,6 +396,7 @@ import ProviderLogo from './components/ProviderLogo.vue'
 import RegulatoryEventList from './components/RegulatoryEventList.vue'
 import ScraperStatusDashboard from './components/ScraperStatusDashboard.vue'
 import SelectedBriefBar from './components/SelectedBriefBar.vue'
+import ShareComparisonPanel from './components/ShareComparisonPanel.vue'
 import { useI18n } from './i18n'
 import { buildPlanKey, providers } from './lib/providers'
 import { LIVE_SCRAPE_MODE, loadAppData } from './lib/staticData'
@@ -438,7 +446,6 @@ const masRegulatoryEvents = ref([])
 const brochureChangeAlerts = ref([])
 const carrierCanonicalNames = ref([])
 const scraperHealth = ref([])
-const activeCoverageTags = ref([])
 const sortMode = ref('updated')
 const activeDetailTab = ref('card')
 const theme = ref(initialTheme())
@@ -493,8 +500,8 @@ const activeView = computed(() => {
   if (path === '/matrix/panel-hospitals') {
     return 'panelMatrix'
   }
-  if (path === '/compare') {
-    return 'compare'
+  if (path === '/brief' || path === '/compare') {
+    return 'brief'
   }
   if (path === '/status') {
     return 'scraperStatus'
@@ -720,12 +727,6 @@ function filteredPlans() {
     ) {
       return false
     }
-    if (activeCoverageTags.value.length > 0) {
-      const tags = coverageTagsForPlan(plan)
-      if (!activeCoverageTags.value.every((tag) => tags.includes(tag))) {
-        return false
-      }
-    }
     if (!query) {
       return true
     }
@@ -826,10 +827,6 @@ const activeProviderLabel = computed(() => {
   return providerFor(activeProviderKey.value).name
 })
 
-const allCoverageTags = computed(() =>
-  Array.from(new Set(enrichedPlans.value.flatMap((plan) => coverageTagsForPlan(plan)))).sort(),
-)
-
 const selectedPlans = computed(() =>
   selectedPlanKeys.value
     .map((key) => enrichedPlans.value.find((plan) => plan.key === key))
@@ -875,14 +872,6 @@ function togglePlanSelection(planKey) {
     return
   }
   selectedPlanKeys.value = [...selectedPlanKeys.value, key]
-}
-
-function toggleCoverageTag(tag) {
-  if (activeCoverageTags.value.includes(tag)) {
-    activeCoverageTags.value = activeCoverageTags.value.filter((item) => item !== tag)
-    return
-  }
-  activeCoverageTags.value = [...activeCoverageTags.value, tag]
 }
 
 function clearFilters() {
@@ -1355,12 +1344,6 @@ h1 span {
 .repo-list {
   display: grid;
   gap: 12px;
-}
-
-.scrape-progress {
-  margin: 0;
-  color: var(--hf-muted);
-  font-size: 14px;
 }
 
 .repo-tabs {
